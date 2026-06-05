@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nave — a month of content in 30 minutes</title>
+<meta name="description" content="Nave is a plug-and-play Claude Code template that turns one footage drop into a month of finished, on-brand content — clips, carousels, captions, and a full schedule. Your whole content team, in one install. You own it.">
+<link rel="canonical" href="https://nave.infinitxai.com/">
+<meta name="theme-color" content="#0B0B0B">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nave">
+<meta property="og:title" content="Nave — a month of content in 30 minutes">
+<meta property="og:description" content="A plug-and-play Claude Code template that turns one footage drop into a month of finished, on-brand content. Your whole content team, in one install. You own it.">
+<meta property="og:url" content="https://nave.infinitxai.com/">
+<meta property="og:image" content="https://nave.infinitxai.com/assets/nave-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nave — a month of content in 30 minutes">
+<meta name="twitter:description" content="Your whole content team, in one install. Drop your footage; the ship beams back a month of content. You own it.">
+<meta name="twitter:image" content="https://nave.infinitxai.com/assets/nave-logo.png">
+
+<link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
+
+<!-- GEO: structured data so AI assistants + search can cite Nave as an entity -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nave.infinitxai.com/#org",
+      "name": "Nave",
+      "url": "https://nave.infinitxai.com/",
+      "logo": "https://nave.infinitxai.com/assets/nave-logo.png",
+      "parentOrganization": { "@type": "Organization", "name": "INFINITX", "url": "https://infinitxai.com/" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Nave",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, Linux (via Claude Code)",
+      "url": "https://nave.infinitxai.com/",
+      "description": "Nave is a plug-and-play Claude Code template that installs a complete content department on your machine. Drop one footage drop and a library of brand-tuned format-specialist agents produces a month of finished, on-brand content — clips, carousels, captions, and a multi-platform schedule. You own the system; it runs on your own Claude Code with no monthly tool credits.",
+      "offers": { "@type": "Offer", "price": "79", "priceCurrency": "USD", "description": "Founding launch — DIY template from $49; done-with-you install $397; build-along community $89/mo." },
+      "publisher": { "@id": "https://nave.infinitxai.com/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is Nave?", "acceptedAnswer": { "@type": "Answer", "text": "Nave is a plug-and-play Claude Code template. You clone the repo and run one command, and a whole content department installs onto your machine — a video editor, a publisher, comment/DM automation, a copywriter, a content coach, footage intelligence, a competitor scout, and a library of format-specialist agents. Drop a month of footage and it produces a month of finished, on-brand content. You own the system." } },
+        { "@type": "Question", "name": "Do I need to know how to code to use Nave?", "acceptedAnswer": { "@type": "Answer", "text": "No. A one-command installer sets up everything, and a five-minute guided bootstrap configures Nave to your brand. After that you talk to it in plain English: \"make a month of content from this video.\" There is also a done-with-you option where it's installed with you live." } },
+        { "@type": "Question", "name": "How is Nave different from Blotato or other AI content tools?", "acceptedAnswer": { "@type": "Answer", "text": "Hosted tools are rented SaaS — you pay per credit and own nothing the day you stop paying. Nave is a template you own and run on your own Claude Code, with no per-credit markup. And instead of one generic repurpose, Nave is a format factory: one footage drop runs through a whole library of brand-tuned format-specialist agents, producing a slate of distinct, finished pieces." } },
+        { "@type": "Question", "name": "What does \"a month of content in 30 minutes\" mean?", "acceptedAnswer": { "@type": "Answer", "text": "After setup, you give Nave one footage drop or video and it produces a month's slate — roughly 8–15 short clips, a few carousels, a long-form package, and a full posting schedule — and stages it for your approval. Your hands-on time is about 30 minutes of review; the agents do the rest." } },
+        { "@type": "Question", "name": "What do I need to run Nave?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Code, and your own API keys (Anthropic for the agents, AssemblyAI for transcription, and a publishing key). The installer handles the rest — ffmpeg, the render engine, and the face-tracking reframe engine. You pay your own usage directly, with no middleman markup." } },
+        { "@type": "Question", "name": "Who is Nave for?", "acceptedAnswer": { "@type": "Answer", "text": "People building with AI and Claude Code who want a proven content system they own — operators, freelancers, agency owners, and creators who'd rather run their own engine than rent another tool." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{ --bg:#0B0B0B; --panel:#121319; --line:#23252E; --text:#ECEDEF; --muted:#9AA0AB; --green:#1FE07A; }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  .green{color:var(--green)}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  /* nav */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(11,11,11,.72);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.5px}
+  .brand svg{width:30px;height:30px}
+  nav .links{display:flex;gap:26px;align-items:center;color:var(--muted);font-size:14px}
+  nav .links a:hover{color:var(--text)}
+  .btn{display:inline-block;background:var(--green);color:#06140C;font-weight:700;padding:11px 18px;border-radius:10px;font-size:14px;border:0;cursor:pointer;transition:transform .08s,filter .15s}
+  .btn:hover{filter:brightness(1.08)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  /* hero */
+  .hero{padding:84px 0 64px;text-align:center}
+  .badge{display:inline-block;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:26px}
+  .badge b{color:var(--green)}
+  h1{font-size:clamp(38px,7vw,72px);line-height:1.02;letter-spacing:-2px;margin:0 0 18px;font-weight:850}
+  .lede{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:680px;margin:0 auto 30px}
+  .lede b{color:var(--text);font-weight:600}
+  .ufo{width:128px;height:128px;margin:6px auto 30px;display:block}
+  form.waitlist{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+  form.waitlist input{flex:1;min-width:240px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:13px 15px;border-radius:10px;font-size:15px}
+  form.waitlist input:focus{outline:none;border-color:var(--green)}
+  .subcta{margin-top:16px;font-size:14px;color:var(--muted)}
+  .subcta a{color:var(--green);border-bottom:1px solid transparent}
+  .subcta a:hover{border-color:var(--green)}
+  .trust{margin-top:30px;color:var(--muted);font-size:13px;display:flex;gap:8px 22px;justify-content:center;flex-wrap:wrap}
+  .trust span:before{content:"✓ ";color:var(--green)}
+  /* sections */
+  section{padding:62px 0;border-top:1px solid var(--line)}
+  .eyebrow{color:var(--green);font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 12px}
+  h2{font-size:clamp(27px,4vw,40px);letter-spacing:-1px;margin:0 0 16px;font-weight:800;line-height:1.1}
+  section p.big{font-size:18px;color:var(--muted);max-width:720px}
+  section p.big b{color:var(--text)}
+  /* crew grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:30px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card .sign{font-family:ui-monospace,monospace;font-size:12px;color:var(--green);font-weight:700}
+  .card h3{margin:6px 0 6px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:30px}
+  .step{position:relative;padding-left:0}
+  .step .n{font-size:13px;color:var(--green);font-weight:800;font-family:ui-monospace,monospace}
+  .step h3{margin:8px 0 6px;font-size:18px}
+  .step p{margin:0;color:var(--muted);font-size:15px}
+  .codeline{margin-top:14px;background:#08120C;border:1px solid #16351F;color:#9af5c4;border-radius:10px;padding:12px 14px;font-family:ui-monospace,monospace;font-size:13.5px;overflow-x:auto}
+  /* compare */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+  .compare .col{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
+  .compare .col.own{border-color:#1c5e3a;background:linear-gradient(180deg,#0e1b13,#0c0f0c)}
+  .compare h3{margin:0 0 14px;font-size:18px}
+  .compare ul{margin:0;padding:0;list-style:none}
+  .compare li{padding:7px 0;color:var(--muted);font-size:14.5px;border-top:1px solid var(--line)}
+  .compare li:first-child{border-top:0}
+  .compare .own li:before{content:"✓ ";color:var(--green);font-weight:700}
+  .compare .rent li:before{content:"× ";color:#6b7280;font-weight:700}
+  /* pricing */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:30px}
+  .tier{border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--panel);display:flex;flex-direction:column}
+  .tier.feature{border-color:var(--green);box-shadow:0 0 0 1px var(--green) inset}
+  .tier .name{font-weight:700;font-size:16px}
+  .tier .price{font-size:30px;font-weight:850;letter-spacing:-1px;margin:10px 0 2px}
+  .tier .price small{font-size:14px;color:var(--muted);font-weight:500}
+  .tier .was{color:var(--muted);text-decoration:line-through;font-size:14px;margin-left:6px}
+  .tier ul{list-style:none;padding:0;margin:14px 0 20px;flex:1}
+  .tier li{padding:6px 0;color:var(--muted);font-size:14px}
+  .tier li:before{content:"✓ ";color:var(--green)}
+  .note{color:var(--muted);font-size:13px;margin-top:16px;text-align:center}
+  /* faq */
+  details{border-top:1px solid var(--line);padding:18px 0}
+  details summary{cursor:pointer;font-weight:650;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+  details summary::-webkit-details-marker{display:none}
+  details summary:after{content:"+";color:var(--green);font-weight:700}
+  details[open] summary:after{content:"–"}
+  details p{color:var(--muted);margin:12px 0 0;font-size:15.5px}
+  /* final + footer */
+  .final{text-align:center}
+  footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:13.5px}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+  .tagfoot{color:var(--green);font-family:ui-monospace,monospace;font-size:12.5px}
+  @media(max-width:640px){ nav .links a:not(.btn){display:none} .compare{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#0B0B0B"/><g transform="translate(51.2,51.2) scale(0.8)"><rect x="64" y="256" width="384" height="32" fill="#fff"/><rect x="0" y="288" width="512" height="32" fill="#fff"/><rect x="128" y="320" width="256" height="32" fill="#fff"/><rect x="96" y="288" width="32" height="32" fill="#1FE07A"/><rect x="224" y="288" width="32" height="32" fill="#1FE07A"/><rect x="352" y="288" width="32" height="32" fill="#1FE07A"/><rect x="224" y="96" width="64" height="32" fill="#1FE07A"/><rect x="192" y="128" width="128" height="32" fill="#1FE07A"/><rect x="160" y="160" width="192" height="32" fill="#1FE07A"/><rect x="160" y="192" width="32" height="32" fill="#1FE07A"/><rect x="224" y="192" width="64" height="32" fill="#1FE07A"/><rect x="320" y="192" width="32" height="32" fill="#1FE07A"/><rect x="128" y="224" width="256" height="32" fill="#1FE07A"/><rect x="192" y="192" width="32" height="32" fill="#0B0B0B"/><rect x="288" y="192" width="32" height="32" fill="#0B0B0B"/></g></svg>
+    nave
+  </a>
+  <div class="links">
+    <a href="#how">How it works</a>
+    <a href="#own">Own it</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn" href="#waitlist">Join the waitlist</a>
+  </div>
+</nav></div></header>
+
+<main>
+<section class="hero" style="border-top:0">
+  <div class="wrap">
+    <div class="badge">Part of the <b>INFINITX</b> ecosystem · runs on your own Claude Code</div>
+    <svg class="ufo" viewBox="0 0 512 512" aria-label="Nave"><rect width="512" height="512" rx="112" fill="#121319"/><g transform="translate(51.2,51.2) scale(0.8)"><rect x="192" y="352" width="128" height="32" fill="#1FE07A" fill-opacity=".4"/><rect x="160" y="384" width="192" height="32" fill="#1FE07A" fill-opacity=".2"/><rect x="64" y="256" width="384" height="32" fill="#fff"/><rect x="0" y="288" width="512" height="32" fill="#fff"/><rect x="128" y="320" width="256" height="32" fill="#fff"/><rect x="96" y="288" width="32" height="32" fill="#1FE07A"/><rect x="224" y="288" width="32" height="32" fill="#1FE07A"/><rect x="352" y="288" width="32" height="32" fill="#1FE07A"/><rect x="224" y="96" width="64" height="32" fill="#1FE07A"/><rect x="192" y="128" width="128" height="32" fill="#1FE07A"/><rect x="160" y="160" width="192" height="32" fill="#1FE07A"/><rect x="160" y="192" width="32" height="32" fill="#1FE07A"/><rect x="224" y="192" width="64" height="32" fill="#1FE07A"/><rect x="320" y="192" width="32" height="32" fill="#1FE07A"/><rect x="128" y="224" width="256" height="32" fill="#1FE07A"/><rect x="192" y="192" width="32" height="32" fill="#121319"/><rect x="288" y="192" width="32" height="32" fill="#121319"/></g></svg>
+    <h1>A month of content<br>in <span class="green">30 minutes</span>.</h1>
+    <p class="lede">Nave is a plug-and-play Claude Code template that turns one footage drop into a month of finished, on-brand content — clips, carousels, captions, and a full schedule. <b>Your whole content team, in one install. You own it.</b></p>
+    <form class="waitlist" id="waitlist" action="#" method="post" onsubmit="return false">
+      <!-- TODO: wire to your email provider (Beehiiv/ConvertKit/Resend/Formspree). action="#" is a placeholder. -->
+      <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
+      <button class="btn" type="submit">Get founding access →</button>
+    </form>
+    <div class="subcta"><a href="#how">See what it makes →</a></div>
+    <div class="trust"><span>You own the repo</span><span>No monthly tool credits</span><span>No vendor lock-in</span></div>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <p class="eyebrow">Not a tool you rent</p>
+    <h2>A crew you own — in one ship.</h2>
+    <p class="big">Clone the repo, run one command, and a whole content department installs into your Claude Code. Drop your footage and a library of <b>format-specialist agents</b> turns it into a slate of finished pieces — each one tuned to <b>your</b> brand. Drop the same kind of footage again and the right agent already knows how to make it. It's a content <b>factory</b>, not a one-off repurpose.</p>
+  </div>
+</section>
+
+<section id="crew">
+  <div class="wrap">
+    <p class="eyebrow">The crew</p>
+    <h2>Your content department, by call sign.</h2>
+    <div class="grid">
+      <div class="card"><div class="sign">FI</div><h3>Footage Intelligence</h3><p>Reads every clip in a drop — who's in it, what's happening, what's said — into one library the crew works from.</p></div>
+      <div class="card"><div class="sign">VE</div><h3>Video Editor</h3><p>Face-tracked 9:16 reframes and premium captioned edits with motivated moves.</p></div>
+      <div class="card"><div class="sign">FS</div><h3>Format Studio</h3><p>A specialist agent per format — spotlight, montage, compilation, testimonial, breakdown, and more.</p></div>
+      <div class="card"><div class="sign">CW</div><h3>Copywriter</h3><p>Captions, hooks, scripts, and platform-native variants — humanized before they ship.</p></div>
+      <div class="card"><div class="sign">PM</div><h3>Publisher &amp; Manager</h3><p>Stages a multi-platform schedule behind your approval, plus comment-to-DM automation.</p></div>
+      <div class="card"><div class="sign">CC</div><h3>Content Coach</h3><p>Plans the week, tracks what's working, tells you what to make next.</p></div>
+      <div class="card"><div class="sign">CS</div><h3>Competitor Scout</h3><p>Surfaces what's working in your niche right now.</p></div>
+      <div class="card"><div class="sign">AG</div><h3>Asset Generator</h3><p>Cheap AI images, voiceover, and video (via kie.ai) to fill any footage gaps.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Three steps. Then ~30 minutes a month.</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Clone &amp; install</h3><p>Get the repo and run one command. It sets up everything — render engine, reframe engine, the whole crew — and verifies it works.</p><div class="codeline">git clone …/nave &amp;&amp; cd nave<br>./install.ps1</div></div>
+      <div class="step"><div class="n">02</div><h3>Set it up for your brand</h3><p>A five-minute bootstrap learns your colors, voice, and audience and configures the whole crew to you.</p><div class="codeline">“Set up Nave for my brand.”</div></div>
+      <div class="step"><div class="n">03</div><h3>Make a month of content</h3><p>Drop a video or a month of footage. Nave produces the slate and stages it. You review and ship.</p><div class="codeline">“Make a month of content<br>from this video: &lt;url&gt;”</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="own">
+  <div class="wrap">
+    <p class="eyebrow">Own it, don't rent it</p>
+    <h2>Hosted tools are a great on-ramp.<br>Nave is the owned version.</h2>
+    <p class="big">When you outgrow a credit-metered SaaS, there's nowhere to go. Nave is yours — a real repo you keep, fork, and run on your own keys.</p>
+    <div class="compare">
+      <div class="col own"><h3>🛸 Nave (you own it)</h3><ul>
+        <li>A repo you keep — fork and customize anything</li>
+        <li>Runs on your own Claude Code &amp; keys</li>
+        <li>No per-credit markup, no vendor that can throttle you</li>
+        <li>A whole library of brand-tuned formats from one drop</li>
+        <li>Gets better with every update you pull</li>
+      </ul></div>
+      <div class="col rent"><h3>Rented content SaaS</h3><ul>
+        <li>You rent a black box; stop paying, lose everything</li>
+        <li>Credit-metered — you pay the middleman's markup</li>
+        <li>Can be repriced or shut off on you</li>
+        <li>One generic repurpose, not tuned to your voice</li>
+        <li>No premium tier to graduate into</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Founding launch</p>
+    <h2>Pricing</h2>
+    <p class="big">Founding pricing for the first wave. Join the waitlist for access — checkout opens at launch.</p>
+    <div class="tiers">
+      <div class="tier"><div class="name">DIY Template</div><div class="price">$49<small> /once</small><span class="was">$79</span></div><ul><li>The full repo + one-command install</li><li>The whole crew + Format Studio</li><li>Guided brand bootstrap</li><li>Get-running guarantee</li></ul><a class="btn btn-ghost" href="#waitlist">Join the waitlist</a></div>
+      <div class="tier feature"><div class="name">Done-With-You Install ★</div><div class="price">$397<small> /once</small></div><ul><li>We install it with you, live</li><li>Your first month produced together</li><li>Everything in DIY</li><li>Get-running guarantee</li></ul><a class="btn" href="#waitlist">Join the waitlist</a></div>
+      <div class="tier"><div class="name">Build-Along Community</div><div class="price">$89<small> /mo</small></div><ul><li>Weekly build-along calls</li><li>Install help + new format-agents over time</li><li>Continuous engine updates</li><li>The give-first community</li></ul><a class="btn btn-ghost" href="#waitlist">Join the waitlist</a></div>
+    </div>
+    <p class="note">You bring your own API keys and pay your own usage directly — no middleman markup.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2>Questions, answered.</h2>
+    <details open><summary>What is Nave?</summary><p>Nave is a plug-and-play Claude Code template. You clone the repo and run one command, and a whole content department installs onto your machine — a video editor, a publisher, comment/DM automation, a copywriter, a content coach, footage intelligence, a competitor scout, and a library of format-specialist agents. Drop a month of footage and it produces a month of finished, on-brand content. You own the system.</p></details>
+    <details><summary>Do I need to know how to code?</summary><p>No. A one-command installer sets up everything, and a five-minute bootstrap configures Nave to your brand. After that you talk to it in plain English — “make a month of content from this video.” There's also a done-with-you option where it's installed with you live.</p></details>
+    <details><summary>How is it different from Blotato or other AI content tools?</summary><p>Hosted tools are rented SaaS — you pay per credit and own nothing the day you stop paying. Nave is a template you own and run on your own Claude Code, with no per-credit markup. And instead of one generic repurpose, Nave is a format factory: one footage drop runs through a whole library of brand-tuned format-specialist agents, producing a slate of distinct, finished pieces.</p></details>
+    <details><summary>What does “a month of content in 30 minutes” mean?</summary><p>After setup, you give Nave one footage drop or video and it produces a month's slate — roughly 8–15 short clips, a few carousels, a long-form package, and a full posting schedule — staged for your approval. Your hands-on time is about 30 minutes of review; the agents do the rest.</p></details>
+    <details><summary>What do I need to run it?</summary><p>Claude Code and your own API keys (Anthropic for the agents, AssemblyAI for transcription, and a publishing key). The installer handles ffmpeg, the render engine, and the face-tracking reframe engine. You pay your own usage directly.</p></details>
+    <details><summary>Who is Nave for?</summary><p>People building with AI and Claude Code who want a proven content system they own — operators, freelancers, agency owners, and creators who'd rather run their own engine than rent another tool.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Get a month of content back.</h2>
+    <p class="big" style="margin:0 auto 26px">Join the founding waitlist — be first in when Nave opens.</p>
+    <form class="waitlist" action="#" method="post" onsubmit="return false">
+      <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
+      <button class="btn" type="submit">Get founding access →</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><div class="foot">
+  <div>🛸 <b>Nave</b> — by INFINITX · <a href="https://infinitxai.com/" class="green">infinitxai.com</a></div>
+  <div class="tagfoot">Build first. Give first. Own it.</div>
+</div></div></footer>
+
+</body>
+</html>

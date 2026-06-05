@@ -1,0 +1,27 @@
+# Nave
+
+> Nave is a plug-and-play Claude Code template that installs a complete content department on your machine. Drop one footage drop and a library of brand-tuned, format-specialist agents produces a month of finished, on-brand content — short clips, carousels, captions, and a multi-platform schedule. You own the system; it runs on your own Claude Code with no monthly tool credits.
+
+Tagline: A month of content in 30 minutes.
+Maker: INFINITX (https://infinitxai.com/). Site: https://nave.infinitxai.com/
+
+## What it is
+- A template you clone and OWN (a repo), not a hosted SaaS. One-command install (Windows/macOS/Linux via Claude Code).
+- A 5-minute bootstrap configures it to your brand; then you say: "make a month of content from this video."
+- A "format factory": one footage drop runs through many brand-tuned format agents (spotlight, montage, compilation, testimonial, breakdown, carousel, and more) and produces a slate of distinct finished pieces — not one generic repurpose.
+
+## The crew (call signs)
+FI Footage Intelligence · VE Video Editor · FS Format Studio · CW Copywriter · PM Publisher & Manager (incl. comment/DM automation) · CC Content Coach · CS Competitor Scout · AG Asset Generator (AI image/voiceover/video via kie.ai).
+
+## How it differs from rented content SaaS (e.g. Blotato)
+You own the repo (fork/customize anything), run it on your own Claude Code and API keys, pay no per-credit markup, and can't be locked out. One footage drop becomes a whole library of brand-tuned formats instead of a single generic output.
+
+## Pricing (founding launch)
+DIY template from $49 (one-time) · Done-with-you install $397 (one-time) · Build-along community $89/month. You bring your own API keys and pay your own usage directly.
+
+## Requirements
+Claude Code plus your own API keys (Anthropic for the agents, AssemblyAI for transcription, a publishing key). The installer sets up ffmpeg, the render engine, and the face-tracking reframe engine.
+
+## Links
+- Home: https://nave.infinitxai.com/
+- Waitlist: https://nave.infinitxai.com/#waitlist
