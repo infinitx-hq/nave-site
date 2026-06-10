@@ -1,7 +1,6 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="Nave">
-  <!-- app-icon: near-black tile + green mosaic saucer (Emerald Grid system, 2026-06) -->
-  <rect x="0" y="0" width="512" height="512" fill="#070908"/>
-  <g fill="#1FE07A" transform="translate(0,32)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 448" fill="none">
+  <!-- Nave mark — pixel-mosaic saucer, green ink. Dome 2/4 · hull 8/12/8 (light gaps) · fading beam. -->
+  <g fill="#1FE07A">
     <rect x="224" y="96"  width="32" height="32"/><rect x="256" y="96"  width="32" height="32"/>
     <rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/>
     <rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/>

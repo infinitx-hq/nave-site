@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#070908;color:#F0EBDE;font-family:'DM Mono',monospace;padding:60px;
+    background-image:linear-gradient(rgba(31,224,122,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(31,224,122,.06) 1px,transparent 1px);
+    background-size:28px 28px}
+  .row{display:flex;gap:54px;align-items:flex-start;margin-bottom:60px}
+  .cell{text-align:center}
+  .label{font-size:12px;letter-spacing:.12em;color:#1FE07A;margin-top:18px;text-transform:uppercase}
+  .tile{width:220px;height:220px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(31,224,122,.18);background:rgba(13,18,15,.55)}
+  .small{display:flex;gap:14px;align-items:center;justify-content:center;margin-top:14px}
+  .lockup{display:flex;align-items:center;gap:22px;margin-top:44px}
+  .word{font-family:'Newsreader',serif;font-weight:400;font-size:84px;letter-spacing:-.02em;line-height:1;color:#F0EBDE}
+  svg{display:block}
+</style></head>
+<body>
+
+<!-- V4 mark, reusable -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="saucer" fill="#1FE07A">
+      <!-- dome: 2 then 4 -->
+      <rect x="224" y="96"  width="32" height="32"/><rect x="256" y="96"  width="32" height="32"/>
+      <rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/>
+      <!-- hull taper top: 8 -->
+      <rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/>
+      <!-- hull widest: 12 -->
+      <rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/>
+      <!-- hull bottom taper: 8, with two light gaps -->
+      <rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/>
+      <!-- beam -->
+      <rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/>
+      <rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/>
+    </g>
+  </defs>
+</svg>
+
+<div class="row">
+  <div class="cell">
+    <div class="tile"><svg width="170" height="170" viewBox="0 0 512 448"><use href="#saucer"/></svg></div>
+    <div class="small">
+      <svg width="48" height="48" viewBox="0 0 512 448"><use href="#saucer"/></svg>
+      <svg width="28" height="28" viewBox="0 0 512 448"><use href="#saucer"/></svg>
+      <svg width="16" height="16" viewBox="0 0 512 448"><use href="#saucer"/></svg>
+    </div>
+    <div class="label">V4 — ellipse saucer + beam</div>
+  </div>
+
+  <div class="cell">
+    <div class="tile">
+      <svg width="170" height="170" viewBox="0 0 480 480">
+        <g stroke="#1FE07A" fill="none" stroke-width="7">
+          <ellipse cx="240" cy="252" rx="168" ry="54"/>
+          <path d="M150 224 A 96 76 0 0 1 330 224"/>
+          <line x1="240" y1="306" x2="240" y2="380" stroke-dasharray="10 14" stroke-width="5"/>
+        </g>
+        <g fill="#1FE07A">
+          <circle cx="168" cy="262" r="9"/><circle cx="240" cy="270" r="9"/><circle cx="312" cy="262" r="9"/>
+        </g>
+      </svg>
+    </div>
+    <div class="label">V3 — hairline (editorial / large use)</div>
+  </div>
+</div>
+
+<div class="lockup">
+  <svg width="96" height="84" viewBox="0 0 512 448"><use href="#saucer"/></svg>
+  <div class="word">Nave</div>
+</div>
+<div class="label" style="text-align:left;margin-top:16px">Lockup — V4 mark + Newsreader 400 wordmark</div>
+
+</body></html>
