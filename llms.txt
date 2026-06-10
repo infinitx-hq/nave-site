@@ -1,27 +1,32 @@
 # Nave
 
-> Nave is a plug-and-play Claude Code template that installs a complete content department on your machine. Drop one footage drop and a library of brand-tuned, format-specialist agents produces a month of finished, on-brand content — short clips, carousels, captions, and a multi-platform schedule. You own the system; it runs on your own Claude Code with no monthly tool credits.
+> Nave is a Claude Code template that installs a complete content department on your machine. One footage drop in and an 8-member crew of brand-tuned agents produces a month of finished, on-brand content — short clips, carousels, posts, and a multi-platform schedule staged behind your approval. You own the system; it runs on your own Claude Code subscription.
 
-Tagline: A month of content in 30 minutes.
-Maker: INFINITX (https://infinitxai.com/). Site: https://nave.infinitxai.com/
+Tagline: One footage drop in. A month of finished content out. (One-time setup, then about an hour of hands-on time a month.)
+Maker: INFINITX (https://infinitxai.com/). Founder: Enrique Marquez. Site: https://nave.infinitxai.com/
 
 ## What it is
-- A template you clone and OWN (a repo), not a hosted SaaS. One-command install (Windows/macOS/Linux via Claude Code).
+- A template you clone and OWN (a repo), not a hosted SaaS. One-command install (Windows/macOS/Linux via Claude Code), with a verification render as part of the install.
 - A 5-minute bootstrap configures it to your brand; then you say: "make a month of content from this video."
 - A "format factory": one footage drop runs through many brand-tuned format agents (spotlight, montage, compilation, testimonial, breakdown, carousel, and more) and produces a slate of distinct finished pieces — not one generic repurpose.
+- Nothing publishes itself: every piece is staged behind the owner's approval gate ("review, then say 'schedule it'").
 
 ## The crew (call signs)
-FI Footage Intelligence · VE Video Editor · FS Format Studio · CW Copywriter · PM Publisher & Manager (incl. comment/DM automation) · CC Content Coach · CS Competitor Scout · AG Asset Generator (AI image/voiceover/video via kie.ai).
+FI Footage Intelligence · VE Video Editor · FS Format Studio (carousels + PDF guides) · CW Copywriter · PM Publisher & Manager (incl. comment/DM automation) · CC Content Coach · CS Competitor Scout · AG Ground Crew (downloads, transcripts, quality gate, brand profile).
 
-## How it differs from rented content SaaS (e.g. Blotato)
-You own the repo (fork/customize anything), run it on your own Claude Code and API keys, pay no per-credit markup, and can't be locked out. One footage drop becomes a whole library of brand-tuned formats instead of a single generic output.
+## How it differs from rented content SaaS
+You own the machine — the orchestration, config, agents, and local pipeline (a repo you can fork and customize). You bring your own metered keys, so you pay cost instead of markup, and you can swap any single tool without re-buying the system. What you still depend on: your Claude subscription (itself metered — Claude Max recommended for full month-runs) and the tool vendors you pay directly.
 
 ## Pricing (founding launch)
-DIY template from $49 (one-time) · Done-with-you install $397 (one-time) · Build-along community $89/month. You bring your own API keys and pay your own usage directly.
+- The Founding Build Cohort — $397 one-time: a live group install workshop (capped for quality) + the full template + your first month of content produced together + founding community access (then optional $89/mo, rate locked for founding members) + personal Loom support + lifetime priority engine updates. Backed by the written Get-Running Guarantee: Nave runs on your machine, or we make it run — or your money back (https://nave.infinitxai.com/guarantee.html).
+- The Template — $89 one-time, firm: the full repo, self-serve, with bounded install support (no cash refund — it's a forkable repo).
 
 ## Requirements
-Claude Code plus your own API keys (Anthropic for the agents, AssemblyAI for transcription, a publishing key). The installer sets up ffmpeg, the render engine, and the face-tracking reframe engine.
+Your own Claude Code (your Claude subscription — there is no separate Anthropic API key; Claude Max recommended for full-volume runs, on Pro run formats one at a time), plus your own keys for the tools Nave orchestrates: AssemblyAI (transcription) and Zernio (publishing + comment/DM automation), with optional OpenAI and xAI keys for deep research. The installer sets up ffmpeg, the render engine, and the face-tracking reframe engine, and verifies a real render.
 
 ## Links
 - Home: https://nave.infinitxai.com/
-- Waitlist: https://nave.infinitxai.com/#waitlist
+- The offer: https://nave.infinitxai.com/#offer
+- Guarantee terms: https://nave.infinitxai.com/guarantee.html
+- Terms & refunds: https://nave.infinitxai.com/terms.html
+- Privacy: https://nave.infinitxai.com/privacy.html

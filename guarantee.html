@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Get-Running Guarantee — Written Terms · Nave</title>
+<meta name="description" content="The written terms of Nave's Get-Running Guarantee: Nave runs on your machine, or we make it run — or your money back.">
+<link rel="canonical" href="https://nave.infinitxai.com/guarantee.html">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
+<style>
+  :root{ --bg:#0B0B0B; --panel:#121319; --line:#23252E; --text:#ECEDEF; --muted:#9AA0AB; --green:#1FE07A; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--green);text-decoration:none}
+  .wrap{max-width:760px;margin:0 auto;padding:48px 22px 80px}
+  h1{font-size:clamp(28px,5vw,40px);letter-spacing:-1px;line-height:1.1}
+  h2{font-size:21px;margin:38px 0 10px;letter-spacing:-.3px}
+  p,li{color:var(--muted);font-size:15.5px}
+  p b,li b{color:var(--text)}
+  .draft{display:inline-block;border:1px solid #5a4a23;background:#1a1610;color:#e0c071;border-radius:8px;padding:8px 14px;font-size:13px;margin:0 0 24px;font-family:ui-monospace,monospace}
+  .promise{border:1px solid var(--green);border-radius:14px;padding:20px 24px;background:linear-gradient(180deg,#0e1b13,#0b0d0b);color:var(--text);font-size:17px;font-weight:600}
+  .back{font-family:ui-monospace,monospace;font-size:13px}
+  footer{border-top:1px solid var(--line);margin-top:60px;padding-top:20px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body><div class="wrap">
+<p class="back"><a href="/">← nave.infinitxai.com</a></p>
+<h1>The Get-Running Guarantee — Written Terms</h1>
+<p class="draft">STATUS: DRAFT — for review before launch. Placeholders marked in [brackets].</p>
+<p><i>Effective date: [set at launch] · Applies to: the Founding Build Cohort ($397, one-time)</i></p>
+
+<h2>The promise, in one line</h2>
+<p class="promise">Nave runs on your machine, or we make it run. If we can't, you get your money back.</p>
+
+<h2>Who this covers</h2>
+<p>This guarantee applies to buyers of the <b>Founding Build Cohort ($397)</b>. The <b>$89 Template</b> carries a different promise — bounded install support, not a cash refund. See the section near the end.</p>
+
+<h2>The window</h2>
+<p><b>30 days from your cohort date</b> (the date of the live workshop session you attend, or your first scheduled session if you miss it). <i>[30 days = suggested default — confirm.]</i> Claims must be opened by email within this window.</p>
+
+<h2>What "runs" means</h2>
+<p>Nave counts as running on your machine when all three are true:</p>
+<ul>
+<li>The install script (<b>install.ps1</b> / <b>install.sh</b>) completes and its verification step passes (the test render reports "render verified"), and</li>
+<li>Your first content piece renders end to end from <b>your own footage</b>, and</li>
+<li>This happens with the tool versions current as of your cohort date.</li>
+</ul>
+<p><b>Scope:</b> this is a get-it-running guarantee. It is not a warranty that upstream vendors (Anthropic, AssemblyAI, Zernio, or others) will never change their APIs, pricing, or terms after your window closes. It is also not a guarantee of views, followers, or revenue.</p>
+
+<h2>What we'll do to make it run</h2>
+<p>If Nave isn't running on your machine:</p>
+<ul>
+<li><b>Email us</b> at [support email] with a short description and, if possible, the error output.</li>
+<li><b>We respond within 2 business days.</b></li>
+<li><b>We attempt the fix with you:</b> up to three (3) scheduled live screen-share sessions and unlimited async Loom walkthroughs within the window. <i>[Session count = draft — confirm.]</i></li>
+</ul>
+
+<h2>Your part</h2>
+<ul>
+<li>Your machine meets the stated minimums (Windows / macOS with Homebrew / Debian-based Linux; the installer handles Node 20+, Python 3.12, ffmpeg, yt-dlp, jq).</li>
+<li>You give us a reasonable shot at fixing it: share the error output, attend or schedule at least one screen-share or watch the Loom we send, and try the documented fix.</li>
+<li>You hold an active Claude subscription (Nave runs inside your own Claude Code).</li>
+</ul>
+<p>If your machine turns out to be unable to meet the minimums and we can't find a workaround, that still counts as "we couldn't make it run" — you get the refund.</p>
+
+<h2>The refund</h2>
+<p>If, after the steps above, Nave still does not run on your machine within the window:</p>
+<ul>
+<li>You receive a <b>full refund of $397</b> to your original payment method.</li>
+<li>Processed within <b>10 business days</b> of the refund decision.</li>
+<li>No exit interviews, no hoops.</li>
+</ul>
+
+<h2>What this guarantee does not cover</h2>
+<ul>
+<li>Outcomes beyond "running": views, growth, revenue, or any business result.</li>
+<li>Upstream vendor changes (API, pricing, terms) occurring after your window closes.</li>
+<li>Refund requests opened after the window, except at our discretion.</li>
+<li>Cases where the buyer declines to attempt any fix with us. (We have to be allowed to try — that's the "we make it run" half of the promise.)</li>
+</ul>
+
+<h2>The $89 Template — a different promise</h2>
+<p>The Template is a forkable repository. Once cloned, it cannot be returned, so cash refunds are not offered on it. Instead it carries <b>bounded install support</b>: async Loom replies — up to three (3) within 30 days of purchase — to get the installer verified and your first render out. <i>[Reply count and window = draft — confirm.]</i> Full details in the <a href="/terms.html">Terms &amp; Refund Policy</a>.</p>
+
+<h2>How to claim</h2>
+<p>Email <b>[support email]</b> with the subject "Get-Running Guarantee" inside your 30-day window. That's it — no other steps.</p>
+
+<footer>
+<p>INFINITX — Enrique Marquez · [support email] · [business address / entity details — add before launch]</p>
+<p><i>This document is a plain-language commitment. If anything here conflicts with the <a href="/terms.html">Terms &amp; Refund Policy</a>, the more buyer-favorable reading of this guarantee applies to cohort purchases. [Have counsel review this clause.]</i></p>
+</footer>
+</div></body></html>
