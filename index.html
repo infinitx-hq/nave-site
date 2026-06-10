@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nave — a content department you own, inside Claude Code</title>
+<title>Nave — a month of content, in about an hour</title>
 <meta name="description" content="Nave installs an 8-member content crew into your own Claude Code. One footage drop in, a month of finished content out — staged behind your approval. One-time setup, then about an hour a month. You own the system.">
 <link rel="canonical" href="https://nave.infinitxai.com/">
 <meta name="theme-color" content="#0B0B0B">
@@ -12,12 +12,12 @@
 <!-- Open Graph / Twitter -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nave">
-<meta property="og:title" content="Nave — a content department you own, inside Claude Code">
+<meta property="og:title" content="Nave — a month of content, in about an hour">
 <meta property="og:description" content="One footage drop in. A month of finished content out. An 8-member crew installed into your own Claude Code — staged behind your approval. You own it.">
 <meta property="og:url" content="https://nave.infinitxai.com/">
 <meta property="og:image" content="https://nave.infinitxai.com/assets/nave-logo.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nave — a content department you own, inside Claude Code">
+<meta name="twitter:title" content="Nave — a month of content, in about an hour">
 <meta name="twitter:description" content="One footage drop in. A month of finished content out. One-time setup, then about an hour a month. You own the system.">
 <meta name="twitter:image" content="https://nave.infinitxai.com/assets/nave-logo.png">
 
@@ -67,179 +67,216 @@
 </script>
 
 <style>
-  :root{ --bg:#0B0B0B; --panel:#121319; --line:#23252E; --text:#ECEDEF; --muted:#9AA0AB; --green:#1FE07A; --dim:#6b7280; }
+  :root{ --bg:#0B0B0B; --panel:#111318; --panel2:#0d1011; --line:#22252c; --text:#ECEDEF; --muted:#9AA0AB; --dim:#6b7280; --green:#1FE07A; --green2:#8df5bd; }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
   .green{color:var(--green)}
   .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .grad{background:linear-gradient(100deg,#fff 20%,var(--green) 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{display:inline-block;font-family:ui-monospace,monospace;font-size:11.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--green);border:1px solid #1c5e3a;border-radius:999px;padding:6px 14px;margin:0 0 18px;background:#0c1610}
+  h2{font-size:clamp(30px,4.6vw,46px);letter-spacing:-1.5px;margin:0 0 12px;font-weight:850;line-height:1.06}
+  .sub{font-size:16.5px;color:var(--muted);max-width:620px;margin:0 auto}
+  .sub b{color:var(--text)}
+  /* glow accents */
+  .glowfield{position:relative}
+  .glowfield:before{content:"";position:absolute;inset:-120px -40px auto -40px;height:480px;background:radial-gradient(600px 320px at 20% 10%,rgba(31,224,122,.10),transparent 70%),radial-gradient(500px 300px at 85% 30%,rgba(31,224,122,.06),transparent 70%);pointer-events:none}
   /* nav */
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(11,11,11,.72);border-bottom:1px solid var(--line)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:62px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:-.5px}
-  .brand svg{width:30px;height:30px}
-  nav .links{display:flex;gap:26px;align-items:center;color:var(--muted);font-size:14px}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(11,11,11,.74);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;letter-spacing:-.5px}
+  .brand svg{width:28px;height:28px}
+  nav .links{display:flex;gap:24px;align-items:center;color:var(--muted);font-size:14px}
   nav .links a:hover{color:var(--text)}
-  .btn{display:inline-block;background:var(--green);color:#06140C;font-weight:700;padding:12px 20px;border-radius:10px;font-size:14.5px;border:0;cursor:pointer;transition:transform .08s,filter .15s;text-align:center}
-  .btn:hover{filter:brightness(1.08)}
-  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .btn{display:inline-block;background:var(--green);color:#06140C;font-weight:750;padding:12px 22px;border-radius:11px;font-size:14.5px;border:0;cursor:pointer;transition:transform .08s,filter .15s,box-shadow .2s;text-align:center;box-shadow:0 0 22px rgba(31,224,122,.35)}
+  .btn:hover{filter:brightness(1.08);box-shadow:0 0 34px rgba(31,224,122,.5)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line);box-shadow:none}
+  .btn-ghost:hover{box-shadow:none;border-color:#3a3f49}
   .micro{display:block;margin-top:9px;font-size:12.5px;color:var(--muted);font-family:ui-monospace,monospace}
-  .ctablock{text-align:center;margin-top:30px}
+  .ctablock{text-align:center;margin-top:28px}
   .pending-note{display:none;margin-top:10px;font-size:13px;color:var(--green)}
   /* sticky cta bar */
   #ctabar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(11,11,11,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px;display:none;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
   #ctabar.show{display:flex}
   #ctabar .bartext{font-size:12.5px;color:var(--muted);font-family:ui-monospace,monospace}
   /* hero */
-  .hero{padding:74px 0 48px}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center}
-  .badge{display:inline-block;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:22px;letter-spacing:.6px;text-transform:uppercase}
-  .badge b{color:var(--green)}
-  h1{font-size:clamp(36px,5.6vw,58px);line-height:1.04;letter-spacing:-1.8px;margin:0 0 18px;font-weight:850}
-  .lede{font-size:clamp(16px,2vw,18.5px);color:var(--muted);margin:0 0 26px}
-  .lede b{color:var(--text);font-weight:600}
-  .subcta{margin-top:14px;font-size:14px;color:var(--muted)}
-  .subcta a{color:var(--green);border-bottom:1px solid transparent}
-  .subcta a:hover{border-color:var(--green)}
-  /* terminal demo */
-  .term{background:#08120C;border:1px solid #16351F;border-radius:14px;overflow:hidden;aspect-ratio:16/10;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(31,224,122,.06)}
-  .term .bar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid #16351F}
+  .hero{padding:72px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}
+  h1{font-size:clamp(42px,6.4vw,72px);line-height:1.0;letter-spacing:-2.5px;margin:0 0 18px;font-weight:880}
+  .lede{font-size:clamp(16px,2vw,18px);color:var(--muted);margin:0 0 26px;max-width:480px}
+  .lede b{color:var(--text);font-weight:650}
+  .heroctas{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .trustline{display:flex;gap:8px 18px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-size:13px}
+  .trustline span:before{content:"✓ ";color:var(--green)}
+  /* terminal */
+  .term{background:#08120C;border:1px solid #16351F;border-radius:16px;overflow:hidden;aspect-ratio:16/11;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(31,224,122,.10),0 0 0 1px rgba(31,224,122,.06)}
+  .term .bar{display:flex;gap:6px;padding:11px 13px;border-bottom:1px solid #16351F;align-items:center}
   .term .bar i{width:10px;height:10px;border-radius:50%;background:#1c2b21}
   .term .bar i:first-child{background:#234634}
-  .term pre{flex:1;margin:0;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.8px;line-height:1.75;color:#9af5c4;white-space:pre-wrap;overflow:hidden}
+  .term .bar .title{margin-left:8px;font-family:ui-monospace,monospace;font-size:11px;color:#4f7c61}
+  .term pre{flex:1;margin:0;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.6px;line-height:1.78;color:#9af5c4;white-space:pre-wrap;overflow:hidden}
   .term .dimline{color:#4f7c61}
   .term .cursor{display:inline-block;width:7px;height:14px;background:#1FE07A;vertical-align:-2px;animation:blink 1s steps(1) infinite}
   @keyframes blink{50%{opacity:0}}
-  /* receipts strip */
-  .receipts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;background:#0d0e12}
-  .chips{display:flex;gap:10px 14px;flex-wrap:wrap;justify-content:center}
-  .chip{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
-  .chip b{color:var(--text);font-weight:600}
-  .chip:before{content:"✓ ";color:var(--green)}
+  /* ticker */
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;background:#0d0e12;overflow:hidden}
+  .ticker .label{text-align:center;font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-bottom:10px}
+  .ticker .items{display:flex;gap:38px;justify-content:center;flex-wrap:wrap;font-family:ui-monospace,monospace;font-size:14px;color:var(--muted);font-weight:600}
+  .ticker .items b{color:var(--text)}
+  /* stat band */
+  .stats{padding:64px 0 56px}
+  .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .stat{border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:var(--panel);text-align:left}
+  .stat .n{font-size:clamp(34px,4.4vw,46px);font-weight:880;letter-spacing:-2px;line-height:1}
+  .stat .c{margin-top:10px;font-family:ui-monospace,monospace;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);line-height:1.6}
   /* sections */
-  section{padding:64px 0;border-top:1px solid var(--line)}
-  .eyebrow{color:var(--green);font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 12px;font-family:ui-monospace,monospace}
-  h2{font-size:clamp(26px,3.8vw,38px);letter-spacing:-1px;margin:0 0 16px;font-weight:800;line-height:1.12}
-  section p.big{font-size:17.5px;color:var(--muted);max-width:740px}
-  section p.big b{color:var(--text)}
-  /* cards */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:30px}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .card .sign{font-family:ui-monospace,monospace;font-size:12px;color:var(--green);font-weight:700}
-  .card h3{margin:6px 0 6px;font-size:16.5px}
-  .card p{margin:0;color:var(--muted);font-size:14.5px}
-  .card .comp{display:block;margin-top:10px;font-family:ui-monospace,monospace;font-size:11px;color:var(--dim)}
-  .card.fear{border-color:#5a2330;background:linear-gradient(180deg,#1a0f13,#121319)}
-  .card.fear b{color:var(--text)}
-  .card.fear a{color:var(--green)}
-  .footline{margin-top:22px;color:var(--muted);font-size:15px}
-  .footline b{color:var(--text)}
-  /* steps */
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:30px}
-  .step .n{font-size:13px;color:var(--green);font-weight:800;font-family:ui-monospace,monospace}
-  .step h3{margin:8px 0 6px;font-size:18px}
-  .step p{margin:0;color:var(--muted);font-size:15px}
-  .honest{margin-top:26px;font-size:16px;color:var(--text);font-weight:600}
-  .reqchip{margin-top:18px;background:#08120C;border:1px solid #16351F;color:#9af5c4;border-radius:10px;padding:14px 16px;font-family:ui-monospace,monospace;font-size:13px;line-height:1.7}
-  /* compare */
-  .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-  .compare .col{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
-  .compare .col.own{border-color:#1c5e3a;background:linear-gradient(180deg,#0e1b13,#0c0f0c)}
-  .compare h3{margin:0 0 12px;font-size:18px}
-  .compare p{color:var(--muted);font-size:15px;margin:0}
-  .deprow{grid-column:1/-1;border:1px solid var(--line);border-radius:14px;padding:16px 22px;background:#0d0e12;color:var(--muted);font-size:14px}
-  .deprow b{color:var(--text)}
-  .epigraph{margin:34px 0 0;padding-left:18px;border-left:3px solid var(--green);font-size:19px;color:var(--text);font-style:italic;max-width:560px}
-  .epigraph .who{display:block;margin-top:8px;font-size:13.5px;color:var(--muted);font-style:normal}
+  section{padding:72px 0}
+  .centered{text-align:center}
+  /* bento crew */
+  .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
+  .bcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:0;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s}
+  .bcard:hover{border-color:#1c5e3a}
+  .bviz{height:118px;background:var(--panel2);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:6px;padding:16px;position:relative;overflow:hidden}
+  .btxt{padding:16px 18px 18px}
+  .btxt .sign{font-family:ui-monospace,monospace;font-size:10.5px;color:var(--green);font-weight:700;letter-spacing:1.5px}
+  .btxt h3{margin:5px 0 5px;font-size:15.5px;letter-spacing:-.2px}
+  .btxt p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+  /* bento mini-visuals (pure CSS) */
+  .v-frames{display:flex;gap:7px;align-items:center}
+  .v-frames i{width:26px;height:46px;border-radius:5px;background:#161a1f;border:1px solid #23272e;position:relative}
+  .v-frames i:after{content:"";position:absolute;left:4px;right:4px;bottom:5px;height:3px;border-radius:2px;background:var(--green);opacity:.85}
+  .v-frames i:nth-child(2n):after{width:60%;opacity:.45}
+  .v-wave{display:flex;gap:4px;align-items:flex-end;height:54px}
+  .v-wave i{width:5px;border-radius:3px;background:var(--green);opacity:.8}
+  .v-tags{position:absolute;bottom:12px;display:flex;gap:6px}
+  .v-tags em{font-style:normal;font-family:ui-monospace,monospace;font-size:9px;color:var(--green);border:1px solid #1c5e3a;border-radius:99px;padding:2px 7px;background:#0c1610}
+  .v-car{display:flex;gap:6px}
+  .v-car i{width:40px;height:50px;border-radius:6px;background:#161a1f;border:1px solid #23272e;position:relative}
+  .v-car i:first-child{border-color:#1c5e3a}
+  .v-car i:first-child:before{content:"";position:absolute;inset:6px 6px auto 6px;height:14px;border-radius:3px;background:var(--green);opacity:.8}
+  .v-car i:after{content:"";position:absolute;left:6px;right:14px;bottom:7px;height:3px;border-radius:2px;background:#39404a}
+  .v-copy{width:100%;max-width:150px}
+  .v-copy i{display:block;height:5px;border-radius:3px;background:#2a2f37;margin:7px 0}
+  .v-copy i:nth-child(1){width:90%}
+  .v-copy i:nth-child(2){width:100%}
+  .v-copy i:nth-child(3){width:62%;background:var(--green);opacity:.85}
+  .v-cal{display:grid;grid-template-columns:repeat(7,14px);gap:5px}
+  .v-cal i{width:14px;height:14px;border-radius:4px;background:#181c22}
+  .v-cal i.on{background:var(--green);opacity:.85}
+  .v-cal i.half{background:var(--green);opacity:.32}
+  .v-chart{width:100%;max-width:150px;height:60px}
+  .v-list{width:100%;max-width:140px}
+  .v-list i{display:flex;align-items:center;gap:7px;margin:7px 0}
+  .v-list i:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);opacity:.8;flex:none}
+  .v-list i u{text-decoration:none;display:block;height:5px;border-radius:3px;background:#2a2f37;flex:1}
+  .v-list i:nth-child(2) u{max-width:70%}
+  .v-list i:nth-child(3) u{max-width:85%}
+  .v-prompt{font-family:ui-monospace,monospace;font-size:11px;color:#9af5c4;background:#08120C;border:1px solid #16351F;border-radius:8px;padding:10px 12px}
+  .bfoot{margin-top:22px;text-align:center;color:var(--muted);font-size:14.5px}
+  .bfoot b{color:var(--text)}
+  /* how strip */
+  .how3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:34px;text-align:left}
+  .how3 .step{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--panel)}
+  .how3 .n{font-family:ui-monospace,monospace;font-size:12px;color:var(--green);font-weight:800}
+  .how3 h3{margin:8px 0 6px;font-size:17px}
+  .how3 p{margin:0;color:var(--muted);font-size:14px}
+  .reqchip{margin:26px auto 0;max-width:760px;background:#08120C;border:1px solid #16351F;color:#9af5c4;border-radius:12px;padding:13px 16px;font-family:ui-monospace,monospace;font-size:12.5px;line-height:1.7;text-align:left}
   /* founder */
-  .founder-grid{display:grid;grid-template-columns:auto 1fr;gap:30px;margin-top:26px;align-items:start}
-  .headshot{width:148px;height:148px;border-radius:16px;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:12px;font-family:ui-monospace,monospace;text-align:center;padding:10px}
-  .founder-copy p{color:var(--muted);font-size:16px;max-width:680px}
-  .founder-copy p b{color:var(--text)}
-  .pullquote{margin:26px 0 0;padding:22px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:12px;font-size:18.5px;color:var(--text);max-width:720px}
-  .pullquote .who{display:block;margin-top:10px;font-size:13.5px;color:var(--muted)}
+  .founder{background:#0d0e12;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fgrid{display:grid;grid-template-columns:280px 1fr;gap:44px;align-items:center}
+  .headshot{width:280px;aspect-ratio:4/5;border-radius:18px;background:var(--panel);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:12px;font-family:ui-monospace,monospace;text-align:center;padding:12px}
+  .fchips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
+  .fchips span{font-family:ui-monospace,monospace;font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+  .fchips span:before{content:"✓ ";color:var(--green)}
+  .fname{margin-top:16px;color:var(--dim);font-family:ui-monospace,monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase}
+  .fcopy p{color:var(--muted);font-size:16.5px;max-width:600px}
+  .fcopy p b{color:var(--text)}
+  .fquote{margin:20px 0 0;padding-left:16px;border-left:3px solid var(--green);font-size:17.5px;color:var(--text);font-style:italic;max-width:580px}
   /* offer */
-  .anchorcard{margin-top:30px;border:1px dashed var(--line);border-radius:14px;padding:22px;background:#0d0e12;color:var(--muted);max-width:760px}
-  .anchorcard .label{font-family:ui-monospace,monospace;font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--dim)}
-  .anchorcard h3{margin:8px 0 6px;font-size:20px;color:var(--text)}
-  .anchorcard .price{font-size:26px;font-weight:850;color:var(--text)}
-  .anchorcard .price small{font-size:14px;color:var(--muted);font-weight:500}
-  .anchorcard p{margin:10px 0 0;font-size:14.5px}
-  .anchornote{margin:12px 0 0;color:var(--dim);font-size:13.5px;max-width:760px}
-  .manifest{margin-top:34px;border:1px solid #1c5e3a;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#0e1b13,#0c0f0c)}
-  .manifest .mhead{padding:18px 24px;border-bottom:1px solid #16351F;font-weight:700;font-size:17px}
-  .manifest .mhead small{display:block;font-weight:400;color:var(--muted);font-size:13.5px;margin-top:3px}
+  .anchorline{margin:30px auto 0;max-width:720px;border:1px dashed var(--line);border-radius:14px;padding:16px 22px;background:#0d0e12;color:var(--muted);font-size:14.5px;text-align:left}
+  .anchorline b{color:var(--text)}
+  .anchorline .p{font-size:20px;font-weight:850;color:var(--text)}
+  .manifest{margin:26px auto 0;max-width:760px;border:1px solid #1c5e3a;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0e1b13,#0c0f0c);text-align:left;box-shadow:0 0 60px rgba(31,224,122,.06)}
+  .manifest .mhead{padding:16px 22px;border-bottom:1px solid #16351F;font-weight:750;font-size:16px}
+  .manifest .mhead small{display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:2px}
   .manifest table{width:100%;border-collapse:collapse}
-  .manifest td{padding:14px 24px;border-top:1px solid #14241a;font-size:14.5px;color:var(--muted);vertical-align:top}
-  .manifest td:first-child{font-family:ui-monospace,monospace;color:var(--green);font-size:12.5px;white-space:nowrap;width:42px}
+  .manifest td{padding:12px 22px;border-top:1px solid #14241a;font-size:14px;color:var(--muted);vertical-align:top}
+  .manifest td:first-child{font-family:ui-monospace,monospace;color:var(--green);font-size:12px;white-space:nowrap;width:40px}
   .manifest td b{color:var(--text)}
-  .manifest td:last-child{text-align:right;font-family:ui-monospace,monospace;color:var(--text);white-space:nowrap;width:90px}
-  .manifest tr.total td{border-top:2px solid #1c5e3a;font-weight:800;color:var(--text);font-size:16px}
-  .stacknotes{margin-top:16px;color:var(--dim);font-size:13.5px;max-width:760px}
-  .stacknotes li{margin:6px 0}
-  .reveal{margin-top:34px;text-align:center}
-  .reveal .was{color:var(--dim);text-decoration:line-through;font-size:22px;font-family:ui-monospace,monospace}
-  .reveal .now{font-size:clamp(30px,4.6vw,44px);font-weight:850;letter-spacing:-1px;margin:6px 0 4px}
-  .reveal .now small{font-size:16px;color:var(--muted);font-weight:500}
-  .reveal .floor{color:var(--muted);font-size:14.5px}
-  .mechanics{margin-top:12px;font-size:13.5px;color:var(--muted);font-family:ui-monospace,monospace;text-align:center}
-  /* guarantee */
-  .gbox{margin-top:10px;border:1px solid var(--green);border-radius:16px;padding:26px;background:linear-gradient(180deg,#0e1b13,#0b0d0b)}
-  .gbox h3{margin:0 0 10px;font-size:21px}
-  .gbox p.promise{font-size:17px;color:var(--text);margin:0 0 16px}
-  .gbox ul{margin:0 0 14px;padding-left:20px;color:var(--muted);font-size:14.5px}
-  .gbox ul li{margin:7px 0}
-  .gbox ul li b{color:var(--text)}
-  .gbox .tier{font-size:13.5px;color:var(--muted);border-top:1px solid #16351F;padding-top:12px;margin-top:4px}
+  .manifest td:last-child{text-align:right;font-family:ui-monospace,monospace;color:var(--text);white-space:nowrap;width:84px}
+  .manifest tr.total td{border-top:2px solid #1c5e3a;font-weight:800;color:var(--text);font-size:15.5px}
+  .stacknote{margin:14px auto 0;max-width:720px;color:var(--dim);font-size:13px;text-align:left}
+  .reveal{margin-top:34px}
+  .reveal .was{color:var(--dim);text-decoration:line-through;font-size:21px;font-family:ui-monospace,monospace}
+  .reveal .now{font-size:clamp(32px,5vw,50px);font-weight:880;letter-spacing:-1.5px;margin:6px 0 6px}
+  .reveal .now small{font-size:17px;color:var(--muted);font-weight:500}
+  .reveal .floor{color:var(--muted);font-size:14.5px;max-width:560px;margin:0 auto}
+  .mechanics{margin-top:12px;font-size:13px;color:var(--muted);font-family:ui-monospace,monospace}
+  /* guarantee + cohort strip */
+  .gbox{margin:36px auto 0;max-width:760px;border:1px solid var(--green);border-radius:18px;padding:24px 26px;background:linear-gradient(180deg,#0e1b13,#0b0d0b);text-align:left}
+  .gbox h3{margin:0 0 8px;font-size:19px}
+  .gbox p.promise{font-size:16.5px;color:var(--text);margin:0 0 10px;font-weight:600}
+  .gbox p.terms{font-size:13.5px;color:var(--muted);margin:0 0 10px}
   .gbox a{color:var(--green)}
-  /* cohort agenda */
-  .agenda{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:26px}
-  .scarcity{margin-top:26px;border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--panel);color:var(--muted);font-size:15px;max-width:760px}
-  .scarcity b{color:var(--text)}
-  /* proof */
-  .proofnote{margin-top:24px;border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);color:var(--muted);font-size:15.5px;max-width:680px}
-  .proofnote b{color:var(--text)}
-  /* template tier */
-  .tier-solo{margin-top:30px;border:1px solid var(--line);border-radius:16px;padding:26px;background:var(--panel);max-width:660px}
-  .tier-solo .name{font-weight:700;font-size:16px}
-  .tier-solo .price{font-size:30px;font-weight:850;letter-spacing:-1px;margin:8px 0 2px}
-  .tier-solo .price small{font-size:14px;color:var(--muted);font-weight:500}
-  .tier-solo ul{list-style:none;padding:0;margin:14px 0 16px}
-  .tier-solo li{padding:6px 0;color:var(--muted);font-size:14.5px}
-  .tier-solo li:before{content:"✓ ";color:var(--green)}
-  .tier-solo .support{border-top:1px solid var(--line);padding-top:14px;margin-top:4px;color:var(--muted);font-size:13.5px}
-  .tier-solo .support b{color:var(--text)}
-  .tier-solo .support a{color:var(--green)}
-  .firm{margin-top:14px;font-size:14px;color:var(--muted)}
-  .firm b{color:var(--text)}
+  .gbox .tier{font-size:12.5px;color:var(--dim);border-top:1px solid #16351F;padding-top:10px;margin-top:6px}
+  .cohortstrip{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:26px auto 0;max-width:820px}
+  .cohortstrip span{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:8px 15px}
+  .cohortstrip span b{color:var(--text)}
+  .cohortstrip span:before{content:"✓ ";color:var(--green)}
+  .loomline{margin:18px auto 0;max-width:680px;color:var(--muted);font-size:14px}
+  .loomline b{color:var(--text)}
+  /* template */
+  .tcard{margin:34px auto 0;max-width:560px;border:1px solid var(--line);border-radius:18px;padding:26px;background:var(--panel);text-align:left}
+  .tcard .name{font-weight:750;font-size:15.5px}
+  .tcard .price{font-size:34px;font-weight:880;letter-spacing:-1.5px;margin:6px 0 2px}
+  .tcard .price small{font-size:14px;color:var(--muted);font-weight:500}
+  .tcard ul{list-style:none;padding:0;margin:12px 0 14px}
+  .tcard li{padding:5px 0;color:var(--muted);font-size:14px}
+  .tcard li:before{content:"✓ ";color:var(--green)}
+  .tcard .support{border-top:1px solid var(--line);padding-top:12px;margin-top:4px;color:var(--dim);font-size:12.5px;line-height:1.6}
+  .tcard .support b{color:var(--muted)}
+  .tcard .support a{color:var(--green)}
   /* faq */
-  details{border-top:1px solid var(--line);padding:18px 0}
-  details summary{cursor:pointer;font-weight:650;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+  .faqwrap{max-width:760px;margin:34px auto 0;text-align:left}
+  details{border:1px solid var(--line);border-radius:14px;padding:0;margin:10px 0;background:var(--panel);overflow:hidden}
+  details summary{cursor:pointer;font-weight:650;font-size:15.5px;list-style:none;display:flex;align-items:baseline;gap:14px;padding:17px 20px}
   details summary::-webkit-details-marker{display:none}
-  details summary:after{content:"+";color:var(--green);font-weight:700}
+  details summary .qn{font-family:ui-monospace,monospace;font-size:11px;color:var(--dim);flex:none}
+  details summary:after{content:"+";color:var(--green);font-weight:700;margin-left:auto}
   details[open] summary:after{content:"–"}
-  details p{color:var(--muted);margin:12px 0 0;font-size:15.5px}
-  details a{color:var(--green)}
-  /* close + newsletter + footer */
-  .final{text-align:center}
-  .final .disclaimer{margin-top:26px;color:var(--muted);font-size:13.5px}
-  .nl{background:#0d0e12}
-  form.capture{display:flex;gap:10px;max-width:480px;margin:24px auto 0;flex-wrap:wrap;justify-content:center}
-  form.capture input{flex:1;min-width:240px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:13px 15px;border-radius:10px;font-size:15px}
+  details[open]{border-color:#1c5e3a}
+  details .a{color:var(--muted);margin:0;font-size:14.5px;padding:0 20px 18px 47px}
+  details .a a{color:var(--green)}
+  /* final */
+  .finalcard{margin:0 auto;max-width:880px;border:1px solid #1c5e3a;border-radius:24px;padding:64px 30px;background:radial-gradient(600px 300px at 50% 0%,rgba(31,224,122,.13),transparent 70%),linear-gradient(180deg,#0e1b13,#0b0d0b);text-align:center;box-shadow:0 0 80px rgba(31,224,122,.08)}
+  .finalcard .pre{font-family:ui-monospace,monospace;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+  .finalcard h2{margin-bottom:18px}
+  .finalcard .disclaimer{margin-top:26px;color:var(--dim);font-size:12.5px}
+  .otherdoor{margin-top:16px;font-size:14px;color:var(--muted)}
+  .otherdoor a{color:var(--green)}
+  /* newsletter strip */
+  .nl{border-top:1px solid var(--line);background:#0d0e12;padding:46px 0}
+  .nlgrid{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .nlgrid h3{margin:0 0 4px;font-size:19px}
+  .nlgrid p{margin:0;color:var(--muted);font-size:14px;max-width:440px}
+  form.capture{display:flex;gap:10px;flex-wrap:wrap}
+  form.capture input{min-width:230px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:10px;font-size:14.5px}
   form.capture input:focus{outline:none;border-color:var(--green)}
-  footer{border-top:1px solid var(--line);padding:40px 0 90px;color:var(--muted);font-size:13.5px}
-  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
-  .tagfoot{color:var(--green);font-family:ui-monospace,monospace;font-size:12.5px}
-  .legalrow{margin-top:14px;display:flex;gap:18px;flex-wrap:wrap}
-  .legalrow a:hover{color:var(--text)}
-  @media(max-width:880px){ .hero-grid{grid-template-columns:1fr} .founder-grid{grid-template-columns:1fr} }
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:44px 0 96px;color:var(--muted);font-size:13.5px}
+  .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+  .fcols .colh{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+  .fcols a{display:block;padding:4px 0}
+  .fcols a:hover{color:var(--text)}
+  .tagfoot{color:var(--green);font-family:ui-monospace,monospace;font-size:12px;margin-top:14px}
+  @media(max-width:920px){ .hero-grid{grid-template-columns:1fr} .bento{grid-template-columns:repeat(2,1fr)} .fgrid{grid-template-columns:1fr} .headshot{width:100%;max-width:300px} .fcols{grid-template-columns:1fr 1fr} }
   @media(max-width:640px){
     nav .links a:not(.btn){display:none}
-    .compare{grid-template-columns:1fr}
     nav .btn{padding:9px 12px;font-size:12.5px}
     nav .btn .navlong{display:none}
+    .bento{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -251,40 +288,45 @@
     nave
   </a>
   <div class="links">
-    <a href="#how">How it works</a>
     <a href="#crew">The Crew</a>
+    <a href="#how">How it works</a>
     <a href="#offer">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a class="btn" href="#offer">Apply<span class="navlong"> for the Founding Build Cohort</span></a>
+    <a class="btn" href="#offer">Apply<span class="navlong"> for the Cohort</span></a>
   </div>
 </nav></div></header>
 
 <!-- Sticky CTA bar (appears after 50% scroll) -->
 <div id="ctabar">
-  <span class="bartext">$397 once — the $2,500/mo department, installed · capped for quality</span>
+  <span class="bartext">$397 once · runs or refunded · capped for quality</span>
   <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
 </div>
 
 <main>
-<section class="hero" style="border-top:0">
+<div class="glowfield">
+<section class="hero">
   <div class="wrap">
-    <div class="badge">Nave — a content department you own, inside <b>Claude Code</b></div>
     <div class="hero-grid">
       <div>
-        <h1>One footage drop in.<br>A month of <span class="green">finished content</span> out.</h1>
-        <p class="lede">Nave installs an 8-member content crew into your own Claude Code. You drop raw footage. It cuts the clips, writes the posts, designs the carousels, and stages all of it behind your approval. <b>One-time setup, then about an hour of your time a month.</b> Runs on your Claude subscription. No Anthropic API key.</p>
-        <div>
+        <span class="eyebrow">Runs inside your own Claude Code</span>
+        <h1>A month<br>of content.<br><span class="grad">In about an hour.</span></h1>
+        <p class="lede">Drop your footage. An 8-member crew you <b>own</b> cuts the clips, writes the posts, builds the carousels — and stages it all behind your approval. <b>One-time install, then ~1 hour a month.</b></p>
+        <div class="heroctas">
           <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-          <span class="micro">$397 once — the $2,500/mo department, installed · live group install · capped for quality</span>
-          <span class="pending-note" data-pending-note>Applications open shortly — leave your email below and you're first in line.</span>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
         </div>
-        <div class="subcta"><a href="#how">or see how it works ↓</a></div>
+        <span class="pending-note" data-pending-note>Applications open shortly — leave your email below and you're first in line.</span>
+        <div class="trustline">
+          <span>100k+ organic views in ~2 months</span>
+          <span>Real client work runs on it today</span>
+          <span>No Anthropic API key</span>
+        </div>
       </div>
       <!-- VSL swap contract: when the VSL exists, set data-state="vsl" and drop the embed in;
            the terminal becomes the poster frame. Zero layout shift. -->
       <div id="vsl-slot" data-state="console">
         <div class="term" aria-label="Nave terminal demo">
-          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="bar"><i></i><i></i><i></i><span class="title">nave — your machine</span></div>
           <pre id="termfeed"><span class="dimline">$ claude</span>
 </pre>
         </div>
@@ -292,298 +334,233 @@
     </div>
   </div>
 </section>
+</div>
 
-<div class="receipts">
+<div class="ticker">
   <div class="wrap">
-    <div class="chips">
-      <span class="chip"><b>100k+ views in ~2 months, fully organic</b></span>
-      <!-- TODO(launch checklist #8): flip to "Tiempo Soccer" once client permission is on file -->
-      <span class="chip">Runs real client content today (a soccer-club client) plus Enrique's own channels</span>
-      <span class="chip">Runs inside your own Claude Code — no separate Anthropic API key</span>
-      <span class="chip">Claude Max recommended for full month-runs</span>
-      <span class="chip">Your keys (AssemblyAI / Zernio, optional OpenAI + xAI), paid directly — no markup</span>
-    </div>
+    <div class="label">Runs on your stack — your keys, your machine, no markup</div>
+    <div class="items"><b>Claude Code</b><span>AssemblyAI</span><span>Zernio</span><span>ffmpeg</span><span>Hyperframes</span><span>OpenAI</span><span>xAI</span><span>GitHub</span></div>
   </div>
 </div>
 
-<section id="problem">
+<section class="stats">
   <div class="wrap">
-    <p class="eyebrow">The monthly math</p>
-    <h2>The footage exists. The department doesn't.</h2>
-    <div class="grid">
-      <div class="card"><h3>The footage already exists. It's dying in a folder.</h3><p>Hours of raw video sit on your drives. Podcasts, client calls, b-roll, talks. Zero posts out of any of it. Filming was never the bottleneck.</p></div>
-      <div class="card"><h3>Editors run $1,500–$3,000 a month, and they still need briefs.</h3><p>You pay for the edit, and you still do the managing: what to cut, what the hook is, where it posts. You bought help and kept the job.</p></div>
-      <div class="card"><h3>Repurposing SaaS is rent.</h3><p>Monthly credits, their templates, your workflow living on their servers. Stop paying and it all stops existing. Renting is fine. It just isn't owning.</p></div>
-      <div class="card"><h3>The courses taught theory. Nothing got installed.</h3><p>You finished the modules. You took notes. Your machine looks exactly like it did before you paid.</p></div>
-      <div class="card fear"><h3>And the real fear:</h3><p><b>"You buy it and never get it running."</b><br><br>That fear is why the guarantee exists. <a href="#guarantee">Read it before you buy anything →</a></p></div>
+    <div class="statgrid">
+      <div class="stat"><div class="n grad">100k+</div><div class="c">Organic views in ~2 months. No paid ads in that number.</div></div>
+      <div class="stat"><div class="n grad">8-in-1</div><div class="c">Specialists in one install. A department, not a tool.</div></div>
+      <div class="stat"><div class="n grad">~1 hr</div><div class="c">Your hands-on time per month. The crew does the rest.</div></div>
+      <div class="stat"><div class="n grad">$397</div><div class="c">Once. Not monthly. You own the repo.</div></div>
     </div>
   </div>
 </section>
 
-<section id="how">
+<section id="crew" class="centered">
   <div class="wrap">
-    <p class="eyebrow">How it works</p>
-    <h2>Drop footage. The crew builds. You review and say "schedule it."</h2>
-    <div class="steps">
-      <div class="step"><div class="n">01</div><h3>Drop footage.</h3><p>One folder or one link. Raw is fine. Long is fine. The crew reads every clip first: who's on screen, what's usable, what was said.</p></div>
-      <div class="step"><div class="n">02</div><h3>The crew produces the month.</h3><p>It transcribes, picks the strongest moments, reframes to vertical with face tracking, captions, designs carousels, and writes posts in your voice. Every piece sits behind YOUR approval gate. Nothing publishes itself.</p></div>
-      <div class="step"><div class="n">03</div><h3>You review and say "schedule it."</h3><p>A staged multi-platform queue. You approve, adjust, or kill each piece. About an hour of your time.</p></div>
-    </div>
-    <p class="honest">One-time install first. Then about an hour a month.</p>
-    <div class="reqchip">Runs on your own Claude Code — no separate Anthropic API key. Claude Max recommended for full-volume runs; on Pro, run formats one at a time. You bring keys only for the tools it orchestrates (AssemblyAI / Zernio, optional OpenAI + xAI) and pay that usage directly — no markup.</div>
-    <!-- TODO(launch): artifacts row — three REAL screenshots (finished short with captions, carousel frame, staged schedule view),
-         each captioned "made with Nave · [date] · [time spent]". No mockups — real artifacts only. -->
-    <div class="ctablock">
-      <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-      <span class="micro">$397 once · runs or refunded · capped for quality</span>
+    <span class="eyebrow">The crew</span>
+    <h2>One install.<br><span class="grad">Eight specialists.</span></h2>
+    <p class="sub">Every one of them reads <b>your</b> brand profile. They work for you, on your machine.</p>
+    <div class="bento">
+      <div class="bcard"><div class="bviz"><div class="v-wave"><i style="height:14px"></i><i style="height:30px"></i><i style="height:46px"></i><i style="height:22px"></i><i style="height:38px"></i><i style="height:18px"></i><i style="height:44px"></i><i style="height:26px"></i><i style="height:12px"></i></div><div class="v-tags"><em>who</em><em>what</em><em>said</em></div></div><div class="btxt"><div class="sign">FI · FOOTAGE INTELLIGENCE</div><h3>Reads every clip first.</h3><p>Who's on screen, what's usable, which lines are worth quoting.</p></div></div>
+      <div class="bcard"><div class="bviz"><div class="v-frames"><i></i><i></i><i></i><i></i><i></i></div></div><div class="btxt"><div class="sign">VE · VIDEO EDITOR</div><h3>Footage in. Shorts out.</h3><p>Face-tracked 9:16 reframes, captioned edits, the strongest moments ranked.</p></div></div>
+      <div class="bcard"><div class="bviz"><div class="v-car"><i></i><i></i><i></i></div></div><div class="btxt"><div class="sign">FS · FORMAT STUDIO</div><h3>Carousels &amp; guides.</h3><p>IG and LinkedIn carousels plus PDF guides, on your brand system.</p></div></div>
+      <div class="bcard"><div class="bviz"><div class="v-copy"><i></i><i></i><i></i></div></div><div class="btxt"><div class="sign">CW · COPYWRITER</div><h3>Your voice, not bot voice.</h3><p>Captions, posts, scripts — a humanizer pass cleans every piece.</p></div></div>
+      <div class="bcard"><div class="bviz"><div class="v-cal"><i class="on"></i><i></i><i class="half"></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i><i class="half"></i><i></i><i class="on"></i><i></i><i class="half"></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i></div></div><div class="btxt"><div class="sign">PM · PUBLISHER</div><h3>Staged, never auto-posted.</h3><p>A multi-platform queue behind your approval. Plus comment-to-DM automation.</p></div></div>
+      <div class="bcard"><div class="bviz"><svg class="v-chart" viewBox="0 0 150 60" fill="none"><polyline points="4,52 30,44 56,46 82,30 108,24 134,10" stroke="#1FE07A" stroke-width="2.5" stroke-linecap="round"/><circle cx="134" cy="10" r="4" fill="#1FE07A"/></svg></div><div class="btxt"><div class="sign">CC · CONTENT COACH</div><h3>Knows what's working.</h3><p>Plans your week, tracks your numbers, tells you what to make next.</p></div></div>
+      <div class="bcard"><div class="bviz"><div class="v-list"><i><u></u></i><i><u></u></i><i><u></u></i></div></div><div class="btxt"><div class="sign">CS · COMPETITOR SCOUT</div><h3>Your niche, last 30 days.</h3><p>What's actually moving, weighted by real engagement.</p></div></div>
+      <div class="bcard"><div class="bviz"><div class="v-prompt">"Make a month of content<br>from this video: &lt;url&gt;"</div></div><div class="btxt"><div class="sign">GC · GROUND CREW</div><h3>The foundation.</h3><p>Downloads, word-level transcripts, the pre-publish quality gate, your brand profile.</p></div></div>
     </div>
   </div>
 </section>
 
-<section id="crew">
+<section id="how" class="centered" style="padding-top:0">
   <div class="wrap">
-    <p class="eyebrow">The crew</p>
-    <h2>Eight specialists. One brand brief.</h2>
-    <div class="grid">
-      <div class="card"><div class="sign">FI</div><h3>Footage Intelligence</h3><p>Reads every clip in your drop: who's on screen, what the scene is usable for, which lines are worth quoting. Builds one searchable footage library.</p><span class="comp mono">footage-intelligence</span></div>
-      <div class="card"><div class="sign">VE</div><h3>Video Editor</h3><p>Reframes face-tracked 16:9 down to 9:16, scores and ranks the strongest moments, and cuts captioned edits with motivated moves.</p><span class="comp mono">clip-machine · clip-extractor · creative-director · hyperframes-edit</span></div>
-      <div class="card"><div class="sign">FS</div><h3>Format Studio</h3><p>Builds Instagram and LinkedIn carousels plus PDF guides, designed on your brand system.</p><span class="comp mono">carousel · document-carousel</span></div>
-      <div class="card"><div class="sign">CW</div><h3>Copywriter</h3><p>Writes captions, posts, and scripts in your voice. A humanizer pass cleans every piece before it's saved.</p><span class="comp mono">copywriting · content-repurposing · humanizer</span></div>
-      <div class="card"><div class="sign">PM</div><h3>Publisher &amp; Manager</h3><p>Stages a multi-platform schedule behind your approval gate — you review, then say "schedule it." Also runs comment-to-DM automation.</p><span class="comp mono">social-media-publishing · zernio-comment-to-dm</span></div>
-      <div class="card"><div class="sign">CC</div><h3>Content Coach</h3><p>Plans your week, tracks your numbers, reads patterns off your live posts, and tells you what to make next.</p><span class="comp mono">coach · content-review</span></div>
-      <div class="card"><div class="sign">CS</div><h3>Competitor Scout</h3><p>Researches what's actually moving in your niche over the last 30 days, weighted by real engagement.</p><span class="comp mono">trending-research</span></div>
-      <div class="card"><div class="sign">AG</div><h3>Ground Crew</h3><p>The foundation everything else stands on: downloads, word-level transcripts, the pre-publish quality gate, your brand profile.</p><span class="comp mono">video-download · extracting-transcripts · quality-gate · brand-profile</span></div>
+    <span class="eyebrow">How it works</span>
+    <h2>Drop footage. Review.<br><span class="grad">Say "schedule it."</span></h2>
+    <div class="how3">
+      <div class="step"><div class="n">01</div><h3>Drop footage</h3><p>One folder or one link. Raw is fine. The crew reads every clip first.</p></div>
+      <div class="step"><div class="n">02</div><h3>The crew produces the month</h3><p>Clips, carousels, posts — in your voice, staged behind your approval. Nothing publishes itself.</p></div>
+      <div class="step"><div class="n">03</div><h3>You review — ~1 hour</h3><p>Approve, adjust, or kill each piece. Then it ships on schedule.</p></div>
     </div>
-    <p class="footline">Every crew member reads <b>your</b> brand profile. They work for you, on your machine.</p>
-    <div class="ctablock">
-      <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-      <span class="micro">$397 once · runs or refunded · capped for quality</span>
-    </div>
+    <div class="reqchip">Runs on your own Claude Code — no separate Anthropic API key. Claude Max recommended for full month-runs; on Pro, run formats one at a time. Your keys (AssemblyAI / Zernio, optional OpenAI + xAI), paid directly — no markup.</div>
+    <!-- TODO(launch): artifacts row — three REAL screenshots (finished short, carousel frame, staged schedule),
+         captioned "made with Nave · [date] · [time spent]". Real artifacts only. -->
   </div>
 </section>
 
-<section id="own-vs-rent">
+<section class="founder" id="founder">
   <div class="wrap">
-    <p class="eyebrow">Own, don't rent</p>
-    <h2>Rent a repurposing tool, or own a content department.</h2>
-    <div class="compare">
-      <div class="col rent"><h3>Renting</h3><p>Repurposing tools are great if renting repurposing is what you want. They're fast to start, they're polished, and there's a support team when you get stuck. You pay monthly, you work inside their templates, and the workflow lives on their servers. That's a fair trade if it's the trade you want.</p></div>
-      <div class="col own"><h3>🛸 Owning</h3><p>With Nave you own the machine: the orchestration, the config, the agents, the local pipeline. You bring your own metered keys, so you pay cost instead of markup. You can swap any single tool without re-buying the system. The repo sits on your disk. Nobody can re-price it, throttle it, or lock you out of your own work.</p></div>
-      <div class="deprow"><b>What you still depend on:</b> your Claude subscription, and the tool vendors you pay directly. Claude is metered too — usage caps on a shared pool, and full month-runs want Max.</div>
-    </div>
-    <blockquote class="epigraph">"I want people to feel like they have a choice."<span class="who">— Enrique</span></blockquote>
-  </div>
-</section>
-
-<section id="founder">
-  <div class="wrap">
-    <p class="eyebrow">Who built this</p>
-    <h2>"I build first, then I teach."</h2>
-    <div class="founder-grid">
+    <div class="fgrid">
       <!-- TODO(launch): real headshot or workspace still — not a stock render -->
-      <div class="headshot">photo:<br>Enrique —<br>real workspace still</div>
-      <div class="founder-copy">
-        <p>I'm Enrique. I make content for a living — my own channels and real client work. Nave is the system I built to run both, and it runs them today.</p>
-        <p>Here are the numbers I can show you. <b>100k+ views in about two months on this topic, all organic.</b> A soccer club's content runs through this engine. So does mine. Everything on this page was made by the thing this page sells.</p>
-        <p>The moment that started it, in my own words:</p>
-        <p><i>"Oh damn. I can actually have this much time back. I can build systems that support me. I can create a life with more space, more meaning, and more freedom."</i></p>
+      <div class="headshot">photo: Enrique —<br>real workspace still</div>
+      <div class="fcopy">
+        <span class="eyebrow">Who built this</span>
+        <div class="fchips">
+          <span>Builds the engine himself</span>
+          <span>100k+ organic in 2 months</span>
+          <span>Runs real client content today</span>
+        </div>
+        <h2>"I build first,<br>then I teach."</h2>
+        <p>I'm Enrique. I make content for a living — my own channels and real client work. Nave is the system I built to run both, and it runs them today. <b>Everything on this page was made by the thing this page sells.</b></p>
+        <p class="fquote">"I build real systems, show them working, and explain how they're wired — so people see it's possible AND see how to do it."</p>
+        <div class="fname">Enrique Marquez · INFINITX</div>
       </div>
     </div>
-    <div class="pullquote">"I build real systems, show them working, and explain how they're wired — so people see it's possible AND see how to do it."<span class="who">— Enrique Marquez, INFINITX</span></div>
   </div>
 </section>
 
-<section id="offer">
+<section id="offer" class="centered">
   <div class="wrap">
-    <p class="eyebrow">The offer</p>
-    <h2>Installed live, with you, until it runs —<br>The Founding Build Cohort.</h2>
-    <p class="big">We install live, as a group, until it runs on your machine.</p>
+    <span class="eyebrow">The offer</span>
+    <h2>The Founding Build Cohort.<br><span class="grad">Installed live, with you, until it runs.</span></h2>
+    <p class="sub">A live group workshop. We install together, render together, and start your first month — on your machine.</p>
 
-    <div class="anchorcard">
-      <span class="label">For scale — the ceiling</span>
-      <h3>The Full Content Department, done entirely for you</h3>
-      <div class="price">~$2,500<small>/month. Every month.</small></div>
-      <p>It exists, and real client work runs through it today. It is not what this page sells. Nave installs the same machine once, and then it's yours.</p>
-    </div>
-    <p class="anchornote">For scale: a single freelance editor alone runs $1,500+ a month.</p>
+    <div class="anchorline">For scale: the done-for-you version of this department is <span class="p">~$2,500/month</span> — and a single freelance editor alone runs $1,500+/mo. Nave installs the same machine <b>once</b>, and then it's yours.</div>
 
     <div class="manifest">
-      <div class="mhead">What's in the Founding Build Cohort<small>Every line priced at what it costs standalone.</small></div>
+      <div class="mhead">What's in the cohort<small>Every line priced at what it costs standalone.</small></div>
       <table>
-        <tr><td>01</td><td><b>The Nave template</b> — the full 8-member crew repo <i>(sold solo below as The Template; the cohort is everything else on this list)</i></td><td>$89</td></tr>
-        <tr><td>02</td><td><b>Done-with-you install</b> — the live Founding Build Cohort workshop. Group, capped. We build together until it runs on your machine</td><td>$397</td></tr>
-        <tr><td>03</td><td><b>Your first month of content</b>, produced together in the cohort</td><td>$500</td></tr>
-        <tr><td>04</td><td><b>Founding community access</b>, weekly build-along included — free through the founding window, then optional at the locked founding rate of $89/mo, cancel anytime. The rate goes up for everyone who joins later</td><td>$297</td></tr>
-        <tr><td>05</td><td><b>Personal Loom support</b> — your problem, your screen, a custom walkthrough within 2 business days, unlimited rounds through your guarantee window</td><td>$300</td></tr>
-        <tr><td>06</td><td><b>Lifetime priority engine updates</b> — every release, for as long as Nave ships (the template alone includes 12 months)</td><td>$200</td></tr>
-        <tr><td>07</td><td><b>Bonus: the Format Studio design library</b> — the pre-built carousel and PDF design systems the FS agent draws from, beyond what ships in the base repo</td><td>$97</td></tr>
-        <tr><td>08</td><td><b>Bonus: the swipe file</b> — the hooks, covers, and captions behind the 100k+ organic run, organized to steal from</td><td>$97</td></tr>
+        <tr><td>01</td><td><b>The Nave template</b> — the full 8-member crew repo</td><td>$89</td></tr>
+        <tr><td>02</td><td><b>Done-with-you install</b> — live group workshop, capped. We build until it runs on your machine</td><td>$397</td></tr>
+        <tr><td>03</td><td><b>Your first month of content</b>, produced together</td><td>$500</td></tr>
+        <tr><td>04</td><td><b>Founding community + weekly build-along</b> — free through the founding window, then optional $89/mo, locked for life. Later members pay more</td><td>$297</td></tr>
+        <tr><td>05</td><td><b>Personal Loom support</b> — your problem, your screen, within 2 business days</td><td>$300</td></tr>
+        <tr><td>06</td><td><b>Lifetime priority engine updates</b> (template alone: 12 months)</td><td>$200</td></tr>
+        <tr><td>07</td><td><b>Bonus: Format Studio design library</b></td><td>$97</td></tr>
+        <tr><td>08</td><td><b>Bonus: the swipe file</b> behind the 100k+ organic run</td><td>$97</td></tr>
         <tr class="total"><td></td><td>Total standalone value</td><td>$1,977</td></tr>
       </table>
     </div>
-    <ul class="stacknotes">
-      <li>Every line is priced at what it costs standalone. The install line IS this price — everything else is what founding members get with it.</li>
-      <li>If you're doing the math on line 01: yes, the repo alone is $89, sold solo below. The other $308 buys the live install, your first month produced together, the community, the Loom net, and the refund behind all of it.</li>
-      <li>Nothing recurring is billed at purchase. The community is included through the founding window; after it closes it's an optional $89/mo, cancel anytime, locked at that rate for founding members.</li>
-    </ul>
+    <p class="stacknote">Nothing recurring is billed at purchase. The community is optional after the founding window — cancel anytime.</p>
 
     <div class="reveal">
       <span class="was">$1,977</span>
-      <div class="now">Founding price: $397, <small>one-time</small></div>
-      <p class="floor">The lowest the cohort will ever be sold for.<br>Less than one month of a single freelance editor — for the whole department installed, the same engine behind 100k+ organic views in two months.</p>
+      <div class="now">$397, <small>one-time</small></div>
+      <p class="floor">The lowest the cohort will ever be sold for. Less than one month of a single freelance editor — for the whole department, installed.</p>
     </div>
 
     <div class="ctablock">
       <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
       <span class="micro">$397 once · runs or refunded · capped for quality</span>
-      <p class="mechanics">Apply in 2 minutes → we confirm your seat and cohort date → you pay the $397 founding price.</p>
+      <p class="mechanics">Apply in 2 minutes → seat + cohort date confirmed → pay the $397 founding price.</p>
       <span class="pending-note" data-pending-note>Applications open shortly — leave your email below and you're first in line.</span>
     </div>
 
     <div class="gbox" id="guarantee">
       <h3>The Get-Running Guarantee</h3>
-      <p class="promise"><b>Nave runs on your machine, or we make it run. If we can't, you get your money back.</b></p>
-      <ul>
-        <li><b>Window:</b> 30 days from your cohort date.</li>
-        <li><b>What "runs" means:</b> the installer verifies on your machine and your first piece renders from your own footage, with the tool versions current at your cohort date. This is a get-it-running promise, not a warranty against upstream API changes forever.</li>
-        <li><b>The process:</b> email us → we attempt the fix with you (screen-share or Loom walkthrough, as many rounds as it takes inside the window) → if we can't make it run inside the window, full refund. No forms designed to make you give up.</li>
-      </ul>
-      <a href="/guarantee.html">Read the full written terms →</a>
-      <p class="tier">Money-back applies to the $397 cohort. The $89 template carries bounded install support instead — async Loom replies, up to 3 within 30 days — and <a href="#template">The Other Door</a> below spells out exactly why.</p>
+      <p class="promise">Nave runs on your machine, or we make it run. If we can't, you get your money back.</p>
+      <p class="terms">30 days from your cohort date. "Runs" = the installer verifies on your machine and your first piece renders from your own footage. We fix it with you — screen-shares and Looms, as many rounds as it takes inside the window. If it still doesn't run: full refund, no hoops. <a href="/guarantee.html">Read the full written terms →</a></p>
+      <p class="tier">Money-back applies to the $397 cohort. The $89 template carries bounded install support instead — <a href="#template">here's why</a>.</p>
     </div>
+
+    <div class="cohortstrip">
+      <span><b>Live group build</b> — on purpose; same errors, fixed in front of everyone</span>
+      <span><b>Capped at 12 seats</b> — a quality cap, not a countdown</span>
+      <span><b>No timers</b> — when the founding window closes, the price changes. That's it.</span>
+    </div>
+    <p class="loomline"><b>Still stuck after the workshop?</b> Personal Loom support — your problem, your screen, within 2 business days, as many rounds as it takes inside your guarantee window. <b>Founding cohort means exactly that:</b> the first testimonials on this page will be yours.</p>
   </div>
 </section>
 
-<section id="cohort">
+<section id="template" class="centered" style="padding-top:0">
   <div class="wrap">
-    <p class="eyebrow">Inside the cohort</p>
-    <h2>It's a live group build. On purpose.</h2>
-    <p class="big">You're booking a seat at a live workshop, not buying a video library. The rest of the founding crew is on the same call, hitting the same walls. Watching someone else's error get fixed is half the education.</p>
-    <div class="agenda">
-      <div class="card"><div class="sign">1</div><h3>Install together</h3><p>Run the installer live (<span class="mono">./install.ps1</span> or <span class="mono">./install.sh</span>). Whatever your machine throws at us, we fix on the call.</p></div>
-      <div class="card"><div class="sign">2</div><h3>Verification render</h3><p>The engine renders a test piece end to end. You see "render verified" on your own screen before we move on.</p></div>
-      <div class="card"><div class="sign">3</div><h3>Brand brief</h3><p>We fill in your brand profile together so the crew cuts and writes in your voice, not a generic one.</p></div>
-      <div class="card"><div class="sign">4</div><h3>First footage run</h3><p>You drop real footage and we start your first month-run live. Most members on Max review their first staged queue before the session ends; on Pro it finishes across your first few sittings, with the Loom net behind you.</p></div>
-    </div>
-    <div class="scarcity">
-      <p style="margin:0 0 12px"><b>Still stuck after the workshop?</b> Personal Loom support — your problem, your screen, a custom walkthrough within 2 business days, as many rounds as it takes inside your guarantee window.</p>
-      <p style="margin:0 0 12px"><b>We cap each cohort at 12 seats</b> so everyone leaves running. That's a quality cap, not a countdown.</p>
-      <p style="margin:0">What does expire: $397 is the founding price (the lowest the cohort will ever be sold for), and the $89/mo community rate locks for life for founding members. The founding window closes when cohort 1 ships. After that, both go up. No timers on this page. When the founding window closes, the price changes. Nothing else is counting down.</p>
-    </div>
-    <div class="ctablock">
-      <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-      <span class="micro">$397 once · runs or refunded · capped for quality</span>
-    </div>
-  </div>
-</section>
-
-<section id="proof">
-  <div class="wrap">
-    <p class="eyebrow">Proof</p>
-    <h2>No projections — receipts.</h2>
-    <!-- TODO(launch): receipts wall — real artifacts only:
-         3–4 published shorts (visible view counts), carousel frames, dated analytics screenshots of the 100k+ organic run.
-         Caption format on every artifact: "made with Nave · [date] · [time spent]".
-         If the ~500k run appears: "a ~500k reach test (with paid amplification behind it) — evidence the paid lever exists, not organic proof."
-         Swap the card below for the testimonial wall after cohort 1 ships. -->
-    <div class="proofnote"><b>Founding cohort means exactly that:</b> the first testimonials on this page will be yours. That's part of why the price is $397 and not what it will be.</div>
-  </div>
-</section>
-
-<section id="not-for">
-  <div class="wrap">
-    <p class="eyebrow">Read this first</p>
-    <h2>Who shouldn't buy Nave. Cheaper for both of us to say it now.</h2>
-    <div class="grid">
-      <div class="card"><h3>You don't film, and you won't start.</h3><p>Nave needs your footage. You drive; the system supports you. No raw material means no month of content. Nothing here fixes an empty folder.</p></div>
-      <div class="card"><h3>You want 100% hands-off.</h3><p>Nothing posts until you review it and say "schedule it." If you want zero involvement, this will frustrate you.</p></div>
-      <div class="card"><h3>You're on Claude Pro and won't upgrade.</h3><p>Full month-runs want Claude Max. On Pro you run formats one at a time, across a few sittings. It works. It's just slower.</p></div>
-      <div class="card"><h3>You want someone else to own and run it.</h3><p>That's the ~$2,500/month done-for-you department. It's real, and if that's you, reach out and we'll point you to it.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="template">
-  <div class="wrap">
-    <p class="eyebrow">The other door</p>
-    <h2>Want to install it yourself? That's the Template — $89, firm.</h2>
-    <p class="big">If you read documentation for fun and don't want a workshop, this is your door.</p>
-    <div class="tier-solo">
+    <span class="eyebrow">The other door</span>
+    <h2>Just want the repo?<br><span class="grad">The Template — $89, firm.</span></h2>
+    <p class="sub">For the ones who read documentation for fun and don't want a workshop.</p>
+    <div class="tcard">
       <div class="name">The Template</div>
       <div class="price">$89<small> /once</small></div>
       <ul>
-        <li>The full 8-member crew template — the same repo the cohort installs</li>
-        <li>Self-verifying install scripts and docs (Windows, macOS, Linux)</li>
+        <li>The same full 8-member crew repo the cohort installs</li>
+        <li>Self-verifying install scripts + docs (Windows · macOS · Linux)</li>
         <li>Engine updates for 12 months</li>
       </ul>
-      <div class="support"><b>The template's support (service, not cash):</b> hit a wall with the installer or your first render, send the error, and you get an async Loom walkthrough — up to 3 replies within 30 days of purchase. The cohort's net is deliberately bigger: live install, unlimited Loom rounds plus screen-shares through the guarantee window, and a cash refund behind it. No cash refunds on the template. The reason is simple: it's a forkable repo. Once cloned, it can't be returned. <a href="/terms.html">Full refund policy →</a></div>
-      <div class="ctablock" style="text-align:left">
+      <div class="support"><b>Support is service, not cash:</b> hit a wall, send the error, get an async Loom walkthrough — up to 3 replies within 30 days. No cash refunds: it's a forkable repo, and once cloned it can't be returned. <a href="/terms.html">Refund policy →</a> The only discount on this page is the cohort.</div>
+      <div class="ctablock" style="text-align:left;margin-top:18px">
         <a class="btn btn-ghost" data-cta="BUY" href="#mission-control">Join the template waitlist</a>
         <span class="micro" data-buy-fulfillment></span>
       </div>
     </div>
-    <p class="firm"><b>$89 is firm.</b> The only discount on this page is the cohort.</p>
     <!-- TODO(launch checklist #5, needs sign-off): the up-path line —
          "Buy the template, want the cohort later? Your $89 counts toward the $397 seat." -->
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="centered" style="padding-top:0">
   <div class="wrap">
-    <p class="eyebrow">FAQ</p>
-    <h2>Every question worth asking before $397</h2>
-    <details open><summary>Do I need an Anthropic API key?</summary><p>No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic API key, ever. You bring your own keys only for the tools it orchestrates: AssemblyAI (transcription) and Zernio (publishing + DM automation), plus optional OpenAI and xAI keys if you want the Competitor Scout's deep research. You pay that usage directly to those vendors. No markup, no credits bought through us.</p></details>
-    <details><summary>Which Claude plan do I need?</summary><p>Claude Max ($100/mo and up) is the recommended plan for full month-runs. A multi-agent monthly run can exhaust a $20 Pro plan's 5-hour usage window in under an hour, and that pool is shared with everything else you use Claude for. On Pro, run formats one at a time and expect the month to take a few sittings. Your Claude subscription is itself metered (usage caps, shared pool), so plan around that.</p></details>
-    <details><summary>What does "a month of content in an hour" really mean?</summary><p>It means one-time install first (that's the cohort), then about an hour of your hands-on time per month after that. The crew does the production. Your hour is the review: you check the staged queue and say "schedule it." The approval gate is part of the design.</p></details>
-    <details><summary>Is the cohort 1:1?</summary><p>No, it's a live group cohort, deliberately. We install together because the group is part of the value: same errors, fixed in front of everyone. The 1:1 layer is the Loom support — send your problem and your screen, and you get a custom walkthrough within 2 business days, as many rounds as it takes inside your guarantee window.</p></details>
-    <details><summary>What exactly are the guarantees and refunds?</summary><p>The $397 cohort carries the Get-Running Guarantee: Nave runs on your machine within 30 days of your cohort date, or we make it run, or you get your money back. <a href="/guarantee.html">Written terms here.</a> The $89 template carries bounded install support instead: async Loom replies, up to 3 within 30 days of purchase, to get your installer verified and your first render out. No cash refund on the template: it's a forkable repo, and once cloned it can't be returned. <a href="/terms.html">Refund policy here.</a></p></details>
-    <details><summary>What do I own, and what can still change on me?</summary><p>You own the machine: orchestration, config, agents, the local pipeline, the repo on your disk. You bring your own metered keys, so you pay cost rather than markup, and you can swap any single tool without re-buying the system. What can still change on you: your Claude subscription (metered, usage caps, shared pool — Max for full runs) and the tool vendors you pay directly. Ownership here means no middleman and no re-pricing layer between you and your tools. It does not mean "no caps exist anywhere."</p></details>
-    <details><summary>What machine do I need?</summary><p>Windows, macOS, or Linux. Under the hood: Node 20+, Python 3.12, ffmpeg, yt-dlp, jq — and the installer checks and installs them for you (winget on Windows, Homebrew on macOS, apt on Debian-based Linux). It's safe to re-run and has a check-only mode, so you can verify your machine before the cohort. macOS needs Homebrew already installed; non-Debian Linux distros aren't auto-handled yet.</p></details>
-    <details><summary>What happens after the founding window?</summary><p>The community continues, and founding members keep the $89/mo rate for life. The rate goes up for everyone who joins after the founding window. The $397 founding price for the cohort install goes up too: the founding window closes when cohort 1 ships, and $397 is the lowest the cohort will ever be sold for.</p></details>
-    <div class="ctablock">
-      <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-      <span class="micro">$397 once · runs or refunded · capped for quality</span>
+    <span class="eyebrow">FAQ</span>
+    <h2>Real questions.<br><span class="grad">Straight answers.</span></h2>
+    <div class="faqwrap">
+      <details open><summary><span class="qn">01</span>Do I need an Anthropic API key?</summary><p class="a">No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic API key, ever. You bring keys only for the tools it orchestrates: AssemblyAI (transcription) and Zernio (publishing + DM automation), plus optional OpenAI and xAI for deep research. You pay those vendors directly. No markup.</p></details>
+      <details><summary><span class="qn">02</span>Which Claude plan do I need?</summary><p class="a">Claude Max ($100/mo+) is recommended for full month-runs. A multi-agent run can exhaust a $20 Pro plan's 5-hour window in under an hour, and that pool is shared with everything else you use Claude for. On Pro: run formats one at a time, expect a few sittings.</p></details>
+      <details><summary><span class="qn">03</span>What does "a month of content in an hour" really mean?</summary><p class="a">One-time install first (that's the cohort), then about an hour of your hands-on time per month. The crew produces; your hour is the review. You check the staged queue and say "schedule it." Nothing publishes without your approval.</p></details>
+      <details><summary><span class="qn">04</span>Is the cohort 1:1?</summary><p class="a">No — it's a live group cohort, deliberately. Same errors, fixed in front of everyone. The 1:1 layer is Loom support: your problem, your screen, a custom walkthrough within 2 business days, as many rounds as it takes inside your guarantee window.</p></details>
+      <details><summary><span class="qn">05</span>What are the guarantees and refunds?</summary><p class="a">The $397 cohort: Nave runs on your machine within 30 days, or we make it run, or your money back — <a href="/guarantee.html">written terms</a>. The $89 template: bounded install support (up to 3 Loom replies in 30 days), no cash refund — it's a forkable repo; once cloned it can't be returned. <a href="/terms.html">Refund policy</a>.</p></details>
+      <details><summary><span class="qn">06</span>What do I own — and what can still change on me?</summary><p class="a">You own the machine: orchestration, config, agents, the local pipeline, the repo on your disk. You pay cost instead of markup and can swap any single tool without re-buying the system. What can still change: your Claude subscription (metered, usage caps) and the tool vendors you pay directly. Ownership means no middleman — not "no caps exist anywhere."</p></details>
+      <details><summary><span class="qn">07</span>What machine do I need?</summary><p class="a">Windows, macOS, or Linux. Under the hood: Node 20+, Python 3.12, ffmpeg, yt-dlp, jq — the installer checks and installs them for you, is safe to re-run, and has a check-only mode. macOS needs Homebrew; non-Debian Linux isn't auto-handled yet.</p></details>
+      <details><summary><span class="qn">08</span>Who should NOT buy Nave?</summary><p class="a">You, if: you don't film and won't start (Nave needs your footage — you drive, the system supports you) · you want 100% hands-off (nothing posts without your review) · you're on Claude Pro and won't upgrade (works, just slower) · you want someone else to run it all — that's the ~$2,500/mo done-for-you department; reach out and we'll point you to it.</p></details>
+      <details><summary><span class="qn">09</span>What happens after the founding window?</summary><p class="a">Founding members keep the $89/mo community rate for life; later members pay more. The $397 founding price goes up too — the window closes when cohort 1 ships, and $397 is the lowest the cohort will ever be sold for.</p></details>
     </div>
   </div>
 </section>
 
-<section class="final" id="close">
+<section class="centered" id="close" style="padding-top:24px">
   <div class="wrap">
-    <h2>One footage drop in. A month out.<br>About an hour of your time, after we install it together.</h2>
-    <p class="big" style="margin:0 auto">That's the whole promise, with its math attached. The crew produces, you approve, and you own the engine.</p>
-    <div class="ctablock">
-      <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-      <span class="micro">$397 once · runs or refunded · capped for quality</span>
+    <div class="finalcard">
+      <div class="pre">$397 once · runs or refunded · capped for quality</div>
+      <h2>One footage drop in.<br><span class="grad">A month of content out.</span></h2>
+      <div class="ctablock" style="margin-top:18px">
+        <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
+      </div>
+      <div class="otherdoor">Just want the repo? <a href="#template">The Template — $89</a></div>
+      <p class="disclaimer">Results shown on this page are my own and my clients' — not typical, and not a guarantee.</p>
     </div>
-    <div class="subcta">Just want the repo? <a href="#template">The Template — $89</a></div>
-    <p class="disclaimer">Results shown on this page are my own and my clients' — not typical, and not a guarantee.</p>
   </div>
 </section>
 
-<section class="nl final" id="mission-control">
+<div class="nl" id="mission-control">
   <div class="wrap">
-    <p class="eyebrow">The build log</p>
-    <h2>Not buying anything today? Take the build log.</h2>
-    <p class="big" style="margin:0 auto"><b>Mission Control</b> is the free build log: what I built this week, how it's wired, what it did. No gatekeeping. Just the working log of a real content engine, written by the person running it.</p>
-    <form class="capture" id="capture" action="#" method="post">
-      <!-- Wire to the Kit (ConvertKit) form action via NAVE_LINKS.NEWSLETTER_FORM_ACTION below. -->
-      <input type="email" name="email_address" placeholder="you@email.com" aria-label="Email" required>
-      <button class="btn" type="submit">Get Mission Control</button>
-    </form>
+    <div class="nlgrid">
+      <div>
+        <h3>Not buying anything today? Take the build log.</h3>
+        <p><b>Mission Control</b> — what I built this week, how it's wired, what it did. Free, no gatekeeping.</p>
+      </div>
+      <form class="capture" id="capture" action="#" method="post">
+        <!-- Wire to the Kit (ConvertKit) form action via NAVE_LINKS.NEWSLETTER_FORM_ACTION below. -->
+        <input type="email" name="email_address" placeholder="you@email.com" aria-label="Email" required>
+        <button class="btn" type="submit">Get Mission Control</button>
+      </form>
+    </div>
     <span class="pending-note" data-capture-note style="display:none"></span>
   </div>
-</section>
+</div>
 </main>
 
 <footer><div class="wrap">
-  <div class="foot">
-    <div>🛸 <b>Nave</b> — Built by INFINITX · Enrique Marquez · <a href="https://infinitxai.com/" class="green">infinitxai.com</a></div>
-    <div class="tagfoot">Build first. Give first.</div>
-  </div>
-  <div class="legalrow">
-    <a href="/guarantee.html">Guarantee Terms</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/terms.html">Terms &amp; Refund Policy</a>
+  <div class="fcols">
+    <div>
+      <div style="font-weight:800;font-size:16px;color:var(--text)">🛸 Nave</div>
+      <div style="margin-top:8px">A content department you own,<br>inside Claude Code.</div>
+      <div class="tagfoot">Build first. Give first.</div>
+    </div>
+    <div>
+      <div class="colh">Product</div>
+      <a href="#crew">The Crew</a>
+      <a href="#how">How it works</a>
+      <a href="#offer">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div>
+      <div class="colh">Company</div>
+      <a href="https://infinitxai.com/">INFINITX</a>
+      <a href="#founder">Enrique Marquez</a>
+      <a href="#mission-control">Mission Control</a>
+    </div>
+    <div>
+      <div class="colh">Legal</div>
+      <a href="/guarantee.html">Guarantee Terms</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms &amp; Refunds</a>
+    </div>
   </div>
 </div></footer>
 
