@@ -67,6 +67,12 @@
   #s2-h i { font-style: italic; color: #1FE07A; }
   #s2-cap { margin-top: 38px; font-family: "DM Mono", monospace; font-size: 22px; letter-spacing: .1em;
     text-transform: uppercase; color: rgba(240,235,222,.5); line-height: 1.9; }
+  #s2-term { margin-top: 34px; width: max-content; font-family: "DM Mono", monospace; font-size: 23px;
+    letter-spacing: .04em; color: #7CE8AF; border: 2px solid rgba(31,224,122,.16);
+    background-color: rgba(8,18,12,.85); padding: 18px 26px; }
+  #s2-term .dim { color: rgba(124,232,175,.45); }
+  #s2-cursor { display: inline-block; width: 11px; height: 24px; background-color: #1FE07A;
+    vertical-align: -3px; margin-left: 8px; }
   #s2-stack { position: relative; flex: 1; height: 700px; }
   .fcard { position: absolute; width: 660px; height: 372px; background-color: rgba(15,21,17,.92);
     border: 2px solid rgba(31,224,122,.16); box-shadow: 0 30px 80px rgba(0,0,0,.55); }
@@ -212,7 +218,7 @@
     <div class="metaline"><span id="s1-meta-l">Nave / the Content OS</span><span id="s1-meta-r">runs inside Claude Code</span></div>
     <div class="corner c-tl" id="s1-ctl"></div><div class="corner c-br" id="s1-cbr"></div>
     <div id="s1-content">
-      <div id="s1-badge"><span class="spark">✳</span><span>Built for <b>Claude Code</b></span></div>
+      <div id="s1-badge"><span>Built for</span><img src="assets/cc-dark.svg" alt="Claude Code" style="height:28px;width:auto;display:block"></div>
       <div id="s1-h1a" class="serif">A month</div>
       <div id="s1-h1b" class="serif">of content</div>
       <div id="s1-h1c" class="serif"><span>in</span><span id="s1-one">1</span><span>hour.</span></div>
@@ -231,6 +237,7 @@
         <div id="s2-num">Step 01</div>
         <div id="s2-h" class="serif">Drop in your <i>raw footage.</i></div>
         <div id="s2-cap">clips · podcasts · screen-records<br>raw is fine — one drop feeds the month</div>
+        <div id="s2-term"><span class="dim">$ claude</span> &gt; make a month from this drop<span id="s2-cursor"></span></div>
       </div>
       <div id="s2-stack" data-layout-allow-overflow>
         <div class="fcard" id="fc1">
@@ -314,7 +321,7 @@
       <div id="s5-card">
         <div class="free">Free — the playbook</div>
         <div class="t">How I Make a Month of <i>Quality Content</i> in a Day</div>
-        <div class="cc"><span class="spark">✳</span><span>with Claude Code</span></div>
+        <div class="cc"><span>with</span><img src="assets/cc-dark-s5.svg" alt="Claude Code" style="height:24px;width:auto;display:block"></div>
         <div class="vault">+ the resource vault — every guide, free</div>
       </div>
       <div id="s5-right">
@@ -363,10 +370,13 @@ tl.fromTo("#s2-cap", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.
 tl.fromTo("#fc1", { x: 560, rotation: 9, opacity: 0 }, { x: 0, rotation: -2, opacity: 1, duration: 0.7, ease: "power3.out" }, 5.5);
 tl.fromTo("#fc2", { x: 640, rotation: 12, opacity: 0 }, { x: 0, rotation: 1.5, opacity: 1, duration: 0.7, ease: "power3.out" }, 5.68);
 tl.fromTo("#fc3", { x: 720, rotation: 15, opacity: 0 }, { x: 0, rotation: -1, opacity: 1, duration: 0.7, ease: "power3.out" }, 5.86);
-/* ambient: cards breathe apart, rec dots blink */
+tl.fromTo("#s2-term", { opacity: 0, scaleX: 0.6, transformOrigin: "left center" },
+  { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.out" }, 6.5);
+/* ambient: cards breathe apart, rec dots blink, cursor blinks */
 tl.to("#fc1", { y: -14, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 1 }, 6.4);
 tl.to("#fc3", { y: 12, duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 1 }, 6.5);
 tl.to("#s2 .dot", { opacity: 0.25, duration: 0.42, ease: "steps(1)", yoyo: true, repeat: 5 }, 6.0);
+tl.to("#s2-cursor", { opacity: 0, duration: 0.4, ease: "steps(1)", yoyo: true, repeat: 5 }, 7.0);
 
 /* ---- T2 (9.2) zoom through S2 -> S3 (PEAK accent) ---- */
 tl.to("#s2", { scale: 1.22, filter: "blur(18px)", opacity: 0, duration: 0.35, ease: "power3.in" }, 9.2);
@@ -387,9 +397,11 @@ tl.fromTo("#s3-crew span",
   { y: 0, opacity: 1, duration: 0.35, ease: "power2.out", stagger: 0.055 }, 10.9);
 tl.fromTo("#s3-stamp", { scale: 2.1, opacity: 0, rotation: 6 },
   { scale: 1, opacity: 1, rotation: -4, duration: 0.45, ease: "expo.out" }, 11.9);
-/* ambient: grid drifts subtly, stamp settles */
+/* ambient: grid drifts subtly, stamp settles, cards do a live ripple mid-hold */
 tl.to("#s3-grid", { y: -16, duration: 3.2, ease: "sine.inOut" }, 12.4);
 tl.to("#s3-glow", { scale: 1.1, duration: 1.8, ease: "sine.inOut", yoyo: true, repeat: 1 }, 12.0);
+tl.to("#s3-grid .pcard", { scale: 1.045, duration: 0.28, ease: "sine.inOut", yoyo: true, repeat: 1,
+  stagger: { each: 0.07, from: "start" } }, 13.3);
 
 /* ---- T3 (15.4) vertical push S3 -> S4 ---- */
 tl.to("#s3", { y: -1080, duration: 0.55, ease: "power3.inOut" }, 15.4);
@@ -416,6 +428,10 @@ tl.fromTo("#s4-cells .day i", { scaleX: 0, transformOrigin: "left center" },
     }
   }, 16.9);
 })();
+/* mid-hold life: the staged month glints, the install chip nudges */
+tl.to("#s4-cells .day i", { opacity: 0.7, duration: 0.2, ease: "sine.inOut", yoyo: true, repeat: 1,
+  stagger: { each: 0.018, from: "start" } }, 18.8);
+tl.to("#s4-install", { scale: 1.06, duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: 1 }, 19.3);
 
 /* ---- T4 (20.2) blur crossfade S4 -> S5 (wind-down) ---- */
 tl.to("#s4", { filter: "blur(12px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 20.2);
