@@ -1,0 +1,110 @@
+/* ============================================================
+   NAVE_LINKS — the ONLY block to edit when wiring goes live.
+   Shared by index.html / apply.html / nave.html / custom.html.
+   Leave a value '' and every page degrades honestly:
+   - BOOK '': $397 buttons route to the apply page.
+   - PLAYBOOK_FORM_ACTION '': opt-in forms show the honest pending note.
+   - APPLY_FORM_ACTION '': application still routes to the right page,
+     and the answers fall back to a mailto (or nothing, with a note).
+   - CUSTOM_FORM_ACTION '': custom-build form falls back to mailto.
+   ============================================================ */
+const NAVE_LINKS = {
+  BOOK: '',                  // Stripe/Cal.com checkout+booking for the 1:1 install, $397
+  PLAYBOOK_FORM_ACTION: '',  // Kit (ConvertKit) form action — playbook + vault opt-in (email + fields[phone])
+  APPLY_FORM_ACTION: '',     // endpoint for application answers (Tally / Formspree / Kit)
+  CUSTOM_FORM_ACTION: '',    // endpoint for custom-build requests
+  CONTACT_EMAIL: '',         // public support email — also referenced by the legal pages
+  VSL_INDEX: '',             // main VSL embed URL (squeeze page)
+  VSL_NAVE: '',              // Nave offer VSL embed URL
+  VSL_CUSTOM: ''             // done-for-you VSL embed URL
+};
+
+/* Shared CTA state machine */
+(function(){
+  /* $397 booking buttons */
+  document.querySelectorAll('[data-cta="BOOK"]').forEach(function(a){
+    if (NAVE_LINKS.BOOK){ a.href = NAVE_LINKS.BOOK; a.target = '_blank'; a.rel = 'noopener'; }
+    else if (a.dataset.fallback){ a.href = a.dataset.fallback; }
+  });
+  if (!NAVE_LINKS.BOOK) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
+
+  /* Playbook + vault opt-in forms */
+  document.querySelectorAll('[data-capture-form]').forEach(function(form){
+    if (NAVE_LINKS.PLAYBOOK_FORM_ACTION){ form.action = NAVE_LINKS.PLAYBOOK_FORM_ACTION; form.method = 'post'; }
+    else {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var email = form.querySelector('input[type="email"]').value;
+        if (NAVE_LINKS.CONTACT_EMAIL){
+          location.href = 'mailto:' + NAVE_LINKS.CONTACT_EMAIL + '?subject=Send%20me%20the%20playbook&body=' + encodeURIComponent(email);
+        } else {
+          var note = form.parentElement.querySelector('[data-capture-note], [data-pending-note]');
+          if (note){
+            note.textContent = 'Delivery wiring goes live this week — check back, or find Enrique on his channels in the meantime.';
+            note.style.display = 'block';
+          }
+        }
+      });
+    }
+  });
+
+  /* VSL slots: data-vsl="INDEX|NAVE|CUSTOM" — when the URL exists, swap the poster for the embed */
+  document.querySelectorAll('[data-vsl]').forEach(function(slot){
+    var url = NAVE_LINKS['VSL_' + slot.dataset.vsl];
+    if (url){
+      slot.dataset.state = 'vsl';
+      var f = document.createElement('iframe');
+      f.src = url; f.allow = 'autoplay; fullscreen'; f.style.cssText = 'width:100%;aspect-ratio:16/9;border:1px solid var(--line);display:block';
+      slot.replaceChildren(f);
+    }
+  });
+})();
+
+/* Sticky CTA bar after 50% scroll (pages that include #ctabar) */
+(function(){
+  var bar = document.getElementById('ctabar');
+  if (!bar) return;
+  var shown = false;
+  addEventListener('scroll', function(){
+    var half = (document.documentElement.scrollHeight - innerHeight) * 0.5;
+    var show = scrollY > Math.min(half, innerHeight * 2);
+    if (show !== shown){ shown = show; bar.classList.toggle('show', show); }
+  }, { passive: true });
+})();
+
+/* Terminal demo — typewriter (pages that include #termfeed) */
+(function(){
+  var feed = document.getElementById('termfeed');
+  if (!feed) return;
+  var LINES = [
+    '> Make a month of content from this video: footage/june-drop.mp4',
+    '',
+    '[FI] reading footage......... 14 clips · 3 speakers · 41 quotable lines',
+    '[VE] reframing 9:16.......... captions on · 12 shorts cut',
+    '[FS] carousels............... 4 designed',
+    '[CW] posts written........... in your voice · humanizer pass done',
+    '[PM] month staged............ 28 pieces · waiting on YOUR approval',
+    '',
+    '> Review queue ready. Say "schedule it."'
+  ];
+  var li = 0, ci = 0, out = '';
+  var cursor = '<span class="cursor"></span>';
+  function tick(){
+    if (li >= LINES.length){
+      feed.innerHTML = '<span class="dimline">$ claude</span>\n' + out + cursor;
+      setTimeout(function(){ li = 0; ci = 0; out = ''; tick(); }, 9000);
+      return;
+    }
+    var line = LINES[li];
+    if (ci <= line.length){
+      feed.innerHTML = '<span class="dimline">$ claude</span>\n' + out + line.slice(0, ci) + cursor;
+      ci += 2;
+      setTimeout(tick, line.startsWith('[') ? 8 : 18);
+    } else {
+      out += line + '\n';
+      li++; ci = 0;
+      setTimeout(tick, line.startsWith('[') ? 260 : 420);
+    }
+  }
+  tick();
+})();

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply — Nave, the Content OS for Claude Code</title>
+<meta name="description" content="Two minutes of questions, and you land on exactly the right version of Nave: installed with you, or built for you.">
+<link rel="canonical" href="https://nave.infinitxai.com/apply.html">
+<meta name="theme-color" content="#070908">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="index.html">
+    <svg viewBox="0 0 512 448" aria-label="Nave"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></g></svg>
+    <span class="w">Nave</span>
+  </a>
+  <div class="links">
+    <a href="index.html">Home</a>
+  </div>
+</nav></div></header>
+
+<main>
+<section style="text-align:center;padding-top:72px">
+  <div class="wrap">
+    <span class="eyebrow">Apply</span>
+    <h2 data-block="apply.h1">Tell me <i>what you publish.</i></h2>
+    <p class="sub" data-block="apply.sub">Two minutes of straight answers, then the fastest path to a month of content in 1 hour: the live install, or a custom build.</p>
+
+    <form class="quiz" id="applyform" action="#" method="post">
+      <div class="legend" data-block="apply.fields_legend">Where to reach you — no cold calls</div>
+      <div class="row">
+        <input type="text" name="name" placeholder="your name" aria-label="Name" required>
+        <input type="text" name="company" placeholder="business / brand" aria-label="Business or brand" required>
+      </div>
+      <div class="row">
+        <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
+        <input type="tel" name="phone" placeholder="phone" aria-label="Phone" required>
+      </div>
+
+      <div class="legend" data-block="apply.q_details_label">Your content today</div>
+      <textarea name="about" data-block="apply.q_details_placeholder" placeholder="What do you publish, where does it go, and what should the system take off your plate? Example: weekly YouTube video plus shorts, all posting is manual, editing eats two days a month." aria-label="About your content" required></textarea>
+
+      <div class="legend" data-block="apply.q_route_label">How do you want Nave running?</div>
+      <label class="choice" data-route="nave.html">
+        <input type="radio" name="route" value="install" required>
+        <span class="cl" data-block="apply.q_route_a_label">I'll run it myself</span>
+        <span class="cd" data-block="apply.q_route_a_desc">One live hour, we install the Content OS in your Claude Code. You own the repo from day one. $397 founding (then $497). Running on your machine within 30 days or your money back.</span>
+      </label>
+      <label class="choice" data-route="custom.html">
+        <input type="radio" name="route" value="custom">
+        <span class="cl" data-block="apply.q_route_b_label">Build it for me</span>
+        <span class="cd" data-block="apply.q_route_b_desc">A done-for-you Content OS built around your operation. $2,500–$7,500 one-time, scoped on a call.</span>
+      </label>
+
+      <div class="ctablock" style="text-align:left">
+        <button class="btn" type="submit" data-block="apply.submit_button">Get my next step</button>
+        <span class="micro" data-block="apply.submit_micro">No payment on this page. Your answers route you, nothing else.</span>
+        <span class="pending-note" data-apply-note style="display:none"></span>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="pagechrome" style="border-top:0;margin-top:0"><span>Nave / INFINITX — MMXXVI</span><span><a href="privacy.html">Privacy</a></span></div>
+</div></footer>
+
+<script src="assets/links.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('applyform');
+  if (!form) return;
+  /* highlight selected route card */
+  form.querySelectorAll('.choice').forEach(function(c){
+    c.addEventListener('click', function(){
+      form.querySelectorAll('.choice').forEach(function(x){ x.classList.remove('sel'); });
+      c.classList.add('sel');
+    });
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var sel = form.querySelector('input[name="route"]:checked');
+    if (!sel) return;
+    var dest = sel.closest('.choice').dataset.route;
+    var d = new FormData(form);
+    var finish = function(){ location.href = dest + '?applied=1'; };
+    if (NAVE_LINKS.APPLY_FORM_ACTION){
+      fetch(NAVE_LINKS.APPLY_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: d }).finally(finish);
+    } else if (NAVE_LINKS.CONTACT_EMAIL){
+      var body = ['Name: '+d.get('name'),'Business: '+d.get('company'),'Email: '+d.get('email'),'Phone: '+d.get('phone'),'Route: '+d.get('route'),'','About:',d.get('about')].join('\n');
+      location.href = 'mailto:' + NAVE_LINKS.CONTACT_EMAIL + '?subject=' + encodeURIComponent('Nave application') + '&body=' + encodeURIComponent(body);
+      setTimeout(finish, 800);
+    } else {
+      finish();
+    }
+  });
+})();
+</script>
+</body>
+</html>

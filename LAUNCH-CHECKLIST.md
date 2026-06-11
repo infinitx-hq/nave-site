@@ -1,53 +1,60 @@
-# Nave Offer Page — Pre-Launch Checklist
+# Nave Funnel — Pre-Launch Checklist
 
-Internal — not page copy. Rebuilt 2026-06-10 after Enrique locked the funnel shape: free playbook capture first (email + required phone) → $89 template → $397 live 1:1 install (community included) → custom build $2,500–$7,500. Items marked **(Enrique's call)** need his explicit sign-off.
+Internal — not page copy. Rebuilt 2026-06-10 (second pass) after Enrique locked the multi-path funnel. Items marked **(Enrique's call)** need his explicit sign-off.
 
-## Funnel decisions LOCKED today (2026-06-10, Enrique)
+## The funnel (locked 2026-06-10)
 
-- Template = **$89, no discount framing** (the "$249 → $85" idea was dropped in favor of the locked $89).
-- $397 = **live 1:1 install hour** (replaces the group cohort), stack anchored at **$1,297** (sums exactly: 89+300+297+297+197+117), **founding price → $497 after the founding window** (this is a real commitment — the price MUST actually go to $497, or the line comes off the page).
-- Community + weekly call = **$397+ only**. $89 buyers get bounded Loom support, no community.
-- Capture = **email + required phone** on both playbook forms.
-- Custom Content OS = **one-time build, $2,500–$7,500**, contact form, scoped on a call.
-- No later-member community price printed anywhere (still uncommitted).
+```
+/  (squeeze)            apply.html              nave.html ($397 offer VSL page)
+one line + 1 HOUR  -->  email/phone/details --> OR
+Claude Code badge       + routing question      custom.html (DFY $2.5k-$7.5k VSL page)
+VSL + playbook+vault
+opt-in (email+phone)
+```
 
-## Wiring (the page is live the moment these exist)
+- Word "template" is BANNED — the product is **the Content OS** (self-serve door = "The Content OS, self-serve").
+- Two core offers: **$397 installed-with-you** (1:1 hour, $1,297 stack, community + weekly call included, founding price → $497) and **custom build $2,500–$7,500 one-time**. The $89 self-serve stays as a quiet side door on nave.html only.
+- Free tier = playbook ("How I Make a Month of Quality Content in a Day with Claude Code") + the resource vault (playbook PDF + Claude Code guide EN/ES + future guides).
+- API-key/tech talk lives in the FAQ only — off every hero and offer surface.
 
-Edit the `NAVE_LINKS` block at the bottom of `index.html`:
+## ⚠️ "First ever" claim — DECIDED AGAINST (evidence on file)
 
-- [ ] `BOOK` — Cal.com booking URL for the 1:1 install hour ($397). Until set, install buttons route to the playbook capture with a "first in line" note.
-- [ ] `BUY` + `BUY_FULFILLMENT` — Stripe Payment Link (or Gumroad) for The Template $89 **plus** automated delivery (GitHub invite or release zip). The buy button may not ship before the fulfillment line is true (redteam `no-checkout-infra`). Until both set, the button stays "Join the template waitlist."
-- [ ] `PLAYBOOK_FORM_ACTION` — Kit (ConvertKit) form action for the playbook capture. The form posts `email_address` + `fields[phone]` — create a `phone` custom field in Kit and confirm the field name matches. Hook the instant-delivery email + 6-email nurture from `launch/lead-magnet-funnel.md` (update email #5/#6 copy: no cohort, 1:1 install).
-- [ ] `CUSTOM_FORM_ACTION` — endpoint for the custom-build request form (Tally / Formspree). `''` = mailto fallback via CONTACT_EMAIL.
-- [ ] `CONTACT_EMAIL` — public support email; also replaces `[support email]` in /guarantee, /terms, /privacy.
+Enrique asked for "The first ever Content OS built for Claude Code." Verification found **The AI Break selling a "Claude Content OS" ("Build a Content OS Machine in Claude Code") since May 5, 2026** (theaibreaklp.com/content-os) plus Justin Welsh's "Content Operating System" owning the name in the creator market. Shipped wording: **"The Content OS built for Claude Code"** (badge, kickers, meta). If Enrique wants a "first" claim back, the verifiable axis is footage-first (e.g. "the first Claude Code content engine built around your real footage") — verify before shipping. **(Enrique's call)**
+
+## Claude Code logo + trademark
+
+- Official lockup fetched from code.claude.com docs; viewBox-cropped to remove the "Docs" word. `assets/claude-code-dark.svg` (off-white text, used on site) + `claude-code.svg` (dark text, light backgrounds).
+- Footer disclaimer shipped on all pages: "Claude Code is a trademark of Anthropic, PBC. Nave is an independent product — not affiliated with or endorsed by Anthropic." Nominative use; do not imply endorsement.
+
+## Wiring (edit `assets/links.js` → NAVE_LINKS, shared by all pages)
+
+- [ ] `BOOK` — checkout+booking for the $397 install (Stripe → Cal.com, or Cal.com paid event). Until set, $397 buttons fall back per-page.
+- [ ] `PLAYBOOK_FORM_ACTION` — Kit form action; posts `email_address` + `fields[phone]` (create the phone custom field in Kit; confirm field name). Hook instant delivery (playbook + vault links) + the 6-email nurture from `launch/lead-magnet-funnel.md` — **update emails #5/#6: no cohort, no "template", 1:1 install language, vault mention**.
+- [ ] `APPLY_FORM_ACTION` — endpoint for application answers (Tally/Formspree/Kit). Until set: mailto fallback, and routing still works (the redirect is the filter).
+- [ ] `CUSTOM_FORM_ACTION` — endpoint for custom-build requests; mailto fallback via CONTACT_EMAIL.
+- [ ] `CONTACT_EMAIL` — public support email (also referenced by legal pages).
+- [ ] `VSL_INDEX` / `VSL_NAVE` / `VSL_CUSTOM` — three VSL embed URLs. Slots are live on all three pages (terminal demo / poster pane until then). **Two VSLs to produce: the Nave offer VSL + the done-for-you VSL; plus the squeeze VSL (can be the Nave one initially).**
 
 ## Decisions still open (Enrique's call)
 
-1. **Founding-window boundary:** what closes the $397 window — a date, or N installs delivered? Confirm the trigger before launch ("when the founding window closes" prints now, undefined).
-2. **Guarantee window:** 30 days from install session = suggested default; "as many rounds as it takes" in /guarantee = draft language.
-3. **$89-credits-toward-$397 up-path:** still recommended by the cannibalization audit. Currently OFF (HTML comment in #template). Approve to ship.
-4. **Tiempo naming:** page renders the safe fallback ("real client work"). Name "Tiempo Soccer" only with Fernando's permission on file.
-5. **Update tiering:** install "lifetime priority updates" ($117 stack line) vs template "12 months" — sign off, or rebuild the stack (re-verify printed total = sum).
-6. **Template support bound:** "up to 3 Loom replies / 30 days" = draft numbers; the bound itself is mandatory.
-7. **Swipe file / Format Studio bonuses:** REMOVED from the $397 stack in the rebuild (old lines 07/08). Re-add only with real counts, and re-sum the stack if so.
-8. **SMS use:** phone is now required at opt-in. Decide what phone is actually FOR (SMS sequence? call-backs?) and make /privacy + the consent microcopy match. Until an SMS motion exists, do not text the list.
+1. **Founding-window boundary** — what closes the $397→$497 step: a date or N installs. "When the founding window closes" prints now, undefined. The $497 step is a REAL commitment once printed.
+2. **$89-credits-toward-$397 up-path** — recommended; OFF (HTML comment in nave.html #selfserve).
+3. **Tiempo naming** — pages say "real client work"; name the client only with Fernando's permission.
+4. **Update tiering** — install "lifetime priority updates" ($117 stack line) vs self-serve "12 months".
+5. **Phone use** — index opt-in promises "your phone is only used if you book an install." Honor it: no SMS broadcasts to the list, ever, unless the promise text changes first.
+6. **"Roughly 30 finished pieces"** (custom page, first month) — confirm this matches real delivery capacity.
+7. **"Weeks, not months"** custom build timeline — confirm.
 
 ## Content to produce
 
-- [ ] **The playbook PDF is already built** — `data/companies/infinitx/offers/content-engine/launch/lead-magnet-playbook.pdf`. Host it at a direct link + wire as Kit's incentive email.
-- [ ] **Artifacts row in #how** — three REAL screenshots (finished short, carousel frame, staged schedule), captioned "made with Nave · [date] · [time spent]".
-- [ ] **Proof wall in #proof** — 3–4 published shorts with visible view counts + dated analytics of the 100k+ organic run (paid-amplification disclosure if the ~500k run appears).
-- [ ] **Founder headshot** — real photo or workspace still (placeholder box in #founder).
-- [ ] **VSL** — drops into `#vsl-slot` (set `data-state="vsl"`); the terminal demo becomes the poster frame.
-
-## Repo (infinitx-hq/nave) fixes before launch
-
-- [ ] L11 + L56 "30 minutes" → "about an hour".
-- [ ] L8–9 "while you sleep" → review-then-ship framing.
-- [ ] L12 "no monthly tool credits, no vendor that can throttle you" → "no middleman markup — you pay tool vendors directly."
-- [ ] Keys language everywhere = "AssemblyAI, Zernio, optional OpenAI + xAI" (KIE.ai is NOT in the env surface).
+- [ ] Playbook PDF exists (`data/companies/infinitx/offers/content-engine/launch/lead-magnet-playbook.pdf`) — **retitle cover to "...with Claude Code"** to match the page promise, host at a direct link, wire as Kit incentive.
+- [ ] Vault delivery: bundle playbook + Claude Code guide EN/ES links into the delivery email.
+- [ ] 3 VSLs (see wiring). 
+- [ ] Founder headshot (nave.html placeholder). 
+- [ ] Artifacts row screenshots (nave.html #how TODO).
+- [ ] Proof wall assets (100k analytics, published shorts) — nave.html has chips only today.
 
 ## Legal
 
-- [ ] /guarantee.html, /terms.html, /privacy.html are DRAFTS — updated for the 1:1 install + phone capture, but still need counsel review, bracketed placeholders filled, dates set.
-- [ ] All three must be live before any paid traffic.
+- [ ] /guarantee /terms /privacy — drafts updated for 1:1 install + phone capture + Content OS naming; still need counsel, placeholders, dates.
+- [ ] All three live before any paid traffic.
