@@ -1,47 +1,53 @@
 # Nave Offer Page — Pre-Launch Checklist
 
-Internal — not page copy. Produced by the offer-page build (2026-06-10), from the adversarially-verified copy pass. Every item below is a decision or wiring task gating launch. Items marked **(Enrique's call)** need his explicit sign-off.
+Internal — not page copy. Rebuilt 2026-06-10 after Enrique locked the funnel shape: free playbook capture first (email + required phone) → $89 template → $397 live 1:1 install (community included) → custom build $2,500–$7,500. Items marked **(Enrique's call)** need his explicit sign-off.
 
-## Wiring (the page is live the moment these 3 URLs exist)
+## Funnel decisions LOCKED today (2026-06-10, Enrique)
+
+- Template = **$89, no discount framing** (the "$249 → $85" idea was dropped in favor of the locked $89).
+- $397 = **live 1:1 install hour** (replaces the group cohort), stack anchored at **$1,297** (sums exactly: 89+300+297+297+197+117), **founding price → $497 after the founding window** (this is a real commitment — the price MUST actually go to $497, or the line comes off the page).
+- Community + weekly call = **$397+ only**. $89 buyers get bounded Loom support, no community.
+- Capture = **email + required phone** on both playbook forms.
+- Custom Content OS = **one-time build, $2,500–$7,500**, contact form, scoped on a call.
+- No later-member community price printed anywhere (still uncommitted).
+
+## Wiring (the page is live the moment these exist)
 
 Edit the `NAVE_LINKS` block at the bottom of `index.html`:
 
-- [ ] `BOOK` — apply+book URL for the Founding Build Cohort (Cal.com event with required qualify questions, or Tally form → calendar). Until set, Apply buttons route to the email capture with a "first in line" note.
+- [ ] `BOOK` — Cal.com booking URL for the 1:1 install hour ($397). Until set, install buttons route to the playbook capture with a "first in line" note.
 - [ ] `BUY` + `BUY_FULFILLMENT` — Stripe Payment Link (or Gumroad) for The Template $89 **plus** automated delivery (GitHub invite or release zip). The buy button may not ship before the fulfillment line is true (redteam `no-checkout-infra`). Until both set, the button stays "Join the template waitlist."
-- [ ] `NEWSLETTER_FORM_ACTION` — Kit (ConvertKit) form action for Mission Control (per `launch/lead-magnet-funnel.md`, Kit over Beehiiv).
+- [ ] `PLAYBOOK_FORM_ACTION` — Kit (ConvertKit) form action for the playbook capture. The form posts `email_address` + `fields[phone]` — create a `phone` custom field in Kit and confirm the field name matches. Hook the instant-delivery email + 6-email nurture from `launch/lead-magnet-funnel.md` (update email #5/#6 copy: no cohort, 1:1 install).
+- [ ] `CUSTOM_FORM_ACTION` — endpoint for the custom-build request form (Tally / Formspree). `''` = mailto fallback via CONTACT_EMAIL.
 - [ ] `CONTACT_EMAIL` — public support email; also replaces `[support email]` in /guarantee, /terms, /privacy.
 
-## Decisions (Enrique's call)
+## Decisions still open (Enrique's call)
 
-1. **Cohort cap:** "12 seats" is a placeholder — set the real number.
-2. **Guarantee window:** 30 days = suggested default; "up to 3 live screen-share sessions" in /guarantee = draft count.
-3. **$89-credits-toward-$397 up-path:** strongly recommended by the cannibalization audit (turns the side door into a ladder). Currently OFF (HTML comment in #template). Approve to ship.
-4. **CTA verb:** "Apply for the Founding Build Cohort" ships. If no real 2-minute qualification step exists behind the BOOK link, switch the verb to "Book your seat."
-5. **Tiempo naming:** page currently renders the safe fallback ("a soccer-club client"). Flip to "Tiempo Soccer" everywhere only with Fernando's permission on file (receipts chip + founder block + proof wall).
-6. **Constructed-phrase toggles (all OFF by default):** footer "Own it."; crew "Your ship." pun; the long offer-name descriptor. Bare "The Founding Build Cohort" is the redteam-sanctioned form that ships.
-7. **Later-member community rate:** UNCOMMITTED — no number prints anywhere ("the rate goes up"). Sign off a number before printing one.
-8. **Founding-window boundary:** "closes when cohort 1 ships" = suggested trigger; confirm or set a date.
-9. **Update tiering:** cohort "lifetime priority updates" vs template "12 months" — sign off, or delete stack line 06 and rebuild the $200 elsewhere (then re-verify the printed total equals the sum).
-10. **Template support bound:** "up to 3 Loom replies / 30 days" = draft numbers, but the bound itself is mandatory (an unbounded promise cannibalizes the cohort).
-11. **DFY anchor claim:** "real client work runs through it today" is safe at one client. Say "a few clients" only with 2+ and receipts.
-12. **Swipe file count:** fill the real N before launch; no invented count.
+1. **Founding-window boundary:** what closes the $397 window — a date, or N installs delivered? Confirm the trigger before launch ("when the founding window closes" prints now, undefined).
+2. **Guarantee window:** 30 days from install session = suggested default; "as many rounds as it takes" in /guarantee = draft language.
+3. **$89-credits-toward-$397 up-path:** still recommended by the cannibalization audit. Currently OFF (HTML comment in #template). Approve to ship.
+4. **Tiempo naming:** page renders the safe fallback ("real client work"). Name "Tiempo Soccer" only with Fernando's permission on file.
+5. **Update tiering:** install "lifetime priority updates" ($117 stack line) vs template "12 months" — sign off, or rebuild the stack (re-verify printed total = sum).
+6. **Template support bound:** "up to 3 Loom replies / 30 days" = draft numbers; the bound itself is mandatory.
+7. **Swipe file / Format Studio bonuses:** REMOVED from the $397 stack in the rebuild (old lines 07/08). Re-add only with real counts, and re-sum the stack if so.
+8. **SMS use:** phone is now required at opt-in. Decide what phone is actually FOR (SMS sequence? call-backs?) and make /privacy + the consent microcopy match. Until an SMS motion exists, do not text the list.
 
 ## Content to produce
 
-- [ ] **Artifacts row in #how** — three REAL screenshots (finished short with captions, carousel frame, staged schedule view), captioned "made with Nave · [date] · [time spent]". HTML comment marks the slot.
-- [ ] **Proof wall in #proof** — 3–4 published shorts with visible view counts + dated analytics of the 100k+ organic run. If the ~500k run appears: "(with paid amplification behind it)" in the same caption.
-- [ ] **Founder headshot** — real photo or workspace still (placeholder box marked in #founder).
-- [ ] **VSL** — drops into `#vsl-slot` (set `data-state="vsl"`); the terminal demo becomes the poster frame. Zero layout shift by design.
+- [ ] **The playbook PDF is already built** — `data/companies/infinitx/offers/content-engine/launch/lead-magnet-playbook.pdf`. Host it at a direct link + wire as Kit's incentive email.
+- [ ] **Artifacts row in #how** — three REAL screenshots (finished short, carousel frame, staged schedule), captioned "made with Nave · [date] · [time spent]".
+- [ ] **Proof wall in #proof** — 3–4 published shorts with visible view counts + dated analytics of the 100k+ organic run (paid-amplification disclosure if the ~500k run appears).
+- [ ] **Founder headshot** — real photo or workspace still (placeholder box in #founder).
+- [ ] **VSL** — drops into `#vsl-slot` (set `data-state="vsl"`); the terminal demo becomes the poster frame.
 
 ## Repo (infinitx-hq/nave) fixes before launch
 
-The substrate copy of the README was already corrected (keys story). The SHIPPED repo needs the same plus:
 - [ ] L11 + L56 "30 minutes" → "about an hour".
 - [ ] L8–9 "while you sleep" → review-then-ship framing.
-- [ ] L12 "no monthly tool credits, no vendor that can throttle you" → "no middleman markup — you pay tool vendors directly." Zero unqualified no-reprice/no-throttle/no-shutoff claims may ship.
-- [ ] Keys language everywhere = "AssemblyAI, Zernio, optional OpenAI + xAI" (KIE.ai is NOT in the env surface — page ships the verified list; reconcile PLAYBOOK if KIE lands later).
+- [ ] L12 "no monthly tool credits, no vendor that can throttle you" → "no middleman markup — you pay tool vendors directly."
+- [ ] Keys language everywhere = "AssemblyAI, Zernio, optional OpenAI + xAI" (KIE.ai is NOT in the env surface).
 
 ## Legal
 
-- [ ] /guarantee.html, /terms.html, /privacy.html are DRAFTS — review (counsel for the liability + guarantee-precedence clauses), fill bracketed placeholders, set dates.
+- [ ] /guarantee.html, /terms.html, /privacy.html are DRAFTS — updated for the 1:1 install + phone capture, but still need counsel review, bracketed placeholders filled, dates set.
 - [ ] All three must be live before any paid traffic.

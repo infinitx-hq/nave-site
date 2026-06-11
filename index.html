@@ -48,8 +48,9 @@
       "url": "https://nave.infinitxai.com/",
       "description": "Nave is a Claude Code template that installs a complete content department on your machine. One footage drop in and an 8-member crew of brand-tuned agents produces a month of finished, on-brand content — clips, carousels, posts, and a multi-platform schedule staged behind your approval. You own the system; it runs on your own Claude Code subscription.",
       "offers": [
-        { "@type": "Offer", "name": "The Founding Build Cohort — Nave, installed with you, live", "price": "397", "priceCurrency": "USD", "description": "Live group install workshop (capped for quality) + the full template + your first month of content produced together + founding community access + personal Loom support + the Get-Running Guarantee: it runs on your machine or your money back." },
-        { "@type": "Offer", "name": "The Template", "price": "89", "priceCurrency": "USD", "description": "The full Nave repo, self-serve: the 8-member crew, self-verifying install scripts, docs, and bounded install support." }
+        { "@type": "Offer", "name": "Nave, installed with you — live 1:1 install hour", "price": "397", "priceCurrency": "USD", "description": "A live 1:1 session: the full template installed on your machine, keys placed, a real render verified, brand setup and your first month's run kicked off together. Includes the founding community + weekly call, personal Loom support, and the Get-Running Guarantee: it runs on your machine or your money back. Founding price — $497 after the founding window." },
+        { "@type": "Offer", "name": "The Template", "price": "89", "priceCurrency": "USD", "description": "The full Nave repo, self-serve: the 8-member crew, self-verifying install scripts, docs, and bounded install support." },
+        { "@type": "AggregateOffer", "name": "Custom Content OS build", "lowPrice": "2500", "highPrice": "7500", "priceCurrency": "USD", "description": "A custom content operating system scoped to your business — formats, brand, machines, team training. One-time build, scoped on a call." }
       ],
       "publisher": { "@id": "https://nave.infinitxai.com/#org" }
     },
@@ -59,8 +60,8 @@
         { "@type": "Question", "name": "Do I need an Anthropic API key to run Nave?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic API key, ever. You bring your own keys only for the tools it orchestrates: AssemblyAI (transcription) and Zernio (publishing + DM automation), plus optional OpenAI and xAI keys for deep research. You pay that usage directly to those vendors. No markup." } },
         { "@type": "Question", "name": "Which Claude plan do I need for Nave?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Max ($100/mo and up) is the recommended plan for full month-runs. A multi-agent monthly run can exhaust a $20 Pro plan's 5-hour usage window in under an hour, and that pool is shared with everything else you use Claude for. On Pro, run formats one at a time and expect the month to take a few sittings." } },
         { "@type": "Question", "name": "What does 'a month of content in an hour' really mean?", "acceptedAnswer": { "@type": "Answer", "text": "One-time install first, then about an hour of your hands-on time per month after that. The crew does the production. Your hour is the review: you check the staged queue and say 'schedule it.' Nothing publishes without your approval." } },
-        { "@type": "Question", "name": "Is the Nave install cohort 1:1?", "acceptedAnswer": { "@type": "Answer", "text": "No — it's a live group cohort, deliberately. Everyone installs together; the same errors get fixed in front of everyone. The 1:1 layer is the Loom support: send your problem and your screen, and you get a custom walkthrough within 2 business days, as many rounds as it takes inside your guarantee window." } },
-        { "@type": "Question", "name": "What are Nave's guarantees and refunds?", "acceptedAnswer": { "@type": "Answer", "text": "The $397 cohort carries the Get-Running Guarantee: Nave runs on your machine within 30 days of your cohort date, or we make it run, or you get your money back. The $89 template carries bounded install support instead (async Loom replies), with no cash refund — it's a forkable repo, and once cloned it can't be returned." } },
+        { "@type": "Question", "name": "Is the Nave install 1:1?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — one hour, live, on your machine. The template is installed, your keys are placed, a real render is verified, and your brand setup plus your first month's run are kicked off together on the call. After the session: the weekly community call plus personal Loom support — a custom walkthrough within 2 business days." } },
+        { "@type": "Question", "name": "What are Nave's guarantees and refunds?", "acceptedAnswer": { "@type": "Answer", "text": "The $397 install carries the Get-Running Guarantee: Nave runs on your machine within 30 days of your install session, or we make it run, or you get your money back. The $89 template carries bounded install support instead (async Loom replies), with no cash refund — it's a forkable repo, and once cloned it can't be returned." } },
         { "@type": "Question", "name": "What do I own with Nave, and what can still change on me?", "acceptedAnswer": { "@type": "Answer", "text": "You own the machine: orchestration, config, agents, the local pipeline, the repo on your disk. You bring your own metered keys, so you pay cost rather than markup, and you can swap any single tool without re-buying the system. What can still change: your Claude subscription (metered, usage caps) and the tool vendors you pay directly." } },
         { "@type": "Question", "name": "What machine do I need to run Nave?", "acceptedAnswer": { "@type": "Answer", "text": "Windows, macOS, or Linux. Under the hood: Node 20+, Python 3.12, ffmpeg, yt-dlp, jq — the installer checks and installs them for you. It is safe to re-run and has a check-only mode. macOS needs Homebrew already installed." } }
       ]
@@ -273,6 +274,22 @@
   .final .disclaimer{margin-top:34px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.04em;color:var(--cream-50)}
   .otherdoor{margin-top:18px;font-size:14px;color:var(--cream-50)}
   .otherdoor a{color:var(--ink)}
+  /* lead magnet capture (hero + bottom) */
+  .lm{padding:22px 24px;max-width:480px;margin-top:4px}
+  .lm .lmtitle{font-size:16px;color:var(--cream-72);margin:12px 0 6px;line-height:1.5}
+  .lm .lmsub{font-size:13.5px;color:var(--cream-50);margin:0 0 16px}
+  form.capture.stacked{flex-direction:column;gap:10px}
+  form.capture.stacked input{min-width:0;width:100%;border:1px solid var(--line)}
+  form.capture.stacked .btn{width:100%}
+  .router{margin-top:20px;font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:var(--cream-50)}
+  .router a{color:var(--ink)}
+  /* custom build form */
+  .cform{margin:40px auto 0;max-width:560px;padding:30px 34px;text-align:left}
+  .cform .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+  .cform input,.cform textarea{width:100%;background:var(--glass);border:1px solid var(--line);color:var(--cream);padding:13px 16px;font-size:14px;font-family:'DM Mono',monospace}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--line-strong)}
+  .cform textarea{min-height:96px;resize:vertical;margin-bottom:14px}
+  @media(max-width:640px){.cform .row{grid-template-columns:1fr}}
   /* newsletter */
   .nl{border-top:1px solid var(--line);padding:52px 0}
   .nlgrid{display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap}
@@ -327,14 +344,14 @@
     <a href="#how">How</a>
     <a href="#offer">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a class="btn" href="#offer">Apply<span class="navlong"> · Founding Cohort</span></a>
+    <a class="btn" href="#playbook">Free playbook<span class="navlong"> · the full method</span></a>
   </div>
 </nav></div></header>
 
 <!-- Sticky CTA bar (appears after 50% scroll) -->
 <div id="ctabar">
-  <span class="bartext">$397 once · runs or refunded · capped for quality</span>
-  <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
+  <span class="bartext">$397 once · runs or refunded · limited install slots</span>
+  <a class="btn" data-cta="BOOK" href="#offer">Get Nave installed with you</a>
 </div>
 
 <main>
@@ -347,11 +364,19 @@
       <div>
         <h1>A month<br>of content.<br><i>In about an hour.</i></h1>
         <p class="lede">Drop your footage. An 8-member crew you <b>own</b> cuts the clips, writes the posts, builds the carousels — staged behind your approval. <b>One-time install, then ~1&nbsp;hour a month.</b></p>
-        <div class="heroctas">
-          <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-          <a class="chrome dim" href="#how" style="letter-spacing:.14em">↓ How it works</a>
+        <div class="lm pane" id="playbook">
+          <div class="lmhead"><span class="chrome">Free — the full method</span></div>
+          <p class="lmtitle">Start with the playbook: <b>How I Make a Month of Quality Content in a Day.</b></p>
+          <p class="lmsub">The real steps, no gatekeeping. Even if you never buy anything, you walk away able to do this yourself.</p>
+          <form class="capture stacked" data-capture-form action="#" method="post">
+            <input type="email" name="email_address" placeholder="you@email.com" aria-label="Email" required>
+            <input type="tel" name="fields[phone]" placeholder="phone" aria-label="Phone" required>
+            <button class="btn" type="submit">Send me the playbook</button>
+          </form>
+          <span class="micro">Lands in your inbox right away. Then a short series on running the method — unsubscribe anytime.</span>
+          <span class="pending-note" data-pending-note>Delivery wiring goes live this week — your email still puts you first in line.</span>
         </div>
-        <span class="pending-note" data-pending-note>Applications open shortly — leave your email below and you're first in line.</span>
+        <div class="router">Know what you need already? <a href="#template">The template, $89</a> · <a href="#offer">Installed with you, $397</a> · <a href="#custom">Built for you</a></div>
         <div class="trustline">
           <span>100k+ organic views in ~2 months</span>
           <span>Real client work runs on it today</span>
@@ -453,48 +478,46 @@
 <section id="offer" style="text-align:center">
   <div class="wrap">
     <span class="eyebrow">004 — The offer</span>
-    <h2>The Founding Build Cohort.<br><i>Installed live, with you, until it runs.</i></h2>
-    <p class="sub">A live group workshop. We install together, render together, and start your first month — on your machine.</p>
+    <h2>Nave, installed with you.<br><i>One hour, live, on your machine.</i></h2>
+    <p class="sub">Just the two of us: we install together, verify a real render, set up your brand, and kick off your first month before we hang up.</p>
 
-    <p class="anchorline">For scale: the done-for-you version of this department is <b>~$2,500 a month</b> — a single freelance editor alone runs $1,500+. Nave installs the same machine <b>once</b>, and then it's yours.</p>
+    <p class="anchorline">For scale: having this department <b>built custom for your business</b> runs $2,500–$7,500. A single freelance editor alone is $1,500+ a month. The install puts the same machine on your desk <b>once</b>, and then it's yours.</p>
 
     <div class="manifest pane">
-      <div class="mhead"><span class="t">What's in the cohort</span><span class="s">standalone value</span></div>
+      <div class="mhead"><span class="t">What you get</span><span class="s">standalone value</span></div>
       <table>
         <tr><td>01</td><td><b>The Nave template</b> — the full 8-member crew repo</td><td>$89</td></tr>
-        <tr><td>02</td><td><b>Done-with-you install</b> — live group workshop, capped. We build until it runs on your machine</td><td>$397</td></tr>
-        <tr><td>03</td><td><b>Your first month of content</b>, produced together</td><td>$500</td></tr>
-        <tr><td>04</td><td><b>Founding community + weekly build-along</b> — free through the founding window, then optional $89/mo, locked for life. Later members pay more</td><td>$297</td></tr>
-        <tr><td>05</td><td><b>Personal Loom support</b> — your problem, your screen, within 2 business days</td><td>$300</td></tr>
-        <tr><td>06</td><td><b>Lifetime priority engine updates</b> (template alone: 12 months)</td><td>$200</td></tr>
-        <tr><td>07</td><td><b>Bonus: Format Studio design library</b></td><td>$97</td></tr>
-        <tr><td>08</td><td><b>Bonus: the swipe file</b> behind the 100k+ organic run</td><td>$97</td></tr>
-        <tr class="total"><td></td><td>Total standalone value</td><td>$1,977</td></tr>
+        <tr><td>02</td><td><b>Live 1:1 install hour</b> — your machine, your keys placed, a real render verified before we hang up</td><td>$300</td></tr>
+        <tr><td>03</td><td><b>Brand setup + your first month's run</b>, kicked off together on the call</td><td>$297</td></tr>
+        <tr><td>04</td><td><b>Founding community + weekly call with me</b> — bring your questions, I answer them live</td><td>$297</td></tr>
+        <tr><td>05</td><td><b>Personal Loom support</b> — your problem, your screen, within 2 business days</td><td>$197</td></tr>
+        <tr><td>06</td><td><b>Lifetime priority engine updates</b> (template alone: 12 months)</td><td>$117</td></tr>
+        <tr class="total"><td></td><td>Total standalone value</td><td>$1,297</td></tr>
       </table>
     </div>
-    <p class="stacknote">Nothing recurring is billed at purchase. The community is optional after the founding window — cancel anytime.</p>
+    <p class="stacknote">Nothing recurring is billed — $397 covers all of it, once. Community access is part of the founding deal.</p>
 
     <div class="reveal">
-      <span class="was">$1,977</span>
-      <div class="now">$397<small>one-time</small></div>
-      <p class="floor">The lowest the cohort will ever be sold for. Less than one month of a single freelance editor — for the whole department, installed.</p>
+      <span class="was">$1,297</span>
+      <div class="now">$397<small>one-time founding price</small></div>
+      <p class="floor">When the founding window closes, this goes to $497. $397 is the lowest it will ever be — less than a quarter of what one freelance editor costs you every month.</p>
     </div>
 
     <div class="ctablock">
-      <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
-      <span class="micro">$397 once · runs or refunded · capped for quality</span>
-      <p class="mechanics">Apply in 2 minutes → seat + cohort date confirmed → pay the $397 founding price.</p>
-      <span class="pending-note" data-pending-note>Applications open shortly — leave your email below and you're first in line.</span>
+      <a class="btn" data-cta="BOOK" href="#offer">Book your install — $397</a>
+      <span class="micro">$397 once · runs or refunded · limited install slots</span>
+      <p class="mechanics">Book your hour → we install + render live → you leave already producing month one.</p>
+      <span class="pending-note" data-pending-note>Booking opens shortly — grab the free playbook above and you're first in line.</span>
     </div>
 
     <div class="gbox pane" id="guarantee">
       <h3>The Get-Running Guarantee</h3>
       <p class="promise">Nave runs on your machine, or we make it run. If we can't, you get your money back.</p>
-      <p class="terms">30 days from your cohort date. "Runs" = the installer verifies on your machine and your first piece renders from your own footage. We fix it with you — screen-shares and Looms, as many rounds as it takes inside the window. If it still doesn't run: full refund, no hoops. <a href="/guarantee.html">Read the full written terms →</a></p>
-      <p class="tier">Money-back applies to the $397 cohort. The $89 template carries bounded install support instead — <a href="#template">here's why</a>.</p>
+      <p class="terms">30 days from your install session. "Runs" = the installer verifies on your machine and your first piece renders from your own footage. We fix it with you — screen-shares and Looms, as many rounds as it takes inside the window. If it still doesn't run: full refund, no hoops. <a href="/guarantee.html">Read the full written terms →</a></p>
+      <p class="tier">Money-back applies to the $397 install. The $89 template carries bounded install support instead — <a href="#template">here's why</a>.</p>
     </div>
 
-    <p class="cohortline"><b>Live group build</b> — on purpose; same errors, fixed in front of everyone<br><b>Capped at 12 seats</b> — a quality cap, not a countdown · <b>No timers</b> — when the founding window closes, the price changes<br><i>Still stuck after the workshop?</i> Personal Loom support inside your guarantee window. The first testimonials on this page will be yours.</p>
+    <p class="cohortline"><b>Live 1:1, on your machine</b> — not a course, not a group webinar<br><b>Limited slots</b> — each install is a real hour on my calendar, not a fake countdown ·<b>No timers</b> — when the founding window closes, the price goes to $497<br><i>Stuck after your session?</i> Personal Loom support inside your guarantee window. The first testimonials on this page will be yours.</p>
   </div>
 </section>
 
@@ -509,18 +532,47 @@
       <div class="name">The Template</div>
       <div class="price">$89 <small>/ once</small></div>
       <ul>
-        <li>The same full 8-member crew repo the cohort installs</li>
+        <li>The same full 8-member crew repo the live install puts on your machine</li>
         <li>Self-verifying install scripts + docs (Windows · macOS · Linux)</li>
         <li>Engine updates for 12 months</li>
       </ul>
-      <div class="support"><b style="color:var(--cream)">Support is service, not cash:</b> hit a wall, send the error, get an async Loom walkthrough — up to 3 replies within 30 days. No cash refunds: it's a forkable repo, and once cloned it can't be returned. <a href="/terms.html">Refund policy →</a> The only discount on this page is the cohort.</div>
+      <div class="support"><b style="color:var(--cream)">Support is service, not cash:</b> hit a wall, send the error, get an async Loom walkthrough — up to 3 replies within 30 days. No cash refunds: it's a forkable repo, and once cloned it can't be returned. <a href="/terms.html">Refund policy →</a> The only discount on this page is the founding price on the install.</div>
       <div class="ctablock" style="text-align:left;margin-top:20px">
-        <a class="btn btn-ghost" data-cta="BUY" href="#mission-control">Join the template waitlist</a>
+        <a class="btn btn-ghost" data-cta="BUY" href="#playbook">Join the template waitlist</a>
         <span class="micro" data-buy-fulfillment></span>
       </div>
     </div>
     <!-- TODO(launch checklist #5, needs sign-off): the up-path line —
-         "Buy the template, want the cohort later? Your $89 counts toward the $397 seat." -->
+         "Buy the template, want the install later? Your $89 counts toward the $397 session." -->
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<section id="custom" style="text-align:center">
+  <div class="wrap">
+    <span class="eyebrow">006 — Done for you</span>
+    <h2>Don't want to run it at all?<br><i>We build it for you.</i></h2>
+    <p class="sub">A custom Content OS scoped to your business — your formats, your brand, your machines, your team trained to run it. Built by the person who built Nave.</p>
+    <p class="anchorline">Custom builds run <b>$2,500–$7,500 one-time</b>, depending on scope. We figure out the right shape on a call — no obligation, and if the $397 install is actually what you need, I'll tell you that instead.</p>
+    <div class="cform pane">
+      <form id="customform" action="#" method="post">
+        <div class="row">
+          <input type="text" name="name" placeholder="your name" aria-label="Name" required>
+          <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
+        </div>
+        <div class="row">
+          <input type="tel" name="phone" placeholder="phone" aria-label="Phone" required>
+          <input type="text" name="company" placeholder="business / brand" aria-label="Business or brand" required>
+        </div>
+        <textarea name="about" placeholder="what do you publish today, and where? what should the system take off your plate?" aria-label="About your content" required></textarea>
+        <div class="ctablock" style="text-align:left;margin-top:0">
+          <button class="btn" type="submit">Request a custom build</button>
+          <span class="micro">Scoped on a call · $2,500–$7,500 one-time · I reply personally</span>
+          <span class="pending-note" data-custom-note style="display:none"></span>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -528,18 +580,18 @@
 
 <section id="faq" style="text-align:center">
   <div class="wrap">
-    <span class="eyebrow">006 — FAQ</span>
+    <span class="eyebrow">007 — FAQ</span>
     <h2>Real questions. <i>Straight answers.</i></h2>
     <div class="faqwrap">
       <details open><summary><span class="qn">01</span><span class="q">Do I need an Anthropic API key?</span></summary><p class="a">No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic API key, ever. You bring keys only for the tools it orchestrates: AssemblyAI (transcription) and Zernio (publishing + DM automation), plus optional OpenAI and xAI for deep research. You pay those vendors directly. No markup.</p></details>
       <details><summary><span class="qn">02</span><span class="q">Which Claude plan do I need?</span></summary><p class="a">Claude Max ($100/mo+) is recommended for full month-runs. A multi-agent run can exhaust a $20 Pro plan's 5-hour window in under an hour, and that pool is shared with everything else you use Claude for. On Pro: run formats one at a time, expect a few sittings.</p></details>
-      <details><summary><span class="qn">03</span><span class="q">What does "a month of content in an hour" really mean?</span></summary><p class="a">One-time install first (that's the cohort), then about an hour of your hands-on time per month. The crew produces; your hour is the review. You check the staged queue and say "schedule it." Nothing publishes without your approval.</p></details>
-      <details><summary><span class="qn">04</span><span class="q">Is the cohort 1:1?</span></summary><p class="a">No — it's a live group cohort, deliberately. Same errors, fixed in front of everyone. The 1:1 layer is Loom support: your problem, your screen, a custom walkthrough within 2 business days, as many rounds as it takes inside your guarantee window.</p></details>
-      <details><summary><span class="qn">05</span><span class="q">What are the guarantees and refunds?</span></summary><p class="a">The $397 cohort: Nave runs on your machine within 30 days, or we make it run, or your money back — <a href="/guarantee.html">written terms</a>. The $89 template: bounded install support (up to 3 Loom replies in 30 days), no cash refund — it's a forkable repo; once cloned it can't be returned. <a href="/terms.html">Refund policy</a>.</p></details>
+      <details><summary><span class="qn">03</span><span class="q">What does "a month of content in an hour" really mean?</span></summary><p class="a">One-time install first (that's the live session), then about an hour of your hands-on time per month. The crew produces; your hour is the review. You check the staged queue and say "schedule it." Nothing publishes without your approval.</p></details>
+      <details><summary><span class="qn">04</span><span class="q">Is the install really 1:1?</span></summary><p class="a">Yes — one hour, live, just you and me, on your machine. We install, place your keys, verify a real render, set up your brand, and kick off your first month's run before we hang up. After the session: the weekly community call plus Loom support — your problem, your screen, a custom walkthrough within 2 business days.</p></details>
+      <details><summary><span class="qn">05</span><span class="q">What are the guarantees and refunds?</span></summary><p class="a">The $397 install: Nave runs on your machine within 30 days of your session, or we make it run, or your money back — <a href="/guarantee.html">written terms</a>. The $89 template: bounded install support (up to 3 Loom replies in 30 days), no cash refund — it's a forkable repo; once cloned it can't be returned. <a href="/terms.html">Refund policy</a>.</p></details>
       <details><summary><span class="qn">06</span><span class="q">What do I own — and what can still change on me?</span></summary><p class="a">You own the machine: orchestration, config, agents, the local pipeline, the repo on your disk. You pay cost instead of markup and can swap any single tool without re-buying the system. What can still change: your Claude subscription (metered, usage caps) and the tool vendors you pay directly. Ownership means no middleman — not "no caps exist anywhere."</p></details>
       <details><summary><span class="qn">07</span><span class="q">What machine do I need?</span></summary><p class="a">Windows, macOS, or Linux. Under the hood: Node 20+, Python 3.12, ffmpeg, yt-dlp, jq — the installer checks and installs them for you, is safe to re-run, and has a check-only mode. macOS needs Homebrew; non-Debian Linux isn't auto-handled yet.</p></details>
-      <details><summary><span class="qn">08</span><span class="q">Who should NOT buy Nave?</span></summary><p class="a">You, if: you don't film and won't start (Nave needs your footage — you drive, the system supports you) · you want 100% hands-off (nothing posts without your review) · you're on Claude Pro and won't upgrade (works, just slower) · you want someone else to run it all — that's the ~$2,500/mo done-for-you department; reach out and we'll point you to it.</p></details>
-      <details><summary><span class="qn">09</span><span class="q">What happens after the founding window?</span></summary><p class="a">Founding members keep the $89/mo community rate for life; later members pay more. The $397 founding price goes up too — the window closes when cohort 1 ships, and $397 is the lowest the cohort will ever be sold for.</p></details>
+      <details><summary><span class="qn">08</span><span class="q">Who should NOT buy Nave?</span></summary><p class="a">You, if: you don't film and won't start (Nave needs your footage — you drive, the system supports you) · you want 100% hands-off (nothing posts without your review) · you're on Claude Pro and won't upgrade (works, just slower) · you want it built and tuned for your business without touching it — that's the <a href="#custom">custom build, $2,500–$7,500 one-time</a>.</p></details>
+      <details><summary><span class="qn">09</span><span class="q">What happens after the founding window?</span></summary><p class="a">The $397 founding price goes to $497 when the founding window closes — $397 is the lowest the install will ever be sold for. Founding members keep their community access; whatever later members pay for it, it will be more than you did.</p></details>
     </div>
   </div>
 </section>
@@ -549,27 +601,28 @@
 <section class="final" id="close">
   <div class="wrap" style="position:relative">
     <div class="glitchL" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="pre">$397 once · runs or refunded · capped for quality</div>
+    <div class="pre">$397 once · runs or refunded · limited install slots</div>
     <h2>One footage drop in.<br><i>A month of content out.</i></h2>
     <div class="ctablock">
-      <a class="btn" data-cta="BOOK" href="#offer">Apply for the Founding Build Cohort</a>
+      <a class="btn" data-cta="BOOK" href="#offer">Get Nave installed with you — $397</a>
     </div>
-    <div class="otherdoor">Just want the repo? <a href="#template">The Template — $89</a></div>
+    <div class="otherdoor">Just want the repo? <a href="#template">The Template — $89</a> · Want it built for you? <a href="#custom">Custom build</a></div>
     <p class="disclaimer">Results shown on this page are my own and my clients' — not typical, and not a guarantee.</p>
   </div>
 </section>
 
-<div class="nl" id="mission-control">
+<div class="nl" id="playbook-bottom">
   <div class="wrap">
     <div class="nlgrid">
       <div>
-        <h3>Not buying anything today? Take the build log.</h3>
-        <p><b>Mission Control</b> — what I built this week, how it's wired, what it did. Free, no gatekeeping.</p>
+        <h3>Leaving without the playbook?</h3>
+        <p><b>How I Make a Month of Quality Content in a Day</b> — the full method, free. Run it by hand forever if you want.</p>
       </div>
-      <form class="capture" id="capture" action="#" method="post">
-        <!-- Wire to the Kit (ConvertKit) form action via NAVE_LINKS.NEWSLETTER_FORM_ACTION below. -->
+      <form class="capture" data-capture-form action="#" method="post">
+        <!-- Wire to the Kit (ConvertKit) form action via NAVE_LINKS.PLAYBOOK_FORM_ACTION below. -->
         <input type="email" name="email_address" placeholder="you@email.com" aria-label="Email" required>
-        <button class="btn" type="submit">Get Mission Control</button>
+        <input type="tel" name="fields[phone]" placeholder="phone" aria-label="Phone" required>
+        <button class="btn" type="submit">Send me the playbook</button>
       </form>
     </div>
     <span class="pending-note" data-capture-note style="display:none"></span>
@@ -598,7 +651,8 @@
       <div class="colh">Company</div>
       <a href="https://infinitxai.com/">INFINITX</a>
       <a href="#founder">Enrique Marquez</a>
-      <a href="#mission-control">Mission Control</a>
+      <a href="#playbook">Free playbook</a>
+      <a href="#custom">Custom builds</a>
     </div>
     <div>
       <div class="colh">Legal</div>
@@ -614,15 +668,17 @@
 /* ============================================================
    NAVE_LINKS — the ONLY block to edit when wiring goes live.
    Leave a value '' and the page degrades honestly:
-   - BOOK '': apply buttons scroll to the email capture (first-in-line).
+   - BOOK '': install buttons scroll to the playbook capture (first-in-line).
    - BUY  '': template button stays "Join the template waitlist".
-   - NEWSLETTER_FORM_ACTION '': capture form falls back to CONTACT_EMAIL.
+   - PLAYBOOK_FORM_ACTION '': capture forms fall back to CONTACT_EMAIL.
+   - CUSTOM_FORM_ACTION '': custom-build form falls back to CONTACT_EMAIL.
    ============================================================ */
 const NAVE_LINKS = {
-  BOOK: '',                       // Cal.com / Tally apply+book URL for the Founding Build Cohort
+  BOOK: '',                       // Cal.com booking URL for the 1:1 install hour, $397
   BUY: '',                        // Stripe Payment Link (or Gumroad) for The Template, $89
   BUY_FULFILLMENT: '',            // e.g. 'Stripe checkout · automated GitHub invite within minutes' — required before BUY ships
-  NEWSLETTER_FORM_ACTION: '',     // Kit (ConvertKit) form action URL for Mission Control
+  PLAYBOOK_FORM_ACTION: '',       // Kit (ConvertKit) form action URL — playbook capture (email + phone custom field)
+  CUSTOM_FORM_ACTION: '',         // form endpoint for custom-build requests (Tally / Formspree); '' = mailto fallback
   CONTACT_EMAIL: ''               // public support email — also referenced by the legal pages
 };
 
@@ -631,7 +687,7 @@ const NAVE_LINKS = {
   const bookSet = !!NAVE_LINKS.BOOK;
   document.querySelectorAll('[data-cta="BOOK"]').forEach(a=>{
     if (bookSet){ a.href = NAVE_LINKS.BOOK; a.target = '_blank'; a.rel = 'noopener'; }
-    else { a.href = '#mission-control'; }
+    else { a.href = '#playbook'; }
   });
   if (!bookSet) document.querySelectorAll('[data-pending-note]').forEach(n=>{ n.style.display='block'; });
 
@@ -646,18 +702,40 @@ const NAVE_LINKS = {
     }
   }
 
-  const form = document.getElementById('capture');
-  if (form){
-    if (NAVE_LINKS.NEWSLETTER_FORM_ACTION){ form.action = NAVE_LINKS.NEWSLETTER_FORM_ACTION; form.method = 'post'; }
+  /* Playbook capture forms (hero + bottom) */
+  document.querySelectorAll('[data-capture-form]').forEach(form=>{
+    if (NAVE_LINKS.PLAYBOOK_FORM_ACTION){ form.action = NAVE_LINKS.PLAYBOOK_FORM_ACTION; form.method = 'post'; }
     else {
       form.addEventListener('submit', e=>{
         e.preventDefault();
-        const note = document.querySelector('[data-capture-note]');
-        const email = form.querySelector('input').value;
+        const email = form.querySelector('input[type="email"]').value;
         if (NAVE_LINKS.CONTACT_EMAIL){
-          location.href = 'mailto:' + NAVE_LINKS.CONTACT_EMAIL + '?subject=Mission%20Control%20%2B%20founding%20list&body=' + encodeURIComponent(email);
+          location.href = 'mailto:' + NAVE_LINKS.CONTACT_EMAIL + '?subject=Send%20me%20the%20playbook&body=' + encodeURIComponent(email);
+        } else {
+          const note = form.parentElement.querySelector('[data-capture-note], [data-pending-note]');
+          if (note){
+            note.textContent = 'Delivery wiring goes live this week — check back, or find Enrique on his channels in the meantime.';
+            note.style.display = 'block';
+          }
+        }
+      });
+    }
+  });
+
+  /* Custom-build request form */
+  const cform = document.getElementById('customform');
+  if (cform){
+    if (NAVE_LINKS.CUSTOM_FORM_ACTION){ cform.action = NAVE_LINKS.CUSTOM_FORM_ACTION; cform.method = 'post'; }
+    else {
+      cform.addEventListener('submit', e=>{
+        e.preventDefault();
+        const note = cform.querySelector('[data-custom-note]');
+        if (NAVE_LINKS.CONTACT_EMAIL){
+          const d = new FormData(cform);
+          const body = ['Name: '+d.get('name'),'Email: '+d.get('email'),'Phone: '+d.get('phone'),'Business: '+d.get('company'),'','About:',d.get('about')].join('\n');
+          location.href = 'mailto:' + NAVE_LINKS.CONTACT_EMAIL + '?subject=' + encodeURIComponent('Custom Content OS build request') + '&body=' + encodeURIComponent(body);
         } else if (note){
-          note.textContent = 'Capture wiring goes live this week — check back, or find Enrique on his channels in the meantime.';
+          note.textContent = 'Request wiring goes live this week — check back, or find Enrique on his channels in the meantime.';
           note.style.display = 'block';
         }
       });
