@@ -106,7 +106,11 @@
   .pcard { position: relative; background-color: rgba(15,21,17,.92); border: 2px solid rgba(31,224,122,.16);
     overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.5); }
   .pcard .tag { position: absolute; top: 14px; left: 16px; font-family: "DM Mono", monospace; font-size: 15px;
-    letter-spacing: .14em; text-transform: uppercase; color: rgba(240,235,222,.5); }
+    letter-spacing: .14em; text-transform: uppercase; color: rgba(240,235,222,.5); z-index: 2; }
+  .pcard .tag.real { color: #1FE07A; background-color: rgba(7,9,8,.78); padding: 5px 10px; top: 10px; left: 10px; }
+  .pc-short .ph { position: absolute; top: 12px; left: 63px; width: 130px; height: 231px;
+    border: 3px solid rgba(31,224,122,.55); object-fit: cover; }
+  .pc-fanout .full { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .pc-short .frame { position: absolute; top: 48px; left: 78px; width: 100px; height: 178px;
     border: 3px solid rgba(31,224,122,.55); }
   .pc-short .play { position: absolute; top: 116px; left: 113px; width: 0; height: 0;
@@ -271,14 +275,14 @@
         </div>
       </div>
       <div id="s3-grid">
-        <div class="pcard pc-short"><span class="tag">short</span><div class="frame"></div><div class="play"></div><div class="cap1"></div><div class="cap2"></div></div>
+        <div class="pcard pc-short"><span class="tag real">short · real</span><img class="ph" src="assets/real-short.jpg" alt=""></div>
         <div class="pcard pc-car"><span class="tag">carousel</span><div class="sq"></div><div class="sq2"></div><div class="dots"><i></i><i></i><i></i></div></div>
         <div class="pcard pc-post"><span class="tag">post</span><div class="ln l1"></div><div class="ln l2"></div><div class="ln l3"></div><div class="ln l4"></div><div class="hash">#buildfirst</div></div>
         <div class="pcard pc-thumb"><span class="tag">thumbnail</span><div class="big">1h</div><div class="sm">a month of content</div></div>
         <div class="pcard pc-guide"><span class="tag">guide</span><div class="pg"><i></i><i></i><i></i><i></i></div></div>
         <div class="pcard pc-stat"><span class="tag">stat</span><div class="n">500k+</div><div class="c">organic views</div></div>
         <div class="pcard pc-quote"><span class="tag">quote</span><div class="q">"</div><div class="ln l1"></div><div class="ln l2"></div></div>
-        <div class="pcard pc-clip"><span class="tag">edit</span><div class="tl t1"><i style="left:8%;width:30%"></i><i style="left:52%;width:22%"></i></div><div class="tl t2"><i style="left:20%;width:44%"></i></div><div class="tl t3"><i style="left:6%;width:18%"></i><i style="left:40%;width:36%"></i></div></div>
+        <div class="pcard pc-fanout"><span class="tag real">fan-out · real</span><img class="full" src="assets/real-fanout.jpg" alt=""></div>
         <div class="pcard pc-cal"><span class="tag">schedule</span>
           <div class="cell" style="top:58px;left:30px"></div><div class="cell" style="top:58px;left:80px"></div><div class="cell" style="top:58px;left:130px"></div><div class="cell" style="top:58px;left:180px"></div>
           <div class="cell" style="top:108px;left:30px"></div><div class="cell" style="top:108px;left:80px"></div><div class="cell" style="top:108px;left:130px"></div><div class="cell" style="top:108px;left:180px"></div>
@@ -322,7 +326,7 @@
         <div class="free">Free — the playbook</div>
         <div class="t">How I Make a Month of <i>Quality Content</i> in a Day</div>
         <div class="cc"><span>with</span><img src="assets/cc-dark-s5.svg" alt="Claude Code" style="height:24px;width:auto;display:block"></div>
-        <div class="vault">+ the resource vault — every guide, free</div>
+        <div class="vault">+ the vault: skills · agents · workflows · prompts</div>
       </div>
       <div id="s5-right">
         <div id="s5-h" class="serif">Start <i>free.</i></div>
