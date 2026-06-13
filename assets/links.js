@@ -28,24 +28,20 @@ const NAVE_LINKS = {
   });
   if (!NAVE_LINKS.BOOK) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
 
-  /* Playbook + vault opt-in forms */
+  /* Playbook + vault opt-in forms → capture, then advance to the qualifier (/apply).
+     Capture (Kit) wiring lands when PLAYBOOK_FORM_ACTION is set; until then the path
+     is still walkable — submit advances to /apply. */
   document.querySelectorAll('[data-capture-form]').forEach(function(form){
-    if (NAVE_LINKS.PLAYBOOK_FORM_ACTION){ form.action = NAVE_LINKS.PLAYBOOK_FORM_ACTION; form.method = 'post'; }
-    else {
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        var email = form.querySelector('input[type="email"]').value;
-        if (NAVE_LINKS.CONTACT_EMAIL){
-          location.href = 'mailto:' + NAVE_LINKS.CONTACT_EMAIL + '?subject=Send%20me%20the%20playbook&body=' + encodeURIComponent(email);
-        } else {
-          var note = form.parentElement.querySelector('[data-capture-note], [data-pending-note]');
-          if (note){
-            note.textContent = 'Delivery wiring goes live this week — check back, or find Enrique on his channels in the meantime.';
-            note.style.display = 'block';
-          }
-        }
-      });
-    }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var next = function(){ location.href = '/apply'; };
+      if (NAVE_LINKS.PLAYBOOK_FORM_ACTION){
+        var d = new FormData(form);
+        fetch(NAVE_LINKS.PLAYBOOK_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: d }).finally(next);
+      } else {
+        next();
+      }
+    });
   });
 
   /* VSL slots: data-vsl="INDEX|NAVE|CUSTOM" — when the URL exists, swap the poster for the embed */

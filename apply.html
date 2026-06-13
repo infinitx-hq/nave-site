@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Apply — Nave, the Content OS for Claude Code</title>
 <meta name="description" content="Two minutes of questions, and you land on exactly the right version of Nave: installed with you, or built for you.">
-<link rel="canonical" href="https://nave.infinitxai.com/apply.html">
+<link rel="canonical" href="https://nave.infinitxai.com/apply">
 <meta name="theme-color" content="#070908">
 <meta name="robots" content="noindex,follow">
 <link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
@@ -22,46 +22,56 @@
     <span class="w">Nave</span>
   </a>
   <div class="links">
-    <a href="index.html">Home</a>
+    <a href="/">Home</a>
   </div>
 </nav></div></header>
 
 <main>
 <section style="text-align:center;padding-top:72px">
   <div class="wrap">
-    <span class="eyebrow">Apply</span>
-    <h2 data-block="apply.h1">Tell me <i>what you publish.</i></h2>
-    <p class="sub" data-block="apply.sub">Two minutes of straight answers, then the fastest path to a month of content in 1 hour: the live install, or a custom build.</p>
+    <span class="eyebrow">2-minute fit check</span>
+    <h2 data-block="apply.h1">Find your fastest path to <i>a month of content in an hour.</i></h2>
+    <p class="sub" data-block="apply.sub">Three questions. They'll show you what's really eating your time — and the fastest way to hand it off. No call, no pitch.</p>
 
     <form class="quiz" id="applyform" action="#" method="post">
-      <div class="legend" data-block="apply.fields_legend">Where to reach you — no cold calls</div>
-      <div class="row">
-        <input type="text" name="name" placeholder="your name" aria-label="Name" required>
-        <input type="text" name="company" placeholder="business / brand" aria-label="Business or brand" required>
-      </div>
-      <div class="row">
-        <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
-        <input type="tel" name="phone" placeholder="phone" aria-label="Phone" required>
+      <div class="legend">1 — Where are you with content right now?</div>
+      <label class="choice"><input type="radio" name="reality" value="inconsistent" required><span class="cl">Posting when I can — honestly inconsistent</span></label>
+      <label class="choice"><input type="radio" name="reality" value="eating_week"><span class="cl">Consistent — but it's eating my week</span></label>
+      <label class="choice"><input type="radio" name="reality" value="paying_help"><span class="cl">Paying people to help — costly and hard to manage</span></label>
+      <label class="choice"><input type="radio" name="reality" value="stalled"><span class="cl">Barely posting — no time, no system</span></label>
+
+      <div class="legend">2 — What's the part you'd kill to never do again?</div>
+      <label class="choice"><input type="radio" name="drain" value="editing" required><span class="cl">Editing &amp; clipping the raw footage</span></label>
+      <label class="choice"><input type="radio" name="drain" value="writing"><span class="cl">Writing the posts &amp; captions</span></label>
+      <label class="choice"><input type="radio" name="drain" value="design"><span class="cl">Designing carousels &amp; graphics</span></label>
+      <label class="choice"><input type="radio" name="drain" value="posting"><span class="cl">Posting &amp; scheduling across platforms</span></label>
+      <label class="choice"><input type="radio" name="drain" value="all"><span class="cl">All of it — I just want my time back</span></label>
+
+      <div class="reveal pane" style="text-align:left;margin:28px 0;padding:22px 24px">
+        <p class="formhead">Here's the part most people miss.</p>
+        <p style="margin:0">It's not a time problem — it's a <b>system</b> problem. <b>Nave</b> is that system: you drop one raw video, and a crew of AI agents — running inside your own Claude Code — turns it into a <b>month of finished content</b> (clips, posts, carousels), scheduled and waiting for your one-tap approval. About an hour of your time a month. You own it.</p>
       </div>
 
-      <div class="legend" data-block="apply.q_details_label">Your content today</div>
-      <textarea name="about" data-block="apply.q_details_placeholder" placeholder="What do you publish, where does it go, and what should the system take off your plate? Example: weekly YouTube video plus shorts, all posting is manual, editing eats two days a month." aria-label="About your content" required></textarea>
-
-      <div class="legend" data-block="apply.q_route_label">How do you want Nave running?</div>
-      <label class="choice" data-route="nave.html">
+      <div class="legend">3 — How do you want that system running?</div>
+      <label class="choice" data-route="/">
         <input type="radio" name="route" value="install" required>
-        <span class="cl" data-block="apply.q_route_a_label">I'll run it myself</span>
-        <span class="cd" data-block="apply.q_route_a_desc">One live hour, we install the Content OS in your Claude Code. You own the repo from day one. $397 founding (then $497). Running on your machine within 30 days or your money back.</span>
+        <span class="cl">Set it up with me — I'll run it</span>
+        <span class="cd">One live hour: we install it on your machine and kick off your first month together. You own it from day one. $397 founding.</span>
       </label>
-      <label class="choice" data-route="custom.html">
+      <label class="choice" data-route="/custom">
         <input type="radio" name="route" value="custom">
-        <span class="cl" data-block="apply.q_route_b_label">Build it for me</span>
-        <span class="cd" data-block="apply.q_route_b_desc">A done-for-you Content OS built around your operation. $2,500–$7,500 one-time, scoped on a call.</span>
+        <span class="cl">Build the whole thing for me</span>
+        <span class="cd">Done-for-you: I build your Content OS around your brand and operation, your team trained to run it. From $2,500, scoped on a call.</span>
+      </label>
+      <label class="choice" data-route="/">
+        <input type="radio" name="route" value="proof">
+        <span class="cl">I'm interested — but show me it works first</span>
+        <span class="cd">See the full offer, the proof, and exactly what you get.</span>
       </label>
 
       <div class="ctablock" style="text-align:left">
-        <button class="btn" type="submit" data-block="apply.submit_button">Get my next step</button>
-        <span class="micro" data-block="apply.submit_micro">No payment on this page. Your answers route you, nothing else.</span>
+        <button class="btn" type="submit" data-block="apply.submit_button">Show me my path →</button>
+        <span class="micro" data-block="apply.submit_micro">No payment here. Your answers just point you to the right next step.</span>
         <span class="pending-note" data-apply-note style="display:none"></span>
       </div>
     </form>
@@ -78,11 +88,13 @@
 (function(){
   var form = document.getElementById('applyform');
   if (!form) return;
-  /* highlight selected route card */
-  form.querySelectorAll('.choice').forEach(function(c){
-    c.addEventListener('click', function(){
-      form.querySelectorAll('.choice').forEach(function(x){ x.classList.remove('sel'); });
-      c.classList.add('sel');
+  /* highlight selected choice within its own question group (by radio name) */
+  form.querySelectorAll('.choice input[type="radio"]').forEach(function(input){
+    input.addEventListener('change', function(){
+      form.querySelectorAll('input[name="' + input.name + '"]').forEach(function(x){
+        var lab = x.closest('.choice'); if (lab) lab.classList.remove('sel');
+      });
+      var lab = input.closest('.choice'); if (lab) lab.classList.add('sel');
     });
   });
   form.addEventListener('submit', function(e){
@@ -90,16 +102,11 @@
     var sel = form.querySelector('input[name="route"]:checked');
     if (!sel) return;
     var dest = sel.closest('.choice').dataset.route;
-    var d = new FormData(form);
-    var finish = function(){ location.href = dest + '?applied=1'; };
+    var finish = function(){ location.href = dest + (dest.indexOf('?') < 0 ? '?applied=1' : '&applied=1'); };
     if (NAVE_LINKS.APPLY_FORM_ACTION){
-      fetch(NAVE_LINKS.APPLY_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: d }).finally(finish);
-    } else if (NAVE_LINKS.CONTACT_EMAIL){
-      var body = ['Name: '+d.get('name'),'Business: '+d.get('company'),'Email: '+d.get('email'),'Phone: '+d.get('phone'),'Route: '+d.get('route'),'','About:',d.get('about')].join('\n');
-      location.href = 'mailto:' + NAVE_LINKS.CONTACT_EMAIL + '?subject=' + encodeURIComponent('Nave application') + '&body=' + encodeURIComponent(body);
-      setTimeout(finish, 800);
+      fetch(NAVE_LINKS.APPLY_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: new FormData(form) }).finally(finish);
     } else {
-      finish();
+      finish();  /* answer-capture wiring lands tomorrow; routing works now */
     }
   });
 })();

@@ -18,19 +18,19 @@ FI Footage Intelligence · VE Video Editor · FS Format Studio (carousels + PDF 
 You own the machine — the orchestration, config, agents, and local pipeline (a repo you can fork and customize). You bring your own metered keys, so you pay cost instead of markup, and you can swap any single tool without re-buying the system. What you still depend on: your Claude subscription (itself metered — Claude Max recommended for full month-runs) and the tool vendors you pay directly.
 
 ## Pricing (founding launch)
-- Free playbook + resource vault — "How I Make a Month of Quality Content in a Day with Claude Code": the full method taught give-first, plus the Claude Code installation guide (EN + ES), delivered by email. No purchase required. (https://nave.infinitxai.com/)
-- Nave, installed with you — $397 one-time (founding price; $497 after the founding window): a live 1:1 install hour on your machine (keys placed, real render verified, brand setup + first month's run kicked off together) + the full Content OS + founding community with a weekly live call + personal Loom support + lifetime priority engine updates. Backed by the written Get-Running Guarantee: Nave runs on your machine, or we make it run — or your money back. (https://nave.infinitxai.com/nave.html)
+- Free playbook + resource vault — "How I Make a Month of Quality Content in a Day with Claude Code": the full method taught give-first, plus the Claude Code installation guide (EN + ES), delivered by email. No purchase required. (https://nave.infinitxai.com/playbook)
+- Nave, installed with you — $397 one-time (founding price; $497 after the founding window): a live 1:1 install hour on your machine (keys placed, real render verified, brand setup + first month's run kicked off together) + the full Content OS + founding community with a weekly live call + personal Loom support + lifetime priority engine updates. Backed by the written Get-Running Guarantee: Nave runs on your machine, or we make it run — or your money back. (https://nave.infinitxai.com/)
 - The Content OS, self-serve — $89 one-time, firm: the full system, self-serve, with bounded install support (no cash refund — it's a forkable repo).
-- Custom Content OS build, done for you — $2,500–$7,500 one-time, scoped on a call: the system tailor-built for a business (formats, brand, machines, team training). (https://nave.infinitxai.com/custom.html)
+- Custom Content OS build, done for you — $2,500–$7,500 one-time, scoped on a call: the system tailor-built for a business (formats, brand, machines, team training). (https://nave.infinitxai.com/custom)
 
 ## Requirements
 Your own Claude Code (your Claude subscription — there is no separate Anthropic API key; Claude Max recommended for full-volume runs, on Pro run formats one at a time), plus your own keys for the tools Nave orchestrates: AssemblyAI (transcription) and Zernio (publishing + comment/DM automation), with optional OpenAI and xAI keys for deep research. The installer sets up ffmpeg, the render engine, and the face-tracking reframe engine, and verifies a real render.
 
 ## Links
-- Home (free playbook + vault): https://nave.infinitxai.com/
-- Apply (2-minute routing): https://nave.infinitxai.com/apply.html
-- The install offer: https://nave.infinitxai.com/nave.html
-- The custom build: https://nave.infinitxai.com/custom.html
+- The Nave install offer (home): https://nave.infinitxai.com/
+- Free playbook + vault: https://nave.infinitxai.com/playbook
+- Apply (2-minute routing): https://nave.infinitxai.com/apply
+- The custom build: https://nave.infinitxai.com/custom
 - Guarantee terms: https://nave.infinitxai.com/guarantee.html
 - Terms & refunds: https://nave.infinitxai.com/terms.html
 - Privacy: https://nave.infinitxai.com/privacy.html
