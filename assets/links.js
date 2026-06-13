@@ -9,6 +9,7 @@
    - CUSTOM_FORM_ACTION '': custom-build form falls back to mailto.
    ============================================================ */
 const NAVE_LINKS = {
+  LEADS_ENDPOINT: 'https://ix-substrate-core-production.up.railway.app/leads',  // substrate lead capture -> state.db (LIVE)
   BOOK: '',                  // Stripe/Cal.com checkout+booking for the 1:1 install, $397
   PLAYBOOK_FORM_ACTION: '',  // Kit (ConvertKit) form action — playbook + vault opt-in (email + fields[phone])
   APPLY_FORM_ACTION: '',     // endpoint for application answers (Tally / Formspree / Kit)
@@ -28,19 +29,40 @@ const NAVE_LINKS = {
   });
   if (!NAVE_LINKS.BOOK) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
 
-  /* Playbook + vault opt-in forms → capture, then advance to the qualifier (/apply).
-     Capture (Kit) wiring lands when PLAYBOOK_FORM_ACTION is set; until then the path
-     is still walkable — submit advances to /apply. */
+  /* Lead-capture beacon → substrate /leads (state.db). no-cors + text/plain means
+     no CORS preflight; the opaque response is fine (fire-and-forget). Exposed as
+     window.naveCapture so apply.html's inline script reuses it for the answers. */
+  window.naveCapture = function(row){
+    if (!NAVE_LINKS.LEADS_ENDPOINT) return Promise.resolve();
+    try {
+      return fetch(NAVE_LINKS.LEADS_ENDPOINT, {
+        method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(row || {})
+      });
+    } catch (_e) { return Promise.resolve(); }
+  };
+
+  /* Playbook opt-in → capture name/email/phone, stash the email for the qualifier,
+     then advance to /apply. A 2.5s fallback advances the visitor even if the network
+     stalls. Beehiiv list opt-in layers on here once PLAYBOOK_FORM_ACTION is set. */
   document.querySelectorAll('[data-capture-form]').forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var next = function(){ location.href = '/apply'; };
+      var val = function(sel){ var el = form.querySelector(sel); return el ? (el.value || '').trim() : ''; };
+      var email = val('input[type="email"]');
+      var name  = val('input[name="fields[first_name]"]') || val('input[type="text"]');
+      var phone = val('input[type="tel"]');
+      try { if (email) sessionStorage.setItem('nave_email', email); } catch (_e) {}
+      var done = false, go = function(){ if (done) return; done = true; location.href = '/apply'; };
+      window.naveCapture({
+        source: 'playbook', email: email, name: name, phone: phone,
+        referrer: document.referrer || location.href,
+        company_website: val('input[name="company_website"]')
+      }).finally(go);
       if (NAVE_LINKS.PLAYBOOK_FORM_ACTION){
-        var d = new FormData(form);
-        fetch(NAVE_LINKS.PLAYBOOK_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: d }).finally(next);
-      } else {
-        next();
+        try { fetch(NAVE_LINKS.PLAYBOOK_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: new FormData(form) }); } catch (_e) {}
       }
+      setTimeout(go, 2500);
     });
   });
 

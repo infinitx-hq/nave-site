@@ -102,12 +102,18 @@
     var sel = form.querySelector('input[name="route"]:checked');
     if (!sel) return;
     var dest = sel.closest('.choice').dataset.route;
-    var finish = function(){ location.href = dest + (dest.indexOf('?') < 0 ? '?applied=1' : '&applied=1'); };
-    if (NAVE_LINKS.APPLY_FORM_ACTION){
-      fetch(NAVE_LINKS.APPLY_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: new FormData(form) }).finally(finish);
-    } else {
-      finish();  /* answer-capture wiring lands tomorrow; routing works now */
-    }
+    var pick = function(n){ var el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
+    var email = ''; try { email = sessionStorage.getItem('nave_email') || ''; } catch (_e) {}
+    var done = false, finish = function(){ if (done) return; done = true; location.href = dest + (dest.indexOf('?') < 0 ? '?applied=1' : '&applied=1'); };
+    /* Capture the qualifier answers (tied to the opt-in email) to the substrate, then route. */
+    if (window.naveCapture){
+      window.naveCapture({
+        source: 'apply', email: email,
+        content_reality: pick('reality'), biggest_drain: pick('drain'),
+        chosen_path: sel.value, referrer: document.referrer || ''
+      }).finally(finish);
+    } else { finish(); }
+    setTimeout(finish, 2500);
   });
 })();
 </script>
