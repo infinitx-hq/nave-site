@@ -10,7 +10,8 @@
    ============================================================ */
 const NAVE_LINKS = {
   LEADS_ENDPOINT: 'https://ix-substrate-core-production.up.railway.app/leads',  // substrate lead capture -> state.db (LIVE)
-  BOOK: '',                  // Stripe/Cal.com checkout+booking for the 1:1 install, $397
+  BOOK: 'https://buy.stripe.com/3cIdR9bkH0UX7pzaOB8so0o',       // Stripe $397 1:1 install (pay -> then book)
+  SELF_SERVE: 'https://buy.stripe.com/8x2dR9dsP5bdbFP9Kx8so0n', // Stripe $89 self-serve Content OS
   PLAYBOOK_FORM_ACTION: '',  // Kit (ConvertKit) form action — playbook + vault opt-in (email + fields[phone])
   APPLY_FORM_ACTION: '',     // endpoint for application answers (Tally / Formspree / Kit)
   CUSTOM_FORM_ACTION: '',    // endpoint for custom-build requests
@@ -28,6 +29,11 @@ const NAVE_LINKS = {
     else if (a.dataset.fallback){ a.href = a.dataset.fallback; }
   });
   if (!NAVE_LINKS.BOOK) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
+
+  /* $89 self-serve buy buttons */
+  document.querySelectorAll('[data-cta="BUY"]').forEach(function(a){
+    if (NAVE_LINKS.SELF_SERVE){ a.href = NAVE_LINKS.SELF_SERVE; a.target = '_blank'; a.rel = 'noopener'; }
+  });
 
   /* Lead-capture beacon → substrate /leads (state.db). no-cors + text/plain means
      no CORS preflight; the opaque response is fine (fire-and-forget). Exposed as
