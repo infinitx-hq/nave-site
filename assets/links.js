@@ -59,7 +59,7 @@ const NAVE_LINKS = {
       var name  = val('input[name="fields[first_name]"]') || val('input[type="text"]');
       var phone = val('input[type="tel"]');
       try { if (email) sessionStorage.setItem('nave_email', email); } catch (_e) {}
-      var done = false, go = function(){ if (done) return; done = true; location.href = '/playbook-ready'; };
+      var done = false, go = function(){ if (done) return; done = true; try { sessionStorage.setItem('nave_kit', '1'); } catch (_e) {} location.href = '/kit'; };
       window.naveCapture({
         source: 'playbook', email: email, name: name, phone: phone,
         referrer: document.referrer || location.href,
