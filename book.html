@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're in — book your Nave install</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#070908;--cream:#F4EFE6;--cream-70:#b9c0ba;--cream-50:#7d847e;--green:#1FE07A;--line:rgba(31,224,122,.18);--panel:#0c120e}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:radial-gradient(120% 80% at 50% -10%,#0c1a12 0%,var(--bg) 55%);color:var(--cream);font-family:'Hanken Grotesk',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  header{padding:26px 0}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--cream)}
+  .brand svg{width:30px;height:auto}.brand .w{font-family:Newsreader,serif;font-size:24px}
+  main{padding:34px 0 70px}
+  .eyebrow{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--green)}
+  h1{font-family:Newsreader,serif;font-size:clamp(36px,5.6vw,56px);line-height:1.06;margin:14px 0 0;font-weight:400}
+  h1 i{font-style:italic;color:var(--green)}
+  .lede{font-size:19px;color:var(--cream-70);max-width:560px;margin:18px 0 0}
+  .pane{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:30px}
+  .step{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-50)}
+  h2{font-family:Newsreader,serif;font-weight:400;font-size:24px;margin:6px 0 10px}
+  p.sub{color:var(--cream-70)}
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#04130a;text-decoration:none;font-weight:600;font-size:16px;padding:14px 24px;border-radius:10px;margin-top:14px}
+  .btn.ghost{background:transparent;color:var(--green);border:1px solid var(--line)}
+  /* Google Appointment Schedule embed slot */
+  #booking iframe{width:100%;min-height:620px;border:1px solid var(--line);border-radius:12px;margin-top:8px}
+  .pending{font-family:'DM Mono',monospace;font-size:13px;color:var(--cream-50);border:1px dashed var(--line);border-radius:10px;padding:16px;margin-top:8px}
+  footer{padding:30px 0 48px;text-align:center;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/></g></svg>
+    <span class="w">Nave</span>
+  </a>
+</div></header>
+
+<main><div class="wrap">
+  <span class="eyebrow">Payment confirmed — installed with you</span>
+  <h1>You're in. <i>Let's book your install.</i></h1>
+  <p class="lede">One live hour: we set up the Content OS on your machine, verify a real render, configure your brand, and kick off your first month together.</p>
+
+  <div class="pane">
+    <div class="step">Step 1 · book your install hour</div>
+    <h2>Pick a time that works</h2>
+    <p class="sub">Grab the slot that fits — you'll get a calendar invite with the video link.</p>
+    <div id="booking">
+      <!-- BOOKING_EMBED: replace this block with the Google Appointment Schedule iframe/link -->
+      <div class="pending">Booking calendar is being connected — if you don't see it yet, reply to your Stripe receipt and we'll lock your time within the hour.</div>
+    </div>
+  </div>
+
+  <div class="pane">
+    <div class="step">Step 2 · grab the Content OS now (optional head start)</div>
+    <h2>Your system's ready to download</h2>
+    <p class="sub">Want to peek before the call? Download it now — we'll install + verify it together on the call regardless.</p>
+    <a class="btn ghost" href="/access">Open your Content OS download →</a>
+  </div>
+</div></main>
+
+<footer><div class="wrap">INFINITX — 2026 · build first · give first · own it</div></footer>
+</body>
+</html>
