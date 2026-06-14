@@ -47,8 +47,15 @@ Enrique asked for "The first ever Content OS built for Claude Code." Verificatio
 
 ## Content to produce
 
-- [ ] Playbook PDF exists (`data/companies/infinitx/offers/content-engine/launch/lead-magnet-playbook.pdf`) — **retitle cover to "...with Claude Code"** to match the page promise, host at a direct link, wire as Kit incentive.
-- [ ] Vault delivery: bundle playbook + Claude Code guide EN/ES links into the delivery email.
+- [x] **Playbook rebuilt (2026-06-14)** — new content-OS playbook (`launch/lead-magnet-content-os.md`
+  → `nave-playbook.pdf`, 19pp, 8 download-buttons) supersedes the old `lead-magnet-playbook.pdf`.
+  Hosted in-repo at `/nave-playbook.pdf`. (Cover retitle to "...with Claude Code" still optional.)
+- [x] **`/kit` vault page live in repo** (`kit.html` → `/kit`) — email-gated, serves the kit zip +
+  playbook PDF + CC guide EN/ES. The playbook's download buttons all point here. Staged, not pushed.
+- [x] **Kit built + leak-reviewed** — `nave-playbook-kit.zip` (sanitized skills/agents/workflow;
+  see `launch/KIT-LEAK-REVIEW.md`). 2-min human eyeball still recommended before public host.
+- [ ] Vault delivery: the delivery email + nurture #3 now link `/kit`; still need `PLAYBOOK_FORM_ACTION`
+  set so the email actually fires.
 - [ ] 3 VSLs (see wiring). 
 - [ ] Founder headshot (nave.html placeholder). 
 - [ ] Artifacts row screenshots (nave.html #how TODO).
