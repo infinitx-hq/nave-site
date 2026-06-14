@@ -50,16 +50,17 @@ Enrique asked for "The first ever Content OS built for Claude Code." Verificatio
 - [x] **Playbook rebuilt (2026-06-14)** — new content-OS playbook (`launch/lead-magnet-content-os.md`
   → `nave-playbook.pdf`, 19pp, 8 download-buttons) supersedes the old `lead-magnet-playbook.pdf`.
   Hosted in-repo at `/nave-playbook.pdf`. (Cover retitle to "...with Claude Code" still optional.)
-- [x] **`/kit` vault page live in repo** (`kit.html` → `/kit`) — email-gated, serves the kit zip +
-  playbook PDF + CC guide EN/ES. The playbook's download buttons all point here. Staged, not pushed.
-- [x] **Kit built + leak-reviewed + LEANED** — `nave-playbook-kit.zip` (184 KB): footage-intelligence
+- [x] **No separate "kit/vault" page (Enrique's call 2026-06-14)** — `/kit` REMOVED. The playbook IS
+  the bundle (PDF + tools), delivered **on `/playbook`**: opt-in reveals the downloads on-page, and
+  every `data-capture-form` opt-in (incl. the homepage) routes to `/playbook?unlocked=1` (links.js).
+- [x] **The tools (formerly "the kit"), leaned** — `nave-playbook-kit.zip` (184 KB): footage-intelligence
   (the dynamic workflow) + extracting-transcripts + zernio-publish + zernio-comment-to-dm + humanizer.
-  Heavy/core pieces cut → read-only reveals in the PDF. See `launch/KIT-LEAK-REVIEW.md`. 2-min eyeball
+  Heavy/core pieces stay as read-only reveals in the PDF. See `launch/KIT-LEAK-REVIEW.md`. 2-min eyeball
   still recommended before public host.
 - [x] **Video pin + author face in the PDF** — p3 carries the YouTube walkthrough (thumbnail + QR +
   YouTube badge, → youtu.be/9JiRMaGJyvk); last page carries Enrique's headshot + bio.
-- [ ] Vault delivery: the delivery email + nurture #3 now link `/kit`; still need `PLAYBOOK_FORM_ACTION`
-  set so the email actually fires.
+- [ ] Email delivery: `/playbook` delivers on-page now; the delivery email should also link `/playbook`.
+  Still need `PLAYBOOK_FORM_ACTION` set so the email actually fires.
 - [ ] 3 VSLs (see wiring). 
 - [ ] Founder headshot (nave.html placeholder). 
 - [ ] Artifacts row screenshots (nave.html #how TODO).
