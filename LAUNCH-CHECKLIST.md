@@ -52,8 +52,12 @@ Enrique asked for "The first ever Content OS built for Claude Code." Verificatio
   Hosted in-repo at `/nave-playbook.pdf`. (Cover retitle to "...with Claude Code" still optional.)
 - [x] **`/kit` vault page live in repo** (`kit.html` → `/kit`) — email-gated, serves the kit zip +
   playbook PDF + CC guide EN/ES. The playbook's download buttons all point here. Staged, not pushed.
-- [x] **Kit built + leak-reviewed** — `nave-playbook-kit.zip` (sanitized skills/agents/workflow;
-  see `launch/KIT-LEAK-REVIEW.md`). 2-min human eyeball still recommended before public host.
+- [x] **Kit built + leak-reviewed + LEANED** — `nave-playbook-kit.zip` (184 KB): footage-intelligence
+  (the dynamic workflow) + extracting-transcripts + zernio-publish + zernio-comment-to-dm + humanizer.
+  Heavy/core pieces cut → read-only reveals in the PDF. See `launch/KIT-LEAK-REVIEW.md`. 2-min eyeball
+  still recommended before public host.
+- [x] **Video pin + author face in the PDF** — p3 carries the YouTube walkthrough (thumbnail + QR +
+  YouTube badge, → youtu.be/9JiRMaGJyvk); last page carries Enrique's headshot + bio.
 - [ ] Vault delivery: the delivery email + nurture #3 now link `/kit`; still need `PLAYBOOK_FORM_ACTION`
   set so the email actually fires.
 - [ ] 3 VSLs (see wiring). 
