@@ -18,8 +18,22 @@ const NAVE_LINKS = {
   CONTACT_EMAIL: '',         // public support email — also referenced by the legal pages
   VSL_INDEX: '',             // main VSL embed URL (squeeze page)
   VSL_NAVE: '',              // Nave offer VSL embed URL
-  VSL_CUSTOM: ''             // done-for-you VSL embed URL
+  VSL_CUSTOM: '',            // done-for-you VSL embed URL
+  CLARITY_ID: ''             // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
 };
+
+/* Microsoft Clarity — heatmaps + session recordings (where visitors look / stay).
+   Loads ONLY when CLARITY_ID is set, so the site ships analytics-free until then.
+   Privacy policy discloses this (see privacy.html §4). */
+(function(){
+  var id = NAVE_LINKS.CLARITY_ID;
+  if (!id) return;
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window,document,"clarity","script",id);
+})();
 
 /* Shared CTA state machine */
 (function(){
