@@ -19,7 +19,7 @@ const NAVE_LINKS = {
   VSL_INDEX: '',             // main VSL embed URL (squeeze page)
   VSL_NAVE: '',              // Nave offer VSL embed URL
   VSL_CUSTOM: '',            // done-for-you VSL embed URL
-  CLARITY_ID: ''             // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
+  CLARITY_ID: 'x7j0avqhnn'   // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
 };
 
 /* Microsoft Clarity — heatmaps + session recordings (where visitors look / stay).
