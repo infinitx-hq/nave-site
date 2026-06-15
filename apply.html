@@ -27,8 +27,14 @@
 </nav></div></header>
 
 <main>
-<section style="text-align:center;padding-top:72px">
+<section style="text-align:center;padding-top:56px">
   <div class="wrap">
+    <div id="sentbanner" class="reveal pane" hidden style="text-align:left;margin:0 auto 30px;max-width:620px;padding:18px 22px;border-color:rgba(31,224,122,.4)">
+      <p class="formhead" style="margin:0 0 4px;color:var(--ink)">✓ Check your email — your free playbook + tools are on the way<span id="sentto"></span>.</p>
+      <p style="margin:0;font-size:14.5px">The full method, the real skills &amp; agents, and the Claude Code setup guide (EN/ES) are landing in your inbox now. While you wait — <b>answer these three quick questions</b> so we point you to the right way to actually run it.</p>
+      <p class="micro" style="margin:8px 0 0">Didn't get the email in a couple minutes? <a href="/playbook?unlocked=1">Grab everything here →</a> (check spam too.)</p>
+    </div>
+
     <span class="eyebrow">2-minute fit check</span>
     <h2 data-block="apply.h1">Find your fastest path to <i>a month of content in an hour.</i></h2>
     <p class="sub" data-block="apply.sub">Three questions. They'll show you what's really eating your time — and the fastest way to hand it off. No call, no pitch.</p>
@@ -85,6 +91,15 @@
 
 <script src="assets/links.js"></script>
 <script>
+(function(){
+  /* "Check your email" banner — shown when arriving fresh from the opt-in */
+  var banner = document.getElementById('sentbanner');
+  var email = ''; try { email = sessionStorage.getItem('nave_email') || ''; } catch (_e) {}
+  if (banner && (/[?&]sent=1/.test(location.search) || email)) {
+    banner.hidden = false;
+    if (email) { var s = document.getElementById('sentto'); if (s) s.textContent = ' to ' + email; }
+  }
+})();
 (function(){
   var form = document.getElementById('applyform');
   if (!form) return;

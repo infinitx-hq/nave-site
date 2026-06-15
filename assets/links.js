@@ -48,10 +48,10 @@ const NAVE_LINKS = {
     } catch (_e) { return Promise.resolve(); }
   };
 
-  /* Playbook opt-in → capture name/email/phone, then advance to /playbook with the
-     downloads revealed (the playbook IS the bundle — PDF + tools, delivered on /playbook;
-     there's no separate kit page). A 2.5s fallback advances even if the network stalls.
-     Beehiiv list opt-in layers on here once PLAYBOOK_FORM_ACTION is set. */
+  /* Playbook opt-in → capture name/email/phone, then advance to /apply?sent=1
+     ("Check your email" + qualifier questions). Resources are delivered by EMAIL
+     (Beehiiv welcome), NOT inline — the page just confirms + routes to the funnel.
+     A 2.5s fallback advances even if the network stalls. */
   document.querySelectorAll('[data-capture-form]').forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
@@ -60,7 +60,7 @@ const NAVE_LINKS = {
       var name  = val('input[name="fields[first_name]"]') || val('input[type="text"]');
       var phone = val('input[type="tel"]');
       try { if (email) sessionStorage.setItem('nave_email', email); } catch (_e) {}
-      var done = false, go = function(){ if (done) return; done = true; try { sessionStorage.setItem('nave_playbook', '1'); } catch (_e) {} location.href = '/playbook?unlocked=1'; };
+      var done = false, go = function(){ if (done) return; done = true; location.href = '/apply?sent=1'; };
       window.naveCapture({
         source: 'playbook', email: email, name: name, phone: phone,
         referrer: document.referrer || location.href,

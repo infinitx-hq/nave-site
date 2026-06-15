@@ -155,29 +155,35 @@
 
 <script src="assets/links.js"></script>
 <script>
-/* /playbook delivers the playbook on this page: opt-in -> beacon to the live /leads
-   endpoint (source:playbook) -> reveal the downloads. Reuses window.naveCapture (links.js).
-   Degrades open if the beacon is missing. Survives refresh via sessionStorage / ?unlocked=1. */
+/* /playbook is the single opt-in. On submit: beacon to /leads (source:playbook) ->
+   Beehiiv welcome email delivers the resources -> route to /apply ("Check your email"
+   + qualifier questions). The downloads block is now a FALLBACK only, shown via
+   /apply's "didn't get the email?" link (?unlocked=1). Reuses window.naveCapture. */
 (function(){
   var form = document.getElementById('pb-form');
   var gate = document.getElementById('pb-gate');
   var dl = document.getElementById('pb-dl');
-  function reveal(){ if(dl) dl.hidden = false; if(gate) gate.style.display = 'none';
-    try{ sessionStorage.setItem('nave_playbook','1'); }catch(_e){} }
-  try{ if(sessionStorage.getItem('nave_playbook')==='1' || /[?&]unlocked=1/.test(location.search)) reveal(); }catch(_e){}
+  function reveal(){ if(dl) dl.hidden = false; if(gate) gate.style.display = 'none'; }
+  /* fallback download view only when explicitly requested */
+  try{ if(/[?&]unlocked=1/.test(location.search)) reveal(); }catch(_e){}
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var v=function(s){var el=form.querySelector(s);return el?(el.value||'').trim():'';};
+      var email=v('input[type=email]');
+      try{ if(email) sessionStorage.setItem('nave_email', email); }catch(_e){}
+      var done=false, go=function(){ if(done) return; done=true; location.href='/apply?sent=1'; };
       try{
-        if(window.naveCapture) window.naveCapture({
-          source:'playbook', email:v('input[type=email]'),
-          name:v('input[name="fields[first_name]"]')||v('input[type=text]'),
-          phone:v('input[type=tel]'), referrer:document.referrer||location.href,
-          company_website:v('input[name="company_website"]')
-        });
-      }catch(_e){}
-      reveal();
+        if(window.naveCapture){
+          window.naveCapture({
+            source:'playbook', email:email,
+            name:v('input[name="fields[first_name]"]')||v('input[type=text]'),
+            phone:v('input[type=tel]'), referrer:document.referrer||location.href,
+            company_website:v('input[name="company_website"]')
+          }).finally(go);
+        } else { go(); }
+      }catch(_e){ go(); }
+      setTimeout(go, 2500);
     });
   }
 })();
