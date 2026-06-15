@@ -155,7 +155,7 @@ nav .btn{padding:11px 18px}
 .manifest tr.total td{border-bottom:0;border-top:1px solid var(--line-strong);font-weight:600;color:var(--cream);font-size:15px;padding-top:16px}
 .stacknote{margin:16px auto 0;max-width:740px;font-size:13px;color:var(--cream-50);text-align:center}
 .reveal{margin-top:56px;text-align:center}
-.reveal .was{font-family:'DM Mono',monospace;color:var(--cream-50);text-decoration:line-through;font-size:18px;letter-spacing:.04em}
+.was{font-family:'DM Mono',monospace;color:var(--cream-50);text-decoration:line-through;font-size:18px;letter-spacing:.04em}
 .reveal .now{font-family:'Newsreader',serif;font-weight:400;color:var(--cream);font-size:clamp(64px,9vw,120px);line-height:1;letter-spacing:-.02em;margin:10px 0 8px}
 .reveal .now small{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-left:10px}
 .reveal .floor{color:var(--cream-72);font-size:15px;max-width:520px;margin:14px auto 0}

@@ -10,7 +10,7 @@
    ============================================================ */
 const NAVE_LINKS = {
   LEADS_ENDPOINT: 'https://ix-substrate-core-production.up.railway.app/leads',  // substrate lead capture -> state.db (LIVE)
-  BOOK: 'https://buy.stripe.com/3cIdR9bkH0UX7pzaOB8so0o',       // Stripe $397 1:1 install (pay -> then book)
+  BOOK: 'https://buy.stripe.com/dRm8wPbkHfPRdNX1e18so0p',       // Stripe $397 1:1 install (pay -> then book)
   SELF_SERVE: 'https://buy.stripe.com/8x2dR9dsP5bdbFP9Kx8so0n', // Stripe $89 self-serve Content OS
   PLAYBOOK_FORM_ACTION: '',  // Kit (ConvertKit) form action — playbook + vault opt-in (email + fields[phone])
   APPLY_FORM_ACTION: '',     // endpoint for application answers (Tally / Formspree / Kit)
