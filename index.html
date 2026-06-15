@@ -60,24 +60,20 @@
     <div class="glitch" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="hero-grid" style="margin-top:64px">
       <div>
-        <span class="eyebrow" data-block="nave.kicker">The Content OS built for Claude Code</span>
-        <h1 style="font-size:clamp(44px,6vw,80px)" data-block="nave.h1">Installed with you.<br><i>One live hour. You leave with it running.</i></h1>
-        <p class="lede" data-block="nave.sub">We get on a call, the two of us on your machine. I install the Content OS, place your keys, verify a real render, set up your brand, and kick off your first month while we're still on the call.</p>
+        <span class="eyebrow" data-block="nave.kicker">The Content OS for Claude Code</span>
+        <h1 style="font-size:clamp(44px,6vw,80px)" data-block="nave.h1">A month of quality content.<br><i>In one hour.</i></h1>
+        <p class="lede" data-block="nave.sub">Nave is a content team that lives on your computer. Drop your raw videos — it turns them into a month of finished clips, posts, and carousels, in your voice. You just review and say "go." We set the whole thing up together on one live call.</p>
         <div class="heroctas">
-          <a class="btn" data-cta="BOOK" data-fallback="#offer" href="#offer" data-block="nave.cta_primary">Book my install hour · $397</a>
+          <a class="btn" data-cta="BOOK" data-fallback="#offer" href="#offer" data-block="nave.cta_primary">Get Nave installed — $397</a>
         </div>
-        <span class="micro" data-block="nave.cta_micro">Founding price, goes to $497 when the window closes · running in 30 days or your money back · I block the full hour for you</span>
+        <span class="micro" data-block="nave.cta_micro">$397 once — not monthly · running on your machine in 30 days or your money back</span>
         <span class="pending-note" data-pending-note>Booking opens shortly — <a href="/playbook" style="color:var(--ink)">grab the free playbook</a> and you're first in line.</span>
       </div>
       <div>
-        <div id="vsl-slot" data-vsl="NAVE" data-state="console">
-          <div class="term" aria-label="Nave terminal demo">
-            <div class="bar"><i></i><i></i><i></i><span class="title">nave — your machine</span></div>
-            <pre id="termfeed"><span class="dimline">$ claude</span>
-</pre>
-          </div>
+        <div class="lm pane" style="max-width:none;padding:0;overflow:hidden">
+          <video src="assets/hero.mp4" autoplay muted loop playsinline aria-label="Nave — a month of content in an hour" style="width:100%;display:block"></video>
         </div>
-        <div class="vslnote" data-block="nave.vsl_note">This whole page was made by the system</div>
+        <div class="vslnote" data-block="nave.vsl_note">This whole page was made by the thing it sells.</div>
       </div>
     </div>
   </div>
@@ -116,12 +112,52 @@
   </div>
 </section>
 
+<div class="wrap"><hr class="rule"></div>
+
+<style>
+  #repo .repocard{padding:0;overflow:hidden;text-align:left;margin-top:26px}
+  #repo .repohead{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(31,224,122,.18);font-family:'DM Mono',monospace;font-size:14px;color:#F4EFE6}
+  #repo .repodot{width:10px;height:10px;border-radius:50%;background:#1FE07A;flex:none}
+  #repo .repometa{margin-left:auto;color:#7d847e;font-size:12px}
+  #repo .repotree{padding:8px 18px}
+  #repo .rfile{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid rgba(31,224,122,.08);font-family:'DM Mono',monospace;font-size:14px;color:#F4EFE6}
+  #repo .rfile:last-child{border-bottom:0}
+  #repo .ri{width:18px;flex:none}
+  #repo .rc{font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;color:#8b938c;flex:1;min-width:220px}
+  #repo .repofoot{padding:15px 18px;border-top:1px solid rgba(31,224,122,.18);background:rgba(31,224,122,.05);font-size:14.5px;color:#b9c0ba}
+  #repo .repofoot b{color:#1FE07A}
+</style>
+<section id="repo">
+  <div class="wrap">
+    <span class="eyebrow">What you actually get</span>
+    <div class="topbar">
+      <h2>Not a promise. <i>The real system, on your machine.</i></h2>
+      <span class="tag">readable · forkable · yours</span>
+    </div>
+    <p class="sub" style="text-align:left;max-width:660px;margin-bottom:0">When you install, this whole repo lands on your computer — the actual files, not a login to someone else's software. Read it, change it, keep it forever.</p>
+    <div class="repocard pane">
+      <div class="repohead"><span class="repodot"></span><span>infinitx-hq / <b>nave</b></span><span class="repometa">the Content OS · yours on install</span></div>
+      <div class="repotree">
+        <div class="rfile"><span class="ri">📁</span> .claude/skills/ <span class="rc">42 skills — transcribe, reframe to vertical, edit, build carousels, write captions, publish, coach</span></div>
+        <div class="rfile"><span class="ri">📁</span> .claude/agents/ <span class="rc">27 agents — the clip-editor crew + the humanizer that strips the AI tells out of every line</span></div>
+        <div class="rfile"><span class="ri">📁</span> .claude/workflows/ <span class="rc">make-month — one command fans the whole month out at once</span></div>
+        <div class="rfile"><span class="ri">📁</span> content-production/ <span class="rc">your brand profile + the month's queue, staged for approval</span></div>
+        <div class="rfile"><span class="ri">📁</span> tools/ <span class="rc">the render engine + the face-tracking reframe engine, bundled in</span></div>
+        <div class="rfile"><span class="ri">📄</span> install.sh · install.ps1 <span class="rc">one command — sets it all up and verifies a real render before you touch it</span></div>
+      </div>
+      <div class="repofoot"><b>42 skills · 27 agents · 1 workflow</b> — a whole content department, in one folder you own. No SaaS, no monthly lock-in.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
 <section id="how" style="padding-top:40px">
   <div class="wrap">
     <span class="eyebrow">002 — How it works</span>
     <h2>Drop footage. Review. <i>Say "schedule it."</i></h2>
     <div class="how3">
-      <div class="step"><div class="n">01</div><h3>Drop footage</h3><p>One folder or one link. Raw is fine. The crew reads every clip first.</p></div>
+      <div class="step"><div class="n">01</div><h3>Drop your footage</h3><p>One folder or one link. Raw is fine. Footage Intelligence reads and transcribes every clip first — who's in it, what's usable, the best lines.</p></div>
       <div class="step"><div class="n">02</div><h3>The crew produces the month</h3><p>Clips, carousels, posts — in your voice, staged behind your approval. Nothing publishes itself.</p></div>
       <div class="step"><div class="n">03</div><h3>You review — ~1 hour</h3><p>Approve, adjust, or kill each piece. Then it ships on schedule.</p></div>
     </div>
@@ -136,16 +172,15 @@
   <div class="wrap">
     <span class="eyebrow">003 — Who built this</span>
     <div class="fgrid" style="margin-top:30px">
-      <!-- TODO(launch): real headshot or workspace still — not a stock render -->
-      <div class="headshot pane">photo: Enrique —<br>real workspace still</div>
+      <img src="assets/enrique.png" alt="Enrique Marquez" class="headshot" style="width:100%;display:block;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 28%, #15271c, #0a110c)">
       <div>
-        <p class="fquote">"I build first, <em>then I teach.</em>"</p>
-        <p class="fbody">I'm Enrique. I make content for a living — my own channels and real client work. Nave is the system I built to run both, and it runs them today. <b>Everything on this page was made by the thing this page sells.</b></p>
-        <div class="attr"><span>Enrique Marquez · INFINITX</span></div>
+        <p class="fquote">"I got tired of losing a whole day to content. <em>So I built the team that does it for me.</em>"</p>
+        <p class="fbody">I'm Enrique. I make content for a living — my own channels and real client work. One good batch of footage used to mean a full day of editing, writing, and posting. So I built Nave: the exact system I run every week. It's made <b>500k+ organic views in six months</b>, and it runs paid client content today. Everything on this page — the clips, the copy, the posts — was made by the thing this page sells.</p>
+        <div class="attr"><span>Enrique Marquez · founder, INFINITX</span></div>
         <div class="fchips">
-          <span>Builds the engine himself</span>
+          <span>Builds the system himself</span>
           <span>500k+ organic in 6 months</span>
-          <span>Runs real client content</span>
+          <span>Runs real client content on it</span>
         </div>
       </div>
     </div>
@@ -208,7 +243,7 @@
     <p class="sub">For the ones who read documentation for fun and don't want a live session.</p>
     <div class="tcard pane">
       <div class="name">The Content OS — self-serve</div>
-      <div class="price">$89 <small>/ once</small></div>
+      <div class="price"><span class="was">$597</span> $89 <small>/ once</small></div>
       <ul>
         <li>The same full Content OS repo the live install puts on your machine — the whole crew</li>
         <li>Self-verifying installer + docs (Windows · macOS · Linux)</li>
@@ -232,15 +267,12 @@
     <span class="eyebrow">006 — FAQ</span>
     <h2>Real questions. <i>Straight answers.</i></h2>
     <div class="faqwrap">
-      <details open><summary><span class="qn">01</span><span class="q">Do I need an Anthropic API key?</span></summary><p class="a">No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic API key, ever. You bring keys only for the tools it orchestrates: AssemblyAI (transcription) and Zernio (publishing + DM automation), plus optional OpenAI and xAI for deep research. You pay those vendors directly. No markup.</p></details>
-      <details><summary><span class="qn">02</span><span class="q">Which Claude plan do I need?</span></summary><p class="a">Claude Max ($100/mo+) is recommended for full month-runs. A multi-agent run can exhaust a $20 Pro plan's 5-hour window in under an hour, and that pool is shared with everything else you use Claude for. On Pro: run formats one at a time, expect a few sittings.</p></details>
-      <details><summary><span class="qn">03</span><span class="q">What does "a month of content in an hour" really mean?</span></summary><p class="a">One-time install first (that's the live session), then about an hour of your hands-on time per month. The crew produces; your hour is the review. You check the staged queue and say "schedule it." Nothing publishes without your approval.</p></details>
-      <details><summary><span class="qn">04</span><span class="q">Is the install really 1:1?</span></summary><p class="a">Yes — one hour, live, just you and me, on your machine. We install, place your keys, verify a real render, set up your brand, and kick off your first month's run before we hang up. After the session: the weekly community call plus Loom support — your problem, your screen, a custom walkthrough within 2 business days.</p></details>
-      <details><summary><span class="qn">05</span><span class="q">What are the guarantees and refunds?</span></summary><p class="a">The $397 install: Nave runs on your machine within 30 days of your session, or we make it run, or your money back — <a href="guarantee.html">written terms</a>. The $89 self-serve Content OS: bounded install support (up to 3 Loom replies in 30 days), no cash refund — it's a forkable repo; once cloned it can't be returned. <a href="terms.html">Refund policy</a>.</p></details>
-      <details><summary><span class="qn">06</span><span class="q">What do I own — and what can still change on me?</span></summary><p class="a">You own the machine: orchestration, config, agents, the local pipeline, the repo on your disk. You pay cost instead of markup and can swap any single tool without re-buying the system. What can still change: your Claude subscription (metered, usage caps) and the tool vendors you pay directly. Ownership means no middleman — not "no caps exist anywhere."</p></details>
-      <details><summary><span class="qn">07</span><span class="q">What machine do I need?</span></summary><p class="a">Windows, macOS, or Linux. Under the hood: Node 20+, Python 3.12, ffmpeg, yt-dlp, jq — the installer checks and installs them for you, is safe to re-run, and has a check-only mode. macOS needs Homebrew; non-Debian Linux isn't auto-handled yet.</p></details>
-      <details><summary><span class="qn">08</span><span class="q">Who should NOT buy Nave?</span></summary><p class="a">You, if: you don't film and won't start (Nave needs your footage — you drive, the system supports you) · you want 100% hands-off (nothing posts without your review) · you're on Claude Pro and won't upgrade (works, just slower) · you want it built and tuned for your business without touching it — that's the <a href="custom.html">custom build, $2,500–$7,500 one-time</a>.</p></details>
-      <details><summary><span class="qn">09</span><span class="q">What happens after the founding window?</span></summary><p class="a">The $397 founding price goes to $497 when the founding window closes — $397 is the lowest the install will ever be sold for. Founding members keep their community access; whatever later members pay for it, it will be more than you did.</p></details>
+      <details open><summary><span class="qn">01</span><span class="q">Do I need a separate AI or API key?</span></summary><p class="a">No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic key. You bring keys only for the two tools it uses: AssemblyAI (transcription) and Zernio (publishing + DM automation). You pay those directly — no markup.</p></details>
+      <details><summary><span class="qn">02</span><span class="q">What does "a month of content in an hour" mean?</span></summary><p class="a">You install once — that's the live session. After that it's about an hour of your time per month: the crew produces the content, your hour is the review. You check the staged queue and say "schedule it." Nothing publishes without your approval. (Runs on your Claude Code — Claude Max recommended for full month-runs.)</p></details>
+      <details><summary><span class="qn">03</span><span class="q">Is the install really 1:1?</span></summary><p class="a">Yes — one hour, live, just you and me, on your machine. We install, place your keys, verify a real render, set up your brand, and kick off your first month before we hang up. After: the weekly community call + personal Loom support — your screen, your problem, a custom walkthrough within 2 business days.</p></details>
+      <details><summary><span class="qn">04</span><span class="q">What do I actually own?</span></summary><p class="a">The whole repo, on your machine — the skills, the agents, the workflow, the config. Yours to read, change, and keep. No subscription, no login to someone else's software, no middleman who can reprice you or shut you off.</p></details>
+      <details><summary><span class="qn">05</span><span class="q">What's the guarantee?</span></summary><p class="a">The $397 install: Nave runs on your machine within 30 days, or we make it run, or you get your money back — <a href="guarantee.html">written terms</a>. The $89 self-serve: bounded install support instead (no cash refund — it's a forkable repo; once cloned it can't be returned). <a href="terms.html">Refund policy</a>.</p></details>
+      <details><summary><span class="qn">06</span><span class="q">Who should NOT buy this?</span></summary><p class="a">You, if: you don't film and won't start (Nave needs your footage — you drive, it supports) · you want 100% hands-off (nothing posts without your review) · or you want it built and tuned FOR your business without touching it — that's the <a href="custom.html">custom build ($2,500–$7,500)</a>.</p></details>
     </div>
   </div>
 </section>
