@@ -37,15 +37,8 @@ const NAVE_LINKS = {
 
 /* Shared CTA state machine */
 (function(){
-  /* $397 — BOOK-FIRST: the offer CTAs route to /book (pick a time), where the
-     pay step lives. This kills the "paid but no slot" trap. The actual Stripe
-     $397 link (NAVE_LINKS.BOOK) is used by the data-cta="PAY" button on /book. */
+  /* $397 booking buttons */
   document.querySelectorAll('[data-cta="BOOK"]').forEach(function(a){
-    a.href = '/book';
-  });
-
-  /* $397 pay button (lives on /book, AFTER they've picked a time) */
-  document.querySelectorAll('[data-cta="PAY"]').forEach(function(a){
     if (NAVE_LINKS.BOOK){ a.href = NAVE_LINKS.BOOK; a.target = '_blank'; a.rel = 'noopener'; }
     else if (a.dataset.fallback){ a.href = a.dataset.fallback; }
   });
