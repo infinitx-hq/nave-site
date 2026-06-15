@@ -29,7 +29,7 @@ Enrique asked for "The first ever Content OS built for Claude Code." Verificatio
 ## Wiring (edit `assets/links.js` → NAVE_LINKS, shared by all pages)
 
 - [ ] `BOOK` — checkout+booking for the $397 install (Stripe → Cal.com, or Cal.com paid event). Until set, $397 buttons fall back per-page.
-- [ ] `PLAYBOOK_FORM_ACTION` — Kit form action; posts `email_address` + `fields[phone]` (create the phone custom field in Kit; confirm field name). Hook instant delivery (playbook + vault links) + the 6-email nurture from `launch/lead-magnet-funnel.md` — **update emails #5/#6: no cohort, no "template", 1:1 install language, vault mention**.
+- [x] `PLAYBOOK_FORM_ACTION` — **leave empty.** Email runs through **Beehiiv server-side**: `/playbook` opt-in → substrate `POST /leads` → `_beehiiv_subscribe()` (api/server.py) subscribes the lead + fires Beehiiv's Welcome Email (the delivery). No browser-side form action needed. To go live: set `BEEHIIV_API_KEY` + `BEEHIIV_PUBLICATION_ID` secrets, then build the Welcome Email + Automation in Beehiiv — full punch-list in `launch/BEEHIIV-SETUP.md`.
 - [ ] `APPLY_FORM_ACTION` — endpoint for application answers (Tally/Formspree/Kit). Until set: mailto fallback, and routing still works (the redirect is the filter).
 - [ ] `CUSTOM_FORM_ACTION` — endpoint for custom-build requests; mailto fallback via CONTACT_EMAIL.
 - [ ] `CONTACT_EMAIL` — public support email (also referenced by legal pages).
@@ -60,7 +60,8 @@ Enrique asked for "The first ever Content OS built for Claude Code." Verificatio
 - [x] **Video pin + author face in the PDF** — p3 carries the YouTube walkthrough (thumbnail + QR +
   YouTube badge, → youtu.be/9JiRMaGJyvk); last page carries Enrique's headshot + bio.
 - [ ] Email delivery: `/playbook` delivers on-page now; the delivery email should also link `/playbook`.
-  Still need `PLAYBOOK_FORM_ACTION` set so the email actually fires.
+  Email = Beehiiv (server-side via `/leads` → `_beehiiv_subscribe`). To fire: set `BEEHIIV_API_KEY` +
+  `BEEHIIV_PUBLICATION_ID` secrets + build the Welcome Email + Automation (see `launch/BEEHIIV-SETUP.md`).
 - [ ] 3 VSLs (see wiring). 
 - [ ] Founder headshot (nave.html placeholder). 
 - [ ] Artifacts row screenshots (nave.html #how TODO).
