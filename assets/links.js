@@ -57,12 +57,33 @@ const NAVE_LINKS = {
   /* Lead-capture beacon → substrate /leads (state.db). no-cors + text/plain means
      no CORS preflight; the opaque response is fine (fire-and-forget). Exposed as
      window.naveCapture so apply.html's inline script reuses it for the answers. */
+  /* Persist first-touch attribution (utm_* + original external referrer) so it
+     survives the hop from the landing page to /apply — that's how we know a lead
+     came from YouTube vs LinkedIn vs direct. First-touch wins (never overwritten). */
+  (function(){
+    try {
+      var p = new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign'].forEach(function(k){
+        var v = p.get(k);
+        if (v && !sessionStorage.getItem('nave_' + k)) sessionStorage.setItem('nave_' + k, v.slice(0, 80));
+      });
+      if (!sessionStorage.getItem('nave_ref0')) sessionStorage.setItem('nave_ref0', document.referrer || '');
+    } catch (_e) {}
+  })();
+
   window.naveCapture = function(row){
     if (!NAVE_LINKS.LEADS_ENDPOINT) return Promise.resolve();
+    row = row || {};
+    try {
+      ['utm_source','utm_medium','utm_campaign'].forEach(function(k){
+        if (!row[k]) { var v = sessionStorage.getItem('nave_' + k); if (v) row[k] = v; }
+      });
+      if (!row.referrer) row.referrer = sessionStorage.getItem('nave_ref0') || document.referrer || location.href;
+    } catch (_e) {}
     try {
       return fetch(NAVE_LINKS.LEADS_ENDPOINT, {
         method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(row || {})
+        body: JSON.stringify(row)
       });
     } catch (_e) { return Promise.resolve(); }
   };
