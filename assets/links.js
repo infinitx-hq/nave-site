@@ -19,7 +19,12 @@ const NAVE_LINKS = {
   VSL_INDEX: '',             // main VSL embed URL (squeeze page)
   VSL_NAVE: '',              // Nave offer VSL embed URL
   VSL_CUSTOM: '',            // done-for-you VSL embed URL
-  CLARITY_ID: 'x7j0avqhnn'   // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
+  CLARITY_ID: 'x7j0avqhnn',  // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
+  /* Real testimonials only. Add an object per quote and the section reveals itself.
+     Empty = the wall stays hidden (the page never shows fake proof). */
+  TESTIMONIALS: [
+    // { quote: "Installed it in an hour, made my first week of clips on the call.", name: "Jordan R.", handle: "@jordanbuilds", role: "Creator" },
+  ]
 };
 
 /* Microsoft Clarity — heatmaps + session recordings (where visitors look / stay).

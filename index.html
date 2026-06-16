@@ -249,6 +249,25 @@
 
 <div class="wrap"><hr class="rule"></div>
 
+<style>
+  #wall{display:none}
+  #wall .wallgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:26px}
+  #wall figure{margin:0}
+  #wall blockquote{margin:0;padding:24px 24px 20px;border-radius:12px;font-size:17px;line-height:1.5;color:var(--cream)}
+  #wall .qm{color:var(--ink);font-family:'Newsreader',serif;font-size:30px;line-height:0;display:inline-block;transform:translateY(8px);margin-right:4px}
+  #wall figcaption{display:flex;align-items:center;gap:4px;margin-top:16px;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--cream-72)}
+  #wall figcaption b{color:var(--cream)}
+  #wall figcaption .h{color:var(--ink)}
+</style>
+<section id="wall" style="text-align:center">
+  <div class="wrap">
+    <span class="eyebrow" style="display:inline-block">From the people running it</span>
+    <h2>Real words. <i>From real installs.</i></h2>
+    <div class="wallgrid" id="wallgrid"></div>
+  </div>
+</section>
+<div class="wrap" id="wall-rule" style="display:none"><hr class="rule"></div>
+
 <section id="offer" style="text-align:center">
   <div class="wrap">
     <span class="eyebrow">004 — The offer</span>
@@ -407,6 +426,21 @@
 
 <script src="assets/links.js"></script>
 <script>/* reveal the VSL section only once VSL_NAVE is set in links.js (poster→embed handled by links.js) */
-(function(){var s=document.getElementById('vslsection');try{if(s&&window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)s.style.display='';}catch(_e){}})();</script>
+(function(){var s=document.getElementById('vslsection');try{if(s&&window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)s.style.display='';}catch(_e){}})();
+/* testimonial wall — renders ONLY real quotes from NAVE_LINKS.TESTIMONIALS; stays hidden when empty */
+(function(){
+  try{
+    var t = (window.NAVE_LINKS && NAVE_LINKS.TESTIMONIALS) || [];
+    if(!t.length) return;
+    var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+    var grid=document.getElementById('wallgrid'); if(!grid) return;
+    grid.innerHTML = t.map(function(q){
+      return '<figure class="pane"><blockquote><span class="qm">&ldquo;</span>'+esc(q.quote)+'</blockquote>'+
+        '<figcaption><b>'+esc(q.name||'')+'</b>'+(q.handle?' <span class="h">'+esc(q.handle)+'</span>':'')+(q.role?' · '+esc(q.role):'')+'</figcaption></figure>';
+    }).join('');
+    document.getElementById('wall').style.display='';
+    var r=document.getElementById('wall-rule'); if(r) r.style.display='';
+  }catch(_e){}
+})();</script>
 </body>
 </html>
