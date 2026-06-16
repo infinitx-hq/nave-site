@@ -105,10 +105,16 @@
           <div id="vsl-slot" data-vsl="INDEX" data-state="motion">
             <video src="assets/hero.mp4" autoplay muted loop playsinline aria-label="Nave in 26 seconds" style="width:100%;display:block;border-bottom:1px solid rgba(31,224,122,.16)"></video>
           </div>
-          <div style="padding:24px 28px 28px;text-align:center">
+          <div style="padding:24px 28px 28px">
             <p class="formhead">The full method + the real tools, free.</p>
-            <button class="btn" id="getaccess" type="button" style="width:100%;margin-top:8px">Get access →</button>
-            <span class="micro" style="margin-top:10px;display:block">30 seconds · 3 quick questions · no card</span>
+            <form class="capture stacked" id="ac-form1" action="#" method="post">
+              <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
+              <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
+              <input type="tel" name="phone" placeholder="phone (optional)" aria-label="Phone">
+              <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0">
+              <button class="btn" type="submit">Get the playbook →</button>
+            </form>
+            <span class="micro" style="margin-top:10px;display:block">By opting in you agree to our <a href="privacy.html">privacy policy</a>.</span>
           </div>
         </div>
       </div>
@@ -118,25 +124,8 @@
 
 <section id="access" hidden style="border-top:1px solid var(--line)">
   <div class="wrap" style="max-width:680px">
-    <!-- STEP 1 — email opt-in (captures the lead first) -->
-    <div id="ac-step1">
-      <span class="eyebrow" style="display:block;text-align:center">Get instant access</span>
-      <h2 style="text-align:center">The full method + the real tools. <i>Where do I send it?</i></h2>
-      <p class="sub" style="margin:8px auto 0;text-align:center">Your details and it's yours. Then 3 quick questions so I point you to the fastest way to run it.</p>
-      <form class="quiz" id="ac-form1" action="#" method="post">
-        <div class="row">
-          <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
-          <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
-        </div>
-        <input type="tel" name="phone" placeholder="phone (optional — only if you'd want a hand setting it up)" aria-label="Phone">
-        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0">
-        <button class="btn" type="submit" style="width:100%;margin-top:18px">Get the playbook →</button>
-        <span class="micro" style="text-align:center;display:block;margin-top:10px">By opting in you agree to our <a href="privacy.html">privacy policy</a>.</span>
-      </form>
-    </div>
-
-    <!-- STEP 2 — the questions (shown after the email is captured) -->
-    <div id="ac-step2" hidden>
+    <!-- The questions — revealed after the email is captured in the hero form -->
+    <div id="ac-step2">
       <span class="eyebrow" style="display:block;text-align:center;color:var(--ink)">Your playbook's on its way ✓</span>
       <h2 style="text-align:center">3 quick questions, <i>so I point you to the right way to run it.</i></h2>
       <p class="sub" style="margin:8px auto 0;text-align:center">No call, no pitch. This just tailors what you see next.</p>
@@ -187,20 +176,17 @@
 
 <script src="assets/links.js"></script>
 <script>
-/* /playbook = 2-step access. "Get access" reveals step 1 (email). Submitting step 1 captures
-   the lead first (source:playbook -> Beehiiv welcome email), THEN reveals step 2 (the 3
-   questions). Submitting step 2 attaches the answers (same email -> custom fields), shows the
-   downloads on-page, and sets a path-aware CTA. Reuses window.naveCapture from links.js. */
+/* /playbook = email form attached in the hero. Submitting it captures the lead first
+   (source:playbook -> Beehiiv welcome email), THEN reveals the questions below. Submitting
+   the questions attaches the answers (same email -> custom fields), shows the downloads
+   on-page, and sets a path-aware CTA. Reuses window.naveCapture from links.js. */
 (function(){
   var access=document.getElementById('access');
-  var btn=document.getElementById('getaccess');
-  var step1=document.getElementById('ac-step1'), form1=document.getElementById('ac-form1');
+  var form1=document.getElementById('ac-form1');   // the email form, in the hero
   var step2=document.getElementById('ac-step2'), form2=document.getElementById('ac-form2');
   var dl=document.getElementById('ac-dl'), cta=document.getElementById('ac-cta');
   function go(el){ if(el){ el.hidden=false; el.scrollIntoView({behavior:'smooth',block:'start'}); } }
-  function show(){ go(access); }
-  if(btn) btn.addEventListener('click', show);
-  try{ if(/[?&]unlocked=1/.test(location.search)) show(); }catch(_e){}
+  try{ if(/[?&]unlocked=1/.test(location.search)) go(access); }catch(_e){}
   function v(form,s){ var el=form.querySelector(s); return el?(el.value||'').trim():''; }
   function pick(form,n){ var el=form.querySelector('input[name="'+n+'"]:checked'); return el?el.value:''; }
   /* highlight the chosen option within its group (step 2) */
@@ -220,8 +206,7 @@
       phone:v(form1,'input[type=tel]'), referrer:document.referrer||location.href,
       company_website:v(form1,'input[name=company_website]')
     }); }catch(_e){}
-    if(step1) step1.style.display='none';
-    go(step2);
+    go(access);
   });
   /* STEP 2 — attach the qualifier answers to the same email, deliver, route */
   var DEST={install:'/',custom:'/custom',proof:'/'};
