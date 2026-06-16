@@ -105,43 +105,62 @@
           <div id="vsl-slot" data-vsl="INDEX" data-state="motion">
             <video src="assets/hero.mp4" autoplay muted loop playsinline aria-label="Nave in 26 seconds" style="width:100%;display:block;border-bottom:1px solid rgba(31,224,122,.16)"></video>
           </div>
-          <div style="padding:24px 28px 28px">
-            <div id="pb-gate">
-              <p class="formhead" data-block="index.form_head">Enter your details and the playbook's yours.</p>
-              <form id="pb-form" class="capture stacked" action="#" method="post">
-                <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
-                <input type="email" name="email_address" placeholder="you@email.com" aria-label="Email" required>
-                <input type="tel" name="fields[phone]" placeholder="phone" aria-label="Phone" required>
-                <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none">
-                <button class="btn" type="submit" data-block="index.optin_button">Get the playbook</button>
-              </form>
-              <span class="micro" data-block="index.consent">By opting in you consent to have your email used in line with our privacy policy.</span>
-            </div>
-
-            <div id="pb-dl" hidden>
-              <p class="formhead" style="color:var(--ink);margin:0 0 4px">You're in. Here's the whole playbook.</p>
-              <p class="micro" style="margin:0 0 16px">The method + the real tools. Read them, change them, keep them.</p>
-              <div class="dlrow">
-                <div class="meta"><div class="t">The Playbook (PDF)</div><div class="d">the full method · 19 pages</div></div>
-                <a class="btn" href="nave-playbook.pdf" target="_blank" rel="noopener">Read</a>
-              </div>
-              <div class="dlrow">
-                <div class="meta"><div class="t">The tools</div><div class="d">workflow · skills · agent · .zip · 184 KB</div></div>
-                <a class="btn btn-ghost" href="nave-playbook-kit.zip" download>Download</a>
-              </div>
-              <div class="dlrow">
-                <div class="meta"><div class="t">Claude Code install guide</div><div class="d">get set up · EN / ES</div></div>
-                <span style="display:flex;gap:8px">
-                  <a class="btn btn-ghost" href="guide-claude-code-en.pdf" target="_blank" rel="noopener">EN</a>
-                  <a class="btn btn-ghost" href="guide-claude-code-es.pdf" target="_blank" rel="noopener">ES</a>
-                </span>
-              </div>
-              <div class="pbcode">unzip nave-playbook-kit.zip &amp;&amp; cp -r nave-playbook-kit/* your-project/.claude/</div>
-              <a class="btn btn-ghost" href="/" style="margin-top:14px;display:inline-block">Rather have it done for you? See Nave →</a>
-            </div>
+          <div style="padding:24px 28px 28px;text-align:center">
+            <p class="formhead">The full method + the real tools, free.</p>
+            <button class="btn" id="getaccess" type="button" style="width:100%;margin-top:8px">Get access →</button>
+            <span class="micro" style="margin-top:10px;display:block">30 seconds · 3 quick questions · no card</span>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="access" hidden style="border-top:1px solid var(--line)">
+  <div class="wrap" style="max-width:680px">
+    <div id="ac-gate">
+      <span class="eyebrow" style="display:block;text-align:center">Get instant access</span>
+      <h2 style="text-align:center">Your details, three quick questions, <i>and it's yours.</i></h2>
+      <p class="sub" style="margin:8px auto 0;text-align:center">The questions just point you to the fastest way to actually run it. No call, no pitch.</p>
+      <form class="quiz" id="ac-form" action="#" method="post">
+        <div class="row">
+          <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
+          <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
+        </div>
+        <input type="tel" name="phone" placeholder="phone (optional — only if you'd want a hand setting it up)" aria-label="Phone">
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0">
+
+        <div class="legend">1 — Where are you with content right now?</div>
+        <label class="choice"><input type="radio" name="reality" value="inconsistent" required><span class="cl">Posting when I can, honestly inconsistent</span></label>
+        <label class="choice"><input type="radio" name="reality" value="eating_week"><span class="cl">Consistent, but it's eating my week</span></label>
+        <label class="choice"><input type="radio" name="reality" value="paying_help"><span class="cl">Paying people to help, costly and hard to manage</span></label>
+        <label class="choice"><input type="radio" name="reality" value="stalled"><span class="cl">Barely posting, no time, no system</span></label>
+
+        <div class="legend">2 — What's eating most of your time?</div>
+        <label class="choice"><input type="radio" name="drain" value="editing" required><span class="cl">Editing &amp; clipping the footage</span></label>
+        <label class="choice"><input type="radio" name="drain" value="writing"><span class="cl">Writing the posts &amp; captions</span></label>
+        <label class="choice"><input type="radio" name="drain" value="design"><span class="cl">Designing carousels &amp; graphics</span></label>
+        <label class="choice"><input type="radio" name="drain" value="posting"><span class="cl">Posting &amp; scheduling across platforms</span></label>
+        <label class="choice"><input type="radio" name="drain" value="all"><span class="cl">All of it, I just want my time back</span></label>
+
+        <div class="legend">3 — If you love it, how do you want it running?</div>
+        <label class="choice"><input type="radio" name="route" value="install" required><span class="cl">Set it up with me, I'll run it</span><span class="cd">One live hour: we install it on your machine and make your first month together. You own it from day one.</span></label>
+        <label class="choice"><input type="radio" name="route" value="custom"><span class="cl">Build the whole thing for me</span><span class="cd">Done-for-you, around your brand and operation, your team trained to run it. Scoped on a call.</span></label>
+        <label class="choice"><input type="radio" name="route" value="proof"><span class="cl">Just send the playbook, I'll explore first</span><span class="cd">No pressure. You get everything, and you can decide later.</span></label>
+
+        <button class="btn" type="submit" style="width:100%;margin-top:20px">Get the playbook →</button>
+        <span class="micro" style="text-align:center;display:block;margin-top:10px">No payment here. By opting in you agree to our <a href="privacy.html">privacy policy</a>.</span>
+      </form>
+    </div>
+
+    <div id="ac-dl" hidden>
+      <span class="eyebrow" style="display:block;text-align:center;color:var(--ink)">You're in</span>
+      <h2 style="text-align:center">Here's the whole playbook.</h2>
+      <p class="sub" style="margin:8px auto 22px;text-align:center">It's also on the way to your inbox. Read it, change it, keep it.</p>
+      <div class="dlrow"><div class="meta"><div class="t">The Playbook (PDF)</div><div class="d">the full method · 19 pages</div></div><a class="btn" href="nave-playbook.pdf" target="_blank" rel="noopener">Read</a></div>
+      <div class="dlrow"><div class="meta"><div class="t">The tools</div><div class="d">workflow · skills · agent · .zip · 184 KB</div></div><a class="btn btn-ghost" href="nave-playbook-kit.zip" download>Download</a></div>
+      <div class="dlrow"><div class="meta"><div class="t">Claude Code install guide</div><div class="d">get set up · EN / ES</div></div><span style="display:flex;gap:8px"><a class="btn btn-ghost" href="guide-claude-code-en.pdf" target="_blank" rel="noopener">EN</a><a class="btn btn-ghost" href="guide-claude-code-es.pdf" target="_blank" rel="noopener">ES</a></span></div>
+      <a class="btn" id="ac-cta" href="/" style="margin-top:20px;display:block;text-align:center">See the full system →</a>
     </div>
   </div>
 </section>
@@ -155,37 +174,49 @@
 
 <script src="assets/links.js"></script>
 <script>
-/* /playbook is the single opt-in. On submit: beacon to /leads (source:playbook) ->
-   Beehiiv welcome email delivers the resources -> route to /apply ("Check your email"
-   + qualifier questions). The downloads block is now a FALLBACK only, shown via
-   /apply's "didn't get the email?" link (?unlocked=1). Reuses window.naveCapture. */
+/* /playbook = one combined access form (email + 3 qualifier questions). "Get access"
+   reveals it. On submit: capture everything to /leads (source:playbook) -> Beehiiv welcome
+   email delivers + the downloads also show on-page (reliable). The chosen path sets a
+   tailored CTA, no hard redirect. Reuses window.naveCapture from links.js. */
 (function(){
-  var form = document.getElementById('pb-form');
-  var gate = document.getElementById('pb-gate');
-  var dl = document.getElementById('pb-dl');
-  function reveal(){ if(dl) dl.hidden = false; if(gate) gate.style.display = 'none'; }
-  /* fallback download view only when explicitly requested */
-  try{ if(/[?&]unlocked=1/.test(location.search)) reveal(); }catch(_e){}
-  if(form){
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var v=function(s){var el=form.querySelector(s);return el?(el.value||'').trim():'';};
-      var email=v('input[type=email]');
-      try{ if(email) sessionStorage.setItem('nave_email', email); }catch(_e){}
-      var done=false, go=function(){ if(done) return; done=true; location.href='/apply?sent=1'; };
-      try{
-        if(window.naveCapture){
-          window.naveCapture({
-            source:'playbook', email:email,
-            name:v('input[name="fields[first_name]"]')||v('input[type=text]'),
-            phone:v('input[type=tel]'), referrer:document.referrer||location.href,
-            company_website:v('input[name="company_website"]')
-          }).finally(go);
-        } else { go(); }
-      }catch(_e){ go(); }
-      setTimeout(go, 2500);
+  var access = document.getElementById('access');
+  var btn    = document.getElementById('getaccess');
+  var form   = document.getElementById('ac-form');
+  var gate   = document.getElementById('ac-gate');
+  var dl     = document.getElementById('ac-dl');
+  var cta    = document.getElementById('ac-cta');
+  function show(){ if(access){ access.hidden=false; access.scrollIntoView({behavior:'smooth',block:'start'}); } }
+  if(btn) btn.addEventListener('click', show);
+  try{ if(/[?&]unlocked=1/.test(location.search)) show(); }catch(_e){}
+  if(!form) return;
+  /* highlight the chosen option within its question group */
+  form.querySelectorAll('.choice input[type=radio]').forEach(function(i){
+    i.addEventListener('change', function(){
+      form.querySelectorAll('input[name="'+i.name+'"]').forEach(function(x){ var l=x.closest('.choice'); if(l) l.classList.remove('sel'); });
+      var l=i.closest('.choice'); if(l) l.classList.add('sel');
     });
-  }
+  });
+  function v(s){ var el=form.querySelector(s); return el?(el.value||'').trim():''; }
+  function pick(n){ var el=form.querySelector('input[name="'+n+'"]:checked'); return el?el.value:''; }
+  var DEST={install:'/',custom:'/custom',proof:'/'};
+  var LABEL={install:'Ready to set it up with me? →',custom:'Want it built for you? →',proof:'See the full system + the proof →'};
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email=v('input[type=email]'), route=pick('route');
+    try{ if(email) sessionStorage.setItem('nave_email', email); }catch(_e){}
+    try{
+      if(window.naveCapture) window.naveCapture({
+        source:'playbook', email:email,
+        name:v('input[name="fields[first_name]"]'), phone:v('input[type=tel]'),
+        content_reality:pick('reality'), biggest_drain:pick('drain'), chosen_path:route,
+        referrer:document.referrer||location.href, company_website:v('input[name=company_website]')
+      });
+    }catch(_e){}
+    if(cta){ cta.textContent=LABEL[route]||'See the full system →'; cta.href=(DEST[route]||'/')+'?applied=1'; }
+    if(gate) gate.style.display='none';
+    if(dl) dl.hidden=false;
+    if(access) access.scrollIntoView({behavior:'smooth',block:'start'});
+  });
 })();
 </script>
 </body>
