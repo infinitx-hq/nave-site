@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#070908;--ink:#1FE07A;--cream:#F0EBDE;--orange:#FF7614;--line:rgba(31,224,122,.18)}
+  *{margin:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px}
+  body{background:var(--bg);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;overflow:hidden;position:relative;
+    background-image:linear-gradient(rgba(31,224,122,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(31,224,122,.05) 1px,transparent 1px);
+    background-size:34px 34px}
+  .glow{position:absolute;width:680px;height:680px;border-radius:50%;right:-200px;top:-220px;
+    background:radial-gradient(circle,rgba(255,118,20,.16),transparent 62%);filter:blur(8px)}
+  .glow2{position:absolute;width:560px;height:560px;border-radius:50%;left:-180px;bottom:-240px;
+    background:radial-gradient(circle,rgba(31,224,122,.14),transparent 62%)}
+  .frame{position:absolute;inset:0;padding:64px 70px;display:flex;flex-direction:column;justify-content:space-between}
+  .top{display:flex;align-items:center;gap:16px}
+  .saucer{width:54px;height:48px}
+  .wm{font-weight:800;font-size:30px;letter-spacing:.01em;color:var(--cream)}
+  .kick{font-family:'DM Mono',monospace;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);margin-left:6px}
+  .mid{display:flex;gap:46px;align-items:center}
+  .copy{flex:1.15}
+  h1{font-size:84px;line-height:.98;font-weight:800;color:var(--cream);letter-spacing:-.02em}
+  h1 i{font-family:'Newsreader',serif;font-style:italic;font-weight:500;color:var(--orange)}
+  .lede{font-size:23px;line-height:1.4;color:rgba(240,235,222,.74);margin-top:24px;max-width:560px}
+  .lede b{color:var(--cream);font-weight:700}
+  .grid{flex:.85;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.5);transform:rotate(2deg)}
+  .grid img{display:block;width:100%;height:330px;object-fit:cover;object-position:center 16%}
+  .bottom{display:flex;align-items:center;justify-content:space-between}
+  .chips{display:flex;gap:10px}
+  .chip{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:.05em;color:var(--cream);
+    border:1px solid var(--line);border-radius:999px;padding:9px 16px;background:rgba(7,9,8,.5)}
+  .chip b{color:var(--ink)}
+  .url{font-family:'DM Mono',monospace;font-size:15px;letter-spacing:.06em;color:rgba(240,235,222,.55)}
+</style></head>
+<body>
+<div class="glow"></div><div class="glow2"></div>
+<div class="frame">
+  <div class="top">
+    <svg class="saucer" viewBox="0 0 512 448"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></g></svg>
+    <span class="wm">Nave</span>
+    <span class="kick">The Content OS for Claude Code</span>
+  </div>
+  <div class="mid">
+    <div class="copy">
+      <h1>A month of content.<br><i>In one hour.</i></h1>
+      <p class="lede">Drop your footage. A crew of agents on <b>your own machine</b> turns it into a month of finished clips, posts &amp; carousels — in your voice. You just say "go."</p>
+    </div>
+    <div class="grid"><img src="proof/month-grid.jpg" alt=""></div>
+  </div>
+  <div class="bottom">
+    <div class="chips">
+      <span class="chip"><b>$397</b> once — not monthly</span>
+      <span class="chip">you own the system</span>
+      <span class="chip">no SaaS</span>
+    </div>
+    <span class="url">nave.infinitxai.com</span>
+  </div>
+</div>
+</body></html>
