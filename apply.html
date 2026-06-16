@@ -56,11 +56,6 @@
       <label class="choice"><input type="radio" name="drain" value="no_system"><span class="cl">Just staying consistent — I have no real system</span></label>
       <label class="choice"><input type="radio" name="drain" value="all"><span class="cl">All of it — I want it handled</span></label>
 
-      <div class="reveal pane" style="text-align:left;margin:28px 0;padding:22px 24px">
-        <p class="formhead">Here's how I can help with your content production.</p>
-        <p style="margin:0">I'd get you a <b>content operating system</b>: you drop one raw video, and a crew of AI agents (running inside your own Claude Code) turns it into a <b>month of finished content</b> (clips, posts, carousels), scheduled and waiting for your approval. About an hour of your time a month, and you own it. There are a few ways I can get that running for you.</p>
-      </div>
-
       <div class="legend">3 — What would be your preference if you had a content operating system running?</div>
       <label class="choice" data-route="/">
         <input type="radio" name="route" value="self" required>
@@ -80,7 +75,7 @@
 
       <div class="ctablock" style="text-align:left">
         <button class="btn" type="submit" data-block="apply.submit_button">Show me the path →</button>
-        <span class="micro" data-block="apply.submit_micro">No payment here. Your answers just point you to the right next step.</span>
+        <span class="micro" data-block="apply.submit_micro">Your answers just point you to the right next step.</span>
         <span class="pending-note" data-apply-note style="display:none"></span>
       </div>
     </form>
@@ -121,14 +116,16 @@
     if (!sel) return;
     var dest = sel.closest('.choice').dataset.route;
     var pick = function(n){ var el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
-    var email = ''; try { email = sessionStorage.getItem('nave_email') || ''; } catch (_e) {}
+    var email='', name='', ref='';
+    try { email = sessionStorage.getItem('nave_email')||''; name = sessionStorage.getItem('nave_name')||''; ref = sessionStorage.getItem('nave_ref')||''; } catch (_e) {}
     var done = false, finish = function(){ if (done) return; done = true; location.href = dest + (dest.indexOf('?') < 0 ? '?applied=1' : '&applied=1'); };
-    /* Capture the qualifier answers (tied to the opt-in email) to the substrate, then route. */
-    if (window.naveCapture){
+    /* Only attach answers for people who actually came through the playbook form (have an email).
+       Name + email + lead_ref tie the responses to that same lead; referrer carries the path. */
+    if (email && window.naveCapture){
       window.naveCapture({
-        source: 'apply', email: email,
+        source: 'apply', email: email, name: name, lead_ref: ref,
         content_reality: pick('reality'), biggest_drain: pick('drain'),
-        chosen_path: sel.value, referrer: document.referrer || ''
+        chosen_path: sel.value, referrer: document.referrer || location.href
       }).finally(finish);
     } else { finish(); }
     setTimeout(finish, 2500);

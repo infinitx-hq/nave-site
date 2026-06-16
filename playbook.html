@@ -157,14 +157,14 @@
   function v(s){ var el=form1.querySelector(s); return el?(el.value||'').trim():''; }
   if(form1) form1.addEventListener('submit', function(e){
     e.preventDefault();
-    var email=v('input[type=email]');
-    try{ if(email) sessionStorage.setItem('nave_email', email); }catch(_e){}
+    var email=v('input[type=email]'), name=v('input[name="fields[first_name]"]');
+    var ref=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now()+'-'+Math.random().toString(36).slice(2));
+    try{ sessionStorage.setItem('nave_email', email); sessionStorage.setItem('nave_name', name); sessionStorage.setItem('nave_ref', ref); }catch(_e){}
     var done=false, next=function(){ if(done) return; done=true; location.href='/apply?sent=1'; };
     try{
       if(window.naveCapture){
-        window.naveCapture({ source:'playbook', email:email,
-          name:v('input[name="fields[first_name]"]'), phone:v('input[type=tel]'),
-          referrer:document.referrer||location.href, company_website:v('input[name=company_website]')
+        window.naveCapture({ source:'playbook', email:email, name:name, phone:v('input[type=tel]'),
+          lead_ref:ref, referrer:document.referrer||location.href, company_website:v('input[name=company_website]')
         }).finally(next);
       } else next();
     }catch(_e){ next(); }
