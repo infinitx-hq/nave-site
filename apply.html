@@ -39,43 +39,68 @@
     <h2 data-block="apply.h1">I just want to understand <i>what you're struggling with.</i></h2>
     <p class="sub" data-block="apply.sub">A few quick questions so I actually get where you're at — then I'll show you how I can help with your content production.</p>
 
+    <style>
+      .quiz{max-width:580px;margin:30px auto 0;text-align:left}
+      .qprogress{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+      .qbar{flex:1;height:6px;border-radius:999px;background:rgba(31,224,122,.12);overflow:hidden}
+      .qbar i{display:block;height:100%;width:33%;background:var(--ink);border-radius:999px;transition:width .35s ease}
+      .qcount{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50);white-space:nowrap}
+      .qcount b{color:var(--ink)}
+      .qstep{animation:qfade .35s ease}
+      .qstep[hidden]{display:none}
+      @keyframes qfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+      .qnav{display:flex;align-items:center;justify-content:space-between;margin-top:18px;min-height:24px}
+      .qbacklink{background:none;border:0;color:var(--cream-50);font-family:'DM Mono',monospace;font-size:13px;cursor:pointer;padding:6px 0}
+      .qbacklink:hover{color:var(--ink)}
+    </style>
     <form class="quiz" id="applyform" action="#" method="post">
-      <div class="legend">1 — Where are you with content right now?</div>
-      <label class="choice"><input type="radio" name="reality" value="inconsistent" required><span class="cl">Posting when I can — honestly inconsistent</span></label>
-      <label class="choice"><input type="radio" name="reality" value="eating_week"><span class="cl">Consistent — but it's eating my week</span></label>
-      <label class="choice"><input type="radio" name="reality" value="paying_help"><span class="cl">Paying people to help — costly and hard to manage</span></label>
-      <label class="choice"><input type="radio" name="reality" value="stalled"><span class="cl">Barely posting — no time, no system</span></label>
+      <div class="qprogress"><div class="qbar"><i id="qbarfill"></i></div><span class="qcount">Question <b id="qnum">1</b> of 3</span></div>
 
-      <div class="legend">2 — What's the hardest part of content for you?</div>
-      <label class="choice"><input type="radio" name="drain" value="ideas" required><span class="cl">Figuring out what to even post — ideas, hooks, angles</span></label>
-      <label class="choice"><input type="radio" name="drain" value="filming"><span class="cl">Filming &amp; recording it</span></label>
-      <label class="choice"><input type="radio" name="drain" value="editing"><span class="cl">Editing &amp; clipping the footage</span></label>
-      <label class="choice"><input type="radio" name="drain" value="writing"><span class="cl">Writing the captions &amp; scripts</span></label>
-      <label class="choice"><input type="radio" name="drain" value="design"><span class="cl">Designing the carousels &amp; graphics</span></label>
-      <label class="choice"><input type="radio" name="drain" value="posting"><span class="cl">Posting &amp; scheduling across platforms</span></label>
-      <label class="choice"><input type="radio" name="drain" value="no_system"><span class="cl">Just staying consistent — I have no real system</span></label>
-      <label class="choice"><input type="radio" name="drain" value="all"><span class="cl">All of it — I want it handled</span></label>
+      <div class="qstep" data-step="1">
+        <div class="legend">Where are you with content right now?</div>
+        <label class="choice"><input type="radio" name="reality" value="inconsistent"><span class="cl">Posting when I can — honestly inconsistent</span></label>
+        <label class="choice"><input type="radio" name="reality" value="eating_week"><span class="cl">Consistent — but it's eating my week</span></label>
+        <label class="choice"><input type="radio" name="reality" value="paying_help"><span class="cl">Paying people to help — costly and hard to manage</span></label>
+        <label class="choice"><input type="radio" name="reality" value="stalled"><span class="cl">Barely posting — no time, no system</span></label>
+      </div>
 
-      <div class="legend">3 — What would be your preference if you had a content operating system running?</div>
-      <label class="choice" data-route="/">
-        <input type="radio" name="route" value="self" required>
-        <span class="cl">I'd install it myself</span>
-        <span class="cd">You get the technical pieces to install onto your content operating system, guided by videos and step-by-step instructions.</span>
-      </label>
-      <label class="choice" data-route="/">
-        <input type="radio" name="route" value="install">
-        <span class="cl">Set it up with me — then I run it</span>
-        <span class="cd">We do it together on one live call: installed on your machine, your first month kicked off. You own it and run it from there.</span>
-      </label>
-      <label class="choice" data-route="/custom">
-        <input type="radio" name="route" value="custom">
-        <span class="cl">Build the whole thing for me</span>
-        <span class="cd">Tailored to your brand and operations, with me there helping you the whole way.</span>
-      </label>
+      <div class="qstep" data-step="2" hidden>
+        <div class="legend">What's the hardest part of content for you?</div>
+        <label class="choice"><input type="radio" name="drain" value="ideas"><span class="cl">Figuring out what to even post — ideas, hooks, angles</span></label>
+        <label class="choice"><input type="radio" name="drain" value="filming"><span class="cl">Filming &amp; recording it</span></label>
+        <label class="choice"><input type="radio" name="drain" value="editing"><span class="cl">Editing &amp; clipping the footage</span></label>
+        <label class="choice"><input type="radio" name="drain" value="writing"><span class="cl">Writing the captions &amp; scripts</span></label>
+        <label class="choice"><input type="radio" name="drain" value="design"><span class="cl">Designing the carousels &amp; graphics</span></label>
+        <label class="choice"><input type="radio" name="drain" value="posting"><span class="cl">Posting &amp; scheduling across platforms</span></label>
+        <label class="choice"><input type="radio" name="drain" value="no_system"><span class="cl">Just staying consistent — I have no real system</span></label>
+        <label class="choice"><input type="radio" name="drain" value="all"><span class="cl">All of it — I want it handled</span></label>
+      </div>
 
-      <div class="ctablock" style="text-align:left">
-        <button class="btn" type="submit" data-block="apply.submit_button">Show me the path →</button>
-        <span class="micro" data-block="apply.submit_micro">Your answers just point you to the right next step.</span>
+      <div class="qstep" data-step="3" hidden>
+        <div class="legend">If you had a content operating system running, what would you want?</div>
+        <label class="choice" data-route="/">
+          <input type="radio" name="route" value="self">
+          <span class="cl">I'd install it myself</span>
+          <span class="cd">You get the technical pieces to install onto your content operating system, guided by videos and step-by-step instructions.</span>
+        </label>
+        <label class="choice" data-route="/">
+          <input type="radio" name="route" value="install">
+          <span class="cl">Set it up with me — then I run it</span>
+          <span class="cd">We do it together on one live call: installed on your machine, your first month kicked off. You own it and run it from there.</span>
+        </label>
+        <label class="choice" data-route="/custom">
+          <input type="radio" name="route" value="custom">
+          <span class="cl">Build the whole thing for me</span>
+          <span class="cd">Tailored to your brand and operations, with me there helping you the whole way.</span>
+        </label>
+        <div class="ctablock" style="text-align:left;margin-top:22px">
+          <button class="btn" type="submit" id="applysubmit" data-block="apply.submit_button">Show me the path →</button>
+          <span class="micro" data-block="apply.submit_micro">Your answers just point you to the right next step.</span>
+        </div>
+      </div>
+
+      <div class="qnav">
+        <button type="button" id="qback" class="qbacklink" hidden>← Back</button>
         <span class="pending-note" data-apply-note style="display:none"></span>
       </div>
     </form>
@@ -101,25 +126,42 @@
 (function(){
   var form = document.getElementById('applyform');
   if (!form) return;
-  /* highlight selected choice within its own question group (by radio name) */
+  var steps = [].slice.call(form.querySelectorAll('.qstep'));
+  var total = steps.length;
+  var fill = document.getElementById('qbarfill');
+  var qnum = document.getElementById('qnum');
+  var back = document.getElementById('qback');
+  var cur = 0;
+
+  function show(i){
+    cur = i;
+    steps.forEach(function(s, idx){ s.hidden = idx !== i; });
+    if (fill) fill.style.width = Math.round((i + 1) / total * 100) + '%';
+    if (qnum) qnum.textContent = (i + 1);
+    if (back) back.hidden = i === 0;
+  }
+  if (back) back.addEventListener('click', function(){ if (cur > 0) show(cur - 1); });
+
+  /* highlight the pick, then reveal the next question one at a time */
   form.querySelectorAll('.choice input[type="radio"]').forEach(function(input){
     input.addEventListener('change', function(){
       form.querySelectorAll('input[name="' + input.name + '"]').forEach(function(x){
         var lab = x.closest('.choice'); if (lab) lab.classList.remove('sel');
       });
       var lab = input.closest('.choice'); if (lab) lab.classList.add('sel');
+      if (cur < total - 1) setTimeout(function(){ show(cur + 1); }, 320);
     });
   });
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
+
+  function submitApply(){
     var sel = form.querySelector('input[name="route"]:checked');
     if (!sel) return;
     var dest = sel.closest('.choice').dataset.route;
     var pick = function(n){ var el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
-    var email='', name='', ref='';
-    try { email = sessionStorage.getItem('nave_email')||''; name = sessionStorage.getItem('nave_name')||''; ref = sessionStorage.getItem('nave_ref')||''; } catch (_e) {}
+    var email = '', name = '', ref = '';
+    try { email = sessionStorage.getItem('nave_email') || ''; name = sessionStorage.getItem('nave_name') || ''; ref = sessionStorage.getItem('nave_ref') || ''; } catch (_e) {}
     var done = false, finish = function(){ if (done) return; done = true; location.href = dest + (dest.indexOf('?') < 0 ? '?applied=1' : '&applied=1'); };
-    /* Only attach answers for people who actually came through the playbook form (have an email).
+    /* Only attach answers for people who came through the playbook form (have an email).
        Name + email + lead_ref tie the responses to that same lead; referrer carries the path. */
     if (email && window.naveCapture){
       window.naveCapture({
@@ -129,7 +171,10 @@
       }).finally(finish);
     } else { finish(); }
     setTimeout(finish, 2500);
-  });
+  }
+  form.addEventListener('submit', function(e){ e.preventDefault(); submitApply(); });
+
+  show(0);
 })();
 </script>
 </body>
