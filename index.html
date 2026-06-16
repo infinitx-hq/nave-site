@@ -79,6 +79,20 @@
   </div>
 </section>
 
+<section id="vslsection" style="display:none">
+  <div class="wrap" style="max-width:880px;text-align:center">
+    <span class="eyebrow" style="display:inline-block">Watch this first</span>
+    <h2>Two minutes with me, <i>before you decide.</i></h2>
+    <p class="sub" style="margin:6px auto 26px">No hype: what Nave is, who it's for, and how the install works, straight from me.</p>
+    <div id="vsl-nave" data-vsl="NAVE" data-state="poster" style="position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0a0d0c;max-width:760px;margin:0 auto">
+      <img src="assets/enrique.png" alt="Watch Enrique" style="width:100%;height:100%;object-fit:cover;opacity:.92">
+      <span aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(0,0,0,.45)">
+        <span style="border-left:22px solid #06140C;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px"></span>
+      </span>
+    </div>
+  </div>
+</section>
+
 <section class="stats" style="padding-top:0">
   <div class="wrap">
     <div class="statgrid">
@@ -346,5 +360,7 @@
 </div></footer>
 
 <script src="assets/links.js"></script>
+<script>/* reveal the VSL section only once VSL_NAVE is set in links.js (poster→embed handled by links.js) */
+(function(){var s=document.getElementById('vslsection');try{if(s&&window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)s.style.display='';}catch(_e){}})();</script>
 </body>
 </html>
