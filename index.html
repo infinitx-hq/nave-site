@@ -87,9 +87,12 @@
 </section>
 
 <style>
-  #crew .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
-  @media(max-width:560px){#crew .ggrid{grid-template-columns:1fr}}
-  #crew .gcard{padding:22px 24px;display:flex;flex-direction:column;gap:8px;min-height:128px}
+  #crew .ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media(max-width:760px){#crew .ggrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){#crew .ggrid{grid-template-columns:1fr}}
+  #crew .gcard{padding:22px 22px;display:flex;flex-direction:column;gap:8px;min-height:150px}
+  #crew .gpunch{max-width:780px;margin:26px auto 0;text-align:center;font-family:'Newsreader',serif;font-size:clamp(18px,2.2vw,24px);color:var(--cream);line-height:1.45}
+  #crew .gpunch b{color:var(--ink);font-weight:400}
   #crew .gname{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
   #crew .gbody{font-size:14px;color:var(--cream-72);line-height:1.55;margin:0}
   #crew .gout{margin:32px auto 0;font-family:'Newsreader',serif;font-size:clamp(19px,2.4vw,26px);color:var(--cream);text-align:center;max-width:800px;line-height:1.45}
@@ -111,14 +114,17 @@
 </style>
 <section id="crew" style="padding-top:8px">
   <div class="wrap">
-    <h2>One install. <i>The whole system is yours.</i></h2>
-    <p class="sub" style="text-align:left;max-width:720px;margin-bottom:0">Nave drops a complete content operating system into your Claude Code, and you own every piece of it. This is what's inside:</p>
+    <h2>One install. <i>The whole crew is yours.</i></h2>
+    <p class="sub" style="text-align:left;max-width:740px;margin-bottom:0">Picture a content department that works while you sleep, and you own every seat. You drop your footage; they turn it into a finished month, all in your voice, ready to ship. Here's the crew:</p>
     <div class="ggrid">
-      <div class="gcard pane"><div class="gname">Dynamic workflows</div><p class="gbody">Orchestrate a whole month of content end to end, in one command.</p></div>
-      <div class="gcard pane"><div class="gname">Specialized agents</div><p class="gbody">The specialists that plan, produce, and publish — editor, designer, copywriter, manager — plus the deep crew each one calls on.</p></div>
-      <div class="gcard pane"><div class="gname">Skills</div><p class="gbody">27 production skills — transcribe, clip, reframe, caption, carousel, schedule.</p></div>
-      <div class="gcard pane"><div class="gname">Your brand</div><p class="gbody">Every piece reads your brand profile, so all of it sounds and looks like you.</p></div>
+      <div class="gcard pane"><div class="gname">🔎 The producer</div><p class="gbody">Watches every clip you drop and pulls the gold — who's in it, what's usable, the best lines. You stop scrubbing footage.</p></div>
+      <div class="gcard pane"><div class="gname">🎬 The editor</div><p class="gbody">Cuts, reframes, and captions a full month of finished clips. You never open a timeline again.</p></div>
+      <div class="gcard pane"><div class="gname">🖼 The designer</div><p class="gbody">Turns the same footage into carousels and guides, on your brand. No Canva, no freelancer.</p></div>
+      <div class="gcard pane"><div class="gname">✍️ The copywriter</div><p class="gbody">Writes every caption, hook, and script in your voice. No blank page, ever.</p></div>
+      <div class="gcard pane"><div class="gname">📡 The social manager</div><p class="gbody">Schedules the month across your platforms and turns comments into DMs. You stop logging in to post.</p></div>
+      <div class="gcard pane"><div class="gname">📈 The strategist</div><p class="gbody">Reports what's working and what to make next, every week. You stop guessing.</p></div>
     </div>
+    <p class="gpunch">A whole content department — <b>27 skills, 12 specialized agents, all trained on your brand</b> — installed once, and yours. No salaries, no churn, no monthly tool.</p>
     <p class="tlead">Setup is just your keys. You bring them, you own them, and you pay each tool directly — no markup, no middleman.</p>
     <div class="term envcard">
       <div class="bar"><i></i><i></i><i></i><span class="title">nave / .env · your keys, your machine</span></div>
