@@ -99,6 +99,10 @@
   #crew summary{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--cream-50);cursor:pointer}
   #crew summary:hover{color:var(--ink)}
   #crew .callskills{font-family:'DM Mono',monospace;font-size:11px;color:var(--cream-72);line-height:2;margin-top:14px}
+  #crew .glogos{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:10px}
+  #crew .glogos img{width:auto;object-fit:contain;display:block;opacity:.95}
+  #crew .gnote{max-width:800px;margin:28px auto 0;padding:16px 20px;border-left:2px solid var(--ink);background:rgba(31,224,122,.05);font-size:15.5px;color:var(--cream);line-height:1.55;text-align:left}
+  #crew .gnote b{color:var(--ink);font-weight:400}
 </style>
 <section id="crew" style="padding-top:8px">
   <div class="wrap">
@@ -108,9 +112,10 @@
       <div class="gcard pane"><div class="gname">Dynamic workflows</div><p class="gbody">Orchestrate a whole month of content end to end, in one command.</p></div>
       <div class="gcard pane"><div class="gname">Specialized agents</div><p class="gbody">The specialists that plan, produce, and publish — editor, designer, copywriter, manager — plus the deep crew each one calls on.</p></div>
       <div class="gcard pane"><div class="gname">Skills</div><p class="gbody">27 production skills — transcribe, clip, reframe, caption, carousel, schedule.</p></div>
-      <div class="gcard pane"><div class="gname">Tools</div><p class="gbody">AssemblyAI, Hyperframes, Zernio, KIE — best-in-class, wired into your own keys.</p></div>
+      <div class="gcard pane"><div class="gname">Tools</div><p class="gbody">Best-in-class, wired into your own keys (plus KIE for generation).</p><div class="glogos"><img src="assets/logos/assemblyai.svg" alt="AssemblyAI" style="height:14px"><img src="assets/logos/hyperframes.svg" alt="Hyperframes" style="height:20px"><img src="assets/logos/zernio.png" alt="Zernio" style="height:20px"></div></div>
       <div class="gcard pane"><div class="gname">Your brand</div><p class="gbody">Every piece reads your brand profile, so all of it sounds and looks like you.</p></div>
     </div>
+    <p class="gnote">You can buy these tools yourself. What you can't buy is the <b>orchestration layer</b> that makes them run as one proven system, start to finish. That layer is Nave.</p>
     <p class="gout">The result: a content operation that runs every month, consistent and on-brand and <b>entirely yours.</b> That's what your Claude Code becomes the moment Nave is installed.</p>
     <details>
       <summary>see every skill + agent in the system →</summary>
@@ -121,38 +126,6 @@
 
 <div class="wrap"><hr class="rule"></div>
 
-<style>
-  #tools .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:24px}
-  #tools .tcard{padding:18px 18px 16px;display:flex;flex-direction:column;gap:7px}
-  #tools .thead{height:30px;display:flex;align-items:center;gap:9px}
-  #tools .tlogo{height:20px;width:auto;max-width:150px;object-fit:contain;object-position:left center;display:block}
-  #tools .ticon{height:26px;width:26px;object-fit:contain;display:block}
-  #tools .tname{font-family:'Newsreader',serif;font-size:19px;color:var(--cream);line-height:1}
-  #tools .tdesc{font-size:13.5px;color:var(--cream-72);line-height:1.5;margin:0;flex:1}
-  #tools .tchip{margin-top:6px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-50);border:1px solid var(--line);border-radius:999px;padding:4px 9px;align-self:flex-start}
-  #tools .tnote{max-width:760px;margin:24px 0 0;padding:16px 20px;border-left:2px solid var(--ink);background:rgba(31,224,122,.05);font-size:15.5px;color:var(--cream);line-height:1.55}
-  #tools .tnote b{color:var(--ink);font-weight:400}
-</style>
-<section id="tools">
-  <div class="wrap">
-    <div class="topbar">
-      <h2>Every tool it runs on. <i>You bring the keys.</i></h2>
-      <span class="tag">your keys · your accounts</span>
-    </div>
-    <p class="sub" style="text-align:left;max-width:720px;margin-bottom:0">No subscriptions stacked on top. Nave runs on best-in-class tools wired straight into your own accounts — you bring the keys, and you keep them.</p>
-    <div class="tgrid">
-      <div class="tcard pane"><div class="thead"><img class="tlogo" src="assets/claude-code-dark.svg" alt="Claude Code"></div><p class="tdesc">The brain that runs the whole system on your machine.</p><span class="tchip">your subscription</span></div>
-      <div class="tcard pane"><div class="thead"><img class="tlogo" src="assets/logos/assemblyai.svg" alt="AssemblyAI"></div><p class="tdesc">Transcribes and understands every word in your footage.</p><span class="tchip">your key</span></div>
-      <div class="tcard pane"><div class="thead"><img class="ticon" src="assets/logos/hyperframes.svg" alt=""><span class="tname">Hyperframes</span></div><p class="tdesc">Edits and renders the actual videos — captions, motion, sound.</p><span class="tchip">bundled · on your machine</span></div>
-      <div class="tcard pane"><div class="thead"><span class="tname">KIE.ai</span></div><p class="tdesc">Generates a missing shot, cover, or music bed when there's a gap.</p><span class="tchip">your key · optional</span></div>
-      <div class="tcard pane"><div class="thead"><img class="ticon" src="assets/logos/zernio.png" alt=""><span class="tname">Zernio</span></div><p class="tdesc">Publishes to your accounts, runs comment-to-DM, reports your analytics.</p><span class="tchip">your account</span></div>
-    </div>
-    <p class="tnote">You can buy every one of these yourself. What you can't buy is the <b>orchestration layer</b> that makes them run as one proven system, start to finish. That layer is Nave — and it's the part that actually works.</p>
-    <p class="sub" style="text-align:left;max-width:720px;margin:16px 0 0;color:var(--cream-50);font-size:14px">I build and ship on these every day — a Hyperframes contributor and a Zernio partner.</p>
-  </div>
-</section>
-
-<div class="wrap"><hr class="rule"></div>
 
 <style>
   #how .flow{max-width:780px;margin:30px auto 0;text-align:left}
@@ -200,6 +173,7 @@
         <p class="fquote">"Everyone's racing to rent you another AI tool. <em>I'd rather hand you a system you own — and your time back with it.</em>"</p>
         <p class="fbody">I'm Enrique. For a long time I did exactly what most of AI is doing right now: building my own SaaS tool, my own agent system, trying to rent it out by the month. I got tired of it. A tool you rent never gives you the thing that actually changes your life — your own system, that you own, working for you.<br><br>So now I just hand you the system. Nave is the exact one I run for my own channels and my clients: the most powerful tools, wired together and yours to own. No subscription, no middleman. And I'll teach you to get the same results I get. That's the whole point — you own your stack, you get everything out of it, and you get your time back to actually live.</p>
         <div class="attr"><span>Enrique Marq · founder, INFINITX</span></div>
+        <div style="margin-top:8px;font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.04em;color:var(--cream-50)">Hyperframes contributor · Zernio partner</div>
         <div class="fstats" style="display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin-top:24px;max-width:400px">
           <div><div style="font-family:'Newsreader',serif;font-size:30px;color:var(--ink);line-height:1">500k+</div><div style="font-size:12.5px;color:var(--cream-72);margin-top:4px">organic views, 6 months</div></div>
           <div><div style="font-family:'Newsreader',serif;font-size:30px;color:var(--ink);line-height:1">39</div><div style="font-size:12.5px;color:var(--cream-72);margin-top:4px">skills + agents, one install</div></div>
