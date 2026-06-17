@@ -87,10 +87,9 @@
 </section>
 
 <style>
-  #crew .ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-  @media(max-width:900px){#crew .ggrid{grid-template-columns:1fr 1fr}}
+  #crew .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
   @media(max-width:560px){#crew .ggrid{grid-template-columns:1fr}}
-  #crew .gcard{padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px}
+  #crew .gcard{padding:22px 24px;display:flex;flex-direction:column;gap:8px;min-height:128px}
   #crew .gname{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
   #crew .gbody{font-size:14px;color:var(--cream-72);line-height:1.55;margin:0}
   #crew .gout{margin:32px auto 0;font-family:'Newsreader',serif;font-size:clamp(19px,2.4vw,26px);color:var(--cream);text-align:center;max-width:800px;line-height:1.45}
@@ -99,10 +98,15 @@
   #crew summary{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--cream-50);cursor:pointer}
   #crew summary:hover{color:var(--ink)}
   #crew .callskills{font-family:'DM Mono',monospace;font-size:11px;color:var(--cream-72);line-height:2;margin-top:14px}
-  #crew .gtools{display:flex;flex-direction:column;gap:10px;margin-top:12px}
-  #crew .gtool{display:flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.02em;color:var(--cream-72)}
-  #crew .gtool img.ic{height:18px;width:18px;object-fit:contain;display:block}
-  #crew .gtool img.wm{height:14px;width:auto;object-fit:contain;display:block}
+  #crew .tlead{text-align:left;max-width:720px;margin:24px 0 0;font-size:14.5px;color:var(--cream-72)}
+  #crew .tbxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+  #crew details.tbx{max-width:none;margin:0;text-align:left;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);overflow:hidden}
+  #crew details.tbx summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;padding:0 15px;min-height:54px;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.02em;color:var(--cream)}
+  #crew details.tbx summary::-webkit-details-marker{display:none}
+  #crew details.tbx summary img.ic{height:18px;width:18px;object-fit:contain;display:block}
+  #crew details.tbx summary img.wm{height:13px;width:auto;object-fit:contain;display:block}
+  #crew details.tbx summary:after{margin-left:auto}
+  #crew details.tbx .tbwhat{padding:0 15px 15px;font-size:12.5px;color:var(--cream-72);line-height:1.55}
   #crew .gnote{max-width:800px;margin:28px auto 0;padding:16px 20px;border-left:2px solid var(--ink);background:rgba(31,224,122,.05);font-size:15.5px;color:var(--cream);line-height:1.55;text-align:left}
   #crew .gnote b{color:var(--ink);font-weight:400}
 </style>
@@ -114,8 +118,15 @@
       <div class="gcard pane"><div class="gname">Dynamic workflows</div><p class="gbody">Orchestrate a whole month of content end to end, in one command.</p></div>
       <div class="gcard pane"><div class="gname">Specialized agents</div><p class="gbody">The specialists that plan, produce, and publish — editor, designer, copywriter, manager — plus the deep crew each one calls on.</p></div>
       <div class="gcard pane"><div class="gname">Skills</div><p class="gbody">27 production skills — transcribe, clip, reframe, caption, carousel, schedule.</p></div>
-      <div class="gcard pane"><div class="gname">Tools</div><p class="gbody">Best-in-class, wired into your own keys.</p><div class="gtools"><div class="gtool"><img class="wm" src="assets/logos/assemblyai.svg" alt="AssemblyAI"></div><div class="gtool"><img class="ic" src="assets/logos/hyperframes.svg" alt=""><span>Hyperframes</span></div><div class="gtool"><img class="ic" src="assets/logos/zernio.png" alt=""><span>Zernio</span></div><div class="gtool"><img class="ic" src="assets/logos/kie.png" alt=""><span>KIE.ai</span></div></div></div>
       <div class="gcard pane"><div class="gname">Your brand</div><p class="gbody">Every piece reads your brand profile, so all of it sounds and looks like you.</p></div>
+    </div>
+    <p class="tlead">The tools it runs on, on your own keys. Tap any to see what it brings.</p>
+    <div class="tbxgrid">
+      <details class="tbx"><summary><img class="wm" src="assets/claude-code-dark.svg" alt="Claude Code"></summary><div class="tbwhat">The brain. Runs the whole system on your machine, on your own Claude subscription.</div></details>
+      <details class="tbx"><summary><img class="wm" src="assets/logos/assemblyai.svg" alt="AssemblyAI"></summary><div class="tbwhat">Hearing. Word-perfect transcription of every clip, so every cut and caption is accurate.</div></details>
+      <details class="tbx"><summary><img class="ic" src="assets/logos/hyperframes.svg" alt=""><span>Hyperframes</span></summary><div class="tbwhat">The editor's hands. Renders the finished videos — captions, motion, sound.</div></details>
+      <details class="tbx"><summary><img class="ic" src="assets/logos/zernio.png" alt=""><span>Zernio</span></summary><div class="tbwhat">Distribution. Publishes to your own accounts, runs comment-to-DM, and reports your analytics.</div></details>
+      <details class="tbx"><summary><img class="ic" src="assets/logos/kie.png" alt=""><span>KIE.ai</span></summary><div class="tbwhat">Generation. Fills a missing shot, cover, or music bed when your footage has a gap. Optional.</div></details>
     </div>
     <p class="gnote">You can buy these tools yourself. What you can't buy is the <b>orchestration layer</b> that makes them run as one proven system, start to finish. That layer is Nave.</p>
     <p class="gout">The result: a content operation that runs every month, consistent and on-brand and <b>entirely yours.</b> That's what your Claude Code becomes the moment Nave is installed.</p>
