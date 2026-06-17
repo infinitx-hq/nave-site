@@ -46,8 +46,8 @@
     <span class="w">Nave</span>
   </a>
   <div class="links">
+    <a href="#crew">What you get</a>
     <a href="#how">How it works</a>
-    <a href="#crew">The crew</a>
     <a href="#offer">Pricing</a>
     <a href="#faq">FAQ</a>
   </div>
@@ -69,12 +69,11 @@
           <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:16px;width:auto">
         </span>
         <h1 style="font-size:clamp(44px,6vw,80px)" data-block="nave.h1">A month of quality content.<br><i>In one hour.</i></h1>
-        <p class="lede" data-block="nave.sub">Nave is one content operating system that handles your whole content production. Drop in a batch of footage and its crew of agents turns it into a finished month — clips, posts, and carousels, written and designed in your voice, ready for your one-tap approval. It lives on your own machine, and you own it. Your part is about an hour of review a month. It does the rest.</p>
+        <p class="lede" data-block="nave.sub">A complete content operating system you install into Claude Code and own. Drop in your footage and it produces a full month of clips, posts, and carousels, ready to approve and schedule.</p>
         <div class="heroctas">
           <a class="btn" href="#offer" data-block="nave.cta_primary">Get my month of content</a>
-          <a class="btn btn-ghost" href="#how" data-block="nave.cta_secondary">Watch how it works</a>
         </div>
-        <span class="micro" data-block="nave.cta_micro">On your own machine, in your voice. One hour of review a month, and you're done.</span>
+        <span class="micro" data-block="nave.cta_micro">Install once. You own it.</span>
         <span class="pending-note" data-pending-note>Booking opens shortly — <a href="/playbook" style="color:var(--ink)">grab the free playbook</a> and you're first in line.</span>
       </div>
       <div>
@@ -88,62 +87,36 @@
 </section>
 
 <style>
-  #crew .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-  @media(max-width:900px){#crew .cgrid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){#crew .cgrid{grid-template-columns:1fr}}
-  #crew .ccard{padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px}
-  #crew .crole{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
-  #crew .cbody{font-size:14px;color:var(--cream-72);line-height:1.55;margin:0;flex:1}
-  #crew .cskills{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.02em;color:var(--cream-50);margin-top:4px;word-spacing:.04em}
-  #crew .ccount{text-align:center;margin-top:26px;font-family:'DM Mono',monospace;font-size:13.5px;color:var(--cream-72)}
-  #crew .ccount b{color:var(--ink);font-weight:400}
-  #crew details{max-width:780px;margin:16px auto 0;text-align:center}
+  #crew .ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media(max-width:900px){#crew .ggrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){#crew .ggrid{grid-template-columns:1fr}}
+  #crew .gcard{padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px}
+  #crew .gname{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  #crew .gbody{font-size:14px;color:var(--cream-72);line-height:1.55;margin:0}
+  #crew .gout{margin:32px auto 0;font-family:'Newsreader',serif;font-size:clamp(19px,2.4vw,26px);color:var(--cream);text-align:center;max-width:800px;line-height:1.45}
+  #crew .gout b{color:var(--ink);font-weight:400}
+  #crew details{max-width:800px;margin:20px auto 0;text-align:center}
   #crew summary{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--cream-50);cursor:pointer}
   #crew summary:hover{color:var(--ink)}
   #crew .callskills{font-family:'DM Mono',monospace;font-size:11px;color:var(--cream-72);line-height:2;margin-top:14px}
-  #crew .creassure{text-align:center;margin-top:20px;font-size:13.5px;color:var(--cream-50)}
 </style>
 <section id="crew" style="padding-top:8px">
   <div class="wrap">
-    <span class="eyebrow">What you actually get</span>
-    <div class="topbar">
-      <h2>You're not buying a tool. <i>You're hiring a crew.</i></h2>
-      <span class="tag">one install · a whole department</span>
+    <h2>One install. <i>The whole system is yours.</i></h2>
+    <p class="sub" style="text-align:left;max-width:720px;margin-bottom:0">Nave drops a complete content operating system into your Claude Code, and you own every piece of it. This is what's inside:</p>
+    <div class="ggrid">
+      <div class="gcard pane"><div class="gname">Dynamic workflows</div><p class="gbody">Orchestrate a whole month of content end to end, in one command.</p></div>
+      <div class="gcard pane"><div class="gname">AI agents</div><p class="gbody">Specialists that plan, produce, and publish — your editor, designer, copywriter, and manager.</p></div>
+      <div class="gcard pane"><div class="gname">Sub-agents</div><p class="gbody">The deep crew each agent calls on: scene director, move designer, sound designer, and more.</p></div>
+      <div class="gcard pane"><div class="gname">Skills</div><p class="gbody">27 production skills — transcribe, clip, reframe, caption, carousel, schedule.</p></div>
+      <div class="gcard pane"><div class="gname">Tools</div><p class="gbody">AssemblyAI, Hyperframes, Zernio, KIE — best-in-class, wired into your own keys.</p></div>
+      <div class="gcard pane"><div class="gname">Your brand</div><p class="gbody">Every piece reads your brand profile, so all of it sounds and looks like you.</p></div>
     </div>
-    <p class="sub" style="text-align:left;max-width:720px;margin-bottom:0">One install drops a whole content department onto your machine. They read your brand profile, so everything sounds and looks like you. Here's who you get, and what each one makes.</p>
-    <div class="cgrid">
-      <div class="ccard pane">
-        <div class="crole">🔭 Intake</div>
-        <p class="cbody">Watches every clip you drop and builds one searchable library — who's in it, what's usable, and the best lines to pull.</p>
-        <div class="cskills">footage-intelligence</div>
-      </div>
-      <div class="ccard pane">
-        <div class="crole">🎬 The Editor</div>
-        <p class="cbody">Cuts your footage into finished short clips — strongest moments picked, face-tracked to vertical, captioned, with motion and sound. Generates a missing shot, cover, or music bed when there's a gap.</p>
-        <div class="cskills">clip-selection · hyperframes-edit</div>
-      </div>
-      <div class="ccard pane">
-        <div class="crole">🖼 The Designer</div>
-        <p class="cbody">Turns the same footage into scroll-stopping carousels and PDF guides, on your brand, ready to post.</p>
-        <div class="cskills">carousel · document-carousel</div>
-      </div>
-      <div class="ccard pane">
-        <div class="crole">✍️ The Copywriter</div>
-        <p class="cbody">Writes the captions, hooks, and scripts in your voice, then strips out the AI tells so it reads like you.</p>
-        <div class="cskills">copywriting · humanizer</div>
-      </div>
-      <div class="ccard pane">
-        <div class="crole">📡 Publisher &amp; Manager</div>
-        <p class="cbody">Schedules the whole month across your own accounts, turns comments into DMs, and sends you a weekly report.</p>
-        <div class="cskills">social-media-publishing · zernio-comment-to-dm</div>
-      </div>
-    </div>
-    <p class="ccount"><b>27 skills, 12 specialist agents.</b> You meet five. The rest just work.</p>
+    <p class="gout">The result: a content operation that runs every month, consistent and on-brand and <b>entirely yours.</b> That's what your Claude Code becomes the moment Nave is installed.</p>
     <details>
-      <summary>see every skill in the system →</summary>
+      <summary>see every skill + agent in the system →</summary>
       <p class="callskills">video-download · extracting-transcripts · clip-selection · brand-profile · content-bootstrap · clip-machine · clip-extractor · creative-director · hyperframes-edit · hyperframes · gsap · clip-edit-logos · clip-hook-first · clip-research-brief · video-senses · carousel · document-carousel · footage-intelligence · social-media-publishing · zernio-comment-to-dm · copywriting · ugc-scripts · content-repurposing · coach · content-review · quality-gate · trending-research<br><br>agents: clip-editor · scene-director · move-designer · sound-designer · asset-fetcher · short-form-posting · carousel-posting · youtube-package · humanizer · content-planner · content-producer · content-scheduler</p>
     </details>
-    <p class="creassure">You never have to open a file to use it. But you can — they're all plain, readable, and yours to change.</p>
   </div>
 </section>
 
@@ -152,25 +125,28 @@
 <style>
   #tools .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:24px}
   #tools .tcard{padding:18px 18px 16px;display:flex;flex-direction:column;gap:7px}
-  #tools .tname{font-family:'Newsreader',serif;font-size:20px;color:var(--cream);line-height:1.1}
+  #tools .thead{height:30px;display:flex;align-items:center;gap:9px}
+  #tools .tlogo{height:20px;width:auto;max-width:150px;object-fit:contain;object-position:left center;display:block}
+  #tools .ticon{height:26px;width:26px;object-fit:contain;display:block}
+  #tools .tname{font-family:'Newsreader',serif;font-size:19px;color:var(--cream);line-height:1}
   #tools .tdesc{font-size:13.5px;color:var(--cream-72);line-height:1.5;margin:0;flex:1}
   #tools .tchip{margin-top:6px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream-50);border:1px solid var(--line);border-radius:999px;padding:4px 9px;align-self:flex-start}
 </style>
 <section id="tools">
   <div class="wrap">
-    <span class="eyebrow">The tools, wired in</span>
     <div class="topbar">
-      <h2>Every tool the crew needs. <i>You bring the keys.</i></h2>
+      <h2>Every tool it runs on. <i>You bring the keys.</i></h2>
       <span class="tag">your keys · your accounts</span>
     </div>
-    <p class="sub" style="text-align:left;max-width:720px;margin-bottom:0">No subscriptions stacked on top of Nave. The crew runs on best-in-class tools wired straight into your own accounts — you bring the keys, and you keep them.</p>
+    <p class="sub" style="text-align:left;max-width:720px;margin-bottom:0">No subscriptions stacked on top. Nave runs on best-in-class tools wired straight into your own accounts — you bring the keys, and you keep them.</p>
     <div class="tgrid">
-      <div class="tcard pane"><div class="tname">Claude Code</div><p class="tdesc">The brain that runs the whole crew on your machine.</p><span class="tchip">your subscription</span></div>
-      <div class="tcard pane"><div class="tname">AssemblyAI</div><p class="tdesc">Transcribes and understands every word in your footage.</p><span class="tchip">your key</span></div>
-      <div class="tcard pane"><div class="tname">Hyperframes</div><p class="tdesc">Edits and renders the actual videos — captions, motion, sound.</p><span class="tchip">bundled · on your machine</span></div>
-      <div class="tcard pane"><div class="tname">KIE.ai</div><p class="tdesc">Generates a missing shot, cover, or music bed when there's a gap.</p><span class="tchip">your key · optional</span></div>
-      <div class="tcard pane"><div class="tname">Zernio</div><p class="tdesc">Publishes to your accounts, runs comment-to-DM, reports your analytics.</p><span class="tchip">your account</span></div>
+      <div class="tcard pane"><div class="thead"><img class="tlogo" src="assets/claude-code-dark.svg" alt="Claude Code"></div><p class="tdesc">The brain that runs the whole system on your machine.</p><span class="tchip">your subscription</span></div>
+      <div class="tcard pane"><div class="thead"><img class="tlogo" src="assets/logos/assemblyai.svg" alt="AssemblyAI"></div><p class="tdesc">Transcribes and understands every word in your footage.</p><span class="tchip">your key</span></div>
+      <div class="tcard pane"><div class="thead"><img class="ticon" src="assets/logos/hyperframes.svg" alt=""><span class="tname">Hyperframes</span></div><p class="tdesc">Edits and renders the actual videos — captions, motion, sound.</p><span class="tchip">bundled · on your machine</span></div>
+      <div class="tcard pane"><div class="thead"><span class="tname">KIE.ai</span></div><p class="tdesc">Generates a missing shot, cover, or music bed when there's a gap.</p><span class="tchip">your key · optional</span></div>
+      <div class="tcard pane"><div class="thead"><img class="ticon" src="assets/logos/zernio.png" alt=""><span class="tname">Zernio</span></div><p class="tdesc">Publishes to your accounts, runs comment-to-DM, reports your analytics.</p><span class="tchip">your account</span></div>
     </div>
+    <p class="sub" style="text-align:left;max-width:720px;margin:18px 0 0;color:var(--cream-50);font-size:14px">I build and ship on these every day — a Hyperframes contributor and a Zernio partner.</p>
   </div>
 </section>
 
@@ -186,7 +162,6 @@
 </style>
 <section id="how" style="padding-top:40px">
   <div class="wrap" style="text-align:center">
-    <span class="eyebrow" style="display:inline-block">How it works</span>
     <h2>Drop footage. Get a month. <i>Every week, a report.</i></h2>
     <p class="sub" style="margin:6px auto 0;max-width:600px">One loop, start to finish. You're in it about an hour a month — the crew does the rest.</p>
     <div class="term" style="max-width:760px;margin:26px auto 0;text-align:left">
@@ -216,8 +191,7 @@
 
 <section id="founder">
   <div class="wrap">
-    <span class="eyebrow">Who built this</span>
-    <div class="fgrid" style="margin-top:30px">
+    <div class="fgrid" style="margin-top:8px">
       <img src="assets/enrique.png" alt="Enrique Marq" class="headshot" style="width:100%;display:block;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 28%, #15271c, #0a110c)">
       <div>
         <p class="fquote">"I got tired of losing a whole day to content. <em>So I built the team that does it for me.</em>"</p>
@@ -269,7 +243,6 @@
 </style>
 <section id="support" style="text-align:center">
   <div class="wrap">
-    <span class="eyebrow" style="display:inline-block">After you get it</span>
     <h2>You own it. <i>You're not alone with it.</i></h2>
     <p class="sub" style="margin:6px auto 0;max-width:600px">Open files you can read, a year of updates, and a human when you're stuck.</p>
     <div class="suprows">
@@ -308,7 +281,6 @@
 </style>
 <section id="offer" style="text-align:center">
   <div class="wrap">
-    <span class="eyebrow">The offer</span>
     <h2>Two ways to get it. <i>Both yours to keep.</i></h2>
     <p class="sub">What an agency bills $3–5k a month for, or an editor $1.5k, you own once. The only question is whether you set it up solo, or we install it together, live, with me in your corner for good.</p>
 
@@ -350,7 +322,6 @@
 
 <section id="faq" style="text-align:center">
   <div class="wrap">
-    <span class="eyebrow">FAQ</span>
     <h2>Real questions. <i>Straight answers.</i></h2>
     <div class="faqwrap">
       <details open><summary><span class="qn">01</span><span class="q">Do I need a separate AI or API key?</span></summary><p class="a">No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic key. You bring keys only for the two tools it uses: AssemblyAI (transcription) and Zernio (publishing + DM automation). You pay those directly — no markup.</p></details>
@@ -409,7 +380,7 @@
     </div>
     <div>
       <div class="colh">Product</div>
-      <a href="#crew">The Crew</a>
+      <a href="#crew">What you get</a>
       <a href="#how">How it works</a>
       <a href="#offer">Pricing</a>
       <a href="#faq">FAQ</a>
