@@ -98,15 +98,14 @@
   #crew summary{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--cream-50);cursor:pointer}
   #crew summary:hover{color:var(--ink)}
   #crew .callskills{font-family:'DM Mono',monospace;font-size:11px;color:var(--cream-72);line-height:2;margin-top:14px}
-  #crew .tlead{text-align:left;max-width:720px;margin:24px 0 0;font-size:14.5px;color:var(--cream-72)}
-  #crew .tbxgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
-  #crew details.tbx{max-width:none;margin:0;text-align:left;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);overflow:hidden}
-  #crew details.tbx summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;padding:0 15px;min-height:54px;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.02em;color:var(--cream)}
-  #crew details.tbx summary::-webkit-details-marker{display:none}
-  #crew details.tbx summary img.ic{height:18px;width:18px;object-fit:contain;display:block}
-  #crew details.tbx summary img.wm{height:13px;width:auto;object-fit:contain;display:block}
-  #crew details.tbx summary:after{margin-left:auto}
-  #crew details.tbx .tbwhat{padding:0 15px 15px;font-size:12.5px;color:var(--cream-72);line-height:1.55}
+  #crew .tlead{text-align:left;max-width:720px;margin:26px 0 0;font-size:14.5px;color:var(--cream-72)}
+  #crew .envcard{max-width:680px;margin:16px 0 0;text-align:left;aspect-ratio:auto}
+  #crew .envcard pre{flex:none}
+  #crew .envcard pre{font-size:12.5px;line-height:1.9}
+  #crew .envcard .ec{color:rgba(124,232,175,.5)}
+  #crew .envlogos{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:18px;opacity:.72}
+  #crew .envlogos img.ic{height:18px;width:18px;object-fit:contain;display:block}
+  #crew .envlogos img.wm{height:14px;width:auto;object-fit:contain;display:block}
   #crew .gnote{max-width:800px;margin:28px auto 0;padding:16px 20px;border-left:2px solid var(--ink);background:rgba(31,224,122,.05);font-size:15.5px;color:var(--cream);line-height:1.55;text-align:left}
   #crew .gnote b{color:var(--ink);font-weight:400}
 </style>
@@ -120,13 +119,23 @@
       <div class="gcard pane"><div class="gname">Skills</div><p class="gbody">27 production skills — transcribe, clip, reframe, caption, carousel, schedule.</p></div>
       <div class="gcard pane"><div class="gname">Your brand</div><p class="gbody">Every piece reads your brand profile, so all of it sounds and looks like you.</p></div>
     </div>
-    <p class="tlead">The tools it runs on, on your own keys. Tap any to see what it brings.</p>
-    <div class="tbxgrid">
-      <details class="tbx"><summary><img class="wm" src="assets/claude-code-dark.svg" alt="Claude Code"></summary><div class="tbwhat">The brain. Runs the whole system on your machine, on your own Claude subscription.</div></details>
-      <details class="tbx"><summary><img class="wm" src="assets/logos/assemblyai.svg" alt="AssemblyAI"></summary><div class="tbwhat">Hearing. Word-perfect transcription of every clip, so every cut and caption is accurate.</div></details>
-      <details class="tbx"><summary><img class="ic" src="assets/logos/hyperframes.svg" alt=""><span>Hyperframes</span></summary><div class="tbwhat">The editor's hands. Renders the finished videos — captions, motion, sound.</div></details>
-      <details class="tbx"><summary><img class="ic" src="assets/logos/zernio.png" alt=""><span>Zernio</span></summary><div class="tbwhat">Distribution. Publishes to your own accounts, runs comment-to-DM, and reports your analytics.</div></details>
-      <details class="tbx"><summary><img class="ic" src="assets/logos/kie.png" alt=""><span>KIE.ai</span></summary><div class="tbwhat">Generation. Fills a missing shot, cover, or music bed when your footage has a gap. Optional.</div></details>
+    <p class="tlead">Setup is just your keys. You bring them, you own them, and you pay each tool directly — no markup, no middleman.</p>
+    <div class="term envcard">
+      <div class="bar"><i></i><i></i><i></i><span class="title">nave / .env · your keys, your machine</span></div>
+      <pre><span class="ec"># this is the whole setup</span>
+ASSEMBLYAI_API_KEY=••••••••   <span class="ec"># hearing — transcription</span>
+ZERNIO_API_KEY=••••••••       <span class="ec"># publishing + comment-to-DM</span>
+KIE_API_KEY=••••••••          <span class="ec"># generation (optional)</span>
+
+<span class="ec"># Hyperframes (editing) ships bundled</span>
+<span class="ec"># Claude Code runs the whole thing</span></pre>
+    </div>
+    <div class="envlogos">
+      <img class="wm" src="assets/claude-code-dark.svg" alt="Claude Code">
+      <img class="wm" src="assets/logos/assemblyai.svg" alt="AssemblyAI">
+      <img class="ic" src="assets/logos/hyperframes.svg" alt="Hyperframes">
+      <img class="ic" src="assets/logos/zernio.png" alt="Zernio">
+      <img class="ic" src="assets/logos/kie.png" alt="KIE.ai">
     </div>
     <p class="gnote">You can buy these tools yourself. What you can't buy is the <b>orchestration layer</b> that makes them run as one proven system, start to finish. That layer is Nave.</p>
     <p class="gout">The result: a content operation that runs every month, consistent and on-brand and <b>entirely yours.</b> That's what your Claude Code becomes the moment Nave is installed.</p>
