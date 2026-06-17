@@ -184,9 +184,49 @@ KIE_API_KEY=••••••••          <span class="ec"># AI generation �
 
 <div class="wrap"><hr class="rule"></div>
 
-<section id="own" style="text-align:center">
+<style>
+  #vs .vsgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:30px auto 0;text-align:left}
+  @media(max-width:680px){#vs .vsgrid{grid-template-columns:1fr}}
+  #vs .vscol{padding:26px 26px 22px}
+  #vs .vscol.good{border-color:var(--line-strong);box-shadow:0 0 0 1px var(--line-strong)}
+  #vs .vshead{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
+  #vs .bad .vshead{color:var(--cream-50)}
+  #vs .good .vshead{color:var(--ink)}
+  #vs ul{list-style:none;margin:0;padding:0}
+  #vs li{position:relative;padding:0 0 0 26px;margin:0 0 13px;font-size:14.5px;line-height:1.5}
+  #vs .bad li{color:var(--cream-50)}
+  #vs .good li{color:var(--cream)}
+  #vs .bad li:before{content:"\2715";position:absolute;left:0;top:1px;color:var(--cream-50);font-size:12px}
+  #vs .good li:before{content:"\2713";position:absolute;left:0;top:1px;color:var(--ink)}
+</style>
+<section id="vs" style="text-align:center">
   <div class="wrap">
-    <p style="font-family:'Newsreader',serif;font-size:clamp(22px,3vw,30px);color:var(--cream);max-width:780px;margin:0 auto;line-height:1.4">Not another subscription — <i style="color:var(--ink)">a content operating system that runs on your machine, yours to keep.</i></p>
+    <h2>They rent you tools. <i>You own the whole system.</i></h2>
+    <p class="sub" style="margin:6px auto 0;max-width:640px">Every other AI content tool is a subscription — generic, marked up, and gone the day you stop paying. Owning the system flips all of it.</p>
+    <div class="vsgrid">
+      <div class="vscol pane bad">
+        <div class="vshead">Renting a content platform</div>
+        <ul>
+          <li>Pay every month, forever</li>
+          <li>Generic AI, tuned for everyone but you</li>
+          <li>Their tools, their markup, their rules</li>
+          <li>A pile of features in a dashboard you still operate</li>
+          <li>You still do the work</li>
+          <li>Stop paying and it all disappears</li>
+        </ul>
+      </div>
+      <div class="vscol pane good">
+        <div class="vshead">Owning Nave</div>
+        <ul>
+          <li>Install once — yours for good</li>
+          <li>A crew trained on your brand and your voice</li>
+          <li>Your own keys, paid direct — no markup</li>
+          <li>One system that runs on a single command</li>
+          <li>The crew does the work, you just approve</li>
+          <li>It lives on your machine — nobody can switch it off</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
