@@ -1,0 +1,36 @@
+---
+permalink: /404.html
+---
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nave</title>
+<script>
+/* Clean short-link router. Any path GitHub Pages can't match lands here.
+   /<channel>/<slug...>  ->  /playbook?utm_source=<channel>&utm_medium=<m>&utm_campaign=<slug>
+   so you can share pretty links per video (e.g. /y/month-of-content) that track
+   exactly like the full UTM URL. Unknown paths fall through to the homepage. */
+(function () {
+  var SRC = { y:'youtube', yt:'youtube', in:'linkedin', li:'linkedin', ig:'instagram',
+              x:'x', tw:'x', tt:'tiktok', fb:'facebook' };
+  var MED = { youtube:'video', linkedin:'post', instagram:'bio', x:'post', tiktok:'video', facebook:'post' };
+  try {
+    var parts = location.pathname.replace(/^\/+|\/+$/g, '').split('/');
+    var src = SRC[(parts[0] || '').toLowerCase()];
+    if (src) {
+      var slug = parts.slice(1).join('-').toLowerCase().replace(/[^a-z0-9\-]/g, '') || 'untitled';
+      var qs = location.search ? (location.search + '&') : '?';
+      location.replace('/playbook' + qs + 'utm_source=' + src + '&utm_medium=' + MED[src] +
+                       '&utm_campaign=' + encodeURIComponent(slug));
+      return;
+    }
+  } catch (e) {}
+  location.replace('/');
+})();
+</script>
+<meta http-equiv="refresh" content="0;url=/">
+</head>
+<body style="background:#070908;color:#F0EBDE;font-family:system-ui,sans-serif;text-align:center;padding:60px">
+Redirecting…
+</body></html>
