@@ -99,6 +99,18 @@ const NAVE_LINKS = {
       var email = val('input[type="email"]');
       var name  = val('input[name="fields[first_name]"]') || val('input[type="text"]');
       var phone = val('input[type="tel"]');
+
+      /* Validate before anything fires — block junk emails + phone numbers.
+         Uses native bubbles on the offending field; nothing is captured on fail. */
+      var emailEl = form.querySelector('input[type="email"]');
+      var phoneEl = form.querySelector('input[type="tel"]');
+      var bad = function(el, msg){ if (el){ el.setCustomValidity(msg); el.reportValidity(); el.addEventListener('input', function h(){ el.setCustomValidity(''); el.removeEventListener('input', h); }); el.focus(); } };
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      if (!emailOk){ bad(emailEl, 'Enter a valid email address (you@example.com).'); return; }
+      var digits = phone.replace(/\D/g, '');
+      var phoneOk = /^\+?[\d\s().\-]{7,20}$/.test(phone) && digits.length >= 7 && digits.length <= 15;
+      if (!phoneOk){ bad(phoneEl, 'Enter a valid phone number with country code (e.g. +1 555 123 4567).'); return; }
+
       try { if (email) sessionStorage.setItem('nave_email', email); } catch (_e) {}
       var done = false, go = function(){ if (done) return; done = true; location.href = '/apply?sent=1'; };
       window.naveCapture({

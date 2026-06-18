@@ -109,8 +109,8 @@
             <p class="formhead">The full method + the real tools, free.</p>
             <form class="capture stacked" id="ac-form1" action="#" method="post">
               <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
-              <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required>
-              <input type="tel" name="phone" placeholder="phone" aria-label="Phone" required>
+              <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email" required>
+              <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" aria-label="Phone" required>
               <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0">
               <button class="btn" type="submit">Get the playbook →</button>
             </form>
@@ -157,13 +157,19 @@
   function v(s){ var el=form1.querySelector(s); return el?(el.value||'').trim():''; }
   if(form1) form1.addEventListener('submit', function(e){
     e.preventDefault();
-    var email=v('input[type=email]'), name=v('input[name="fields[first_name]"]');
+    var email=v('input[type=email]'), name=v('input[name="fields[first_name]"]'), phone=v('input[type=tel]');
+    /* Validate before capture — block junk emails + phone numbers (native bubble on the bad field). */
+    var emEl=form1.querySelector('input[type=email]'), phEl=form1.querySelector('input[type=tel]');
+    var bad=function(el,msg){ if(el){ el.setCustomValidity(msg); el.reportValidity(); el.addEventListener('input',function h(){el.setCustomValidity('');el.removeEventListener('input',h);}); el.focus(); } };
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ bad(emEl,'Enter a valid email address (you@example.com).'); return; }
+    var digits=phone.replace(/\D/g,'');
+    if(!(/^\+?[\d\s().\-]{7,20}$/.test(phone) && digits.length>=7 && digits.length<=15)){ bad(phEl,'Enter a valid phone number with country code (e.g. +1 555 123 4567).'); return; }
     var ref=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now()+'-'+Math.random().toString(36).slice(2));
     try{ sessionStorage.setItem('nave_email', email); sessionStorage.setItem('nave_name', name); sessionStorage.setItem('nave_ref', ref); }catch(_e){}
     var done=false, next=function(){ if(done) return; done=true; location.href='/apply?sent=1'; };
     try{
       if(window.naveCapture){
-        window.naveCapture({ source:'playbook', email:email, name:name, phone:v('input[type=tel]'),
+        window.naveCapture({ source:'playbook', email:email, name:name, phone:phone,
           lead_ref:ref, referrer:document.referrer||location.href, company_website:v('input[name=company_website]')
         }).finally(next);
       } else next();
