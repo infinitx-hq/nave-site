@@ -19,7 +19,7 @@ const NAVE_LINKS = {
   CONTACT_EMAIL: '',         // public support email — also referenced by the legal pages
   VSL_INDEX: '',             // main VSL embed URL (squeeze page)
   VSL_NAVE: '',              // Nave offer VSL embed URL (iframe — Vimeo/YouTube)
-  VSL_FILE: '',              // OR a direct self-hosted mp4 URL (Supabase Storage) — native player, no third-party chrome
+  VSL_FILE: 'https://fkupordxnjuedmesjhnu.supabase.co/storage/v1/object/public/nave-public/vsl.mp4',  // self-hosted on Supabase Storage (interim de-stuttered cut; premium edit replaces it at the same URL)
   VSL_CUSTOM: '',            // done-for-you VSL embed URL
   CLARITY_ID: 'x7j0avqhnn',  // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
   /* Real testimonials only. Add an object per quote and the section reveals itself.
