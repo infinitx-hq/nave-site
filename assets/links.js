@@ -22,10 +22,10 @@ const NAVE_LINKS = {
   VSL_FILE: 'https://fkupordxnjuedmesjhnu.supabase.co/storage/v1/object/public/nave-public/vsl.mp4',  // self-hosted on Supabase Storage (interim de-stuttered cut; premium edit replaces it at the same URL)
   VSL_CUSTOM: '',            // done-for-you VSL embed URL
   CLARITY_ID: 'x7j0avqhnn',  // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
-  /* Real testimonials only. Add an object per quote and the section reveals itself.
-     Empty = the wall stays hidden (the page never shows fake proof). */
+  /* Real testimonials only — result-led (the result is the headline; it converts better).
+     Add an object per client and the section reveals itself. Empty = wall stays hidden. */
   TESTIMONIALS: [
-    // { quote: "Installed it in an hour, made my first week of clips on the call.", name: "Jordan R.", handle: "@jordanbuilds", role: "Creator" },
+    // { result: "From posting twice a month to daily, in a week.", quote: "...what changed after install...", name: "Name", business: "Business", industry: "Industry" },
   ]
 };
 
