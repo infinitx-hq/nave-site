@@ -10,7 +10,7 @@
    ============================================================ */
 const NAVE_LINKS = {
   LEADS_ENDPOINT: 'https://ix-substrate-core-production.up.railway.app/leads',  // substrate lead capture -> state.db (LIVE)
-  CALL_BOOKING: '',            // ← 15-min call booking link (Calendly / Cal.com). Empty = CTAs route to /apply + show "booking opens shortly".
+  CALL_BOOKING: 'https://calendar.app.google/L25kvuTgSLfwxC8P7',  // 15-min call booking (Google Calendar appointments)
   BOOK: 'https://buy.stripe.com/dRm8wPbkHfPRdNX1e18so0p',       // Stripe $397 1:1 install (pay -> then book)
   SELF_SERVE: 'https://buy.stripe.com/8x2dR9dsP5bdbFP9Kx8so0n', // Stripe $89 self-serve Content OS
   PLAYBOOK_FORM_ACTION: '',  // Kit (ConvertKit) form action — playbook + vault opt-in (email + fields[phone])
@@ -18,7 +18,8 @@ const NAVE_LINKS = {
   CUSTOM_FORM_ACTION: '',    // endpoint for custom-build requests
   CONTACT_EMAIL: '',         // public support email — also referenced by the legal pages
   VSL_INDEX: '',             // main VSL embed URL (squeeze page)
-  VSL_NAVE: '',              // Nave offer VSL embed URL
+  VSL_NAVE: '',              // Nave offer VSL embed URL (iframe — Vimeo/YouTube)
+  VSL_FILE: '',              // OR a direct self-hosted mp4 URL (Supabase Storage) — native player, no third-party chrome
   VSL_CUSTOM: '',            // done-for-you VSL embed URL
   CLARITY_ID: 'x7j0avqhnn',  // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
   /* Real testimonials only. Add an object per quote and the section reveals itself.

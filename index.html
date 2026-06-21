@@ -131,9 +131,9 @@
     <span class="vpending" data-pending-note>Booking opens shortly — meanwhile, <a href="/playbook" style="color:var(--ink)">grab the free playbook</a>.</span>
 
     <div class="proofbar">
-      <span><b>500,000+</b> organic views in 6 months</span><span class="sep">·</span>
+      <span><b>500,000+</b> organic views</span><span class="sep">·</span>
       <span><b>$25,000</b> in clients from the content itself</span><span class="sep">·</span>
-      <span>built on the system I run <b>every week</b></span>
+      <span>installed for <b>50+ businesses</b></span>
     </div>
   </div>
 </section>
@@ -218,18 +218,19 @@
    else a self-hosted assets/vsl.mp4, else keeps the poster + note. */
 (function(){
   var box=document.getElementById('vsl'); if(!box) return;
-  var embed=''; try{ embed=(window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)||''; }catch(_e){}
+  var file='',embed=''; try{ file=(window.NAVE_LINKS&&NAVE_LINKS.VSL_FILE)||''; embed=(window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)||''; }catch(_e){}
+  var src=file||'assets/vsl.mp4';
   function play(){
     if(box.dataset.state==='playing') return;
     box.dataset.state='playing';
     var note=box.querySelector('[data-vsl-note]'); if(note) note.remove();
     var btn=box.querySelector('.vslplay'); if(btn) btn.remove();
-    if(embed){
+    if(!file && embed){
       var f=document.createElement('iframe'); f.src=embed+(embed.indexOf('?')<0?'?':'&')+'autoplay=1';
       f.allow='autoplay; fullscreen; picture-in-picture'; f.setAttribute('allowfullscreen','');
       box.appendChild(f);
     } else {
-      var v=document.createElement('video'); v.src='assets/vsl.mp4'; v.controls=true; v.autoplay=true; v.playsInline=true;
+      var v=document.createElement('video'); v.src=src; v.controls=true; v.autoplay=true; v.playsInline=true;
       v.onerror=function(){ box.dataset.state='poster'; box.innerHTML='<img class="vslposter" src="assets/vsl-poster.jpg" alt=""><span class="vslnote">The walkthrough is being finalized — book a call and I\'ll show you live.</span>'; };
       box.appendChild(v);
     }
