@@ -28,6 +28,10 @@ const NAVE_LINKS = {
     // { result: "From posting twice a month to daily, in a week.", quote: "...what changed after install...", name: "Name", business: "Business", industry: "Industry" },
   ]
 };
+/* Expose on window — a top-level `const` is script-scoped and does NOT attach to
+   window, so inline scripts reading window.NAVE_LINKS (the VSL player, testimonial
+   wall) were getting undefined. This makes window.NAVE_LINKS resolve everywhere. */
+window.NAVE_LINKS = NAVE_LINKS;
 
 /* Microsoft Clarity — heatmaps + session recordings (where visitors look / stay).
    Loads ONLY when CLARITY_ID is set, so the site ships analytics-free until then.
