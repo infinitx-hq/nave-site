@@ -3,480 +3,239 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nave, installed with you — the Content OS for Claude Code, live 1:1</title>
-<meta name="description" content="A live 1:1 install hour: the Nave Content OS on your machine, a real render verified, your brand set up, and your first month of content kicked off together. $397 once.">
+<title>Nave — get a month of content in a day, without it running through you</title>
+<meta name="description" content="The content operating system you own. Install it once and it produces, publishes, and learns — so you stay consistent every month without being the one making it. Book a 15-minute call.">
 <link rel="canonical" href="https://nave.infinitxai.com/">
 <meta name="theme-color" content="#070908">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nave">
-<meta property="og:title" content="Nave, installed with you — live 1:1, $397 once">
-<meta property="og:description" content="One hour, live, on your machine. Install verified, brand set up, first month kicked off together. Runs or refunded.">
+<meta property="og:title" content="Get a month of content in a day — without it running through you">
+<meta property="og:description" content="The content operating system you own. Install once; it produces, publishes, and learns. Book a 15-minute call.">
 <meta property="og:url" content="https://nave.infinitxai.com/">
 <meta property="og:image" content="https://nave.infinitxai.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Nave — a month of content in one hour. The Content OS for Claude Code.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nave — a month of content in one hour">
-<meta name="twitter:description" content="Drop your footage. A crew of agents on your own machine turns it into a month of finished content. $397 once — you own it.">
 <meta name="twitter:image" content="https://nave.infinitxai.com/assets/og.png">
 <link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Is the Nave install 1:1?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — one hour, live, on your machine. The Content OS is installed, your keys are placed, a real render is verified, and your brand setup plus your first month's run are kicked off together on the call. After the session: the weekly community call plus personal Loom support — a custom walkthrough within 2 business days." } },
-    { "@type": "Question", "name": "What are Nave's guarantees and refunds?", "acceptedAnswer": { "@type": "Answer", "text": "The $397 install carries the Get-Running Guarantee: Nave runs on your machine within 30 days of your install session, or we make it run, or you get your money back. The $89 self-serve Content OS carries bounded install support instead (async Loom replies), with no cash refund — it's a forkable repo, and once cloned it can't be returned." } },
-    { "@type": "Question", "name": "What does 'a month of content in an hour' really mean?", "acceptedAnswer": { "@type": "Answer", "text": "One-time install first, then about an hour of your hands-on time per month after that. The crew does the production. Your hour is the review: you check the staged queue and say 'schedule it.' Nothing publishes without your approval." } }
+    { "@type": "Question", "name": "What happens on the 15-minute call?", "acceptedAnswer": { "@type": "Answer", "text": "I get to know you and where you're at, and we figure out together if Nave's the right fit. If it is, we get the ball rolling. If not, I'll tell you straight — no pressure." } },
+    { "@type": "Question", "name": "Do I need to be technical?", "acceptedAnswer": { "@type": "Answer", "text": "No. Nave installs into Claude Code, and we set it up with you. If you can drop a file in a folder, you can run it." } },
+    { "@type": "Question", "name": "What if I don't have any footage?", "acceptedAnswer": { "@type": "Answer", "text": "Then you don't need any. Nave can build a full month from just your ideas — or generate it from scratch, including avatar videos if you'd rather not be on camera." } },
+    { "@type": "Question", "name": "Is this another monthly subscription?", "acceptedAnswer": { "@type": "Answer", "text": "No. You pay once and own it. It lives on your machine. There's nothing to cancel and nothing that disappears." } }
   ]
 }
 </script>
+<style>
+  :root{--orange:#FF7614}
+  /* VSL page */
+  .vpage{max-width:980px;margin:0 auto;padding:0 26px}
+  .vhero{text-align:center;padding:46px 0 0}
+  .veyebrow{display:inline-block;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
+  .vh1{font-size:clamp(34px,5.4vw,62px);line-height:1.03;font-weight:800;color:var(--cream);letter-spacing:-.02em;margin:0 auto;max-width:18ch}
+  .vh1 i{font-family:'Newsreader',serif;font-style:italic;font-weight:400;color:var(--orange)}
+  .vsub{font-size:clamp(16px,2.1vw,20px);color:var(--cream-72);max-width:60ch;margin:20px auto 0;line-height:1.5}
+  /* player */
+  .vslwrap{max-width:860px;margin:34px auto 0}
+  .vslplayer{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0d0c;box-shadow:0 30px 80px rgba(0,0,0,.5);cursor:pointer}
+  .vslplayer img.vslposter,.vslplayer video,.vslplayer iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+  .vslplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;border:0;background:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 36px rgba(0,0,0,.5);transition:transform .15s}
+  .vslplayer:hover .vslplay{transform:translate(-50%,-50%) scale(1.06)}
+  .vslplay span{border-left:26px solid #06140c;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:7px}
+  .vslnote{position:absolute;left:0;right:0;bottom:0;padding:12px;text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--cream-50);background:linear-gradient(transparent,rgba(7,9,8,.85))}
+  /* ctas */
+  .vcta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#06140c;font-weight:800;font-size:18px;border-radius:12px;padding:16px 30px;text-decoration:none;margin-top:26px;transition:transform .15s,box-shadow .15s;box-shadow:0 10px 30px rgba(31,224,122,.18)}
+  .vcta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(31,224,122,.28)}
+  .vmicro{display:block;font-size:14px;color:var(--cream-50);margin-top:12px}
+  .vpending{display:none;font-size:13px;color:var(--orange);margin-top:8px;font-family:'DM Mono',monospace}
+  /* proof bar */
+  .proofbar{margin:30px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;font-family:'DM Mono',monospace;font-size:13.5px;color:var(--cream-72);text-align:center}
+  .proofbar b{color:var(--ink);font-weight:500}
+  .proofbar .sep{color:var(--line)}
+  /* sections */
+  .vsec{padding:60px 0;border-bottom:1px solid var(--line)}
+  .vsec h2{font-size:clamp(26px,3.6vw,40px);line-height:1.08;font-weight:800;color:var(--cream);letter-spacing:-.01em;max-width:20ch}
+  .vsec h2 i{font-family:'Newsreader',serif;font-style:italic;font-weight:400;color:var(--orange)}
+  .vsec p{font-size:17px;line-height:1.65;color:var(--cream-72);max-width:62ch;margin-top:16px}
+  .vsec p b{color:var(--cream);font-weight:600}
+  .crewlist{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:2px;max-width:640px}
+  .crewlist li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(31,224,122,.08);font-size:16.5px;color:var(--cream)}
+  .crewlist li .d{width:9px;height:9px;border-radius:50%;background:var(--ink);flex:none;margin-top:7px}
+  .crewlist li b{color:var(--ink);font-weight:600}
+  .crewnote{margin-top:22px;font-size:16px;color:var(--cream)}
+  .mathrow{display:grid;gap:0;margin-top:22px;max-width:560px}
+  .mathrow div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(31,224,122,.1);font-size:16.5px;color:var(--cream-72)}
+  .mathrow div span{color:var(--cream)}
+  .mathrow .nave{color:var(--ink);font-weight:600;border-bottom:0;padding-top:18px}
+  .mathrow .nave span,.mathrow .nave{color:var(--ink)}
+  .vsec.cta-sec{text-align:center;border-bottom:1px solid var(--line)}
+  .vsec.cta-sec h2{margin:0 auto}
+  .vsec.cta-sec p{margin:16px auto 0}
+  .faqwrap{max-width:720px;margin-top:24px}
+  .faqwrap details{border-bottom:1px solid var(--line);padding:18px 0}
+  .faqwrap summary{cursor:pointer;list-style:none;font-size:18px;font-weight:600;color:var(--cream);display:flex;justify-content:space-between;gap:16px}
+  .faqwrap summary::-webkit-details-marker{display:none}
+  .faqwrap summary::after{content:"+";color:var(--ink);font-weight:400}
+  .faqwrap details[open] summary::after{content:"–"}
+  .faqwrap details p{font-size:16px;color:var(--cream-72);margin-top:12px;max-width:none}
+  .vfinal{text-align:center;padding:64px 0}
+  .vfinal h2{margin:0 auto}
+  .vfoot{padding:40px 0;border-top:1px solid var(--line-strong);text-align:center;font-size:13px;color:var(--cream-50);line-height:1.7}
+  .vfoot .fb{font-weight:800;color:var(--cream);font-size:16px}
+  @media(max-width:640px){.vsec{padding:46px 0}}
+</style>
 </head>
 <body>
 
+<div id="ctabar">
+  <span class="bartext">A month of content in a day — without it running through you</span>
+  <a class="btn" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-min call</a>
+</div>
+
 <header><div class="wrap"><nav>
   <a class="brand" href="/">
-    <svg viewBox="0 0 512 448" aria-label="Nave"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></g></svg>
+    <svg viewBox="0 0 512 448" aria-label="Nave"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/></g></svg>
     <span class="w">Nave</span>
   </a>
   <div class="links">
-    <a href="#crew">What you get</a>
-    <a href="#how">How it works</a>
-    <a href="#offer">Pricing</a>
-    <a href="#faq">FAQ</a>
+    <a class="btn" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-min call</a>
   </div>
 </nav></div></header>
 
-<div id="ctabar">
-  <span class="bartext">A month of quality content, in an hour. Your machine, your voice.</span>
-  <a class="btn" href="#offer">Get my month of content</a>
-</div>
-
 <main>
-<section class="hero" style="padding-top:0">
-  <div class="wrap" style="position:relative">
-    <div class="glitch" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="hero-grid" style="margin-top:64px">
-      <div>
-        <span class="ccbadge" data-block="nave.kicker">
-          <span>The content OS you own, built for</span>
-          <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:16px;width:auto">
-        </span>
-        <h1 style="font-size:clamp(44px,6vw,80px)" data-block="nave.h1">A month of quality content.<br><i>In one hour.</i></h1>
-        <p class="lede" data-block="nave.sub">Stop renting content tools. Nave is the system you own: install it into your Claude Code, and a crew turns one footage drop into a finished month of clips, posts, and carousels, ready to approve and schedule.</p>
-        <div class="heroctas">
-          <a class="btn" href="#offer" data-block="nave.cta_primary">Get my month of content</a>
-        </div>
-        <span class="micro" data-block="nave.cta_micro">Install once. No subscription, no monthly anything.</span>
-        <span class="pending-note" data-pending-note>Booking opens shortly — <a href="/playbook" style="color:var(--ink)">grab the free playbook</a> and you're first in line.</span>
+<section class="vhero">
+  <div class="vpage">
+    <span class="veyebrow">For business owners drowning in their own content</span>
+    <h1 class="vh1">Get a full month of content in a day — <i>without it ever running through you again.</i></h1>
+    <p class="vsub">The content operating system you own. Install it once, and it produces, publishes, and learns — so you stay consistent every month without being the one making it.</p>
+
+    <div class="vslwrap">
+      <div id="vsl" class="vslplayer" data-state="poster">
+        <img class="vslposter" src="assets/vsl-poster.jpg" alt="Watch: how Nave works">
+        <button class="vslplay" aria-label="Play the video"><span></span></button>
+        <span class="vslnote" data-vsl-note>The walkthrough is being finalized — book a call and I'll show you live.</span>
       </div>
-      <div>
-        <div class="lm pane" style="max-width:none;padding:0;overflow:hidden">
-          <video src="assets/hero.mp4" autoplay muted loop playsinline aria-label="Nave — a month of content in an hour" style="width:100%;display:block"></video>
-        </div>
-        <div class="vslnote" data-block="nave.vsl_note">This whole page was made by the thing it sells.</div>
-      </div>
+    </div>
+
+    <a class="vcta" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-minute call →</a>
+    <span class="vmicro">15 minutes to see if Nave's a fit. No pitch, no pressure.</span>
+    <span class="vpending" data-pending-note>Booking opens shortly — meanwhile, <a href="/playbook" style="color:var(--ink)">grab the free playbook</a>.</span>
+
+    <div class="proofbar">
+      <span><b>500,000+</b> organic views in 6 months</span><span class="sep">·</span>
+      <span><b>$25,000</b> in clients from the content itself</span><span class="sep">·</span>
+      <span>built on the system I run <b>every week</b></span>
     </div>
   </div>
 </section>
 
-<style>
-  #crew .ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
-  @media(max-width:760px){#crew .ggrid{grid-template-columns:1fr 1fr}}
-  @media(max-width:520px){#crew .ggrid{grid-template-columns:1fr}}
-  #crew .gcard{padding:22px 22px;display:flex;flex-direction:column;gap:8px;min-height:150px}
-  #crew .gpunch{max-width:780px;margin:26px auto 0;text-align:center;font-family:'Newsreader',serif;font-size:clamp(18px,2.2vw,24px);color:var(--cream);line-height:1.45}
-  #crew .gpunch b{color:var(--ink);font-weight:400}
-  #crew .gname{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
-  #crew .gbody{font-size:14px;color:var(--cream-72);line-height:1.55;margin:0}
-  #crew .gout{margin:32px auto 0;font-family:'Newsreader',serif;font-size:clamp(19px,2.4vw,26px);color:var(--cream);text-align:center;max-width:800px;line-height:1.45}
-  #crew .gout b{color:var(--ink);font-weight:400}
-  #crew details{max-width:800px;margin:20px auto 0;text-align:center}
-  #crew summary{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--cream-50);cursor:pointer}
-  #crew summary:hover{color:var(--ink)}
-  #crew .callskills{font-family:'DM Mono',monospace;font-size:11px;color:var(--cream-72);line-height:2;margin-top:14px}
-  #crew .tlead{text-align:left;max-width:720px;margin:26px 0 0;font-size:14.5px;color:var(--cream-72)}
-  #crew .envcard{max-width:680px;margin:16px 0 0;text-align:left;aspect-ratio:auto}
-  #crew .envcard pre{flex:none}
-  #crew .envcard pre{font-size:12.5px;line-height:1.9}
-  #crew .envcard .ec{color:rgba(124,232,175,.5)}
-  #crew .envlogos{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:18px;opacity:.72}
-  #crew .envlogos img.ic{height:18px;width:18px;object-fit:contain;display:block}
-  #crew .envlogos img.wm{height:14px;width:auto;object-fit:contain;display:block}
-  #crew .gnote{max-width:800px;margin:28px auto 0;padding:16px 20px;border-left:2px solid var(--ink);background:rgba(31,224,122,.05);font-size:15.5px;color:var(--cream);line-height:1.55;text-align:left}
-  #crew .gnote b{color:var(--ink);font-weight:400}
-</style>
-<section id="crew" style="padding-top:8px">
-  <div class="wrap">
-    <h2>One install. <i>The whole crew is yours.</i></h2>
-    <p class="sub" style="text-align:left;max-width:740px;margin-bottom:0">Picture a content department that works while you sleep, and you own every seat. You drop your footage; they turn it into a finished month, all in your voice, ready to ship. Here's the crew:</p>
-    <div class="ggrid">
-      <div class="gcard pane"><div class="gname">🔎 The producer</div><p class="gbody">Watches every clip you drop and pulls the gold — who's in it, what's usable, the best lines. You stop scrubbing footage.</p></div>
-      <div class="gcard pane"><div class="gname">🎬 The editor</div><p class="gbody">Cuts, reframes, and captions a full month of finished clips. You never open a timeline again.</p></div>
-      <div class="gcard pane"><div class="gname">🖼 The designer</div><p class="gbody">Turns the same footage into carousels and guides, on your brand. No Canva, no freelancer.</p></div>
-      <div class="gcard pane"><div class="gname">✍️ The copywriter</div><p class="gbody">Writes every caption, hook, and script in your voice. No blank page, ever.</p></div>
-      <div class="gcard pane"><div class="gname">📡 The social manager</div><p class="gbody">Schedules the month across your platforms and turns comments into DMs. You stop logging in to post.</p></div>
-      <div class="gcard pane"><div class="gname">📈 The strategist</div><p class="gbody">Reports what's working and what to make next, every week. You stop guessing.</p></div>
+<div class="vpage">
+
+  <section class="vsec">
+    <h2>Your content has a chokepoint. <i>It's you.</i></h2>
+    <p>Every post runs through you — the ideas, the filming, the editing, the publishing. So the week you get busy, it all stops. Hiring an editor or an agency doesn't fix it; they're still waiting on you. Nave takes you out of the line and runs the whole thing for you.</p>
+  </section>
+
+  <section class="vsec">
+    <h2>One system. <i>Your whole content team.</i></h2>
+    <ul class="crewlist">
+      <li><span class="d"></span><span><b>A producer</b> that turns your best moments into content</span></li>
+      <li><span class="d"></span><span><b>An editor</b> that cuts, captions, and polishes every piece</span></li>
+      <li><span class="d"></span><span><b>A designer</b> that builds your carousels</span></li>
+      <li><span class="d"></span><span><b>A copywriter</b> that writes every hook in your voice</span></li>
+      <li><span class="d"></span><span><b>A social manager</b> that schedules the month across your platforms</span></li>
+      <li><span class="d"></span><span><b>A strategist</b> that tells you each week what's working</span></li>
+    </ul>
+    <p class="crewnote">Six specialists, one system — and you own it. No salaries, no subscription, no monthly anything.</p>
+  </section>
+
+  <section class="vsec">
+    <h2>Footage, an idea, <i>or nothing at all.</i></h2>
+    <p>Drop in your own footage and it cuts your month from it. Hand it just an idea and it writes the script. Got nothing? It builds the whole thing from scratch — video, images, music, captions — even AI avatar videos, if you'd rather stay off camera.</p>
+  </section>
+
+  <section class="vsec">
+    <h2>You don't rent Nave. <i>You own it.</i></h2>
+    <p>Every other content tool is a subscription — generic, marked up, gone the day you stop paying. Nave installs once, lives on your machine, and stays yours. Updates included. Nothing to cancel, nothing that disappears.</p>
+  </section>
+
+  <section class="vsec">
+    <h2>What you'd pay for this <i>everywhere else:</i></h2>
+    <div class="mathrow">
+      <div>An agency <span>$3,000–$5,000 / month</span></div>
+      <div>An editor <span>$1,500 / month</span></div>
+      <div>Your week <span>gone</span></div>
+      <div class="nave">With Nave <span>pay once, own the whole thing</span></div>
     </div>
-    <p class="gpunch">A whole content department — <b>27 skills, 12 specialized agents, all trained on your brand</b> — installed once, and yours. No salaries, no churn, no monthly tool.</p>
-    <p class="tlead">Setup is just your keys. You bring them, you own them, and you pay each tool directly — no markup, no middleman.</p>
-    <div class="term envcard">
-      <div class="bar"><i></i><i></i><i></i><span class="title">nave / .env · your keys, your machine</span></div>
-      <pre><span class="ec"># this is the whole setup</span>
-ASSEMBLYAI_API_KEY=••••••••   <span class="ec"># hearing — transcription</span>
-ZERNIO_API_KEY=••••••••       <span class="ec"># publishing + comment-to-DM</span>
-KIE_API_KEY=••••••••          <span class="ec"># AI generation — video, image, music</span>
+  </section>
 
-<span class="ec"># Hyperframes (editing) ships bundled</span>
-<span class="ec"># Claude Code runs the whole thing</span></pre>
-    </div>
-    <div class="envlogos">
-      <img class="wm" src="assets/claude-code-dark.svg" alt="Claude Code">
-      <img class="wm" src="assets/logos/assemblyai.svg" alt="AssemblyAI">
-      <img class="ic" src="assets/logos/hyperframes.svg" alt="Hyperframes">
-      <img class="ic" src="assets/logos/zernio.png" alt="Zernio">
-      <img class="ic" src="assets/logos/kie.png" alt="KIE.ai">
-    </div>
-    <p class="gnote">You can buy these tools yourself. What you can't buy is the <b>orchestration layer</b> that makes them run as one proven system, start to finish. That layer is Nave.</p>
-    <p class="gout">The result: a content operation that runs every month, consistent and on-brand and <b>entirely yours.</b> That's what your Claude Code becomes the moment Nave is installed.</p>
-    <details>
-      <summary>see every skill + agent in the system →</summary>
-      <p class="callskills">video-download · extracting-transcripts · clip-selection · brand-profile · content-bootstrap · clip-machine · clip-extractor · creative-director · hyperframes-edit · hyperframes · gsap · clip-edit-logos · clip-hook-first · clip-research-brief · video-senses · carousel · document-carousel · footage-intelligence · social-media-publishing · zernio-comment-to-dm · copywriting · ugc-scripts · content-repurposing · coach · content-review · quality-gate · trending-research<br><br>agents: clip-editor · scene-director · move-designer · sound-designer · asset-fetcher · short-form-posting · carousel-posting · youtube-package · humanizer · content-planner · content-producer · content-scheduler</p>
-    </details>
-  </div>
-</section>
+  <section class="vsec cta-sec">
+    <h2>Stop being <i>the chokepoint.</i></h2>
+    <p>Book a 15-minute call. We'll see if Nave's a fit, and if it is, we get the ball rolling.</p>
+    <a class="vcta" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-minute call →</a>
+  </section>
 
-<div class="wrap"><hr class="rule"></div>
-
-
-<style>
-  #how .flow{max-width:780px;margin:30px auto 0;text-align:left}
-  #how .fstep{display:flex;gap:18px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line)}
-  #how .fstep:first-child{border-top:0}
-  #how .fnum{font-family:'Newsreader',serif;font-size:26px;color:var(--ink);line-height:1;min-width:38px}
-  #how .fh{margin:0 0 4px;font-size:16px;color:var(--cream)}
-  #how .fp{margin:0;font-size:14.5px;color:var(--cream-72);line-height:1.55}
-</style>
-<section id="how" style="padding-top:40px">
-  <div class="wrap" style="text-align:center">
-    <h2>Drop footage. Get a month. <i>Every week, a report.</i></h2>
-    <p class="sub" style="margin:6px auto 0;max-width:640px">A fully operating content machine you set up inside Claude Code — one loop, start to finish, where the specialized agents, dynamic workflows, tools, and skills all work together.</p>
-    <div class="term" style="max-width:760px;margin:26px auto 0;text-align:left">
-      <div class="bar"><i></i><i></i><i></i><span class="title">nave · your content operating system</span></div>
-      <pre id="termfeed"></pre>
-    </div>
-    <p class="micro" style="margin:14px auto 0">One command. The dynamic workflow runs every specialized agent, tool, and skill in order.</p>
-    <div class="flow">
-      <div class="fstep"><div class="fnum">1</div><div><h3 class="fh">Drop your footage</h3><p class="fp">One folder or one link, raw is fine. No footage yet? Start from a topic and it scripts exactly what to film.</p></div></div>
-      <div class="fstep"><div class="fnum">2</div><div><h3 class="fh">The system produces your month</h3><p class="fp">Specialized agents, dynamic workflows, tools, and skills work together to make your clips, posts, and carousels — in your voice.</p></div></div>
-      <div class="fstep"><div class="fnum">3</div><div><h3 class="fh">Your manager schedules it</h3><p class="fp">Staggered across all your platforms, automatically.</p></div></div>
-      <div class="fstep"><div class="fnum">4</div><div><h3 class="fh">Approve it, or let it run</h3><p class="fp">Keep an approval gate, or hand it the keys. Either way it's a full distribution process, not a folder of files.</p></div></div>
-      <div class="fstep"><div class="fnum">5</div><div><h3 class="fh">A specialized agent reports back, every week</h3><p class="fp">What landed, what didn't, and what to make next — sent to you automatically.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><hr class="rule"></div>
-
-<style>
-  #vs .vsgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:30px auto 0;text-align:left}
-  @media(max-width:680px){#vs .vsgrid{grid-template-columns:1fr}}
-  #vs .vscol{padding:26px 26px 22px}
-  #vs .vscol.good{border-color:var(--line-strong);box-shadow:0 0 0 1px var(--line-strong)}
-  #vs .vshead{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
-  #vs .bad .vshead{color:var(--cream-50)}
-  #vs .good .vshead{color:var(--ink)}
-  #vs ul{list-style:none;margin:0;padding:0}
-  #vs li{position:relative;padding:0 0 0 26px;margin:0 0 13px;font-size:14.5px;line-height:1.5}
-  #vs .bad li{color:var(--cream-50)}
-  #vs .good li{color:var(--cream)}
-  #vs .bad li:before{content:"\2715";position:absolute;left:0;top:1px;color:var(--cream-50);font-size:12px}
-  #vs .good li:before{content:"\2713";position:absolute;left:0;top:1px;color:var(--ink)}
-</style>
-<section id="vs" style="text-align:center">
-  <div class="wrap">
-    <h2>They rent you tools. <i>You own the whole system.</i></h2>
-    <p class="sub" style="margin:6px auto 0;max-width:640px">Every other AI content tool is a subscription — generic, marked up, and gone the day you stop paying. Owning the system flips all of it.</p>
-    <div class="vsgrid">
-      <div class="vscol pane bad">
-        <div class="vshead">Renting a content platform</div>
-        <ul>
-          <li>Pay every month, forever</li>
-          <li>Generic AI, tuned for everyone but you</li>
-          <li>Their tools, their markup, their rules</li>
-          <li>A pile of features in a dashboard you still operate</li>
-          <li>You still do the work</li>
-          <li>Stop paying and it all disappears</li>
-        </ul>
-      </div>
-      <div class="vscol pane good">
-        <div class="vshead">Owning Nave</div>
-        <ul>
-          <li>Install once — yours for good</li>
-          <li>A crew trained on your brand and your voice</li>
-          <li>Your own keys, paid direct — no markup</li>
-          <li>One system that runs on a single command</li>
-          <li>The crew does the work, you just approve</li>
-          <li>It lives on your machine — nobody can switch it off</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<style>
-  #founder .fcap{margin-top:12px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50)}
-  #founder .fbadge{display:inline-flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin-bottom:18px}
-  #founder .fbadge i{width:6px;height:6px;border-radius:50%;background:var(--ink);display:block}
-  #founder .fcreds{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:24px}
-  #founder .fcreds span{display:inline-flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.03em;color:var(--cream);border:1px solid var(--line);border-radius:999px;padding:7px 13px;background:rgba(255,255,255,.02)}
-  #founder .fcreds span:before{content:"\25CF";color:var(--ink);font-size:9px}
-  #founder h2.fh1{font-size:clamp(32px,4.2vw,50px);line-height:1.05;margin:0 0 20px}
-  #founder .fbody b{color:var(--cream)}
-  #founder .fcta{margin-top:26px}
-</style>
-<section id="founder">
-  <div class="wrap">
-    <div class="fgrid" style="margin-top:8px;align-items:start">
-      <div>
-        <img src="assets/enrique.png" alt="Enrique Marq" class="headshot" style="width:100%;display:block;border:1px solid var(--line);border-radius:14px;background:radial-gradient(circle at 50% 28%, #15271c, #0a110c)">
-        <div class="fcap">Enrique Marq 🛸</div>
-      </div>
-      <div>
-        <span class="fbadge"><i></i>AI content systems builder</span>
-        <div class="fcreds">
-          <span>INFINITX partner</span>
-          <span>Hyperframes contributor</span>
-          <span>Zernio partner</span>
-        </div>
-        <h2 class="fh1">I built Nave <i>because I needed it.</i></h2>
-        <p class="fbody">I started where you are: overwhelmed, but determined to grow. I was tired of paying for expensive AI tools that promise the world and deliver little — none of them could be the one thing I actually needed: an AI agent wired into your entire content operating system. Nobody had built that.<br><br>So I did. Nave is the harness I put on top of Claude Code to hit real outcomes, and I ran it on myself first. The result: <b>500k+ organic views</b>, and <b>$25k from clients</b> by installing it for them — <b>no team, no editors, no VAs, no paid ads.</b> Just me and the system, posting consistently.<br><br>I didn't build it to rent you another tool. I built it to change how this works: you own the system, you get the same results, and you get your time back.</p>
-        <div class="fcta"><a class="btn" href="#offer">Get my month of content</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><hr class="rule"></div>
-
-<style>
-  #wall{display:none}
-  #wall .wallgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:26px}
-  #wall figure{margin:0}
-  #wall blockquote{margin:0;padding:24px 24px 20px;border-radius:12px;font-size:17px;line-height:1.5;color:var(--cream)}
-  #wall .qm{color:var(--ink);font-family:'Newsreader',serif;font-size:30px;line-height:0;display:inline-block;transform:translateY(8px);margin-right:4px}
-  #wall figcaption{display:flex;align-items:center;gap:4px;margin-top:16px;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--cream-72)}
-  #wall figcaption b{color:var(--cream)}
-  #wall figcaption .h{color:var(--ink)}
-</style>
-<section id="wall" style="text-align:center">
-  <div class="wrap">
-    <span class="eyebrow" style="display:inline-block">From the people running it</span>
-    <h2>Real words. <i>From real installs.</i></h2>
-    <div class="wallgrid" id="wallgrid"></div>
-  </div>
-</section>
-<div class="wrap" id="wall-rule" style="display:none"><hr class="rule"></div>
-
-<div class="wrap"><hr class="rule"></div>
-
-<style>
-  #support .suprows{max-width:760px;margin:26px auto 0;text-align:left}
-  #support .suprow{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}
-  #support .suprow:first-child{border-top:0}
-  #support .suplabel{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);min-width:108px;padding-top:3px}
-  #support .supbody{font-size:15px;color:var(--cream-72);line-height:1.55;margin:0}
-  #support code{font-family:'DM Mono',monospace;color:var(--cream);font-size:.9em}
-  #support .suptrust{text-align:center;margin-top:24px;font-size:13.5px;color:var(--cream-50)}
-  @media(max-width:600px){#support .suprow{flex-direction:column;gap:6px}}
-</style>
-<section id="support" style="text-align:center">
-  <div class="wrap">
-    <h2>You own it. <i>You're not alone with it.</i></h2>
-    <p class="sub" style="margin:6px auto 0;max-width:600px">Open files you can read, a year of updates, and a human when you're stuck.</p>
-    <div class="suprows">
-      <div class="suprow">
-        <span class="suplabel">Open</span>
-        <p class="supbody">Every skill and agent is a plain, readable file in your <code>.claude</code> folder — open it, read it, change it, fork it. Nothing hidden behind someone else's login.</p>
-      </div>
-      <div class="suprow">
-        <span class="suplabel">Maintained</span>
-        <p class="supbody">A full year of updates as the crew gets sharper, pulled from the same system we run in production ourselves.</p>
-      </div>
-      <div class="suprow">
-        <span class="suplabel">Supported</span>
-        <p class="supbody">Start solo with the setup guide and the founding community room, or have me install it with you live — your keys wired, your first batch run together. Either way you're running your own system, not filing tickets for software you rent.</p>
-      </div>
-    </div>
-    <p class="suptrust">And it never posts on its own. You approve the month, then it fires.</p>
-  </div>
-</section>
-
-<style>
-  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:36px auto 0;text-align:left}
-  @media(max-width:760px){.tiers{grid-template-columns:1fr}}
-  .tier{padding:28px 26px;display:flex;flex-direction:column}
-  .tier.featured{border-color:var(--line-strong);box-shadow:0 0 0 1px var(--line-strong),0 18px 50px rgba(0,0,0,.45);position:relative}
-  .tbadge{position:absolute;top:-11px;left:26px;background:var(--ink);color:#06140C;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;padding:4px 11px;border-radius:999px;font-weight:700}
-  .tname{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:10px}
-  .tprice{font-family:'Newsreader',serif;font-size:48px;color:var(--cream);line-height:1}
-  .tprice small{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.05em;color:var(--cream-50);margin-left:9px}
-  .tlede{font-size:15px;color:var(--cream-72);margin:10px 0 18px}
-  .tier ul{list-style:none;padding:0;margin:0 0 22px;flex:1}
-  .tier li{position:relative;padding:0 0 0 22px;margin:0 0 12px;font-size:14.5px;color:var(--cream-72);line-height:1.5}
-  .tier li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;background:var(--ink);transform:rotate(45deg)}
-  .tier .btn{width:100%;text-align:center}
-  .tier .micro{margin-top:11px;text-align:center}
-</style>
-<section id="offer" style="text-align:center">
-  <div class="wrap">
-    <h2>Two ways to get it. <i>Both yours to keep.</i></h2>
-    <p class="sub">What an agency bills $3–5k a month for, or an editor $1.5k, you own once. The only question is whether you set it up solo, or we install it together, live, with me in your corner for good.</p>
-
-    <div class="tiers">
-      <div class="tier pane">
-        <div class="tname">Do it yourself</div>
-        <div class="tprice">$89<small>once</small></div>
-        <p class="tlede">The complete content operating system, yours to set up and run on your own.</p>
-        <ul>
-          <li>The full system — every content skill and agent, one command makes your month.</li>
-          <li>Step-by-step setup guide for Windows, macOS, and Linux.</li>
-          <li>A year of updates as the system gets better.</li>
-          <li>Yours to keep, on your machine — nothing monthly.</li>
-          <li>Help by Loom if you get stuck setting it up.</li>
-        </ul>
-        <a class="btn btn-ghost" data-cta="BUY" href="https://buy.stripe.com/8x2dR9dsP5bdbFP9Kx8so0n" target="_blank" rel="noopener">Get the system — $89</a>
-        <span class="micro" data-buy-fulfillment>Set it up yourself, at your pace.</span>
-      </div>
-
-      <div class="tier pane">
-        <div class="tname">Installed with you</div>
-        <div class="tprice">$397<small>once</small></div>
-        <p class="tlede">We set it up together on a live call, and you keep me in your corner after.</p>
-        <ul>
-          <li><b>A live 1:1 setup call</b> — installed on your machine and producing before we hang up.</li>
-          <li><b>Your brand and first month</b>, set up together on the call.</li>
-          <li><b>The founding community</b> — the weekly live call and a room building alongside you, for good.</li>
-          <li><b>Personal support</b> — your screen, your problem, a custom walkthrough within 2 business days.</li>
-          <li><b>The get-running guarantee</b> — it runs on your machine, or your money back. <a href="guarantee.html">Terms →</a></li>
-        </ul>
-        <a class="btn" data-cta="BOOK" data-fallback="apply.html" href="apply.html">Get installed with you — $397</a>
-        <span class="micro">Each setup is a real hour on my calendar, so slots are limited.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><hr class="rule"></div>
-
-<section id="faq" style="text-align:center">
-  <div class="wrap">
+  <section class="vsec">
     <h2>Real questions. <i>Straight answers.</i></h2>
     <div class="faqwrap">
-      <details open><summary><span class="qn">01</span><span class="q">Do I need a separate AI or API key?</span></summary><p class="a">No. Nave runs on your own Claude Code — your existing Claude subscription, no separate Anthropic key. You bring keys only for the two tools it uses: AssemblyAI (transcription) and Zernio (publishing + DM automation). You pay those directly — no markup.</p></details>
-      <details><summary><span class="qn">02</span><span class="q">What does "a month of content in an hour" mean?</span></summary><p class="a">You install once — that's the live session. After that it's about an hour of your time per month: the crew produces the content, your hour is the review. You check the staged queue and say "schedule it." Nothing publishes without your approval. (Runs on your Claude Code — Claude Max recommended for full month-runs.)</p></details>
-      <details><summary><span class="qn">03</span><span class="q">Is the install really 1:1?</span></summary><p class="a">Yes — one hour, live, just you and me, on your machine. We install, place your keys, verify a real render, set up your brand, and kick off your first month before we hang up. After: the weekly community call + personal Loom support — your screen, your problem, a custom walkthrough within 2 business days.</p></details>
-      <details><summary><span class="qn">04</span><span class="q">What do I actually own?</span></summary><p class="a">The whole content operating system, on your machine — every skill, agent, and workflow that makes your content. Yours to keep, adjust, and grow with. No subscription, no login to someone else's software, no middleman who can reprice you or shut you off.</p></details>
-      <details><summary><span class="qn">05</span><span class="q">What's the guarantee?</span></summary><p class="a">The $397 install: Nave runs on your machine within 30 days, or we make it run, or you get your money back — <a href="guarantee.html">written terms</a>. The $89 self-serve: bounded setup support instead (no cash refund — it's a complete system you download, so once it's yours it can't be returned). <a href="terms.html">Refund policy</a>.</p></details>
-      <details><summary><span class="qn">06</span><span class="q">Who should NOT buy this?</span></summary><p class="a">You, if: you don't film and won't start (Nave needs your footage — you drive, it supports) · you want 100% hands-off (nothing posts without your review) · or you want it built and tuned FOR your business without touching it — that's the <a href="custom.html">custom build</a>.</p></details>
+      <details open><summary>What happens on the 15-minute call?</summary><p>I get to know you and where you're at, and we figure out together if Nave's the right fit. If it is, we get the ball rolling. If not, I'll tell you straight — no pressure.</p></details>
+      <details><summary>Do I need to be technical?</summary><p>No. Nave installs into Claude Code, and we set it up with you. If you can drop a file in a folder, you can run it.</p></details>
+      <details><summary>What if I don't have any footage?</summary><p>Then you don't need any. Nave can build a full month from just your ideas — or generate it from scratch, including avatar videos if you'd rather not be on camera.</p></details>
+      <details><summary>Is this another monthly subscription?</summary><p>No. You pay once and own it. It lives on your machine. There's nothing to cancel and nothing that disappears.</p></details>
+      <details><summary>Will the content actually sound like me?</summary><p>Yes — it's built in your voice, from your direction. You're not handing your brand to generic AI; you're taking yourself out of the labor, not out of the content.</p></details>
+      <details><summary>How is this different from the AI tools I've already tried?</summary><p>Those are single tools you rent. Nave is the whole operation — every step of making content, run by its own agent, as one system you own.</p></details>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="wrap"><hr class="rule-strong"></div>
+  <section class="vfinal">
+    <h2>Your content, handled every month — <i>and a system that's yours for good.</i></h2>
+    <p class="vsub" style="margin:16px auto 0">Book the 15-minute call. Worst case, it's 15 minutes. Best case, you walk away with your own content operating system.</p>
+    <a class="vcta" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-minute call →</a>
+  </section>
 
-<section class="final" id="close">
-  <div class="wrap" style="position:relative">
-    <div class="glitchL" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="pre">runs or refunded · limited install slots</div>
-    <h2 data-block="nave.close_h2">Get your month of content.<br><i>Walk away with it running.</i></h2>
-    <p class="sub" data-block="nave.close_sub" style="margin-top:8px">We watch a real render go through before the call ends. If Nave isn't running within 30 days, we make it run, or you get your money back.</p>
-    <div class="ctablock">
-      <a class="btn" href="#offer">Get my month of content</a>
-    </div>
-    <div class="otherdoor">See both ways to get it <a href="#offer">in the pricing</a> · Built for you? <a href="custom.html">The custom build</a></div>
-    <p class="disclaimer">Results shown on this page are my own and my clients' — not typical, and not a guarantee.</p>
-  </div>
-</section>
-
-<div class="nl" id="playbook-bottom">
-  <div class="wrap">
-    <div class="nlgrid">
-      <div>
-        <h3>Not ready to decide?</h3>
-        <p><b>How I Make a Month of Quality Content in a Day with Claude Code</b> — the full method, free, plus the real tools (the workflow, skills + the humanizer).</p>
-      </div>
-      <form class="capture" data-capture-form action="#" method="post">
-        <input type="email" name="email_address" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email" required>
-        <input type="tel" name="fields[phone]" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" aria-label="Phone" required>
-        <button class="btn" type="submit">Send me the playbook</button>
-      </form>
-    </div>
-    <span class="pending-note" data-capture-note style="display:none"></span>
-  </div>
 </div>
 </main>
 
-<footer><div class="wrap">
-  <div class="fcols">
-    <div>
-      <div class="flock">
-        <svg viewBox="0 0 512 448" width="34" height="30"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></g></svg>
-        <span class="w">Nave</span>
-      </div>
-      <div style="margin-top:10px">The Content OS for Claude Code.<br>A department you own.</div>
-      <div class="tagfoot">Build first. Give first.</div>
-    </div>
-    <div>
-      <div class="colh">Product</div>
-      <a href="#crew">What you get</a>
-      <a href="#how">How it works</a>
-      <a href="#offer">Pricing</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <div>
-      <div class="colh">Paths</div>
-      <a href="/playbook">Free playbook + vault</a>
-      <a href="apply.html">Apply</a>
-      <a href="custom.html">Custom build</a>
-    </div>
-    <div>
-      <div class="colh">Legal</div>
-      <a href="guarantee.html">Guarantee Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms &amp; Refunds</a>
-    </div>
-  </div>
-  <div class="pagechrome"><span>INFINITX — 2026</span><span>nave.infinitxai.com</span></div>
-  <div style="margin-top:14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--cream-50)">Claude Code is a trademark of Anthropic, PBC. Nave is an independent product — not affiliated with or endorsed by Anthropic.</div>
+<footer><div class="vpage vfoot">
+  <div class="fb">Nave — the content operating system you own.</div>
+  <div style="margin-top:6px">Built for Claude Code. · INFINITX · 2026</div>
+  <div style="margin-top:14px">Results shown are my own and my clients'. Not typical, and not a guarantee.</div>
+  <div style="margin-top:6px;font-family:'DM Mono',monospace;font-size:10.5px">Claude Code is a trademark of Anthropic, PBC. Nave is independent and not affiliated with Anthropic.</div>
 </div></footer>
 
 <script src="assets/links.js"></script>
-<script>/* reveal the VSL section only once VSL_NAVE is set in links.js (poster→embed handled by links.js) */
-(function(){var s=document.getElementById('vslsection');try{if(s&&window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)s.style.display='';}catch(_e){}})();
-/* testimonial wall — renders ONLY real quotes from NAVE_LINKS.TESTIMONIALS; stays hidden when empty */
+<script>
+/* VSL player — click to play. Uses NAVE_LINKS.VSL_NAVE (embed URL) if set,
+   else a self-hosted assets/vsl.mp4, else keeps the poster + note. */
 (function(){
-  try{
-    var t = (window.NAVE_LINKS && NAVE_LINKS.TESTIMONIALS) || [];
-    if(!t.length) return;
-    var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
-    var grid=document.getElementById('wallgrid'); if(!grid) return;
-    grid.innerHTML = t.map(function(q){
-      return '<figure class="pane"><blockquote><span class="qm">&ldquo;</span>'+esc(q.quote)+'</blockquote>'+
-        '<figcaption><b>'+esc(q.name||'')+'</b>'+(q.handle?' <span class="h">'+esc(q.handle)+'</span>':'')+(q.role?' · '+esc(q.role):'')+'</figcaption></figure>';
-    }).join('');
-    document.getElementById('wall').style.display='';
-    var r=document.getElementById('wall-rule'); if(r) r.style.display='';
-  }catch(_e){}
-})();</script>
+  var box=document.getElementById('vsl'); if(!box) return;
+  var embed=''; try{ embed=(window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)||''; }catch(_e){}
+  function play(){
+    if(box.dataset.state==='playing') return;
+    box.dataset.state='playing';
+    var note=box.querySelector('[data-vsl-note]'); if(note) note.remove();
+    var btn=box.querySelector('.vslplay'); if(btn) btn.remove();
+    if(embed){
+      var f=document.createElement('iframe'); f.src=embed+(embed.indexOf('?')<0?'?':'&')+'autoplay=1';
+      f.allow='autoplay; fullscreen; picture-in-picture'; f.setAttribute('allowfullscreen','');
+      box.appendChild(f);
+    } else {
+      var v=document.createElement('video'); v.src='assets/vsl.mp4'; v.controls=true; v.autoplay=true; v.playsInline=true;
+      v.onerror=function(){ box.dataset.state='poster'; box.innerHTML='<img class="vslposter" src="assets/vsl-poster.jpg" alt=""><span class="vslnote">The walkthrough is being finalized — book a call and I\'ll show you live.</span>'; };
+      box.appendChild(v);
+    }
+  }
+  box.addEventListener('click', play);
+})();
+</script>
 </body>
 </html>

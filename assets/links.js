@@ -10,6 +10,7 @@
    ============================================================ */
 const NAVE_LINKS = {
   LEADS_ENDPOINT: 'https://ix-substrate-core-production.up.railway.app/leads',  // substrate lead capture -> state.db (LIVE)
+  CALL_BOOKING: '',            // ← 15-min call booking link (Calendly / Cal.com). Empty = CTAs route to /apply + show "booking opens shortly".
   BOOK: 'https://buy.stripe.com/dRm8wPbkHfPRdNX1e18so0p',       // Stripe $397 1:1 install (pay -> then book)
   SELF_SERVE: 'https://buy.stripe.com/8x2dR9dsP5bdbFP9Kx8so0n', // Stripe $89 self-serve Content OS
   PLAYBOOK_FORM_ACTION: '',  // Kit (ConvertKit) form action — playbook + vault opt-in (email + fields[phone])
@@ -48,6 +49,13 @@ const NAVE_LINKS = {
     else if (a.dataset.fallback){ a.href = a.dataset.fallback; }
   });
   if (!NAVE_LINKS.BOOK) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
+
+  /* 15-minute call booking buttons (VSL page) */
+  document.querySelectorAll('[data-cta="CALL"]').forEach(function(a){
+    if (NAVE_LINKS.CALL_BOOKING){ a.href = NAVE_LINKS.CALL_BOOKING; a.target = '_blank'; a.rel = 'noopener'; }
+    else if (a.dataset.fallback){ a.href = a.dataset.fallback; }
+  });
+  if (!NAVE_LINKS.CALL_BOOKING) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
 
   /* $89 self-serve buy buttons */
   document.querySelectorAll('[data-cta="BUY"]').forEach(function(a){
