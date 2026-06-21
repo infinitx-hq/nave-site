@@ -284,16 +284,20 @@
   var src=file||'assets/vsl.mp4';
   box.addEventListener('click', function(){
     if(box.dataset.state==='playing') return; box.dataset.state='playing';
-    var n=box.querySelector('[data-vsl-note]'); if(n) n.remove();
-    var b=box.querySelector('.vslplay'); if(b) b.remove();
+    box.innerHTML='';   // clear poster + play button + note so nothing sits on top
     if(!file && embed){
       var f=document.createElement('iframe'); f.src=embed+(embed.indexOf('?')<0?'?':'&')+'autoplay=1';
       f.allow='autoplay; fullscreen; picture-in-picture'; f.setAttribute('allowfullscreen',''); box.appendChild(f);
-    } else {
-      var v=document.createElement('video'); v.src=src; v.controls=true; v.autoplay=true; v.playsInline=true;
-      v.onerror=function(){ box.dataset.state='poster'; box.innerHTML='<img class="vslposter" src="assets/vsl-poster.jpg" alt=""><span class="vslnote">Walkthrough loading — or book a call and I\'ll show you live.</span>'; };
-      box.appendChild(v);
+      return;
     }
+    var v=document.createElement('video');
+    v.src=src; v.controls=true; v.playsInline=true; v.preload='auto';
+    v.setAttribute('poster','assets/vsl-poster.jpg');
+    v.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000';
+    v.onerror=function(){ box.dataset.state='poster'; box.innerHTML='<img class="vslposter" src="assets/vsl-poster.jpg" alt=""><span class="vslnote">Couldn\'t load the video — book a call and I\'ll show you live.</span>'; };
+    box.appendChild(v);
+    var p=v.play();
+    if(p&&p.catch){ p.catch(function(){ v.muted=true; v.play().catch(function(){}); }); }  // if sound-autoplay is blocked, start muted (controls let them unmute)
   });
 })();
 /* Testimonial wall — result-led, renders ONLY real entries from NAVE_LINKS.TESTIMONIALS; hidden when empty */
