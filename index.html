@@ -104,6 +104,22 @@
   .vfoot{padding:40px 0;border-top:1px solid var(--line-strong);text-align:center;font-size:13px;color:var(--cream-50);line-height:1.7}
   .vfoot .fb{font-weight:800;color:var(--cream);font-size:16px}
   @media(max-width:640px){.vsec{padding:44px 0}}
+  /* ── Loom-style custom player ── */
+  .nplayer{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#0a0d0c;box-shadow:0 30px 80px rgba(0,0,0,.5);cursor:pointer}
+  .nv-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;display:block}
+  .nv-unmute{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;background:rgba(7,9,8,.8);backdrop-filter:blur(6px);color:var(--cream);border:1px solid var(--line-strong);border-radius:999px;padding:14px 24px;font:600 16px/1 'Hanken Grotesk',sans-serif;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.5);transition:opacity .25s,transform .2s;z-index:4}
+  .nv-unmute svg{width:20px;height:20px}
+  .nv-unmute:hover{transform:translate(-50%,-50%) scale(1.05)}
+  .nplayer[data-muted="0"] .nv-unmute{opacity:0;pointer-events:none}
+  .nv-controls{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:14px;padding:13px 18px;background:linear-gradient(transparent,rgba(7,9,8,.92));opacity:0;transition:opacity .25s;z-index:3}
+  .nplayer:hover .nv-controls,.nplayer[data-state="paused"] .nv-controls{opacity:1}
+  .nv-ic{width:34px;height:34px;flex:none;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--cream);cursor:pointer;padding:0;border-radius:8px;transition:color .15s}
+  .nv-ic:hover{color:var(--ink)} .nv-ic svg{width:22px;height:22px}
+  .nv-seek{flex:1;height:6px;border-radius:4px;background:rgba(240,235,222,.16);position:relative;cursor:pointer}
+  .nv-buf{position:absolute;left:0;top:0;height:100%;width:0;background:rgba(240,235,222,.22);border-radius:4px}
+  .nv-fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--ink);border-radius:4px}
+  .nv-fill::after{content:"";position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:13px;height:13px;border-radius:50%;background:var(--ink);box-shadow:0 0 8px rgba(31,224,122,.6)}
+  .nv-time{font:500 13px/1 'DM Mono',monospace;color:var(--cream-72);flex:none;min-width:78px;text-align:right}
 </style>
 </head>
 <body>
@@ -129,10 +145,19 @@
     <p class="vsub">Not an agency you pay every month. Not another tool you rent. A full content system — built, installed, and handed to you — that turns one day of your direction into a month of finished, published content. You own it. It runs without you.</p>
 
     <div class="vslwrap">
-      <div id="vsl" class="vslplayer" data-state="poster">
-        <img class="vslposter" src="assets/vsl-poster.jpg" alt="Watch how Nave works">
-        <button class="vslplay" aria-label="Play the video"><span></span></button>
-        <span class="vslnote" data-vsl-note>Watch the 5-minute walkthrough</span>
+      <div id="player" class="nplayer" data-state="loading" data-muted="1">
+        <video id="nv" class="nv-video" playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
+        <button id="nv-unmute" class="nv-unmute" aria-label="Unmute">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>
+          Tap for sound
+        </button>
+        <div class="nv-controls">
+          <button id="nv-pp" class="nv-ic" aria-label="Play / pause"></button>
+          <div id="nv-seek" class="nv-seek"><div id="nv-buf" class="nv-buf"></div><div id="nv-fill" class="nv-fill"></div></div>
+          <span id="nv-time" class="nv-time">0:00</span>
+          <button id="nv-mute" class="nv-ic" aria-label="Mute / unmute"></button>
+          <button id="nv-fs" class="nv-ic" aria-label="Fullscreen"></button>
+        </div>
       </div>
     </div>
 
@@ -140,132 +165,9 @@
     <span class="vmicro">Limited installs each month. We'll see if it's a fit before anything else.</span>
     <span class="vpending" data-pending-note>Booking opens shortly — meanwhile, <a href="/playbook" style="color:var(--ink)">grab the free playbook</a>.</span>
 
-    <div class="proofbar">
-      <span><b>500,000+</b> organic views</span><span class="sep">·</span>
-      <span><b>$25,000</b> in clients from the content itself</span><span class="sep">·</span>
-      <span>installed across <b>50+ businesses</b></span>
-    </div>
   </div>
 </section>
 
-<div class="vpage">
-
-  <section class="vsec">
-    <h2>You're not bad at content. <i>You're the bottleneck.</i></h2>
-    <p>Every piece runs through you — the ideas, the filming, the editing, the publishing. So the week you get busy, it all stops. That's the <b>Content Chokepoint</b>, and it's why hiring never fixed it: an editor, an agency, a VA — they're all still waiting on you.</p>
-    <p class="lead">You don't need to try harder. You need to take yourself out of the line.</p>
-  </section>
-
-  <section class="vsec">
-    <h2>Here's exactly <i>what you're getting.</i></h2>
-    <p>This isn't software you log into. It isn't a course. It's a complete content operation — a system of specialized AI agents, each running one part of the job — that we install directly into your business on a single call.</p>
-    <p>Once it's in, it's yours. It lives on your machine. From that day on it produces, edits, designs, writes, and schedules your content — every month — without running through you.</p>
-    <p><b>Nothing like this has existed before.</b> Until now you could rent tools, or hire people. You couldn't own the whole operation. That's what this is.</p>
-  </section>
-
-  <section class="vsec">
-    <h2>One system. <i>The work of a six-person team.</i></h2>
-    <ul class="funcs">
-      <li><b>Production</b><span>finds your best moments and builds them into content</span></li>
-      <li><b>Editing</b><span>handles the cuts, captions, and finishing — publish-ready</span></li>
-      <li><b>Design</b><span>builds your carousels and visuals, on-brand</span></li>
-      <li><b>Copy</b><span>writes every hook and caption in your voice</span></li>
-      <li><b>Distribution</b><span>schedules the full month across your platforms</span></li>
-      <li><b>Strategy</b><span>reports each week on what's working and what to make next</span></li>
-    </ul>
-    <p>Start with your own footage, a single idea, or nothing at all — it builds a full month either way, including AI presenter videos if you'd rather stay off camera.</p>
-  </section>
-
-  <section class="vsec">
-    <h2>We don't just hand you a system. <i>We get it running with you.</i></h2>
-    <ol class="steps">
-      <li>We install the entire content operation into your setup — done with you, live on the call.</li>
-      <li>We configure it to your brand, your voice, and your platforms.</li>
-      <li>We produce your first batch of content together — before we hang up.</li>
-      <li>You keep lifetime updates as the system gets sharper.</li>
-      <li>You join the founding community, so you're never running it alone.</li>
-    </ol>
-    <p class="lead">You leave the call with the full system installed, configured, and producing — owned outright.</p>
-  </section>
-
-  <section class="vsec">
-    <h2>What this <i>replaces.</i></h2>
-    <div class="mathrow">
-      <div>A content agency <span>$3,000–$5,000 / month</span></div>
-      <div>A dedicated editor <span>$1,500 / month</span></div>
-      <div>The hours it drains from your week <span>every week</span></div>
-      <div class="tot">That's <span>$50,000+ a year — and you still own nothing</span></div>
-    </div>
-    <div class="pricewrap">
-      <div class="now" style="font-size:32px;line-height:1.15">One-time. Installed.<br><span style="color:var(--ink)">Owned for good.</span></div>
-      <p class="vmicro" style="margin-top:14px">No retainer. No subscription. No monthly anything. We go over the investment together on the call — once we know it's a fit.</p>
-    </div>
-    <div style="text-align:center"><a class="vcta" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-minute fit call →</a></div>
-  </section>
-
-  <section class="vsec">
-    <h2>Is this <i>for you?</i></h2>
-    <div class="twocol">
-      <div>
-        <div class="qualhead">This is for you if</div>
-        <ul class="quallist yes">
-          <li>You're a business owner, founder, or operator with real revenue coming in</li>
-          <li>You know content drives your business — you're just not consistent</li>
-          <li>You want to own your content operation, not rent it forever</li>
-        </ul>
-      </div>
-      <div>
-        <div class="qualhead">This is not for you if</div>
-        <ul class="quallist no">
-          <li>You want a cheap monthly tool</li>
-          <li>You're not willing to spend one day a month giving direction</li>
-          <li>You expect it to post for you with zero input</li>
-        </ul>
-      </div>
-    </div>
-    <p>We only take a handful of installs a month, so the call is where we make sure it's a fit — for both of us.</p>
-  </section>
-
-  <section class="vsec">
-    <h2>The get-running <i>guarantee.</i></h2>
-    <div class="gbox">
-      <h3>You watch it produce real content before the call ends.</h3>
-      <p>If it isn't installed and running on your machine by the time we hang up, you don't pay. Simple as that.</p>
-    </div>
-  </section>
-
-  <section id="twall" class="vsec">
-    <h2>Business owners who <i>took themselves out of the line.</i></h2>
-    <div class="tgrid" id="tgrid"></div>
-  </section>
-
-  <section class="vsec ctasec">
-    <h2>Stop being <i>the chokepoint.</i></h2>
-    <p>Book the 15-minute fit call. We'll confirm it's right for you — and if it is, you walk away with your own content operation.</p>
-    <a class="vcta" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-minute fit call →</a>
-  </section>
-
-  <section class="vsec">
-    <h2>Real questions. <i>Straight answers.</i></h2>
-    <div class="faqwrap">
-      <details open><summary>What actually happens on the call?</summary><p>I learn about you and where your business is, we confirm the system's a fit, and if it is, we install it together — live. You leave with it running.</p></details>
-      <details><summary>Do I need to be technical?</summary><p>No. It installs into Claude Code and we configure it with you. If you can drop a file in a folder, you can run it.</p></details>
-      <details><summary>What if I don't have any footage?</summary><p>You don't need any. It builds a full month from your ideas, or generates everything from scratch — presenter videos included.</p></details>
-      <details><summary>Is there a monthly fee?</summary><p>No. One-time investment, owned outright. It lives on your machine. Nothing recurring, nothing to cancel.</p></details>
-      <details><summary>Will it actually sound like me?</summary><p>Yes — it's configured to your voice and works from your direction. You're removing yourself from the labor, not from the content.</p></details>
-      <details><summary>How is this different from AI tools I've already tried?</summary><p>Those are single tools you rent. This is the entire operation — every step, run by its own agent, installed and owned by you.</p></details>
-      <details><summary>Why is it a one-time price and not a subscription?</summary><p>Because you own it. I'm not renting you access — I'm installing a system into your business and handing you the keys.</p></details>
-    </div>
-  </section>
-
-  <section class="vfinal">
-    <h2>Stop being the chokepoint. <i>Own the system instead.</i></h2>
-    <p class="vsub" style="margin:16px auto 0">Book the 15-minute fit call. We'll confirm it's right for you, and if it is, you'll walk away with your own content operation — installed, running, and yours for good.</p>
-    <a class="vcta" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-minute fit call →</a>
-    <span class="vmicro">Each install is a real slot on my calendar, so they're limited.</span>
-  </section>
-
-</div>
 </main>
 
 <footer><div class="vpage vfoot">
@@ -277,41 +179,32 @@
 
 <script src="assets/links.js?v=20260621d"></script>
 <script>
-/* VSL player — self-hosted (Supabase) mp4 or embed; click to play */
+/* Loom-style custom player — AUTOPLAYS (muted) on every page load; tap for sound */
 (function(){
-  var box=document.getElementById('vsl'); if(!box) return;
-  var file='',embed=''; try{ file=(window.NAVE_LINKS&&NAVE_LINKS.VSL_FILE)||''; embed=(window.NAVE_LINKS&&NAVE_LINKS.VSL_NAVE)||''; }catch(_e){}
-  var src=file||'assets/vsl.mp4';
-  box.addEventListener('click', function(){
-    if(box.dataset.state==='playing') return; box.dataset.state='playing';
-    box.innerHTML='';   // clear poster + play button + note so nothing sits on top
-    if(!file && embed){
-      var f=document.createElement('iframe'); f.src=embed+(embed.indexOf('?')<0?'?':'&')+'autoplay=1';
-      f.allow='autoplay; fullscreen; picture-in-picture'; f.setAttribute('allowfullscreen',''); box.appendChild(f);
-      return;
-    }
-    var v=document.createElement('video');
-    v.src=src; v.controls=true; v.playsInline=true; v.preload='auto';
-    v.setAttribute('poster','assets/vsl-poster.jpg');
-    v.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000';
-    v.onerror=function(){ box.dataset.state='poster'; box.innerHTML='<img class="vslposter" src="assets/vsl-poster.jpg" alt=""><span class="vslnote">Couldn\'t load the video — book a call and I\'ll show you live.</span>'; };
-    box.appendChild(v);
-    var p=v.play();
-    if(p&&p.catch){ p.catch(function(){ v.muted=true; v.play().catch(function(){}); }); }  // if sound-autoplay is blocked, start muted (controls let them unmute)
-  });
-})();
-/* Testimonial wall — result-led, renders ONLY real entries from NAVE_LINKS.TESTIMONIALS; hidden when empty */
-(function(){
-  try{
-    var t=(window.NAVE_LINKS&&NAVE_LINKS.TESTIMONIALS)||[]; if(!t.length) return;
-    var esc=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
-    var g=document.getElementById('tgrid'); if(!g) return;
-    g.innerHTML=t.map(function(q){
-      var who=[q.name,q.business,q.industry].filter(Boolean).map(esc).join(' · ');
-      return '<figure>'+(q.result?'<div class="tres">'+esc(q.result)+'</div>':'')+'<blockquote>'+esc(q.quote)+'</blockquote>'+(who?'<figcaption>— '+who+'</figcaption>':'')+'</figure>';
-    }).join('');
-    document.getElementById('twall').style.display='';
-  }catch(_e){}
+  var p=document.getElementById('player'); if(!p) return;
+  var v=document.getElementById('nv');
+  var file=''; try{ file=(window.NAVE_LINKS&&NAVE_LINKS.VSL_FILE)||''; }catch(_e){}
+  v.src=file||'assets/vsl.mp4';
+  v.muted=true; v.setAttribute('muted',''); v.playsInline=true;
+  var pp=document.getElementById('nv-pp'),seek=document.getElementById('nv-seek'),fill=document.getElementById('nv-fill'),buf=document.getElementById('nv-buf'),tEl=document.getElementById('nv-time'),muteBtn=document.getElementById('nv-mute'),fsBtn=document.getElementById('nv-fs'),unmute=document.getElementById('nv-unmute');
+  var I={play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',pause:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',vol:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>',mute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg>',fs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>'};
+  pp.innerHTML=I.pause; muteBtn.innerHTML=I.mute; fsBtn.innerHTML=I.fs;
+  function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
+  function toggle(){ if(v.paused){v.play();}else{v.pause();} }
+  v.addEventListener('click',toggle);
+  pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  v.addEventListener('play',function(){pp.innerHTML=I.pause;p.dataset.state='playing';});
+  v.addEventListener('pause',function(){pp.innerHTML=I.play;p.dataset.state='paused';});
+  v.addEventListener('timeupdate',function(){var d=v.duration||1;fill.style.width=(v.currentTime/d*100)+'%';tEl.textContent=fmt(v.currentTime)+' / '+fmt(d);if(v.buffered.length)buf.style.width=(v.buffered.end(v.buffered.length-1)/d*100)+'%';});
+  seek.addEventListener('click',function(e){e.stopPropagation();var r=seek.getBoundingClientRect();v.currentTime=Math.max(0,(e.clientX-r.left)/r.width)*(v.duration||0);});
+  function setMute(m){v.muted=m;p.dataset.muted=m?'1':'0';muteBtn.innerHTML=m?I.mute:I.vol;}
+  muteBtn.addEventListener('click',function(e){e.stopPropagation();setMute(!v.muted);});
+  unmute.addEventListener('click',function(e){e.stopPropagation();setMute(false);if(v.paused)v.play();});
+  fsBtn.addEventListener('click',function(e){e.stopPropagation();if(document.fullscreenElement){document.exitFullscreen();}else if(p.requestFullscreen){p.requestFullscreen();}});
+  v.onerror=function(){p.innerHTML='<img src="assets/vsl-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt=""><span style="position:absolute;left:0;right:0;bottom:0;padding:12px;text-align:center;font-family:\'DM Mono\',monospace;font-size:12px;color:var(--cream-50);background:linear-gradient(transparent,rgba(7,9,8,.85))">Couldn\'t load the video — book a call and I\'ll show you live.</span>';};
+  // autoplay (muted) on load — runs every time the page opens
+  var go=function(){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){p.dataset.state='paused';pp.innerHTML=I.play;});};
+  if(v.readyState>=2)go(); else v.addEventListener('loadeddata',go,{once:true});
 })();
 </script>
 </body>
