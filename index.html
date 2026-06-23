@@ -148,7 +148,7 @@
 
     <div class="vslwrap">
       <div id="player" class="nplayer" data-state="loading" data-muted="1">
-        <video id="nv" class="nv-video" playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
+        <video id="nv" class="nv-video" autoplay muted playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
         <button id="nv-unmute" class="nv-unmute" aria-label="Unmute">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>
           Tap for sound
@@ -215,16 +215,19 @@
     var off=function(){ ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){window.removeEventListener(e,once,true);}); };
     ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){window.addEventListener(e,once,true);});
   }
+  // GUARANTEED autoplay: muted is the only autoplay browsers always allow, so start muted and
+  // play. Sound then comes on at the visitor's first interaction (click / tap / scroll / key).
+  var started=false;
   var go=function(){
-    v.muted=false; setMute(false);
+    if(started) return; started=true;
+    v.muted=true; setMute(true);
     var pr=v.play();
-    if(pr&&pr.then){ pr.then(function(){ setMute(false); }).catch(function(){
-      v.muted=true; setMute(true);
-      v.play().catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; });
-      armUnmute();
-    }); }
+    if(pr&&pr.catch) pr.catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; });
+    armUnmute();
   };
-  if(v.readyState>=2)go(); else v.addEventListener('loadeddata',go,{once:true});
+  v.addEventListener('canplay',go,{once:true});
+  v.addEventListener('loadeddata',go,{once:true});
+  if(v.readyState>=2) go();
 })();
 </script>
 </body>
