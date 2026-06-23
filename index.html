@@ -148,7 +148,7 @@
 
     <div class="vslwrap">
       <div id="player" class="nplayer" data-state="loading" data-muted="1">
-        <video id="nv" class="nv-video" autoplay muted playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
+        <video id="nv" class="nv-video" playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
         <button id="nv-unmute" class="nv-unmute" aria-label="Unmute">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>
           Tap for sound
@@ -195,7 +195,9 @@
   function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
   var userPaused=false;
   function toggle(){ if(v.paused){ userPaused=false; v.play(); } else { userPaused=true; v.pause(); } }
-  v.addEventListener('click',toggle);                 // click the video = pause / play
+  // click the video: if it's still muted, the FIRST click turns sound on (keeps playing);
+  // once sound is on, clicking pauses / plays.
+  v.addEventListener('click',function(){ if(v.muted){ setMute(false); if(v.paused){ userPaused=false; v.play(); } } else { toggle(); } });
   pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
   v.addEventListener('play',function(){ userPaused=false; pp.innerHTML=I.pause; p.dataset.state='playing'; });
   v.addEventListener('pause',function(){ pp.innerHTML=I.play; p.dataset.state='paused';
@@ -209,16 +211,21 @@
   rateBtn.addEventListener('click',function(e){e.stopPropagation();ri=(ri+1)%RATES.length;v.playbackRate=RATES[ri];rateBtn.textContent=(RATES[ri]%1?RATES[ri]:RATES[ri]+'')+'×';});
   fsBtn.addEventListener('click',function(e){e.stopPropagation();if(document.fullscreenElement){document.exitFullscreen();}else if(p.requestFullscreen){p.requestFullscreen();}});
   v.onerror=function(){p.innerHTML='<img src="assets/vsl-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt=""><span style="position:absolute;left:0;right:0;bottom:0;padding:12px;text-align:center;font-family:\'DM Mono\',monospace;font-size:12px;color:var(--cream-50);background:linear-gradient(transparent,rgba(7,9,8,.85))">Couldn\'t load the video — book a call and I\'ll show you live.</span>';};
-  // GUARANTEED autoplay: muted is the only autoplay browsers always allow. It stays playing through
-  // scroll (the pause handler above auto-resumes any non-user pause). Sound = "Tap for sound" / mute
-  // button — both real clicks, so unmuting there keeps it playing. We do NOT auto-unmute on scroll,
-  // because unmuting an autoplaying video without a real click makes the browser pause it.
+  // Autoplay WITH SOUND when the browser allows it (visitors it trusts — e.g. returning visitors
+  // who've engaged with the page). If sound-autoplay is blocked, fall back to muted autoplay (always
+  // allowed) and the first click on the video turns the sound on. We never unmute on scroll (that
+  // pauses the video), so it keeps playing as you scroll; the pause handler resumes any non-user pause.
   var started=false;
   var go=function(){
     if(started) return; started=true;
-    v.muted=true; setMute(true);
+    v.muted=false; setMute(false);
     var pr=v.play();
-    if(pr&&pr.catch) pr.catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; });
+    if(pr&&pr.then){
+      pr.then(function(){ setMute(false); }).catch(function(){
+        v.muted=true; setMute(true);
+        v.play().catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; });
+      });
+    }
   };
   v.addEventListener('canplay',go,{once:true});
   v.addEventListener('loadeddata',go,{once:true});
