@@ -148,7 +148,7 @@
 
     <div class="vslwrap">
       <div id="player" class="nplayer" data-state="loading" data-muted="1">
-        <video id="nv" class="nv-video" playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
+        <video id="nv" class="nv-video" autoplay muted playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
         <button id="nv-unmute" class="nv-unmute" aria-label="Unmute">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>
           Tap for sound
@@ -193,7 +193,7 @@
   var I={play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',pause:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',vol:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>',mute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg>',fs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>'};
   pp.innerHTML=I.pause; muteBtn.innerHTML=I.mute; fsBtn.innerHTML=I.fs;
   function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
-  var userPaused=false;
+  var userPaused=false, soundProbe=false;
   function toggle(){ if(v.paused){ userPaused=false; v.play(); } else { userPaused=true; v.pause(); } }
   // click the video: if it's still muted, the FIRST click turns sound on (keeps playing);
   // once sound is on, clicking pauses / plays.
@@ -201,7 +201,7 @@
   pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
   v.addEventListener('play',function(){ userPaused=false; pp.innerHTML=I.pause; p.dataset.state='playing'; });
   v.addEventListener('pause',function(){ pp.innerHTML=I.play; p.dataset.state='paused';
-    if(!userPaused && !v.ended){ v.play().catch(function(){}); } });   // keep playing through scroll/anything but a real click
+    if(!userPaused && !v.ended && !soundProbe){ v.play().catch(function(){}); } });   // keep playing through scroll/anything but a real click
   v.addEventListener('timeupdate',function(){var d=v.duration||1;fill.style.width=(v.currentTime/d*100)+'%';tEl.textContent=fmt(v.currentTime)+' / '+fmt(d);if(v.buffered.length)buf.style.width=(v.buffered.end(v.buffered.length-1)/d*100)+'%';});
   seek.addEventListener('click',function(e){e.stopPropagation();var r=seek.getBoundingClientRect();v.currentTime=Math.max(0,(e.clientX-r.left)/r.width)*(v.duration||0);});
   function setMute(m){v.muted=m;p.dataset.muted=m?'1':'0';muteBtn.innerHTML=m?I.mute:I.vol;}
@@ -215,21 +215,25 @@
   // who've engaged with the page). If sound-autoplay is blocked, fall back to muted autoplay (always
   // allowed) and the first click on the video turns the sound on. We never unmute on scroll (that
   // pauses the video), so it keeps playing as you scroll; the pause handler resumes any non-user pause.
+  // The <video> tag carries autoplay+muted, so it muted-autoplays reliably & promptly. Once it's
+  // playing we PROBE for sound: unmute, and if the browser blocks it (untrusted visitor) the video
+  // pauses — we catch that and revert to muted so it KEEPS PLAYING. Trusted/returning visitors keep
+  // the sound on. We never unmute on scroll (that pauses it). First click on the video also unmutes.
+  function probeSound(){
+    if(!v.muted) return;
+    soundProbe=true; v.muted=false; p.dataset.muted='0'; muteBtn.innerHTML=I.vol;
+    setTimeout(function(){
+      soundProbe=false;
+      if(v.paused){ setMute(true); if(!userPaused) v.play().catch(function(){}); }  // blocked -> back to muted, keep playing
+      else { setMute(false); }                                                      // sound stayed on (trusted visitor)
+    }, 120);
+  }
+  v.addEventListener('playing', function _pl(){ v.removeEventListener('playing',_pl); probeSound(); });
+  // safety net: if the autoplay attribute didn't kick in, start it muted ourselves
   var started=false;
-  var go=function(){
-    if(started) return; started=true;
-    v.muted=false; setMute(false);
-    var pr=v.play();
-    if(pr&&pr.then){
-      pr.then(function(){ setMute(false); }).catch(function(){
-        v.muted=true; setMute(true);
-        v.play().catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; });
-      });
-    }
-  };
+  function go(){ if(started)return; started=true; if(v.paused){ v.muted=true; setMute(true); v.play().catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; }); } }
   v.addEventListener('canplay',go,{once:true});
-  v.addEventListener('loadeddata',go,{once:true});
-  if(v.readyState>=2) go();
+  setTimeout(go,1200);
 })();
 </script>
 </body>
