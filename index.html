@@ -197,7 +197,7 @@
   function toggle(){ if(v.paused){ userPaused=false; v.play(); } else { userPaused=true; v.pause(); } }
   // click the video: if it's still muted, the FIRST click turns sound on (keeps playing);
   // once sound is on, clicking pauses / plays.
-  v.addEventListener('click',function(){ if(v.muted){ setMute(false); if(v.paused){ userPaused=false; v.play(); } } else { toggle(); } });
+  v.addEventListener('click',function(){ if(v.muted){ setMute(false); userPaused=false; v.play().catch(function(){}); } else { toggle(); } });
   pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
   v.addEventListener('play',function(){ userPaused=false; pp.innerHTML=I.pause; p.dataset.state='playing'; });
   v.addEventListener('pause',function(){ pp.innerHTML=I.play; p.dataset.state='paused';
