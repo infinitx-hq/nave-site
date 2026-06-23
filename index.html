@@ -193,11 +193,13 @@
   var I={play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',pause:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',vol:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>',mute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg>',fs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>'};
   pp.innerHTML=I.pause; muteBtn.innerHTML=I.mute; fsBtn.innerHTML=I.fs;
   function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
-  function toggle(){ if(v.paused){v.play();}else{v.pause();} }
-  v.addEventListener('click',toggle);
+  var userPaused=false;
+  function toggle(){ if(v.paused){ userPaused=false; v.play(); } else { userPaused=true; v.pause(); } }
+  v.addEventListener('click',toggle);                 // click the video = pause / play
   pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
-  v.addEventListener('play',function(){pp.innerHTML=I.pause;p.dataset.state='playing';});
-  v.addEventListener('pause',function(){pp.innerHTML=I.play;p.dataset.state='paused';});
+  v.addEventListener('play',function(){ userPaused=false; pp.innerHTML=I.pause; p.dataset.state='playing'; });
+  v.addEventListener('pause',function(){ pp.innerHTML=I.play; p.dataset.state='paused';
+    if(!userPaused && !v.ended){ v.play().catch(function(){}); } });   // keep playing through scroll/anything but a real click
   v.addEventListener('timeupdate',function(){var d=v.duration||1;fill.style.width=(v.currentTime/d*100)+'%';tEl.textContent=fmt(v.currentTime)+' / '+fmt(d);if(v.buffered.length)buf.style.width=(v.buffered.end(v.buffered.length-1)/d*100)+'%';});
   seek.addEventListener('click',function(e){e.stopPropagation();var r=seek.getBoundingClientRect();v.currentTime=Math.max(0,(e.clientX-r.left)/r.width)*(v.duration||0);});
   function setMute(m){v.muted=m;p.dataset.muted=m?'1':'0';muteBtn.innerHTML=m?I.mute:I.vol;}
@@ -207,23 +209,16 @@
   rateBtn.addEventListener('click',function(e){e.stopPropagation();ri=(ri+1)%RATES.length;v.playbackRate=RATES[ri];rateBtn.textContent=(RATES[ri]%1?RATES[ri]:RATES[ri]+'')+'×';});
   fsBtn.addEventListener('click',function(e){e.stopPropagation();if(document.fullscreenElement){document.exitFullscreen();}else if(p.requestFullscreen){p.requestFullscreen();}});
   v.onerror=function(){p.innerHTML='<img src="assets/vsl-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt=""><span style="position:absolute;left:0;right:0;bottom:0;padding:12px;text-align:center;font-family:\'DM Mono\',monospace;font-size:12px;color:var(--cream-50);background:linear-gradient(transparent,rgba(7,9,8,.85))">Couldn\'t load the video — book a call and I\'ll show you live.</span>';};
-  // AUTOPLAY WITH SOUND on load. Browsers block sound-autoplay for new visitors, so if it's
-  // blocked we start muted and unmute on the visitor's first interaction anywhere (click / tap /
-  // scroll / key) — sound comes on the instant they engage. Returning visitors get sound immediately.
-  function armUnmute(){
-    var once=function(){ if(v.muted) setMute(false); off(); };
-    var off=function(){ ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){window.removeEventListener(e,once,true);}); };
-    ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){window.addEventListener(e,once,true);});
-  }
-  // GUARANTEED autoplay: muted is the only autoplay browsers always allow, so start muted and
-  // play. Sound then comes on at the visitor's first interaction (click / tap / scroll / key).
+  // GUARANTEED autoplay: muted is the only autoplay browsers always allow. It stays playing through
+  // scroll (the pause handler above auto-resumes any non-user pause). Sound = "Tap for sound" / mute
+  // button — both real clicks, so unmuting there keeps it playing. We do NOT auto-unmute on scroll,
+  // because unmuting an autoplaying video without a real click makes the browser pause it.
   var started=false;
   var go=function(){
     if(started) return; started=true;
     v.muted=true; setMute(true);
     var pr=v.play();
     if(pr&&pr.catch) pr.catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; });
-    armUnmute();
   };
   v.addEventListener('canplay',go,{once:true});
   v.addEventListener('loadeddata',go,{once:true});
