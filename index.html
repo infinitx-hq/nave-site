@@ -115,6 +115,8 @@
   .nplayer:hover .nv-controls,.nplayer[data-state="paused"] .nv-controls{opacity:1}
   .nv-ic{width:34px;height:34px;flex:none;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--cream);cursor:pointer;padding:0;border-radius:8px;transition:color .15s}
   .nv-ic:hover{color:var(--ink)} .nv-ic svg{width:22px;height:22px}
+  .nv-rate{width:auto;min-width:44px;padding:0 10px;font:600 14px/1 'DM Mono',monospace;border:1px solid var(--line);border-radius:8px}
+  .nv-rate:hover{border-color:var(--line-strong)}
   .nv-seek{flex:1;height:6px;border-radius:4px;background:rgba(240,235,222,.16);position:relative;cursor:pointer}
   .nv-buf{position:absolute;left:0;top:0;height:100%;width:0;background:rgba(240,235,222,.22);border-radius:4px}
   .nv-fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--ink);border-radius:4px}
@@ -155,6 +157,7 @@
           <button id="nv-pp" class="nv-ic" aria-label="Play / pause"></button>
           <div id="nv-seek" class="nv-seek"><div id="nv-buf" class="nv-buf"></div><div id="nv-fill" class="nv-fill"></div></div>
           <span id="nv-time" class="nv-time">0:00</span>
+          <button id="nv-rate" class="nv-ic nv-rate" aria-label="Playback speed">1×</button>
           <button id="nv-mute" class="nv-ic" aria-label="Mute / unmute"></button>
           <button id="nv-fs" class="nv-ic" aria-label="Fullscreen"></button>
         </div>
@@ -179,14 +182,14 @@
 
 <script src="assets/links.js?v=20260621d"></script>
 <script>
-/* Loom-style custom player — AUTOPLAYS (muted) on every page load; tap for sound */
+/* Loom-style custom player — autoplays WITH SOUND on load (muted fallback + first-gesture unmute); speed control */
 (function(){
   var p=document.getElementById('player'); if(!p) return;
   var v=document.getElementById('nv');
   var file=''; try{ file=(window.NAVE_LINKS&&NAVE_LINKS.VSL_FILE)||''; }catch(_e){}
   v.src=file||'assets/vsl.mp4';
-  v.muted=true; v.setAttribute('muted',''); v.playsInline=true;
-  var pp=document.getElementById('nv-pp'),seek=document.getElementById('nv-seek'),fill=document.getElementById('nv-fill'),buf=document.getElementById('nv-buf'),tEl=document.getElementById('nv-time'),muteBtn=document.getElementById('nv-mute'),fsBtn=document.getElementById('nv-fs'),unmute=document.getElementById('nv-unmute');
+  v.playsInline=true;
+  var pp=document.getElementById('nv-pp'),seek=document.getElementById('nv-seek'),fill=document.getElementById('nv-fill'),buf=document.getElementById('nv-buf'),tEl=document.getElementById('nv-time'),muteBtn=document.getElementById('nv-mute'),fsBtn=document.getElementById('nv-fs'),unmute=document.getElementById('nv-unmute'),rateBtn=document.getElementById('nv-rate');
   var I={play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',pause:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',vol:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>',mute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg>',fs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>'};
   pp.innerHTML=I.pause; muteBtn.innerHTML=I.mute; fsBtn.innerHTML=I.fs;
   function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
@@ -200,10 +203,27 @@
   function setMute(m){v.muted=m;p.dataset.muted=m?'1':'0';muteBtn.innerHTML=m?I.mute:I.vol;}
   muteBtn.addEventListener('click',function(e){e.stopPropagation();setMute(!v.muted);});
   unmute.addEventListener('click',function(e){e.stopPropagation();setMute(false);if(v.paused)v.play();});
+  var RATES=[1,1.25,1.5,2,3],ri=0;
+  rateBtn.addEventListener('click',function(e){e.stopPropagation();ri=(ri+1)%RATES.length;v.playbackRate=RATES[ri];rateBtn.textContent=(RATES[ri]%1?RATES[ri]:RATES[ri]+'')+'×';});
   fsBtn.addEventListener('click',function(e){e.stopPropagation();if(document.fullscreenElement){document.exitFullscreen();}else if(p.requestFullscreen){p.requestFullscreen();}});
   v.onerror=function(){p.innerHTML='<img src="assets/vsl-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt=""><span style="position:absolute;left:0;right:0;bottom:0;padding:12px;text-align:center;font-family:\'DM Mono\',monospace;font-size:12px;color:var(--cream-50);background:linear-gradient(transparent,rgba(7,9,8,.85))">Couldn\'t load the video — book a call and I\'ll show you live.</span>';};
-  // autoplay (muted) on load — runs every time the page opens
-  var go=function(){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){p.dataset.state='paused';pp.innerHTML=I.play;});};
+  // AUTOPLAY WITH SOUND on load. Browsers block sound-autoplay for new visitors, so if it's
+  // blocked we start muted and unmute on the visitor's first interaction anywhere (click / tap /
+  // scroll / key) — sound comes on the instant they engage. Returning visitors get sound immediately.
+  function armUnmute(){
+    var once=function(){ if(v.muted) setMute(false); off(); };
+    var off=function(){ ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){window.removeEventListener(e,once,true);}); };
+    ['pointerdown','touchstart','keydown','scroll'].forEach(function(e){window.addEventListener(e,once,true);});
+  }
+  var go=function(){
+    v.muted=false; setMute(false);
+    var pr=v.play();
+    if(pr&&pr.then){ pr.then(function(){ setMute(false); }).catch(function(){
+      v.muted=true; setMute(true);
+      v.play().catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; });
+      armUnmute();
+    }); }
+  };
   if(v.readyState>=2)go(); else v.addEventListener('loadeddata',go,{once:true});
 })();
 </script>
