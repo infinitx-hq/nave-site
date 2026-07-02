@@ -173,27 +173,27 @@ window.NAVE_LINKS = NAVE_LINKS;
   var feed = document.getElementById('termfeed');
   if (!feed) return;
   var LINES = [
-    '> Make a month of content from this video: footage/june-drop.mp4',
+    '> Make a month of content from: footage/june-drop/ · 14 clips in',
     '',
-    '[FI] reading footage......... 14 clips · 3 speakers · 41 quotable lines',
-    '[VE] reframing 9:16.......... captions on · 12 shorts cut',
-    '[FS] carousels............... 4 designed',
-    '[CW] posts written........... in your voice · humanizer pass done',
-    '[PM] month staged............ 28 pieces · waiting on YOUR approval',
+    '[pre-production].. footage read · 41 quotable lines · formats planned',
+    '[production]...... shorts x12 · carousels x4 · posts x8 · covers',
+    '[post-production]. cuts · captions · 9:16 reframes · graphics done',
+    '[distribution].... 28 pieces scheduled · staggered across platforms',
+    '[engagement]...... inbox armed · comment-to-DM on · weekly report set',
     '',
-    '> Review queue ready. Say "schedule it."'
+    '> Month staged. Nothing posts without your OK.'
   ];
   var li = 0, ci = 0, out = '';
   var cursor = '<span class="cursor"></span>';
   function tick(){
     if (li >= LINES.length){
-      feed.innerHTML = '<span class="dimline">$ claude</span>\n' + out + cursor;
+      feed.innerHTML = '<span class="dimline">$ <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:12px;width:auto;vertical-align:-2px;opacity:.85"></span>\n' + out + cursor;
       setTimeout(function(){ li = 0; ci = 0; out = ''; tick(); }, 9000);
       return;
     }
     var line = LINES[li];
     if (ci <= line.length){
-      feed.innerHTML = '<span class="dimline">$ claude</span>\n' + out + line.slice(0, ci) + cursor;
+      feed.innerHTML = '<span class="dimline">$ <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:12px;width:auto;vertical-align:-2px;opacity:.85"></span>\n' + out + line.slice(0, ci) + cursor;
       ci += 2;
       setTimeout(tick, line.startsWith('[') ? 8 : 18);
     } else {
