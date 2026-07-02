@@ -22,9 +22,22 @@ const NAVE_LINKS = {
   VSL_CUSTOM: '',            // done-for-you VSL embed URL
   CLARITY_ID: 'x7j0avqhnn',  // Microsoft Clarity project ID — heatmaps + session recordings (free). Empty = off.
   /* Real testimonials only — result-led (the result is the headline; it converts better).
-     Add an object per client and the section reveals itself. Empty = wall stays hidden. */
+     These are INFINITX client-work quotes (the company behind Nave), pulled verbatim from
+     infinitxai.com + the LinkedIn receipts in assets/proof/. The /join wall labels the source
+     honestly. Member quotes get ADDED here as they land — never invented, never paraphrased. */
   TESTIMONIALS: [
-    // { result: "From posting twice a month to daily, in a week.", quote: "...what changed after install...", name: "Name", business: "Business", industry: "Industry" },
+    { result: "“A couple thousand at this point.”",
+      quote: "Freaking overwhelmed with the amount of potential clients. So many leads just from follow-up. I'm up to a couple thousand at this point.",
+      name: "Zach Alexandre", business: "$2.5M/yr operator", source: "https://infinitxai.com/" },
+    { result: "Senior-engineer weeks of build. About 4 hours.",
+      quote: "One of the most advanced, skilled, and creative AI infrastructure, AI growth systems, and AI voice systems developers in the industry. He engineered this multifaceted AI automation marvel in about 4 hours. Nothing short of God-given talent.",
+      name: "Richard Hawley", business: "Founder, Velocity AI", source: "assets/proof/testimonial-richard-hawley.png" },
+    { result: "“I can't recommend anyone more.”",
+      quote: "If you're looking to get anything done in the AI / Automation space, Tréjon is the GOAT! I consider myself very skilled, but what Tréjon does is astonishing. I'm constantly in awe of the solutions he comes up with. I can't recommend anyone more than him; to top it off, he's also an amazing human.",
+      name: "Santiago Iturbide", business: "CEO, Azloia.com", source: "assets/proof/testimonial-santiago-iturbide.png" },
+    { result: "“The highest recommendation I could give.”",
+      quote: "When it comes to all things AI, Trejon is an industry leader. I lean on him daily, never asking a question he doesn't have an answer for. The highest recommendation I could give another human.",
+      name: "Dexter Brocks", business: "TheChicagoAIGuy.com", source: "https://infinitxai.com/" }
   ]
 };
 /* Expose on window — a top-level `const` is script-scoped and does NOT attach to

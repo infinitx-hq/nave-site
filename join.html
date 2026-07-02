@@ -231,9 +231,9 @@
 
 <section id="twall" style="padding-top:40px">
   <div class="wrap">
-    <span class="eyebrow">Operators, in their own words</span>
-    <h2>Real members. <i>Real accounts.</i></h2>
-    <p class="sub" style="max-width:560px">Linked so you can check. When there's nothing here yet, there's nothing here — we don't decorate.</p>
+    <span class="eyebrow">Real words, real people</span>
+    <h2>The team behind it, <i>in client words.</i></h2>
+    <p class="sub" style="max-width:620px">The community is new, so no member quotes yet. These are from INFINITX client work — the company behind Nave — verbatim, receipts linked so you can check. Member wins get added here as they land. We don't decorate.</p>
     <div class="tgrid" id="tgrid"></div>
   </div>
 </section>
@@ -322,7 +322,8 @@
       if (t.quote){ var q = document.createElement('p'); q.className = 'q'; q.textContent = '“' + t.quote + '”'; c.appendChild(q); }
       var who = document.createElement('div'); who.className = 'who';
       who.textContent = [t.name, t.business, t.industry].filter(Boolean).join(' · ');
-      if (t.link){ var a = document.createElement('a'); a.href = t.link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = ' ↗'; a.style.color = 'var(--ink)'; who.appendChild(a); }
+      var src = t.link || t.source;
+      if (src){ var a = document.createElement('a'); a.href = src; a.target = '_blank'; a.rel = 'noopener'; a.textContent = ' ↗ receipt'; a.style.color = 'var(--ink)'; a.style.textDecoration = 'none'; who.appendChild(a); }
       c.appendChild(who); grid.appendChild(c);
     });
     wall.classList.add('on');
