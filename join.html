@@ -242,6 +242,20 @@
   .crow .cl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
   .crow .cv{color:var(--cream-72);font-size:13.5px;line-height:1.55}
   .crow .cv b{color:var(--cream)}
+
+  /* pieces sections */
+  .thumbrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:22px}
+  .thumbrow img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid var(--line);transition:border-color .2s,transform .3s}
+  .thumbrow img:hover{border-color:var(--line-strong);transform:scale(1.02)}
+  .playhint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border:1px solid var(--line-strong);background:rgba(7,9,8,.62);backdrop-filter:blur(6px);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:17px;pointer-events:none;transition:opacity .25s}
+  .film.playing .playhint{opacity:0}
+  .vrow9{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:22px;max-width:860px}
+  .v916{aspect-ratio:9/16;max-height:520px}
+  .tik{position:relative;aspect-ratio:9/16;max-height:560px;border:1px solid var(--line);background:#0c0f0d;overflow:hidden}
+  .tik iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .ligrid{margin-top:22px;max-width:560px}
+  .ligrid iframe{width:100%;height:640px;border:1px solid var(--line);background:#0c0f0d}
+
 </style>
 </head>
 <body>
@@ -488,7 +502,7 @@
   <div class="wrap">
     <span class="eyebrow">Real pieces, published</span>
     <h2 class="ph">Made by the OS. <i>Shipped in public.</i></h2>
-    <p class="sub" style="max-width:560px">Straight from the founder's channel — planned, edited and packaged with the same system you install.</p>
+    <p class="sub" style="max-width:560px">From the founder's channel, client channels and client brands — every piece planned, edited and packaged by the same system you install.</p>
     <div class="ytgrid">
       <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/9JiRMaGJyvk" title="I Made a Month of Quality Content in a Day with Claude Code" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
       <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/58dOl9SGJMA" title="How I Make a Week of YouTube Content With My Content OS" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
@@ -496,23 +510,59 @@
     </div>
 
     <div style="margin-top:44px">
-      <span class="eyebrow">AI-generated — same system, production stage</span>
-      <p class="sub" style="max-width:620px;margin-top:10px">When there's no footage, the OS generates it: model-made film and imagery, directed from the terminal. Not agency work for hire — this is the Production stage members install, in our hands.</p>
+      <span class="eyebrow">Produced for Zernio &mdash; the client&rsquo;s channel</span>
+      <div class="ytgrid">
+        <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/uqnnBAZpPek" title="Stop Manually Posting TikToks. Build This Claude Code System Instead" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+        <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/ifj_Sw3jdg8" title="I Built an Instagram DM Booking Agent with Claude Managed Agents" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+        <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/UNcbO0_fhsg" title="How to Connect Meta Ads API to Claude" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="eyebrow">AI-generated thumbnails &mdash; every video ships with one</span>
+      <div class="thumbrow">
+        <img src="https://i.ytimg.com/vi/9JiRMaGJyvk/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
+        <img src="https://i.ytimg.com/vi/58dOl9SGJMA/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
+        <img src="https://i.ytimg.com/vi/ZtxE1SgoCto/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
+        <img src="https://i.ytimg.com/vi/uqnnBAZpPek/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
+        <img src="https://i.ytimg.com/vi/ifj_Sw3jdg8/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
+        <img src="https://i.ytimg.com/vi/UNcbO0_fhsg/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
+      </div>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="eyebrow">AI video generation</span>
       <div class="films">
-        <div class="film" data-film><video src="assets/proof/nave-work/film-cinematic.mp4" poster="assets/proof/nave-work/film-cinematic.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — cinematic</span></div>
-        <div class="film" data-film><video src="assets/proof/nave-work/film-fashion.mp4" poster="assets/proof/nave-work/film-fashion.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — fashion</span></div>
-        <div class="film" data-film><video src="assets/proof/nave-work/film-republic.mp4" poster="assets/proof/nave-work/film-republic.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — brand spot</span></div>
-        <div class="film" data-film><video src="assets/proof/nave-work/film-vday.mp4" poster="assets/proof/nave-work/film-vday.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — campaign</span></div>
+        <div class="film" data-film><video src="assets/proof/nave-work/film-cinematic.mp4" poster="assets/proof/nave-work/film-cinematic.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
+        <div class="film" data-film><video src="assets/proof/nave-work/film-fashion.mp4" poster="assets/proof/nave-work/film-fashion.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
+        <div class="film" data-film><video src="assets/proof/nave-work/film-republic.mp4" poster="assets/proof/nave-work/film-republic.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
       </div>
-      <div class="sggrid">
-        <img src="assets/proof/nave-work/sg-1.jpg" alt="AI-generated product imagery" loading="lazy">
-        <img src="assets/proof/nave-work/sg-3.jpg" alt="AI-generated product imagery" loading="lazy">
-        <img src="assets/proof/nave-work/sg-5.jpg" alt="AI-generated product imagery" loading="lazy">
-        <img src="assets/proof/nave-work/sg-7.jpg" alt="AI-generated product imagery" loading="lazy">
-        <img src="assets/proof/nave-work/sg-8.jpg" alt="AI-generated jewelry imagery" loading="lazy">
-        <img src="assets/proof/nave-work/sg-9.jpg" alt="AI-generated product imagery" loading="lazy">
+      <p class="micro" style="margin-top:10px">Tap to play, sound on.</p>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="eyebrow">AI avatar + motion design</span>
+      <div class="vrow9">
+        <div class="film v916" data-film><video src="assets/proof/nave-work/avatar-spokesperson.mp4" poster="assets/proof/nave-work/avatar-spokesperson.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
+        <div class="film v916" data-film><video src="assets/proof/nave-work/nave-one-drop.mp4" poster="assets/proof/nave-work/nave-one-drop.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
+        <div class="film v916" data-film><video src="assets/proof/nave-work/nave-path-to-a-month.mp4" poster="assets/proof/nave-work/nave-path-to-a-month.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
       </div>
-      <p class="micro" style="margin-top:10px">Hover to play. Generated with the gen engines in the stack — Kie.ai and friends — directed by the crew.</p>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="eyebrow">Short-form, published</span>
+      <div class="vrow9">
+        <div class="tik"><iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7650215324930952461" allow="encrypted-media; picture-in-picture" allowfullscreen title="TikTok published short"></iframe></div>
+        <div class="tik"><iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7643081996935138574" allow="encrypted-media; picture-in-picture" allowfullscreen title="TikTok photo carousel"></iframe></div>
+        <div class="tik"><iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7605696760614309133" allow="encrypted-media; picture-in-picture" allowfullscreen title="TikTok published short"></iframe></div>
+      </div>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="eyebrow">Carousels &amp; posts</span>
+      <div class="ligrid">
+        <iframe loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7424568506098282496" title="LinkedIn published post" allowfullscreen></iframe>
+      </div>
     </div>
 
     <div style="margin-top:44px">
@@ -662,13 +712,19 @@
     });
   });
 
-  /* AI films: hover to play (tap toggles on touch) */
-  document.querySelectorAll('[data-film]').forEach(function(card){
+  /* films & motion: click to play, SOUND ON; pause any other playing tile */
+  var tiles = [].slice.call(document.querySelectorAll('[data-film]'));
+  tiles.forEach(function(card){
     var v = card.querySelector('video');
     if (!v) return;
-    card.addEventListener('pointerenter', function(){ v.play().catch(function(){}); });
-    card.addEventListener('pointerleave', function(){ v.pause(); });
-    card.addEventListener('click', function(){ v.paused ? v.play().catch(function(){}) : v.pause(); });
+    card.addEventListener('click', function(){
+      if (v.paused){
+        tiles.forEach(function(o){ var ov = o.querySelector('video'); if (ov && ov !== v){ ov.pause(); o.classList.remove('playing'); } });
+        v.muted = false;
+        v.play().catch(function(){});
+        card.classList.add('playing');
+      } else { v.pause(); card.classList.remove('playing'); }
+    });
   });
 
   /* Personalized landing — /apply passes ?focus= */
