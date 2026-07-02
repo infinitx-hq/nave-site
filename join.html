@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agentic AI Content — systematize your content production with AI agents</title>
-<meta name="description" content="A community + a working Content OS: agents for every stage of content production, 10hrs+ of training, live calls 2x a week, same-day support. $58/mo founding, locked for life. A month of content in 30 days, or your money back.">
+<title>Agentic AI Content — your content team, in the terminal</title>
+<meta name="description" content="A community + a working Content OS: AI agents for every stage of content production — plan, make, polish, publish, learn. Built on Claude Code. A month of content in 30 days, or your money back.">
 <link rel="canonical" href="https://nave.infinitxai.com/join">
 <meta name="theme-color" content="#070908">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nave">
-<meta property="og:title" content="Agentic AI Content — systematize your content production with AI agents">
-<meta property="og:description" content="The Content OS + the operators running it. $58/mo founding, locked for life. A month of content in 30 days, or your money back.">
+<meta property="og:title" content="Agentic AI Content — your content team, in the terminal">
+<meta property="og:description" content="AI agents for every stage of content production, the training to run them, and the operators building the same way. A month of content in 30 days, or your money back.">
 <meta property="og:url" content="https://nave.infinitxai.com/join">
-<meta property="og:image" content="https://nave.infinitxai.com/assets/nave-logo.png">
+<meta property="og:image" content="https://nave.infinitxai.com/assets/og.png">
 <link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 
 <script type="application/ld+json">
@@ -38,15 +38,7 @@
       "name": "Agentic AI Content",
       "description": "A membership for creators and operators who systematize their content production with AI agents: the Nave Content OS installed on your machine, an agent system for every stage, 10+ hours of training, live calls twice a week, same-day support, and a weekly vault of new agents and skills.",
       "url": "https://nave.infinitxai.com/join",
-      "brand": { "@id": "https://nave.infinitxai.com/#org" },
-      "offers": {
-        "@type": "Offer",
-        "name": "Agentic AI Content — founding membership",
-        "price": "58",
-        "priceCurrency": "USD",
-        "url": "https://nave.infinitxai.com/join",
-        "description": "Founding price, locked for life. Cancel anytime and keep the Content OS you installed. A full month of content in 30 days, or your money back."
-      }
+      "brand": { "@id": "https://nave.infinitxai.com/#org" }
     },
     {
       "@type": "FAQPage",
@@ -54,7 +46,6 @@
         { "@type": "Question", "name": "What is Claude Code, and do I need to be technical?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Code is Anthropic's AI agent that runs on your own computer. You direct it in plain English — nobody here writes code. If you can install an app and paste a command, you're qualified. The install course walks every step, and same-day support catches the rest." } },
         { "@type": "Question", "name": "Is this another course I won't finish?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Content OS works the day you paste it in — the training is depth, not a prerequisite. The live calls and the 30-day guarantee exist for the version of you that's bought courses before." } },
         { "@type": "Question", "name": "Why not just hire an editor or an agency?", "acceptedAnswer": { "@type": "Answer", "text": "That's $1,500–5,000/mo, forever, for someone else's judgment of your brand. Here you own the operation and your voice is built into the system." } },
-        { "@type": "Question", "name": "What does it really cost to run?", "acceptedAnswer": { "@type": "Answer", "text": "$58/mo plus your own Claude (or Codex) subscription, paid to Anthropic or OpenAI — roughly $80–160/mo all-in. We'd rather tell you now than have you find out inside." } },
         { "@type": "Question", "name": "Can I run it for clients or multiple brands?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the OS installs per brand, each with its own voice locked in. Several of the pipelines inside were built running client work." } },
         { "@type": "Question", "name": "What if I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Cancel anytime from your account. The OS is installed on your machine, so you keep everything you've built. What ends is the weekly drops, the calls, the support, and the room." } }
       ]
@@ -64,35 +55,80 @@
 </script>
 
 <style>
-  .joinhero h1{font-size:clamp(36px,4.8vw,66px);line-height:1.06}
+  /* ── poster type ─────────────────────────────────────────────── */
+  .anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em}
+  .joinhero{position:relative;overflow:hidden;padding:96px 0 70px;text-align:center}
+  .joinhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(52px,9.2vw,140px);line-height:.98;letter-spacing:.005em;margin:22px 0 0;color:var(--cream)}
+  .joinhero h1 .ln2{display:block;color:var(--ink)}
+  .badgechip{display:inline-flex;gap:14px;align-items:center;border:1px solid var(--line);background:rgba(15,21,17,.7);backdrop-filter:blur(8px);padding:9px 16px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50)}
+  .badgechip b{color:var(--ink);font-weight:500}
+  .herosub{font-family:'DM Mono',monospace;font-size:14.5px;line-height:1.85;color:var(--cream-72);max-width:640px;margin:28px auto 0}
+  .herosub b{color:var(--cream)}
+  .heroctas-c{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px}
+  .btn-big{font-size:14.5px;padding:18px 34px}
+  .proofchips{display:flex;gap:10px 26px;justify-content:center;flex-wrap:wrap;margin-top:30px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--ink-soft)}
+  /* ── floating agent cursor-tags (the motion in the back) ─────── */
+  .ftag{position:absolute;z-index:1;pointer-events:none;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;font-weight:500;color:#06140C;background:var(--c,#1FE07A);padding:5px 9px;animation:fdrift var(--d,9s) ease-in-out infinite alternate;opacity:.92}
+  .ftag::before{content:'';position:absolute;top:-9px;left:-9px;border:6px solid transparent;border-right-color:var(--c,#1FE07A);border-bottom-color:var(--c,#1FE07A);transform:rotate(8deg)}
+  @keyframes fdrift{0%{transform:translate(0,0) rotate(-1deg)}100%{transform:translate(var(--dx,26px),var(--dy,-20px)) rotate(1.5deg)}}
+  @media(max-width:760px){.ftag{display:none}}
+  /* ── marquee ticker ──────────────────────────────────────────── */
+  .tick{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(31,224,122,.03);padding:13px 0;white-space:nowrap}
+  .tick span{display:inline-block;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);animation:tmove 30s linear infinite;padding-right:0}
+  @keyframes tmove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  /* ── section heads (poster style) ────────────────────────────── */
+  .ph{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(34px,5vw,64px);line-height:1.02;color:var(--cream);margin:10px 0 0}
+  .ph i{font-style:normal;color:var(--ink)}
+  /* ── real output gallery ─────────────────────────────────────── */
+  .gal{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:14px;margin-top:30px;align-items:stretch}
+  .gcard{border:1px solid var(--line);background:rgba(15,21,17,.5);overflow:hidden;position:relative;min-height:340px}
+  .gcard img,.gcard video{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .gcard .glabel{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(transparent,rgba(7,9,8,.92));padding:34px 14px 12px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .gcard.fit img{object-fit:contain;object-position:center;background:#0c0f0d}
+  #run .term{aspect-ratio:auto}
+  #run .term pre{min-height:300px}
+  @media(max-width:860px){.gal{grid-template-columns:1fr}}
+  /* ── animated pipeline ───────────────────────────────────────── */
+  .pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:38px 0 0;position:relative}
+  .pnode{position:relative;padding:22px 14px 18px;border:1px solid var(--line);background:rgba(15,21,17,.5);text-align:center;opacity:.35;animation:pglow 10s infinite}
+  .pnode+.pnode{border-left:0}
+  .pnode .pk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:7px}
+  .pnode .pt{font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);display:block;margin-bottom:6px}
+  .pnode .pa{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--cream-50);line-height:1.6;display:block}
+  .pnode:nth-child(1){animation-delay:0s}.pnode:nth-child(2){animation-delay:2s}.pnode:nth-child(3){animation-delay:4s}.pnode:nth-child(4){animation-delay:6s}.pnode:nth-child(5){animation-delay:8s}
+  @keyframes pglow{0%,18%{opacity:1;border-color:var(--line-strong);background:rgba(31,224,122,.07)}22%,100%{opacity:.4;border-color:var(--line);background:rgba(15,21,17,.5)}}
+  .pipetrack{height:3px;background:rgba(31,224,122,.1);position:relative;overflow:hidden}
+  .pipetrack i{position:absolute;top:0;left:0;height:100%;width:20%;background:var(--ink);animation:ptravel 10s linear infinite}
+  @keyframes ptravel{0%{left:0}100%{left:100%}}
+  @media(max-width:860px){.pipe{grid-template-columns:1fr 1fr}.pnode+.pnode{border-left:1px solid var(--line);border-top:0}}
+  /* ── the stack (real logos) ──────────────────────────────────── */
+  .stack{display:flex;gap:14px 34px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:34px;padding:22px 0;border-top:1px dashed var(--line)}
+  .stack .sk{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50)}
+  .stack img{height:20px;width:auto;opacity:.82;filter:grayscale(.2)}
+  .stack img.tall{height:24px}
+  .stack .skool{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16px;color:var(--cream-72);letter-spacing:.02em}
+  /* ── inside cards ────────────────────────────────────────────── */
   .checkgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:30px}
-  .ck{border:1px solid var(--line);background:rgba(31,224,122,.03);padding:20px 22px;position:relative;transition:border-color .2s}
+  .ck{border:1px solid var(--line);background:rgba(31,224,122,.03);padding:20px 22px;transition:border-color .2s}
   .ck:hover{border-color:var(--line-strong)}
   .ck .t{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16.5px;color:var(--cream);margin:0 0 6px;display:flex;align-items:baseline;gap:10px}
   .ck .t .m{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink);letter-spacing:.08em}
   .ck p{margin:0;color:var(--cream-72);font-size:14px;line-height:1.55}
   .ck.gift{border-style:dashed}
-  /* ── animated pipeline infographic ─────────────────────────── */
-  .pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:38px 0 8px;position:relative}
-  .pnode{position:relative;padding:22px 14px 18px;border:1px solid var(--line);background:rgba(15,21,17,.5);text-align:center;opacity:.35;animation:pglow 10s infinite}
-  .pnode+.pnode{border-left:0}
-  .pnode .pk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:7px}
-  .pnode .pt{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14.5px;color:var(--cream);display:block;margin-bottom:6px}
-  .pnode .pa{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--cream-50);line-height:1.6;display:block}
-  .pnode:nth-child(1){animation-delay:0s}.pnode:nth-child(2){animation-delay:2s}.pnode:nth-child(3){animation-delay:4s}.pnode:nth-child(4){animation-delay:6s}.pnode:nth-child(5){animation-delay:8s}
-  @keyframes pglow{0%,18%{opacity:1;border-color:var(--line-strong);background:rgba(31,224,122,.07)}22%,100%{opacity:.4;border-color:var(--line);background:rgba(15,21,17,.5)}}
-  .pipetrack{height:3px;background:rgba(31,224,122,.1);position:relative;overflow:hidden;margin-top:-1px}
-  .pipetrack i{position:absolute;top:0;left:0;height:100%;width:20%;background:var(--ink);animation:ptravel 10s linear infinite}
-  @keyframes ptravel{0%{left:0}100%{left:100%}}
-  @media(max-width:860px){.pipe{grid-template-columns:1fr 1fr}.pnode+.pnode{border-left:1px solid var(--line);border-top:0}}
-  /* ── price + faq (compact) ─────────────────────────────────── */
-  .pricepane{border:1px solid var(--line-strong);background:var(--glass);padding:30px 32px;max-width:560px;margin:26px auto 0;text-align:center}
-  .pricepane .amount{font-family:'Newsreader',serif;font-size:58px;color:var(--cream);line-height:1}
-  .pricepane .amount small{font-size:20px;color:var(--cream-50)}
-  .plist{list-style:none;margin:18px 0 0;padding:0;text-align:left;display:inline-block}
-  .plist li{padding:5px 0 5px 24px;position:relative;color:var(--cream-72);font-size:15px}
-  .plist li::before{content:'✓';position:absolute;left:0;color:var(--ink);font-family:'DM Mono',monospace}
-  .costnote{border:1px dashed var(--line);padding:11px 14px;margin-top:18px;font-size:13px;color:var(--cream-50);text-align:left}
+  /* ── receipts + quotes ───────────────────────────────────────── */
+  .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:24px}
+  .tcard2{border:1px solid var(--line);background:rgba(31,224,122,.03);padding:18px 20px}
+  .tcard2 .res{font-family:'Newsreader',serif;font-size:18px;color:var(--cream);margin:0 0 8px}
+  .tcard2 .q{color:var(--cream-72);font-size:13.5px;margin:0 0 10px;line-height:1.55}
+  .tcard2 .who{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+  .receipts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .receipts a{display:block;border:1px solid var(--line);overflow:hidden;background:#0c0f0d}
+  .receipts img{width:100%;display:block;opacity:.94;transition:opacity .2s}
+  .receipts a:hover img{opacity:1}
+  @media(max-width:760px){.receipts{grid-template-columns:1fr}}
+  #twall{display:none}
+  #twall.on{display:block}
+  /* ── faq ─────────────────────────────────────────────────────── */
   .faq{max-width:680px;margin:26px auto 0;text-align:left}
   .faq details{border-bottom:1px solid var(--line);padding:2px 0}
   .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16px;color:var(--cream)}
@@ -100,13 +136,9 @@
   .faq details[open] summary::after{content:'–'}
   .faq .a{padding:0 0 16px;color:var(--cream-72);font-size:15px;line-height:1.6;max-width:620px}
   .faq .a a{color:var(--ink)}
-  #twall{display:none}
-  #twall.on{display:block}
-  .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:24px}
-  .tcard2{border:1px solid var(--line);background:rgba(31,224,122,.03);padding:18px 20px}
-  .tcard2 .res{font-family:'Newsreader',serif;font-size:18px;color:var(--cream);margin:0 0 8px}
-  .tcard2 .q{color:var(--cream-72);font-size:13.5px;margin:0 0 10px;line-height:1.55}
-  .tcard2 .who{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+  /* ── final + ctabar ──────────────────────────────────────────── */
+  .finalposter{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(44px,7.5vw,104px);line-height:.99;color:var(--cream);margin:14px 0 0}
+  .finalposter .ln2{display:block;color:var(--ink)}
   #ctabar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--glass);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 0;transform:translateY(110%);transition:transform .3s ease}
   #ctabar.show{transform:none}
   #ctabar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -122,38 +154,60 @@
     <span class="w">Nave</span>
   </a>
   <div class="links">
-    <a class="btn" data-cta="JOIN" href="#price">Join — $58/mo</a>
+    <a class="btn" data-cta="JOIN" href="#final">Join the community</a>
   </div>
 </nav></div></header>
 
 <main>
-<section class="hero joinhero" style="padding-top:30px">
-  <div class="wrap" style="position:relative">
+<section class="joinhero">
+  <!-- floating agent cursors — the crew, drifting -->
+  <span class="ftag" style="--c:#1FE07A;top:14%;left:8%;--dx:30px;--dy:-18px;--d:9s">STRATEGIST</span>
+  <span class="ftag" style="--c:#D97757;top:9%;right:14%;--dx:-26px;--dy:22px;--d:11s">EDITOR</span>
+  <span class="ftag" style="--c:#6C9BF0;top:30%;left:16%;--dx:22px;--dy:26px;--d:10s">COPYWRITER</span>
+  <span class="ftag" style="--c:#C08BF2;top:44%;right:9%;--dx:-30px;--dy:-24px;--d:12s">DESIGNER</span>
+  <span class="ftag" style="--c:#F2C94C;top:66%;left:10%;--dx:26px;--dy:-20px;--d:9.5s">PRODUCER</span>
+  <span class="ftag" style="--c:#EB5757;top:74%;right:16%;--dx:-22px;--dy:-26px;--d:10.5s">PUBLISHER</span>
+  <span class="ftag" style="--c:#2FD4C2;top:82%;left:5%;--dx:24px;--dy:-16px;--d:11.5s">INBOX</span>
+
+  <div class="wrap" style="position:relative;z-index:2">
     <div class="glitch" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow" style="display:block;margin-bottom:14px">Agentic AI Content — community + working system</span>
-        <h1>Systematize your <i>entire content production</i> with AI agents.</h1>
-        <p class="lede" style="max-width:520px;margin:22px 0 20px">Fix the bottleneck: a Content OS you install and own does the producing — you direct it. Learn it, run it, and build it your way with operators doing the same.</p>
-        <div class="heroctas">
-          <a class="btn" data-cta="JOIN" href="#price">Join for $58/mo →</a>
-        </div>
-        <span class="micro" style="display:block;margin-top:10px">Founding price, locked for life · cancel anytime · <b>a month of content in 30 days, or your money back</b></span>
-        <div class="proofrow" style="margin-top:24px">
-          <div class="pcell"><div class="pn">500k+</div><div class="pc">organic views in 6 months, made by this system*</div></div>
-          <div class="pcell"><div class="pn">This page</div><div class="pc">also made by it</div></div>
-        </div>
-        <span class="micro">*Results shown are the founder's own. Not typical, and not a guarantee.</span>
-        <span class="pending-note" data-pending-note style="display:none">Doors open this week — the join link goes live here.</span>
-      </div>
-      <div>
-        <div class="term">
-          <div class="bar"><i></i><i></i><i></i><span class="title">nave — your content os, live</span></div>
-          <pre id="termfeed"></pre>
-        </div>
-        <div class="vslnote" style="margin-top:10px">What running it looks like. One input, a month staged for your OK.</div>
-      </div>
+    <span class="badgechip"><b>FOUNDING WINDOW</b> // COMMUNITY + CONTENT OS // BUILT ON <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:14px;width:auto;vertical-align:-2px"></span>
+    <h1>Your content team<span class="ln2">in the terminal.</span></h1>
+    <p class="herosub">Content used to mean five jobs — or a $3K/month agency. Now it's a crew of AI agents on your machine. <b>You direct. They produce.</b> Agentic AI Content is the system + the operators running it, building together.</p>
+    <div class="heroctas-c">
+      <a class="btn btn-big" data-cta="JOIN" href="#final">Be part of the community →</a>
+      <a class="btn btn-ghost" href="#run">See it run ↓</a>
     </div>
+    <span class="micro" style="display:block;margin-top:14px"><b>A month of content in 30 days, or your money back.</b></span>
+    <div class="proofchips">
+      <span>★ 500k+ organic views, made by this system*</span>
+      <span>this page: also made by it</span>
+      <span>runs on your machine — you own it</span>
+    </div>
+    <span class="micro" style="display:block;margin-top:8px">*Results shown are the founder's own. Not typical, and not a guarantee.</span>
+    <span class="pending-note" data-pending-note style="display:none">Doors open this week — the join link goes live here.</span>
+  </div>
+</section>
+
+<div class="tick" aria-hidden="true"><span>PLAN · MAKE · POLISH · PUBLISH · LEARN &nbsp;·&nbsp; PLAN · MAKE · POLISH · PUBLISH · LEARN &nbsp;·&nbsp; PLAN · MAKE · POLISH · PUBLISH · LEARN &nbsp;·&nbsp; PLAN · MAKE · POLISH · PUBLISH · LEARN &nbsp;·&nbsp; </span></div>
+
+<section id="run">
+  <div class="wrap">
+    <span class="eyebrow">See it run</span>
+    <h2 class="ph">One input. <i>A month staged.</i></h2>
+    <div style="max-width:820px;margin:30px auto 0">
+      <div class="term">
+        <div class="bar"><i></i><i></i><i></i><span class="title">nave — your content os, live</span></div>
+        <pre id="termfeed"></pre>
+      </div>
+      <div class="vslnote" style="margin-top:10px;text-align:center">A real run. Nothing posts without your OK.</div>
+    </div>
+    <div class="gal">
+      <div class="gcard"><img src="assets/proof/month-grid.jpg" alt="A real month of shorts, produced by the system" loading="lazy"><div class="glabel">A real month — the shorts wall</div></div>
+      <div class="gcard"><img src="assets/proof/short-hero.jpg" alt="A finished short, produced by the system" loading="lazy"><div class="glabel">A finished short</div></div>
+      <div class="gcard fit"><img src="assets/proof/carousel.jpg" alt="A real carousel slide, produced by the system" loading="lazy"><div class="glabel">A real carousel</div></div>
+    </div>
+    <p class="micro" style="margin-top:12px">All of it real output from the system — same engine, same agents you install.</p>
   </div>
 </section>
 
@@ -162,8 +216,8 @@
 <section id="math" style="padding-top:46px">
   <div class="wrap">
     <span class="eyebrow">The system</span>
-    <h2>One agent crew. <i>Every stage.</i></h2>
-    <p class="sub" style="max-width:540px" id="voice">Your brand voice is built in as a rule the agents can't break — so it sounds like you, not like AI.</p>
+    <h2 class="ph">One agent crew. <i>Every stage.</i></h2>
+    <p class="sub" style="max-width:540px" id="voice">Your brand voice is built in as a rule the agents can't break — it sounds like you, not like AI.</p>
     <div class="pipe" aria-label="The five stages of the content pipeline">
       <div class="pnode"><span class="pk">01 · Pre-production</span><span class="pt">Plan</span><span class="pa">strategist · copywriter<br>angles · hooks · scripts</span></div>
       <div class="pnode"><span class="pk">02 · Production</span><span class="pt">Make</span><span class="pa">producer · gen engines<br>video · image · audio</span></div>
@@ -172,7 +226,16 @@
       <div class="pnode"><span class="pk">05 · Engagement</span><span class="pt">Learn</span><span class="pa">inbox · replies · reports<br>smarter every cycle</span></div>
     </div>
     <div class="pipetrack"><i></i></div>
-    <p class="micro" style="margin-top:14px">Runs on Claude Code — Anthropic's AI agent on your own computer. Plain English, no coding. Works with Codex too.</p>
+    <div class="stack">
+      <span class="sk">The stack —</span>
+      <img src="assets/claude-code-dark.svg" alt="Claude Code" class="tall">
+      <img src="assets/logos/assemblyai.svg" alt="AssemblyAI">
+      <img src="assets/logos/hyperframes.svg" alt="Hyperframes">
+      <img src="assets/logos/zernio.png" alt="Zernio">
+      <img src="assets/logos/kie.png" alt="Kie.ai">
+      <span class="skool">skool</span>
+    </div>
+    <p class="micro" style="text-align:center">Claude Code is Anthropic's AI agent for your own computer. Plain English, no coding. Works with Codex too.</p>
   </div>
 </section>
 
@@ -181,7 +244,7 @@
 <section id="inside">
   <div class="wrap">
     <span class="eyebrow">What's inside</span>
-    <h2>Plug it in. <i>Then make it yours.</i></h2>
+    <h2 class="ph">Plug it in. <i>Make it yours.</i></h2>
     <div class="checkgrid">
       <div class="ck"><p class="t"><span class="m">01</span>The Nave Content OS</p><p>Copy-paste install — it works today. Yours permanently, on your machine.</p></div>
       <div class="ck"><p class="t"><span class="m">02</span>An agent for every stage</p><p>Pre-production → production → post → distribution → engagement &amp; inbox.</p></div>
@@ -199,7 +262,7 @@
 <section id="path">
   <div class="wrap">
     <span class="eyebrow">Your first 30 days</span>
-    <h2>Install → your brand → <i>a full month.</i></h2>
+    <h2 class="ph">Install → your brand → <i>a full month.</i></h2>
     <div class="how3">
       <div class="step"><div class="n">01</div><h3>Install</h3><p>The OS running on your machine, first output the same sitting.</p></div>
       <div class="step"><div class="n">02</div><h3>Scope it to you</h3><p>Your voice, your formats, your brand — locked into the system.</p></div>
@@ -211,30 +274,12 @@
 <section id="twall" style="padding-top:40px">
   <div class="wrap">
     <span class="eyebrow">Real words, real people</span>
-    <h2>The team behind it, <i>in client words.</i></h2>
-    <p class="sub" style="max-width:600px">The community is new — these are from INFINITX client work (the company behind Nave), verbatim, receipts linked. Member wins get added as they land.</p>
+    <h2 class="ph">In <i>client words.</i></h2>
+    <p class="sub" style="max-width:600px">From INFINITX client work — the company behind Nave. Verbatim, receipts below. Member wins get added as they land.</p>
     <div class="tgrid" id="tgrid"></div>
-  </div>
-</section>
-
-<div class="wrap"><hr class="rule"></div>
-
-<section id="price" style="text-align:center">
-  <div class="wrap">
-    <span class="eyebrow">The price, plainly</span>
-    <h2>$58 a month. <i>Locked the day you join.</i></h2>
-    <div class="pricepane">
-      <div class="amount">$58<small>/mo</small></div>
-      <ul class="plist">
-        <li>Founding price — locked for life as the OS grows</li>
-        <li>Cancel anytime; <b>keep the OS you installed</b></li>
-        <li>A month of content in 30 days, <b>or your money back</b></li>
-        <li>No timers, no fake spots — the price just rises later</li>
-      </ul>
-      <div class="costnote">Honest all-in: the OS runs on your own Claude (or Codex) plan — $20–100/mo paid to Anthropic/OpenAI, not us. Budget ~$80–160/mo total.</div>
-      <div class="ctablock" style="margin-top:20px">
-        <a class="btn" data-cta="JOIN" href="#price" style="display:block;text-align:center">Join Agentic AI Content →</a>
-      </div>
+    <div class="receipts">
+      <a href="assets/proof/testimonial-richard-hawley.png" target="_blank" rel="noopener"><img src="assets/proof/testimonial-richard-hawley.png" alt="LinkedIn recommendation from Richard Hawley, Founder of Velocity AI" loading="lazy"></a>
+      <a href="assets/proof/testimonial-santiago-iturbide.png" target="_blank" rel="noopener"><img src="assets/proof/testimonial-santiago-iturbide.png" alt="LinkedIn recommendation from Santiago Iturbide, CEO of Azloia.com" loading="lazy"></a>
     </div>
   </div>
 </section>
@@ -244,12 +289,11 @@
 <section id="faq-s">
   <div class="wrap" style="text-align:center">
     <span class="eyebrow">FAQ</span>
-    <h2>Asked <i>straight.</i></h2>
+    <h2 class="ph">Asked <i>straight.</i></h2>
     <div class="faq">
       <details id="faq-tech"><summary>What is Claude Code — and do I need to be technical?</summary><div class="a">Claude Code is Anthropic's AI agent that runs on your own computer. You direct it in plain English — nobody here writes code. If you can install an app and paste a command, you're qualified. The install course walks every step; same-day support catches the rest.</div></details>
       <details id="faq-course"><summary>Is this another course I won't finish?</summary><div class="a">No. The OS works the day you paste it in — the training is depth, not a prerequisite. The live calls and the 30-day guarantee exist for the version of you that's bought courses before.</div></details>
       <details id="faq-agency"><summary>Why not just hire an editor or an agency?</summary><div class="a">That's $1,500–5,000/mo, forever, for someone else's judgment of your brand. Here you own the operation and your voice is built into the system.</div></details>
-      <details id="faq-cost"><summary>What does it really cost to run?</summary><div class="a">$58/mo plus your own Claude (or Codex) plan — roughly $80–160/mo all-in. We'd rather tell you now than have you find out inside.</div></details>
       <details id="faq-clients"><summary>Can I run it for clients or multiple brands?</summary><div class="a">Yes — the OS installs per brand, each with its own voice locked in. Several of the pipelines inside were built running client work.</div></details>
       <details id="faq-cancel"><summary>What if I cancel?</summary><div class="a">Cancel anytime from your account. The OS lives on your machine, so you keep everything you've built. What ends is the weekly drops, the calls, the support, and the room.</div></details>
     </div>
@@ -260,25 +304,25 @@
 
 <section id="final" style="text-align:center;padding-bottom:90px">
   <div class="wrap">
-    <span class="eyebrow">Founding window</span>
-    <h2 style="font-size:clamp(34px,4.4vw,56px)">You made a day of content.<br><i>Members make months.</i></h2>
-    <div class="ctablock" style="margin-top:24px">
-      <a class="btn" data-cta="JOIN" href="#price">Join Agentic AI Content — $58/mo, locked for life →</a>
-      <span class="micro" style="display:block;margin-top:12px">A month of content in 30 days, or your money back.</span>
+    <span class="badgechip"><b>FOUNDING WINDOW</b> // DOORS OPEN</span>
+    <h2 class="finalposter">Be part of<span class="ln2">the community.</span></h2>
+    <p class="sub" style="max-width:520px;margin:18px auto 0">The system, the training, the calls, the support, the room — and a month of content in your first 30 days, or your money back.</p>
+    <div class="ctablock" style="margin-top:26px">
+      <a class="btn btn-big" data-cta="JOIN" href="#final">Join Agentic AI Content →</a>
     </div>
   </div>
 </section>
 </main>
 
 <div id="ctabar"><div class="wrap">
-  <span class="t">Agentic AI Content — $58/mo founding, locked for life · month of content in 30 days or your money back</span>
-  <a class="btn" data-cta="JOIN" href="#price">Join →</a>
+  <span class="t">Agentic AI Content — founding window open · a month of content in 30 days, or your money back</span>
+  <a class="btn" data-cta="JOIN" href="#final">Join →</a>
 </div></div>
 
 <footer style="padding:36px 0 110px"><div class="wrap">
   <div class="pagechrome" style="border-top:0;margin-top:0"><span>INFINITX — 2026</span><span><a href="/">Free playbook</a> · <a href="/done-for-you">Done for you</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span></div>
   <div style="margin-top:12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--cream-50)">Results shown are the founder's own. Not typical, and not a guarantee.</div>
-  <div style="margin-top:8px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--cream-50)">Claude Code is a trademark of Anthropic, PBC. Nave is an independent product — not affiliated with or endorsed by Anthropic.</div>
+  <div style="margin-top:8px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--cream-50)">Claude Code is a trademark of Anthropic, PBC. Nave is an independent product — not affiliated with or endorsed by Anthropic. AssemblyAI, Hyperframes, Zernio, Kie.ai and Skool are trademarks of their respective owners.</div>
 </div></footer>
 
 <script src="assets/links.js"></script>
@@ -301,7 +345,7 @@
     wall.classList.add('on');
   }
 
-  /* Personalized landing — /apply passes ?focus=; scroll the reader to what they said hurts. */
+  /* Personalized landing — /apply passes ?focus=; scroll to what they said hurts. */
   try {
     var focus = new URLSearchParams(location.search).get('focus');
     var map = { tech: '#faq-tech', voice: '#voice', time: '#math', course: '#faq-course' };
