@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Agentic AI Content — systematize your content production with AI agents</title>
-<meta name="description" content="A community + a working Content OS: a dedicated AI agent crew for pre-production, production, post-production, distribution and engagement. Built on Claude Code. A month of quality content, built in one day.">
+<meta name="description" content="A community dedicated to building agentic systems around content production — a Content OS that takes over your whole production process, built on Claude Code. You direct. They produce.">
 <link rel="canonical" href="https://nave.infinitxai.com/join">
 <meta name="theme-color" content="#070908">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nave">
 <meta property="og:title" content="Agentic AI Content — systematize your content production with AI agents">
-<meta property="og:description" content="A dedicated AI agent crew for every stage of content production. A month of quality content, built in one day.">
+<meta property="og:description" content="Agentic systems around content production: a Content OS that takes over your whole production process, built on Claude Code. You direct. They produce.">
 <meta property="og:url" content="https://nave.infinitxai.com/join">
 <meta property="og:image" content="https://nave.infinitxai.com/assets/og.png">
 <link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
@@ -36,7 +36,7 @@
     {
       "@type": "Product",
       "name": "Agentic AI Content",
-      "description": "A membership for creators and operators who systematize their content production with AI agents: the Nave Content OS installed on your machine, a dedicated agent crew for every stage, 10+ hours of training, live calls twice a week, same-day support, and a weekly vault of new agents and skills.",
+      "description": "A community for creators and operators building agentic systems around content production: the Nave Content OS installed on your machine, a dedicated agent crew for every stage, 10+ hours of training, live calls twice a week, same-day support, and a weekly vault of new agents and skills.",
       "url": "https://nave.infinitxai.com/join",
       "brand": { "@id": "https://nave.infinitxai.com/#org" }
     },
@@ -44,10 +44,11 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "What is Claude Code, and do I need to be technical?", "acceptedAnswer": { "@type": "Answer", "text": "Claude Code is Anthropic's AI agent that runs on your own computer. You direct it in plain English — nobody here writes code. If you can install an app and paste a command, you're qualified. The install course walks every step, and same-day support catches the rest." } },
-        { "@type": "Question", "name": "Is this another course I won't finish?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Content OS works the day you paste it in — the training is depth, not a prerequisite. The live calls and the 30-day guarantee exist for the version of you that's bought courses before." } },
+        { "@type": "Question", "name": "Is this another course I won't finish?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Content OS works the day you paste it in — the training is depth, not a prerequisite. The live calls and same-day support exist for the version of you that's bought courses before." } },
+        { "@type": "Question", "name": "Do I need footage?", "acceptedAnswer": { "@type": "Answer", "text": "Any footage works — talking-head, b-roll, screen recordings, footage from your business, or footage you create with AI. You can build your own presets and content templates around whatever you have." } },
         { "@type": "Question", "name": "Why not just hire an editor or an agency?", "acceptedAnswer": { "@type": "Answer", "text": "That's $1,500–5,000/mo, forever, for someone else's judgment of your brand. Here you own the operation and your voice is built into the system." } },
         { "@type": "Question", "name": "Can I run it for clients or multiple brands?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the OS installs per brand, each with its own voice locked in. Several of the pipelines inside were built running client work." } },
-        { "@type": "Question", "name": "What if I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Cancel anytime from your account. The OS is installed on your machine, so you keep everything you've built. What ends is the weekly drops, the calls, the support, and the room." } }
+        { "@type": "Question", "name": "What if I cancel?", "acceptedAnswer": { "@type": "Answer", "text": "Cancel anytime from your account, effective at the end of the billing period. What ends is the weekly drops, the calls, the support, and the room." } }
       ]
     }
   ]
@@ -55,28 +56,37 @@
 </script>
 
 <style>
-  /* ── hero: poster type + entrance choreography ────────────────── */
-  .joinhero{position:relative;overflow:hidden;padding:84px 0 60px;text-align:center}
-  .joinhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(34px,5.6vw,80px);line-height:1.02;letter-spacing:.008em;margin:22px 0 0;color:var(--cream)}
-  .joinhero h1 .ln2{display:block;color:var(--ink)}
+  /* ── hero: the ship + escort scene ─────────────────────────────── */
+  .joinhero{position:relative;overflow:hidden;padding:64px 0 60px;text-align:center}
+  .joinhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,5.2vw,74px);line-height:1.04;letter-spacing:.008em;margin:20px 0 0;color:var(--cream)}
+  .joinhero h1 em{font-style:normal;color:var(--ink)}
   .rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--rd,0s)}
   @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
   .badgechip{display:inline-flex;gap:14px;align-items:center;border:1px solid var(--line);background:rgba(15,21,17,.7);backdrop-filter:blur(8px);padding:9px 16px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50)}
   .badgechip b{color:var(--ink);font-weight:500}
-  .herosub{font-family:'DM Mono',monospace;font-size:14px;line-height:1.85;color:var(--cream-72);max-width:600px;margin:24px auto 0}
+  .herosub{font-family:'DM Mono',monospace;font-size:13.5px;line-height:1.9;color:var(--cream-72);max-width:640px;margin:22px auto 0}
   .herosub b{color:var(--cream)}
-  .heroctas-c{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:28px}
+  .heroctas-c{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:26px}
   .btn-big{font-size:14.5px;padding:18px 34px}
-  /* pixel stars — the space the ship flies through */
-  .star{position:absolute;width:3px;height:3px;background:var(--cream-50);animation:tw var(--td,4s) ease-in-out infinite;opacity:.25}
-  @keyframes tw{0%,100%{opacity:.12}50%{opacity:.55}}
-  /* the crew drifting — each agent its own sprite */
-  .crewmate{position:absolute;z-index:1;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:6px;animation:fdrift var(--d,10s) ease-in-out infinite alternate;opacity:.95}
-  .crewmate svg{width:34px;height:30px;filter:drop-shadow(0 0 10px var(--c));animation:blink 6s steps(1) infinite}
-  .crewmate .nm{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
-  @keyframes fdrift{0%{transform:translate(0,0)}100%{transform:translate(var(--dx,24px),var(--dy,-18px))}}
+  /* the ship flying — thruster + streaking stars */
+  .ship{position:relative;width:66px;margin:0 auto;animation:shiphover 3.2s ease-in-out infinite alternate}
+  @keyframes shiphover{0%{transform:translateY(0)}100%{transform:translateY(-7px)}}
+  .ship svg{width:66px;height:58px;filter:drop-shadow(0 0 18px rgba(31,224,122,.5))}
+  .flames{display:flex;justify-content:center;gap:7px;margin-top:-4px}
+  .flames i{width:5px;background:#F2C94C;animation:flick .32s steps(2) infinite alternate;box-shadow:0 0 8px rgba(242,201,76,.8)}
+  .flames i:nth-child(1){height:8px;animation-delay:.05s}
+  .flames i:nth-child(2){height:13px}
+  .flames i:nth-child(3){height:8px;animation-delay:.12s}
+  @keyframes flick{0%{transform:scaleY(.6);opacity:.7}100%{transform:scaleY(1.15);opacity:1}}
+  .star{position:absolute;width:2px;height:7px;background:var(--cream-50);opacity:.2;animation:fall var(--td,5s) linear infinite}
+  @keyframes fall{0%{transform:translateY(-40px);opacity:0}12%{opacity:.4}88%{opacity:.35}100%{transform:translateY(140px);opacity:0}}
+  /* the escort — crew in formation beside the ship */
+  .crewmate{position:absolute;z-index:1;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:5px;animation:esc 4.6s ease-in-out infinite alternate;animation-delay:var(--ed,0s)}
+  .crewmate svg{width:30px;height:26px;filter:drop-shadow(0 0 9px var(--c));animation:blink 6s steps(1) infinite}
+  .crewmate .nm{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+  @keyframes esc{0%{transform:translateY(0)}100%{transform:translateY(-9px)}}
   @keyframes blink{0%,92%{opacity:1}94%,97%{opacity:.35}98%,100%{opacity:1}}
-  @media(max-width:760px){.crewmate{display:none}}
+  @media(max-width:860px){.crewmate{display:none}}
   /* ── marquee ticker ──────────────────────────────────────────── */
   .tick{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(31,224,122,.03);padding:12px 0;white-space:nowrap}
   .tick span{display:inline-block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);animation:tmove 32s linear infinite}
@@ -84,7 +94,7 @@
   /* ── section heads ───────────────────────────────────────────── */
   .ph{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,3.8vw,48px);line-height:1.04;color:var(--cream);margin:10px 0 0}
   .ph i{font-style:normal;color:var(--ink)}
-  /* ══ THE MISSION — footage in → 5 stations → the month ══ */
+  /* ══ THE MISSION ══ */
   .mission{max-width:920px;margin:32px auto 0;position:relative}
   .mission .term{aspect-ratio:auto;margin-bottom:8px}
   .mission .term pre{min-height:200px}
@@ -107,6 +117,7 @@
   .mdesc{font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;color:var(--cream-72);margin:6px 0 10px;line-height:1.55}
   .mout{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 12px}
   .mout span{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:var(--ink-soft);border:1px dashed var(--line);padding:4px 9px;white-space:nowrap}
+  .mout.plats span{font-size:9.5px;padding:3px 7px;color:var(--cream-50)}
   .magents{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end}
   .mag{display:flex;flex-direction:column;align-items:center;gap:5px}
   .mag svg{width:30px;height:26px;filter:drop-shadow(0 0 8px var(--c));animation:bob 1.8s ease-in-out infinite alternate;animation-delay:var(--bd,0s)}
@@ -118,22 +129,19 @@
   .mio .gate{font-family:'DM Mono',monospace;font-size:11px;color:var(--cream-50);margin-top:10px;display:block}
   .mio .gate b{color:var(--ink)}
   @media(max-width:640px){.mline{padding-left:48px}.mline::before{left:17px}.mdot{left:12px}.mnode::before{left:-37px}}
-  /* ── the motion vignettes (per-station mini demos) ───────────── */
+  /* vignettes */
   .vg{width:158px;min-width:158px;height:96px;border:1px dashed var(--line);padding:12px;display:flex;flex-direction:column;justify-content:center;gap:8px;background:rgba(7,9,8,.5)}
   @media(max-width:720px){.vg{display:none}}
-  /* script being written */
   .vg-script .l{height:5px;background:var(--ink-soft);opacity:.75;animation:vw 3.2s ease-out infinite;width:0}
   .vg-script .l:nth-child(1){--w:88%;animation-delay:0s}
   .vg-script .l:nth-child(2){--w:64%;animation-delay:.5s}
   .vg-script .l:nth-child(3){--w:76%;animation-delay:1s}
   @keyframes vw{0%{width:0}45%,88%{width:var(--w)}100%{width:var(--w);opacity:.2}}
-  /* filmstrip rolling */
   .vg-film{flex-direction:row;align-items:center;gap:5px}
   .vg-film i{flex:1;height:52px;border:1px solid var(--line);background:rgba(31,224,122,.04);animation:vlit 2.4s infinite}
   .vg-film i:nth-child(1){animation-delay:0s}.vg-film i:nth-child(2){animation-delay:.4s}.vg-film i:nth-child(3){animation-delay:.8s}
   .vg-film i:nth-child(4){animation-delay:1.2s}.vg-film i:nth-child(5){animation-delay:1.6s}.vg-film i:nth-child(6){animation-delay:2s}
   @keyframes vlit{0%,12%{background:rgba(31,224,122,.35);border-color:var(--line-strong)}16%,100%{background:rgba(31,224,122,.04);border-color:var(--line)}}
-  /* edit timeline: playhead fill + captions popping */
   .vg-edit .caps{display:flex;gap:6px;height:16px}
   .vg-edit .caps b{width:22%;height:8px;background:var(--ink-soft);opacity:0;animation:cpop 3.2s infinite}
   .vg-edit .caps b:nth-child(1){animation-delay:.4s}.vg-edit .caps b:nth-child(2){animation-delay:.9s}.vg-edit .caps b:nth-child(3){animation-delay:1.4s}
@@ -141,11 +149,9 @@
   .vg-edit .tl{height:10px;border:1px solid var(--line);position:relative;overflow:hidden}
   .vg-edit .tl i{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(31,224,122,.4);animation:tfill 3.2s linear infinite}
   @keyframes tfill{0%{width:0}92%,100%{width:100%}}
-  /* calendar filling up — a month, scheduled */
   .vg-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;align-content:center}
   .vg-cal i{aspect-ratio:1;background:rgba(31,224,122,.06);border:1px solid rgba(31,224,122,.12);animation:cfill 6.3s infinite;animation-delay:calc(var(--i)*.18s)}
   @keyframes cfill{0%,3%{background:rgba(31,224,122,.06)}6%,72%{background:rgba(31,224,122,.5);border-color:var(--line-strong)}80%,100%{background:rgba(31,224,122,.06)}}
-  /* chat + chart — replies land, insight grows */
   .vg-chat .bub{height:11px;border-radius:6px;background:rgba(47,212,194,.4);opacity:0;animation:bpop 4.2s infinite}
   .vg-chat .bub:nth-child(1){width:70%;animation-delay:.2s}
   .vg-chat .bub:nth-child(2){width:52%;margin-left:auto;background:rgba(31,224,122,.4);animation-delay:1s}
@@ -160,20 +166,27 @@
   .stack img{height:20px;width:auto;opacity:.82}
   .stack img.tall{height:24px}
   .stack .skool{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16px;color:var(--cream-72)}
-  /* ══ THE DECK — what's inside as a slideshow ══ */
+  /* ── real pieces (published) ─────────────────────────────────── */
+  .ytgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:28px}
+  .ytcard{border:1px solid var(--line);background:#0c0f0d;overflow:hidden;transition:border-color .2s}
+  .ytcard:hover{border-color:var(--line-strong)}
+  .ytcard .vh{position:relative;padding-bottom:56.25%}
+  .ytcard iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  /* ══ WHAT'S INSIDE — sequential reveal ══ */
+  .seq{max-width:780px;margin:30px auto 0}
+  .srow{display:grid;grid-template-columns:104px 1fr;gap:22px;align-items:center;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.04),rgba(15,21,17,.6));padding:20px 26px;margin-bottom:12px;animation:seqglow 12.6s infinite;animation-delay:calc(var(--i)*1.8s);transition:border-color .2s}
+  .srow:hover{border-color:var(--line-strong)}
+  @keyframes seqglow{0%,10%{border-color:var(--line-strong);box-shadow:0 0 22px rgba(31,224,122,.13)}14%,100%{border-color:var(--line);box-shadow:none}}
+  .srow .num{font-family:'Anton',sans-serif;font-size:58px;line-height:1;color:var(--sc,#1FE07A);opacity:.28;text-align:center;animation:numlit 12.6s infinite;animation-delay:calc(var(--i)*1.8s)}
+  @keyframes numlit{0%,10%{opacity:1;text-shadow:0 0 24px var(--sc,#1FE07A)}14%,100%{opacity:.28;text-shadow:none}}
+  .srow h3{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:17.5px;color:var(--cream);margin:0 0 5px}
+  .srow p{margin:0;color:var(--cream-72);font-size:14px;line-height:1.55}
+  @media(max-width:560px){.srow{grid-template-columns:64px 1fr;padding:16px 18px}.srow .num{font-size:40px}}
+  /* ── loom carousel ───────────────────────────────────────────── */
   .deckwrap{position:relative;margin-top:30px}
-  .deck{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 16px;scrollbar-width:none;cursor:grab}
-  .deck::-webkit-scrollbar{display:none}
-  .slide{flex:0 0 min(500px,86%);scroll-snap-align:center;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(15,21,17,.66));padding:34px 32px 30px;position:relative;overflow:hidden;transition:border-color .2s}
-  .slide:hover{border-color:var(--line-strong)}
-  .slide .bignum{font-family:'Anton',sans-serif;font-size:120px;color:var(--sc,#1FE07A);opacity:.12;position:absolute;right:14px;top:-14px;line-height:1;pointer-events:none}
-  .slide .tagl{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sc,#1FE07A);display:block;margin-bottom:10px}
-  .slide h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(22px,2.4vw,30px);color:var(--cream);margin:0 0 10px;letter-spacing:.02em}
-  .slide p{color:var(--cream-72);font-size:15px;line-height:1.6;margin:0;max-width:360px}
   .dnav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:40px;height:40px;border:1px solid var(--line-strong);background:var(--glass);backdrop-filter:blur(8px);color:var(--ink);font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
   .dnav:hover{background:rgba(31,224,122,.15)}
   .dnav.prev{left:-8px}.dnav.next{right:-8px}
-  /* ── loom carousel ───────────────────────────────────────────── */
   .vslider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 16px;scrollbar-width:none;cursor:grab}
   .vslider::-webkit-scrollbar{display:none}
   .vcard{flex:0 0 min(430px,88%);scroll-snap-align:center;border:1px solid var(--line);background:#0c0f0d;overflow:hidden}
@@ -206,8 +219,9 @@
 </head>
 <body>
 
-<!-- ── the pixel crew: every agent its OWN sprite ── -->
+<!-- ── pixel crew sprites + the ship ── -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
   <symbol id="px-scout" viewBox="0 0 24 20">
     <rect x="11" y="0" width="2" height="2"/><rect x="7" y="2" width="10" height="2"/>
     <rect x="7" y="4" width="2" height="2"/><rect x="11" y="4" width="2" height="2"/><rect x="15" y="4" width="2" height="2"/>
@@ -262,39 +276,40 @@
 
 <header><div class="wrap"><nav>
   <a class="brand" href="/">
-    <svg viewBox="0 0 512 448" aria-label="Nave"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></g></svg>
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
     <span class="w">Nave</span>
   </a>
-  <div class="links">
-    <a class="btn" data-cta="JOIN" href="#final">Join the community</a>
-  </div>
 </nav></div></header>
 
 <main>
 <section class="joinhero">
-  <!-- pixel stars -->
-  <i class="star" style="top:12%;left:22%;--td:3.4s"></i><i class="star" style="top:24%;left:70%;--td:4.6s"></i>
-  <i class="star" style="top:38%;left:12%;--td:5s"></i><i class="star" style="top:18%;left:44%;--td:4s"></i>
-  <i class="star" style="top:64%;left:80%;--td:3.8s"></i><i class="star" style="top:72%;left:30%;--td:4.4s"></i>
-  <i class="star" style="top:56%;left:56%;--td:5.4s"></i><i class="star" style="top:86%;left:64%;--td:3.6s"></i>
-  <!-- the crew drifting -->
-  <span class="crewmate" style="--c:#1FE07A;top:16%;left:9%;--dx:26px;--dy:-14px;--d:10s"><svg fill="#1FE07A"><use href="#px-scout"/></svg><span class="nm">strategist</span></span>
-  <span class="crewmate" style="--c:#F2C94C;top:12%;right:11%;--dx:-22px;--dy:18px;--d:11s"><svg fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span>
-  <span class="crewmate" style="--c:#D97757;top:52%;left:6%;--dx:20px;--dy:20px;--d:12s"><svg fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span>
-  <span class="crewmate" style="--c:#C08BF2;top:46%;right:6%;--dx:-24px;--dy:-18px;--d:9.5s"><svg fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span>
-  <span class="crewmate" style="--c:#EB5757;top:82%;left:14%;--dx:22px;--dy:-16px;--d:10.5s"><svg fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">publisher</span></span>
-  <span class="crewmate" style="--c:#2FD4C2;top:78%;right:13%;--dx:-20px;--dy:-20px;--d:11.5s"><svg fill="#2FD4C2"><use href="#px-mail"/></svg><span class="nm">inbox</span></span>
+  <!-- streaking stars — the ship is moving -->
+  <i class="star" style="top:6%;left:18%;--td:4.2s;animation-delay:.3s"></i><i class="star" style="top:2%;left:38%;--td:5.2s"></i>
+  <i class="star" style="top:8%;left:62%;--td:4.6s;animation-delay:1.2s"></i><i class="star" style="top:4%;left:82%;--td:5.6s;animation-delay:.7s"></i>
+  <i class="star" style="top:12%;left:28%;--td:6s;animation-delay:2s"></i><i class="star" style="top:10%;left:72%;--td:4.4s;animation-delay:1.6s"></i>
+  <i class="star" style="top:16%;left:50%;--td:5s;animation-delay:.9s"></i><i class="star" style="top:14%;left:8%;--td:5.8s;animation-delay:2.4s"></i>
+  <!-- the escort formation -->
+  <span class="crewmate" style="--c:#1FE07A;top:11%;left:16%;--ed:0s"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><span class="nm">strategist</span></span>
+  <span class="crewmate" style="--c:#6C9BF0;top:20%;left:8%;--ed:.5s"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><span class="nm">copywriter</span></span>
+  <span class="crewmate" style="--c:#F2C94C;top:31%;left:15%;--ed:1s"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span>
+  <span class="crewmate" style="--c:#D97757;top:11%;right:16%;--ed:.3s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span>
+  <span class="crewmate" style="--c:#C08BF2;top:20%;right:8%;--ed:.8s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span>
+  <span class="crewmate" style="--c:#EB5757;top:31%;right:15%;--ed:1.3s"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span>
 
   <div class="wrap" style="position:relative;z-index:2">
     <div class="glitch" aria-hidden="true"><i></i><i></i><i></i></div>
-    <span class="badgechip rise" style="--rd:.05s"><b>AGENTIC AI CONTENT</b> // THE COMMUNITY + THE WORKING SYSTEM</span>
-    <h1><span class="rise" style="--rd:.15s;display:block">Systematize your</span><span class="rise" style="--rd:.25s;display:block">content production</span><span class="ln2 rise" style="--rd:.38s">with AI agents.</span></h1>
-    <p class="herosub rise" style="--rd:.5s">A community running a <b>Content OS</b> — a dedicated agent crew for every stage, on your machine, built on <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:15px;width:auto;vertical-align:-3px"> <b>You direct. They produce.</b></p>
-    <div class="heroctas-c rise" style="--rd:.62s">
+    <div class="ship" aria-hidden="true">
+      <svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg>
+      <div class="flames"><i></i><i></i><i></i></div>
+    </div>
+    <span class="badgechip rise" style="--rd:.1s;margin-top:18px"><b>AGENTIC AI CONTENT</b> // THE COMMUNITY + THE WORKING SYSTEM</span>
+    <h1><span class="rise" style="--rd:.2s;display:block">Systematize your <em>content production</em></span><span class="rise" style="--rd:.32s;display:block">with <em>AI agents.</em></span></h1>
+    <p class="herosub rise" style="--rd:.46s">A community dedicated to building <b>agentic systems around content production</b> — and to the Content OS that takes over your whole production process, built on <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:15px;width:auto;vertical-align:-3px"> <b>You direct it. They produce.</b></p>
+    <div class="heroctas-c rise" style="--rd:.58s">
       <a class="btn btn-big" data-cta="JOIN" href="#final">Be part of the community →</a>
       <a class="btn btn-ghost" href="#math">See it run ↓</a>
     </div>
-    <span class="micro rise" style="--rd:.72s;display:block;margin-top:14px"><b>A month of content in 30 days, or your money back.</b></span>
+    <span class="micro rise" style="--rd:.68s;display:block;margin-top:14px">Your voice and your style, built in — <b>a rule the agents can't break.</b></span>
     <span class="pending-note" data-pending-note style="display:none">Doors open this week — the join link goes live here.</span>
   </div>
 </section>
@@ -306,7 +321,7 @@
   <div class="wrap">
     <span class="eyebrow">See it run — the whole system</span>
     <h2 class="ph">A month of quality content. <i>Built in one day.</i></h2>
-    <p class="sub" style="max-width:540px" id="voice">Footage in → the crew builds the formats → you approve. Your voice is built in as a rule the agents can't break.</p>
+    <p class="sub" style="max-width:540px" id="voice">Footage in → the crew builds the formats → you approve. Works with whatever you have.</p>
 
     <div class="mission">
       <div class="term">
@@ -320,8 +335,8 @@
 
         <div class="mnode mio" style="--gd:0s">
           <div class="mcard">
-            <span class="iolabel">Footage in</span>
-            <span class="iotext">Your clips — talking-head, b-roll, screen recordings — plus one day of your direction.</span>
+            <span class="iolabel">Footage in — any footage works</span>
+            <span class="iotext">Yours, your business's, or footage you create with AI. Your presets, your templates, your formats.</span>
           </div>
         </div>
 
@@ -333,8 +348,8 @@
                 <p class="mdesc">Decides what to make from your plan and pillars.</p>
                 <div class="mout"><span>research</span><span>angles</span><span>hooks</span><span>scripts</span><span>content plan</span></div>
                 <div class="magents">
-                  <span class="mag" style="--c:#1FE07A;--bd:0s"><svg fill="#1FE07A"><use href="#px-scout"/></svg><span class="nm">strategist</span></span>
-                  <span class="mag" style="--c:#6C9BF0;--bd:.4s"><svg fill="#6C9BF0"><use href="#px-writer"/></svg><span class="nm">copywriter</span></span>
+                  <span class="mag" style="--c:#1FE07A;--bd:0s"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><span class="nm">strategist</span></span>
+                  <span class="mag" style="--c:#6C9BF0;--bd:.4s"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><span class="nm">copywriter</span></span>
                 </div>
               </div>
               <div class="vg vg-script" aria-hidden="true"><i class="l"></i><i class="l"></i><i class="l"></i></div>
@@ -350,7 +365,7 @@
                 <p class="mdesc">Builds the raw pieces from your footage — and generates what's missing.</p>
                 <div class="mout"><span>talking-head</span><span>b-roll</span><span>AI images</span><span>covers</span><span>audio</span></div>
                 <div class="magents">
-                  <span class="mag" style="--c:#F2C94C;--bd:.2s"><svg fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span>
+                  <span class="mag" style="--c:#F2C94C;--bd:.2s"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span>
                 </div>
               </div>
               <div class="vg vg-film" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -366,8 +381,8 @@
                 <p class="mdesc">Polishes everything to publish-ready.</p>
                 <div class="mout"><span>frame-accurate cuts</span><span>captions</span><span>9:16 reframes</span><span>carousels</span><span>graphics</span></div>
                 <div class="magents">
-                  <span class="mag" style="--c:#D97757;--bd:0s"><svg fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span>
-                  <span class="mag" style="--c:#C08BF2;--bd:.4s"><svg fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span>
+                  <span class="mag" style="--c:#D97757;--bd:0s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span>
+                  <span class="mag" style="--c:#C08BF2;--bd:.4s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span>
                 </div>
               </div>
               <div class="vg vg-edit" aria-hidden="true"><div class="caps"><b></b><b></b><b></b></div><div class="tl"><i></i></div></div>
@@ -381,9 +396,10 @@
               <div>
                 <div class="mhead"><span class="stg"><span class="k">04</span>Distribution</span></div>
                 <p class="mdesc">Schedules the month across your platforms, platform-native.</p>
-                <div class="mout"><span>13 platforms</span><span>staggered schedule</span><span>native captions</span></div>
+                <div class="mout"><span>staggered schedule</span><span>native captions</span></div>
+                <div class="mout plats"><span>YouTube</span><span>Instagram</span><span>TikTok</span><span>LinkedIn</span><span>X</span><span>Threads</span><span>Facebook</span><span>Pinterest</span><span>Bluesky</span><span>Reddit</span><span>Snapchat</span><span>Telegram</span><span>Google Business</span></div>
                 <div class="magents">
-                  <span class="mag" style="--c:#EB5757;--bd:.1s"><svg fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span>
+                  <span class="mag" style="--c:#EB5757;--bd:.1s"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span>
                 </div>
               </div>
               <div class="vg vg-cal" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i><i style="--i:6"></i><i style="--i:7"></i><i style="--i:8"></i><i style="--i:9"></i><i style="--i:10"></i><i style="--i:11"></i><i style="--i:12"></i><i style="--i:13"></i><i style="--i:14"></i><i style="--i:15"></i><i style="--i:16"></i><i style="--i:17"></i><i style="--i:18"></i><i style="--i:19"></i><i style="--i:20"></i><i style="--i:21"></i><i style="--i:22"></i><i style="--i:23"></i><i style="--i:24"></i><i style="--i:25"></i><i style="--i:26"></i><i style="--i:27"></i></div>
@@ -399,8 +415,8 @@
                 <p class="mdesc">Runs the social inbox and learns — next month gets smarter.</p>
                 <div class="mout"><span>social inbox</span><span>comment→DM</span><span>replies</span><span>analytics report</span></div>
                 <div class="magents">
-                  <span class="mag" style="--c:#2FD4C2;--bd:0s"><svg fill="#2FD4C2"><use href="#px-mail"/></svg><span class="nm">inbox</span></span>
-                  <span class="mag" style="--c:#9BF06C;--bd:.4s"><svg fill="#9BF06C"><use href="#px-bars"/></svg><span class="nm">reports</span></span>
+                  <span class="mag" style="--c:#2FD4C2;--bd:0s"><svg viewBox="0 0 24 20" fill="#2FD4C2"><use href="#px-mail"/></svg><span class="nm">chat marketing agent</span></span>
+                  <span class="mag" style="--c:#9BF06C;--bd:.4s"><svg viewBox="0 0 24 20" fill="#9BF06C"><use href="#px-bars"/></svg><span class="nm">analytics</span></span>
                 </div>
               </div>
               <div class="vg vg-chat" aria-hidden="true"><i class="bub"></i><i class="bub"></i><div class="brs"><b style="--h:45%"></b><b style="--h:70%"></b><b style="--h:95%"></b></div></div>
@@ -436,37 +452,50 @@
 
 <div class="wrap"><hr class="rule"></div>
 
-<!-- ══ THE DECK — what's inside, as a slideshow ══ -->
-<section id="inside">
+<!-- ══ REAL PIECES — published ══ -->
+<section id="pieces">
   <div class="wrap">
-    <span class="eyebrow">What's inside — slide through</span>
-    <h2 class="ph">Plug it in. <i>Make it yours.</i></h2>
-    <div class="deckwrap">
-      <button class="dnav prev" data-deck="deck1" aria-label="Previous">←</button>
-      <div class="deck" id="deck1">
-        <div class="slide" style="--sc:#1FE07A"><span class="bignum">01</span><span class="tagl">The system</span><h3>The Nave <b style="color:var(--sc)">Content OS</b></h3><p>Copy-paste install — it works today. Yours permanently, on your machine.</p></div>
-        <div class="slide" style="--sc:#F2C94C"><span class="bignum">02</span><span class="tagl">The crew</span><h3>An agent for <b style="color:var(--sc)">every stage</b></h3><p>The storyline above, installed — pre-production through engagement, staffed.</p></div>
-        <div class="slide" style="--sc:#6C9BF0"><span class="bignum">03</span><span class="tagl">The training</span><h3>10hrs+ <b style="color:var(--sc)">in build order</b></h3><p>Set it up, then design your own Content OS around your business.</p></div>
-        <div class="slide" style="--sc:#D97757"><span class="bignum">04</span><span class="tagl">The support</span><h3>Same-day, <b style="color:var(--sc)">unlimited</b></h3><p>Stuck at 9pm? That's what it's for. You're never alone with a broken pipeline.</p></div>
-        <div class="slide" style="--sc:#C08BF2"><span class="bignum">05</span><span class="tagl">The calls</span><h3>Live, <b style="color:var(--sc)">2x a week</b></h3><p>Real screens, real problems, fixed live — working sessions, not webinars.</p></div>
-        <div class="slide" style="--sc:#EB5757"><span class="bignum">06</span><span class="tagl">The vault</span><h3>New drops <b style="color:var(--sc)">weekly</b></h3><p>New agents, skills and systems every week. Platforms shift, fixes ship.</p></div>
-        <div class="slide" style="--sc:#2FD4C2"><span class="bignum">🎁</span><span class="tagl">The bonus</span><h3>The founding <b style="color:var(--sc)">room</b></h3><p>Operators building the same way — posting what worked and what didn't.</p></div>
-      </div>
-      <button class="dnav next" data-deck="deck1" aria-label="Next">→</button>
+    <span class="eyebrow">Real pieces, published</span>
+    <h2 class="ph">Made by the OS. <i>Shipped in public.</i></h2>
+    <p class="sub" style="max-width:560px">Straight from the founder's channel — planned, edited and packaged with the same system you install.</p>
+    <div class="ytgrid">
+      <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/9JiRMaGJyvk" title="I Made a Month of Quality Content in a Day with Claude Code" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+      <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/58dOl9SGJMA" title="How I Make a Week of YouTube Content With My Content OS" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+      <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/ZtxE1SgoCto" title="Claude Code Creative System That Turns Ideas Into Finished Content" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
     </div>
   </div>
 </section>
 
 <div class="wrap"><hr class="rule"></div>
 
+<!-- ══ WHAT'S INSIDE — in sequence ══ -->
+<section id="inside">
+  <div class="wrap">
+    <span class="eyebrow">What's inside</span>
+    <h2 class="ph">Plug it in. <i>Make it yours.</i></h2>
+    <div class="seq">
+      <div class="srow" style="--i:0;--sc:#1FE07A"><span class="num">01</span><div><h3>The Nave Content OS</h3><p>Copy-paste install — it works today. Yours permanently, on your machine.</p></div></div>
+      <div class="srow" style="--i:1;--sc:#F2C94C"><span class="num">02</span><div><h3>A dedicated agent for every stage</h3><p>Pre-production through engagement — the storyline above, installed.</p></div></div>
+      <div class="srow" style="--i:2;--sc:#6C9BF0"><span class="num">03</span><div><h3>10hrs+ of step-by-step training</h3><p>Set it up, then design your own Content OS around your business.</p></div></div>
+      <div class="srow" style="--i:3;--sc:#D97757"><span class="num">04</span><div><h3>Unlimited same-day support</h3><p>Stuck at 9pm? That's what it's for.</p></div></div>
+      <div class="srow" style="--i:4;--sc:#C08BF2"><span class="num">05</span><div><h3>Live calls, 2x a week</h3><p>Real screens, real problems, fixed live.</p></div></div>
+      <div class="srow" style="--i:5;--sc:#EB5757"><span class="num">06</span><div><h3>The Vault — new drops weekly</h3><p>New agents, skills and systems as the OS grows. Platforms shift, fixes ship.</p></div></div>
+      <div class="srow" style="--i:6;--sc:#2FD4C2"><span class="num">🎁</span><div><h3>The founding-member room</h3><p>Operators building the same way — posting what worked and what didn't.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ══ THE PATH — long-term ══ -->
 <section id="path">
   <div class="wrap">
-    <span class="eyebrow">Your first 30 days</span>
-    <h2 class="ph">Install → your brand → <i>a full month.</i></h2>
+    <span class="eyebrow">The path</span>
+    <h2 class="ph">From install <i>to operating system.</i></h2>
     <div class="how3">
-      <div class="step"><div class="n">01</div><h3>Install</h3><p>The OS on your machine, first output the same sitting.</p></div>
-      <div class="step"><div class="n">02</div><h3>Scope it to you</h3><p>Your voice, formats and brand — locked in.</p></div>
-      <div class="step"><div class="n">03</div><h3>Run a month</h3><p>A full month in 30 days — the guarantee line.</p></div>
+      <div class="step"><div class="n">01</div><h3>Days 1–30 · Run it</h3><p>Install, scope it to your brand, produce your first month of content.</p></div>
+      <div class="step"><div class="n">02</div><h3>Days 31–60 · Shape it</h3><p>Build your own presets, templates and formats — the OS starts looking like your business.</p></div>
+      <div class="step"><div class="n">03</div><h3>Days 61–90+ · Scale it</h3><p>More platforms, more brands, client work — and the Vault keeps compounding it.</p></div>
     </div>
   </div>
 </section>
@@ -515,10 +544,11 @@
     <h2 class="ph">Asked <i>straight.</i></h2>
     <div class="faq">
       <details id="faq-tech"><summary>What is Claude Code — and do I need to be technical?</summary><div class="a">Claude Code is Anthropic's AI agent that runs on your own computer. You direct it in plain English — nobody here writes code. If you can install an app and paste a command, you're qualified. The install course walks every step; same-day support catches the rest.</div></details>
-      <details id="faq-course"><summary>Is this another course I won't finish?</summary><div class="a">No. The OS works the day you paste it in — the training is depth, not a prerequisite. The live calls and the 30-day guarantee exist for the version of you that's bought courses before.</div></details>
+      <details id="faq-course"><summary>Is this another course I won't finish?</summary><div class="a">No. The OS works the day you paste it in — the training is depth, not a prerequisite. The live calls and same-day support exist for the version of you that's bought courses before.</div></details>
+      <details id="faq-footage"><summary>Do I need footage?</summary><div class="a">Any footage works — talking-head, b-roll, screen recordings, footage from your business, or footage you create with AI. You build your own presets and content templates around whatever you have.</div></details>
       <details id="faq-agency"><summary>Why not just hire an editor or an agency?</summary><div class="a">That's $1,500–5,000/mo, forever, for someone else's judgment of your brand. Here you own the operation and your voice is built into the system.</div></details>
       <details id="faq-clients"><summary>Can I run it for clients or multiple brands?</summary><div class="a">Yes — the OS installs per brand, each with its own voice locked in. Several of the pipelines inside were built running client work.</div></details>
-      <details id="faq-cancel"><summary>What if I cancel?</summary><div class="a">Cancel anytime from your account. The OS lives on your machine, so you keep everything you've built. What ends is the weekly drops, the calls, the support, and the room.</div></details>
+      <details id="faq-cancel"><summary>What if I cancel?</summary><div class="a">Cancel anytime from your account, effective at the end of the billing period. What ends is the weekly drops, the calls, the support, and the room.</div></details>
     </div>
   </div>
 </section>
@@ -529,7 +559,7 @@
   <div class="wrap">
     <span class="badgechip"><b>FOUNDING WINDOW</b> // DOORS OPEN</span>
     <h2 class="finalposter">Be part of<span class="ln2">the community.</span></h2>
-    <p class="sub" style="max-width:500px;margin:18px auto 0">The system, the training, the calls, the support, the room — and a month of content in your first 30 days, or your money back.</p>
+    <p class="sub" style="max-width:500px;margin:18px auto 0">The system, the training, the calls, the support, the room — built to compound, month after month.</p>
     <div class="ctablock" style="margin-top:26px">
       <a class="btn btn-big" data-cta="JOIN" href="#final">Join Agentic AI Content →</a>
     </div>
@@ -538,7 +568,7 @@
 </main>
 
 <div id="ctabar"><div class="wrap">
-  <span class="t">Agentic AI Content — founding window open · a month of content in 30 days, or your money back</span>
+  <span class="t">Agentic AI Content — founding window open · your whole content production, systematized</span>
   <a class="btn" data-cta="JOIN" href="#final">Join →</a>
 </div></div>
 
@@ -550,12 +580,12 @@
 <script src="assets/links.js"></script>
 <script>
 (function(){
-  /* deck + video-carousel arrows */
+  /* loom carousel arrows */
   document.querySelectorAll('.dnav').forEach(function(btn){
     btn.addEventListener('click', function(){
       var d = document.getElementById(btn.dataset.deck);
       if (!d) return;
-      var w = d.querySelector('.slide, .vcard');
+      var w = d.querySelector('.vcard');
       var step = w ? w.getBoundingClientRect().width + 14 : d.clientWidth * .8;
       d.scrollBy({ left: btn.classList.contains('next') ? step : -step, behavior: 'smooth' });
     });
