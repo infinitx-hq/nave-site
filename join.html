@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Agentic AI Content — your content team, in the terminal</title>
+<title>Agentic AI Content — systematize your content production with AI agents</title>
 <meta name="description" content="A community + a working Content OS: AI agents for every stage of content production — plan, make, polish, publish, learn. Built on Claude Code. A month of content in 30 days, or your money back.">
 <link rel="canonical" href="https://nave.infinitxai.com/join">
 <meta name="theme-color" content="#070908">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nave">
-<meta property="og:title" content="Agentic AI Content — your content team, in the terminal">
+<meta property="og:title" content="Agentic AI Content — systematize your content production with AI agents">
 <meta property="og:description" content="AI agents for every stage of content production, the training to run them, and the operators building the same way. A month of content in 30 days, or your money back.">
 <meta property="og:url" content="https://nave.infinitxai.com/join">
 <meta property="og:image" content="https://nave.infinitxai.com/assets/og.png">
@@ -66,7 +66,6 @@
   .herosub b{color:var(--cream)}
   .heroctas-c{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:30px}
   .btn-big{font-size:14.5px;padding:18px 34px}
-  .proofchips{display:flex;gap:10px 26px;justify-content:center;flex-wrap:wrap;margin-top:30px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;color:var(--ink-soft)}
   /* ── floating agent cursor-tags (the motion in the back) ─────── */
   .ftag{position:absolute;z-index:1;pointer-events:none;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;font-weight:500;color:#06140C;background:var(--c,#1FE07A);padding:5px 9px;animation:fdrift var(--d,9s) ease-in-out infinite alternate;opacity:.92}
   .ftag::before{content:'';position:absolute;top:-9px;left:-9px;border:6px solid transparent;border-right-color:var(--c,#1FE07A);border-bottom-color:var(--c,#1FE07A);transform:rotate(8deg)}
@@ -88,19 +87,21 @@
   #run .term{aspect-ratio:auto}
   #run .term pre{min-height:300px}
   @media(max-width:860px){.gal{grid-template-columns:1fr}}
-  /* ── animated pipeline ───────────────────────────────────────── */
-  .pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:38px 0 0;position:relative}
-  .pnode{position:relative;padding:22px 14px 18px;border:1px solid var(--line);background:rgba(15,21,17,.5);text-align:center;opacity:.35;animation:pglow 10s infinite}
-  .pnode+.pnode{border-left:0}
-  .pnode .pk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:7px}
-  .pnode .pt{font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);display:block;margin-bottom:6px}
+  /* ── animated pipeline (always lit; highlight sweeps through) ── */
+  .pipe{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:38px 0 14px;position:relative}
+  .pnode{position:relative;padding:22px 16px 20px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(15,21,17,.62));text-align:left;transition:transform .22s ease,border-color .22s ease;animation:psweep 10s infinite}
+  .pnode:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+  .pnode .pk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
+  .pnode .pt{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--cream);display:block;margin-bottom:10px}
+  .pnode .crew{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .pnode .crew i{font-style:normal;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#06140C;background:var(--c,#1FE07A);padding:3px 8px;white-space:nowrap}
   .pnode .pa{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--cream-50);line-height:1.6;display:block}
   .pnode:nth-child(1){animation-delay:0s}.pnode:nth-child(2){animation-delay:2s}.pnode:nth-child(3){animation-delay:4s}.pnode:nth-child(4){animation-delay:6s}.pnode:nth-child(5){animation-delay:8s}
-  @keyframes pglow{0%,18%{opacity:1;border-color:var(--line-strong);background:rgba(31,224,122,.07)}22%,100%{opacity:.4;border-color:var(--line);background:rgba(15,21,17,.5)}}
+  @keyframes psweep{0%,16%{border-color:var(--line-strong);box-shadow:0 0 24px rgba(31,224,122,.14),inset 0 1px 0 var(--glass-hi)}20%,100%{border-color:var(--line);box-shadow:none}}
   .pipetrack{height:3px;background:rgba(31,224,122,.1);position:relative;overflow:hidden}
   .pipetrack i{position:absolute;top:0;left:0;height:100%;width:20%;background:var(--ink);animation:ptravel 10s linear infinite}
   @keyframes ptravel{0%{left:0}100%{left:100%}}
-  @media(max-width:860px){.pipe{grid-template-columns:1fr 1fr}.pnode+.pnode{border-left:1px solid var(--line);border-top:0}}
+  @media(max-width:860px){.pipe{grid-template-columns:1fr 1fr}}
   /* ── the stack (real logos) ──────────────────────────────────── */
   .stack{display:flex;gap:14px 34px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:34px;padding:22px 0;border-top:1px dashed var(--line)}
   .stack .sk{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50)}
@@ -171,20 +172,14 @@
 
   <div class="wrap" style="position:relative;z-index:2">
     <div class="glitch" aria-hidden="true"><i></i><i></i><i></i></div>
-    <span class="badgechip"><b>FOUNDING WINDOW</b> // COMMUNITY + CONTENT OS // BUILT ON <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:14px;width:auto;vertical-align:-2px"></span>
-    <h1>Your content team<span class="ln2">in the terminal.</span></h1>
-    <p class="herosub">Content used to mean five jobs — or a $3K/month agency. Now it's a crew of AI agents on your machine. <b>You direct. They produce.</b> Agentic AI Content is the system + the operators running it, building together.</p>
+    <span class="badgechip"><b>AGENTIC AI CONTENT</b> // THE COMMUNITY + THE WORKING SYSTEM</span>
+    <h1>Systematize your<br>content production<span class="ln2">with AI agents.</span></h1>
+    <p class="herosub">A community of creators and operators running a <b>Content OS</b> — an AI agent for every stage of production, on your own machine, built on <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:15px;width:auto;vertical-align:-3px"> <b>You direct. They produce.</b></p>
     <div class="heroctas-c">
       <a class="btn btn-big" data-cta="JOIN" href="#final">Be part of the community →</a>
       <a class="btn btn-ghost" href="#run">See it run ↓</a>
     </div>
     <span class="micro" style="display:block;margin-top:14px"><b>A month of content in 30 days, or your money back.</b></span>
-    <div class="proofchips">
-      <span>★ 500k+ organic views, made by this system*</span>
-      <span>this page: also made by it</span>
-      <span>runs on your machine — you own it</span>
-    </div>
-    <span class="micro" style="display:block;margin-top:8px">*Results shown are the founder's own. Not typical, and not a guarantee.</span>
     <span class="pending-note" data-pending-note style="display:none">Doors open this week — the join link goes live here.</span>
   </div>
 </section>
@@ -219,11 +214,21 @@
     <h2 class="ph">One agent crew. <i>Every stage.</i></h2>
     <p class="sub" style="max-width:540px" id="voice">Your brand voice is built in as a rule the agents can't break — it sounds like you, not like AI.</p>
     <div class="pipe" aria-label="The five stages of the content pipeline">
-      <div class="pnode"><span class="pk">01 · Pre-production</span><span class="pt">Plan</span><span class="pa">strategist · copywriter<br>angles · hooks · scripts</span></div>
-      <div class="pnode"><span class="pk">02 · Production</span><span class="pt">Make</span><span class="pa">producer · gen engines<br>video · image · audio</span></div>
-      <div class="pnode"><span class="pk">03 · Post-production</span><span class="pt">Polish</span><span class="pa">editor · designer<br>cuts · captions · carousels</span></div>
-      <div class="pnode"><span class="pk">04 · Distribution</span><span class="pt">Publish</span><span class="pa">social media manager<br>a month, scheduled</span></div>
-      <div class="pnode"><span class="pk">05 · Engagement</span><span class="pt">Learn</span><span class="pa">inbox · replies · reports<br>smarter every cycle</span></div>
+      <div class="pnode"><span class="pk">01 · Pre-production</span><span class="pt">Plan</span>
+        <span class="crew"><i style="--c:#1FE07A">strategist</i><i style="--c:#6C9BF0">copywriter</i></span>
+        <span class="pa">angles · hooks · scripts</span></div>
+      <div class="pnode"><span class="pk">02 · Production</span><span class="pt">Make</span>
+        <span class="crew"><i style="--c:#F2C94C">producer</i><i style="--c:#8BC9F2">gen engines</i></span>
+        <span class="pa">video · image · audio</span></div>
+      <div class="pnode"><span class="pk">03 · Post-production</span><span class="pt">Polish</span>
+        <span class="crew"><i style="--c:#D97757">editor</i><i style="--c:#C08BF2">designer</i></span>
+        <span class="pa">cuts · captions · carousels</span></div>
+      <div class="pnode"><span class="pk">04 · Distribution</span><span class="pt">Publish</span>
+        <span class="crew"><i style="--c:#EB5757">publisher</i></span>
+        <span class="pa">a month, scheduled</span></div>
+      <div class="pnode"><span class="pk">05 · Engagement</span><span class="pt">Learn</span>
+        <span class="crew"><i style="--c:#2FD4C2">inbox</i><i style="--c:#9BF06C">reports</i></span>
+        <span class="pa">replies · insights · next month</span></div>
     </div>
     <div class="pipetrack"><i></i></div>
     <div class="stack">
@@ -321,7 +326,6 @@
 
 <footer style="padding:36px 0 110px"><div class="wrap">
   <div class="pagechrome" style="border-top:0;margin-top:0"><span>INFINITX — 2026</span><span><a href="/">Free playbook</a> · <a href="/done-for-you">Done for you</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span></div>
-  <div style="margin-top:12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--cream-50)">Results shown are the founder's own. Not typical, and not a guarantee.</div>
   <div style="margin-top:8px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--cream-50)">Claude Code is a trademark of Anthropic, PBC. Nave is an independent product — not affiliated with or endorsed by Anthropic. AssemblyAI, Hyperframes, Zernio, Kie.ai and Skool are trademarks of their respective owners.</div>
 </div></footer>
 
