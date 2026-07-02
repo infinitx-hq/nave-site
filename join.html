@@ -243,18 +243,32 @@
   .crow .cv{color:var(--cream-72);font-size:13.5px;line-height:1.55}
   .crow .cv b{color:var(--cream)}
 
-  /* pieces sections */
-  .thumbrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:22px}
-  .thumbrow img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid var(--line);transition:border-color .2s,transform .3s}
-  .thumbrow img:hover{border-color:var(--line-strong);transform:scale(1.02)}
-  .playhint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border:1px solid var(--line-strong);background:rgba(7,9,8,.62);backdrop-filter:blur(6px);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:17px;pointer-events:none;transition:opacity .25s}
-  .film.playing .playhint{opacity:0}
-  .vrow9{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:22px;max-width:860px}
-  .v916{aspect-ratio:9/16;max-height:520px}
-  .tik{position:relative;aspect-ratio:9/16;max-height:560px;border:1px solid var(--line);background:#0c0f0d;overflow:hidden}
-  .tik iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .ligrid{margin-top:22px;max-width:560px}
-  .ligrid iframe{width:100%;height:640px;border:1px solid var(--line);background:#0c0f0d}
+
+
+  /* showreel */
+  .reel{position:relative;margin-top:26px;height:clamp(420px,58vh,600px);border:1px solid var(--line);background:#0a0d0b;overflow:hidden;cursor:pointer}
+  .rbg{position:absolute;inset:-50px;background-size:cover;background-position:center;filter:blur(46px) brightness(.3) saturate(1.15);transform:scale(1.15)}
+  .rlayer{position:absolute;inset:0}
+  .rlayer video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+  .rlayer img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .45s}
+  .rlayer img.cur{opacity:1}
+  .rlayer.enter{animation:rin .6s cubic-bezier(.22,.9,.28,1) both}
+  .rlayer.exit{animation:rout .6s cubic-bezier(.55,0,.55,.2) both;pointer-events:none}
+  @keyframes rin{from{transform:translateX(101%)}to{transform:translateX(0)}}
+  @keyframes rout{from{transform:translateX(0);opacity:1}to{transform:translateX(-8%);opacity:0}}
+  .rtop{position:absolute;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;align-items:center;z-index:4;pointer-events:none}
+  .rtag,.rcount,.rsound{font-family:"DM Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:rgba(7,9,8,.55);border:1px solid var(--line);padding:6px 10px;backdrop-filter:blur(8px)}
+  .rtag{color:var(--ink)}
+  .rcount{color:rgba(236,237,239,.6)}
+  .rsegs{position:absolute;left:16px;right:16px;bottom:14px;display:flex;gap:6px;z-index:4}
+  .seg{flex:1;height:3px;background:rgba(255,255,255,.16);cursor:pointer;overflow:hidden}
+  .seg i{display:block;height:100%;width:0;background:var(--ink)}
+  .rarw{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:38px;height:44px;border:1px solid var(--line);background:rgba(7,9,8,.5);color:rgba(236,237,239,.85);font-size:22px;line-height:1;cursor:pointer;backdrop-filter:blur(6px);transition:border-color .2s}
+  .rarw:hover{border-color:var(--line-strong)}
+  .rprev{left:12px}.rnext{right:12px}
+  .rsound{position:absolute;right:16px;bottom:32px;z-index:4;color:var(--ink);pointer-events:none}
+  .rsound.off{display:none}
+  @media(max-width:720px){.reel{height:72vh}.rarw{width:32px;height:38px;font-size:18px}}
 
 </style>
 </head>
@@ -502,88 +516,18 @@
   <div class="wrap">
     <span class="eyebrow">Real pieces, published</span>
     <h2 class="ph">Made by the OS. <i>Shipped in public.</i></h2>
-    <p class="sub" style="max-width:560px">From the founder's channel, client channels and client brands — every piece planned, edited and packaged by the same system you install.</p>
-    <div class="ytgrid">
-      <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/9JiRMaGJyvk" title="I Made a Month of Quality Content in a Day with Claude Code" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
-      <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/58dOl9SGJMA" title="How I Make a Week of YouTube Content With My Content OS" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
-      <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/ZtxE1SgoCto" title="Claude Code Creative System That Turns Ideas Into Finished Content" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+    <p class="sub" style="max-width:560px">AI film, avatar spokespeople, motion design, published videos, shorts and carousels — one reel, every piece made and shipped by the system you install.</p>
+    <div class="reel" id="reel" aria-label="Showreel — pieces made by the OS">
+      <div class="rbg" id="rbg"></div>
+      <div class="rlayer" id="rlA"></div>
+      <div class="rlayer" id="rlB"></div>
+      <div class="rtop"><span class="rtag" id="rtag"></span><span class="rcount" id="rcount"></span></div>
+      <button class="rarw rprev" id="rprev" aria-label="Previous piece">&#8249;</button>
+      <button class="rarw rnext" id="rnext" aria-label="Next piece">&#8250;</button>
+      <span class="rsound" id="rsound">tap for sound</span>
+      <div class="rsegs" id="rsegs"></div>
     </div>
-
-    <div style="margin-top:44px">
-      <span class="eyebrow">Produced for Zernio &mdash; the client&rsquo;s channel</span>
-      <div class="ytgrid">
-        <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/uqnnBAZpPek" title="Stop Manually Posting TikToks. Build This Claude Code System Instead" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
-        <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/ifj_Sw3jdg8" title="I Built an Instagram DM Booking Agent with Claude Managed Agents" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
-        <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/UNcbO0_fhsg" title="How to Connect Meta Ads API to Claude" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
-      </div>
-    </div>
-
-    <div style="margin-top:44px">
-      <span class="eyebrow">AI-generated thumbnails &mdash; every video ships with one</span>
-      <div class="thumbrow">
-        <img src="https://i.ytimg.com/vi/9JiRMaGJyvk/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
-        <img src="https://i.ytimg.com/vi/58dOl9SGJMA/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
-        <img src="https://i.ytimg.com/vi/ZtxE1SgoCto/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
-        <img src="https://i.ytimg.com/vi/uqnnBAZpPek/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
-        <img src="https://i.ytimg.com/vi/ifj_Sw3jdg8/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
-        <img src="https://i.ytimg.com/vi/UNcbO0_fhsg/hqdefault.jpg" alt="AI-generated thumbnail" loading="lazy">
-      </div>
-    </div>
-
-    <div style="margin-top:44px">
-      <span class="eyebrow">AI video generation</span>
-      <div class="films">
-        <div class="film" data-film><video src="assets/proof/nave-work/film-cinematic.mp4" poster="assets/proof/nave-work/film-cinematic.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
-        <div class="film" data-film><video src="assets/proof/nave-work/film-fashion.mp4" poster="assets/proof/nave-work/film-fashion.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
-        <div class="film" data-film><video src="assets/proof/nave-work/film-republic.mp4" poster="assets/proof/nave-work/film-republic.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
-      </div>
-      <p class="micro" style="margin-top:10px">Tap to play, sound on.</p>
-    </div>
-
-    <div style="margin-top:44px">
-      <span class="eyebrow">AI avatar + motion design</span>
-      <div class="vrow9">
-        <div class="film v916" data-film><video src="assets/proof/nave-work/avatar-spokesperson.mp4" poster="assets/proof/nave-work/avatar-spokesperson.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
-        <div class="film v916" data-film><video src="assets/proof/nave-work/nave-one-drop.mp4" poster="assets/proof/nave-work/nave-one-drop.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
-        <div class="film v916" data-film><video src="assets/proof/nave-work/nave-path-to-a-month.mp4" poster="assets/proof/nave-work/nave-path-to-a-month.jpg" loop playsinline preload="none"></video><span class="playhint">&#9654;</span></div>
-      </div>
-    </div>
-
-    <div style="margin-top:44px">
-      <span class="eyebrow">Short-form, published</span>
-      <div class="vrow9">
-        <div class="tik"><iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7650215324930952461" allow="encrypted-media; picture-in-picture" allowfullscreen title="TikTok published short"></iframe></div>
-        <div class="tik"><iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7643081996935138574" allow="encrypted-media; picture-in-picture" allowfullscreen title="TikTok photo carousel"></iframe></div>
-        <div class="tik"><iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7605696760614309133" allow="encrypted-media; picture-in-picture" allowfullscreen title="TikTok published short"></iframe></div>
-      </div>
-    </div>
-
-    <div style="margin-top:44px">
-      <span class="eyebrow">Carousels &amp; posts</span>
-      <div class="ligrid">
-        <iframe loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7424568506098282496" title="LinkedIn published post" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <div style="margin-top:44px">
-      <span class="eyebrow">Client storylines — the same OS, other brands</span>
-      <div class="cases">
-        <div class="case">
-          <div class="brand"><h3>Tiempo Soccer</h3><span class="niche">youth academy · Long Island</span></div>
-          <p class="story">A weekend of training footage goes in. A dedicated Nave install — its own agents, formats and voice — turns it into the academy's whole month.</p>
-          <div class="crow"><span class="cl">In</span><span class="cv">One footage drop — trainings, interviews, scrimmage</span></div>
-          <div class="crow"><span class="cl">Built</span><span class="cv"><b>10+ format agents</b> for the brand: player spotlights, montages, multi-voice compilations, coach origins, tactical breakdowns, bilingual value carousels</span></div>
-          <div class="crow"><span class="cl">Out</span><span class="cv">Reels, carousels and covers — captioned in the academy's voice, scheduled, <b>parents share them the same week</b></span></div>
-        </div>
-        <div class="case">
-          <div class="brand"><h3>Premier Cabinets</h3><span class="niche">luxury cabinetry · Sacramento</span></div>
-          <p class="story">A cabinet shop's project photos go in. The OS builds the brand's entire content presence — digital and print.</p>
-          <div class="crow"><span class="cl">In</span><span class="cv">Job-site photos + the owner's story</span></div>
-          <div class="crow"><span class="cl">Built</span><span class="cv">Brand system, website copy, tear sheets, flyers and cards — plus a <b>self-running SEO blog engine</b> on its own agents</span></div>
-          <div class="crow"><span class="cl">Out</span><span class="cv">A publish-ready brand: print pieces at the shop, <b>daily SEO content</b> compounding on the site</span></div>
-        </div>
-      </div>
-    </div>
+    <p class="micro" style="margin-top:10px">Auto-playing reel &mdash; tap any clip for sound. Full videos live on <a href="https://www.youtube.com/@enriquemarq-0" target="_blank" rel="noopener">the founder&rsquo;s channel</a>.</p>
   </div>
 </section>
 
@@ -712,20 +656,119 @@
     });
   });
 
-  /* films & motion: click to play, SOUND ON; pause any other playing tile */
-  var tiles = [].slice.call(document.querySelectorAll('[data-film]'));
-  tiles.forEach(function(card){
-    var v = card.querySelector('video');
-    if (!v) return;
-    card.addEventListener('click', function(){
-      if (v.paused){
-        tiles.forEach(function(o){ var ov = o.querySelector('video'); if (ov && ov !== v){ ov.pause(); o.classList.remove('playing'); } });
-        v.muted = false;
-        v.play().catch(function(){});
-        card.classList.add('playing');
-      } else { v.pause(); card.classList.remove('playing'); }
+  /* showreel: one piece at a time, auto-advance, tap for sound */
+  (function(){
+    var reel = document.getElementById('reel');
+    if (!reel) return;
+    var RW = 'assets/proof/nave-work/', RR = 'assets/proof/reel/';
+    function gl(pre, n, pad){ var a=[], i; for(i=1;i<=n;i++){ a.push(pre + (pad && i<10 ? '0'+i : i)); } return a; }
+    var ITEMS = [
+      {t:'v', s:RR+'avatar.mp4',                p:RR+'avatar.jpg',                l:'ai avatar'},
+      {t:'v', s:RW+'nave-one-drop.mp4',         p:RW+'nave-one-drop.jpg',         l:'motion design'},
+      {t:'v', s:RW+'nave-path-to-a-month.mp4',  p:RW+'nave-path-to-a-month.jpg',  l:'motion design'},
+      {t:'v', s:RW+'film-cinematic.mp4',        p:RW+'film-cinematic.jpg',        l:'ai film'},
+      {t:'v', s:RW+'film-fashion.mp4',          p:RW+'film-fashion.jpg',          l:'ai film'},
+      {t:'v', s:RW+'film-republic.mp4',         p:RW+'film-republic.jpg',         l:'ai film'},
+      {t:'v', s:RR+'yt-month-intro.mp4',        p:RR+'yt-month-intro.jpg',        l:'youtube · published'},
+      {t:'v', s:RR+'yt-zernio-intro.mp4',       p:RR+'yt-zernio-intro.jpg',       l:'client channel · published'},
+      {t:'v', s:RR+'short-1.mp4',               p:RR+'short-1.jpg',               l:'short-form · published'},
+      {t:'v', s:RR+'short-2.mp4',               p:RR+'short-2.jpg',               l:'short-form · published'},
+      {t:'g', imgs:gl(RR+'ideas-',10,true), per:1200, l:'carousel · published'},
+      {t:'g', imgs:gl(RR+'case-',5,false),  per:1600, l:'carousel · published'}
+    ];
+    var CAP = 9;
+    var layers = [document.getElementById('rlA'), document.getElementById('rlB')];
+    var bg = document.getElementById('rbg'), tag = document.getElementById('rtag'),
+        cnt = document.getElementById('rcount'), segs = document.getElementById('rsegs'),
+        snd = document.getElementById('rsound');
+    var idx = 0, active = 0, raf = null, gTimer = null, unmuted = false, inview = true;
+
+    ITEMS.forEach(function(_, i){
+      var s = document.createElement('span'); s.className = 'seg';
+      s.appendChild(document.createElement('i'));
+      s.addEventListener('click', function(e){ e.stopPropagation(); show(i); });
+      segs.appendChild(s);
     });
-  });
+
+    function poster(it){ return it.t === 'v' ? it.p : it.imgs[0] + '.jpg'; }
+    function setProg(f){ segs.children[idx].firstChild.style.width = (Math.min(1, Math.max(0, f)) * 100) + '%'; }
+    function stopTimers(){ if (raf){ cancelAnimationFrame(raf); raf = null; } if (gTimer){ clearInterval(gTimer); gTimer = null; } }
+
+    function show(n){
+      stopTimers();
+      var prev = layers[active]; active = 1 - active;
+      var layer = layers[active];
+      var pv = prev.querySelector('video'); if (pv) pv.pause();
+      idx = n; var it = ITEMS[n];
+      for (var i = 0; i < ITEMS.length; i++) segs.children[i].firstChild.style.width = i < n ? '100%' : '0%';
+      tag.textContent = it.l;
+      cnt.textContent = (n + 1 < 10 ? '0' : '') + (n + 1) + ' / ' + ITEMS.length;
+      bg.style.backgroundImage = 'url("' + poster(it) + '")';
+      unmuted = false; snd.textContent = 'tap for sound'; snd.classList.toggle('off', it.t !== 'v');
+      layer.innerHTML = '';
+      if (it.t === 'v'){
+        var v = document.createElement('video');
+        v.src = it.s; v.poster = it.p; v.muted = true; v.playsInline = true;
+        v.setAttribute('playsinline', ''); v.preload = 'auto';
+        layer.appendChild(v);
+        v.addEventListener('ended', function(){ next(); });
+        if (inview) v.play().catch(function(){});
+        var tick = function(){
+          if (raf === null) return;
+          if (v.duration){
+            var lim = unmuted ? v.duration : Math.min(v.duration, CAP);
+            setProg(v.currentTime / lim);
+            if (v.currentTime >= lim - 0.05 && !v.paused){ next(); return; }
+          }
+          raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+      } else {
+        it.imgs.forEach(function(src, i){
+          var im = document.createElement('img');
+          im.src = src + '.jpg'; im.alt = 'published carousel slide';
+          if (i === 0) im.className = 'cur';
+          layer.appendChild(im);
+        });
+        var per = it.per || 1400, total = per * it.imgs.length, t0 = performance.now(), k = 0;
+        gTimer = setInterval(function(){
+          k++;
+          if (k >= it.imgs.length){ next(); return; }
+          var ims = layer.querySelectorAll('img');
+          for (var j = 0; j < ims.length; j++) ims[j].classList.remove('cur');
+          ims[k].classList.add('cur');
+        }, per);
+        var gtick = function(){
+          if (raf === null) return;
+          setProg((performance.now() - t0) / total);
+          raf = requestAnimationFrame(gtick);
+        };
+        raf = requestAnimationFrame(gtick);
+      }
+      layer.className = 'rlayer enter'; prev.className = 'rlayer exit';
+      setTimeout(function(){ if (layers[active] !== prev) prev.innerHTML = ''; }, 700);
+    }
+
+    function next(){ stopTimers(); show((idx + 1) % ITEMS.length); }
+    function prevItem(){ stopTimers(); show((idx - 1 + ITEMS.length) % ITEMS.length); }
+
+    document.getElementById('rnext').addEventListener('click', function(e){ e.stopPropagation(); next(); });
+    document.getElementById('rprev').addEventListener('click', function(e){ e.stopPropagation(); prevItem(); });
+    reel.addEventListener('click', function(){
+      var it = ITEMS[idx]; if (it.t !== 'v') return;
+      var v = layers[active].querySelector('video'); if (!v) return;
+      unmuted = !unmuted; v.muted = !unmuted;
+      snd.textContent = unmuted ? 'sound on' : 'tap for sound';
+    });
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){
+        inview = en[0].isIntersecting;
+        var v = layers[active].querySelector('video');
+        if (v){ if (inview){ v.play().catch(function(){}); } else { v.pause(); } }
+      }, {threshold:.15}).observe(reel);
+    }
+    show(0);
+  })();
 
   /* Personalized landing — /apply passes ?focus= */
   try {
