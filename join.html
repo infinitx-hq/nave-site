@@ -85,6 +85,10 @@
   .crewmate svg{width:30px;height:26px;filter:drop-shadow(0 0 9px var(--c));animation:blink 6s steps(1) infinite}
   .crewmate .nm{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
   @keyframes esc{0%{transform:translateY(0)}100%{transform:translateY(-9px)}}
+  .wz{display:flex;flex-direction:column;align-items:center;gap:5px;animation:warp 16s infinite;animation-delay:var(--wd,0s)}
+  @keyframes warp{0%,84%{transform:scale(1);opacity:1;filter:none}88%{transform:scale(.15) rotate(8deg);opacity:0}92%{transform:scale(.15);opacity:0}96%{transform:scale(1.18);opacity:1;filter:brightness(2)}100%{transform:scale(1);opacity:1;filter:none}}
+  .shipwz{display:flex;flex-direction:column;align-items:center;animation:shipwarp 18s infinite}
+  @keyframes shipwarp{0%,88%{transform:scale(1);opacity:1;filter:none}91%{transform:scale(.1);opacity:0}94%{transform:scale(.1);opacity:0}97%{transform:scale(1.2);opacity:1;filter:brightness(2.2)}100%{transform:scale(1);opacity:1;filter:none}}
   @keyframes blink{0%,92%{opacity:1}94%,97%{opacity:.35}98%,100%{opacity:1}}
   @media(max-width:860px){.crewmate{display:none}}
   /* ── marquee ticker ──────────────────────────────────────────── */
@@ -215,6 +219,29 @@
   #ctabar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
   #ctabar .t{font-size:14px;color:var(--cream-72)}
   @media(max-width:640px){#ctabar .t{display:none}}
+
+  /* AI media wall */
+  .films{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:26px}
+  .film{position:relative;border:1px solid var(--line);background:#0c0f0d;overflow:hidden;aspect-ratio:16/9;cursor:pointer;transition:border-color .2s}
+  .film:hover{border-color:var(--line-strong)}
+  .film video{width:100%;height:100%;object-fit:cover;display:block}
+  .film .fl{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(7,9,8,.9));padding:26px 12px 10px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);pointer-events:none}
+  .sggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+  .sggrid img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border:1px solid var(--line);transition:border-color .2s,transform .3s}
+  .sggrid img:hover{border-color:var(--line-strong);transform:scale(1.02)}
+  /* client storylines */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+  @media(max-width:860px){.cases{grid-template-columns:1fr}}
+  .case{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.04),rgba(15,21,17,.62));padding:26px 28px;transition:border-color .2s}
+  .case:hover{border-color:var(--line-strong)}
+  .case .brand{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+  .case .brand h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:22px;color:var(--cream);margin:0}
+  .case .brand .niche{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+  .case .story{color:var(--cream-72);font-size:14.5px;line-height:1.6;margin:0 0 16px}
+  .crow{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:baseline;padding:9px 0;border-top:1px dashed var(--line)}
+  .crow .cl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .crow .cv{color:var(--cream-72);font-size:13.5px;line-height:1.55}
+  .crow .cv b{color:var(--cream)}
 </style>
 </head>
 <body>
@@ -288,19 +315,23 @@
   <i class="star" style="top:8%;left:62%;--td:4.6s;animation-delay:1.2s"></i><i class="star" style="top:4%;left:82%;--td:5.6s;animation-delay:.7s"></i>
   <i class="star" style="top:12%;left:28%;--td:6s;animation-delay:2s"></i><i class="star" style="top:10%;left:72%;--td:4.4s;animation-delay:1.6s"></i>
   <i class="star" style="top:16%;left:50%;--td:5s;animation-delay:.9s"></i><i class="star" style="top:14%;left:8%;--td:5.8s;animation-delay:2.4s"></i>
-  <!-- the escort formation -->
-  <span class="crewmate" style="--c:#1FE07A;top:11%;left:16%;--ed:0s"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><span class="nm">strategist</span></span>
-  <span class="crewmate" style="--c:#6C9BF0;top:20%;left:8%;--ed:.5s"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><span class="nm">copywriter</span></span>
-  <span class="crewmate" style="--c:#F2C94C;top:31%;left:15%;--ed:1s"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span>
-  <span class="crewmate" style="--c:#D97757;top:11%;right:16%;--ed:.3s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span>
-  <span class="crewmate" style="--c:#C08BF2;top:20%;right:8%;--ed:.8s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span>
-  <span class="crewmate" style="--c:#EB5757;top:31%;right:15%;--ed:1.3s"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span>
+  <!-- the escort formation — all 8, warping in and out -->
+  <span class="crewmate" style="--c:#1FE07A;top:10%;left:13%;--ed:0s"><span class="wz" style="--wd:0s"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><span class="nm">strategist</span></span></span>
+  <span class="crewmate" style="--c:#6C9BF0;top:24%;left:6%;--ed:.5s"><span class="wz" style="--wd:2s"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><span class="nm">copywriter</span></span></span>
+  <span class="crewmate" style="--c:#F2C94C;top:38%;left:13%;--ed:1s"><span class="wz" style="--wd:4s"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span></span>
+  <span class="crewmate" style="--c:#D97757;top:52%;left:6%;--ed:1.5s"><span class="wz" style="--wd:6s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span></span>
+  <span class="crewmate" style="--c:#C08BF2;top:10%;right:13%;--ed:.3s"><span class="wz" style="--wd:8s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span></span>
+  <span class="crewmate" style="--c:#EB5757;top:24%;right:6%;--ed:.8s"><span class="wz" style="--wd:10s"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span></span>
+  <span class="crewmate" style="--c:#2FD4C2;top:38%;right:13%;--ed:1.3s"><span class="wz" style="--wd:12s"><svg viewBox="0 0 24 20" fill="#2FD4C2"><use href="#px-mail"/></svg><span class="nm">chat marketing agent</span></span></span>
+  <span class="crewmate" style="--c:#9BF06C;top:52%;right:6%;--ed:1.8s"><span class="wz" style="--wd:14s"><svg viewBox="0 0 24 20" fill="#9BF06C"><use href="#px-bars"/></svg><span class="nm">analytics</span></span></span>
 
   <div class="wrap" style="position:relative;z-index:2">
     <div class="glitch" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="ship" aria-hidden="true">
-      <svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg>
-      <div class="flames"><i></i><i></i><i></i></div>
+      <span class="shipwz">
+        <svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg>
+        <div class="flames"><i></i><i></i><i></i></div>
+      </span>
     </div>
     <span class="badgechip rise" style="--rd:.1s;margin-top:18px"><b>AGENTIC AI CONTENT</b> // THE COMMUNITY + THE WORKING SYSTEM</span>
     <h1><span class="rise" style="--rd:.2s;display:block">Systematize your <em>content production</em></span><span class="rise" style="--rd:.32s;display:block">with <em>AI agents.</em></span></h1>
@@ -463,6 +494,46 @@
       <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/58dOl9SGJMA" title="How I Make a Week of YouTube Content With My Content OS" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
       <div class="ytcard"><div class="vh"><iframe loading="lazy" src="https://www.youtube.com/embed/ZtxE1SgoCto" title="Claude Code Creative System That Turns Ideas Into Finished Content" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
     </div>
+
+    <div style="margin-top:44px">
+      <span class="eyebrow">AI-generated — same system, production stage</span>
+      <p class="sub" style="max-width:620px;margin-top:10px">When there's no footage, the OS generates it: model-made film and imagery, directed from the terminal. Not agency work for hire — this is the Production stage members install, in our hands.</p>
+      <div class="films">
+        <div class="film" data-film><video src="assets/proof/nave-work/film-cinematic.mp4" poster="assets/proof/nave-work/film-cinematic.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — cinematic</span></div>
+        <div class="film" data-film><video src="assets/proof/nave-work/film-fashion.mp4" poster="assets/proof/nave-work/film-fashion.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — fashion</span></div>
+        <div class="film" data-film><video src="assets/proof/nave-work/film-republic.mp4" poster="assets/proof/nave-work/film-republic.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — brand spot</span></div>
+        <div class="film" data-film><video src="assets/proof/nave-work/film-vday.mp4" poster="assets/proof/nave-work/film-vday.jpg" muted loop playsinline preload="none"></video><span class="fl">AI film — campaign</span></div>
+      </div>
+      <div class="sggrid">
+        <img src="assets/proof/nave-work/sg-1.jpg" alt="AI-generated product imagery" loading="lazy">
+        <img src="assets/proof/nave-work/sg-3.jpg" alt="AI-generated product imagery" loading="lazy">
+        <img src="assets/proof/nave-work/sg-5.jpg" alt="AI-generated product imagery" loading="lazy">
+        <img src="assets/proof/nave-work/sg-7.jpg" alt="AI-generated product imagery" loading="lazy">
+        <img src="assets/proof/nave-work/sg-8.jpg" alt="AI-generated jewelry imagery" loading="lazy">
+        <img src="assets/proof/nave-work/sg-9.jpg" alt="AI-generated product imagery" loading="lazy">
+      </div>
+      <p class="micro" style="margin-top:10px">Hover to play. Generated with the gen engines in the stack — Kie.ai and friends — directed by the crew.</p>
+    </div>
+
+    <div style="margin-top:44px">
+      <span class="eyebrow">Client storylines — the same OS, other brands</span>
+      <div class="cases">
+        <div class="case">
+          <div class="brand"><h3>Tiempo Soccer</h3><span class="niche">youth academy · Long Island</span></div>
+          <p class="story">A weekend of training footage goes in. A dedicated Nave install — its own agents, formats and voice — turns it into the academy's whole month.</p>
+          <div class="crow"><span class="cl">In</span><span class="cv">One footage drop — trainings, interviews, scrimmage</span></div>
+          <div class="crow"><span class="cl">Built</span><span class="cv"><b>10+ format agents</b> for the brand: player spotlights, montages, multi-voice compilations, coach origins, tactical breakdowns, bilingual value carousels</span></div>
+          <div class="crow"><span class="cl">Out</span><span class="cv">Reels, carousels and covers — captioned in the academy's voice, scheduled, <b>parents share them the same week</b></span></div>
+        </div>
+        <div class="case">
+          <div class="brand"><h3>Premier Cabinets</h3><span class="niche">luxury cabinetry · Sacramento</span></div>
+          <p class="story">A cabinet shop's project photos go in. The OS builds the brand's entire content presence — digital and print.</p>
+          <div class="crow"><span class="cl">In</span><span class="cv">Job-site photos + the owner's story</span></div>
+          <div class="crow"><span class="cl">Built</span><span class="cv">Brand system, website copy, tear sheets, flyers and cards — plus a <b>self-running SEO blog engine</b> on its own agents</span></div>
+          <div class="crow"><span class="cl">Out</span><span class="cv">A publish-ready brand: print pieces at the shop, <b>daily SEO content</b> compounding on the site</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -589,6 +660,15 @@
       var step = w ? w.getBoundingClientRect().width + 14 : d.clientWidth * .8;
       d.scrollBy({ left: btn.classList.contains('next') ? step : -step, behavior: 'smooth' });
     });
+  });
+
+  /* AI films: hover to play (tap toggles on touch) */
+  document.querySelectorAll('[data-film]').forEach(function(card){
+    var v = card.querySelector('video');
+    if (!v) return;
+    card.addEventListener('pointerenter', function(){ v.play().catch(function(){}); });
+    card.addEventListener('pointerleave', function(){ v.pause(); });
+    card.addEventListener('click', function(){ v.paused ? v.play().catch(function(){}) : v.pause(); });
   });
 
   /* Personalized landing — /apply passes ?focus= */
