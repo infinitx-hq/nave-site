@@ -1,18 +1,17 @@
 /* ============================================================
    NAVE_LINKS — the ONLY block to edit when wiring goes live.
-   Shared by index.html / apply.html / nave.html / custom.html.
+   Shared by index.html / apply.html / join.html / done-for-you.html.
+   Funnel (locked 2026-07-01): / (playbook squeeze) -> /apply (3 questions)
+   -> /join (the community, the MAIN offer) or /done-for-you (custom build).
    Leave a value '' and every page degrades honestly:
-   - BOOK '': $397 buttons route to the apply page.
+   - SKOOL_JOIN '': join buttons show the honest pending note.
    - PLAYBOOK_FORM_ACTION '': opt-in forms show the honest pending note.
-   - APPLY_FORM_ACTION '': application still routes to the right page,
-     and the answers fall back to a mailto (or nothing, with a note).
    - CUSTOM_FORM_ACTION '': custom-build form falls back to mailto.
    ============================================================ */
 const NAVE_LINKS = {
   LEADS_ENDPOINT: 'https://ix-substrate-core-production.up.railway.app/leads',  // substrate lead capture -> state.db (LIVE)
-  CALL_BOOKING: 'https://calendar.app.google/L25kvuTgSLfwxC8P7',  // 15-min call booking (Google Calendar appointments)
-  BOOK: 'https://buy.stripe.com/dRm8wPbkHfPRdNX1e18so0p',       // Stripe $397 1:1 install (pay -> then book)
-  SELF_SERVE: 'https://buy.stripe.com/8x2dR9dsP5bdbFP9Kx8so0n', // Stripe $89 self-serve Content OS
+  SKOOL_JOIN: 'https://www.skool.com/ai-growth-collective/about',  // Agentic AI Content — the community (THE main offer, $58/mo founding)
+  CALL_BOOKING: 'https://calendar.app.google/L25kvuTgSLfwxC8P7',  // 15-min call booking — DFY scoping only
   PLAYBOOK_FORM_ACTION: '',  // Kit (ConvertKit) form action — playbook + vault opt-in (email + fields[phone])
   APPLY_FORM_ACTION: '',     // endpoint for application answers (Tally / Formspree / Kit)
   CUSTOM_FORM_ACTION: '',    // endpoint for custom-build requests
@@ -48,23 +47,17 @@ window.NAVE_LINKS = NAVE_LINKS;
 
 /* Shared CTA state machine */
 (function(){
-  /* $397 booking buttons */
-  document.querySelectorAll('[data-cta="BOOK"]').forEach(function(a){
-    if (NAVE_LINKS.BOOK){ a.href = NAVE_LINKS.BOOK; a.target = '_blank'; a.rel = 'noopener'; }
+  /* Join-the-community buttons (the main offer) */
+  document.querySelectorAll('[data-cta="JOIN"]').forEach(function(a){
+    if (NAVE_LINKS.SKOOL_JOIN){ a.href = NAVE_LINKS.SKOOL_JOIN; a.target = '_blank'; a.rel = 'noopener'; }
     else if (a.dataset.fallback){ a.href = a.dataset.fallback; }
   });
-  if (!NAVE_LINKS.BOOK) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
+  if (!NAVE_LINKS.SKOOL_JOIN) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
 
-  /* 15-minute call booking buttons (VSL page) */
+  /* 15-minute call booking buttons (DFY scoping only) */
   document.querySelectorAll('[data-cta="CALL"]').forEach(function(a){
     if (NAVE_LINKS.CALL_BOOKING){ a.href = NAVE_LINKS.CALL_BOOKING; a.target = '_blank'; a.rel = 'noopener'; }
     else if (a.dataset.fallback){ a.href = a.dataset.fallback; }
-  });
-  if (!NAVE_LINKS.CALL_BOOKING) document.querySelectorAll('[data-pending-note]').forEach(function(n){ n.style.display = 'block'; });
-
-  /* $89 self-serve buy buttons */
-  document.querySelectorAll('[data-cta="BUY"]').forEach(function(a){
-    if (NAVE_LINKS.SELF_SERVE){ a.href = NAVE_LINKS.SELF_SERVE; a.target = '_blank'; a.rel = 'noopener'; }
   });
 
   /* Lead-capture beacon → substrate /leads (state.db). no-cors + text/plain means

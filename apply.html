@@ -27,14 +27,14 @@
 <section style="text-align:center;padding-top:56px">
   <div class="wrap">
     <div id="sentbanner" class="reveal pane" hidden style="text-align:left;margin:0 auto 30px;max-width:620px;padding:18px 22px;border-color:rgba(31,224,122,.4)">
-      <p class="formhead" style="margin:0 0 4px;color:var(--ink)">✓ Check your email — your free playbook + tools are on the way<span id="sentto"></span>.</p>
-      <p style="margin:0;font-size:14.5px">The full method, the real skills &amp; agents, and the Claude Code setup guide (EN/ES) are landing in your inbox now. While you wait — <b>answer these three quick questions</b> so we point you to the right way to actually run it.</p>
+      <p class="formhead" style="margin:0 0 4px;color:var(--ink)">✓ Check your email — the playbook is on the way<span id="sentto"></span>.</p>
+      <p style="margin:0;font-size:14.5px">The full method, the real skills &amp; agents, and the Claude Code setup guide (EN/ES) are landing in your inbox now. While it lands: <b>three quick questions</b>, so I can point you at the right next step. Thirty seconds.</p>
       <p class="micro" style="margin:8px 0 0">Didn't get the email in a couple minutes? <a href="/playbook?unlocked=1">Grab everything here →</a> (check spam too.)</p>
     </div>
 
     <span class="eyebrow">Tell me about you</span>
     <h2 data-block="apply.h1">I just want to understand <i>what you're struggling with.</i></h2>
-    <p class="sub" data-block="apply.sub">A few quick questions so I actually get where you're at — then I'll show you how I can help with your content production.</p>
+    <p class="sub" data-block="apply.sub">Your answers don't change the price of anything. They change which page I show you — so you don't read the wrong one.</p>
 
     <style>
       .quiz{max-width:580px;margin:30px auto 0;text-align:left}
@@ -74,25 +74,25 @@
       </div>
 
       <div class="qstep" data-step="3" hidden>
-        <div class="legend">If you had a content operating system running, what would you want?</div>
-        <label class="choice" data-route="/">
+        <div class="legend">When you picture this running in your business — who's at the keyboard?</div>
+        <label class="choice" data-route="/join">
           <input type="radio" name="route" value="self">
-          <span class="cl">I'd install it myself</span>
-          <span class="cd">You get the technical pieces to install onto your content operating system, guided by videos and step-by-step instructions.</span>
+          <span class="cl">Me. I want to own and run the system myself</span>
+          <span class="cd">You'll learn it, install it, and run it — with support the whole way.</span>
         </label>
-        <label class="choice" data-route="/">
-          <input type="radio" name="route" value="install">
-          <span class="cl">Set it up with me — then I run it</span>
-          <span class="cd">We do it together on one live call: installed on your machine, your first month kicked off. You own it and run it from there.</span>
+        <label class="choice" data-route="/join">
+          <input type="radio" name="route" value="setup_help">
+          <span class="cl">Me, once it's set up — I just don't want to figure out the setup alone</span>
+          <span class="cd">That's exactly what the install course + same-day support are for. You'll run it; you won't set it up alone.</span>
         </label>
-        <label class="choice" data-route="/custom">
-          <input type="radio" name="route" value="custom">
-          <span class="cl">Build the whole thing for me</span>
-          <span class="cd">Tailored to your brand and operations, with me there helping you the whole way.</span>
+        <label class="choice" data-route="/done-for-you">
+          <input type="radio" name="route" value="handled">
+          <span class="cl">Honestly? Nobody on my team. I want it built and handled for me</span>
+          <span class="cd">Then don't buy a system you'll never open. There's a done-for-you build for exactly this.</span>
         </label>
         <div class="ctablock" style="text-align:left;margin-top:22px">
-          <button class="btn" type="submit" id="applysubmit" data-block="apply.submit_button">Show me the path →</button>
-          <span class="micro" data-block="apply.submit_micro">Your answers just point you to the right next step.</span>
+          <button class="btn" type="submit" id="applysubmit" data-block="apply.submit_button">Show me the right page →</button>
+          <span class="micro" data-block="apply.submit_micro">No wrong answers — this just saves you reading a pitch that isn't for you.</span>
         </div>
       </div>
 
@@ -155,9 +155,20 @@
     if (!sel) return;
     var dest = sel.closest('.choice').dataset.route;
     var pick = function(n){ var el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
+    /* Personalize the landing: DFY leads who already pay for help get the owner frame;
+       /join scrolls to the section that answers what they said hurts. */
+    var params = ['applied=1'];
+    if (dest === '/done-for-you' && pick('reality') === 'paying_help') params.push('fit=owner');
+    if (dest === '/join'){
+      var d = pick('drain');
+      var focus = (d === 'ideas' || d === 'writing') ? 'voice'
+                : (d === 'no_system' || d === 'all') ? 'course'
+                : 'time';
+      params.push('focus=' + focus);
+    }
     var email = '', name = '', ref = '';
     try { email = sessionStorage.getItem('nave_email') || ''; name = sessionStorage.getItem('nave_name') || ''; ref = sessionStorage.getItem('nave_ref') || ''; } catch (_e) {}
-    var done = false, finish = function(){ if (done) return; done = true; location.href = dest + (dest.indexOf('?') < 0 ? '?applied=1' : '&applied=1'); };
+    var done = false, finish = function(){ if (done) return; done = true; location.href = dest + '?' + params.join('&'); };
     /* Only attach answers for people who came through the playbook form (have an email).
        Name + email + lead_ref tie the responses to that same lead; referrer carries the path. */
     if (email && window.naveCapture){

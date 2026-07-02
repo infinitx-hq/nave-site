@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nave — we install a complete content operation into your business, and you own it</title>
+<meta name="description" content="Not an agency you pay monthly. Not a tool you rent. We install a full content system into your business on one call — built, configured, producing — and you own it for good. Book a 15-minute fit call.">
+<link rel="canonical" href="https://nave.infinitxai.com/">
+<meta name="theme-color" content="#070908">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nave">
+<meta property="og:title" content="We install a complete content operation into your business — and you own it for good">
+<meta property="og:description" content="One day of your direction → a month of finished, published content. Installed with you, owned by you. Book a 15-minute fit call.">
+<meta property="og:url" content="https://nave.infinitxai.com/">
+<meta property="og:image" content="https://nave.infinitxai.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nave.infinitxai.com/assets/og.png">
+<link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What actually happens on the call?", "acceptedAnswer": { "@type": "Answer", "text": "I learn about you and where your business is, we confirm the system's a fit, and if it is, we install it together — live. You leave with it running." } },
+    { "@type": "Question", "name": "Do I need to be technical?", "acceptedAnswer": { "@type": "Answer", "text": "No. It installs into Claude Code and we configure it with you. If you can drop a file in a folder, you can run it." } },
+    { "@type": "Question", "name": "Is there a monthly fee?", "acceptedAnswer": { "@type": "Answer", "text": "No. One-time investment, owned outright. It lives on your machine. Nothing recurring, nothing to cancel." } },
+    { "@type": "Question", "name": "Why is it a one-time price and not a subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Because you own it. I'm not renting you access — I'm installing a system into your business and handing you the keys." } }
+  ]
+}
+</script>
+<style>
+  :root{--orange:#FF7614}
+  .vpage{max-width:980px;margin:0 auto;padding:0 26px}
+  .vhero{text-align:center;padding:44px 0 0}
+  .veyebrow{display:inline-block;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin-bottom:18px}
+  .vh1{font-size:clamp(32px,5vw,58px);line-height:1.05;font-weight:800;color:var(--cream);letter-spacing:-.02em;margin:0 auto;max-width:20ch}
+  .vh1 i{font-family:'Newsreader',serif;font-style:italic;font-weight:400;color:var(--orange)}
+  .vsub{font-size:clamp(16px,2.1vw,19px);color:var(--cream-72);max-width:64ch;margin:20px auto 0;line-height:1.55}
+  .vslwrap{max-width:860px;margin:34px auto 0}
+  .vslplayer{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0d0c;box-shadow:0 30px 80px rgba(0,0,0,.5);cursor:pointer}
+  .vslplayer img.vslposter,.vslplayer video,.vslplayer iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+  .vslplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;border:0;background:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 36px rgba(0,0,0,.5);transition:transform .15s}
+  .vslplayer:hover .vslplay{transform:translate(-50%,-50%) scale(1.06)}
+  .vslplay span{border-left:26px solid #06140c;border-top:16px solid transparent;border-bottom:16px solid transparent;margin-left:7px}
+  .vslnote{position:absolute;left:0;right:0;bottom:0;padding:12px;text-align:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--cream-50);background:linear-gradient(transparent,rgba(7,9,8,.85))}
+  .vcta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#06140c;font-weight:800;font-size:18px;border-radius:12px;padding:16px 30px;text-decoration:none;margin-top:24px;transition:transform .15s,box-shadow .15s;box-shadow:0 10px 30px rgba(31,224,122,.18)}
+  .vcta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(31,224,122,.28)}
+  .vmicro{display:block;font-size:14px;color:var(--cream-50);margin-top:12px}
+  .vpending{display:none;font-size:13px;color:var(--orange);margin-top:8px;font-family:'DM Mono',monospace}
+  .proofbar{margin:30px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;font-family:'DM Mono',monospace;font-size:13.5px;color:var(--cream-72);text-align:center}
+  .proofbar b{color:var(--ink);font-weight:500}.proofbar .sep{color:var(--line)}
+  .vsec{padding:58px 0;border-bottom:1px solid var(--line)}
+  .vsec h2{font-size:clamp(25px,3.4vw,38px);line-height:1.1;font-weight:800;color:var(--cream);letter-spacing:-.01em;max-width:22ch}
+  .vsec h2 i{font-family:'Newsreader',serif;font-style:italic;font-weight:400;color:var(--orange)}
+  .vsec p{font-size:17px;line-height:1.65;color:var(--cream-72);max-width:64ch;margin-top:16px}
+  .vsec p b{color:var(--cream);font-weight:600}
+  .vsec .lead{font-size:19px;color:var(--cream)}
+  .funcs{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:2px;max-width:680px}
+  .funcs li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;padding:15px 0;border-bottom:1px solid rgba(31,224,122,.08);font-size:16.5px;color:var(--cream-72)}
+  .funcs li b{color:var(--ink);font-weight:600;min-width:108px;display:inline-block}
+  .steps{list-style:none;counter-reset:s;padding:0;margin:24px 0 0;max-width:660px}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:flex-start;padding:15px 0;border-bottom:1px solid rgba(31,224,122,.08);font-size:16.5px;color:var(--cream)}
+  .steps li::before{content:counter(s);font-family:'DM Mono',monospace;color:var(--ink);font-size:14px;border:1px solid var(--line);border-radius:8px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex:none}
+  .mathrow{display:grid;margin-top:22px;max-width:580px}
+  .mathrow div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(31,224,122,.1);font-size:16.5px;color:var(--cream-72)}
+  .mathrow div span{color:var(--cream);text-align:right}
+  .mathrow .tot{color:var(--cream);font-weight:600}
+  .mathrow .nave{color:var(--ink);font-weight:700;border-bottom:0;padding-top:18px;font-size:18px}.mathrow .nave span{color:var(--ink)}
+  .pricewrap{margin-top:24px;text-align:center;padding:26px;border:1px solid var(--line-strong);border-radius:14px;background:var(--glass)}
+  .pricewrap .was{color:var(--cream-50);text-decoration:line-through;font-size:16px}
+  .pricewrap .now{font-size:46px;font-weight:800;color:var(--cream);line-height:1}
+  .pricewrap .now small{display:block;font-size:14px;color:var(--ink);font-weight:500;font-family:'DM Mono',monospace;margin-top:8px;text-transform:uppercase;letter-spacing:.1em}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:24px}
+  @media(max-width:680px){.twocol{grid-template-columns:1fr}}
+  .quallist{list-style:none;padding:0;margin:0}
+  .quallist li{padding:11px 0 11px 28px;position:relative;font-size:16px;color:var(--cream);border-bottom:1px solid rgba(31,224,122,.07)}
+  .quallist.yes li::before{content:"✓";position:absolute;left:0;color:var(--ink);font-weight:700}
+  .quallist.no li::before{content:"✕";position:absolute;left:0;color:#ff7d7d}
+  .quallist.no li{color:var(--cream-72)}
+  .qualhead{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50);margin-bottom:10px}
+  .gbox{margin-top:24px;border:1px solid var(--line-strong);border-radius:14px;padding:24px;background:var(--glass)}
+  .gbox h3{color:var(--ink);font-size:18px;font-weight:700}.gbox p{margin-top:10px}
+  #twall{display:none}
+  #twall .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:26px}
+  #twall figure{margin:0;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:22px}
+  #twall .tres{font-size:18px;font-weight:700;color:var(--cream);line-height:1.3}
+  #twall blockquote{margin:12px 0 0;font-size:15.5px;line-height:1.55;color:var(--cream-72)}
+  #twall figcaption{margin-top:14px;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--ink)}
+  .faqwrap{max-width:720px;margin-top:24px}
+  .faqwrap details{border-bottom:1px solid var(--line);padding:18px 0}
+  .faqwrap summary{cursor:pointer;list-style:none;font-size:18px;font-weight:600;color:var(--cream);display:flex;justify-content:space-between;gap:16px}
+  .faqwrap summary::-webkit-details-marker{display:none}
+  .faqwrap summary::after{content:"+";color:var(--ink);font-weight:400}.faqwrap details[open] summary::after{content:"–"}
+  .faqwrap details p{font-size:16px;color:var(--cream-72);margin-top:12px;max-width:none}
+  .ctasec{text-align:center;border-bottom:1px solid var(--line)}.ctasec h2{margin:0 auto}.ctasec p{margin:16px auto 0}
+  .vfinal{text-align:center;padding:64px 0}.vfinal h2{margin:0 auto}
+  .vfoot{padding:40px 0;border-top:1px solid var(--line-strong);text-align:center;font-size:13px;color:var(--cream-50);line-height:1.7}
+  .vfoot .fb{font-weight:800;color:var(--cream);font-size:16px}
+  @media(max-width:640px){.vsec{padding:44px 0}}
+  /* ── Loom-style custom player ── */
+  .nplayer{position:relative;aspect-ratio:16/9;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#0a0d0c;box-shadow:0 30px 80px rgba(0,0,0,.5);cursor:pointer}
+  .nv-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;display:block}
+  .nv-unmute{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;background:rgba(7,9,8,.8);backdrop-filter:blur(6px);color:var(--cream);border:1px solid var(--line-strong);border-radius:999px;padding:14px 24px;font:600 16px/1 'Hanken Grotesk',sans-serif;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.5);transition:opacity .25s,transform .2s;z-index:4}
+  .nv-unmute svg{width:20px;height:20px}
+  .nv-unmute:hover{transform:translate(-50%,-50%) scale(1.05)}
+  .nplayer[data-muted="0"] .nv-unmute{opacity:0;pointer-events:none}
+  .nv-controls{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:14px;padding:13px 18px;background:linear-gradient(transparent,rgba(7,9,8,.92));opacity:0;transition:opacity .25s;z-index:3}
+  .nplayer:hover .nv-controls,.nplayer[data-state="paused"] .nv-controls{opacity:1}
+  .nv-ic{width:34px;height:34px;flex:none;display:flex;align-items:center;justify-content:center;background:none;border:0;color:var(--cream);cursor:pointer;padding:0;border-radius:8px;transition:color .15s}
+  .nv-ic:hover{color:var(--ink)} .nv-ic svg{width:22px;height:22px}
+  .nv-rate{width:auto;min-width:44px;padding:0 10px;font:600 14px/1 'DM Mono',monospace;border:1px solid var(--line);border-radius:8px}
+  .nv-rate:hover{border-color:var(--line-strong)}
+  .nv-seek{flex:1;height:6px;border-radius:4px;background:rgba(240,235,222,.16);position:relative;cursor:pointer}
+  .nv-buf{position:absolute;left:0;top:0;height:100%;width:0;background:rgba(240,235,222,.22);border-radius:4px}
+  .nv-fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--ink);border-radius:4px}
+  .nv-fill::after{content:"";position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:13px;height:13px;border-radius:50%;background:var(--ink);box-shadow:0 0 8px rgba(31,224,122,.6)}
+  .nv-time{font:500 13px/1 'DM Mono',monospace;color:var(--cream-72);flex:none;min-width:78px;text-align:right}
+</style>
+</head>
+<body>
+
+<div id="ctabar">
+  <span class="bartext">We install a complete content operation into your business — and you own it</span>
+  <a class="btn" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my fit call</a>
+</div>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/></g></svg>
+    <span class="w">Nave</span>
+  </a>
+  <div class="links"><a class="btn" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my fit call</a></div>
+</nav></div></header>
+
+<main>
+<section class="vhero">
+  <div class="vpage">
+    <span class="veyebrow">For business owners who know they should be posting — and aren't</span>
+    <h1 class="vh1">We install a complete content operation into your business in one call — <i>and you own it for good.</i></h1>
+    <p class="vsub">Not an agency you pay every month. Not another tool you rent. A full content system — built, installed, and handed to you — that turns one day of your direction into a month of finished, published content. You own it. It runs without you.</p>
+
+    <div class="vslwrap">
+      <div id="player" class="nplayer" data-state="loading" data-muted="1">
+        <video id="nv" class="nv-video" autoplay muted playsinline preload="auto" poster="assets/vsl-poster.jpg"></video>
+        <button id="nv-unmute" class="nv-unmute" aria-label="Unmute">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"/></svg>
+          Tap for sound
+        </button>
+        <div class="nv-controls">
+          <button id="nv-pp" class="nv-ic" aria-label="Play / pause"></button>
+          <div id="nv-seek" class="nv-seek"><div id="nv-buf" class="nv-buf"></div><div id="nv-fill" class="nv-fill"></div></div>
+          <span id="nv-time" class="nv-time">0:00</span>
+          <button id="nv-rate" class="nv-ic nv-rate" aria-label="Playback speed">1×</button>
+          <button id="nv-mute" class="nv-ic" aria-label="Mute / unmute"></button>
+          <button id="nv-fs" class="nv-ic" aria-label="Fullscreen"></button>
+        </div>
+      </div>
+    </div>
+
+    <a class="vcta" data-cta="CALL" data-fallback="apply.html" href="apply.html">Book my 15-minute fit call →</a>
+    <span class="vmicro">Limited installs each month. We'll see if it's a fit before anything else.</span>
+    <span class="vpending" data-pending-note>Booking opens shortly — meanwhile, <a href="/playbook" style="color:var(--ink)">grab the free playbook</a>.</span>
+
+  </div>
+</section>
+
+</main>
+
+<footer><div class="vpage vfoot">
+  <div class="fb">Nave — the content operating system you own.</div>
+  <div style="margin-top:6px">Built for Claude Code. · INFINITX · 2026</div>
+  <div style="margin-top:14px">Results shown are the founder's and clients' own. Not typical, and not a guarantee.</div>
+  <div style="margin-top:6px;font-family:'DM Mono',monospace;font-size:10.5px">Claude Code is a trademark of Anthropic, PBC. Independent product, not affiliated with Anthropic.</div>
+</div></footer>
+
+<script src="assets/links.js?v=20260621d"></script>
+<script>
+/* Loom-style custom player — autoplays WITH SOUND on load (muted fallback + first-gesture unmute); speed control */
+(function(){
+  var p=document.getElementById('player'); if(!p) return;
+  var v=document.getElementById('nv');
+  var file=''; try{ file=(window.NAVE_LINKS&&NAVE_LINKS.VSL_FILE)||''; }catch(_e){}
+  v.src=file||'assets/vsl.mp4';
+  v.playsInline=true;
+  var pp=document.getElementById('nv-pp'),seek=document.getElementById('nv-seek'),fill=document.getElementById('nv-fill'),buf=document.getElementById('nv-buf'),tEl=document.getElementById('nv-time'),muteBtn=document.getElementById('nv-mute'),fsBtn=document.getElementById('nv-fs'),unmute=document.getElementById('nv-unmute'),rateBtn=document.getElementById('nv-rate');
+  var I={play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',pause:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',vol:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>',mute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg>',fs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg>'};
+  pp.innerHTML=I.pause; muteBtn.innerHTML=I.mute; fsBtn.innerHTML=I.fs;
+  function fmt(s){s=Math.max(0,s|0);return (s/60|0)+':'+('0'+(s%60)).slice(-2);}
+  var userPaused=false, soundProbe=false;
+  function toggle(){ if(v.paused){ userPaused=false; v.play(); } else { userPaused=true; v.pause(); } }
+  // click the video: if it's still muted, the FIRST click turns sound on (keeps playing);
+  // once sound is on, clicking pauses / plays.
+  v.addEventListener('click',function(){ if(v.muted){ setMute(false); userPaused=false; v.play().catch(function(){}); } else { toggle(); } });
+  pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  v.addEventListener('play',function(){ userPaused=false; pp.innerHTML=I.pause; p.dataset.state='playing'; });
+  v.addEventListener('pause',function(){ pp.innerHTML=I.play; p.dataset.state='paused';
+    if(!userPaused && !v.ended && !soundProbe){ v.play().catch(function(){}); } });   // keep playing through scroll/anything but a real click
+  v.addEventListener('timeupdate',function(){var d=v.duration||1;fill.style.width=(v.currentTime/d*100)+'%';tEl.textContent=fmt(v.currentTime)+' / '+fmt(d);if(v.buffered.length)buf.style.width=(v.buffered.end(v.buffered.length-1)/d*100)+'%';});
+  seek.addEventListener('click',function(e){e.stopPropagation();var r=seek.getBoundingClientRect();v.currentTime=Math.max(0,(e.clientX-r.left)/r.width)*(v.duration||0);});
+  function setMute(m){v.muted=m;p.dataset.muted=m?'1':'0';muteBtn.innerHTML=m?I.mute:I.vol;}
+  muteBtn.addEventListener('click',function(e){e.stopPropagation();setMute(!v.muted);});
+  unmute.addEventListener('click',function(e){e.stopPropagation();setMute(false);if(v.paused)v.play();});
+  var RATES=[1,1.25,1.5,2,3],ri=0;
+  rateBtn.addEventListener('click',function(e){e.stopPropagation();ri=(ri+1)%RATES.length;v.playbackRate=RATES[ri];rateBtn.textContent=(RATES[ri]%1?RATES[ri]:RATES[ri]+'')+'×';});
+  fsBtn.addEventListener('click',function(e){e.stopPropagation();if(document.fullscreenElement){document.exitFullscreen();}else if(p.requestFullscreen){p.requestFullscreen();}});
+  v.onerror=function(){p.innerHTML='<img src="assets/vsl-poster.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" alt=""><span style="position:absolute;left:0;right:0;bottom:0;padding:12px;text-align:center;font-family:\'DM Mono\',monospace;font-size:12px;color:var(--cream-50);background:linear-gradient(transparent,rgba(7,9,8,.85))">Couldn\'t load the video — book a call and I\'ll show you live.</span>';};
+  // Autoplay WITH SOUND when the browser allows it (visitors it trusts — e.g. returning visitors
+  // who've engaged with the page). If sound-autoplay is blocked, fall back to muted autoplay (always
+  // allowed) and the first click on the video turns the sound on. We never unmute on scroll (that
+  // pauses the video), so it keeps playing as you scroll; the pause handler resumes any non-user pause.
+  // The <video> tag carries autoplay+muted, so it muted-autoplays reliably & promptly. Once it's
+  // playing we PROBE for sound: unmute, and if the browser blocks it (untrusted visitor) the video
+  // pauses — we catch that and revert to muted so it KEEPS PLAYING. Trusted/returning visitors keep
+  // the sound on. We never unmute on scroll (that pauses it). First click on the video also unmutes.
+  function probeSound(){
+    if(!v.muted) return;
+    soundProbe=true; v.muted=false; p.dataset.muted='0'; muteBtn.innerHTML=I.vol;
+    setTimeout(function(){
+      soundProbe=false;
+      if(v.paused){ setMute(true); if(!userPaused) v.play().catch(function(){}); }  // blocked -> back to muted, keep playing
+      else { setMute(false); }                                                      // sound stayed on (trusted visitor)
+    }, 120);
+  }
+  v.addEventListener('playing', function _pl(){ v.removeEventListener('playing',_pl); probeSound(); });
+  // safety net: if the autoplay attribute didn't kick in, start it muted ourselves
+  var started=false;
+  function go(){ if(started)return; started=true; if(v.paused){ v.muted=true; setMute(true); v.play().catch(function(){ p.dataset.state='paused'; pp.innerHTML=I.play; }); } }
+  v.addEventListener('canplay',go,{once:true});
+  setTimeout(go,1200);
+})();
+</script>
+</body>
+</html>
