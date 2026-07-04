@@ -46,6 +46,14 @@
   code.inl{font-family:'DM Mono',monospace;font-size:13.5px;background:#05140d;border:1px solid var(--line);border-radius:5px;padding:2px 6px;color:#d7f7e6}
   .note{font-size:14px;color:var(--cream-50);margin-top:14px}
   footer{padding:30px 0 48px;text-align:center;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50)}
+  .field{margin:0 0 14px}
+  .field label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50);margin-bottom:6px}
+  .field input{width:100%;background:#05140d;border:1px solid var(--line);border-radius:8px;padding:12px 14px;color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:15.5px;outline:none}
+  .field input:focus{border-color:rgba(31,224,122,.55)}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+  .submit{background:var(--green);color:#06140C;border:none;border-radius:8px;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:13px 26px;cursor:pointer}
+  .submit:hover{filter:brightness(1.08)}
+  .okmsg{display:none;border:1px solid rgba(31,224,122,.5);border-radius:10px;padding:16px 18px;color:#d7f7e6;font-size:15.5px;margin-top:14px}
 </style>
 </head>
 <body>
@@ -57,60 +65,63 @@
 </div></header>
 
 <main><div class="wrap">
-  <span class="eyebrow">Payment confirmed — you're in</span>
-  <h1>Welcome aboard <i>Nave.</i></h1>
-  <p class="lede">Your whole content crew, in one ship. Install it with one command — or download the full system and run it yourself.</p>
+  <span class="eyebrow">Members — get your key</span>
+  <h1>Get access to <i>Nave.</i></h1>
+  <p class="lede">The Content OS is member-only. Three steps: request your key, accept the invite, run one line. Usually same-day.</p>
 
-  <div class="sectlabel">Option 1 · one command (recommended)</div>
+  <div class="sectlabel">Step 1 · request access</div>
   <div class="pane">
-    <div class="tabs">
-      <button class="tab on" data-os="unix">macOS / Linux</button>
-      <button class="tab" data-os="win">Windows</button>
-    </div>
-    <div class="codewrap" data-pane="unix">
-      <pre id="cmd-unix">curl -fsSL https://nave.infinitxai.com/install.sh | bash</pre>
-      <button class="copy" data-target="cmd-unix">Copy</button>
-    </div>
-    <div class="codewrap hide" data-pane="win">
-      <pre id="cmd-win">irm https://nave.infinitxai.com/install.ps1 | iex</pre>
-      <button class="copy" data-target="cmd-win">Copy</button>
-    </div>
-    <p class="note">Downloads the Content OS to <code class="inl">~/nave</code>, then runs the installer (system tools, render + reframe engines, and a verify-render so you know it works).</p>
+    <form id="accessForm" autocomplete="on">
+      <div class="field"><label for="af-name">Your name</label><input id="af-name" name="name" type="text" placeholder="First name is fine"></div>
+      <div class="field"><label for="af-email">The email you joined the community with</label><input id="af-email" name="email" type="email" required placeholder="you@example.com"></div>
+      <div class="field"><label for="af-gh">Your GitHub username</label><input id="af-gh" name="github" type="text" required placeholder="e.g. kikemarqx"></div>
+      <div class="hp"><label>Company website<input name="company_website" type="text" tabindex="-1"></label></div>
+      <button class="submit" type="submit">Request my key &rarr;</button>
+      <div class="okmsg" id="af-ok">&#9989; Request received. Your GitHub invite lands by email &mdash; usually same day. Accept it, then come back for step 3.</div>
+    </form>
+    <p class="note" style="margin-top:14px">No GitHub account yet? <a href="https://github.com/signup" style="color:#7ce8af">Create one free</a> (2 minutes), then submit.</p>
   </div>
 
-  <div class="or">— or —</div>
-
-  <div class="sectlabel" style="margin-top:0">Option 2 · download the whole system</div>
+  <div class="sectlabel">Step 2 · accept the invite</div>
   <div class="pane">
-    <a class="btn" href="https://github.com/infinitx-hq/nave-site/releases/download/content-os-v1/nave-content-os.zip">⬇ Download Nave Content OS <small>(.zip)</small></a>
-    <p class="note">Unzip it, then run <code class="inl">./install.sh</code> (Mac/Linux) or <code class="inl">./install.ps1</code> (Windows) inside the <code class="inl">nave</code> folder. It's yours — forkable, no monthly tool credits.</p>
+    <p style="font-size:15.5px;color:var(--cream-70)">You'll get an email from GitHub: <b style="color:var(--cream)">"infinitx-hq invited you to nave-members."</b> Open it, click <b style="color:var(--cream)">Join</b>. That invite is your member key &mdash; access follows your membership.</p>
+  </div>
+
+  <div class="sectlabel">Step 3 · install &mdash; one line, any machine</div>
+  <div class="pane">
+    <div class="codewrap">
+      <pre id="cmd-install">npx github:infinitx-hq/nave</pre>
+      <button class="copy" data-target="cmd-install">Copy</button>
+    </div>
+    <p class="note">Run it from your project folder (VS Code terminal or the Claude Code panel). It merges the whole crew in &mdash; <b>your existing files always win</b> &mdash; and writes a manifest of everything it did. Then system tools: <code class="inl">./install.ps1</code> (Windows) or <code class="inl">./install.sh</code> (Mac/Linux), and say hello: <code class="inl">/nave:start</code>.</p>
   </div>
 
   <h2>What you just got</h2>
   <ul class="crew">
-    <li><b>🎬 Editor</b> — face-tracked 9:16 reframes + premium captioned edits</li>
-    <li><b>📡 Publisher &amp; Manager</b> — multi-platform scheduling + comment/DM automation</li>
-    <li><b>✍️ Copywriter</b> — captions, hooks, scripts, repurposing (humanized)</li>
-    <li><b>🧭 Content coach</b> — planning, review, what to make next</li>
-    <li><b>🔭 Footage intelligence</b> — reads every clip into one library</li>
-    <li><b>🔭 Competitor scout</b> — what's working in your niche right now</li>
-    <li><b>🎞️ Format Studio</b> — a specialist agent per format (spotlight, montage, carousel…)</li>
+    <li><b>&#127916; Editor</b> &mdash; face-tracked 9:16 reframes + premium captioned edits</li>
+    <li><b>&#128225; Publisher &amp; Manager</b> &mdash; multi-platform scheduling + comment/DM automation</li>
+    <li><b>&#9997;&#65039; Copywriter</b> &mdash; captions, hooks, scripts, repurposing (humanized)</li>
+    <li><b>&#129517; Content coach</b> &mdash; planning, review, what to make next</li>
+    <li><b>&#128301; Footage intelligence</b> &mdash; reads every clip into one library</li>
+    <li><b>&#128301; Competitor scout</b> &mdash; what's working in your niche right now</li>
+    <li><b>&#127902;&#65039; Format Studio</b> &mdash; a specialist agent per format (spotlight, montage, carousel&hellip;)</li>
   </ul>
 
   <h2>Get running in ~30 minutes</h2>
   <ol class="steps">
-    <li><b>Install</b> — run the one-liner above (or download + run the installer).</li>
-    <li><b>Add your keys</b> to <code class="inl">.env</code>: <code class="inl">ASSEMBLYAI_API_KEY</code> (transcription) and <code class="inl">ZERNIO_API_KEY</code> + <code class="inl">ZERNIO_PROFILE_ID</code> (publishing + DMs). You pay those vendors directly — no markup.</li>
-    <li><b>Set Nave up for your brand</b> — open Claude Code in the <code class="inl">nave</code> folder and say: <i>"Set up Nave for my brand."</i> A ~5-min interview writes your brand profile; the whole crew reads it.</li>
-    <li><b>Make a month of content</b> — say: <i>"Make a month of content from this video: &lt;url&gt;"</i>. The crew stages everything for your review.</li>
-    <li><b>Ship it</b> — review, then say <i>"schedule it."</i> Done.</li>
+    <li><b>Install</b> &mdash; the one line above, then the tools installer.</li>
+    <li><b>Add your keys</b> to <code class="inl">.env</code>: <code class="inl">ASSEMBLYAI_API_KEY</code> (the ears) &middot; <code class="inl">ZERNIO_API_KEY</code> + <code class="inl">ZERNIO_PROFILE_ID</code> (the publisher) &middot; <code class="inl">KIE_API_KEY</code> (AI generation). You pay those vendors directly &mdash; no markup.</li>
+    <li><b>Set Nave up for your brand</b> &mdash; say: <i>"Set up Nave for my brand."</i> A ~5-min interview; the crew researches the rest and you correct.</li>
+    <li><b>Make a month of content</b> &mdash; <i>"Make a month of content from this video: &lt;url&gt;"</i>. Everything stages for your review.</li>
+    <li><b>Ship it</b> &mdash; review, then <i>"schedule it."</i> Done.</li>
   </ol>
 
-  <p class="note" style="margin-top:34px">Stuck on install? Reply to your Stripe receipt email and I'll get you running — that's the Get-Running promise. Full walkthrough lives in <code class="inl">README.md</code> inside the download.</p>
+  <p class="note" style="margin-top:34px">Stuck anywhere? Run <code class="inl">npx github:infinitx-hq/nave check</code>, screenshot it, and post in the community &mdash; screenshots get answers fast. The repo's <code class="inl">TROUBLESHOOTING.md</code> covers the five usual suspects.</p>
 </div></main>
 
 <footer><div class="wrap">INFINITX — 2026 · build first · give first · own it</div></footer>
 
+<script src="assets/links.js"></script>
 <script>
 (function(){
   document.querySelectorAll('.tab').forEach(function(t){
@@ -130,8 +141,21 @@
       });
     });
   });
+  var f=document.getElementById('accessForm');
+  if(f){f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var payload={type:'nave-access-request',source:'access-page',
+      name:document.getElementById('af-name').value,
+      email:document.getElementById('af-email').value,
+      github_username:document.getElementById('af-gh').value,
+      company_website:f.querySelector('[name=company_website]').value,
+      page:location.href,ts:new Date().toISOString()};
+    try{fetch((window.NAVE_LINKS&&NAVE_LINKS.LEADS_ENDPOINT)||'https://ix-substrate-core-production.up.railway.app/leads',
+      {method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});}catch(_){}
+    document.getElementById('af-ok').style.display='block';
+    f.querySelector('.submit').disabled=true;f.querySelector('.submit').textContent='Requested \u2713';
+  });}
 })();
 </script>
-<script src="assets/links.js"></script>
 </body>
 </html>
