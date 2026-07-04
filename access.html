@@ -67,9 +67,8 @@
 <main><div class="wrap">
   <span class="eyebrow">Members — get your key</span>
   <h1>Get access to <i>Nave.</i></h1>
-  <p class="lede">The Content OS is member-only. Three steps: request your key, accept the invite, run one line. Usually same-day.</p>
+  <p class="lede">The Content OS is member-only. Request your key below &mdash; your GitHub invite goes out automatically.</p>
 
-  <div class="sectlabel">Step 1 · request access</div>
   <div class="pane">
     <form id="accessForm" autocomplete="on">
       <div class="field"><label for="af-name">Your name</label><input id="af-name" name="name" type="text" placeholder="First name is fine"></div>
@@ -77,46 +76,19 @@
       <div class="field"><label for="af-gh">Your GitHub username</label><input id="af-gh" name="github" type="text" required placeholder="e.g. kikemarqx"></div>
       <div class="hp"><label>Company website<input name="company_website" type="text" tabindex="-1"></label></div>
       <button class="submit" type="submit">Request my key &rarr;</button>
-      <div class="okmsg" id="af-ok">&#9989; Request received. Your GitHub invite lands by email &mdash; usually same day. Accept it, then come back for step 3.</div>
+      <div class="okmsg" id="af-ok">&#9989; Request received &mdash; your GitHub invite is on its way. Check the email on your GitHub account (usually within minutes), accept the invite, then head back to the install lesson in the community.</div>
     </form>
-    <p class="note" style="margin-top:14px">No GitHub account yet? <a href="https://github.com/signup" style="color:#7ce8af">Create one free</a> (2 minutes), then submit.</p>
+    <p class="note" style="margin-top:14px">No GitHub account yet? <a href="https://github.com/signup" style="color:#7ce8af">Create one free</a> (2 minutes), then come back and submit.</p>
   </div>
 
-  <div class="sectlabel">Step 2 · accept the invite</div>
+  <div class="sectlabel">What happens next</div>
   <div class="pane">
-    <p style="font-size:15.5px;color:var(--cream-70)">You'll get an email from GitHub: <b style="color:var(--cream)">"infinitx-hq invited you to nave-members."</b> Open it, click <b style="color:var(--cream)">Join</b>. That invite is your member key &mdash; access follows your membership.</p>
+    <ol class="steps">
+      <li><b>GitHub emails you an invite</b> &mdash; <i>"infinitx-hq invited you to nave-members."</i> That invite is your member key.</li>
+      <li><b>Accept it</b> &mdash; one click on <b style="color:var(--cream)">Join</b>.</li>
+      <li><b>Follow the install lesson</b> in the community &mdash; it walks you through everything from there.</li>
+    </ol>
   </div>
-
-  <div class="sectlabel">Step 3 · install &mdash; one line, any machine</div>
-  <div class="pane">
-    <div class="codewrap">
-      <pre id="cmd-install">npx github:infinitx-hq/nave</pre>
-      <button class="copy" data-target="cmd-install">Copy</button>
-    </div>
-    <p class="note">Run it from your project folder (VS Code terminal or the Claude Code panel). It merges the whole crew in &mdash; <b>your existing files always win</b> &mdash; and writes a manifest of everything it did. Then system tools: <code class="inl">./install.ps1</code> (Windows) or <code class="inl">./install.sh</code> (Mac/Linux), and say hello: <code class="inl">/nave:start</code>.</p>
-  </div>
-
-  <h2>What you just got</h2>
-  <ul class="crew">
-    <li><b>&#127916; Editor</b> &mdash; face-tracked 9:16 reframes + premium captioned edits</li>
-    <li><b>&#128225; Publisher &amp; Manager</b> &mdash; multi-platform scheduling + comment/DM automation</li>
-    <li><b>&#9997;&#65039; Copywriter</b> &mdash; captions, hooks, scripts, repurposing (humanized)</li>
-    <li><b>&#129517; Content coach</b> &mdash; planning, review, what to make next</li>
-    <li><b>&#128301; Footage intelligence</b> &mdash; reads every clip into one library</li>
-    <li><b>&#128301; Competitor scout</b> &mdash; what's working in your niche right now</li>
-    <li><b>&#127902;&#65039; Format Studio</b> &mdash; a specialist agent per format (spotlight, montage, carousel&hellip;)</li>
-  </ul>
-
-  <h2>Get running in ~30 minutes</h2>
-  <ol class="steps">
-    <li><b>Install</b> &mdash; the one line above, then the tools installer.</li>
-    <li><b>Add your keys</b> to <code class="inl">.env</code>: <code class="inl">ASSEMBLYAI_API_KEY</code> (the ears) &middot; <code class="inl">ZERNIO_API_KEY</code> + <code class="inl">ZERNIO_PROFILE_ID</code> (the publisher) &middot; <code class="inl">KIE_API_KEY</code> (AI generation). You pay those vendors directly &mdash; no markup.</li>
-    <li><b>Set Nave up for your brand</b> &mdash; say: <i>"Set up Nave for my brand."</i> A ~5-min interview; the crew researches the rest and you correct.</li>
-    <li><b>Make a month of content</b> &mdash; <i>"Make a month of content from this video: &lt;url&gt;"</i>. Everything stages for your review.</li>
-    <li><b>Ship it</b> &mdash; review, then <i>"schedule it."</i> Done.</li>
-  </ol>
-
-  <p class="note" style="margin-top:34px">Stuck anywhere? Run <code class="inl">npx github:infinitx-hq/nave check</code>, screenshot it, and post in the community &mdash; screenshots get answers fast. The repo's <code class="inl">TROUBLESHOOTING.md</code> covers the five usual suspects.</p>
 </div></main>
 
 <footer><div class="wrap">INFINITX — 2026 · build first · give first · own it</div></footer>
