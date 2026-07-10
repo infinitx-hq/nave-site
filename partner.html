@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nave — your AI-native content team · By application</title>
-<meta name="description" content="A private done-with-you engagement. We deploy an AI-native content team inside your business — strategy to engagement, systemized, run with you.">
+<meta name="description" content="There’s a version of your business where content ships itself. An AI-native content team, working inside your business — every stage systemized. By application.">
 <meta property="og:title" content="Nave — your AI-native content team · By application">
-<meta property="og:description" content="Your content department is about to land. AI-native, deployed inside your business, run with you.">
+<meta property="og:description" content="There’s a version of your business where content ships itself. An AI-native content team, inside your business. By application.">
 <meta property="og:image" content="https://nave.infinitxai.com/assets/partner-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
@@ -85,6 +85,8 @@
   .stg-name{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:25px;letter-spacing:.03em;color:var(--cream)}
   .stg-out{font-size:16.5px;line-height:1.6;color:var(--cream-72)}
   .stg-out b{color:var(--ink);font-weight:600}
+  .landedline{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(22px,3.2vw,38px);color:var(--cream);margin:44px 0 0}
+  .landedline em{font-style:normal;color:var(--ink)}
   @media(max-width:760px){.stg-row{grid-template-columns:1fr;gap:8px}.stg-n{padding-left:44px}}
 
   /* ── letter / for / airlock (quiet sections) ── */
@@ -117,9 +119,12 @@
   .appnote{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.7;color:var(--cream);margin:26px 0 36px;text-align:center}
   .appnote em{font-style:normal;color:var(--ink)}
   .afield{margin-bottom:18px}
+  .afield{counter-increment:fld}
   .afield label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50);margin-bottom:8px}
+  .afield label::before{content:"0" counter(fld) " \00b7  ";color:var(--ink)}
+  #pform{counter-reset:fld}
   .afield input,.afield textarea{width:100%;background:rgba(15,21,17,.7);border:1px solid var(--line);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;padding:14px 16px;outline:none;transition:border-color .15s}
-  .afield input:focus,.afield textarea:focus{border-color:var(--line-strong)}
+  .afield input:focus,.afield textarea:focus{border-color:var(--line-strong);box-shadow:0 0 0 1px rgba(31,224,122,.25),0 0 24px rgba(31,224,122,.08)}
   .afield textarea{min-height:110px;resize:vertical}
   .appfoot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px}
   .ok{border:1px solid var(--line-strong);background:linear-gradient(180deg,rgba(31,224,122,.08),rgba(15,21,17,.7));padding:44px 46px;display:none}
@@ -161,24 +166,24 @@
   <div class="starlayer" id="stars1"></div>
   <div class="starlayer" id="stars2"></div>
   <div class="wrap hero-in">
-    <div class="kwrap"><span class="k"><span class="dot"></span>Incoming &middot; a private engagement &middot; one business at a time</span></div>
+    <div class="kwrap"><span class="k"><span class="dot"></span>A private crossing &middot; one business at a time</span></div>
     <svg class="heroship" id="heroship" viewBox="0 0 512 448" style="width:120px"><use href="#px-ship"/></svg>
     <h1>
-      <span class="hl"><span>Your content department</span></span>
-      <span class="hl"><span><em>is about to land.</em></span></span>
+      <span class="hl"><span>There&rsquo;s a version of your business</span></span>
+      <span class="hl"><span><em>where content ships itself.</em></span></span>
     </h1>
-    <p class="herosub">Nave is an <b>AI-native content team</b> we deploy inside your business &mdash; and run with you. You direct. It produces. <b>Nothing posts without your OK.</b></p>
+    <p class="herosub">An <b>AI-native content team</b>, living inside your business &mdash; every stage of your content production, <b>systemized</b>. You direct. It ships. Nothing posts without your OK.</p>
   </div>
-  <div class="scrollcue">Scroll to begin descent<s>&darr;</s></div>
+  <div class="scrollcue">Begin the descent<s>&darr;</s></div>
 </section>
 
 <!-- ── SCENE 2 · THE DESCENT ── -->
 <section id="descent">
   <div class="stage" id="dstage">
     <svg id="dship" viewBox="0 0 512 448" style="width:150px"><use href="#px-ship"/></svg>
-    <div class="beat" id="beat1">We don&rsquo;t sell you <em>software.</em></div>
-    <div class="beat" id="beat2">We don&rsquo;t sell you <em>hours.</em></div>
-    <div class="beat" id="beat3">We deploy <em>a crew.</em></div>
+    <div class="beat" id="beat1">Up here, every post still waits on <em>you.</em></div>
+    <div class="beat" id="beat2">Where we&rsquo;re landing, <em>it doesn&rsquo;t.</em></div>
+    <div class="beat" id="beat3">A content team &mdash; <em>AI-native</em> &mdash; alive inside your business.</div>
     <div class="crewring" id="crewring">
       <span class="cw" style="--c:#1FE07A;left:12%;top:22%"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><i>strategist</i></span>
       <span class="cw" style="--c:#6C9BF0;left:6%;top:58%"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><i>copywriter</i></span>
@@ -197,8 +202,8 @@
   <div class="stage" id="istage">
     <div class="inst-head">
       <span class="k">AI-native &middot; not AI-assisted</span>
-      <h2>Installed <em>inside</em> your business.</h2>
-      <p class="inst-sub">Agencies bolt AI onto people. Here the department <b style="color:var(--cream)">is</b> the AI &mdash; built around your brand, wired to your platforms, directed with you.</p>
+      <h2>Your content production &mdash; <em>systemized.</em></h2>
+      <p class="inst-sub">Not advice. Not another tool. A working system built around <b style="color:var(--cream)">your brand</b>, wired to <b style="color:var(--cream)">your platforms</b> &mdash; run with you until it runs itself.</p>
     </div>
     <div class="term">
       <div class="bar"><b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b><span>your-business.os — installing</span></div>
@@ -216,7 +221,7 @@
 <section id="month">
   <div class="groundimg" id="groundimg"></div>
   <div class="wrap" style="position:relative">
-    <span class="k">Touchdown &middot; what gets systemized</span>
+    <span class="k">Touchdown &middot; your new default</span>
     <h2>Then the month <em>runs itself.</em></h2>
     <div class="stages">
       <div class="beamline"><i id="beamfill"></i></div>
@@ -227,6 +232,7 @@
       <div class="stg-row fade"><span class="stg-n">05</span><span class="stg-name">Distribution</span><span class="stg-out"><b>The month auto-scheduled</b> across your platforms &mdash; captions native to each.</span></div>
       <div class="stg-row fade"><span class="stg-n">06</span><span class="stg-name">Engagement</span><span class="stg-out">Inbox handled, comments answered &mdash; <b>every post feeds next month&rsquo;s plan.</b></span></div>
     </div>
+    <p class="landedline">This is the version of your business <em>you just landed in.</em></p>
     <p class="privline" style="margin-top:18px">Currently running for brands in home services, custom cabinetry and youth sports. We keep client names between us &mdash; yours will be too.</p>
   </div>
 </section>
@@ -269,6 +275,7 @@
 <!-- ── AIRLOCK · THE APPLICATION ── -->
 <section class="sect" id="airlock">
   <div class="wrap">
+    <div style="text-align:center;margin-bottom:18px"><span class="k"><span class="dot"></span>Step into it</span></div>
     <svg class="lockship" viewBox="0 0 512 448" style="width:92px"><use href="#px-ship"/></svg>
     <div class="lockbeam"></div>
     <h2>The airlock is open &mdash; <em>for a few.</em></h2>
