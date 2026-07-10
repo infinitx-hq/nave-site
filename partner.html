@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nave — your AI-native content team · By application</title>
+<meta name="description" content="A private done-with-you engagement. We become your growth partner and systemize your content production — strategy to engagement — with an AI agent crew built for your business.">
+<meta property="og:title" content="Nave — your AI-native content team · By application">
+<meta property="og:description" content="We become your growth partner. Your content production — systemized, AI-native, run with you.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;600;700&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .k{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+  .k .dot{display:inline-block;width:7px;height:7px;background:var(--ink);margin-right:10px;animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .phero{padding:130px 0 96px;text-align:left}
+  .phero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,6.4vw,88px);line-height:1.04;letter-spacing:.008em;color:var(--cream);margin:26px 0 0;max-width:900px}
+  .phero h1 em{font-style:normal;color:var(--ink)}
+  .plede{font-size:19px;line-height:1.75;color:var(--cream-72);max-width:640px;margin:30px 0 0}
+  .plede b{color:var(--cream);font-weight:600}
+  .applyrow{margin-top:44px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .privline{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--cream-50)}
+  .sect{padding:84px 0}
+  .letter{font-family:'Newsreader',Georgia,serif;font-size:22px;line-height:1.8;color:var(--cream);max-width:720px}
+  .letter em{color:var(--ink);font-style:normal}
+  .letter .sig{display:block;margin-top:26px;font-size:17px;color:var(--cream-50)}
+  .stages{margin-top:8px}
+  .stg-row{display:grid;grid-template-columns:64px 300px 1fr;gap:26px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line)}
+  .stg-row:last-child{border-bottom:1px solid var(--line)}
+  .stg-n{font-family:'DM Mono',monospace;font-size:13px;color:var(--ink)}
+  .stg-name{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:24px;letter-spacing:.03em;color:var(--cream)}
+  .stg-out{font-size:16.5px;line-height:1.6;color:var(--cream-72)}
+  .stg-out b{color:var(--ink);font-weight:600}
+  @media(max-width:760px){.stg-row{grid-template-columns:44px 1fr;gap:12px}.stg-out{grid-column:2}}
+  .band{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(15,21,17,.6));padding:54px 56px;position:relative}
+  .band::before{content:"";position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+  .band::after{content:"";position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink)}
+  .band h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400;font-size:34px;color:var(--cream);margin:14px 0 0}
+  .band h2 em{font-style:normal;color:var(--ink)}
+  .band p{font-size:17px;line-height:1.75;color:var(--cream-72);max-width:680px;margin:18px 0 0}
+  .bandchips{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .bandchips span{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1px dashed rgba(31,224,122,.4);padding:8px 13px}
+  .crewline{display:flex;gap:34px;align-items:flex-end;margin-top:38px;opacity:.75;flex-wrap:wrap}
+  .cm{display:flex;flex-direction:column;align-items:center;gap:7px}
+  .cm svg{width:30px;height:26px;filter:drop-shadow(0 0 8px var(--c))}
+  .cm i{font-style:normal;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+  .forgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px}
+  @media(max-width:760px){.forgrid{grid-template-columns:1fr}}
+  .forcol{border:1px solid var(--line);padding:34px 36px}
+  .forcol.no{opacity:.72}
+  .forcol h3{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 18px}
+  .forcol.yes h3{color:var(--ink)}
+  .forcol.no h3{color:var(--cream-50)}
+  .forcol ul{list-style:none;margin:0;padding:0}
+  .forcol li{font-size:16px;line-height:1.55;color:var(--cream-72);padding:10px 0 10px 24px;position:relative;border-top:1px solid var(--line)}
+  .forcol li:first-child{border-top:0}
+  .forcol.yes li::before{content:"→";position:absolute;left:0;color:var(--ink)}
+  .forcol.no li::before{content:"×";position:absolute;left:0;color:var(--cream-50)}
+  .appwrap{max-width:680px}
+  .appnote{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.7;color:var(--cream);margin:16px 0 34px}
+  .appnote em{font-style:normal;color:var(--ink)}
+  .afield{margin-bottom:18px}
+  .afield label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50);margin-bottom:8px}
+  .afield input,.afield textarea,.afield select{width:100%;background:rgba(15,21,17,.7);border:1px solid var(--line);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;padding:14px 16px;outline:none;transition:border-color .15s}
+  .afield input:focus,.afield textarea:focus,.afield select:focus{border-color:var(--line-strong)}
+  .afield textarea{min-height:110px;resize:vertical}
+  .appfoot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px}
+  .ok{border:1px solid var(--line-strong);background:linear-gradient(180deg,rgba(31,224,122,.08),rgba(15,21,17,.7));padding:44px 46px;display:none}
+  .ok h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;color:var(--cream);margin:0}
+  .ok h3 em{font-style:normal;color:var(--ink)}
+  .ok p{font-size:16.5px;line-height:1.7;color:var(--cream-72);margin:14px 0 0}
+  .fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .fade.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+  <symbol id="px-scout" viewBox="0 0 24 20"><rect x="11" y="0" width="2" height="2"/><rect x="7" y="2" width="10" height="2"/><rect x="7" y="4" width="2" height="2"/><rect x="11" y="4" width="2" height="2"/><rect x="15" y="4" width="2" height="2"/><rect x="7" y="6" width="10" height="2"/><rect x="5" y="8" width="14" height="4"/><rect x="7" y="12" width="2" height="2"/><rect x="15" y="12" width="2" height="2"/><rect x="5" y="14" width="2" height="2"/><rect x="17" y="14" width="2" height="2"/></symbol>
+  <symbol id="px-writer" viewBox="0 0 24 20"><rect x="9" y="0" width="6" height="2"/><rect x="9" y="2" width="6" height="8"/><rect x="9" y="10" width="6" height="2"/><rect x="10" y="12" width="4" height="2"/><rect x="11" y="14" width="2" height="2"/><rect x="4" y="17" width="4" height="2"/><rect x="10" y="17" width="4" height="2"/><rect x="16" y="17" width="3" height="2"/></symbol>
+  <symbol id="px-cam" viewBox="0 0 24 20"><rect x="4" y="1" width="5" height="4"/><rect x="13" y="1" width="5" height="4"/><rect x="3" y="6" width="18" height="9"/><rect x="8" y="8" width="8" height="6" opacity=".3"/><rect x="10" y="10" width="4" height="2"/><rect x="7" y="15" width="2" height="4"/><rect x="15" y="15" width="2" height="4"/></symbol>
+  <symbol id="px-cut" viewBox="0 0 24 20"><rect x="4" y="1" width="2" height="2"/><rect x="6" y="3" width="2" height="2"/><rect x="8" y="5" width="2" height="2"/><rect x="16" y="1" width="2" height="2"/><rect x="14" y="3" width="2" height="2"/><rect x="12" y="5" width="2" height="2"/><rect x="10" y="7" width="4" height="2"/><rect x="8" y="9" width="2" height="2"/><rect x="14" y="9" width="2" height="2"/><rect x="5" y="11" width="4" height="2"/><rect x="4" y="13" width="3" height="3"/><rect x="15" y="11" width="4" height="2"/><rect x="17" y="13" width="3" height="3"/></symbol>
+  <symbol id="px-brush" viewBox="0 0 24 20"><rect x="10" y="0" width="4" height="7"/><rect x="9" y="7" width="6" height="2"/><rect x="9" y="9" width="6" height="4"/><rect x="10" y="13" width="4" height="2"/><rect x="11" y="17" width="2" height="2"/><rect x="4" y="15" width="2" height="2"/><rect x="18" y="14" width="2" height="2"/></symbol>
+  <symbol id="px-dish" viewBox="0 0 24 20"><rect x="3" y="2" width="2" height="2"/><rect x="19" y="2" width="2" height="2"/><rect x="6" y="4" width="2" height="2"/><rect x="16" y="4" width="2" height="2"/><rect x="11" y="1" width="2" height="4"/><rect x="9" y="5" width="6" height="2"/><rect x="11" y="7" width="2" height="8"/><rect x="9" y="10" width="2" height="2"/><rect x="13" y="10" width="2" height="2"/><rect x="7" y="12" width="2" height="2"/><rect x="15" y="12" width="2" height="2"/><rect x="7" y="15" width="10" height="2"/><rect x="5" y="17" width="14" height="2"/></symbol>
+  <symbol id="px-mail" viewBox="0 0 24 20"><rect x="3" y="4" width="18" height="2"/><rect x="3" y="6" width="2" height="10"/><rect x="19" y="6" width="2" height="10"/><rect x="3" y="16" width="18" height="2"/><rect x="5" y="6" width="2" height="2"/><rect x="17" y="6" width="2" height="2"/><rect x="7" y="8" width="2" height="2"/><rect x="15" y="8" width="2" height="2"/><rect x="9" y="10" width="2" height="2"/><rect x="13" y="10" width="2" height="2"/><rect x="11" y="12" width="2" height="2"/></symbol>
+  <symbol id="px-bars" viewBox="0 0 24 20"><rect x="3" y="12" width="4" height="7"/><rect x="10" y="7" width="4" height="12"/><rect x="17" y="3" width="4" height="16"/><rect x="17" y="0" width="2" height="2"/><rect x="20" y="1" width="2" height="2"/></symbol>
+</svg>
+
+<header><div class="wrap"><nav style="display:flex;justify-content:space-between;align-items:center;padding:14px 0">
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
+    <span class="w">Nave</span>
+  </a>
+  <span class="chrome dim">Private &middot; by application</span>
+</nav></div></header>
+
+<main>
+
+<section class="phero"><div class="wrap">
+  <span class="k"><span class="dot"></span>The done-with-you engagement &middot; by application only</span>
+  <h1>We become your <em>growth partner.</em></h1>
+  <p class="plede">An <b>AI-native content team</b>, installed inside your business. Your whole production &mdash; strategy to engagement &mdash; <b>systemized</b> around your brand, run with you, shipping every week. You direct it. It produces.</p>
+  <div class="applyrow">
+    <a class="btn" href="#apply">Apply for a seat &darr;</a>
+    <span class="privline">No call to book. No video to watch. One application.</span>
+  </div>
+</div></section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<section class="sect"><div class="wrap">
+  <span class="k">What this is</span>
+  <p class="letter" style="margin-top:26px">Most businesses don&rsquo;t have a content problem. They have a <em>production</em> problem &mdash; every post waits on a person, and every person has a ceiling. We install a crew of AI agents built around your brand, wire it to your platforms, and run it with you until content ships daily <em>without you carrying it.</em> The system is built for your business. The output is yours. The system is yours.
+  <span class="sig">&mdash; built and run by the team behind Nave</span></p>
+</div></section>
+
+<section class="sect" style="padding-top:0"><div class="wrap">
+  <span class="k">What gets systemized</span>
+  <div class="stages" style="margin-top:30px">
+    <div class="stg-row fade"><span class="stg-n">01</span><span class="stg-name">Strategy</span><span class="stg-out">Your pillars, angles and monthly plan &mdash; <b>decided with you, encoded into the system.</b></span></div>
+    <div class="stg-row fade"><span class="stg-n">02</span><span class="stg-name">Pre-production</span><span class="stg-out">Research, hooks and scripts <b>auto-drafted in your voice</b> &mdash; you approve, you don&rsquo;t write.</span></div>
+    <div class="stg-row fade"><span class="stg-n">03</span><span class="stg-name">Production</span><span class="stg-out">Footage in, finished pieces out &mdash; b-roll, images and covers <b>auto-generated on brand.</b></span></div>
+    <div class="stg-row fade"><span class="stg-n">04</span><span class="stg-name">Post-production</span><span class="stg-out"><b>Auto-edited to publish-ready</b> &mdash; cuts, captions, reframes, carousels.</span></div>
+    <div class="stg-row fade"><span class="stg-n">05</span><span class="stg-name">Distribution</span><span class="stg-out"><b>The month auto-scheduled</b> across your platforms &mdash; captions native to each.</span></div>
+    <div class="stg-row fade"><span class="stg-n">06</span><span class="stg-name">Engagement</span><span class="stg-out">Inbox handled, comments answered &mdash; <b>every post feeds next month&rsquo;s plan.</b></span></div>
+  </div>
+  <p class="privline" style="margin-top:18px">Nothing posts without your OK. Ever.</p>
+</div></section>
+
+<section class="sect" style="padding-top:10px"><div class="wrap">
+  <div class="band fade">
+    <span class="k">AI-native &middot; not AI-assisted</span>
+    <h2>Not an agency with AI <em>bolted on.</em></h2>
+    <p>Agencies sell you hours. Tools sell you software. This is neither: a crew of AI agents runs your production end to end, and we direct it with you &mdash; inside your business, on your brand rules, with your footage. When we leave, the department stays.</p>
+    <div class="bandchips"><span>An agent for every stage</span><span>Your brand, encoded</span><span>You own the system</span></div>
+    <div class="crewline">
+      <span class="cm" style="--c:#1FE07A"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><i>strategist</i></span>
+      <span class="cm" style="--c:#6C9BF0"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><i>copywriter</i></span>
+      <span class="cm" style="--c:#F2C94C"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><i>producer</i></span>
+      <span class="cm" style="--c:#D97757"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><i>editor</i></span>
+      <span class="cm" style="--c:#C08BF2"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><i>designer</i></span>
+      <span class="cm" style="--c:#EB5757"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><i>social media manager</i></span>
+      <span class="cm" style="--c:#2FD4C2"><svg viewBox="0 0 24 20" fill="#2FD4C2"><use href="#px-mail"/></svg><i>chat marketing agent</i></span>
+      <span class="cm" style="--c:#9BF06C"><svg viewBox="0 0 24 20" fill="#9BF06C"><use href="#px-bars"/></svg><i>analytics</i></span>
+    </div>
+  </div>
+  <p class="privline" style="margin-top:20px">Currently running for brands in home services, custom cabinetry and youth sports. We keep client names between us &mdash; yours will be too.</p>
+</div></section>
+
+<section class="sect" style="padding-top:10px"><div class="wrap">
+  <span class="k">Who this is for</span>
+  <div class="forgrid">
+    <div class="forcol yes fade">
+      <h3>For</h3>
+      <ul>
+        <li>Businesses already making money that need content shipped daily &mdash; without hiring a department.</li>
+        <li>Founders who can give one production day a month and want the rest carried.</li>
+        <li>Teams that want the system in-house &mdash; and to own it.</li>
+      </ul>
+    </div>
+    <div class="forcol no fade">
+      <h3>Not for</h3>
+      <ul>
+        <li>Anyone shopping for a cheap tool or a &ldquo;just post something&rdquo; agency.</li>
+        <li>Brands with nothing real to say and no one accountable for saying it.</li>
+        <li>Overnight-virality hunters.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="sect" id="apply" style="padding-top:20px"><div class="wrap">
+  <div class="appwrap">
+    <span class="k"><span class="dot"></span>The application</span>
+    <p class="appnote">We take on a <em>small number of partners per quarter</em> &mdash; the system is built by hand around each business, and we protect the ones we run. Every application is read personally. If there&rsquo;s a fit, you&rsquo;ll hear from us within 48 hours.</p>
+    <form id="pform">
+      <div class="afield"><label for="pf-name">Your name</label><input id="pf-name" name="name" type="text" required autocomplete="name"></div>
+      <div class="afield"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" required autocomplete="email"></div>
+      <div class="afield"><label for="pf-biz">Business name</label><input id="pf-biz" name="business" type="text" required></div>
+      <div class="afield"><label for="pf-web">Website or main social channel</label><input id="pf-web" name="website" type="text" required placeholder="https://"></div>
+      <div class="afield"><label for="pf-need">What should content do for your business in the next 90 days?</label><textarea id="pf-need" name="need" required></textarea></div>
+      <div class="appfoot">
+        <button class="btn" type="submit">Submit application &rarr;</button>
+        <span class="privline">Read personally. Answered within 48 hours if there&rsquo;s a fit.</span>
+      </div>
+    </form>
+    <div class="ok" id="pok">
+      <h3>Application <em>received.</em></h3>
+      <p>We read every application personally. If there&rsquo;s a fit for this quarter, you&rsquo;ll hear from us within 48 hours &mdash; from a person, not a sequence.</p>
+    </div>
+  </div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="pagechrome" style="display:flex;justify-content:space-between;padding:22px 0;border-top:1px solid var(--line)"><span class="chrome dim">INFINITX &mdash; 2026</span><span class="chrome dim"><a href="privacy.html" style="color:inherit">Privacy</a></span></div>
+</div></footer>
+
+<script src="assets/links.js"></script>
+<script>
+(function(){
+  /* fade-ins */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+
+  /* application submit -> substrate lead capture */
+  var form = document.getElementById('pform');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = function(n){ var el = form.querySelector('[name="' + n + '"]'); return el ? (el.value || '').trim() : ''; };
+    var email = v('email');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+      var el = form.querySelector('[name="email"]');
+      el.setCustomValidity('Enter a valid email address.'); el.reportValidity();
+      el.addEventListener('input', function h(){ el.setCustomValidity(''); el.removeEventListener('input', h); });
+      return;
+    }
+    var row = { source: 'partner-apply', name: v('name'), email: email, business: v('business'),
+                website: v('website'), need: v('need').slice(0, 1200), page: 'partner' };
+    try { if (window.naveCapture) window.naveCapture(row); } catch (_e) {}
+    form.style.display = 'none';
+    document.getElementById('pok').style.display = 'block';
+    try { document.getElementById('pok').scrollIntoView({behavior:'smooth', block:'center'}); } catch (_e) {}
+  });
+})();
+</script>
+</body>
+</html>
