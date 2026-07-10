@@ -52,7 +52,7 @@
   .tpw .hand{position:absolute;width:24px;height:20px;bottom:34%;filter:drop-shadow(0 0 8px var(--hc));animation:bob 1.5s ease-in-out infinite alternate}
   .tpw .hand.r{right:-20px}
   .tpw .hand.l{left:-20px;animation-delay:.4s}
-  #dground{position:absolute;left:0;right:0;bottom:0;height:38vh;background-size:cover;background-position:center bottom;opacity:0;pointer-events:none;image-rendering:pixelated;-webkit-mask-image:linear-gradient(180deg,transparent,black 35%);mask-image:linear-gradient(180deg,transparent,black 35%)}
+  #dground{position:absolute;left:0;right:0;bottom:0;height:44vh;background-size:cover;background-position:center;opacity:0;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,black 35%);mask-image:linear-gradient(180deg,transparent,black 35%)}
   .beat{position:absolute;left:0;right:0;text-align:center;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,5.4vw,68px);line-height:1.08;color:var(--cream);opacity:0;padding:0 26px;z-index:5}
   .beat em{font-style:normal;color:var(--ink)}
   .crewring{position:absolute;inset:0;pointer-events:none;z-index:5}
@@ -109,7 +109,7 @@
 
   /* ── proof · touchdown + logo marquee ── */
   #proof{position:relative;padding:150px 0 170px;background:#070908;text-align:center;overflow:hidden}
-  #proofsky{position:absolute;left:0;right:0;bottom:0;height:46%;background-size:cover;background-position:center bottom;opacity:.5;pointer-events:none;image-rendering:pixelated;-webkit-mask-image:linear-gradient(180deg,transparent,black 40%);mask-image:linear-gradient(180deg,transparent,black 40%)}
+  #proofsky{position:absolute;left:0;right:0;bottom:0;height:60%;background-size:cover;background-position:center;opacity:.28;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,black 40%);mask-image:linear-gradient(180deg,transparent,black 40%)}
   #proof h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,4.8vw,60px);line-height:1.08;color:var(--cream);margin:16px 0 0;position:relative}
   #proof h2 em{font-style:normal;color:var(--ink)}
   .mq{overflow:hidden;margin-top:52px;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,black 12%,black 88%,transparent);mask-image:linear-gradient(90deg,transparent,black 12%,black 88%,transparent)}
@@ -132,6 +132,9 @@
   .appwrap{max-width:760px;margin:0 auto}
   .appnote{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.7;color:var(--cream);margin:26px 0 40px;text-align:center}
   .appnote em{font-style:normal;color:var(--ink)}
+  .creds{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:-14px 0 38px}
+  .creds span{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--cream-72);border:1px dashed var(--line);padding:9px 15px}
+  .creds b{color:var(--ink);font-weight:500}
   .step{border:1px solid var(--line);background:rgba(10,13,11,.55);padding:30px 32px;margin-bottom:20px;position:relative}
   .step::before{content:"";position:absolute;top:-1px;left:-1px;width:10px;height:10px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
   .stephead{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
@@ -246,59 +249,55 @@
 <section id="stages">
   <div class="wrap">
     <span class="k">The content operating system</span>
-    <h2 style="font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,4.6vw,58px);color:var(--cream);margin:14px 0 8px">Every stage &mdash; <em style="font-style:normal;color:var(--ink)">named, owned, running.</em></h2>
+    <h2 style="font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,4.6vw,58px);color:var(--cream);margin:14px 0 8px">The processes of content &mdash; <em style="font-style:normal;color:var(--ink)">covered inside.</em></h2>
+    <p style="font-size:16.5px;line-height:1.65;color:var(--cream-72);max-width:560px;margin:10px 0 0">We empower you and your business &mdash; <b style="color:var(--cream)">your team included</b> &mdash; on every stage of content production.</p>
 
     <div class="srow fade">
       <div class="sinfo">
-        <span class="who">01 &middot; Strategy</span>
-        <h3>The Strategist</h3>
+        <span class="who">01 &middot; Business process</span>
+        <h3>Strategy</h3>
         <p>Your market, your voice, your pillars &mdash; turned into a <b>monthly plan you approve in minutes</b>, not meetings.</p>
         <div class="mout"><span>pillars</span><span>angles</span><span>monthly calendar</span></div>
-        <span class="sagent" style="--c:#1FE07A"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><i>your strategist</i></span>
       </div>
       <div class="vig" id="vig1"><div class="cal"></div><span class="vigchip">MONTH PLANNED ✓</span></div>
     </div>
 
     <div class="srow fade">
       <div class="sinfo">
-        <span class="who">02 &middot; Pre-production</span>
-        <h3>The Copywriter</h3>
-        <p>Hooks, scripts and captions <b>drafted in your voice</b> &mdash; grounded in what your audience already responds to, ready before you press record.</p>
+        <span class="who">02 &middot; Business process</span>
+        <h3>Pre-production</h3>
+        <p>Research, hooks, scripts and captions &mdash; <b>drafted in your voice</b>, ready before anyone presses record.</p>
         <div class="mout"><span>hooks</span><span>scripts</span><span>captions</span></div>
-        <span class="sagent" style="--c:#6C9BF0"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><i>your copywriter</i></span>
       </div>
       <div class="vig" id="vig2"><div class="tline hot" data-w="82%"></div><div class="tline" data-w="94%"></div><div class="tline" data-w="70%"></div><div class="tline" data-w="88%"></div><div class="tline" data-w="46%"></div><span class="tcur"></span></div>
     </div>
 
     <div class="srow fade">
       <div class="sinfo">
-        <span class="who">03 &middot; Production</span>
-        <h3>The Producer</h3>
+        <span class="who">03 &middot; Business process</span>
+        <h3>Production</h3>
         <p>Your footage in, finished pieces out. B-roll, covers and images <b>generated on brand</b> &mdash; one recording day becomes a month of material.</p>
         <div class="mout"><span>b-roll</span><span>covers</span><span>ai images</span></div>
-        <span class="sagent" style="--c:#F2C94C"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><i>your producer</i></span>
       </div>
       <div class="vig" id="vig3"><div class="frames"><div class="frame">&#9654;</div><div class="frame">&#9654;</div><div class="frame">&#9654;</div><div class="frame">&#9654;</div></div><div class="covercard">COVER</div></div>
     </div>
 
     <div class="srow fade">
       <div class="sinfo">
-        <span class="who">04 &middot; Post-production</span>
-        <h3>The Editor</h3>
-        <p>Cut, captioned, reframed and designed to <b>publish-ready</b> &mdash; reels, carousels and shorts, every format, every ratio.</p>
+        <span class="who">04 &middot; Business process</span>
+        <h3>Post-production</h3>
+        <p>Cutting, captioning, reframing and design &mdash; every piece <b>publish-ready</b>, every format, every ratio.</p>
         <div class="mout"><span>reels</span><span>carousels</span><span>shorts</span></div>
-        <span class="sagent" style="--c:#D97757"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><i>your editor</i></span>
       </div>
       <div class="vig" id="vig4"><div class="edtl"><div class="ph"></div><div class="cut" style="left:22%"></div><div class="cut" style="left:47%"></div><div class="cut" style="left:71%"></div></div><div style="margin-top:18px"><span class="capchunk" data-w="70px"></span><span class="capchunk" data-w="110px"></span><span class="capchunk" data-w="86px"></span></div></div>
     </div>
 
     <div class="srow fade">
       <div class="sinfo">
-        <span class="who">05 &middot; Distribution</span>
-        <h3>The Social Media Manager</h3>
+        <span class="who">05 &middot; Business process</span>
+        <h3>Distribution</h3>
         <p>The month <b>scheduled across every platform</b> &mdash; captions native to each, timed to when your audience is actually there.</p>
         <div class="mout"><span>auto-schedule</span><span>native captions</span><span>all platforms</span></div>
-        <span class="sagent" style="--c:#EB5757"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><i>your social media manager</i></span>
       </div>
       <div class="vig" id="vig5"><div class="distwrap">
         <div class="dcard"></div>
@@ -309,11 +308,10 @@
 
     <div class="srow fade">
       <div class="sinfo">
-        <span class="who">06 &middot; Engagement</span>
-        <h3>The Engagement Loop</h3>
+        <span class="who">06 &middot; Business process</span>
+        <h3>Engagement</h3>
         <p>Comments and DMs <b>answered in your voice</b>; analytics read every post and feed next month&rsquo;s plan &mdash; the system gets smarter as it runs.</p>
         <div class="mout"><span>inbox</span><span>replies</span><span>learning loop</span></div>
-        <span class="sagent" style="--c:#2FD4C2"><svg viewBox="0 0 24 20" fill="#2FD4C2"><use href="#px-mail"/></svg><i>your engagement + analytics</i></span>
       </div>
       <div class="vig" id="vig6">
         <div class="bub">Do you install this for e-commerce too?</div>
@@ -354,7 +352,12 @@
     <div class="lockbeam"></div>
     <h2>More consistency. More volume.<br><em>More speed. High quality.</em></h2>
     <div class="appwrap">
-      <p class="appnote">The team lands in a <em>small number of businesses per quarter</em> &mdash; every application is read personally. If there&rsquo;s a fit, you&rsquo;ll hear from us within 48 hours.</p>
+      <p class="appnote">First, we need to <em>know you and your business.</em> We&rsquo;re an AI-native human team with a proven system in place &mdash; and we land in a small number of businesses per quarter. Every application is read personally; if there&rsquo;s a fit, you&rsquo;ll hear from us within 48 hours.</p>
+      <div class="creds">
+        <span><b>3+ yrs</b> in the space</span>
+        <span><b>500+</b> people consulted with AI</span>
+        <span><b>1,000+</b> hours trained</span>
+      </div>
       <form id="pform">
         <input type="text" name="company_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
         <div class="step">
@@ -446,7 +449,7 @@
   });
 
   /* plates — pixel skyline for descent-end + proof; nebula unused this version */
-  [['dground','assets/partner/skyline.jpg'],['proofsky','assets/partner/skyline.jpg']].forEach(function(p){
+  [['dground','assets/partner/nebula_field.jpg'],['proofsky','assets/partner/nebula_field.jpg']].forEach(function(p){
     var img = new Image();
     img.onload = function(){ var el = document.getElementById(p[0]); if (el) el.style.backgroundImage = 'url(' + p[1] + ')'; };
     img.src = p[1];
@@ -591,7 +594,7 @@
      .to('#beat2', {autoAlpha: 0, y: -40, duration: 1}, 5.2);
     d.fromTo('#beat3', {autoAlpha: 0, scale: .9}, {autoAlpha: 1, scale: 1, duration: 1.4}, 6.0);
     d.fromTo('.cw', {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: 'back.out(2)', duration: .8, stagger: .28}, 6.6);
-    d.to('#dground', {autoAlpha: 1, duration: 2.4, ease: 'power1.out'}, 7.8);
+    d.to('#dground', {autoAlpha: .5, duration: 2.4, ease: 'power1.out'}, 7.8);
 
     /* proof skyline parallax */
     gsap.fromTo('#proofsky', {y: 50}, {y: -10, ease: 'none',
