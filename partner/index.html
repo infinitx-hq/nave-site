@@ -98,7 +98,9 @@
   .afield{margin-bottom:22px}
   .afield{counter-increment:fld}
   .afield label,.afield .glabel{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50);margin-bottom:10px}
-  .afield label::before,.afield .glabel::before{content:"0" counter(fld) " \00b7  ";color:var(--ink)}
+  .afield > label::before,.afield .glabel::before{content:"0" counter(fld) " \00b7  ";color:var(--ink)}
+  .afield .chip::before,.afield .chip span::before{content:none}
+  .grid2 .afield > label::before{content:"0" counter(fld) " \00b7  ";color:var(--ink)}
   #pform{counter-reset:fld}
   .afield input[type=text],.afield input[type=email],.afield textarea{width:100%;background:rgba(15,21,17,.7);border:1px solid var(--line);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;padding:14px 16px;outline:none;transition:border-color .15s}
   .afield input:focus,.afield textarea:focus{border-color:var(--line-strong);box-shadow:0 0 0 1px rgba(31,224,122,.25),0 0 24px rgba(31,224,122,.08)}
