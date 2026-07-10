@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nave — your AI-native content team · By application</title>
-<meta name="description" content="A private done-with-you engagement. We become your growth partner and systemize your content production — strategy to engagement — with an AI agent crew built for your business.">
+<meta name="description" content="A private done-with-you engagement. We deploy an AI-native content team inside your business — strategy to engagement, systemized, run with you.">
 <meta property="og:title" content="Nave — your AI-native content team · By application">
-<meta property="og:description" content="We become your growth partner. Your content production — systemized, AI-native, run with you.">
+<meta property="og:description" content="Your content department is about to land. AI-native, deployed inside your business, run with you.">
 <meta property="og:image" content="https://nave.infinitxai.com/assets/partner-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
@@ -14,43 +14,89 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;600;700&family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
+  html{scroll-behavior:auto}
+  body{overflow-x:hidden}
   .k{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
   .k .dot{display:inline-block;width:7px;height:7px;background:var(--ink);margin-right:10px;animation:pulse 2.6s ease-in-out infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-  .phero{padding:130px 0 96px;text-align:left}
-  .phero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,6.4vw,88px);line-height:1.04;letter-spacing:.008em;color:var(--cream);margin:26px 0 0;max-width:900px}
-  .phero h1 em{font-style:normal;color:var(--ink)}
-  .plede{font-size:19px;line-height:1.75;color:var(--cream-72);max-width:640px;margin:30px 0 0}
-  .plede b{color:var(--cream);font-weight:600}
-  .applyrow{margin-top:44px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
   .privline{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--cream-50)}
-  .sect{padding:84px 0}
-  .letter{font-family:'Newsreader',Georgia,serif;font-size:22px;line-height:1.8;color:var(--cream);max-width:720px}
-  .letter em{color:var(--ink);font-style:normal}
-  .letter .sig{display:block;margin-top:26px;font-size:17px;color:var(--cream-50)}
-  .stages{margin-top:8px}
-  .stg-row{display:grid;grid-template-columns:64px 300px 1fr;gap:26px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line)}
+
+  /* ── scene 1 · deep space ── */
+  #space{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  #spacebg{position:absolute;inset:0;background:#050706}
+  #spacebg video,#spacebg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+  #spacebg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(5,7,6,.1) 0%,rgba(5,7,6,.82) 90%)}
+  .starlayer{position:absolute;inset:-20% 0;pointer-events:none}
+  .starlayer i{position:absolute;width:2px;height:2px;background:rgba(240,235,222,.5);border-radius:50%}
+  .hero-in{position:relative;z-index:3;width:100%}
+  .heroship{display:block;margin:0 auto 34px;image-rendering:pixelated;fill:#1FE07A;filter:drop-shadow(0 0 26px rgba(31,224,122,.55))}
+  #space h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;text-align:center;font-size:clamp(46px,7.4vw,104px);line-height:1.03;color:var(--cream);margin:26px 0 0}
+  #space h1 em{font-style:normal;color:var(--ink)}
+  #space h1 .hl{display:block;overflow:hidden}
+  #space h1 .hl span{display:inline-block}
+  .herosub{text-align:center;font-size:19px;line-height:1.7;color:var(--cream-72);max-width:620px;margin:26px auto 0}
+  .herosub b{color:var(--cream)}
+  .kwrap{text-align:center}
+  .scrollcue{position:absolute;bottom:34px;left:0;right:0;text-align:center;z-index:3;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--cream-50)}
+  .scrollcue s{display:block;text-decoration:none;color:var(--ink);font-size:16px;margin-top:6px;animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(7px);opacity:1}}
+
+  /* ── scene 2 · the descent (pinned) ── */
+  #descent{position:relative;background:#050706}
+  .stage{height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  #dship{position:absolute;left:50%;top:-140px;transform:translateX(-50%);z-index:4;image-rendering:pixelated;fill:#1FE07A;filter:drop-shadow(0 0 24px rgba(31,224,122,.6))}
+  .beat{position:absolute;left:0;right:0;text-align:center;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(34px,5.6vw,72px);line-height:1.06;color:var(--cream);opacity:0;padding:0 26px}
+  .beat em{font-style:normal;color:var(--ink)}
+  .crewring{position:absolute;inset:0;pointer-events:none}
+  .cw{position:absolute;display:flex;flex-direction:column;align-items:center;gap:9px;opacity:0}
+  .cw svg{width:52px;height:45px;filter:drop-shadow(0 0 14px var(--c))}
+  .cw i{font-style:normal;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--c);text-align:center}
+  @media(max-width:760px){.cw svg{width:36px;height:31px}.cw i{font-size:9px}}
+
+  /* ── scene 3 · the install (pinned) ── */
+  #install{position:relative;background:#050706}
+  .inst-head{position:absolute;top:9vh;left:0;right:0;text-align:center;padding:0 26px}
+  .inst-head h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,4.6vw,58px);line-height:1.08;color:var(--cream);margin:14px 0 0}
+  .inst-head h2 em{font-style:normal;color:var(--ink)}
+  .inst-sub{font-size:16.5px;color:var(--cream-72);max-width:560px;margin:14px auto 0;line-height:1.6}
+  .term{width:min(680px,92vw);background:rgba(10,13,11,.92);border:1px solid var(--line-strong);box-shadow:0 0 70px rgba(31,224,122,.12),0 30px 70px rgba(0,0,0,.6)}
+  .term .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(17,21,19,.9)}
+  .term .bar b{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .term .bar span{margin-left:8px;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--cream-50)}
+  .term pre{margin:0;padding:22px 24px 8px;font-family:'DM Mono',monospace;font-size:14.5px;line-height:2.05;color:var(--cream-72);white-space:pre-wrap}
+  .term pre .ln{display:block;opacity:0}
+  .term pre .ok{color:var(--ink)}
+  .term pre .warn{color:#FF7614}
+  .pbar{margin:10px 24px 24px;height:8px;border:1px solid var(--line);position:relative}
+  .pbar i{position:absolute;inset:1px auto 1px 1px;width:0%;background:var(--ink);box-shadow:0 0 14px rgba(31,224,122,.6)}
+  .pbar span{position:absolute;right:0;top:-24px;font-family:'DM Mono',monospace;font-size:12px;color:var(--ink)}
+
+  /* ── scene 4 · the month runs ── */
+  #month{position:relative;padding:110px 0 90px;background:linear-gradient(180deg,#050706 0%,#070908 100%)}
+  #month .groundimg{position:absolute;left:0;right:0;bottom:0;height:52%;background-size:cover;background-position:center;opacity:.16;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,black 55%);mask-image:linear-gradient(180deg,transparent,black 55%)}
+  #month h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,5vw,62px);color:var(--cream);margin:14px 0 0}
+  #month h2 em{font-style:normal;color:var(--ink)}
+  .stages{margin-top:38px;position:relative}
+  .beamline{position:absolute;left:31px;top:0;bottom:0;width:2px;background:var(--line)}
+  .beamline i{position:absolute;left:0;top:0;width:2px;height:0%;background:var(--ink);box-shadow:0 0 12px rgba(31,224,122,.7)}
+  .stg-row{display:grid;grid-template-columns:64px 290px 1fr;gap:26px;align-items:baseline;padding:27px 0 27px 0;border-top:1px solid var(--line);position:relative}
   .stg-row:last-child{border-bottom:1px solid var(--line)}
-  .stg-n{font-family:'DM Mono',monospace;font-size:13px;color:var(--ink)}
-  .stg-name{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:24px;letter-spacing:.03em;color:var(--cream)}
+  .stg-n{font-family:'DM Mono',monospace;font-size:13px;color:var(--ink);padding-left:64px}
+  .stg-name{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:25px;letter-spacing:.03em;color:var(--cream)}
   .stg-out{font-size:16.5px;line-height:1.6;color:var(--cream-72)}
   .stg-out b{color:var(--ink);font-weight:600}
-  @media(max-width:760px){.stg-row{grid-template-columns:44px 1fr;gap:12px}.stg-out{grid-column:2}}
-  .band{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(15,21,17,.6));padding:54px 56px;position:relative}
-  .band::before{content:"";position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
-  .band::after{content:"";position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink)}
-  .band h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400;font-size:34px;color:var(--cream);margin:14px 0 0}
-  .band h2 em{font-style:normal;color:var(--ink)}
-  .band p{font-size:17px;line-height:1.75;color:var(--cream-72);max-width:680px;margin:18px 0 0}
-  .bandchips{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-  .bandchips span{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);border:1px dashed rgba(31,224,122,.4);padding:8px 13px}
-  .crewline{display:flex;gap:34px;align-items:flex-end;margin-top:38px;opacity:.75;flex-wrap:wrap}
-  .cm{display:flex;flex-direction:column;align-items:center;gap:7px}
-  .cm svg{width:30px;height:26px;filter:drop-shadow(0 0 8px var(--c))}
-  .cm i{font-style:normal;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+  @media(max-width:760px){.stg-row{grid-template-columns:1fr;gap:8px}.stg-n{padding-left:44px}}
+
+  /* ── letter / for / airlock (quiet sections) ── */
+  .sect{padding:96px 0;position:relative}
+  #letter{background:#070908}
+  #letter .nebimg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.14;pointer-events:none}
+  .letter{font-family:'Newsreader',Georgia,serif;font-size:22px;line-height:1.8;color:var(--cream);max-width:720px;position:relative}
+  .letter em{color:var(--ink);font-style:normal}
+  .letter .sig{display:block;margin-top:26px;font-size:17px;color:var(--cream-50)}
   .forgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px}
   @media(max-width:760px){.forgrid{grid-template-columns:1fr}}
-  .forcol{border:1px solid var(--line);padding:34px 36px}
+  .forcol{border:1px solid var(--line);padding:34px 36px;background:rgba(10,13,11,.5)}
   .forcol.no{opacity:.72}
   .forcol h3{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin:0 0 18px}
   .forcol.yes h3{color:var(--ink)}
@@ -60,21 +106,27 @@
   .forcol li:first-child{border-top:0}
   .forcol.yes li::before{content:"→";position:absolute;left:0;color:var(--ink)}
   .forcol.no li::before{content:"×";position:absolute;left:0;color:var(--cream-50)}
-  .appwrap{max-width:680px}
-  .appnote{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.7;color:var(--cream);margin:16px 0 34px}
+
+  /* ── airlock ── */
+  #airlock{background:radial-gradient(ellipse at 50% 0%,rgba(31,224,122,.07),transparent 55%),#050706}
+  .lockship{display:block;margin:0 auto 8px;image-rendering:pixelated;fill:#1FE07A;filter:drop-shadow(0 0 20px rgba(31,224,122,.5))}
+  .lockbeam{width:2px;height:64px;margin:0 auto 26px;background:linear-gradient(180deg,rgba(31,224,122,.8),transparent);box-shadow:0 0 12px rgba(31,224,122,.5)}
+  #airlock h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;text-align:center;font-size:clamp(32px,5vw,60px);color:var(--cream);margin:0}
+  #airlock h2 em{font-style:normal;color:var(--ink)}
+  .appwrap{max-width:680px;margin:0 auto}
+  .appnote{font-family:'Newsreader',Georgia,serif;font-size:20px;line-height:1.7;color:var(--cream);margin:26px 0 36px;text-align:center}
   .appnote em{font-style:normal;color:var(--ink)}
   .afield{margin-bottom:18px}
   .afield label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50);margin-bottom:8px}
-  .afield input,.afield textarea,.afield select{width:100%;background:rgba(15,21,17,.7);border:1px solid var(--line);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;padding:14px 16px;outline:none;transition:border-color .15s}
-  .afield input:focus,.afield textarea:focus,.afield select:focus{border-color:var(--line-strong)}
+  .afield input,.afield textarea{width:100%;background:rgba(15,21,17,.7);border:1px solid var(--line);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:16px;padding:14px 16px;outline:none;transition:border-color .15s}
+  .afield input:focus,.afield textarea:focus{border-color:var(--line-strong)}
   .afield textarea{min-height:110px;resize:vertical}
   .appfoot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:28px}
   .ok{border:1px solid var(--line-strong);background:linear-gradient(180deg,rgba(31,224,122,.08),rgba(15,21,17,.7));padding:44px 46px;display:none}
   .ok h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;color:var(--cream);margin:0}
   .ok h3 em{font-style:normal;color:var(--ink)}
   .ok p{font-size:16.5px;line-height:1.7;color:var(--cream-72);margin:14px 0 0}
-  .fade{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
-  .fade.in{opacity:1;transform:none}
+  .fade{opacity:0;transform:translateY(18px)}
 </style>
 </head>
 <body>
@@ -101,135 +153,268 @@
 
 <main>
 
-<section class="phero"><div class="wrap">
-  <span class="k"><span class="dot"></span>The done-with-you engagement &middot; by application only</span>
-  <h1>We become your <em>growth partner.</em></h1>
-  <p class="plede">An <b>AI-native content team</b>, installed inside your business. Your whole production &mdash; strategy to engagement &mdash; <b>systemized</b> around your brand, run with you, shipping every week. You direct it. It produces.</p>
-  <div class="applyrow">
-    <a class="btn" href="#apply">Apply for a seat &darr;</a>
-    <span class="privline">No call to book. No video to watch. One application.</span>
+<!-- ── SCENE 1 · DEEP SPACE ── -->
+<section id="space">
+  <div id="spacebg">
+    <img src="assets/partner-og.jpg" alt="" aria-hidden="true" id="bgposter">
   </div>
-</div></section>
-
-<div class="wrap"><hr class="rule"></div>
-
-<section class="sect"><div class="wrap">
-  <span class="k">What this is</span>
-  <p class="letter" style="margin-top:26px">Most businesses don&rsquo;t have a content problem. They have a <em>production</em> problem &mdash; every post waits on a person, and every person has a ceiling. We install a crew of AI agents built around your brand, wire it to your platforms, and run it with you until content ships daily <em>without you carrying it.</em> The system is built for your business. The output is yours. The system is yours.
-  <span class="sig">&mdash; built and run by the team behind Nave</span></p>
-</div></section>
-
-<section class="sect" style="padding-top:0"><div class="wrap">
-  <span class="k">What gets systemized</span>
-  <div class="stages" style="margin-top:30px">
-    <div class="stg-row fade"><span class="stg-n">01</span><span class="stg-name">Strategy</span><span class="stg-out">Your pillars, angles and monthly plan &mdash; <b>decided with you, encoded into the system.</b></span></div>
-    <div class="stg-row fade"><span class="stg-n">02</span><span class="stg-name">Pre-production</span><span class="stg-out">Research, hooks and scripts <b>auto-drafted in your voice</b> &mdash; you approve, you don&rsquo;t write.</span></div>
-    <div class="stg-row fade"><span class="stg-n">03</span><span class="stg-name">Production</span><span class="stg-out">Footage in, finished pieces out &mdash; b-roll, images and covers <b>auto-generated on brand.</b></span></div>
-    <div class="stg-row fade"><span class="stg-n">04</span><span class="stg-name">Post-production</span><span class="stg-out"><b>Auto-edited to publish-ready</b> &mdash; cuts, captions, reframes, carousels.</span></div>
-    <div class="stg-row fade"><span class="stg-n">05</span><span class="stg-name">Distribution</span><span class="stg-out"><b>The month auto-scheduled</b> across your platforms &mdash; captions native to each.</span></div>
-    <div class="stg-row fade"><span class="stg-n">06</span><span class="stg-name">Engagement</span><span class="stg-out">Inbox handled, comments answered &mdash; <b>every post feeds next month&rsquo;s plan.</b></span></div>
+  <div class="starlayer" id="stars1"></div>
+  <div class="starlayer" id="stars2"></div>
+  <div class="wrap hero-in">
+    <div class="kwrap"><span class="k"><span class="dot"></span>Incoming &middot; a private engagement &middot; one business at a time</span></div>
+    <svg class="heroship" id="heroship" viewBox="0 0 512 448" style="width:120px"><use href="#px-ship"/></svg>
+    <h1>
+      <span class="hl"><span>Your content department</span></span>
+      <span class="hl"><span><em>is about to land.</em></span></span>
+    </h1>
+    <p class="herosub">Nave is an <b>AI-native content team</b> we deploy inside your business &mdash; and run with you. You direct. It produces. <b>Nothing posts without your OK.</b></p>
   </div>
-  <p class="privline" style="margin-top:18px">Nothing posts without your OK. Ever.</p>
-</div></section>
+  <div class="scrollcue">Scroll to begin descent<s>&darr;</s></div>
+</section>
 
-<section class="sect" style="padding-top:10px"><div class="wrap">
-  <div class="band fade">
-    <span class="k">AI-native &middot; not AI-assisted</span>
-    <h2>Not an agency with AI <em>bolted on.</em></h2>
-    <p>Agencies sell you hours. Tools sell you software. This is neither: a crew of AI agents runs your production end to end, and we direct it with you &mdash; inside your business, on your brand rules, with your footage. When we leave, the department stays.</p>
-    <div class="bandchips"><span>An agent for every stage</span><span>Your brand, encoded</span><span>You own the system</span></div>
-    <div class="crewline">
-      <span class="cm" style="--c:#1FE07A"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><i>strategist</i></span>
-      <span class="cm" style="--c:#6C9BF0"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><i>copywriter</i></span>
-      <span class="cm" style="--c:#F2C94C"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><i>producer</i></span>
-      <span class="cm" style="--c:#D97757"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><i>editor</i></span>
-      <span class="cm" style="--c:#C08BF2"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><i>designer</i></span>
-      <span class="cm" style="--c:#EB5757"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><i>social media manager</i></span>
-      <span class="cm" style="--c:#2FD4C2"><svg viewBox="0 0 24 20" fill="#2FD4C2"><use href="#px-mail"/></svg><i>chat marketing agent</i></span>
-      <span class="cm" style="--c:#9BF06C"><svg viewBox="0 0 24 20" fill="#9BF06C"><use href="#px-bars"/></svg><i>analytics</i></span>
+<!-- ── SCENE 2 · THE DESCENT ── -->
+<section id="descent">
+  <div class="stage" id="dstage">
+    <svg id="dship" viewBox="0 0 512 448" style="width:150px"><use href="#px-ship"/></svg>
+    <div class="beat" id="beat1">We don&rsquo;t sell you <em>software.</em></div>
+    <div class="beat" id="beat2">We don&rsquo;t sell you <em>hours.</em></div>
+    <div class="beat" id="beat3">We deploy <em>a crew.</em></div>
+    <div class="crewring" id="crewring">
+      <span class="cw" style="--c:#1FE07A;left:12%;top:22%"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><i>strategist</i></span>
+      <span class="cw" style="--c:#6C9BF0;left:6%;top:58%"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><i>copywriter</i></span>
+      <span class="cw" style="--c:#F2C94C;left:24%;top:78%"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><i>producer</i></span>
+      <span class="cw" style="--c:#D97757;left:80%;top:20%"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><i>editor</i></span>
+      <span class="cw" style="--c:#C08BF2;left:88%;top:54%"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><i>designer</i></span>
+      <span class="cw" style="--c:#EB5757;left:72%;top:80%"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><i>social media<br>manager</i></span>
+      <span class="cw" style="--c:#2FD4C2;left:40%;top:14%"><svg viewBox="0 0 24 20" fill="#2FD4C2"><use href="#px-mail"/></svg><i>chat marketing<br>agent</i></span>
+      <span class="cw" style="--c:#9BF06C;left:56%;top:82%"><svg viewBox="0 0 24 20" fill="#9BF06C"><use href="#px-bars"/></svg><i>analytics</i></span>
     </div>
   </div>
-  <p class="privline" style="margin-top:20px">Currently running for brands in home services, custom cabinetry and youth sports. We keep client names between us &mdash; yours will be too.</p>
-</div></section>
+</section>
 
-<section class="sect" style="padding-top:10px"><div class="wrap">
-  <span class="k">Who this is for</span>
-  <div class="forgrid">
-    <div class="forcol yes fade">
-      <h3>For</h3>
-      <ul>
-        <li>Businesses already making money that need content shipped daily &mdash; without hiring a department.</li>
-        <li>Founders who can give one production day a month and want the rest carried.</li>
-        <li>Teams that want the system in-house &mdash; and to own it.</li>
-      </ul>
+<!-- ── SCENE 3 · THE INSTALL ── -->
+<section id="install">
+  <div class="stage" id="istage">
+    <div class="inst-head">
+      <span class="k">AI-native &middot; not AI-assisted</span>
+      <h2>Installed <em>inside</em> your business.</h2>
+      <p class="inst-sub">Agencies bolt AI onto people. Here the department <b style="color:var(--cream)">is</b> the AI &mdash; built around your brand, wired to your platforms, directed with you.</p>
     </div>
-    <div class="forcol no fade">
-      <h3>Not for</h3>
-      <ul>
-        <li>Anyone shopping for a cheap tool or a &ldquo;just post something&rdquo; agency.</li>
-        <li>Brands with nothing real to say and no one accountable for saying it.</li>
-        <li>Overnight-virality hunters.</li>
-      </ul>
+    <div class="term">
+      <div class="bar"><b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b><span>your-business.os — installing</span></div>
+      <pre id="tlines"><span class="ln">&gt; brand voice ......... <span class="ok">encoded</span></span>
+<span class="ln">&gt; pillars + angles .... <span class="ok">locked</span></span>
+<span class="ln">&gt; platforms ........... <span class="ok">wired</span></span>
+<span class="ln">&gt; crew ................ <span class="ok">deployed &middot; 8/8</span></span>
+<span class="ln">&gt; approval gate ....... <span class="warn">ACTIVE — nothing posts without your OK</span></span></pre>
+      <div class="pbar"><i id="pfill"></i><span id="ppct">0%</span></div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section class="sect" id="apply" style="padding-top:20px"><div class="wrap">
-  <div class="appwrap">
-    <span class="k"><span class="dot"></span>The application</span>
-    <p class="appnote">We take on a <em>small number of partners per quarter</em> &mdash; the system is built by hand around each business, and we protect the ones we run. Every application is read personally. If there&rsquo;s a fit, you&rsquo;ll hear from us within 48 hours.</p>
-    <form id="pform">
-      <input type="text" name="company_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
-      <div class="afield"><label for="pf-name">Your name</label><input id="pf-name" name="name" type="text" required autocomplete="name"></div>
-      <div class="afield"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" required autocomplete="email"></div>
-      <div class="afield"><label for="pf-biz">Business name</label><input id="pf-biz" name="business" type="text" required></div>
-      <div class="afield"><label for="pf-web">Website or main social channel</label><input id="pf-web" name="website" type="text" required placeholder="https://"></div>
-      <div class="afield"><label for="pf-need">What should content do for your business in the next 90 days?</label><textarea id="pf-need" name="need" required></textarea></div>
-      <div class="appfoot">
-        <button class="btn" type="submit">Submit application &rarr;</button>
-        <span class="privline">Read personally. Answered within 48 hours if there&rsquo;s a fit.</span>
+<!-- ── SCENE 4 · THE MONTH RUNS ── -->
+<section id="month">
+  <div class="groundimg" id="groundimg"></div>
+  <div class="wrap" style="position:relative">
+    <span class="k">Touchdown &middot; what gets systemized</span>
+    <h2>Then the month <em>runs itself.</em></h2>
+    <div class="stages">
+      <div class="beamline"><i id="beamfill"></i></div>
+      <div class="stg-row fade"><span class="stg-n">01</span><span class="stg-name">Strategy</span><span class="stg-out">Your pillars, angles and monthly plan &mdash; <b>decided with you, encoded into the system.</b></span></div>
+      <div class="stg-row fade"><span class="stg-n">02</span><span class="stg-name">Pre-production</span><span class="stg-out">Research, hooks and scripts <b>auto-drafted in your voice</b> &mdash; you approve, you don&rsquo;t write.</span></div>
+      <div class="stg-row fade"><span class="stg-n">03</span><span class="stg-name">Production</span><span class="stg-out">Footage in, finished pieces out &mdash; b-roll, images and covers <b>auto-generated on brand.</b></span></div>
+      <div class="stg-row fade"><span class="stg-n">04</span><span class="stg-name">Post-production</span><span class="stg-out"><b>Auto-edited to publish-ready</b> &mdash; cuts, captions, reframes, carousels.</span></div>
+      <div class="stg-row fade"><span class="stg-n">05</span><span class="stg-name">Distribution</span><span class="stg-out"><b>The month auto-scheduled</b> across your platforms &mdash; captions native to each.</span></div>
+      <div class="stg-row fade"><span class="stg-n">06</span><span class="stg-name">Engagement</span><span class="stg-out">Inbox handled, comments answered &mdash; <b>every post feeds next month&rsquo;s plan.</b></span></div>
+    </div>
+    <p class="privline" style="margin-top:18px">Currently running for brands in home services, custom cabinetry and youth sports. We keep client names between us &mdash; yours will be too.</p>
+  </div>
+</section>
+
+<!-- ── LETTER ── -->
+<section class="sect" id="letter">
+  <div class="nebimg" id="nebimg"></div>
+  <div class="wrap">
+    <span class="k">What this is</span>
+    <p class="letter fade" style="margin-top:26px">Most businesses don&rsquo;t have a content problem. They have a <em>production</em> problem &mdash; every post waits on a person, and every person has a ceiling. We install a crew of AI agents built around your brand, wire it to your platforms, and run it with you until content ships daily <em>without you carrying it.</em> The system is built for your business. The output is yours. The system is yours.
+    <span class="sig">&mdash; built and run by the team behind Nave</span></p>
+  </div>
+</section>
+
+<!-- ── FOR / NOT FOR ── -->
+<section class="sect" style="padding-top:0;background:#070908">
+  <div class="wrap">
+    <span class="k">Who this is for</span>
+    <div class="forgrid">
+      <div class="forcol yes fade">
+        <h3>For</h3>
+        <ul>
+          <li>Businesses already making money that need content shipped daily &mdash; without hiring a department.</li>
+          <li>Founders who can give one production day a month and want the rest carried.</li>
+          <li>Teams that want the system in-house &mdash; and to own it.</li>
+        </ul>
       </div>
-    </form>
-    <div class="ok" id="pok">
-      <h3>Application <em>received.</em></h3>
-      <p>We read every application personally. If there&rsquo;s a fit for this quarter, you&rsquo;ll hear from us within 48 hours &mdash; from a person, not a sequence.</p>
+      <div class="forcol no fade">
+        <h3>Not for</h3>
+        <ul>
+          <li>Anyone shopping for a cheap tool or a &ldquo;just post something&rdquo; agency.</li>
+          <li>Brands with nothing real to say and no one accountable for saying it.</li>
+          <li>Overnight-virality hunters.</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
+
+<!-- ── AIRLOCK · THE APPLICATION ── -->
+<section class="sect" id="airlock">
+  <div class="wrap">
+    <svg class="lockship" viewBox="0 0 512 448" style="width:92px"><use href="#px-ship"/></svg>
+    <div class="lockbeam"></div>
+    <h2>The airlock is open &mdash; <em>for a few.</em></h2>
+    <div class="appwrap">
+      <p class="appnote">We land in a <em>small number of businesses per quarter</em> &mdash; the system is built by hand around each one, and we protect the ones we run. Every application is read personally. If there&rsquo;s a fit, you&rsquo;ll hear from us within 48 hours.</p>
+      <form id="pform">
+        <input type="text" name="company_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+        <div class="afield"><label for="pf-name">Your name</label><input id="pf-name" name="name" type="text" required autocomplete="name"></div>
+        <div class="afield"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="afield"><label for="pf-biz">Business name</label><input id="pf-biz" name="business" type="text" required></div>
+        <div class="afield"><label for="pf-web">Website or main social channel</label><input id="pf-web" name="website" type="text" required placeholder="https://"></div>
+        <div class="afield"><label for="pf-need">What should content do for your business in the next 90 days?</label><textarea id="pf-need" name="need" required></textarea></div>
+        <div class="appfoot">
+          <button class="btn" type="submit">Request docking clearance &rarr;</button>
+          <span class="privline">Read personally. Answered within 48 hours if there&rsquo;s a fit.</span>
+        </div>
+      </form>
+      <div class="ok" id="pok">
+        <h3>Clearance <em>requested.</em></h3>
+        <p>We read every application personally. If there&rsquo;s a fit for this quarter, you&rsquo;ll hear from us within 48 hours &mdash; from a person, not a sequence.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 </main>
 
 <footer><div class="wrap">
-  <div class="pagechrome" style="display:flex;justify-content:space-between;padding:22px 0;border-top:1px solid var(--line)"><span class="chrome dim">INFINITX &mdash; 2026</span><span class="chrome dim"><a href="privacy.html" style="color:inherit">Privacy</a></span></div>
+  <div style="display:flex;justify-content:space-between;padding:22px 0;border-top:1px solid var(--line)"><span class="chrome dim">INFINITX &mdash; 2026</span><span class="chrome dim"><a href="privacy.html" style="color:inherit">Privacy</a></span></div>
 </div></footer>
 
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/links.js"></script>
 <script>
 (function(){
-  /* fade-ins */
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.15});
-  document.querySelectorAll('.fade').forEach(function(el){ io.observe(el); });
+  /* hero video: swap in only if it loads (poster/gradient is the fallback) */
+  var v = document.createElement('video');
+  v.muted = true; v.loop = true; v.playsInline = true; v.setAttribute('playsinline','');
+  v.src = 'assets/partner/hero_space_web.mp4';
+  v.addEventListener('canplay', function(){
+    var bg = document.getElementById('spacebg');
+    bg.insertBefore(v, bg.firstChild);
+    document.getElementById('bgposter').style.opacity = 0;
+    v.play().catch(function(){});
+  });
 
-  /* application submit -> substrate lead capture */
+  /* optional AI plates (no-op if the files are absent) */
+  [['groundimg','assets/partner/descent_ground.jpg'],['nebimg','assets/partner/nebula_field.jpg']].forEach(function(p){
+    var img = new Image();
+    img.onload = function(){ document.getElementById(p[0]).style.backgroundImage = 'url(' + p[1] + ')'; };
+    img.src = p[1];
+  });
+
+  /* procedural star layers */
+  function seedStars(id, n, o){
+    var el = document.getElementById(id);
+    for (var i = 0; i < n; i++){
+      var s = document.createElement('i');
+      s.style.left = (Math.random()*100) + '%';
+      s.style.top = (Math.random()*130 - 15) + '%';
+      s.style.opacity = (o * (0.3 + Math.random()*0.7)).toFixed(2);
+      el.appendChild(s);
+    }
+  }
+  seedStars('stars1', 70, .8); seedStars('stars2', 40, .45);
+
+  gsap.registerPlugin(ScrollTrigger);
+  var mm = gsap.matchMedia();
+
+  /* hero entrance (plays on load) */
+  gsap.set('#heroship', {y: -30, autoAlpha: 0});
+  var intro = gsap.timeline({defaults: {ease: 'power3.out'}});
+  intro.to('#heroship', {y: 0, autoAlpha: 1, duration: 1.1}, .2)
+       .from('#space h1 .hl span', {yPercent: 110, duration: .9, stagger: .14}, .4)
+       .from('.herosub', {autoAlpha: 0, y: 14, duration: .7}, '-=.3')
+       .from('.scrollcue', {autoAlpha: 0, duration: .6}, '-=.2');
+  gsap.to('#heroship', {y: 10, duration: 2.4, ease: 'sine.inOut', repeat: -1, yoyo: true, delay: 1.6});
+
+  mm.add({motion: '(prefers-reduced-motion: no-preference)', still: '(prefers-reduced-motion: reduce)'}, function(ctx){
+    if (ctx.conditions.still){
+      /* no pins — just make everything visible */
+      gsap.set('.beat, .cw, .fade, #tlines .ln', {autoAlpha: 1, clearProps: 'transform'});
+      gsap.set('#pfill', {width: '100%'});
+      document.getElementById('ppct').textContent = '100%';
+      gsap.set('#beamfill', {height: '100%'});
+      return;
+    }
+
+    /* hero parallax */
+    gsap.to('#stars1', {y: -120, ease: 'none', scrollTrigger: {trigger: '#space', start: 'top top', end: 'bottom top', scrub: true}});
+    gsap.to('#stars2', {y: -60,  ease: 'none', scrollTrigger: {trigger: '#space', start: 'top top', end: 'bottom top', scrub: true}});
+
+    /* SCENE 2 — the descent (pinned scrub) */
+    var d = gsap.timeline({scrollTrigger: {trigger: '#descent', start: 'top top', end: '+=2600', pin: '#dstage', scrub: .8}});
+    d.fromTo('#dship', {y: 0}, {y: '82vh', ease: 'none', duration: 10}, 0);
+    d.fromTo('#beat1', {autoAlpha: 0, scale: .92}, {autoAlpha: 1, scale: 1, duration: 1.2}, .4)
+     .to('#beat1', {autoAlpha: 0, y: -40, duration: 1}, 2.4);
+    d.fromTo('#beat2', {autoAlpha: 0, scale: .92}, {autoAlpha: 1, scale: 1, duration: 1.2}, 3.2)
+     .to('#beat2', {autoAlpha: 0, y: -40, duration: 1}, 5.2);
+    d.fromTo('#beat3', {autoAlpha: 0, scale: .9}, {autoAlpha: 1, scale: 1, duration: 1.4}, 6.0);
+    d.fromTo('.cw', {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: 'back.out(2)', duration: .8, stagger: .28}, 6.6);
+
+    /* SCENE 3 — the install (pinned scrub) */
+    var t = gsap.timeline({scrollTrigger: {trigger: '#install', start: 'top top', end: '+=2200', pin: '#istage', scrub: .8}});
+    t.from('.inst-head', {autoAlpha: 0, y: 30, duration: 1.4}, 0);
+    t.from('.term', {autoAlpha: 0, y: 60, scale: .96, duration: 1.6}, .5);
+    t.to('#tlines .ln', {autoAlpha: 1, duration: .6, stagger: 1.1}, 1.8);
+    t.to('#pfill', {width: '100%', ease: 'none', duration: 6.2,
+        onUpdate: function(){
+          var w = parseFloat(gsap.getProperty('#pfill', 'width', '%')) || 0;
+          document.getElementById('ppct').textContent = Math.round(w) + '%';
+        }}, 1.8);
+
+    /* SCENE 4 — beam + rows */
+    gsap.to('#beamfill', {height: '100%', ease: 'none',
+      scrollTrigger: {trigger: '.stages', start: 'top 75%', end: 'bottom 45%', scrub: true}});
+    return function(){};
+  });
+
+  /* fades (both motion modes get at least visible content) */
+  document.querySelectorAll('.fade').forEach(function(el){
+    gsap.to(el, {autoAlpha: 1, y: 0, duration: .8, ease: 'power2.out',
+      scrollTrigger: {trigger: el, start: 'top 85%', once: true}});
+  });
+
+  /* application submit -> substrate lead capture (verified path — do not change names) */
   var form = document.getElementById('pform');
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var v = function(n){ var el = form.querySelector('[name="' + n + '"]'); return el ? (el.value || '').trim() : ''; };
-    var email = v('email');
+    var v2 = function(n){ var el = form.querySelector('[name="' + n + '"]'); return el ? (el.value || '').trim() : ''; };
+    var email = v2('email');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
       var el = form.querySelector('[name="email"]');
       el.setCustomValidity('Enter a valid email address.'); el.reportValidity();
       el.addEventListener('input', function h(){ el.setCustomValidity(''); el.removeEventListener('input', h); });
       return;
     }
-    var row = { source: 'partner-apply', name: v('name'), email: email, business: v('business'),
-                website: v('website'), need: v('need').slice(0, 1200), page: 'partner' };
+    if (v2('company_website')) return; /* honeypot */
+    var row = { source: 'partner-apply', name: v2('name'), email: email, business: v2('business'),
+                website: v2('website'), need: v2('need').slice(0, 1200), page: 'partner' };
     try { if (window.naveCapture) window.naveCapture(row); } catch (_e) {}
     form.style.display = 'none';
-    document.getElementById('pok').style.display = 'block';
-    try { document.getElementById('pok').scrollIntoView({behavior:'smooth', block:'center'}); } catch (_e) {}
+    var ok = document.getElementById('pok');
+    ok.style.display = 'block';
+    try { ok.scrollIntoView({behavior: 'smooth', block: 'center'}); } catch (_e) {}
   });
 })();
 </script>
