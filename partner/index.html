@@ -26,7 +26,11 @@
   /* ── scene 1 · deep space ── */
   #space{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
   #spacebg{position:absolute;inset:0;background:#050706}
-  #spacebg video,#spacebg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+  #spacebg video,#spacebg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:opacity 1.4s ease}
+  #spacebg video{opacity:0}
+  #spacebg video.on{opacity:.55}
+  .hero-in,.scrollcue{visibility:hidden}
+  #shipflash{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(31,224,122,.5),transparent 62%);opacity:0;pointer-events:none;z-index:2}
   #spacebg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(5,7,6,.1) 0%,rgba(5,7,6,.82) 90%)}
   .starlayer{position:absolute;inset:-20% 0;pointer-events:none}
   .hero-in{position:relative;z-index:3;width:100%}
@@ -242,6 +246,7 @@
   <div class="starlayer" id="stars3"></div>
   <div class="warp" id="warp"></div>
   <i class="shoot" id="shoot"></i>
+  <div id="shipflash"></div>
   <div class="wrap hero-in" id="heroin">
     <svg class="heroship" id="heroship" viewBox="0 0 512 448" style="width:104px"><use href="#px-ship"/></svg>
     <h1>
@@ -529,8 +534,11 @@
   v.addEventListener('canplay', function(){
     var bg = document.getElementById('spacebg');
     bg.insertBefore(v, bg.firstChild);
-    document.getElementById('bgposter').style.opacity = 0;
     v.play().catch(function(){});
+    requestAnimationFrame(function(){
+      v.classList.add('on');
+      document.getElementById('bgposter').style.opacity = 0;
+    });
   });
 
   /* nebula plates */
@@ -561,28 +569,39 @@
   gsap.registerPlugin(ScrollTrigger);
   var mm = gsap.matchMedia();
 
-  /* hero entrance — WARP IN */
+  /* hero entrance — WARP IN v2 (true radial burst) */
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  gsap.set('.hero-in, .scrollcue', {visibility: 'visible'});
   var warp = document.getElementById('warp');
-  if (!reduced){
-    for (var w = 0; w < 30; w++){
-      var st = document.createElement('i');
-      st.style.transform = 'rotate(' + (Math.random()*360) + 'deg) translateY(' + (40 + Math.random()*120) + 'px) scaleY(.1)';
-      warp.appendChild(st);
-    }
-  }
-  gsap.set('#heroship', {scale: .12, y: -140, autoAlpha: 0});
   var intro = gsap.timeline({defaults: {ease: 'power3.out'}});
   if (!reduced){
-    intro.to('#warp i', {opacity: .9, scaleY: 3.2, y: '+=340', duration: .55, ease: 'power2.in',
-                         stagger: {each: .012, from: 'random'}}, 0)
-         .to('#warp i', {opacity: 0, duration: .3}, .55)
-         .set('#warp', {display: 'none'});
+    var R = Math.max(window.innerWidth, window.innerHeight) * .72;
+    for (var w = 0; w < 26; w++){
+      var st = document.createElement('i');
+      var ang = Math.random() * Math.PI * 2;
+      st.dataset.dx = Math.cos(ang) * R;
+      st.dataset.dy = Math.sin(ang) * R;
+      gsap.set(st, {left: '50%', top: '50%', xPercent: -50, yPercent: -50,
+                    x: Math.cos(ang) * 36, y: Math.sin(ang) * 36,
+                    rotation: ang * 180 / Math.PI + 90, scaleY: .25, opacity: 0});
+      warp.appendChild(st);
+    }
+    intro.to('#warp i', {opacity: .85, duration: .1, stagger: {each: .013, from: 'random'}}, 0)
+         .to('#warp i', {
+            x: function(i, t){ return parseFloat(t.dataset.dx); },
+            y: function(i, t){ return parseFloat(t.dataset.dy); },
+            scaleY: 3, duration: .6, ease: 'power3.in',
+            stagger: {each: .013, from: 'random'}}, .05)
+         .to('#warp i', {opacity: 0, duration: .16}, .52)
+         .set('#warp', {display: 'none'})
+         .fromTo('#shipflash', {opacity: 0, scale: .4}, {opacity: .5, scale: 1, duration: .26, ease: 'power2.out'}, .58)
+         .to('#shipflash', {opacity: 0, scale: 1.6, duration: .55, ease: 'power2.out'}, .86);
   }
-  intro.to('#heroship', {scale: 1, y: 0, autoAlpha: 1, duration: 1.25, ease: 'power4.out'}, .25)
-       .from('#space h1 .hl span', {yPercent: 112, duration: .85, stagger: .13, ease: 'power4.out'}, .75)
-       .from('.herosub', {autoAlpha: 0, y: 16, duration: .7}, '-=.3')
-       .from('.scrollcue', {autoAlpha: 0, duration: .6}, '-=.2');
+  gsap.set('#heroship', {scale: .1, y: -110, autoAlpha: 0});
+  intro.to('#heroship', {scale: 1, y: 0, autoAlpha: 1, duration: 1.15, ease: 'power4.out'}, reduced ? 0 : .48)
+       .from('#space h1 .hl span', {yPercent: 112, duration: .9, stagger: .12, ease: 'power4.out'}, reduced ? .2 : .92)
+       .from('.herosub', {autoAlpha: 0, y: 16, duration: .7}, '-=.35')
+       .from('.scrollcue', {autoAlpha: 0, duration: .6}, '-=.25');
   gsap.to('#heroship', {y: 10, duration: 2.4, ease: 'sine.inOut', repeat: -1, yoyo: true, delay: 2});
   gsap.to('#stars3 i', {y: '-=26', duration: 3.4, ease: 'sine.inOut', repeat: -1, yoyo: true, stagger: {each: .35, from: 'random'}});
   /* shooting star */
