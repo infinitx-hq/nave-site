@@ -86,17 +86,15 @@
   .door .who{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--cream-50);border-top:1px dashed var(--line);padding-top:12px;margin-top:16px}
 
   /* ── the playbook strip ── */
-  .pbstrip{position:relative;z-index:2;margin:64px auto 0;max-width:760px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(10,13,11,.82));display:grid;grid-template-columns:280px 1fr;overflow:hidden}
+  .pbstrip{position:relative;z-index:2;margin:64px auto 0;max-width:640px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(10,13,11,.82));overflow:hidden}
   .pbstrip::before{content:"";position:absolute;top:-1px;left:-1px;width:11px;height:11px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
-  @media(max-width:700px){.pbstrip{grid-template-columns:1fr}}
-  .pbstrip video{width:100%;height:100%;object-fit:cover;display:block;border-right:1px solid var(--line)}
-  @media(max-width:700px){.pbstrip video{border-right:0;border-bottom:1px solid var(--line);max-height:200px}}
-  .pbin{padding:22px 24px 20px}
+  .pbin{padding:26px 30px 24px}
   .pbin .pk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
-  .pbin h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:19px;color:var(--cream);margin:8px 0 4px}
-  .pbin .pd{font-size:13px;line-height:1.55;color:var(--cream-72);margin:0 0 14px}
-  .pbform{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  @media(max-width:700px){.pbform{grid-template-columns:1fr}}
+  .pbin h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:21px;color:var(--cream);margin:8px 0 12px}
+  .pblist{list-style:none;margin:0 0 20px;padding:0}
+  .pblist li{position:relative;padding-left:24px;font-size:14.5px;line-height:1.6;color:var(--cream-72);margin-bottom:9px}
+  .pblist li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;background:var(--ink)}
+  .pblist b{color:var(--cream)}
   .pbform input{background:rgba(15,21,17,.8);border:1px solid var(--line);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:14px;padding:11px 13px;outline:none;transition:border-color .15s}
   .pbform input:focus{border-color:var(--line-strong)}
   .pbform .btn{grid-column:1 / -1;text-align:center;justify-content:center;font-size:13.5px;padding:13px 16px}
@@ -126,7 +124,7 @@
   <div class="wrap hubin">
     <svg class="hubship" viewBox="0 0 512 448" style="width:88px" fill="#1FE07A"><use href="#px-ship"/></svg>
     <span class="hubk"><span class="dot"></span>Nave &middot; mission control</span>
-    <h1>One content system.<br><em>Three ways in.</em></h1>
+    <h1>AI agents,<br><em>systemizing content production.</em></h1>
     <p class="hubsub">Everything here runs on the same Content OS &mdash; agents on every stage of production. Pick the door that fits how you want it.</p>
 
     <div class="doors">
@@ -137,7 +135,6 @@
         <h2>Agentic AI Content</h2>
         <p>A community dedicated to building <b>agentic systems around content production</b> &mdash; systematize your content production with AI agents.</p>
         <span class="go">Join the community <s>&rarr;</s></span>
-        <span class="who">For creators &amp; operators who want to own the system</span>
       </a>
       <a class="door" href="https://www.youtube.com/@enriquemarq-0" target="_blank" rel="noopener" style="--c:#F0EBDE">
         <span class="scan"></span>
@@ -146,7 +143,6 @@
         <h2>Enrique, on YouTube</h2>
         <p>Showcasing real AI systems and builds around content production &mdash; <b>real builds, real numbers</b>, the whole operation on camera. Free, every week.</p>
         <span class="go">Watch the channel <s>&rarr;</s></span>
-        <span class="who">For anyone who wants to see it working first</span>
       </a>
       <a class="door" href="/partner" style="--c:#FF7614">
         <span class="scan"></span>
@@ -159,17 +155,19 @@
         <h2>Nave Partners</h2>
         <p>Our <b>AI-native human team</b> systemizes your whole content production pipeline for your business &mdash; every stage. Private, by application.</p>
         <span class="go">Apply to partner <s>&rarr;</s></span>
-        <span class="who">For businesses that want it handled</span>
       </a>
     </div>
 
     <!-- the playbook — small, below the hub -->
     <div class="pbstrip">
-      <video src="assets/hero-playbook.mp4" autoplay muted loop playsinline aria-label="Nave in 26 seconds"></video>
       <div class="pbin">
         <span class="pk">Free playbook</span>
         <h3>Make a month of content in a single day</h3>
-        <p class="pd">How I make a month of content in a single day using Claude Code &mdash; get the exact system, the playbook, and the resources. You direct. It produces.</p>
+        <ul class="pblist">
+          <li>Learn how to get <b>a month of content in a single day</b> with this playbook, using AI agents</li>
+          <li>Real pieces of the Content OS &mdash; <b>the skills, agents, dynamic workflows and prompts</b> used</li>
+          <li>The Content OS <b>installation guide</b> &mdash; native to Claude Code</li>
+        </ul>
         <a class="btn" href="/playbook" style="display:inline-block;text-align:center;font-size:13.5px;padding:13px 22px">Get the free playbook &rarr;</a>
         <span class="pbmicro">Free. Real steps, in order, on the playbook page.</span>
       </div>
