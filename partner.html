@@ -196,11 +196,33 @@
   .chip span{display:inline-block;padding:12px 18px;border:1px solid var(--line);background:rgba(15,21,17,.6);color:var(--cream-72);font-family:'Hanken Grotesk',sans-serif;font-size:15px;cursor:pointer;transition:all .15s;user-select:none}
   .chip span:hover{border-color:var(--line-strong);color:var(--cream)}
   .chip input:checked + span{background:var(--ink);color:#06140C;border-color:var(--ink);font-weight:700;box-shadow:0 0 18px rgba(31,224,122,.35)}
-  .appfoot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:8px}
-  .ok{border:1px solid var(--line-strong);background:linear-gradient(180deg,rgba(31,224,122,.08),rgba(15,21,17,.7));padding:44px 46px;display:none}
-  .ok h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;color:var(--cream);margin:0}
-  .ok h3 em{font-style:normal;color:var(--ink)}
-  .ok p{font-size:16.5px;line-height:1.7;color:var(--cream-72);margin:14px 0 0}
+  /* ── the application card — clean white, one accent ── */
+  .appcard{position:relative;max-width:560px;margin:0 auto;background:#FCFBF7;color:#101410;border-radius:16px;padding:40px 40px 32px;box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 0 1px rgba(31,224,122,.16),0 0 46px rgba(31,224,122,.08)}
+  .appcard::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;border-radius:16px 16px 0 0;background:linear-gradient(90deg,#1FE07A,#9BF06C)}
+  .appcard .ftitle{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:23px;letter-spacing:.01em;color:#101410;margin:0 0 6px}
+  .appcard .fsub{font-size:14px;line-height:1.5;color:#5A605A;margin:0 0 26px}
+  .f-field{margin-bottom:18px}
+  .f-field label,.f-field .glabel{display:block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6A706A;margin-bottom:8px}
+  .f-input,.f-area{width:100%;background:#fff;border:1.5px solid #E3E0D4;border-radius:10px;color:#101410;font-family:'Hanken Grotesk',sans-serif;font-size:16px;padding:13px 15px;outline:none;transition:border-color .15s,box-shadow .15s}
+  .f-input:focus,.f-area:focus{border-color:#1FE07A;box-shadow:0 0 0 3px rgba(31,224,122,.22)}
+  .f-input::placeholder,.f-area::placeholder{color:#A8AEA6}
+  .f-area{min-height:76px;resize:vertical}
+  .f-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .f-chips{display:flex;flex-wrap:wrap;gap:9px}
+  .f-chip{position:relative}
+  .f-chip input{position:absolute;opacity:0;pointer-events:none}
+  .f-chip span{display:inline-block;padding:11px 16px;border:1.5px solid #E3E0D4;border-radius:999px;background:#fff;color:#3A403A;font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;transition:all .15s;user-select:none}
+  .f-chip span:hover{border-color:#1FE07A}
+  .f-chip input:checked + span{background:#1FE07A;border-color:#1FE07A;color:#06140C;box-shadow:0 4px 16px rgba(31,224,122,.35)}
+  .f-submit{display:block;width:100%;margin-top:24px;background:#1FE07A;color:#06140C;border:0;border-radius:10px;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:16.5px;padding:16px 20px;cursor:pointer;transition:transform .12s,box-shadow .15s;box-shadow:0 10px 30px rgba(31,224,122,.3)}
+  .f-submit:hover{transform:translateY(-1px);box-shadow:0 14px 36px rgba(31,224,122,.42)}
+  .f-micro{display:block;text-align:center;margin-top:13px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;color:#8A908A}
+  @media(max-width:560px){.f-grid2{grid-template-columns:1fr}.appcard{padding:32px 22px 26px;border-radius:14px}}
+  .ok{position:relative;max-width:560px;margin:0 auto;background:#FCFBF7;border-radius:16px;padding:46px 42px;display:none;box-shadow:0 24px 70px rgba(0,0,0,.55),0 0 0 1px rgba(31,224,122,.16)}
+  .ok::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;border-radius:16px 16px 0 0;background:linear-gradient(90deg,#1FE07A,#9BF06C)}
+  .ok h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;color:#101410;margin:0}
+  .ok h3 em{font-style:normal;color:#0FA85C}
+  .ok p{font-size:16.5px;line-height:1.7;color:#5A605A;margin:14px 0 0}
   .fade{opacity:0;transform:translateY(18px)}
 
   /* ── static fallback (no JS / GSAP failed / reduced motion) ──
@@ -481,66 +503,27 @@
         <span><b>500+</b> people consulted with AI</span>
         <span><b>1,000+</b> hours trained</span>
       </div>
-      <form id="pform">
+      <form id="pform" class="appcard">
         <input type="text" name="company_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
-        <div class="step">
-          <div class="stephead"><span class="sn">STEP 1</span><span class="st">You</span></div>
-          <p class="stephelp">So we know who we&rsquo;re talking to.</p>
-          <div class="grid2">
-            <div class="afield"><label for="pf-name">Your name</label><input id="pf-name" name="name" type="text" required autocomplete="name"></div>
-            <div class="afield"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" required autocomplete="email"></div>
+        <h3 class="ftitle">Apply to Nave Partners</h3>
+        <p class="fsub">60 seconds. Read personally &mdash; answered within 48 hours if there&rsquo;s a fit.</p>
+        <div class="f-grid2">
+          <div class="f-field"><label for="pf-name">Your name</label><input class="f-input" id="pf-name" name="name" type="text" required autocomplete="name"></div>
+          <div class="f-field"><label for="pf-email">Email</label><input class="f-input" id="pf-email" name="email" type="email" required autocomplete="email"></div>
+        </div>
+        <div class="f-field"><label for="pf-web">Business website or main social</label><input class="f-input" id="pf-web" name="website" type="text" required placeholder="https://"></div>
+        <div class="f-field">
+          <span class="glabel">Monthly budget for your content department</span>
+          <div class="f-chips" id="budget-chips">
+            <label class="f-chip"><input type="radio" name="budget" value="$2,500–$5,000" required><span>$2,500&ndash;$5,000</span></label>
+            <label class="f-chip"><input type="radio" name="budget" value="$5,000–$10,000"><span>$5,000&ndash;$10,000</span></label>
+            <label class="f-chip"><input type="radio" name="budget" value="$10,000–$25,000"><span>$10,000&ndash;$25,000</span></label>
+            <label class="f-chip"><input type="radio" name="budget" value="$25,000+"><span>$25,000+</span></label>
           </div>
         </div>
-        <div class="step">
-          <div class="stephead"><span class="sn">STEP 2</span><span class="st">Your business</span></div>
-          <p class="stephelp">The more we know, the better we land.</p>
-          <div class="grid2">
-            <div class="afield"><label for="pf-biz">Business name</label><input id="pf-biz" name="business" type="text" required></div>
-            <div class="afield"><label for="pf-web">Website or main social</label><input id="pf-web" name="website" type="text" required placeholder="https://"></div>
-          </div>
-          <div class="afield"><label for="pf-about">Tell us about your business</label><textarea id="pf-about" name="about" required placeholder="What you do, who you serve, where content fits in."></textarea></div>
-        </div>
-        <div class="step">
-          <div class="stephead"><span class="sn">STEP 3</span><span class="st">The engagement</span></div>
-          <p class="stephelp">Tap to answer &mdash; this is the part we read closest.</p>
-          <div class="afield">
-            <span class="glabel">Monthly budget for your content department</span>
-            <div class="chips" id="budget-chips">
-              <label class="chip"><input type="radio" name="budget" value="$2,500–$5,000" required><span>$2,500&ndash;$5,000</span></label>
-              <label class="chip"><input type="radio" name="budget" value="$5,000–$10,000"><span>$5,000&ndash;$10,000</span></label>
-              <label class="chip"><input type="radio" name="budget" value="$10,000–$25,000"><span>$10,000&ndash;$25,000</span></label>
-              <label class="chip"><input type="radio" name="budget" value="$25,000+"><span>$25,000+</span></label>
-            </div>
-          </div>
-          <div class="afield">
-            <span class="glabel">Your platforms &mdash; the ones that matter to your business</span>
-            <div class="chips">
-              <label class="chip"><input type="checkbox" name="platforms" value="Instagram"><span>Instagram</span></label>
-              <label class="chip"><input type="checkbox" name="platforms" value="TikTok"><span>TikTok</span></label>
-              <label class="chip"><input type="checkbox" name="platforms" value="YouTube"><span>YouTube</span></label>
-              <label class="chip"><input type="checkbox" name="platforms" value="Facebook"><span>Facebook</span></label>
-              <label class="chip"><input type="checkbox" name="platforms" value="LinkedIn"><span>LinkedIn</span></label>
-              <label class="chip"><input type="checkbox" name="platforms" value="X"><span>X</span></label>
-            </div>
-          </div>
-          <div class="afield">
-            <span class="glabel">Which processes are you looking to systemize with AI?</span>
-            <div class="chips" id="sys-chips">
-              <label class="chip"><input type="checkbox" name="systemize" value="Strategy"><span>Strategy</span></label>
-              <label class="chip"><input type="checkbox" name="systemize" value="Pre-production"><span>Pre-production</span></label>
-              <label class="chip"><input type="checkbox" name="systemize" value="Production"><span>Production</span></label>
-              <label class="chip"><input type="checkbox" name="systemize" value="Post-production"><span>Post-production</span></label>
-              <label class="chip"><input type="checkbox" name="systemize" value="Distribution"><span>Distribution</span></label>
-              <label class="chip"><input type="checkbox" name="systemize" value="Engagement"><span>Engagement</span></label>
-              <label class="chip"><input type="checkbox" name="systemize" value="All of it"><span>All of it</span></label>
-            </div>
-          </div>
-          <div class="afield"><label for="pf-need">Anything we should know before the call? <span style="text-transform:none;letter-spacing:0">(optional)</span></label><textarea id="pf-need" name="notes"></textarea></div>
-        </div>
-        <div class="appfoot">
-          <button class="btn" type="submit">Send my application &rarr;</button>
-          <span class="privline">Goes straight to the team. Answered within 48 hours if there&rsquo;s a fit.</span>
-        </div>
+        <div class="f-field"><label for="pf-about">Your business &amp; where content fits <span style="text-transform:none;letter-spacing:0;color:#A8AEA6">(optional)</span></label><textarea class="f-area" id="pf-about" name="about" placeholder="What you sell, who it's for."></textarea></div>
+        <button class="f-submit" type="submit">Send my application &rarr;</button>
+        <span class="f-micro">Goes straight to the team &mdash; never a sequence.</span>
       </form>
       <div class="ok" id="pok">
         <h3>Application <em>received.</em></h3>
@@ -855,22 +838,11 @@
       b.addEventListener('change', function h(){ b.setCustomValidity(''); b.removeEventListener('change', h); });
       return;
     }
-    var sys = multi('systemize');
-    if (!sys){
-      var s = form.querySelector('[name="systemize"]');
-      s.setCustomValidity('Pick at least one.'); s.reportValidity();
-      s.addEventListener('change', function h(){ s.setCustomValidity(''); s.removeEventListener('change', h); });
-      return;
-    }
     if (val('company_website')) return; /* honeypot */
-    var platforms = multi('platforms');
     var about = val('about');
-    var notes = val('notes');
-    var need = ('budget ' + budget + ' · platforms ' + (platforms || '—') + ' · systemize ' + sys +
-                (about ? ' · about: ' + about : '') +
-                (notes ? ' · notes: ' + notes : '')).slice(0, 1200);
-    var row = { source: 'partner-apply', name: val('name'), email: email, business: val('business'),
-                website: val('website'), budget: budget, platforms: platforms, systemize: sys,
+    var need = ('budget ' + budget + (about ? ' · about: ' + about : '')).slice(0, 1200);
+    var row = { source: 'partner-apply', name: val('name'), email: email,
+                website: val('website'), budget: budget,
                 about: about, need: need, page: 'partner' };
     try { if (window.naveCapture) window.naveCapture(row); } catch (_e) {}
     form.style.display = 'none';

@@ -2,34 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nave — how to make a month of content in a single day, free playbook</title>
-<meta name="description" content="The exact playbook behind a content operation run through Claude Code — 500k+ organic views in six months. Real steps, in order, free. You direct. It produces.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nave — the content operating system · pick your door</title>
+<meta name="description" content="One content system, three ways in: the Agentic AI Content community, Enrique's channel building it in public, and Nave Partners running it for your business.">
 <link rel="canonical" href="https://nave.infinitxai.com/">
 <meta name="theme-color" content="#070908">
 <meta name="robots" content="index,follow,max-image-preview:large">
 
-<!-- Open Graph / Twitter -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nave">
-<meta property="og:title" content="How to make a month of content in a single day — free playbook">
-<meta property="og:description" content="The exact playbook behind 500k+ organic views in six months, run through Claude Code. Real steps, in order, free.">
+<meta property="og:title" content="Nave — the content operating system · pick your door">
+<meta property="og:description" content="One content system, three ways in: the community, the channel, the partners.">
 <meta property="og:url" content="https://nave.infinitxai.com/">
 <meta property="og:image" content="https://nave.infinitxai.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to make a month of content in a single day — free playbook">
-<meta name="twitter:description" content="The exact playbook behind 500k+ organic views in six months, run through Claude Code. Free.">
+<meta name="twitter:title" content="Nave — the content operating system · pick your door">
+<meta name="twitter:description" content="One content system, three ways in: the community, the channel, the partners.">
 <meta name="twitter:image" content="https://nave.infinitxai.com/assets/og.png">
 
 <link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 
-<!-- GEO: structured data so AI assistants + search can cite Nave as an entity -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,92 +39,172 @@
       "url": "https://nave.infinitxai.com/",
       "logo": "https://nave.infinitxai.com/assets/nave-logo.png",
       "founder": { "@type": "Person", "name": "Enrique Marquez" },
-      "parentOrganization": { "@type": "Organization", "name": "INFINITX", "url": "https://infinitxai.com/" }
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Nave",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "Windows, macOS, Linux (via Claude Code)",
-      "url": "https://nave.infinitxai.com/",
-      "description": "Nave is a Content Operating System built for Claude Code. A crew of brand-tuned agents covers every stage of content production — pre-production, production, post-production, distribution, engagement and inbox — directed by the operator, staged behind their approval.",
-      "offers": [
-        { "@type": "Offer", "name": "Agentic AI Content — founding membership", "price": "58", "priceCurrency": "USD", "url": "https://nave.infinitxai.com/join", "description": "The Nave Content OS installed on your machine, 10+ hours of training, live calls 2x a week, same-day support, and a weekly vault of agents and skills. Founding price locked for life. Cancel anytime." },
-        { "@type": "AggregateOffer", "name": "Custom Content OS build — done for you", "lowPrice": "2500", "highPrice": "7500", "priceCurrency": "USD", "url": "https://nave.infinitxai.com/done-for-you", "description": "A custom Content OS tailor-built one-time for a business — formats, brand, machines, team training. Scoped on a call." }
-      ],
-      "publisher": { "@id": "https://nave.infinitxai.com/#org" }
+      "parentOrganization": { "@type": "Organization", "name": "INFINITX", "url": "https://infinitxai.com/" },
+      "sameAs": ["https://www.youtube.com/@enriquemarq-0"]
     }
   ]
 }
 </script>
+
+<style>
+  body{overflow-x:hidden}
+  /* ── the space ── */
+  .hub{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:88px 0 64px;overflow:hidden}
+  .hubbg{position:absolute;inset:0;background:
+    radial-gradient(ellipse at 50% -10%,rgba(31,224,122,.09),transparent 55%),
+    radial-gradient(ellipse at 85% 110%,rgba(255,118,20,.05),transparent 50%),#050706}
+  .hubstar{position:absolute;border-radius:50%;background:rgba(240,235,222,.7);animation:twinkle var(--t,3s) ease-in-out infinite}
+  @keyframes twinkle{0%,100%{opacity:.12}50%{opacity:.65}}
+  .hubin{position:relative;z-index:2}
+  .hubship{display:block;margin:0 auto 18px;image-rendering:pixelated;filter:drop-shadow(0 0 24px rgba(31,224,122,.5));animation:hover 3.4s ease-in-out infinite alternate}
+  @keyframes hover{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+  .hubk{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+  .hubk .dot{display:inline-block;width:7px;height:7px;background:var(--ink);margin-right:10px;animation:pulse 2.4s ease-in-out infinite;vertical-align:1px}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .hub h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;text-align:center;font-size:clamp(34px,5.6vw,72px);line-height:1.05;color:var(--cream);margin:0}
+  .hub h1 em{font-style:normal;color:var(--ink)}
+  .hubsub{text-align:center;font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--cream-50);margin:16px auto 0;max-width:520px;line-height:1.8}
+
+  /* ── the three doors ── */
+  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:46px}
+  @media(max-width:900px){.doors{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
+  .door{--c:#1FE07A;position:relative;display:flex;flex-direction:column;gap:0;border:1px solid var(--line);background:linear-gradient(180deg,rgba(15,21,17,.72),rgba(7,9,8,.9));padding:26px 26px 22px;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;overflow:hidden}
+  .door::before{content:"";position:absolute;top:-1px;left:-1px;width:12px;height:12px;border-top:2px solid var(--c);border-left:2px solid var(--c)}
+  .door::after{content:"";position:absolute;bottom:-1px;right:-1px;width:12px;height:12px;border-bottom:2px solid var(--c);border-right:2px solid var(--c)}
+  .door:hover{transform:translateY(-5px);border-color:var(--c);box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 30px color-mix(in srgb,var(--c) 22%,transparent)}
+  .door .scan{position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,color-mix(in srgb,var(--c) 8%,transparent) 50%,transparent 60%);transform:translateX(-120%);transition:transform .7s ease;pointer-events:none}
+  .door:hover .scan{transform:translateX(120%)}
+  .door .dk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--c)}
+  .door .dic{margin:18px 0 14px;height:44px;display:flex;align-items:center}
+  .door .dic svg{image-rendering:pixelated;filter:drop-shadow(0 0 12px color-mix(in srgb,var(--c) 60%,transparent))}
+  .door h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:24px;letter-spacing:.01em;line-height:1.12;color:var(--cream);margin:0 0 8px}
+  .door p{font-size:14.5px;line-height:1.6;color:var(--cream-72);margin:0 0 18px;flex:1}
+  .door p b{color:var(--cream)}
+  .door .go{display:flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+  .door .go s{text-decoration:none;transition:transform .18s}
+  .door:hover .go s{transform:translateX(5px)}
+  .door .who{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--cream-50);border-top:1px dashed var(--line);padding-top:12px;margin-top:16px}
+
+  /* ── the playbook strip ── */
+  .pbstrip{position:relative;z-index:2;margin:64px auto 0;max-width:760px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(10,13,11,.82));display:grid;grid-template-columns:280px 1fr;overflow:hidden}
+  .pbstrip::before{content:"";position:absolute;top:-1px;left:-1px;width:11px;height:11px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+  @media(max-width:700px){.pbstrip{grid-template-columns:1fr}}
+  .pbstrip video{width:100%;height:100%;object-fit:cover;display:block;border-right:1px solid var(--line)}
+  @media(max-width:700px){.pbstrip video{border-right:0;border-bottom:1px solid var(--line);max-height:200px}}
+  .pbin{padding:22px 24px 20px}
+  .pbin .pk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+  .pbin h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:19px;color:var(--cream);margin:8px 0 4px}
+  .pbin .pd{font-size:13px;line-height:1.55;color:var(--cream-72);margin:0 0 14px}
+  .pbform{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media(max-width:700px){.pbform{grid-template-columns:1fr}}
+  .pbform input{background:rgba(15,21,17,.8);border:1px solid var(--line);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-size:14px;padding:11px 13px;outline:none;transition:border-color .15s}
+  .pbform input:focus{border-color:var(--line-strong)}
+  .pbform .btn{grid-column:1 / -1;text-align:center;justify-content:center;font-size:13.5px;padding:13px 16px}
+  .pbmicro{display:block;margin-top:9px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.05em;color:var(--cream-50);line-height:1.7}
+
+  footer{position:relative;z-index:2}
+</style>
 </head>
 <body>
 
-<header><div class="wrap"><nav>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+  <symbol id="px-astro" viewBox="0 0 16 24"><rect x="5" y="0" width="6" height="1"/><rect x="4" y="1" width="1" height="3"/><rect x="11" y="1" width="1" height="3"/><rect x="5" y="1" width="6" height="3" opacity=".32"/><rect x="4" y="4" width="8" height="1"/><rect x="3" y="5" width="10" height="7"/><rect x="2" y="5" width="2" height="3"/><rect x="12" y="5" width="2" height="3"/><rect x="6" y="7" width="4" height="3" opacity=".35"/><rect x="1" y="6" width="1" height="5" opacity=".5"/><rect x="14" y="6" width="1" height="5" opacity=".5"/><rect x="2" y="8" width="2" height="5"/><rect x="12" y="8" width="2" height="5"/><rect x="4" y="12" width="8" height="1" opacity=".55"/><rect x="4" y="13" width="3" height="7"/><rect x="9" y="13" width="3" height="7"/><rect x="3" y="20" width="4" height="3"/><rect x="9" y="20" width="4" height="3"/></symbol>
+  <symbol id="px-cam" viewBox="0 0 24 20"><rect x="4" y="1" width="5" height="4"/><rect x="13" y="1" width="5" height="4"/><rect x="3" y="6" width="18" height="9"/><rect x="8" y="8" width="8" height="6" opacity=".3"/><rect x="10" y="10" width="4" height="2"/><rect x="7" y="15" width="2" height="4"/><rect x="15" y="15" width="2" height="4"/></symbol>
+</svg>
+
+<header style="position:absolute;left:0;right:0;top:0;z-index:5"><div class="wrap"><nav>
   <a class="brand" href="/">
-    <svg viewBox="0 0 512 448" aria-label="Nave"><g fill="#1FE07A"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/><rect x="192" y="320" width="32" height="32" opacity=".16"/><rect x="224" y="320" width="32" height="32" opacity=".16"/><rect x="256" y="320" width="32" height="32" opacity=".16"/><rect x="288" y="320" width="32" height="32" opacity=".16"/></g></svg>
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
     <span class="w">Nave</span>
   </a>
-  <div class="links">
-    <a href="/join">The community</a>
-    <a href="/partner">Partners</a>
-  </div>
 </nav></div></header>
 
 <main>
-<section class="hero squeeze" style="padding-top:24px">
-  <div class="wrap" style="position:relative">
-    <div class="glitch" aria-hidden="true"><i></i><i></i><i></i></div>
-    <div class="hero-grid">
-      <div>
-        <span class="ccbadge" data-block="index.kicker">
-          <span>Free playbook — no call required · built for</span>
-          <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:16px;width:auto">
-        </span>
-        <h1 data-block="index.h1" style="font-size:clamp(40px,4.9vw,74px);line-height:1.04">How to make a <i>Month</i> of Content <i>in a single day.</i></h1>
-        <p class="lede" data-block="index.sub" style="max-width:580px;margin:26px 0 18px">The exact playbook I use to run my content operation through Claude Code — the same system behind <b>500k+ organic views</b> in the last six months, and behind this very page. Written as real steps, in order, so you can follow it start to finish. <b>You direct. It produces.</b></p>
-        <div class="proofrow" data-block="index.proof_line">
-          <div class="pcell"><div class="pn">500k+</div><div class="pc">organic views · last 6 months*</div></div>
-          <div class="pcell"><div class="pn">This page</div><div class="pc">copy, site &amp; emails — produced by the system in the playbook</div></div>
-          <div class="pcell"><div class="pn">You own it</div><div class="pc">the full system, on your machine</div></div>
-        </div>
-        <span class="micro" style="display:block;margin-top:10px">*Results shown are the founder's own. Not typical, and not a guarantee.</span>
-      </div>
-      <div>
-        <div class="lm pane" id="playbook-pane" style="max-width:none;padding:0;overflow:hidden">
-          <div id="vsl-slot" data-vsl="INDEX" data-state="motion">
-            <video src="assets/hero-playbook.mp4" autoplay muted loop playsinline aria-label="Nave in 26 seconds" style="width:100%;display:block;border-bottom:1px solid rgba(31,224,122,.16)"></video>
-          </div>
-          <div style="padding:24px 28px 28px">
-            <p class="formhead" data-block="index.form_head">Where should I send it?</p>
-            <form class="capture stacked" id="ac-form1" action="#" method="post">
-              <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
-              <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email" required>
-              <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" aria-label="Phone" required>
-              <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0">
-              <button class="btn" type="submit">Send me the playbook →</button>
-            </form>
-            <span class="micro" style="margin-top:10px;display:block">Free. Arrives in about a minute. Unsubscribe anytime — the playbook is yours either way.</span>
-            <span class="micro" style="margin-top:8px;display:block;color:var(--cream-72)">One thing before you enter your email: in this playbook, <b>you</b> film and <b>you</b> direct — the system handles the rest. If you're looking for "AI makes it all," this isn't it.</span>
-            <span class="micro" style="margin-top:8px;display:block">By opting in you consent to have your email used in line with our privacy policy.</span>
-          </div>
-        </div>
+<section class="hub">
+  <div class="hubbg" id="hubbg"></div>
+  <div class="wrap hubin">
+    <svg class="hubship" viewBox="0 0 512 448" style="width:88px" fill="#1FE07A"><use href="#px-ship"/></svg>
+    <span class="hubk"><span class="dot"></span>Nave &middot; mission control</span>
+    <h1>One content system.<br><em>Three ways in.</em></h1>
+    <p class="hubsub">Everything here runs on the same Content OS &mdash; agents on every stage of production. Pick the door that fits how you want it.</p>
+
+    <div class="doors">
+      <a class="door" href="/join" style="--c:#1FE07A">
+        <span class="scan"></span>
+        <span class="dk">01 &middot; The community</span>
+        <span class="dic"><svg viewBox="0 0 16 24" style="width:26px;height:39px" fill="#1FE07A"><use href="#px-astro"/></svg></span>
+        <h2>Agentic AI Content</h2>
+        <p>Install the Content OS on <b>your</b> machine and run it yourself &mdash; courses, live calls, same-day support, a crew building alongside you.</p>
+        <span class="go">Join the community <s>&rarr;</s></span>
+        <span class="who">For creators &amp; operators who want to own the system</span>
+      </a>
+      <a class="door" href="https://www.youtube.com/@enriquemarq-0" target="_blank" rel="noopener" style="--c:#F0EBDE">
+        <span class="scan"></span>
+        <span class="dk">02 &middot; The channel</span>
+        <span class="dic"><svg viewBox="0 0 24 20" style="width:40px;height:33px" fill="#F0EBDE"><use href="#px-cam"/></svg></span>
+        <h2>Enrique, on YouTube</h2>
+        <p>The system built and run <b>in public</b> &mdash; real builds, real numbers, the whole operation on camera. Free, every week.</p>
+        <span class="go">Watch the channel <s>&rarr;</s></span>
+        <span class="who">For anyone who wants to see it working first</span>
+      </a>
+      <a class="door" href="/partner" style="--c:#FF7614">
+        <span class="scan"></span>
+        <span class="dk">03 &middot; The partners</span>
+        <span class="dic"><svg viewBox="0 0 512 448" style="width:44px;height:38px" fill="#FF7614"><use href="#px-ship"/></svg></span>
+        <h2>Nave Partners</h2>
+        <p>Our AI-native human team lands in your business and <b>runs the whole thing</b> &mdash; every stage, systemized. Private, by application.</p>
+        <span class="go">Apply to partner <s>&rarr;</s></span>
+        <span class="who">For businesses that want it handled</span>
+      </a>
+    </div>
+
+    <!-- the playbook — small, below the hub -->
+    <div class="pbstrip">
+      <video src="assets/hero-playbook.mp4" autoplay muted loop playsinline aria-label="Nave in 26 seconds"></video>
+      <div class="pbin">
+        <span class="pk">Free playbook</span>
+        <h3>A month of content in a single day</h3>
+        <p class="pd">The exact steps behind the system, written start to finish. You direct. It produces.</p>
+        <form class="pbform" id="ac-form1" action="#" method="post">
+          <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
+          <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email" required>
+          <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" aria-label="Phone" required style="grid-column:1 / -1">
+          <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0">
+          <button class="btn" type="submit">Send me the playbook &rarr;</button>
+        </form>
+        <span class="pbmicro">Free. Arrives in about a minute. You film, you direct &mdash; the system handles the rest. By opting in you consent to our <a href="privacy.html" style="color:inherit">privacy policy</a>.</span>
       </div>
     </div>
   </div>
 </section>
 </main>
 
-<footer style="padding:36px 0 48px"><div class="wrap" style="text-align:center">
-  <div style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50)">INFINITX — 2026</div>
-  <div style="margin-top:10px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--cream-50)"><a href="/join">The community</a> · <a href="/partner">Partners</a> · <a href="privacy.html">Privacy</a></div>
-  <div style="margin-top:12px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.04em;color:var(--cream-50)">Claude Code is a trademark of Anthropic, PBC. Nave is an independent product — not affiliated with or endorsed by Anthropic.</div>
+<footer style="padding:30px 0 44px"><div class="wrap" style="text-align:center">
+  <div style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50)">INFINITX &mdash; 2026</div>
+  <div style="margin-top:10px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--cream-50)"><a href="/join">The community</a> &middot; <a href="/partner">Partners</a> &middot; <a href="/playbook">The playbook</a> &middot; <a href="privacy.html">Privacy</a></div>
 </div></footer>
 
 <script src="assets/links.js"></script>
 <script>
-/* "/" = the start: opt-in captures the lead (source:playbook -> Beehiiv welcome email
-   delivers the playbook), then sends them to /apply for the three questions. */
+/* stars — decorative only; the page is complete without JS */
+(function(){
+  var bg = document.getElementById('hubbg');
+  if (!bg) return;
+  for (var i = 0; i < 70; i++){
+    var s = document.createElement('i');
+    s.className = 'hubstar';
+    var z = Math.random();
+    s.style.width = s.style.height = (z > .9 ? 3 : 2) + 'px';
+    s.style.left = (Math.random()*100) + '%';
+    s.style.top = (Math.random()*100) + '%';
+    s.style.setProperty('--t', (2.2 + Math.random()*3.6).toFixed(2) + 's');
+    s.style.animationDelay = (Math.random()*3).toFixed(2) + 's';
+    bg.appendChild(s);
+  }
+})();
+/* "/" opt-in: capture the lead (source:playbook -> Beehiiv welcome email
+   delivers the playbook), then send them to /apply for the three questions. */
 (function(){
   var form1=document.getElementById('ac-form1');
   function v(s){ var el=form1.querySelector(s); return el?(el.value||'').trim():''; }
