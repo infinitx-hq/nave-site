@@ -133,27 +133,31 @@
       <a class="door" href="/join" style="--c:#1FE07A">
         <span class="scan"></span>
         <span class="dk">01 &middot; The community</span>
-        <span class="dic"><svg viewBox="0 0 16 24" style="width:26px;height:39px" fill="#1FE07A"><use href="#px-astro"/></svg></span>
+        <span class="dic"><svg viewBox="0 0 512 448" style="width:46px;height:40px" fill="#1FE07A"><use href="#px-ship"/></svg></span>
         <h2>Agentic AI Content</h2>
-        <p>Install the Content OS on <b>your</b> machine and run it yourself &mdash; courses, live calls, same-day support, a crew building alongside you.</p>
+        <p>A community dedicated to building <b>agentic systems around content production</b> &mdash; systematize your content production with AI agents.</p>
         <span class="go">Join the community <s>&rarr;</s></span>
         <span class="who">For creators &amp; operators who want to own the system</span>
       </a>
       <a class="door" href="https://www.youtube.com/@enriquemarq-0" target="_blank" rel="noopener" style="--c:#F0EBDE">
         <span class="scan"></span>
         <span class="dk">02 &middot; The channel</span>
-        <span class="dic"><svg viewBox="0 0 24 20" style="width:40px;height:33px" fill="#F0EBDE"><use href="#px-cam"/></svg></span>
+        <span class="dic"><img src="assets/enrique-yt.jpg" alt="Enrique" style="width:44px;height:44px;border-radius:50%;border:2px solid rgba(240,235,222,.85);box-shadow:0 0 14px rgba(240,235,222,.3)"></span>
         <h2>Enrique, on YouTube</h2>
-        <p>The system built and run <b>in public</b> &mdash; real builds, real numbers, the whole operation on camera. Free, every week.</p>
+        <p>Showcasing real AI systems and builds around content production &mdash; <b>real builds, real numbers</b>, the whole operation on camera. Free, every week.</p>
         <span class="go">Watch the channel <s>&rarr;</s></span>
         <span class="who">For anyone who wants to see it working first</span>
       </a>
       <a class="door" href="/partner" style="--c:#FF7614">
         <span class="scan"></span>
         <span class="dk">03 &middot; The partners</span>
-        <span class="dic"><svg viewBox="0 0 512 448" style="width:44px;height:38px" fill="#FF7614"><use href="#px-ship"/></svg></span>
+        <span class="dic" style="gap:7px;align-items:flex-end">
+          <svg viewBox="0 0 16 24" style="width:19px;height:29px;filter:drop-shadow(0 0 10px rgba(31,224,122,.6))" fill="#1FE07A"><use href="#px-astro"/></svg>
+          <svg viewBox="0 0 16 24" style="width:23px;height:35px;filter:drop-shadow(0 0 10px rgba(240,235,222,.5))" fill="#F0EBDE"><use href="#px-astro"/></svg>
+          <svg viewBox="0 0 16 24" style="width:19px;height:29px;filter:drop-shadow(0 0 10px rgba(255,118,20,.6))" fill="#FF7614"><use href="#px-astro"/></svg>
+        </span>
         <h2>Nave Partners</h2>
-        <p>Our AI-native human team lands in your business and <b>runs the whole thing</b> &mdash; every stage, systemized. Private, by application.</p>
+        <p>Our <b>AI-native human team</b> systemizes your whole content production pipeline for your business &mdash; every stage. Private, by application.</p>
         <span class="go">Apply to partner <s>&rarr;</s></span>
         <span class="who">For businesses that want it handled</span>
       </a>
@@ -164,16 +168,10 @@
       <video src="assets/hero-playbook.mp4" autoplay muted loop playsinline aria-label="Nave in 26 seconds"></video>
       <div class="pbin">
         <span class="pk">Free playbook</span>
-        <h3>A month of content in a single day</h3>
-        <p class="pd">The exact steps behind the system, written start to finish. You direct. It produces.</p>
-        <form class="pbform" id="ac-form1" action="#" method="post">
-          <input type="text" name="fields[first_name]" placeholder="your name" aria-label="Name" required>
-          <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email" required>
-          <input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" aria-label="Phone" required style="grid-column:1 / -1">
-          <input type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute!important;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0">
-          <button class="btn" type="submit">Send me the playbook &rarr;</button>
-        </form>
-        <span class="pbmicro">Free. Arrives in about a minute. You film, you direct &mdash; the system handles the rest. By opting in you consent to our <a href="privacy.html" style="color:inherit">privacy policy</a>.</span>
+        <h3>Make a month of content in a single day</h3>
+        <p class="pd">How I make a month of content in a single day using Claude Code &mdash; get the exact system, the playbook, and the resources. You direct. It produces.</p>
+        <a class="btn" href="/playbook" style="display:inline-block;text-align:center;font-size:13.5px;padding:13px 22px">Get the free playbook &rarr;</a>
+        <span class="pbmicro">Free. Real steps, in order, on the playbook page.</span>
       </div>
     </div>
   </div>
@@ -202,32 +200,6 @@
     s.style.animationDelay = (Math.random()*3).toFixed(2) + 's';
     bg.appendChild(s);
   }
-})();
-/* "/" opt-in: capture the lead (source:playbook -> Beehiiv welcome email
-   delivers the playbook), then send them to /apply for the three questions. */
-(function(){
-  var form1=document.getElementById('ac-form1');
-  function v(s){ var el=form1.querySelector(s); return el?(el.value||'').trim():''; }
-  if(form1) form1.addEventListener('submit', function(e){
-    e.preventDefault();
-    var email=v('input[type=email]'), name=v('input[name="fields[first_name]"]'), phone=v('input[type=tel]');
-    var emEl=form1.querySelector('input[type=email]'), phEl=form1.querySelector('input[type=tel]');
-    var bad=function(el,msg){ if(el){ el.setCustomValidity(msg); el.reportValidity(); el.addEventListener('input',function h(){el.setCustomValidity('');el.removeEventListener('input',h);}); el.focus(); } };
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ bad(emEl,'Enter a valid email address (you@example.com).'); return; }
-    var digits=phone.replace(/\D/g,'');
-    if(!(/^\+?[\d\s().\-]{7,20}$/.test(phone) && digits.length>=7 && digits.length<=15)){ bad(phEl,'Enter a valid phone number with country code (e.g. +1 555 123 4567).'); return; }
-    var ref=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now()+'-'+Math.random().toString(36).slice(2));
-    try{ sessionStorage.setItem('nave_email', email); sessionStorage.setItem('nave_name', name); sessionStorage.setItem('nave_ref', ref); }catch(_e){}
-    var done=false, next=function(){ if(done) return; done=true; location.href='/apply?sent=1'; };
-    try{
-      if(window.naveCapture){
-        window.naveCapture({ source:'playbook', email:email, name:name, phone:phone,
-          lead_ref:ref, referrer:document.referrer||location.href, company_website:v('input[name=company_website]')
-        }).finally(next);
-      } else next();
-    }catch(_e){ next(); }
-    setTimeout(next, 2500);
-  });
 })();
 </script>
 </body>
