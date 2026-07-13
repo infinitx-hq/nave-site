@@ -85,10 +85,10 @@
           <span class="cl">Me, once it's set up — I just don't want to figure out the setup alone</span>
           <span class="cd">That's exactly what the install course + same-day support are for. You'll run it; you won't set it up alone.</span>
         </label>
-        <label class="choice" data-route="/done-for-you">
+        <label class="choice" data-route="/partner">
           <input type="radio" name="route" value="handled">
           <span class="cl">Honestly? Nobody on my team. I want it built and handled for me</span>
-          <span class="cd">Then don't buy a system you'll never open. There's a done-for-you build for exactly this.</span>
+          <span class="cd">Then don't buy a system you'll never open. That's Nave Partners — our team systemizes and runs it in your business. By application.</span>
         </label>
         <div class="ctablock" style="text-align:left;margin-top:22px">
           <button class="btn" type="submit" id="applysubmit" data-block="apply.submit_button">Show me the right page →</button>
@@ -155,10 +155,9 @@
     if (!sel) return;
     var dest = sel.closest('.choice').dataset.route;
     var pick = function(n){ var el = form.querySelector('input[name="' + n + '"]:checked'); return el ? el.value : ''; };
-    /* Personalize the landing: DFY leads who already pay for help get the owner frame;
+    /* Personalize the landing:
        /join scrolls to the section that answers what they said hurts. */
     var params = ['applied=1'];
-    if (dest === '/done-for-you' && pick('reality') === 'paying_help') params.push('fit=owner');
     if (dest === '/join'){
       var d = pick('drain');
       var focus = (d === 'ideas' || d === 'writing') ? 'voice'
