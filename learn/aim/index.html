@@ -67,6 +67,8 @@
   .opt{display:block;width:100%;text-align:left;background:rgba(7,9,8,.45);border:1px solid var(--line);color:var(--cream-72);font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.5;padding:12px 38px 12px 38px;margin-bottom:8px;cursor:pointer;position:relative;transition:border-color .15s,opacity .2s}
   .opt::before{content:attr(data-k);position:absolute;left:13px;top:12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink)}
   .opt:hover{border-color:var(--line-strong)}
+  .opt.is-sel{border-color:var(--cream-50);background:rgba(255,255,255,.06);color:var(--cream);opacity:1}
+  .opt.is-sel::after{content:"●";position:absolute;right:13px;top:12px;color:var(--cream-50);font-family:'DM Mono',monospace;font-size:10px}
   .qq.locked .opt{cursor:default}
   .qq.locked .opt:hover{border-color:var(--line)}
   .qq.locked .opt:not(.is-right):not(.is-wrong){opacity:.45}
@@ -86,6 +88,9 @@
   .failmsg p{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--orange);border:1px solid var(--orange-line);background:var(--orange-dim);padding:13px 16px;margin:0 0 14px;line-height:1.7}
   .retrybtn{background:transparent;border:1px solid var(--orange);color:var(--orange);font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;cursor:pointer;transition:background .15s}
   .retrybtn:hover{background:var(--orange-dim)}
+  .submitbtn{background:transparent;border:1px solid var(--line-strong);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 28px;cursor:pointer;margin-top:16px;transition:background .15s,opacity .15s,border-color .15s}
+  .submitbtn:hover:not(:disabled){background:rgba(31,224,122,.08);border-color:var(--ink)}
+  .submitbtn:disabled{opacity:.35;cursor:default}
   [hidden]{display:none!important}
   /* footer nav */
   .lnav{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
@@ -222,13 +227,14 @@
     </div>
 
     <div class="scorebox" id="scorebox">
-      <p class="prog" id="prog">Answer all 5 to see your score — pass is 4/5.</p>
+      <p class="prog" id="prog">0 of 5 answered — pass is 4/5.</p>
+      <button class="submitbtn" id="submitbtn" type="button" disabled>Submit answers</button>
       <div id="final" hidden>
         <p class="score">You got <b id="scoreN">0</b>/5 — pass is 4/5.</p>
-        <p class="passmsg" id="passmsg" hidden>Passed — post your artifact in the community.</p>
+        <p class="passmsg" id="passmsg" hidden>Passed. Next move: post your bullseye (center + one ring) in Build Log, then start Prep 2.</p>
         <div class="failmsg" id="failmsg" hidden>
-          <p>Re-read the section above and retry.</p>
-          <button class="retrybtn" type="button" id="retry">Retry the check</button>
+          <p>Next move: re-read/rewatch the lesson above and retake the check.</p>
+          <button class="retrybtn" type="button" id="retry">Retake the check</button>
         </div>
       </div>
     </div>
@@ -252,63 +258,85 @@
 <script>
 (function(){
   var qs = [].slice.call(document.querySelectorAll('[data-q]'));
-  var answered = 0, correct = 0;
+  var N = qs.length, PASS = 4;
+  var submitted = false;
   var prog = document.getElementById('prog'),
+      submitBtn = document.getElementById('submitbtn'),
       fin = document.getElementById('final'),
       scoreN = document.getElementById('scoreN'),
       passmsg = document.getElementById('passmsg'),
       failmsg = document.getElementById('failmsg');
 
-  function update(){
-    if (answered < qs.length){
-      prog.hidden = false;
-      prog.textContent = answered === 0
-        ? 'Answer all 5 to see your score — pass is 4/5.'
-        : 'Answered ' + answered + ' of ' + qs.length + ' — keep going.';
-      fin.hidden = true;
-      return;
-    }
-    prog.hidden = true;
-    scoreN.textContent = correct;
-    fin.hidden = false;
-    passmsg.hidden = !(correct >= 4);
-    failmsg.hidden = (correct >= 4);
+  function answeredCount(){
+    return qs.filter(function(q){ return q.querySelector('.opt.is-sel'); }).length;
+  }
+
+  function progress(){
+    var a = answeredCount();
+    prog.textContent = a + ' of ' + N + ' answered' +
+      (a === N ? ' — ready to submit.' : ' — pass is ' + PASS + '/' + N + '.');
+    submitBtn.disabled = a < N;
   }
 
   qs.forEach(function(q){
     var opts = [].slice.call(q.querySelectorAll('.opt'));
     opts.forEach(function(o){
       o.addEventListener('click', function(){
-        if (q.classList.contains('locked')) return;
-        q.classList.add('locked');
-        var right = o.hasAttribute('data-correct');
-        o.classList.add(right ? 'is-right' : 'is-wrong');
-        if (!right){
-          opts.forEach(function(x){ if (x.hasAttribute('data-correct')) x.classList.add('is-right'); });
-        }
-        opts.forEach(function(x){ x.disabled = true; });
-        q.querySelector('.why').classList.add('show');
-        answered++; if (right) correct++;
-        update();
+        if (submitted) return;
+        opts.forEach(function(x){ x.classList.remove('is-sel'); });
+        o.classList.add('is-sel');
+        progress();
       });
     });
+  });
+
+  submitBtn.addEventListener('click', function(){
+    if (submitted || answeredCount() < N) return;
+    submitted = true;
+    var correct = 0;
+    qs.forEach(function(q){
+      var opts = [].slice.call(q.querySelectorAll('.opt'));
+      var sel = q.querySelector('.opt.is-sel');
+      var right = !!(sel && sel.hasAttribute('data-correct'));
+      if (right) correct++;
+      q.classList.add('locked');
+      if (sel){
+        sel.classList.remove('is-sel');
+        sel.classList.add(right ? 'is-right' : 'is-wrong');
+      }
+      if (!right){
+        opts.forEach(function(x){ if (x.hasAttribute('data-correct')) x.classList.add('is-right'); });
+      }
+      opts.forEach(function(x){ x.disabled = true; });
+      q.querySelector('.why').classList.add('show');
+    });
+    prog.hidden = true;
+    submitBtn.hidden = true;
+    scoreN.textContent = correct;
+    fin.hidden = false;
+    passmsg.hidden = !(correct >= PASS);
+    failmsg.hidden = (correct >= PASS);
+    document.getElementById('scorebox').scrollIntoView({behavior:'smooth', block:'center'});
   });
 
   var retry = document.getElementById('retry');
   if (retry) retry.addEventListener('click', function(){
-    answered = 0; correct = 0;
+    submitted = false;
     qs.forEach(function(q){
       q.classList.remove('locked');
       [].slice.call(q.querySelectorAll('.opt')).forEach(function(x){
-        x.disabled = false; x.classList.remove('is-right','is-wrong');
+        x.disabled = false; x.classList.remove('is-sel','is-right','is-wrong');
       });
       q.querySelector('.why').classList.remove('show');
     });
-    update();
+    fin.hidden = true;
+    prog.hidden = false;
+    submitBtn.hidden = false;
+    progress();
     qs[0].scrollIntoView({behavior:'smooth', block:'start'});
   });
 
-  update();
+  progress();
 
   /* light entrance animations — page works fine without this */
   try {
