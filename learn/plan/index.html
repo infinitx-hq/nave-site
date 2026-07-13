@@ -76,6 +76,11 @@
   .opt.is-right::after{content:"✓";position:absolute;right:13px;top:11px;color:var(--ink);font-family:'DM Mono',monospace}
   .opt.is-wrong{border-color:var(--orange);background:var(--orange-dim);color:var(--cream);opacity:1}
   .opt.is-wrong::after{content:"✕";position:absolute;right:13px;top:11px;color:var(--orange);font-family:'DM Mono',monospace}
+  /* yes/no questions */
+  .ynrow{display:flex;gap:10px}
+  .opt.yn{flex:1;text-align:center;padding:16px 10px;font-weight:600;font-size:14.5px;letter-spacing:.14em;text-transform:uppercase}
+  .opt.yn::before{content:none}
+  .opt.yn.is-sel::after,.opt.yn.is-right::after,.opt.yn.is-wrong::after{position:static;margin-left:9px}
   .why{display:none;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);margin:12px 2px 2px;line-height:1.55}
   .why.show{display:block}
   /* score */
@@ -173,32 +178,32 @@
     <div class="qhead2">
       <span class="eyebrow" style="margin:0">The self-check</span>
       <h2>Prove it <i>stuck.</i></h2>
-      <p class="qsub">5 questions · pass is 4/5 · it's a check, not a gate</p>
+      <p class="qsub">5 questions · most are yes/no · pass is 4/5 · it's a check, not a gate</p>
     </div>
 
     <div class="qq" data-q>
       <span class="qn">Q1 / 5</span>
-      <p class="qt">A month plan is best thought of as…</p>
-      <button class="opt" type="button" data-k="A">30 ideas you brainstorm one by one</button>
-      <button class="opt" type="button" data-k="B" data-correct>One aimed grid a strategist agent fills, tagged by ring</button>
-      <button class="opt" type="button" data-k="C">A content calendar template</button>
+      <p class="qt">Who fills your 30-piece month grid?</p>
+      <button class="opt" type="button" data-k="A">You — brainstorming 30 ideas one by one</button>
+      <button class="opt" type="button" data-k="B" data-correct>A strategist agent — it drafts the grid, you review and direct it</button>
+      <button class="opt" type="button" data-k="C">A calendar template you copy</button>
       <button class="opt" type="button" data-k="D">Whatever trends that week</button>
-      <p class="why">Why: you don't agonize over 30 blank cells — you direct a grid that's already aimed.</p>
+      <p class="why">Why: you don't agonize over 30 blank cells — the agent fills one aimed grid and you direct the draft.</p>
     </div>
 
     <div class="qq" data-q>
       <span class="qn">Q2 / 5</span>
-      <p class="qt">Why is each piece "ring-tagged"?</p>
-      <button class="opt" type="button" data-k="A">To color-code the calendar</button>
-      <button class="opt" type="button" data-k="B" data-correct>So analytics can read conversions per ring and re-aim next month</button>
-      <button class="opt" type="button" data-k="C">To pick the platform</button>
-      <button class="opt" type="button" data-k="D">It's decoration</button>
-      <p class="why">Why: the tag is what closes the loop — you learn which ring converts and shift the mix.</p>
+      <p class="qt">The ring tag on each piece is just decoration. Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y">Yes</button>
+        <button class="opt yn" type="button" data-k="N" data-correct>No</button>
+      </div>
+      <p class="why">Why: the tag is the wiring for the learning loop — analytics reads results per ring, and next month's plan re-aims on real numbers.</p>
     </div>
 
     <div class="qq" data-q>
       <span class="qn">Q3 / 5</span>
-      <p class="qt">When the plan comes back wrong, you should…</p>
+      <p class="qt">The plan comes back partly wrong. What do you do?</p>
       <button class="opt" type="button" data-k="A">Rewrite it yourself from scratch</button>
       <button class="opt" type="button" data-k="B" data-correct>Correct it in one sentence and re-run</button>
       <button class="opt" type="button" data-k="C">Accept it as-is</button>
@@ -208,22 +213,22 @@
 
     <div class="qq" data-q>
       <span class="qn">Q4 / 5</span>
-      <p class="qt">Batch production beats one-off because…</p>
-      <button class="opt" type="button" data-k="A">It's lower quality but faster</button>
-      <button class="opt" type="button" data-k="B" data-correct>Setup cost is paid once and spread across the whole month</button>
-      <button class="opt" type="button" data-k="C">Platforms prefer batches</button>
-      <button class="opt" type="button" data-k="D">It skips the approval step</button>
-      <p class="why">Why: the leverage is amortizing the aim + the formats across 30 pieces at once.</p>
+      <p class="qt">Batching pays the setup cost — the aim, the voice, the formats — once for the whole month. Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y" data-correct>Yes</button>
+        <button class="opt yn" type="button" data-k="N">No</button>
+      </div>
+      <p class="why">Why: one post at a time pays that cost every single time — batching pays it once and spreads it across 30 pieces.</p>
     </div>
 
     <div class="qq" data-q>
       <span class="qn">Q5 / 5</span>
-      <p class="qt">What makes a plan "aimed"?</p>
-      <button class="opt" type="button" data-k="A">It has 30 pieces</button>
-      <button class="opt" type="button" data-k="B" data-correct>Every piece serves a ring of your bullseye</button>
-      <button class="opt" type="button" data-k="C">It covers every platform</button>
-      <button class="opt" type="button" data-k="D">It's scheduled</button>
-      <p class="why">Why: aimed = every cell traces back to who you're for. Volume without aim is noise.</p>
+      <p class="qt">A plan counts as "aimed" as long as it has 30 pieces. Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y">Yes</button>
+        <button class="opt yn" type="button" data-k="N" data-correct>No</button>
+      </div>
+      <p class="why">Why: aimed means every piece traces back to a ring of your bullseye. Volume without aim is noise.</p>
     </div>
 
     <div class="scorebox" id="scorebox">

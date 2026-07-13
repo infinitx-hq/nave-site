@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SETUP &amp; INSTALL — The Self-Check · Agentic AI Content</title>
-<meta name="description" content="The self-check for the Setup &amp; Install course of the Agentic AI Content community. 10 questions across the three lessons — pass is 8/10.">
+<meta name="description" content="The self-check for the Setup &amp; Install course of the Agentic AI Content community. 8 questions across the three lessons — most are yes/no — pass is 6/8.">
 <link rel="canonical" href="https://nave.infinitxai.com/learn/install/">
 <meta name="theme-color" content="#070908">
 <link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
@@ -66,6 +66,11 @@
   .opt.is-right::after{content:"✓";position:absolute;right:13px;top:11px;color:var(--ink);font-family:'DM Mono',monospace}
   .opt.is-wrong{border-color:var(--orange);background:var(--orange-dim);color:var(--cream);opacity:1}
   .opt.is-wrong::after{content:"✕";position:absolute;right:13px;top:11px;color:var(--orange);font-family:'DM Mono',monospace}
+  /* yes/no questions */
+  .ynrow{display:flex;gap:10px}
+  .opt.yn{flex:1;text-align:center;padding:16px 10px;font-weight:600;font-size:14.5px;letter-spacing:.14em;text-transform:uppercase}
+  .opt.yn::before{content:none}
+  .opt.yn.is-sel::after,.opt.yn.is-right::after,.opt.yn.is-wrong::after{position:static;margin-left:9px}
   .why{display:none;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);margin:12px 2px 2px;line-height:1.55}
   .why.show{display:block}
   /* score */
@@ -113,7 +118,7 @@
     </div>
     <span class="kicker rise" style="--rd:.1s"><b>SETUP &amp; INSTALL</b> · THE SELF-CHECK</span>
     <h1 class="rise" style="--rd:.2s">Setup &amp; Install</h1>
-    <p class="lsub rise" style="--rd:.32s">This check covers the <b>three Install lessons</b>. Ten questions, and the pass bar is <b>8/10</b>. Every answer's explanation points back to the lesson to rewatch — miss one, you know exactly where to go.</p>
+    <p class="lsub rise" style="--rd:.32s">This check covers the <b>three Install lessons</b>. Eight questions — most are simple yes/no — and the pass bar is <b>6/8</b>. Every answer's explanation points back to the lesson to rewatch — miss one, you know exactly where to go.</p>
   </div>
 </section>
 
@@ -139,11 +144,11 @@
     <div class="qhead2">
       <span class="eyebrow" style="margin:0">The self-check</span>
       <h2>Prove it <i>stuck.</i></h2>
-      <p class="qsub">10 questions · pass is 8/10 · it's a check, not a gate</p>
+      <p class="qsub">8 questions · most are yes/no · pass is 6/8 · it's a check, not a gate</p>
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q1 / 10</span>
+      <span class="qn">Q1 / 8</span>
       <p class="qt">Which Claude plan does the course tell you to get?</p>
       <button class="opt" type="button" data-k="A">The free plan — upgrade only when you hit a wall</button>
       <button class="opt" type="button" data-k="B">The Pro plan at $20 — it's the same model anyway</button>
@@ -153,47 +158,37 @@
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q2 / 10</span>
-      <p class="qt">Where does the course have you run Claude Code, and why?</p>
-      <button class="opt" type="button" data-k="A">The terminal — it's faster and more powerful</button>
-      <button class="opt" type="button" data-k="B" data-correct>The Claude Code GUI extension in VS Code — you can drag-drop screenshots and keep sessions open</button>
-      <button class="opt" type="button" data-k="C">The claude.ai website in your browser</button>
-      <button class="opt" type="button" data-k="D">The Claude desktop app on your phone and computer</button>
-      <p class="why">Why: L1 — the GUI extension in VS Code beats the terminal for content work: drag-drop screenshots, sessions stay open.</p>
+      <span class="qn">Q2 / 8</span>
+      <p class="qt">The course has you run Claude Code in the bare terminal. Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y">Yes</button>
+        <button class="opt yn" type="button" data-k="N" data-correct>No</button>
+      </div>
+      <p class="why">Why: L1 — you run the Claude Code GUI extension inside VS Code: drag-drop screenshots, sessions stay open.</p>
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q3 / 10</span>
+      <span class="qn">Q3 / 8</span>
       <p class="qt">Which permission mode does the course recommend for content work?</p>
       <button class="opt" type="button" data-k="A" data-correct>Bypass permissions — Claude works autonomously without stopping to ask</button>
       <button class="opt" type="button" data-k="B">Manual — approve every single action yourself</button>
       <button class="opt" type="button" data-k="C">Plan mode — Claude only plans, never executes</button>
       <button class="opt" type="button" data-k="D">Edit-automatically — file edits allowed, everything else asks</button>
-      <p class="why">Why: L1 — bypass permissions lets Claude work autonomously. Manual, edit-automatically, plan, and auto exist, but for content work you want it moving.</p>
+      <p class="why">Why: L1 — bypass permissions lets Claude work autonomously. The other modes exist, but for content work you want it moving.</p>
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q4 / 10</span>
-      <p class="qt">What effort level should you run, and what's the trade-off?</p>
-      <button class="opt" type="button" data-k="A">Low — it answers faster and that's what matters</button>
-      <button class="opt" type="button" data-k="B">Medium — the balanced default for everything</button>
-      <button class="opt" type="button" data-k="C">Effort doesn't matter — every level thinks the same</button>
-      <button class="opt" type="button" data-k="D" data-correct>Max (or Extra High) — higher effort spends more tokens, and it's worth it</button>
-      <p class="why">Why: L1 — run Max (or Extra High). Higher effort = more tokens, which is exactly why you got the plan that doesn't cap you.</p>
+      <span class="qn">Q4 / 8</span>
+      <p class="qt">To get access, you submit your name, community email, and GitHub username at nave.infinitxai.com/access — then accept the GitHub invite in your email. Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y" data-correct>Yes</button>
+        <button class="opt yn" type="button" data-k="N">No</button>
+      </div>
+      <p class="why">Why: L2 — that's the whole access flow. No zip downloads, no DMs, no license keys — the team invite lands in your email.</p>
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q5 / 10</span>
-      <p class="qt">How do you get access to the Nave Content OS?</p>
-      <button class="opt" type="button" data-k="A">Download the zip file from the community classroom</button>
-      <button class="opt" type="button" data-k="B" data-correct>Submit your name, community email, and GitHub username at nave.infinitxai.com/access, then accept the GitHub team invite by email</button>
-      <button class="opt" type="button" data-k="C">DM Enrique on Instagram with your GitHub username</button>
-      <button class="opt" type="button" data-k="D">Buy a separate license key from the Nave site</button>
-      <p class="why">Why: L2 — name, community email, and GitHub username at nave.infinitxai.com/access, then accept the GitHub team invite that lands in your email.</p>
-    </div>
-
-    <div class="qq" data-q>
-      <span class="qn">Q6 / 10</span>
+      <span class="qn">Q5 / 8</span>
       <p class="qt">How do you get your own copy of the OS, and how do you keep receiving upgrades?</p>
       <button class="opt" type="button" data-k="A">Create a branch inside the shared NAVE repo and work there</button>
       <button class="opt" type="button" data-k="B">Download the code once and disconnect — it's yours now</button>
@@ -203,50 +198,40 @@
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q7 / 10</span>
-      <p class="qt">Who actually performs the install — clone, dependencies, reframe engine, render engine, .env?</p>
-      <button class="opt" type="button" data-k="A" data-correct>Claude does all of it — you just ask in plain English in a new project folder, never touching a terminal</button>
-      <button class="opt" type="button" data-k="B">You do — following a step-by-step terminal guide</button>
-      <button class="opt" type="button" data-k="C">A team member remote-installs it on your machine</button>
-      <button class="opt" type="button" data-k="D">An installer .exe you download and double-click</button>
-      <p class="why">Why: L2 — Claude clones, installs dependencies, sets up the reframe engine, render engine, and .env. You never touch a terminal; you ask in plain English.</p>
+      <span class="qn">Q6 / 8</span>
+      <p class="qt">You do the install yourself, following a step-by-step terminal guide. Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y">Yes</button>
+        <button class="opt yn" type="button" data-k="N" data-correct>No</button>
+      </div>
+      <p class="why">Why: L2 — Claude does the whole install: clone, dependencies, reframe engine, render engine, .env. You ask in plain English and never touch a terminal.</p>
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q8 / 10</span>
-      <p class="qt">The three keys that go in your .env are…</p>
-      <button class="opt" type="button" data-k="A">OpenAI, Midjourney, and Zapier</button>
-      <button class="opt" type="button" data-k="B">Just one — your Claude API key covers everything</button>
-      <button class="opt" type="button" data-k="C">Your Instagram, TikTok, and YouTube passwords</button>
-      <button class="opt" type="button" data-k="D" data-correct>AssemblyAI (transcripts, $50 free credits), Zernio (first 2 accounts free; profile ID + read/write key), and Kie.ai (AI generation — add money first)</button>
-      <p class="why">Why: L2 — AssemblyAI gives $50 free credits for transcripts, Zernio's first 2 accounts are free (you need the profile ID + read/write key), and Kie.ai needs money loaded or nothing generates.</p>
+      <span class="qn">Q7 / 8</span>
+      <p class="qt">The three keys in your .env are AssemblyAI (transcripts), Zernio (posting), and Kie.ai (AI generation). Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y" data-correct>Yes</button>
+        <button class="opt yn" type="button" data-k="N">No</button>
+      </div>
+      <p class="why">Why: L2 — AssemblyAI gives $50 free credits, Zernio's first 2 accounts are free (profile ID + read/write key), and Kie.ai needs money loaded or nothing generates.</p>
     </div>
 
     <div class="qq" data-q>
-      <span class="qn">Q9 / 10</span>
-      <p class="qt">What does the brand-setup skill actually build?</p>
-      <button class="opt" type="button" data-k="A">A logo and a color palette for your channel art</button>
-      <button class="opt" type="button" data-k="B" data-correct>Your constitutional files — brand identity, brand profile (ICP/competitors), content pillars, content plan, and cover system</button>
-      <button class="opt" type="button" data-k="C">A folder of caption templates to copy-paste</button>
-      <button class="opt" type="button" data-k="D">A scraped archive of your competitors' posts to imitate</button>
-      <p class="why">Why: L3 — the skill builds the constitutional files: brand identity, brand profile (ICP/competitors), content pillars, content plan, cover system — and it interviews and researches for you if you're new.</p>
-    </div>
-
-    <div class="qq" data-q>
-      <span class="qn">Q10 / 10</span>
-      <p class="qt">How does the OS memory system work across sessions?</p>
-      <button class="opt" type="button" data-k="A">Memory is automatic — you never run a command</button>
-      <button class="opt" type="button" data-k="B">/save writes a backup and /load restores it</button>
-      <button class="opt" type="button" data-k="C" data-correct>/continue loads the bank + session logs at session start; /done captures the session and promotes what worked into the bank</button>
-      <button class="opt" type="button" data-k="D">It reads your chat history the way ChatGPT's memory setting does</button>
-      <p class="why">Why: L3 — start a session with /continue (loads the bank + session logs), end it with /done (captures the session, promotes what worked into the bank).</p>
+      <span class="qn">Q8 / 8</span>
+      <p class="qt">/continue loads your OS memory at the start of a session; /done saves what worked at the end. Yes or no?</p>
+      <div class="ynrow">
+        <button class="opt yn" type="button" data-k="Y" data-correct>Yes</button>
+        <button class="opt yn" type="button" data-k="N">No</button>
+      </div>
+      <p class="why">Why: L3 — start with /continue (loads the bank + session logs), end with /done (captures the session, promotes what worked into the bank).</p>
     </div>
 
     <div class="scorebox" id="scorebox">
-      <p class="prog" id="prog">0 of 10 answered — pass is 8/10.</p>
+      <p class="prog" id="prog">0 of 8 answered — pass is 6/8.</p>
       <button class="submitbtn" id="submitbtn" type="button" disabled>Submit answers</button>
       <div id="final" hidden>
-        <p class="score">You got <b id="scoreN">0</b>/10 — pass is 8/10.</p>
+        <p class="score">You got <b id="scoreN">0</b>/8 — pass is 6/8.</p>
         <p class="passmsg" id="passmsg" hidden>Passed. Next move: post a screenshot of your installed OS folder in Build Log, then start The Content Pipeline course.</p>
         <div class="failmsg" id="failmsg" hidden>
           <p>Next move: re-read/rewatch the lesson above and retake the check.</p>
@@ -273,7 +258,7 @@
 <script>
 (function(){
   var qs = [].slice.call(document.querySelectorAll('[data-q]'));
-  var N = qs.length, PASS = 8;
+  var N = qs.length, PASS = 6;
   var submitted = false;
   var prog = document.getElementById('prog'),
       submitBtn = document.getElementById('submitbtn'),
