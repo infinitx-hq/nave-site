@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Agentic AI Content — systematize your content production with AI agents</title>
 <meta name="description" content="A community dedicated to building agentic systems around content production — a Content OS that takes over your whole production process, built on Claude Code. You direct. They produce.">
 <link rel="canonical" href="https://nave.infinitxai.com/join">
@@ -214,11 +214,18 @@
   /* ── final + ctabar ──────────────────────────────────────────── */
   .finalposter{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(36px,5.6vw,76px);line-height:1;color:var(--cream);margin:14px 0 0}
   .finalposter .ln2{display:block;color:var(--ink)}
-  #ctabar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--glass);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 0;transform:translateY(110%);transition:transform .3s ease}
+  #ctabar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--glass);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:12px 0 calc(12px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .3s ease}
   #ctabar.show{transform:none}
   #ctabar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
   #ctabar .t{font-size:14px;color:var(--cream-72)}
-  @media(max-width:640px){#ctabar .t{display:none}}
+  @media(max-width:640px){#ctabar .t{display:none}#ctabar .wrap{justify-content:center}}
+  /* small screens: hero chip + type rhythm */
+  @media(max-width:640px){
+    .badgechip{flex-wrap:wrap;justify-content:center;row-gap:2px;max-width:94%;font-size:10.5px;letter-spacing:.07em;text-align:center}
+    .joinhero h1{font-size:clamp(28px,8.6vw,36px)}
+    .herosub{font-size:12.5px;padding:0 2px}
+    .btn-big{width:min(100%,340px);text-align:center;justify-content:center}
+  }
 
   /* AI media wall */
   .films{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:26px}

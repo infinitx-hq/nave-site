@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nave Partners — systemize your content production · By application</title>
 <meta name="description" content="There’s a version of your business where content ships itself. Nave Partners — an AI-native human team with a proven content operating system, systemizing every process of your content production. By application.">
 <meta property="og:title" content="Nave Partners — systemize your content production · By application">
@@ -202,7 +202,41 @@
   .ok h3 em{font-style:normal;color:var(--ink)}
   .ok p{font-size:16.5px;line-height:1.7;color:var(--cream-72);margin:14px 0 0}
   .fade{opacity:0;transform:translateY(18px)}
+
+  /* ── static fallback (no JS / GSAP failed / reduced motion) ──
+     one beat, crew ring, team + ground visible — never stack the beats */
+  .no-anim .hero-in,.no-anim .scrollcue{visibility:visible}
+  .no-anim .fade{opacity:1;transform:none}
+  .no-anim #beat1,.no-anim #beat2{display:none}
+  .no-anim #beat3,.no-anim .cw{opacity:1}
+  .no-anim #dteam{opacity:1;transform:translateX(-50%) translateY(58vh)}
+  .no-anim #dground{opacity:.5}
+  .no-anim .frame{transform:scale(1)}
+  .no-anim .pillars span,.no-anim .badges span,.no-anim .fmt span,.no-anim .bub,.no-anim .vigchip{opacity:1;transform:none}
+
+  /* ── small screens: header + hero + crew ring ── */
+  @media(max-width:640px){
+    .brand .w{font-size:17px}
+    .privline,header .chrome{font-size:9.5px;letter-spacing:.08em;text-align:right;line-height:1.6;max-width:132px}
+    #space{min-height:100svh}
+    .stage{height:100svh}
+    #space h1{font-size:clamp(34px,10.4vw,44px)}
+    .heroship{width:84px!important;margin-bottom:20px}
+    .herosub{font-size:17px;line-height:1.66;margin-top:22px}
+    .scrollcue{bottom:calc(22px + env(safe-area-inset-bottom))}
+    .cw i{max-width:118px}
+  }
 </style>
+<noscript><style>
+  .hero-in,.scrollcue{visibility:visible}
+  .fade{opacity:1;transform:none}
+  #beat1,#beat2{display:none}
+  #beat3,.cw{opacity:1}
+  #dteam{opacity:1;transform:translateX(-50%) translateY(58vh)}
+  #dground{opacity:.5}
+  .frame{transform:scale(1)}
+  .pillars span,.badges span,.fmt span,.bub,.vigchip{opacity:1;transform:none}
+</style></noscript>
 </head>
 <body>
 
@@ -286,11 +320,11 @@
       <span class="cw" style="--c:#1FE07A;left:12%;top:22%"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><i>your strategist</i></span>
       <span class="cw" style="--c:#6C9BF0;left:6%;top:58%"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><i>your copywriter</i></span>
       <span class="cw" style="--c:#F2C94C;left:24%;top:78%"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><i>your producer</i></span>
-      <span class="cw" style="--c:#D97757;left:80%;top:20%"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><i>your editor</i></span>
-      <span class="cw" style="--c:#C08BF2;left:88%;top:54%"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><i>your designer</i></span>
-      <span class="cw" style="--c:#EB5757;left:72%;top:80%"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><i>your social media<br>manager</i></span>
+      <span class="cw" style="--c:#D97757;right:8%;top:20%"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><i>your editor</i></span>
+      <span class="cw" style="--c:#C08BF2;right:3%;top:54%"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><i>your designer</i></span>
+      <span class="cw" style="--c:#EB5757;right:9%;top:74%"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><i>your social media<br>manager</i></span>
       <span class="cw" style="--c:#2FD4C2;left:40%;top:12%"><svg viewBox="0 0 24 20" fill="#2FD4C2"><use href="#px-mail"/></svg><i>your chat marketing<br>agent</i></span>
-      <span class="cw" style="--c:#9BF06C;left:56%;top:82%"><svg viewBox="0 0 24 20" fill="#9BF06C"><use href="#px-bars"/></svg><i>your analytics</i></span>
+      <span class="cw" style="--c:#9BF06C;left:44%;top:86%"><svg viewBox="0 0 24 20" fill="#9BF06C"><use href="#px-bars"/></svg><i>your analytics</i></span>
     </div>
   </div>
 </section>
@@ -566,6 +600,12 @@
   seedStars('stars1', 70, .8); seedStars('stars2', 40, .45); seedStars('stars3', 14, .8, true);
   seedStars('dstars', 90, .7); seedStars('dstars2', 50, .35);
 
+  /* if the animation engine is missing, fall back to the static composition
+     (hero visible, single beat, crew ring on) instead of a hidden/stacked page */
+  if (!window.gsap || !window.ScrollTrigger){
+    document.documentElement.classList.add('no-anim');
+    throw new Error('gsap missing — static fallback active');
+  }
   gsap.registerPlugin(ScrollTrigger);
   var mm = gsap.matchMedia();
 
@@ -749,7 +789,13 @@
 
   mm.add({motion: '(prefers-reduced-motion: no-preference)', still: '(prefers-reduced-motion: reduce)'}, function(ctx){
     if (ctx.conditions.still){
-      gsap.set('.beat, .cw, .fade, #dteam, #dground', {autoAlpha: 1, clearProps: 'transform'});
+      /* static composition — the beats are absolutely stacked, so only ONE
+         may show or they render on top of each other (garbled text) */
+      gsap.set('.fade', {autoAlpha: 1, clearProps: 'transform'});
+      gsap.set('#beat1, #beat2', {display: 'none'});
+      gsap.set('#beat3, .cw', {autoAlpha: 1});
+      gsap.set('#dteam', {autoAlpha: 1, y: '58vh'});
+      gsap.set('#dground', {autoAlpha: .5});
       return;
     }
     gsap.to('#stars1', {y: -140, ease: 'none', scrollTrigger: {trigger: '#space', start: 'top top', end: 'bottom top', scrub: true}});
@@ -781,8 +827,13 @@
     gsap.to(el, {autoAlpha: 1, y: 0, duration: .8, ease: 'power2.out',
       scrollTrigger: {trigger: el, start: 'top 88%', once: true}});
   });
-
-  /* application submit -> substrate lead capture (verified contract) */
+})();
+</script>
+<script>
+(function(){
+  /* application submit -> substrate lead capture (verified contract)
+     — its own script block so the form ALWAYS binds, even if the
+     animation engine fails upstream */
   var form = document.getElementById('pform');
   form.addEventListener('submit', function(e){
     e.preventDefault();
