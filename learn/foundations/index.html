@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOUNDATIONS — The Self-Check · Agentic AI Content</title>
+<meta name="description" content="The self-check for the Foundations course of the Agentic AI Content community. 10 questions across the three lessons — pass is 8/10.">
+<link rel="canonical" href="https://nave.infinitxai.com/learn/foundations/">
+<meta name="theme-color" content="#070908">
+<link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  :root{--orange:#FF7614;--orange-line:rgba(255,118,20,.45);--orange-dim:rgba(255,118,20,.1)}
+  .lwrap{max-width:760px;margin:0 auto;padding:0 22px}
+  /* hero */
+  .lhero{padding:52px 0 26px;text-align:center;position:relative;overflow:hidden}
+  .rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--rd,0s)}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .ship{position:relative;width:56px;margin:0 auto;animation:shiphover 3.2s ease-in-out infinite alternate}
+  @keyframes shiphover{0%{transform:translateY(0)}100%{transform:translateY(-6px)}}
+  .ship svg{width:56px;height:49px;filter:drop-shadow(0 0 16px rgba(31,224,122,.5))}
+  .flames{display:flex;justify-content:center;gap:6px;margin-top:-4px}
+  .flames i{width:4px;background:#F2C94C;animation:flick .32s steps(2) infinite alternate;box-shadow:0 0 8px rgba(242,201,76,.8)}
+  .flames i:nth-child(1){height:7px;animation-delay:.05s}
+  .flames i:nth-child(2){height:11px}
+  .flames i:nth-child(3){height:7px;animation-delay:.12s}
+  @keyframes flick{0%{transform:scaleY(.6);opacity:.7}100%{transform:scaleY(1.15);opacity:1}}
+  .kicker{display:inline-block;border:1px solid var(--line);background:rgba(15,21,17,.7);padding:8px 15px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50);margin-top:18px}
+  .kicker b{color:var(--ink);font-weight:500}
+  .lhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(52px,13vw,96px);line-height:1;letter-spacing:.01em;color:var(--cream);margin:16px 0 0}
+  .lsub{font-family:'DM Mono',monospace;font-size:13px;line-height:1.9;color:var(--cream-72);max-width:520px;margin:16px auto 0}
+  .lsub b{color:var(--cream)}
+  /* teaching blocks */
+  .teach{padding:30px 0 0}
+  .tblock{margin:0 0 36px}
+  .tk{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
+  .tblock h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(21px,3.6vw,29px);line-height:1.12;letter-spacing:.01em;color:var(--cream);margin:0 0 10px}
+  .tblock p{margin:0 0 12px;font-size:15.5px;line-height:1.72;color:var(--cream-72)}
+  .tblock p b{color:var(--cream)}
+  .tblock .note{font-family:'Newsreader',serif;font-style:italic;font-size:17.5px;color:var(--ink-soft);line-height:1.55}
+  ul.tl{list-style:none;padding:0;margin:0 0 12px}
+  ul.tl li{padding:5px 0 5px 20px;position:relative;font-size:15px;color:var(--cream-72);line-height:1.62}
+  ul.tl li b{color:var(--cream)}
+  ul.tl li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;background:var(--ink)}
+  /* quiz */
+  #quiz{padding:48px 0 8px}
+  .qhead2{text-align:center;margin-bottom:26px}
+  .qhead2 h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,4.6vw,40px);line-height:1.05;color:var(--cream);margin:8px 0 0}
+  .qhead2 h2 i{font-style:normal;color:var(--ink)}
+  .qhead2 .qsub{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--cream-50);margin:12px 0 0}
+  .qq{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.04),rgba(15,21,17,.6));padding:20px 22px;margin-bottom:14px}
+  .qq .qn{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink);letter-spacing:.16em}
+  .qq .qt{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16.5px;color:var(--cream);margin:7px 0 14px;line-height:1.45}
+  .opt{display:block;width:100%;text-align:left;background:rgba(7,9,8,.45);border:1px solid var(--line);color:var(--cream-72);font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.5;padding:12px 38px 12px 38px;margin-bottom:8px;cursor:pointer;position:relative;transition:border-color .15s,opacity .2s}
+  .opt::before{content:attr(data-k);position:absolute;left:13px;top:12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink)}
+  .opt:hover{border-color:var(--line-strong)}
+  .qq.locked .opt{cursor:default}
+  .qq.locked .opt:hover{border-color:var(--line)}
+  .qq.locked .opt:not(.is-right):not(.is-wrong){opacity:.45}
+  .opt.is-right{border-color:var(--ink);background:rgba(31,224,122,.1);color:var(--cream);opacity:1}
+  .opt.is-right::after{content:"✓";position:absolute;right:13px;top:11px;color:var(--ink);font-family:'DM Mono',monospace}
+  .opt.is-wrong{border-color:var(--orange);background:var(--orange-dim);color:var(--cream);opacity:1}
+  .opt.is-wrong::after{content:"✕";position:absolute;right:13px;top:11px;color:var(--orange);font-family:'DM Mono',monospace}
+  .why{display:none;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);margin:12px 2px 2px;line-height:1.55}
+  .why.show{display:block}
+  /* score */
+  .scorebox{border:1px solid var(--line);background:var(--glass);padding:26px 24px;text-align:center;margin-top:22px}
+  .scorebox .prog{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50);margin:0}
+  .scorebox .score{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(20px,3.4vw,28px);color:var(--cream);margin:0}
+  .scorebox .score b{color:var(--ink);font-weight:400}
+  .passmsg{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--ink);border:1px solid var(--line-strong);background:rgba(31,224,122,.08);padding:13px 16px;margin:16px 0 0;line-height:1.7}
+  .failmsg{margin:16px 0 0}
+  .failmsg p{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--orange);border:1px solid var(--orange-line);background:var(--orange-dim);padding:13px 16px;margin:0 0 14px;line-height:1.7}
+  .retrybtn{background:transparent;border:1px solid var(--orange);color:var(--orange);font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;cursor:pointer;transition:background .15s}
+  .retrybtn:hover{background:var(--orange-dim)}
+  [hidden]{display:none!important}
+  /* footer nav */
+  .lnav{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .lnav a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50);border:1px solid var(--line);padding:11px 14px;transition:border-color .15s,color .15s}
+  .lnav a:hover{color:var(--cream);border-color:var(--line-strong)}
+  .lnav a.cur{color:var(--ink);border-color:var(--line-strong)}
+  @media(max-width:480px){.lnav a{flex:1 1 100%;text-align:center}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+</svg>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
+    <span class="w">Nave</span>
+  </a>
+  <a class="btn" href="/join">The community →</a>
+</nav></div></header>
+
+<main>
+<section class="lhero">
+  <div class="lwrap">
+    <div class="ship rise" style="--rd:0s" aria-hidden="true">
+      <svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg>
+      <div class="flames"><i></i><i></i><i></i></div>
+    </div>
+    <span class="kicker rise" style="--rd:.1s"><b>FOUNDATIONS</b> · THE SELF-CHECK</span>
+    <h1 class="rise" style="--rd:.2s">Foundations</h1>
+    <p class="lsub rise" style="--rd:.32s">This check covers the <b>three Foundations lessons</b>. Ten questions, and the pass bar is <b>8/10</b>. Every answer's explanation points back to the lesson to rewatch — miss one, you know exactly where to go.</p>
+  </div>
+</section>
+
+<section class="teach">
+  <div class="lwrap">
+
+    <div class="tblock">
+      <span class="tk">What this check covers</span>
+      <h2>The three lessons</h2>
+      <ul class="tl">
+        <li><b>L1 · What agentic content production is</b> — the definition, the five stages, and the ladder up to agentic automation.</li>
+        <li><b>L2 · Agents for content</b> — the name fear, Co-work vs Code, APIs, CLIs, and how Claude sees and hears your footage.</li>
+        <li><b>L3 · How the Content OS was built</b> — the harness, FFmpeg, and HyperFrames.</li>
+      </ul>
+      <p class="note">This page is mostly the check, not a lesson. If a "why" line names a lesson you're shaky on, rewatch it before retrying.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="lwrap">
+    <div class="qhead2">
+      <span class="eyebrow" style="margin:0">The self-check</span>
+      <h2>Prove it <i>stuck.</i></h2>
+      <p class="qsub">10 questions · pass is 8/10 · it's a check, not a gate</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q1 / 10</span>
+      <p class="qt">What is agentic content production?</p>
+      <button class="opt" type="button" data-k="A">A library of prompts you copy into ChatGPT</button>
+      <button class="opt" type="button" data-k="B" data-correct>Autonomous AI systems that plan, research, create, and optimize content — you set an objective, the agent navigates the pipeline</button>
+      <button class="opt" type="button" data-k="C">An editing app with AI features built in</button>
+      <button class="opt" type="button" data-k="D">A tool that schedules your posts automatically</button>
+      <p class="why">Why: L1 — you set the objective; the agent navigates the pipeline choosing tools, skills, and workflows itself.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q2 / 10</span>
+      <p class="qt">The five stages of content production, in order:</p>
+      <button class="opt" type="button" data-k="A">Ideation, scripting, editing, posting, replying</button>
+      <button class="opt" type="button" data-k="B">Production, pre-production, post-production, engagement, distribution</button>
+      <button class="opt" type="button" data-k="C" data-correct>Pre-production, production, post-production, distribution, engagement</button>
+      <button class="opt" type="button" data-k="D">Pre-production, production, distribution, post-production, engagement</button>
+      <p class="why">Why: L1 — pre-production → production → post-production → distribution → engagement. Every piece walks the same five stages.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q3 / 10</span>
+      <p class="qt">The ladder goes generative tools → automations → agentic automation. What makes the top rung different?</p>
+      <button class="opt" type="button" data-k="A">It runs on a schedule without you</button>
+      <button class="opt" type="button" data-k="B">It uses a bigger, smarter model</button>
+      <button class="opt" type="button" data-k="C">It chains prompts in a fixed sequence</button>
+      <button class="opt" type="button" data-k="D" data-correct>An agent has a goal and orchestrates its own tools to reach it</button>
+      <p class="why">Why: L1 — agentic automation = an agent with a goal that orchestrates its own tools, not a fixed chain you wired by hand.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q4 / 10</span>
+      <p class="qt">Claude Code = the LLM + a harness. What's the harness?</p>
+      <button class="opt" type="button" data-k="A">A faster version of the model</button>
+      <button class="opt" type="button" data-k="B" data-correct>The wrapper that lets the model set goals, execute tools, and use your project's context</button>
+      <button class="opt" type="button" data-k="C">The safety filter that blocks bad outputs</button>
+      <button class="opt" type="button" data-k="D">A visual theme for the terminal</button>
+      <p class="why">Why: L1/L3 — the harness is what turns a model that talks into an agent that acts: goals, tools, and your project's context.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q5 / 10</span>
+      <p class="qt">The name says "Code." How much code will you actually write in this course?</p>
+      <button class="opt" type="button" data-k="A">Python basics, taught in week one</button>
+      <button class="opt" type="button" data-k="B">Snippets you copy-paste without understanding</button>
+      <button class="opt" type="button" data-k="C" data-correct>None — you chat, type sentences, and explain what you want</button>
+      <button class="opt" type="button" data-k="D">Just enough HTML and CSS</button>
+      <p class="why">Why: L2 — the name fear is a fake gate. You will not write code here: you chat, type sentences, explain.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q6 / 10</span>
+      <p class="qt">Claude Co-work vs Claude Code — what's the real difference?</p>
+      <button class="opt" type="button" data-k="A">Code runs a smarter model than Co-work</button>
+      <button class="opt" type="button" data-k="B">Co-work is free, Code is paid</button>
+      <button class="opt" type="button" data-k="C">Co-work is for teams, Code is for solo developers</button>
+      <button class="opt" type="button" data-k="D" data-correct>Co-work is capped on external actions — no web scraping, API endpoints, or CLI commands. Code is the same intelligence, uncapped</button>
+      <p class="why">Why: L2 — Co-work is capped on external actions; Code is the same intelligence, uncapped.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q7 / 10</span>
+      <p class="qt">An API, in plain words, is…</p>
+      <button class="opt" type="button" data-k="A" data-correct>A written order between computers — like a waiter carrying your order to the chef</button>
+      <button class="opt" type="button" data-k="B">A programming language for the web</button>
+      <button class="opt" type="button" data-k="C">A database where apps store their data</button>
+      <button class="opt" type="button" data-k="D">A physical cable connecting two servers</button>
+      <p class="why">Why: L2 — customer, waiter, chef. And an endpoint is one specific action on the menu, like "post to Instagram."</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q8 / 10</span>
+      <p class="qt">A CLI, in plain words, is…</p>
+      <button class="opt" type="button" data-k="A">A tool only professional programmers are allowed to use</button>
+      <button class="opt" type="button" data-k="B" data-correct>A tool with no buttons — one typed line does what a button does</button>
+      <button class="opt" type="button" data-k="C">A cloud dashboard for your apps</button>
+      <button class="opt" type="button" data-k="D">A chatbot that answers questions about commands</button>
+      <p class="why">Why: L2 — every button in your editing app has a CLI command underneath. No buttons, same power, one typed line.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q9 / 10</span>
+      <p class="qt">How does Claude "see" and "hear" your video?</p>
+      <button class="opt" type="button" data-k="A">It streams the video and watches it like a human does</button>
+      <button class="opt" type="button" data-k="B">It can't — it only works with text you paste in</button>
+      <button class="opt" type="button" data-k="C" data-correct>Video chunked into frames it reads like photos (eyes) + word-level timestamped transcripts via AssemblyAI (ears)</button>
+      <button class="opt" type="button" data-k="D">It uploads the video to YouTube and reads the auto-captions</button>
+      <p class="why">Why: L2 — frames are the eyes, AssemblyAI timestamps are the ears. Together it knows who said what, per clip.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q10 / 10</span>
+      <p class="qt">FFmpeg and HyperFrames — which is which?</p>
+      <button class="opt" type="button" data-k="A">FFmpeg is a paid Adobe plugin; HyperFrames is a stock-footage library</button>
+      <button class="opt" type="button" data-k="B" data-correct>FFmpeg is the mechanical video engine under YouTube/OBS/Netflix that Claude drives by command line; HyperFrames renders the edit written as code in a browser</button>
+      <button class="opt" type="button" data-k="C">Both are drag-and-drop editors with AI features</button>
+      <button class="opt" type="button" data-k="D">FFmpeg renders in the browser; HyperFrames is the command-line engine</button>
+      <p class="why">Why: L3 — FFmpeg is the engine underneath YouTube, OBS, and Netflix; HyperFrames renders the edit written as code in a browser.</p>
+    </div>
+
+    <div class="scorebox" id="scorebox">
+      <p class="prog" id="prog">Answer all 10 to see your score — pass is 8/10.</p>
+      <div id="final" hidden>
+        <p class="score">You got <b id="scoreN">0</b>/10 — pass is 8/10.</p>
+        <p class="passmsg" id="passmsg" hidden>Passed — the foundations stuck. On to the next course.</p>
+        <div class="failmsg" id="failmsg" hidden>
+          <p>Rewatch the lessons your misses point to, then retry.</p>
+          <button class="retrybtn" type="button" id="retry">Retry the check</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="lnav" aria-label="Course pages">
+      <a class="cur" href="/learn/foundations/" aria-current="page">Foundations · Self-Check</a>
+      <a href="https://nave.infinitxai.com/join">← Back to the community</a>
+    </nav>
+  </div>
+</section>
+</main>
+
+<footer style="padding:30px 0 44px;border-top:0"><div class="wrap">
+  <div class="pagechrome" style="margin-top:0"><span>INFINITX — 2026</span><span>AGENTIC AI CONTENT · FOUNDATIONS SELF-CHECK</span></div>
+</div></footer>
+
+<script src="/assets/vendor/gsap.min.js"></script>
+<script src="/assets/vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var qs = [].slice.call(document.querySelectorAll('[data-q]'));
+  var answered = 0, correct = 0;
+  var PASS = 8;
+  var prog = document.getElementById('prog'),
+      fin = document.getElementById('final'),
+      scoreN = document.getElementById('scoreN'),
+      passmsg = document.getElementById('passmsg'),
+      failmsg = document.getElementById('failmsg');
+
+  function update(){
+    if (answered < qs.length){
+      prog.hidden = false;
+      prog.textContent = answered === 0
+        ? 'Answer all 10 to see your score — pass is 8/10.'
+        : 'Answered ' + answered + ' of ' + qs.length + ' — keep going.';
+      fin.hidden = true;
+      return;
+    }
+    prog.hidden = true;
+    scoreN.textContent = correct;
+    fin.hidden = false;
+    passmsg.hidden = !(correct >= PASS);
+    failmsg.hidden = (correct >= PASS);
+  }
+
+  qs.forEach(function(q){
+    var opts = [].slice.call(q.querySelectorAll('.opt'));
+    opts.forEach(function(o){
+      o.addEventListener('click', function(){
+        if (q.classList.contains('locked')) return;
+        q.classList.add('locked');
+        var right = o.hasAttribute('data-correct');
+        o.classList.add(right ? 'is-right' : 'is-wrong');
+        if (!right){
+          opts.forEach(function(x){ if (x.hasAttribute('data-correct')) x.classList.add('is-right'); });
+        }
+        opts.forEach(function(x){ x.disabled = true; });
+        q.querySelector('.why').classList.add('show');
+        answered++; if (right) correct++;
+        update();
+      });
+    });
+  });
+
+  var retry = document.getElementById('retry');
+  if (retry) retry.addEventListener('click', function(){
+    answered = 0; correct = 0;
+    qs.forEach(function(q){
+      q.classList.remove('locked');
+      [].slice.call(q.querySelectorAll('.opt')).forEach(function(x){
+        x.disabled = false; x.classList.remove('is-right','is-wrong');
+      });
+      q.querySelector('.why').classList.remove('show');
+    });
+    update();
+    qs[0].scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  update();
+
+  /* light entrance animations — page works fine without this */
+  try {
+    if (window.gsap && window.ScrollTrigger){
+      gsap.registerPlugin(ScrollTrigger);
+      [].slice.call(document.querySelectorAll('.tblock,.qq,.scorebox')).forEach(function(el){
+        gsap.from(el, {opacity:0, y:18, duration:.55, ease:'power2.out',
+          scrollTrigger:{trigger:el, start:'top 92%', once:true}});
+      });
+    }
+  } catch(_e){}
+})();
+</script>
+</body>
+</html>
