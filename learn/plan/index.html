@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLAN — Prep 2 · The Month In A Day Challenge</title>
+<meta name="description" content="Prep 2 of The Month In A Day Challenge: turn your aim into one ring-tagged 30-piece month grid. The concept, the build action, and the 5-question self-check.">
+<link rel="canonical" href="https://nave.infinitxai.com/learn/plan/">
+<meta name="theme-color" content="#070908">
+<link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  :root{--orange:#FF7614;--orange-line:rgba(255,118,20,.45);--orange-dim:rgba(255,118,20,.1)}
+  .lwrap{max-width:760px;margin:0 auto;padding:0 22px}
+  /* hero */
+  .lhero{padding:52px 0 26px;text-align:center;position:relative;overflow:hidden}
+  .rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--rd,0s)}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .ship{position:relative;width:56px;margin:0 auto;animation:shiphover 3.2s ease-in-out infinite alternate}
+  @keyframes shiphover{0%{transform:translateY(0)}100%{transform:translateY(-6px)}}
+  .ship svg{width:56px;height:49px;filter:drop-shadow(0 0 16px rgba(31,224,122,.5))}
+  .flames{display:flex;justify-content:center;gap:6px;margin-top:-4px}
+  .flames i{width:4px;background:#F2C94C;animation:flick .32s steps(2) infinite alternate;box-shadow:0 0 8px rgba(242,201,76,.8)}
+  .flames i:nth-child(1){height:7px;animation-delay:.05s}
+  .flames i:nth-child(2){height:11px}
+  .flames i:nth-child(3){height:7px;animation-delay:.12s}
+  @keyframes flick{0%{transform:scaleY(.6);opacity:.7}100%{transform:scaleY(1.15);opacity:1}}
+  .kicker{display:inline-block;border:1px solid var(--line);background:rgba(15,21,17,.7);padding:8px 15px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50);margin-top:18px}
+  .kicker b{color:var(--ink);font-weight:500}
+  .lhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(52px,13vw,96px);line-height:1;letter-spacing:.01em;color:var(--cream);margin:16px 0 0}
+  .lsub{font-family:'DM Mono',monospace;font-size:13px;line-height:1.9;color:var(--cream-72);max-width:520px;margin:16px auto 0}
+  .lsub b{color:var(--cream)}
+  /* teaching blocks */
+  .teach{padding:30px 0 0}
+  .tblock{margin:0 0 36px}
+  .tk{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
+  .tblock h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(21px,3.6vw,29px);line-height:1.12;letter-spacing:.01em;color:var(--cream);margin:0 0 10px}
+  .tblock p{margin:0 0 12px;font-size:15.5px;line-height:1.72;color:var(--cream-72)}
+  .tblock p b{color:var(--cream)}
+  .tblock .note{font-family:'Newsreader',serif;font-style:italic;font-size:17.5px;color:var(--ink-soft);line-height:1.55}
+  .tblock code{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--ink);background:rgba(31,224,122,.07);border:1px solid var(--line);padding:2px 6px;white-space:nowrap}
+  ul.tl{list-style:none;padding:0;margin:0 0 12px}
+  ul.tl li{padding:5px 0 5px 20px;position:relative;font-size:15px;color:var(--cream-72);line-height:1.62}
+  ul.tl li b{color:var(--cream)}
+  ul.tl li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;background:var(--ink)}
+  /* build action card */
+  .build{position:relative;border:1px solid var(--orange-line);background:linear-gradient(180deg,var(--orange-dim),rgba(15,21,17,.65));padding:24px 26px;margin:6px 0 4px}
+  .build::before{content:"";position:absolute;top:-1px;left:-1px;width:11px;height:11px;border-top:2px solid var(--orange);border-left:2px solid var(--orange)}
+  .build::after{content:"";position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-bottom:2px solid var(--orange);border-right:2px solid var(--orange)}
+  .build .bl{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:10px}
+  .build p{margin:0 0 10px;font-size:15px;line-height:1.7;color:var(--cream-72)}
+  .build p b{color:var(--cream)}
+  .build .art{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+  .build .art span{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:var(--ink-soft);border:1px dashed var(--line);padding:4px 9px}
+  /* quiz */
+  #quiz{padding:48px 0 8px}
+  .qhead2{text-align:center;margin-bottom:26px}
+  .qhead2 h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,4.6vw,40px);line-height:1.05;color:var(--cream);margin:8px 0 0}
+  .qhead2 h2 i{font-style:normal;color:var(--ink)}
+  .qhead2 .qsub{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--cream-50);margin:12px 0 0}
+  .qq{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.04),rgba(15,21,17,.6));padding:20px 22px;margin-bottom:14px}
+  .qq .qn{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink);letter-spacing:.16em}
+  .qq .qt{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16.5px;color:var(--cream);margin:7px 0 14px;line-height:1.45}
+  .opt{display:block;width:100%;text-align:left;background:rgba(7,9,8,.45);border:1px solid var(--line);color:var(--cream-72);font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.5;padding:12px 38px 12px 38px;margin-bottom:8px;cursor:pointer;position:relative;transition:border-color .15s,opacity .2s}
+  .opt::before{content:attr(data-k);position:absolute;left:13px;top:12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink)}
+  .opt:hover{border-color:var(--line-strong)}
+  .qq.locked .opt{cursor:default}
+  .qq.locked .opt:hover{border-color:var(--line)}
+  .qq.locked .opt:not(.is-right):not(.is-wrong){opacity:.45}
+  .opt.is-right{border-color:var(--ink);background:rgba(31,224,122,.1);color:var(--cream);opacity:1}
+  .opt.is-right::after{content:"✓";position:absolute;right:13px;top:11px;color:var(--ink);font-family:'DM Mono',monospace}
+  .opt.is-wrong{border-color:var(--orange);background:var(--orange-dim);color:var(--cream);opacity:1}
+  .opt.is-wrong::after{content:"✕";position:absolute;right:13px;top:11px;color:var(--orange);font-family:'DM Mono',monospace}
+  .why{display:none;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);margin:12px 2px 2px;line-height:1.55}
+  .why.show{display:block}
+  /* score */
+  .scorebox{border:1px solid var(--line);background:var(--glass);padding:26px 24px;text-align:center;margin-top:22px}
+  .scorebox .prog{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50);margin:0}
+  .scorebox .score{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(20px,3.4vw,28px);color:var(--cream);margin:0}
+  .scorebox .score b{color:var(--ink);font-weight:400}
+  .passmsg{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--ink);border:1px solid var(--line-strong);background:rgba(31,224,122,.08);padding:13px 16px;margin:16px 0 0;line-height:1.7}
+  .failmsg{margin:16px 0 0}
+  .failmsg p{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--orange);border:1px solid var(--orange-line);background:var(--orange-dim);padding:13px 16px;margin:0 0 14px;line-height:1.7}
+  .retrybtn{background:transparent;border:1px solid var(--orange);color:var(--orange);font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;cursor:pointer;transition:background .15s}
+  .retrybtn:hover{background:var(--orange-dim)}
+  [hidden]{display:none!important}
+  /* footer nav */
+  .lnav{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .lnav a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50);border:1px solid var(--line);padding:11px 14px;transition:border-color .15s,color .15s}
+  .lnav a:hover{color:var(--cream);border-color:var(--line-strong)}
+  .lnav a.cur{color:var(--ink);border-color:var(--line-strong)}
+  @media(max-width:480px){.lnav a{flex:1 1 100%;text-align:center}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+</svg>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
+    <span class="w">Nave</span>
+  </a>
+  <a class="btn" href="/join">The community →</a>
+</nav></div></header>
+
+<main>
+<section class="lhero">
+  <div class="lwrap">
+    <div class="ship rise" style="--rd:0s" aria-hidden="true">
+      <svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg>
+      <div class="flames"><i></i><i></i><i></i></div>
+    </div>
+    <span class="kicker rise" style="--rd:.1s"><b>THE MONTH IN A DAY CHALLENGE</b> · PREP 2</span>
+    <h1 class="rise" style="--rd:.2s">Plan</h1>
+    <p class="lsub rise" style="--rd:.32s">Turn your aim into <b>one aimed grid</b> — 30 pieces, every one tagged to a ring. Read this, run the build action, then take the self-check at the bottom.</p>
+  </div>
+</section>
+
+<section class="teach">
+  <div class="lwrap">
+
+    <div class="tblock">
+      <span class="tk">01 · One grid, not 30 ideas</span>
+      <h2>Stop agonizing cell by cell</h2>
+      <p>The old way: stare at a blank calendar and squeeze out 30 ideas one by one. The system way: a <b>strategist agent fills one 30-piece grid</b>, already aimed at your bullseye. Pillars → grid → calendar.</p>
+      <p>The plan comes back as a <b>draft you direct</b>, not a wish list you stare at. You don't fill the cells — you review them.</p>
+    </div>
+
+    <div class="tblock">
+      <span class="tk">02 · Ring-tag every piece</span>
+      <h2>The tag that closes the loop</h2>
+      <p>Every piece in the grid carries a tag: <b>which ring of your bullseye it serves</b>. It looks like decoration. It isn't — it's the wiring for the learning loop.</p>
+      <p>At the end of the month, analytics can read results <b>per ring</b> — which ring watched, which ring converted — and next month's plan re-aims on real numbers instead of guesses.</p>
+    </div>
+
+    <div class="tblock">
+      <span class="tk">03 · Direct, don't do</span>
+      <h2>Correct in one sentence, re-run</h2>
+      <p>The first draft will be partly wrong. That's fine — it's a draft. Don't rewrite it yourself, and don't throw it away and start over with a new prompt.</p>
+      <p>Correct it in <b>one sentence</b> — "more Ring-1 how-to, fewer hot takes" — and re-run. One-sentence corrections keep you the <b>director, not the typist</b>. That habit is the whole skill of running a crew.</p>
+    </div>
+
+    <div class="tblock">
+      <span class="tk">04 · Batch beats one-off</span>
+      <h2>Pay the setup cost once</h2>
+      <p>Making one post at a time means paying the setup cost — the aim, the voice, the format decisions — <b>every single time</b>. Batching pays it once and spreads it across the whole month.</p>
+      <p class="note">The leverage is amortizing the aim + the formats across 30 pieces at once. Volume without aim is noise; a plan is "aimed" when every cell traces back to who you're for.</p>
+    </div>
+
+    <div class="build">
+      <span class="bl">Today's build action</span>
+      <p>In your OS: <code>plan my month</code> → review the grid → correct it in one sentence → approve.</p>
+      <p><b>Walk away holding:</b> a ring-tagged 30-piece plan. Then post a screenshot of your 30-cell grid in Build Log.</p>
+      <div class="art"><span>30-piece month grid</span><span>ring tags on every cell</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="lwrap">
+    <div class="qhead2">
+      <span class="eyebrow" style="margin:0">The self-check</span>
+      <h2>Prove it <i>stuck.</i></h2>
+      <p class="qsub">5 questions · pass is 4/5 · it's a check, not a gate</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q1 / 5</span>
+      <p class="qt">A month plan is best thought of as…</p>
+      <button class="opt" type="button" data-k="A">30 ideas you brainstorm one by one</button>
+      <button class="opt" type="button" data-k="B" data-correct>One aimed grid a strategist agent fills, tagged by ring</button>
+      <button class="opt" type="button" data-k="C">A content calendar template</button>
+      <button class="opt" type="button" data-k="D">Whatever trends that week</button>
+      <p class="why">Why: you don't agonize over 30 blank cells — you direct a grid that's already aimed.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q2 / 5</span>
+      <p class="qt">Why is each piece "ring-tagged"?</p>
+      <button class="opt" type="button" data-k="A">To color-code the calendar</button>
+      <button class="opt" type="button" data-k="B" data-correct>So analytics can read conversions per ring and re-aim next month</button>
+      <button class="opt" type="button" data-k="C">To pick the platform</button>
+      <button class="opt" type="button" data-k="D">It's decoration</button>
+      <p class="why">Why: the tag is what closes the loop — you learn which ring converts and shift the mix.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q3 / 5</span>
+      <p class="qt">When the plan comes back wrong, you should…</p>
+      <button class="opt" type="button" data-k="A">Rewrite it yourself from scratch</button>
+      <button class="opt" type="button" data-k="B" data-correct>Correct it in one sentence and re-run</button>
+      <button class="opt" type="button" data-k="C">Accept it as-is</button>
+      <button class="opt" type="button" data-k="D">Start over with a new prompt</button>
+      <p class="why">Why: direct, don't do. One-sentence corrections keep you the director, not the typist.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q4 / 5</span>
+      <p class="qt">Batch production beats one-off because…</p>
+      <button class="opt" type="button" data-k="A">It's lower quality but faster</button>
+      <button class="opt" type="button" data-k="B" data-correct>Setup cost is paid once and spread across the whole month</button>
+      <button class="opt" type="button" data-k="C">Platforms prefer batches</button>
+      <button class="opt" type="button" data-k="D">It skips the approval step</button>
+      <p class="why">Why: the leverage is amortizing the aim + the formats across 30 pieces at once.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q5 / 5</span>
+      <p class="qt">What makes a plan "aimed"?</p>
+      <button class="opt" type="button" data-k="A">It has 30 pieces</button>
+      <button class="opt" type="button" data-k="B" data-correct>Every piece serves a ring of your bullseye</button>
+      <button class="opt" type="button" data-k="C">It covers every platform</button>
+      <button class="opt" type="button" data-k="D">It's scheduled</button>
+      <p class="why">Why: aimed = every cell traces back to who you're for. Volume without aim is noise.</p>
+    </div>
+
+    <div class="scorebox" id="scorebox">
+      <p class="prog" id="prog">Answer all 5 to see your score — pass is 4/5.</p>
+      <div id="final" hidden>
+        <p class="score">You got <b id="scoreN">0</b>/5 — pass is 4/5.</p>
+        <p class="passmsg" id="passmsg" hidden>Passed — post your artifact in the community.</p>
+        <div class="failmsg" id="failmsg" hidden>
+          <p>Re-read the section above and retry.</p>
+          <button class="retrybtn" type="button" id="retry">Retry the check</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="lnav" aria-label="Challenge pages">
+      <a href="/learn/aim/">Prep 1 · Aim</a>
+      <a class="cur" href="/learn/plan/" aria-current="page">Prep 2 · Plan</a>
+      <a href="/learn/formats/">Prep 3 · Build Your Formats</a>
+      <a href="https://nave.infinitxai.com/join">← Back to the community</a>
+    </nav>
+  </div>
+</section>
+</main>
+
+<footer style="padding:30px 0 44px;border-top:0"><div class="wrap">
+  <div class="pagechrome" style="margin-top:0"><span>INFINITX — 2026</span><span>THE MONTH IN A DAY CHALLENGE · PREP 2 OF 3</span></div>
+</div></footer>
+
+<script src="/assets/vendor/gsap.min.js"></script>
+<script src="/assets/vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var qs = [].slice.call(document.querySelectorAll('[data-q]'));
+  var answered = 0, correct = 0;
+  var prog = document.getElementById('prog'),
+      fin = document.getElementById('final'),
+      scoreN = document.getElementById('scoreN'),
+      passmsg = document.getElementById('passmsg'),
+      failmsg = document.getElementById('failmsg');
+
+  function update(){
+    if (answered < qs.length){
+      prog.hidden = false;
+      prog.textContent = answered === 0
+        ? 'Answer all 5 to see your score — pass is 4/5.'
+        : 'Answered ' + answered + ' of ' + qs.length + ' — keep going.';
+      fin.hidden = true;
+      return;
+    }
+    prog.hidden = true;
+    scoreN.textContent = correct;
+    fin.hidden = false;
+    passmsg.hidden = !(correct >= 4);
+    failmsg.hidden = (correct >= 4);
+  }
+
+  qs.forEach(function(q){
+    var opts = [].slice.call(q.querySelectorAll('.opt'));
+    opts.forEach(function(o){
+      o.addEventListener('click', function(){
+        if (q.classList.contains('locked')) return;
+        q.classList.add('locked');
+        var right = o.hasAttribute('data-correct');
+        o.classList.add(right ? 'is-right' : 'is-wrong');
+        if (!right){
+          opts.forEach(function(x){ if (x.hasAttribute('data-correct')) x.classList.add('is-right'); });
+        }
+        opts.forEach(function(x){ x.disabled = true; });
+        q.querySelector('.why').classList.add('show');
+        answered++; if (right) correct++;
+        update();
+      });
+    });
+  });
+
+  var retry = document.getElementById('retry');
+  if (retry) retry.addEventListener('click', function(){
+    answered = 0; correct = 0;
+    qs.forEach(function(q){
+      q.classList.remove('locked');
+      [].slice.call(q.querySelectorAll('.opt')).forEach(function(x){
+        x.disabled = false; x.classList.remove('is-right','is-wrong');
+      });
+      q.querySelector('.why').classList.remove('show');
+    });
+    update();
+    qs[0].scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  update();
+
+  /* light entrance animations — page works fine without this */
+  try {
+    if (window.gsap && window.ScrollTrigger){
+      gsap.registerPlugin(ScrollTrigger);
+      [].slice.call(document.querySelectorAll('.tblock,.build,.qq,.scorebox')).forEach(function(el){
+        gsap.from(el, {opacity:0, y:18, duration:.55, ease:'power2.out',
+          scrollTrigger:{trigger:el, start:'top 92%', once:true}});
+      });
+    }
+  } catch(_e){}
+})();
+</script>
+</body>
+</html>

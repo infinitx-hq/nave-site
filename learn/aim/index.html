@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIM — Prep 1 · The Month In A Day Challenge</title>
+<meta name="description" content="Prep 1 of The Month In A Day Challenge: lock who your content is for and how you sound. The concept, the build action, and the 5-question self-check.">
+<link rel="canonical" href="https://nave.infinitxai.com/learn/aim/">
+<meta name="theme-color" content="#070908">
+<link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  :root{--orange:#FF7614;--orange-line:rgba(255,118,20,.45);--orange-dim:rgba(255,118,20,.1)}
+  .lwrap{max-width:760px;margin:0 auto;padding:0 22px}
+  /* hero */
+  .lhero{padding:52px 0 26px;text-align:center;position:relative;overflow:hidden}
+  .rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--rd,0s)}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .ship{position:relative;width:56px;margin:0 auto;animation:shiphover 3.2s ease-in-out infinite alternate}
+  @keyframes shiphover{0%{transform:translateY(0)}100%{transform:translateY(-6px)}}
+  .ship svg{width:56px;height:49px;filter:drop-shadow(0 0 16px rgba(31,224,122,.5))}
+  .flames{display:flex;justify-content:center;gap:6px;margin-top:-4px}
+  .flames i{width:4px;background:#F2C94C;animation:flick .32s steps(2) infinite alternate;box-shadow:0 0 8px rgba(242,201,76,.8)}
+  .flames i:nth-child(1){height:7px;animation-delay:.05s}
+  .flames i:nth-child(2){height:11px}
+  .flames i:nth-child(3){height:7px;animation-delay:.12s}
+  @keyframes flick{0%{transform:scaleY(.6);opacity:.7}100%{transform:scaleY(1.15);opacity:1}}
+  .kicker{display:inline-block;border:1px solid var(--line);background:rgba(15,21,17,.7);padding:8px 15px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50);margin-top:18px}
+  .kicker b{color:var(--ink);font-weight:500}
+  .lhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(52px,13vw,96px);line-height:1;letter-spacing:.01em;color:var(--cream);margin:16px 0 0}
+  .lsub{font-family:'DM Mono',monospace;font-size:13px;line-height:1.9;color:var(--cream-72);max-width:520px;margin:16px auto 0}
+  .lsub b{color:var(--cream)}
+  /* teaching blocks */
+  .teach{padding:30px 0 0}
+  .tblock{margin:0 0 36px}
+  .tk{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
+  .tblock h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(21px,3.6vw,29px);line-height:1.12;letter-spacing:.01em;color:var(--cream);margin:0 0 10px}
+  .tblock p{margin:0 0 12px;font-size:15.5px;line-height:1.72;color:var(--cream-72)}
+  .tblock p b{color:var(--cream)}
+  .tblock .note{font-family:'Newsreader',serif;font-style:italic;font-size:17.5px;color:var(--ink-soft);line-height:1.55}
+  .tblock code{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--ink);background:rgba(31,224,122,.07);border:1px solid var(--line);padding:2px 6px;white-space:nowrap}
+  ul.tl{list-style:none;padding:0;margin:0 0 12px}
+  ul.tl li{padding:5px 0 5px 20px;position:relative;font-size:15px;color:var(--cream-72);line-height:1.62}
+  ul.tl li b{color:var(--cream)}
+  ul.tl li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;background:var(--ink)}
+  /* build action card */
+  .build{position:relative;border:1px solid var(--orange-line);background:linear-gradient(180deg,var(--orange-dim),rgba(15,21,17,.65));padding:24px 26px;margin:6px 0 4px}
+  .build::before{content:"";position:absolute;top:-1px;left:-1px;width:11px;height:11px;border-top:2px solid var(--orange);border-left:2px solid var(--orange)}
+  .build::after{content:"";position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-bottom:2px solid var(--orange);border-right:2px solid var(--orange)}
+  .build .bl{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:10px}
+  .build p{margin:0 0 10px;font-size:15px;line-height:1.7;color:var(--cream-72)}
+  .build p b{color:var(--cream)}
+  .build .art{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+  .build .art span{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.05em;color:var(--ink-soft);border:1px dashed var(--line);padding:4px 9px}
+  /* quiz */
+  #quiz{padding:48px 0 8px}
+  .qhead2{text-align:center;margin-bottom:26px}
+  .qhead2 h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,4.6vw,40px);line-height:1.05;color:var(--cream);margin:8px 0 0}
+  .qhead2 h2 i{font-style:normal;color:var(--ink)}
+  .qhead2 .qsub{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--cream-50);margin:12px 0 0}
+  .qq{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.04),rgba(15,21,17,.6));padding:20px 22px;margin-bottom:14px}
+  .qq .qn{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink);letter-spacing:.16em}
+  .qq .qt{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16.5px;color:var(--cream);margin:7px 0 14px;line-height:1.45}
+  .opt{display:block;width:100%;text-align:left;background:rgba(7,9,8,.45);border:1px solid var(--line);color:var(--cream-72);font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.5;padding:12px 38px 12px 38px;margin-bottom:8px;cursor:pointer;position:relative;transition:border-color .15s,opacity .2s}
+  .opt::before{content:attr(data-k);position:absolute;left:13px;top:12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink)}
+  .opt:hover{border-color:var(--line-strong)}
+  .qq.locked .opt{cursor:default}
+  .qq.locked .opt:hover{border-color:var(--line)}
+  .qq.locked .opt:not(.is-right):not(.is-wrong){opacity:.45}
+  .opt.is-right{border-color:var(--ink);background:rgba(31,224,122,.1);color:var(--cream);opacity:1}
+  .opt.is-right::after{content:"✓";position:absolute;right:13px;top:11px;color:var(--ink);font-family:'DM Mono',monospace}
+  .opt.is-wrong{border-color:var(--orange);background:var(--orange-dim);color:var(--cream);opacity:1}
+  .opt.is-wrong::after{content:"✕";position:absolute;right:13px;top:11px;color:var(--orange);font-family:'DM Mono',monospace}
+  .why{display:none;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);margin:12px 2px 2px;line-height:1.55}
+  .why.show{display:block}
+  /* score */
+  .scorebox{border:1px solid var(--line);background:var(--glass);padding:26px 24px;text-align:center;margin-top:22px}
+  .scorebox .prog{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50);margin:0}
+  .scorebox .score{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(20px,3.4vw,28px);color:var(--cream);margin:0}
+  .scorebox .score b{color:var(--ink);font-weight:400}
+  .passmsg{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--ink);border:1px solid var(--line-strong);background:rgba(31,224,122,.08);padding:13px 16px;margin:16px 0 0;line-height:1.7}
+  .failmsg{margin:16px 0 0}
+  .failmsg p{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--orange);border:1px solid var(--orange-line);background:var(--orange-dim);padding:13px 16px;margin:0 0 14px;line-height:1.7}
+  .retrybtn{background:transparent;border:1px solid var(--orange);color:var(--orange);font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;cursor:pointer;transition:background .15s}
+  .retrybtn:hover{background:var(--orange-dim)}
+  [hidden]{display:none!important}
+  /* footer nav */
+  .lnav{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .lnav a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50);border:1px solid var(--line);padding:11px 14px;transition:border-color .15s,color .15s}
+  .lnav a:hover{color:var(--cream);border-color:var(--line-strong)}
+  .lnav a.cur{color:var(--ink);border-color:var(--line-strong)}
+  @media(max-width:480px){.lnav a{flex:1 1 100%;text-align:center}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+</svg>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
+    <span class="w">Nave</span>
+  </a>
+  <a class="btn" href="/join">The community →</a>
+</nav></div></header>
+
+<main>
+<section class="lhero">
+  <div class="lwrap">
+    <div class="ship rise" style="--rd:0s" aria-hidden="true">
+      <svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg>
+      <div class="flames"><i></i><i></i><i></i></div>
+    </div>
+    <span class="kicker rise" style="--rd:.1s"><b>THE MONTH IN A DAY CHALLENGE</b> · PREP 1</span>
+    <h1 class="rise" style="--rd:.2s">Aim</h1>
+    <p class="lsub rise" style="--rd:.32s">Lock <b>who it's for</b> and <b>how you sound</b> — before you produce a single piece. Read this, run the build action, then take the self-check at the bottom.</p>
+  </div>
+</section>
+
+<section class="teach">
+  <div class="lwrap">
+
+    <div class="tblock">
+      <span class="tk">01 · Broad kills reach</span>
+      <h2>Precision first. Expand later.</h2>
+      <p>Every platform works the same way: it shows your post to a small test group, watches what they do, and decides who sees it next. If your content is for "everyone," that signal comes back muddy — the platform can't tell who to show it to, so it shows it to almost no one.</p>
+      <p>If your content is clearly for <b>one kind of person</b>, the signal is clean and distribution follows. That's why we aim before we produce anything: <b>the algorithm rewards precision</b>, not breadth.</p>
+      <p class="note">Broad content confuses the distribution signal. Precision first — expand later, from a position of strength.</p>
+    </div>
+
+    <div class="tblock">
+      <span class="tk">02 · The audience bullseye</span>
+      <h2>Center, rings, and the 3/1/1 mix</h2>
+      <p>Picture a target (credit to Kallaway's Define / Hit / Expand). The <b>center</b> is the one person your content serves best — specific enough that you could describe their day. Each <b>ring</b> outward is an adjacent audience: close to the center, but one step broader.</p>
+      <p>The <b>3/1/1 mix</b> is how you spend a batch of content: roughly <b>3 parts for the center</b>, <b>1 part one ring out</b>, <b>1 part pure reach</b>. Most of what you make serves the center; a little of it stretches outward so the audience keeps growing without your content going stale.</p>
+    </div>
+
+    <div class="tblock">
+      <span class="tk">03 · Voice is a spec, not a vibe</span>
+      <h2>Write it once. The system obeys it.</h2>
+      <p>If you describe your voice differently every time you prompt, you drift. Instead, write it <b>once</b> — the words you use, the words you never use, your tone, your hard rules — and save it as a file the whole system reads.</p>
+      <p>That's your <b>brand spec</b>: a written constraint the agents can't break. Not a prompt you retype and drift on.</p>
+    </div>
+
+    <div class="tblock">
+      <span class="tk">04 · Gates keep you the director</span>
+      <h2>Nothing ships without your OK</h2>
+      <p>A <b>gate</b> is a human checkpoint before anything irreversible happens — like posting. The system produces; you approve at the gates. That's the deal that makes autonomy safe: the crew does the work, you stay the director.</p>
+    </div>
+
+    <div class="build">
+      <span class="bl">Today's build action</span>
+      <p>In your OS, run the strategy chain: <code>run the bullseye for my brand</code> → answer the interview → <code>set up my brand</code>.</p>
+      <p><b>Walk away holding:</b> your bullseye + your brand spec, sitting in your OS. Then post your bullseye (center + one ring) in Build Log — "here's who I'm aiming at and why."</p>
+      <div class="art"><span>bullseye.md</span><span>brand spec</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="lwrap">
+    <div class="qhead2">
+      <span class="eyebrow" style="margin:0">The self-check</span>
+      <h2>Prove it <i>stuck.</i></h2>
+      <p class="qsub">5 questions · pass is 4/5 · it's a check, not a gate</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q1 / 5</span>
+      <p class="qt">Why do we aim at a precise audience before producing anything?</p>
+      <button class="opt" type="button" data-k="A">Broad content reaches more people</button>
+      <button class="opt" type="button" data-k="B" data-correct>The algorithm rewards precision — a clear audience signal beats a broad one</button>
+      <button class="opt" type="button" data-k="C">It's faster to write</button>
+      <button class="opt" type="button" data-k="D">Platforms require a niche</button>
+      <p class="why">Why: broad content confuses the distribution signal. Precision first, expand later.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q2 / 5</span>
+      <p class="qt">In the bullseye, what is the 3/1/1 mix?</p>
+      <button class="opt" type="button" data-k="A">3 platforms, 1 format, 1 post a day</button>
+      <button class="opt" type="button" data-k="B" data-correct>Roughly 3 parts core-audience, 1 part one ring out, 1 part reach — per batch</button>
+      <button class="opt" type="button" data-k="C">3 hooks, 1 script, 1 CTA</button>
+      <button class="opt" type="button" data-k="D">3 pillars, 1 offer, 1 funnel</button>
+      <p class="why">Why: most content serves the center; a little reaches outward. That ratio keeps you aimed without going stale.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q3 / 5</span>
+      <p class="qt">Your brand voice should live as…</p>
+      <button class="opt" type="button" data-k="A">A prompt you paste each time</button>
+      <button class="opt" type="button" data-k="B" data-correct>A written spec the whole system obeys, written once</button>
+      <button class="opt" type="button" data-k="C">A vibe you describe differently every time</button>
+      <button class="opt" type="button" data-k="D">The model's default tone</button>
+      <p class="why">Why: voice is a constraint the system reads, not a prompt you retype and drift on.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q4 / 5</span>
+      <p class="qt">What is a "gate" in the system?</p>
+      <button class="opt" type="button" data-k="A">A paywall</button>
+      <button class="opt" type="button" data-k="B" data-correct>A human checkpoint before something irreversible happens (like posting)</button>
+      <button class="opt" type="button" data-k="C">A rate limit</button>
+      <button class="opt" type="button" data-k="D">A login screen</button>
+      <p class="why">Why: gates are where you stay the director — you approve before anything ships.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q5 / 5</span>
+      <p class="qt">What do you walk away holding after Prep 1?</p>
+      <button class="opt" type="button" data-k="A">A finished video</button>
+      <button class="opt" type="button" data-k="B" data-correct>Your bullseye + your brand spec</button>
+      <button class="opt" type="button" data-k="C">A month of posts</button>
+      <button class="opt" type="button" data-k="D">A format skill</button>
+      <p class="why">Why: Prep 1 installs the aim. Everything downstream points at it.</p>
+    </div>
+
+    <div class="scorebox" id="scorebox">
+      <p class="prog" id="prog">Answer all 5 to see your score — pass is 4/5.</p>
+      <div id="final" hidden>
+        <p class="score">You got <b id="scoreN">0</b>/5 — pass is 4/5.</p>
+        <p class="passmsg" id="passmsg" hidden>Passed — post your artifact in the community.</p>
+        <div class="failmsg" id="failmsg" hidden>
+          <p>Re-read the section above and retry.</p>
+          <button class="retrybtn" type="button" id="retry">Retry the check</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="lnav" aria-label="Challenge pages">
+      <a class="cur" href="/learn/aim/" aria-current="page">Prep 1 · Aim</a>
+      <a href="/learn/plan/">Prep 2 · Plan</a>
+      <a href="/learn/formats/">Prep 3 · Build Your Formats</a>
+      <a href="https://nave.infinitxai.com/join">← Back to the community</a>
+    </nav>
+  </div>
+</section>
+</main>
+
+<footer style="padding:30px 0 44px;border-top:0"><div class="wrap">
+  <div class="pagechrome" style="margin-top:0"><span>INFINITX — 2026</span><span>THE MONTH IN A DAY CHALLENGE · PREP 1 OF 3</span></div>
+</div></footer>
+
+<script src="/assets/vendor/gsap.min.js"></script>
+<script src="/assets/vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var qs = [].slice.call(document.querySelectorAll('[data-q]'));
+  var answered = 0, correct = 0;
+  var prog = document.getElementById('prog'),
+      fin = document.getElementById('final'),
+      scoreN = document.getElementById('scoreN'),
+      passmsg = document.getElementById('passmsg'),
+      failmsg = document.getElementById('failmsg');
+
+  function update(){
+    if (answered < qs.length){
+      prog.hidden = false;
+      prog.textContent = answered === 0
+        ? 'Answer all 5 to see your score — pass is 4/5.'
+        : 'Answered ' + answered + ' of ' + qs.length + ' — keep going.';
+      fin.hidden = true;
+      return;
+    }
+    prog.hidden = true;
+    scoreN.textContent = correct;
+    fin.hidden = false;
+    passmsg.hidden = !(correct >= 4);
+    failmsg.hidden = (correct >= 4);
+  }
+
+  qs.forEach(function(q){
+    var opts = [].slice.call(q.querySelectorAll('.opt'));
+    opts.forEach(function(o){
+      o.addEventListener('click', function(){
+        if (q.classList.contains('locked')) return;
+        q.classList.add('locked');
+        var right = o.hasAttribute('data-correct');
+        o.classList.add(right ? 'is-right' : 'is-wrong');
+        if (!right){
+          opts.forEach(function(x){ if (x.hasAttribute('data-correct')) x.classList.add('is-right'); });
+        }
+        opts.forEach(function(x){ x.disabled = true; });
+        q.querySelector('.why').classList.add('show');
+        answered++; if (right) correct++;
+        update();
+      });
+    });
+  });
+
+  var retry = document.getElementById('retry');
+  if (retry) retry.addEventListener('click', function(){
+    answered = 0; correct = 0;
+    qs.forEach(function(q){
+      q.classList.remove('locked');
+      [].slice.call(q.querySelectorAll('.opt')).forEach(function(x){
+        x.disabled = false; x.classList.remove('is-right','is-wrong');
+      });
+      q.querySelector('.why').classList.remove('show');
+    });
+    update();
+    qs[0].scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  update();
+
+  /* light entrance animations — page works fine without this */
+  try {
+    if (window.gsap && window.ScrollTrigger){
+      gsap.registerPlugin(ScrollTrigger);
+      [].slice.call(document.querySelectorAll('.tblock,.build,.qq,.scorebox')).forEach(function(el){
+        gsap.from(el, {opacity:0, y:18, duration:.55, ease:'power2.out',
+          scrollTrigger:{trigger:el, start:'top 92%', once:true}});
+      });
+    }
+  } catch(_e){}
+})();
+</script>
+</body>
+</html>
