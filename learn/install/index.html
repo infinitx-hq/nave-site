@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SETUP &amp; INSTALL — The Self-Check · Agentic AI Content</title>
+<meta name="description" content="The self-check for the Setup &amp; Install course of the Agentic AI Content community. 10 questions across the three lessons — pass is 8/10.">
+<link rel="canonical" href="https://nave.infinitxai.com/learn/install/">
+<meta name="theme-color" content="#070908">
+<link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  :root{--orange:#FF7614;--orange-line:rgba(255,118,20,.45);--orange-dim:rgba(255,118,20,.1)}
+  .lwrap{max-width:760px;margin:0 auto;padding:0 22px}
+  /* hero */
+  .lhero{padding:52px 0 26px;text-align:center;position:relative;overflow:hidden}
+  .rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--rd,0s)}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .ship{position:relative;width:56px;margin:0 auto;animation:shiphover 3.2s ease-in-out infinite alternate}
+  @keyframes shiphover{0%{transform:translateY(0)}100%{transform:translateY(-6px)}}
+  .ship svg{width:56px;height:49px;filter:drop-shadow(0 0 16px rgba(31,224,122,.5))}
+  .flames{display:flex;justify-content:center;gap:6px;margin-top:-4px}
+  .flames i{width:4px;background:#F2C94C;animation:flick .32s steps(2) infinite alternate;box-shadow:0 0 8px rgba(242,201,76,.8)}
+  .flames i:nth-child(1){height:7px;animation-delay:.05s}
+  .flames i:nth-child(2){height:11px}
+  .flames i:nth-child(3){height:7px;animation-delay:.12s}
+  @keyframes flick{0%{transform:scaleY(.6);opacity:.7}100%{transform:scaleY(1.15);opacity:1}}
+  .kicker{display:inline-block;border:1px solid var(--line);background:rgba(15,21,17,.7);padding:8px 15px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50);margin-top:18px}
+  .kicker b{color:var(--ink);font-weight:500}
+  .lhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(52px,13vw,96px);line-height:1;letter-spacing:.01em;color:var(--cream);margin:16px 0 0}
+  .lsub{font-family:'DM Mono',monospace;font-size:13px;line-height:1.9;color:var(--cream-72);max-width:520px;margin:16px auto 0}
+  .lsub b{color:var(--cream)}
+  /* teaching blocks */
+  .teach{padding:30px 0 0}
+  .tblock{margin:0 0 36px}
+  .tk{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
+  .tblock h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(21px,3.6vw,29px);line-height:1.12;letter-spacing:.01em;color:var(--cream);margin:0 0 10px}
+  .tblock p{margin:0 0 12px;font-size:15.5px;line-height:1.72;color:var(--cream-72)}
+  .tblock p b{color:var(--cream)}
+  .tblock .note{font-family:'Newsreader',serif;font-style:italic;font-size:17.5px;color:var(--ink-soft);line-height:1.55}
+  ul.tl{list-style:none;padding:0;margin:0 0 12px}
+  ul.tl li{padding:5px 0 5px 20px;position:relative;font-size:15px;color:var(--cream-72);line-height:1.62}
+  ul.tl li b{color:var(--cream)}
+  ul.tl li::before{content:"";position:absolute;left:2px;top:13px;width:7px;height:7px;background:var(--ink)}
+  /* quiz */
+  #quiz{padding:48px 0 8px}
+  .qhead2{text-align:center;margin-bottom:26px}
+  .qhead2 h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,4.6vw,40px);line-height:1.05;color:var(--cream);margin:8px 0 0}
+  .qhead2 h2 i{font-style:normal;color:var(--ink)}
+  .qhead2 .qsub{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--cream-50);margin:12px 0 0}
+  .qq{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.04),rgba(15,21,17,.6));padding:20px 22px;margin-bottom:14px}
+  .qq .qn{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink);letter-spacing:.16em}
+  .qq .qt{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:16.5px;color:var(--cream);margin:7px 0 14px;line-height:1.45}
+  .opt{display:block;width:100%;text-align:left;background:rgba(7,9,8,.45);border:1px solid var(--line);color:var(--cream-72);font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;line-height:1.5;padding:12px 38px 12px 38px;margin-bottom:8px;cursor:pointer;position:relative;transition:border-color .15s,opacity .2s}
+  .opt::before{content:attr(data-k);position:absolute;left:13px;top:12px;font-family:'DM Mono',monospace;font-size:11px;color:var(--ink)}
+  .opt:hover{border-color:var(--line-strong)}
+  .opt.is-sel{border-color:var(--cream-50);background:rgba(255,255,255,.06);color:var(--cream);opacity:1}
+  .opt.is-sel::after{content:"●";position:absolute;right:13px;top:12px;color:var(--cream-50);font-family:'DM Mono',monospace;font-size:10px}
+  .qq.locked .opt{cursor:default}
+  .qq.locked .opt:hover{border-color:var(--line)}
+  .qq.locked .opt:not(.is-right):not(.is-wrong){opacity:.45}
+  .opt.is-right{border-color:var(--ink);background:rgba(31,224,122,.1);color:var(--cream);opacity:1}
+  .opt.is-right::after{content:"✓";position:absolute;right:13px;top:11px;color:var(--ink);font-family:'DM Mono',monospace}
+  .opt.is-wrong{border-color:var(--orange);background:var(--orange-dim);color:var(--cream);opacity:1}
+  .opt.is-wrong::after{content:"✕";position:absolute;right:13px;top:11px;color:var(--orange);font-family:'DM Mono',monospace}
+  .why{display:none;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);margin:12px 2px 2px;line-height:1.55}
+  .why.show{display:block}
+  /* score */
+  .scorebox{border:1px solid var(--line);background:var(--glass);padding:26px 24px;text-align:center;margin-top:22px}
+  .scorebox .prog{font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50);margin:0}
+  .scorebox .score{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(20px,3.4vw,28px);color:var(--cream);margin:0}
+  .scorebox .score b{color:var(--ink);font-weight:400}
+  .passmsg{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--ink);border:1px solid var(--line-strong);background:rgba(31,224,122,.08);padding:13px 16px;margin:16px 0 0;line-height:1.7}
+  .failmsg{margin:16px 0 0}
+  .failmsg p{font-family:'DM Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:var(--orange);border:1px solid var(--orange-line);background:var(--orange-dim);padding:13px 16px;margin:0 0 14px;line-height:1.7}
+  .retrybtn{background:transparent;border:1px solid var(--orange);color:var(--orange);font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 24px;cursor:pointer;transition:background .15s}
+  .retrybtn:hover{background:var(--orange-dim)}
+  .submitbtn{background:transparent;border:1px solid var(--line-strong);color:var(--cream);font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;padding:13px 28px;cursor:pointer;margin-top:16px;transition:background .15s,opacity .15s,border-color .15s}
+  .submitbtn:hover:not(:disabled){background:rgba(31,224,122,.08);border-color:var(--ink)}
+  .submitbtn:disabled{opacity:.35;cursor:default}
+  [hidden]{display:none!important}
+  /* footer nav */
+  .lnav{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .lnav a{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50);border:1px solid var(--line);padding:11px 14px;transition:border-color .15s,color .15s}
+  .lnav a:hover{color:var(--cream);border-color:var(--line-strong)}
+  .lnav a.cur{color:var(--ink);border-color:var(--line-strong)}
+  @media(max-width:480px){.lnav a{flex:1 1 100%;text-align:center}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+</svg>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
+    <span class="w">Nave</span>
+  </a>
+  <a class="btn" href="/join">The community →</a>
+</nav></div></header>
+
+<main>
+<section class="lhero">
+  <div class="lwrap">
+    <div class="ship rise" style="--rd:0s" aria-hidden="true">
+      <svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg>
+      <div class="flames"><i></i><i></i><i></i></div>
+    </div>
+    <span class="kicker rise" style="--rd:.1s"><b>SETUP &amp; INSTALL</b> · THE SELF-CHECK</span>
+    <h1 class="rise" style="--rd:.2s">Setup &amp; Install</h1>
+    <p class="lsub rise" style="--rd:.32s">This check covers the <b>three Install lessons</b>. Ten questions, and the pass bar is <b>8/10</b>. Every answer's explanation points back to the lesson to rewatch — miss one, you know exactly where to go.</p>
+  </div>
+</section>
+
+<section class="teach">
+  <div class="lwrap">
+
+    <div class="tblock">
+      <span class="tk">What this check covers</span>
+      <h2>The three lessons</h2>
+      <ul class="tl">
+        <li><b>L1 · Install Claude Code in VS Code</b> — the plan, the GUI extension, permission modes, and effort levels.</li>
+        <li><b>L2 · Install the Nave Content OS</b> — getting access, your own branch, the Claude-run install, and the three keys.</li>
+        <li><b>L3 · Set up your brand profile</b> — the constitutional files and the memory system.</li>
+      </ul>
+      <p class="note">This page is mostly the check, not a lesson. If a "why" line names a lesson you're shaky on, rewatch it before retrying.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="lwrap">
+    <div class="qhead2">
+      <span class="eyebrow" style="margin:0">The self-check</span>
+      <h2>Prove it <i>stuck.</i></h2>
+      <p class="qsub">10 questions · pass is 8/10 · it's a check, not a gate</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q1 / 10</span>
+      <p class="qt">Which Claude plan does the course tell you to get?</p>
+      <button class="opt" type="button" data-k="A">The free plan — upgrade only when you hit a wall</button>
+      <button class="opt" type="button" data-k="B">The Pro plan at $20 — it's the same model anyway</button>
+      <button class="opt" type="button" data-k="C" data-correct>The Max plan ($100–200) — so you don't get capped on abilities and usage</button>
+      <button class="opt" type="button" data-k="D">Pay-as-you-go API credits instead of a plan</button>
+      <p class="why">Why: L1 — you need the Max plan ($100–200) so you don't get capped on abilities and usage.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q2 / 10</span>
+      <p class="qt">Where does the course have you run Claude Code, and why?</p>
+      <button class="opt" type="button" data-k="A">The terminal — it's faster and more powerful</button>
+      <button class="opt" type="button" data-k="B" data-correct>The Claude Code GUI extension in VS Code — you can drag-drop screenshots and keep sessions open</button>
+      <button class="opt" type="button" data-k="C">The claude.ai website in your browser</button>
+      <button class="opt" type="button" data-k="D">The Claude desktop app on your phone and computer</button>
+      <p class="why">Why: L1 — the GUI extension in VS Code beats the terminal for content work: drag-drop screenshots, sessions stay open.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q3 / 10</span>
+      <p class="qt">Which permission mode does the course recommend for content work?</p>
+      <button class="opt" type="button" data-k="A" data-correct>Bypass permissions — Claude works autonomously without stopping to ask</button>
+      <button class="opt" type="button" data-k="B">Manual — approve every single action yourself</button>
+      <button class="opt" type="button" data-k="C">Plan mode — Claude only plans, never executes</button>
+      <button class="opt" type="button" data-k="D">Edit-automatically — file edits allowed, everything else asks</button>
+      <p class="why">Why: L1 — bypass permissions lets Claude work autonomously. Manual, edit-automatically, plan, and auto exist, but for content work you want it moving.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q4 / 10</span>
+      <p class="qt">What effort level should you run, and what's the trade-off?</p>
+      <button class="opt" type="button" data-k="A">Low — it answers faster and that's what matters</button>
+      <button class="opt" type="button" data-k="B">Medium — the balanced default for everything</button>
+      <button class="opt" type="button" data-k="C">Effort doesn't matter — every level thinks the same</button>
+      <button class="opt" type="button" data-k="D" data-correct>Max (or Extra High) — higher effort spends more tokens, and it's worth it</button>
+      <p class="why">Why: L1 — run Max (or Extra High). Higher effort = more tokens, which is exactly why you got the plan that doesn't cap you.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q5 / 10</span>
+      <p class="qt">How do you get access to the Nave Content OS?</p>
+      <button class="opt" type="button" data-k="A">Download the zip file from the community classroom</button>
+      <button class="opt" type="button" data-k="B" data-correct>Submit your name, community email, and GitHub username at nave.infinitxai.com/access, then accept the GitHub team invite by email</button>
+      <button class="opt" type="button" data-k="C">DM Enrique on Instagram with your GitHub username</button>
+      <button class="opt" type="button" data-k="D">Buy a separate license key from the Nave site</button>
+      <p class="why">Why: L2 — name, community email, and GitHub username at nave.infinitxai.com/access, then accept the GitHub team invite that lands in your email.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q6 / 10</span>
+      <p class="qt">How do you get your own copy of the OS?</p>
+      <button class="opt" type="button" data-k="A">Fork the repo to your personal GitHub account</button>
+      <button class="opt" type="button" data-k="B">Download the code once and disconnect — it's yours now</button>
+      <button class="opt" type="button" data-k="C" data-correct>Create your OWN BRANCH of the NAVE repo (like "yourname-content-os", target main) — a private copy you own</button>
+      <button class="opt" type="button" data-k="D">Work directly on the main branch with everyone else</button>
+      <p class="why">Why: L2 — your own branch (like "yourname-content-os", target main) is your private copy. And staying subscribed means you keep receiving upgrades.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q7 / 10</span>
+      <p class="qt">Who actually performs the install — clone, dependencies, reframe engine, render engine, .env?</p>
+      <button class="opt" type="button" data-k="A" data-correct>Claude does all of it — you just ask in plain English in a new project folder, never touching a terminal</button>
+      <button class="opt" type="button" data-k="B">You do — following a step-by-step terminal guide</button>
+      <button class="opt" type="button" data-k="C">A team member remote-installs it on your machine</button>
+      <button class="opt" type="button" data-k="D">An installer .exe you download and double-click</button>
+      <p class="why">Why: L2 — Claude clones, installs dependencies, sets up the reframe engine, render engine, and .env. You never touch a terminal; you ask in plain English.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q8 / 10</span>
+      <p class="qt">The three keys that go in your .env are…</p>
+      <button class="opt" type="button" data-k="A">OpenAI, Midjourney, and Zapier</button>
+      <button class="opt" type="button" data-k="B">Just one — your Claude API key covers everything</button>
+      <button class="opt" type="button" data-k="C">Your Instagram, TikTok, and YouTube passwords</button>
+      <button class="opt" type="button" data-k="D" data-correct>AssemblyAI (transcripts, $50 free credits), Zernio (first 2 accounts free; profile ID + read/write key), and Kie.ai (AI generation — add money first)</button>
+      <p class="why">Why: L2 — AssemblyAI gives $50 free credits for transcripts, Zernio's first 2 accounts are free (you need the profile ID + read/write key), and Kie.ai needs money loaded or nothing generates.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q9 / 10</span>
+      <p class="qt">What does the brand-setup skill actually build?</p>
+      <button class="opt" type="button" data-k="A">A logo and a color palette for your channel art</button>
+      <button class="opt" type="button" data-k="B" data-correct>Your constitutional files — brand identity, brand profile (ICP/competitors), content pillars, content plan, and cover system</button>
+      <button class="opt" type="button" data-k="C">A folder of caption templates to copy-paste</button>
+      <button class="opt" type="button" data-k="D">A scraped archive of your competitors' posts to imitate</button>
+      <p class="why">Why: L3 — the skill builds the constitutional files: brand identity, brand profile (ICP/competitors), content pillars, content plan, cover system — and it interviews and researches for you if you're new.</p>
+    </div>
+
+    <div class="qq" data-q>
+      <span class="qn">Q10 / 10</span>
+      <p class="qt">How does the OS memory system work across sessions?</p>
+      <button class="opt" type="button" data-k="A">Memory is automatic — you never run a command</button>
+      <button class="opt" type="button" data-k="B">/save writes a backup and /load restores it</button>
+      <button class="opt" type="button" data-k="C" data-correct>/continue loads the bank + session logs at session start; /done captures the session and promotes what worked into the bank</button>
+      <button class="opt" type="button" data-k="D">It reads your chat history the way ChatGPT's memory setting does</button>
+      <p class="why">Why: L3 — start a session with /continue (loads the bank + session logs), end it with /done (captures the session, promotes what worked into the bank).</p>
+    </div>
+
+    <div class="scorebox" id="scorebox">
+      <p class="prog" id="prog">0 of 10 answered — pass is 8/10.</p>
+      <button class="submitbtn" id="submitbtn" type="button" disabled>Submit answers</button>
+      <div id="final" hidden>
+        <p class="score">You got <b id="scoreN">0</b>/10 — pass is 8/10.</p>
+        <p class="passmsg" id="passmsg" hidden>Passed. Next move: post a screenshot of your installed OS folder in Build Log, then start The Content Pipeline course.</p>
+        <div class="failmsg" id="failmsg" hidden>
+          <p>Next move: re-read/rewatch the lesson above and retake the check.</p>
+          <button class="retrybtn" type="button" id="retry">Retake the check</button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="lnav" aria-label="Course pages">
+      <a href="/learn/foundations/">Foundations · Self-Check</a>
+      <a class="cur" href="/learn/install/" aria-current="page">Setup &amp; Install · Self-Check</a>
+      <a href="https://nave.infinitxai.com/join">← Back to the community</a>
+    </nav>
+  </div>
+</section>
+</main>
+
+<footer style="padding:30px 0 44px;border-top:0"><div class="wrap">
+  <div class="pagechrome" style="margin-top:0"><span>INFINITX — 2026</span><span>AGENTIC AI CONTENT · SETUP &amp; INSTALL SELF-CHECK</span></div>
+</div></footer>
+
+<script src="/assets/vendor/gsap.min.js"></script>
+<script src="/assets/vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var qs = [].slice.call(document.querySelectorAll('[data-q]'));
+  var N = qs.length, PASS = 8;
+  var submitted = false;
+  var prog = document.getElementById('prog'),
+      submitBtn = document.getElementById('submitbtn'),
+      fin = document.getElementById('final'),
+      scoreN = document.getElementById('scoreN'),
+      passmsg = document.getElementById('passmsg'),
+      failmsg = document.getElementById('failmsg');
+
+  function answeredCount(){
+    return qs.filter(function(q){ return q.querySelector('.opt.is-sel'); }).length;
+  }
+
+  function progress(){
+    var a = answeredCount();
+    prog.textContent = a + ' of ' + N + ' answered' +
+      (a === N ? ' — ready to submit.' : ' — pass is ' + PASS + '/' + N + '.');
+    submitBtn.disabled = a < N;
+  }
+
+  qs.forEach(function(q){
+    var opts = [].slice.call(q.querySelectorAll('.opt'));
+    opts.forEach(function(o){
+      o.addEventListener('click', function(){
+        if (submitted) return;
+        opts.forEach(function(x){ x.classList.remove('is-sel'); });
+        o.classList.add('is-sel');
+        progress();
+      });
+    });
+  });
+
+  submitBtn.addEventListener('click', function(){
+    if (submitted || answeredCount() < N) return;
+    submitted = true;
+    var correct = 0;
+    qs.forEach(function(q){
+      var opts = [].slice.call(q.querySelectorAll('.opt'));
+      var sel = q.querySelector('.opt.is-sel');
+      var right = !!(sel && sel.hasAttribute('data-correct'));
+      if (right) correct++;
+      q.classList.add('locked');
+      if (sel){
+        sel.classList.remove('is-sel');
+        sel.classList.add(right ? 'is-right' : 'is-wrong');
+      }
+      if (!right){
+        opts.forEach(function(x){ if (x.hasAttribute('data-correct')) x.classList.add('is-right'); });
+      }
+      opts.forEach(function(x){ x.disabled = true; });
+      q.querySelector('.why').classList.add('show');
+    });
+    prog.hidden = true;
+    submitBtn.hidden = true;
+    scoreN.textContent = correct;
+    fin.hidden = false;
+    passmsg.hidden = !(correct >= PASS);
+    failmsg.hidden = (correct >= PASS);
+    document.getElementById('scorebox').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  var retry = document.getElementById('retry');
+  if (retry) retry.addEventListener('click', function(){
+    submitted = false;
+    qs.forEach(function(q){
+      q.classList.remove('locked');
+      [].slice.call(q.querySelectorAll('.opt')).forEach(function(x){
+        x.disabled = false; x.classList.remove('is-sel','is-right','is-wrong');
+      });
+      q.querySelector('.why').classList.remove('show');
+    });
+    fin.hidden = true;
+    prog.hidden = false;
+    submitBtn.hidden = false;
+    progress();
+    qs[0].scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  progress();
+
+  /* light entrance animations — page works fine without this */
+  try {
+    if (window.gsap && window.ScrollTrigger){
+      gsap.registerPlugin(ScrollTrigger);
+      [].slice.call(document.querySelectorAll('.tblock,.qq,.scorebox')).forEach(function(el){
+        gsap.from(el, {opacity:0, y:18, duration:.55, ease:'power2.out',
+          scrollTrigger:{trigger:el, start:'top 92%', once:true}});
+      });
+    }
+  } catch(_e){}
+})();
+</script>
+</body>
+</html>
