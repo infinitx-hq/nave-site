@@ -112,11 +112,11 @@
 </svg>
 
 <header><div class="wrap"><nav>
-  <a class="brand" href="/">
+  <span class="brand" style="cursor:default">
     <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
     <span class="w">Nave</span>
-  </a>
-  <a class="btn" href="/join">The community →</a>
+  </span>
+  <span class="btn" style="pointer-events:none;cursor:default;opacity:.6">Self-check in progress</span>
 </nav></div></header>
 
 <main>
@@ -248,7 +248,7 @@
       <a class="cur" href="/learn/aim/" aria-current="page">Prep 1 · Aim</a>
       <a href="/learn/plan/">Prep 2 · Plan</a>
       <a href="/learn/formats/">Prep 3 · Build Your Formats</a>
-      <a href="https://nave.infinitxai.com/join">← Back to the community</a>
+      <a id="returnlink" href="https://www.skool.com/ai-growth-collective/classroom/a3c04cd2" hidden>Return to your course →</a>
     </nav>
   </div>
 </section>
@@ -321,6 +321,7 @@
     fin.hidden = false;
     passmsg.hidden = !(correct >= PASS);
     failmsg.hidden = (correct >= PASS);
+    var rl=document.getElementById('returnlink'); if(rl) rl.hidden=false;
     document.getElementById('scorebox').scrollIntoView({behavior:'smooth', block:'center'});
   });
 
@@ -335,6 +336,7 @@
       q.querySelector('.why').classList.remove('show');
     });
     fin.hidden = true;
+    var rl2=document.getElementById('returnlink'); if(rl2) rl2.hidden=true;
     prog.hidden = false;
     submitBtn.hidden = false;
     progress();
