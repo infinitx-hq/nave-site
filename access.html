@@ -73,10 +73,11 @@
     <form id="accessForm" autocomplete="on">
       <div class="field"><label for="af-name">Your name</label><input id="af-name" name="name" type="text" placeholder="First name is fine"></div>
       <div class="field"><label for="af-email">The email you joined the community with</label><input id="af-email" name="email" type="email" required placeholder="you@example.com"></div>
-      <div class="field"><label for="af-gh">Your GitHub username</label><input id="af-gh" name="github" type="text" required placeholder="your-github-username"></div>
+      <div class="field"><label for="af-gh">Your GitHub username</label><input id="af-gh" name="github" type="text" required placeholder="your-github-username (just the name, not the URL)"></div>
       <div class="hp"><label>Company website<input name="company_website" type="text" tabindex="-1"></label></div>
       <button class="submit" type="submit">Request access &rarr;</button>
-      <div class="okmsg" id="af-ok">&#9989; Request received &mdash; your GitHub invite is on its way. Check the email on your GitHub account (usually within minutes), accept the invite, then head back to the install lesson in the community.</div>
+      <div class="okmsg" id="af-err" style="display:none;color:#ff9d7c">&#9888;&#65039; <span id="af-err-text">That GitHub username doesn't exist. Double-check it &mdash; just the username, not the profile URL.</span></div>
+      <div class="okmsg" id="af-ok">&#9989; Request received &mdash; your GitHub invite is on its way. <b>It arrives as an email from GitHub</b> (&ldquo;infinitx-hq invited you&hellip;&rdquo;) to the address on your GitHub account, usually within minutes. Don't see it? Open <b>github.com</b> and check the bell &#128276; at the top right &mdash; the invite is there too. <b>Accept it within 7 days</b> (GitHub expires it after that), then head back to the install lesson in the community.</div>
     </form>
     <p class="note" style="margin-top:14px">No GitHub account yet? <a href="https://github.com/signup" style="color:#7ce8af">Create one free</a> (2 minutes), then come back and submit.</p>
   </div>
@@ -84,8 +85,8 @@
   <div class="sectlabel">What happens next</div>
   <div class="pane">
     <ol class="steps">
-      <li><b>GitHub emails you an invite</b> &mdash; <i>"infinitx-hq invited you to Agentic AI Content Members."</i> That invite IS your access &mdash; no password, no file.</li>
-      <li><b>Accept it</b> &mdash; one click on <b style="color:var(--cream)">Join</b>.</li>
+      <li><b>GitHub emails you an invite</b> &mdash; <i>"infinitx-hq invited you to Agentic AI Content Members."</i> That invite IS your access &mdash; no password, no file. Can't find the email? It's also under the &#128276; bell at the top of <b style="color:var(--cream)">github.com</b> when you're logged in.</li>
+      <li><b>Accept it within 7 days</b> &mdash; one click on <b style="color:var(--cream)">Join</b>. (GitHub expires unaccepted invites after 7 days &mdash; if yours expired, just submit the form again.)</li>
       <li><b>Fork the repo</b> &mdash; on <code class="inl">github.com/infinitx-hq/nave</code> hit <b style="color:var(--cream)">Fork</b>, then clone <b style="color:var(--cream)">your fork</b>. Your fork is your ship &mdash; private to you, and updates arrive with the <i>Sync fork</i> button.</li>
       <li><b>Follow the install lesson</b> in the community &mdash; it walks you through everything from there.</li>
     </ol>
@@ -114,19 +115,44 @@
       });
     });
   });
+  function normGh(raw){
+    var u=String(raw||'').trim().replace(/^@+/,'');
+    u=u.replace(/^(?:https?:\/\/)?(?:www\.)?github\.com\//i,'');
+    u=u.replace(/^\/+|\/+$/g,'').split('/')[0].split('?')[0].replace(/^@+/,'').trim();
+    return u;
+  }
   var f=document.getElementById('accessForm');
   if(f){f.addEventListener('submit',function(e){
     e.preventDefault();
-    var payload={type:'nave-access-request',source:'access-page',
-      name:document.getElementById('af-name').value,
-      email:document.getElementById('af-email').value,
-      github_username:document.getElementById('af-gh').value,
-      company_website:f.querySelector('[name=company_website]').value,
-      page:location.href,ts:new Date().toISOString()};
-    try{fetch((window.NAVE_LINKS&&NAVE_LINKS.LEADS_ENDPOINT)||'https://ix-substrate-core-production.up.railway.app/leads',
-      {method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});}catch(_){}
-    document.getElementById('af-ok').style.display='block';
-    f.querySelector('.submit').disabled=true;f.querySelector('.submit').textContent='Requested \u2713';
+    var btn=f.querySelector('.submit'), err=document.getElementById('af-err');
+    err.style.display='none';
+    var gh=normGh(document.getElementById('af-gh').value);
+    if(!/^[A-Za-z\d](?:[A-Za-z\d]|-(?=[A-Za-z\d])){0,38}$/.test(gh)){
+      document.getElementById('af-err-text').textContent='That doesn\u2019t look like a GitHub username. Just the name itself \u2014 letters, numbers, hyphens.';
+      err.style.display='block';return;
+    }
+    btn.disabled=true;btn.textContent='Checking\u2026';
+    var send=function(){
+      var payload={type:'nave-access-request',source:'access-page',
+        name:document.getElementById('af-name').value,
+        email:document.getElementById('af-email').value,
+        github_username:gh,
+        company_website:f.querySelector('[name=company_website]').value,
+        page:location.href,ts:new Date().toISOString()};
+      try{fetch((window.NAVE_LINKS&&NAVE_LINKS.LEADS_ENDPOINT)||'https://ix-substrate-core-production.up.railway.app/leads',
+        {method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});}catch(_){}
+      document.getElementById('af-ok').style.display='block';
+      btn.textContent='Requested \u2713';
+    };
+    /* live existence check via GitHub's CORS-open API; fail OPEN on rate limit/network */
+    fetch('https://api.github.com/users/'+encodeURIComponent(gh))
+      .then(function(r){
+        if(r.status===404){
+          document.getElementById('af-err-text').textContent='GitHub says the username \u201c'+gh+'\u201d doesn\u2019t exist. Double-check the spelling \u2014 just the username, not the profile URL.';
+          err.style.display='block';btn.disabled=false;btn.textContent='Request access \u2192';
+        }else{send();}
+      })
+      .catch(function(){send();});
   });}
 })();
 </script>
