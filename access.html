@@ -132,17 +132,26 @@
       err.style.display='block';return;
     }
     btn.disabled=true;btn.textContent='Checking\u2026';
-    var send=function(){
+    var send=function(attempt){
       var payload={type:'nave-access-request',source:'access-page',
         name:document.getElementById('af-name').value,
         email:document.getElementById('af-email').value,
         github_username:gh,
         company_website:f.querySelector('[name=company_website]').value,
         page:location.href,ts:new Date().toISOString()};
-      try{fetch((window.NAVE_LINKS&&NAVE_LINKS.LEADS_ENDPOINT)||'https://ix-substrate-core-production.up.railway.app/leads',
-        {method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});}catch(_){}
-      document.getElementById('af-ok').style.display='block';
-      btn.textContent='Requested \u2713';
+      var url=(window.NAVE_LINKS&&NAVE_LINKS.LEADS_ENDPOINT)||'https://ix-substrate-core-production.up.railway.app/leads';
+      /* CONFIRMED capture: read the response; success only when the server answered.
+         One retry, then an honest error \u2014 never a fake "Requested \u2713" on a lost POST. */
+      fetch(url,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)})
+        .then(function(r){if(!r.ok)throw new Error('http '+r.status);
+          document.getElementById('af-ok').style.display='block';
+          btn.textContent='Requested \u2713';})
+        .catch(function(){
+          if(attempt<1){setTimeout(function(){send(attempt+1);},1200);return;}
+          document.getElementById('af-err-text').textContent='The request didn\u2019t reach us (a network hiccup or an ad blocker on this page). Please try once more \u2014 if it keeps failing, post in Get Unstuck in the community with your GitHub username and we\u2019ll invite you by hand.';
+          document.getElementById('af-err').style.display='block';
+          btn.disabled=false;btn.textContent='Request access \u2192';
+        });
     };
     /* live existence check via GitHub's CORS-open API; fail OPEN on rate limit/network */
     fetch('https://api.github.com/users/'+encodeURIComponent(gh))
@@ -150,9 +159,9 @@
         if(r.status===404){
           document.getElementById('af-err-text').textContent='GitHub says the username \u201c'+gh+'\u201d doesn\u2019t exist. Double-check the spelling \u2014 just the username, not the profile URL.';
           err.style.display='block';btn.disabled=false;btn.textContent='Request access \u2192';
-        }else{send();}
+        }else{send(0);}
       })
-      .catch(function(){send();});
+      .catch(function(){send(0);});
   });}
 })();
 </script>
