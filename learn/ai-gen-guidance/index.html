@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI GEN GUIDANCE — Realism Prompting + Camera Language · Agentic AI Content</title>
+<meta name="description" content="The AI generation guidance sheet for the Content Pipeline course: the meta prompt for AI images and the full camera-movement language, with a visual reference for every family.">
+<link rel="canonical" href="https://nave.infinitxai.com/learn/ai-gen-guidance/">
+<meta name="theme-color" content="#070908">
+<link rel="icon" type="image/svg+xml" href="/assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  :root{--orange:#FF7614;--orange-line:rgba(255,118,20,.45);--orange-dim:rgba(255,118,20,.1);
+        --cream-72:rgba(240,236,227,.72);--cream-50:rgba(240,236,227,.5)}
+  .lwrap{max-width:860px;margin:0 auto;padding:0 22px}
+  .lhero{padding:52px 0 20px;text-align:center;position:relative;overflow:hidden}
+  .rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--rd,0s)}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .kicker{display:inline-block;border:1px solid var(--line);background:rgba(15,21,17,.7);padding:8px 15px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-50)}
+  .kicker b{color:var(--ink);font-weight:500}
+  .lhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(44px,10vw,84px);line-height:1;letter-spacing:.01em;color:var(--cream);margin:16px 0 0}
+  .lhero h1 i{font-style:normal;color:var(--orange)}
+  .lsub{font-family:'DM Mono',monospace;font-size:13px;line-height:1.9;color:var(--cream-72);max-width:600px;margin:16px auto 0}
+  .lsub b{color:var(--cream)}
+  .tk{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px}
+  .sec{padding:38px 0 0}
+  .sec h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(24px,4.4vw,36px);line-height:1.08;color:var(--cream);margin:0 0 10px}
+  .sec h2 i{font-style:normal;color:var(--orange)}
+  .sec > .lwrap > p{margin:0 0 14px;font-size:15.5px;line-height:1.72;color:var(--cream-72)}
+  .sec p b{color:var(--cream)}
+  /* prompt block */
+  .pwrap{position:relative;border:1px solid var(--orange-line);background:linear-gradient(180deg,var(--orange-dim),rgba(7,9,8,.7));margin:18px 0 6px}
+  .pbar{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 14px}
+  .pbar span{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50)}
+  .copybtn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#070908;background:var(--orange);border:0;padding:8px 14px;cursor:pointer;transition:transform .1s}
+  .copybtn:active{transform:scale(.96)}
+  pre.meta{margin:0;padding:18px 16px 22px;white-space:pre-wrap;font-family:'DM Mono',monospace;font-size:12.5px;line-height:1.75;color:var(--cream-72);max-height:520px;overflow:auto}
+  /* video link */
+  .vlink{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line-strong);padding:12px 18px;margin-top:14px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--cream);text-decoration:none;transition:border-color .15s}
+  .vlink:hover{border-color:var(--orange)}
+  .vlink b{color:var(--orange);font-weight:500}
+  /* movement cards */
+  .mcard{border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.03),rgba(15,21,17,.55));margin:26px 0 0;overflow:hidden}
+  .mcard img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--line)}
+  .mbody{padding:20px 22px 22px}
+  .mnum{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--orange)}
+  .mcard h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(19px,3.2vw,26px);color:var(--cream);margin:6px 0 12px;letter-spacing:.01em}
+  ul.mv{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 22px}
+  @media(max-width:640px){ul.mv{grid-template-columns:1fr}}
+  ul.mv li{padding:5px 0 5px 18px;position:relative;font-size:14.5px;color:var(--cream-72);line-height:1.55}
+  ul.mv li b{color:var(--cream);font-weight:600}
+  ul.mv li::before{content:"";position:absolute;left:0;top:12px;width:7px;height:7px;background:var(--ink)}
+  .usage{border-left:2px solid var(--orange);padding:10px 16px;margin:22px 0 0;font-size:14.5px;line-height:1.7;color:var(--cream-72);background:rgba(255,118,20,.05)}
+  .usage b{color:var(--cream)}
+  .ainote{margin-top:10px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--cream-50)}
+  footer.lfoot{margin-top:64px;border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-family:'DM Mono',monospace;font-size:11.5px;color:var(--cream-50)}
+  footer.lfoot a{color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<section class="lhero">
+  <div class="lwrap">
+    <div class="kicker rise" style="--rd:.05s">CONTENT PIPELINE · PRODUCTION · <b>AI GEN GUIDANCE</b></div>
+    <h1 class="rise" style="--rd:.15s">AI GEN <i>GUIDANCE</i></h1>
+    <p class="lsub rise" style="--rd:.25s">Two tools your agents load before generating any visual: the <b>meta prompt</b> that turns a rough idea into a production-ready image prompt, and the <b>camera language</b> that makes generated video move like cinema — with a visual reference for every movement family.</p>
+  </div>
+</section>
+
+<section class="sec" id="meta-prompt">
+  <div class="lwrap">
+    <span class="tk">TOOL 01</span>
+    <h2>THE META PROMPT <i>FOR AI IMAGES</i></h2>
+    <p>Don't prompt the image model directly. Give this to your agent (or any LLM) with your idea in <b>[INSERT IDEA]</b> — it does the visual-director thinking and hands you one refined, production-ready prompt.</p>
+    <div class="pwrap">
+      <div class="pbar"><span>META-PROMPT.TXT</span><button class="copybtn" onclick="copyPrompt(this)">COPY</button></div>
+      <pre class="meta" id="metaPrompt">You are an expert visual director, cinematographer, and AI prompt engineer.
+
+Your task is to transform a basic idea into a highly detailed, visually striking, and coherent AI image prompt.
+
+Input: [INSERT IDEA]
+
+Follow these steps:
+
+1. Clarify the core subject and intent
+- What is happening?
+- What is the emotional tone?
+
+2. Define the visual composition
+- Camera angle (wide, close-up, top-down, etc.)
+- Framing (centered, rule of thirds, negative space)
+- Depth (foreground, midground, background)
+
+3. Define lighting
+- Type (soft, harsh, golden hour, cinematic, volumetric)
+- Direction (backlit, side-lit, overhead)
+- Mood (ethereal, dramatic, natural, moody)
+
+4. Define environment and setting
+- Location and textures
+- Atmosphere (fog, dust, particles, air quality)
+
+5. Define subject details
+- Pose, expression, gesture
+- Clothing, materials, physical details
+
+6. Define visual style
+- Photography, cinematic, painting, 3D, surreal, etc.
+- Influences (brands, artists, film styles if relevant)
+
+7. Define color palette
+- Dominant tones
+- Contrast level
+- Color harmony (muted, vibrant, monochrome)
+
+8. Define technical quality
+- Lens (35mm, 85mm, macro, etc.)
+- Resolution and detail (ultra-detailed, 8k, film grain, etc.)
+
+9. Add subtle enhancement elements
+- Motion cues, particles, reflections, depth effects
+
+10. Output a single refined prompt
+- Clean, flowing, no bullet points
+- No explanations
+
+Make the result visually precise, emotionally aligned, and production-ready.
+
+Avoid clichés and generic phrases.</pre>
+    </div>
+    <a class="vlink" href="https://www.youtube.com/watch?v=s1TpIcM8ZrA" target="_blank" rel="noopener">▶ WATCH: <b>GRID PROMPTING</b> — the realism technique this pairs with</a>
+  </div>
+</section>
+
+<section class="sec" id="camera-language">
+  <div class="lwrap">
+    <span class="tk">TOOL 02</span>
+    <h2>CAMERA MOVEMENT <i>LANGUAGE</i></h2>
+    <p>Camera movement is how a shot tells the story — it sets mood and steers the eye. When you prompt AI video (or brief your agent), name the movement with this vocabulary. Each family below has a reference frame showing the feel it creates.</p>
+
+    <div class="mcard" id="static">
+      <img src="img/01-static.jpg" alt="Static shot reference — locked-off symmetrical diner frame" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">01</span>
+        <h3>Static Shots</h3>
+        <ul class="mv">
+          <li><b>Static:</b> camera remains completely still — calm, observational scenes.</li>
+          <li><b>Locked Down:</b> camera fixed in position — dialogue or focused action.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="horizontal">
+      <img src="img/02-horizontal.jpg" alt="Horizontal movement reference — tracking shot alongside a runner" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">02</span>
+        <h3>Horizontal Movements</h3>
+        <ul class="mv">
+          <li><b>Pan:</b> camera swivels left/right from a fixed position — reveals or follows action.</li>
+          <li><b>Sweeping Pan:</b> smooth, slow pan across a landscape — adds grandeur.</li>
+          <li><b>Whip Pan:</b> fast, energetic pan — transitions or action beats.</li>
+          <li><b>Tracking Shot:</b> camera moves alongside the subject, following smoothly.</li>
+          <li><b>Dynamic Tracking:</b> fast-paced tracking — high-energy or chase scenes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="vertical">
+      <img src="img/03-vertical.jpg" alt="Vertical movement reference — crane rig rising over a film-set street at dusk" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">03</span>
+        <h3>Vertical Movements</h3>
+        <ul class="mv">
+          <li><b>Tilt:</b> camera moves up/down from a fixed position — reveals vertical elements.</li>
+          <li><b>Pedestal:</b> camera moves vertically while staying level — emphasizes height.</li>
+          <li><b>Epic Crane Shot:</b> dramatic rise or descent — grand, epic feel.</li>
+          <li><b>Jib Shot:</b> smaller-scale vertical move — adds fluidity.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="depth">
+      <img src="img/04-depth.jpg" alt="Depth movement reference — push-in down a corridor toward a lit doorway" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">04</span>
+        <h3>Depth-Based Movements</h3>
+        <ul class="mv">
+          <li><b>Zoom:</b> lens magnifies or reduces without camera movement — draws focus.</li>
+          <li><b>Dramatic Zoom:</b> quick zoom-in on a reaction or critical detail.</li>
+          <li><b>Cinematic Push-In:</b> smooth forward move toward the subject — emotional intensity.</li>
+          <li><b>Pull Out:</b> camera moves backward — reveals context, creates distance.</li>
+          <li><b>Dolly Shot:</b> camera physically moves toward/away — depth and tension.</li>
+          <li><b>Dolly Zoom:</b> dolly in + zoom out (or reverse) — surreal, warping effect.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="circular">
+      <img src="img/05-circular.jpg" alt="Circular movement reference — orbit feel around a dancer in a warehouse" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">05</span>
+        <h3>Circular / Rotational Movements</h3>
+        <ul class="mv">
+          <li><b>Arc:</b> camera curves around the subject — highlights action or emotion.</li>
+          <li><b>360° Orbit:</b> full circle around the subject — dynamic perspective.</li>
+          <li><b>Roll:</b> camera rotates on its own axis — disorienting, dramatic.</li>
+          <li><b>Dutch Angle:</b> tilted diagonal frame — tension or unease.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="aerial">
+      <img src="img/06-aerial.jpg" alt="Aerial movement reference — top-down drone view of a coastline with a red umbrella" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">06</span>
+        <h3>Aerial Movements</h3>
+        <ul class="mv">
+          <li><b>Aerial Glide:</b> smooth movement from above — bird's-eye view.</li>
+          <li><b>Drone Shot:</b> sweeping high-altitude perspectives of landscapes or cities.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="handheld">
+      <img src="img/07-handheld.jpg" alt="Handheld movement reference — immersive frame moving through a neon night market" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">07</span>
+        <h3>Handheld / Immersive Movements</h3>
+        <ul class="mv">
+          <li><b>Handheld:</b> raw, intimate, or chaotic feel.</li>
+          <li><b>Shaky Cam:</b> deliberate instability — intensity and realism in action.</li>
+          <li><b>Body Cam:</b> camera on the actor — subjective, immersive.</li>
+          <li><b>Steadicam:</b> stabilized movement — smooth tracking without the shake.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="complex">
+      <img src="img/08-complex.jpg" alt="Complex shot reference — low-angle hero shot against storm clouds" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">08</span>
+        <h3>Complex / Dramatic Shots</h3>
+        <ul class="mv">
+          <li><b>Hero Shot:</b> camera angles up at the subject — powerful, larger-than-life.</li>
+          <li><b>Over-the-Shoulder:</b> looks over a character's shoulder — their perspective.</li>
+          <li><b>Crash Zoom:</b> sudden fast zoom — action or dramatic moments.</li>
+          <li><b>Parallax Shift:</b> background/foreground separation — adds depth.</li>
+          <li><b>Push and Pan:</b> forward movement + panning — complexity and dynamism.</li>
+          <li><b>Snap Zoom:</b> quick zoom in/out — highlights a key moment.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="time">
+      <img src="img/09-time.jpg" alt="Time-related reference — long-exposure light trails at a night intersection" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">09</span>
+        <h3>Time-Related Movements</h3>
+        <ul class="mv">
+          <li><b>Time-Lapse:</b> passage of time via sped-up frames.</li>
+          <li><b>Slow Motion:</b> slows the action — emphasis on detail and emotion.</li>
+          <li><b>Hyperlapse:</b> time-lapse where the camera also travels through space.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mcard" id="perspective">
+      <img src="img/10-perspective.jpg" alt="Perspective reference — first-person POV hands pushing open a heavy door" loading="lazy">
+      <div class="mbody">
+        <span class="mnum">10</span>
+        <h3>Perspective / Character-Based Movements</h3>
+        <ul class="mv">
+          <li><b>Point of View (POV):</b> the character's direct perspective — full immersion.</li>
+          <li><b>Subjective Camera:</b> follows one character's experience — empathy or suspense.</li>
+          <li><b>Overhead Shot:</b> directly above the subject — dramatic, revealing.</li>
+          <li><b>Reverse Tracking:</b> camera moves backward keeping the subject in focus.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="usage"><b>How to use this in your pipeline:</b> run your idea through the meta prompt first, then name ONE movement from this page in your video prompt (e.g. "cinematic push-in", "360° orbit", "true top-down drone view"). One clear movement per shot beats five stacked ones.</div>
+    <p class="ainote">Reference frames generated with AI (nano-banana) as visual guides for each movement family.</p>
+  </div>
+</section>
+
+<footer class="lfoot">
+  <div class="lwrap">AGENTIC AI CONTENT · CONTENT PIPELINE — PRODUCTION · <a href="https://www.skool.com/ai-growth-collective" target="_blank" rel="noopener">BACK TO THE COMMUNITY</a></div>
+</footer>
+
+<script>
+function copyPrompt(btn){
+  const t = document.getElementById('metaPrompt').innerText;
+  navigator.clipboard.writeText(t).then(()=>{btn.textContent='COPIED ✓';setTimeout(()=>btn.textContent='COPY',1600)});
+}
+</script>
+</body>
+</html>
