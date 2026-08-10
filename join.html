@@ -331,6 +331,14 @@
   .mio2{color:var(--mc);opacity:.85}
   .mhd .magents{margin-left:auto}
   @media(max-width:720px){.mhd .magents{margin-left:0;width:100%}}
+  /* clip-machine source = static thumbnail card (kept light) */
+  .srcthumb{display:block;position:relative;background:#080b09}
+  .srcthumb img{width:100%;display:block;transition:opacity .2s}
+  .srcthumb:hover img{opacity:.9}
+  .srcbar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:12px;padding:22px 12px 10px;background:linear-gradient(transparent,rgba(7,9,8,.94))}
+  .srcbar .ytmark{width:24px;height:24px;flex:none}
+  .srcbar .zmark{height:15px;width:auto;opacity:.95}
+  .srcbar .wt{margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream)}
 
 </style>
 </head>
@@ -606,7 +614,7 @@
         <div class="mhd"><span class="mno">M01</span><h3 class="mname">Clip Machine</h3><span class="mio2">one long-form in → six clips out → auto-posted</span><span class="magents"><span class="mag" style="--c:#D97757;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span><span class="mag" style="--c:#EB5757;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span></span></div>
         <p class="mnote">One YouTube video went in — made as a Zernio creator, <a href="https://youtu.be/Y7hUkXCX8xw" target="_blank" rel="noopener">live on Zernio’s channel ↗</a>. The OS picked the strongest moments, cut them frame-accurate, reframed to vertical, captioned and edited every one — then staged all six to TikTok, Instagram Reels, YouTube Shorts and Threads through the scheduler. Play any of them.</p>
         <div class="mrow r169">
-          <figure class="crate hasv" style="max-width:860px"><figcaption class="chead"><span class="clab"><svg class="pico" viewBox="0 0 24 24" aria-hidden="true"><use href="#lg-yt"/></svg>the source · live on youtube</span><span class="cnum">IN</span></figcaption><div class="cmedia"><video data-vsrc="assets/proof/machines/zernio-long.mp4" poster="assets/proof/machines/zernio-long.jpg" muted loop playsinline preload="none"></video><span class="csnd">tap for sound</span></div><p class="cdesc">15-minute build video — scripted, cut and packaged by the OS, published on the client’s channel.</p></figure>
+          <figure class="crate" style="max-width:620px"><figcaption class="chead"><span class="clab"><svg class="pico" viewBox="0 0 24 24" aria-hidden="true"><use href="#lg-yt"/></svg>the source · live on youtube</span><span class="cnum">IN</span></figcaption><a class="srcthumb" href="https://youtu.be/Y7hUkXCX8xw" target="_blank" rel="noopener" aria-label="Watch the full video on YouTube"><img src="assets/proof/machines/zernio-thumb.jpg" alt="One API key for social channels — video thumbnail" loading="lazy"><span class="srcbar"><svg class="ytmark" viewBox="0 0 24 24" aria-hidden="true"><use href="#lg-yt"/></svg><img class="zmark" src="assets/logos/zernio-wordmark.png" alt="Zernio"><span class="wt">watch on youtube ↗</span></span></a><p class="cdesc">15-minute build video — scripted, cut and packaged by the OS, published on the client’s channel.</p></figure>
         </div>
         <div class="mdrop">the machine extracts · edits · schedules</div>
         <div class="mrow r916">
