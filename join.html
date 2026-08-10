@@ -315,6 +315,23 @@
   .mstages span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--ink-soft);border:1px dashed var(--line);padding:4px 9px}
   .mstages i{font-style:normal;color:var(--cream-50);align-self:center;font-size:10px}
 
+  /* ══ machine selector — all machines equal, one bay at a time ══ */
+  .mtabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0 18px}
+  .mtab{--mc:#1FE07A;display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50);background:rgba(15,21,17,.5);border:1px solid var(--line);padding:9px 13px;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+  .mtab::before{content:"";width:7px;height:7px;background:var(--mc);box-shadow:0 0 7px var(--mc);flex:none}
+  .mtab b{color:var(--cream-72);font-weight:500}
+  .mtab:hover{border-color:var(--line-strong);color:var(--cream)}
+  .mtab.on{background:rgba(31,224,122,.09);border-color:var(--mc);color:var(--cream)}
+  .machines .machine{display:none}
+  .machines .machine.on{display:block;animation:mbayin .45s cubic-bezier(.2,.7,.2,1)}
+  @keyframes mbayin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .machine{--mc:var(--ink)}
+  .machine::before,.machine::after{border-color:var(--mc)}
+  .mno{color:var(--mc);border-color:var(--mc);background:transparent}
+  .mio2{color:var(--mc);opacity:.85}
+  .mhd .magents{margin-left:auto}
+  @media(max-width:720px){.mhd .magents{margin-left:0;width:100%}}
+
 </style>
 </head>
 <body>
@@ -565,18 +582,28 @@
   <div class="wrap">
     <span class="eyebrow">Real pieces, published</span>
     <h2 class="ph">Made by the OS. <i>Machine by machine.</i></h2>
-    <p class="sub" style="max-width:620px">The Content OS isn’t one tool — it’s a set of machines, each owning one production line. Every piece below is real, shipped work, shown inside the machine that made it.</p>
+    <p class="sub" style="max-width:620px">The Content OS isn’t one tool — it’s a set of machines, each owning one production line. Every piece below is a real generation example from that machine — all equal parts of one OS. Pick a bay.</p>
     <div class="bay" aria-hidden="true">
       <div class="bayshipwrap"><svg class="bayship"><use href="#px-ship"/></svg></div>
       <div class="baybeam"></div>
       <span class="bit b1"></span><span class="bit b2"></span><span class="bit b3"></span><span class="bit b4"></span>
     </div>
 
+    <div class="mtabs" role="tablist" aria-label="Machines">
+      <button class="mtab on" data-m="m-clip" style="--mc:#EB5757"><b>M01</b>Clip Machine</button>
+      <button class="mtab" data-m="m-avatar" style="--mc:#F2C94C"><b>M02</b>Avatar Machine</button>
+      <button class="mtab" data-m="m-method" style="--mc:#1FE07A"><b>M03</b>1–30 Method</button>
+      <button class="mtab" data-m="m-edit" style="--mc:#D97757"><b>M04</b>Editing</button>
+      <button class="mtab" data-m="m-carousel" style="--mc:#C08BF2"><b>M05</b>Carousels</button>
+      <button class="mtab" data-m="m-film" style="--mc:#2FD4C2"><b>M06</b>AI Film</button>
+      <button class="mtab" data-m="m-motion" style="--mc:#9BF06C"><b>M07</b>Motion</button>
+    </div>
+
     <div class="machines" id="cargo">
 
       <!-- M01 · CLIP MACHINE -->
-      <div class="machine" id="m-clip">
-        <div class="mhd"><span class="mno">M01</span><h3 class="mname">Clip Machine</h3><span class="mio2">one long-form in → six clips out → auto-posted</span></div>
+      <div class="machine on" id="m-clip" style="--mc:#EB5757">
+        <div class="mhd"><span class="mno">M01</span><h3 class="mname">Clip Machine</h3><span class="mio2">one long-form in → six clips out → auto-posted</span><span class="magents"><span class="mag" style="--c:#D97757;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span><span class="mag" style="--c:#EB5757;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span></span></div>
         <p class="mnote">One YouTube video went in — made as a Zernio creator, <a href="https://youtu.be/Y7hUkXCX8xw" target="_blank" rel="noopener">live on Zernio’s channel ↗</a>. The OS picked the strongest moments, cut them frame-accurate, reframed to vertical, captioned and edited every one — then staged all six to TikTok, Instagram Reels, YouTube Shorts and Threads through the scheduler. Play any of them.</p>
         <div class="mrow r169">
           <figure class="crate hasv" style="max-width:860px"><figcaption class="chead"><span class="clab"><svg class="pico" viewBox="0 0 24 24" aria-hidden="true"><use href="#lg-yt"/></svg>the source · live on youtube</span><span class="cnum">IN</span></figcaption><div class="cmedia"><video data-vsrc="assets/proof/machines/zernio-long.mp4" poster="assets/proof/machines/zernio-long.jpg" muted loop playsinline preload="none"></video><span class="csnd">tap for sound</span></div><p class="cdesc">15-minute build video — scripted, cut and packaged by the OS, published on the client’s channel.</p></figure>
@@ -593,8 +620,8 @@
       </div>
 
       <!-- M02 · AVATAR MACHINE -->
-      <div class="machine" id="m-avatar">
-        <div class="mhd"><span class="mno">M02</span><h3 class="mname">Avatar Machine</h3><span class="mio2">no filming day → finished long-form</span></div>
+      <div class="machine" id="m-avatar" style="--mc:#F2C94C">
+        <div class="mhd"><span class="mno">M02</span><h3 class="mname">Avatar Machine</h3><span class="mio2">no filming day → finished long-form</span><span class="magents"><span class="mag" style="--c:#6C9BF0;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><span class="nm">copywriter</span></span><span class="mag" style="--c:#F2C94C;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span><span class="mag" style="--c:#D97757;--bd:0.6s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span></span></div>
         <div class="mstages" aria-hidden="true"><span>script, in your voice</span><i>→</i><span>voice clone</span><i>→</i><span>AI twin</span><i>→</i><span>generated b-roll</span><i>→</i><span>composed edit</span><i>→</i><span>published + clipped</span></div>
         <p class="mnote">The whole production line with zero filming days: the script written in the founder’s voice, spoken by his voice clone, delivered by his AI twin, b-roll generated to match — and the edit composed shot by shot. The same Clip Machine then cuts the result into shorts.</p>
         <div class="mrow rmix">
@@ -604,8 +631,8 @@
       </div>
 
       <!-- M03 · 1–30 METHOD MACHINE -->
-      <div class="machine" id="m-method">
-        <div class="mhd"><span class="mno">M03</span><h3 class="mname">1–30 Method Machine</h3><span class="mio2">3 recording days → a month of pieces</span></div>
+      <div class="machine" id="m-method" style="--mc:#1FE07A">
+        <div class="mhd"><span class="mno">M03</span><h3 class="mname">1–30 Method Machine</h3><span class="mio2">3 recording days → a month of pieces</span><span class="magents"><span class="mag" style="--c:#1FE07A;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#1FE07A"><use href="#px-scout"/></svg><span class="nm">strategist</span></span><span class="mag" style="--c:#F2C94C;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span><span class="mag" style="--c:#EB5757;--bd:0.6s"><svg viewBox="0 0 24 20" fill="#EB5757"><use href="#px-dish"/></svg><span class="nm">social media manager</span></span></span></div>
         <p class="mnote">The operating method behind a youth soccer club’s feed: three recording days become a month of pieces — interview spotlights, training montages, carousels — planned, produced and scheduled by the OS, week after week.</p>
         <div class="mrow rmix">
           <figure class="crate hasv"><figcaption class="chead"><span class="clab">spotlight · published</span><span class="cnum">01</span></figcaption><div class="cmedia"><video data-vsrc="assets/proof/reel/tiempo-sam.mp4" poster="assets/proof/reel/tiempo-sam.jpg" muted loop playsinline preload="none"></video><span class="csnd">tap for sound</span></div><p class="cdesc">Coach interview cutdown — cut, captioned and published by the OS.</p></figure>
@@ -615,8 +642,8 @@
       </div>
 
       <!-- M04 · EDITING MACHINE -->
-      <div class="machine" id="m-edit">
-        <div class="mhd"><span class="mno">M04</span><h3 class="mname">Editing Machine</h3><span class="mio2">raw cut in → premium edit out</span></div>
+      <div class="machine" id="m-edit" style="--mc:#D97757">
+        <div class="mhd"><span class="mno">M04</span><h3 class="mname">Editing Machine</h3><span class="mio2">raw cut in → premium edit out</span><span class="magents"><span class="mag" style="--c:#D97757;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span><span class="mag" style="--c:#C08BF2;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span></span></div>
         <p class="mnote">Every piece passes the same edit bar: motion graphics, keyword pops, scene takeovers, karaoke captions, sound design. This is what the standard looks like on a long-form open — and on published shorts.</p>
         <div class="mrow rmix">
           <figure class="crate hasv w2"><figcaption class="chead"><span class="clab"><svg class="pico" viewBox="0 0 24 24" aria-hidden="true"><use href="#lg-yt"/></svg>long-form open · published</span><span class="cnum">01</span></figcaption><div class="cmedia"><video data-vsrc="assets/proof/reel/yt-month-intro.mp4" poster="assets/proof/reel/yt-month-intro.jpg" muted loop playsinline preload="none"></video><span class="csnd">tap for sound</span></div><p class="cdesc">“A month of content in a day” — live on the founder’s channel.</p></figure>
@@ -626,8 +653,8 @@
       </div>
 
       <!-- M05 · CAROUSEL MACHINE -->
-      <div class="machine" id="m-carousel">
-        <div class="mhd"><span class="mno">M05</span><h3 class="mname">Carousel Machine</h3><span class="mio2">one idea in → designed slides out</span></div>
+      <div class="machine" id="m-carousel" style="--mc:#C08BF2">
+        <div class="mhd"><span class="mno">M05</span><h3 class="mname">Carousel Machine</h3><span class="mio2">one idea in → designed slides out</span><span class="magents"><span class="mag" style="--c:#6C9BF0;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#6C9BF0"><use href="#px-writer"/></svg><span class="nm">copywriter</span></span><span class="mag" style="--c:#C08BF2;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span></span></div>
         <p class="mnote">Written, art-directed and rendered as finished slides — Instagram carousels, TikTok photo posts and LinkedIn documents, each in the brand’s own design system.</p>
         <div class="mrow rmix">
           <figure class="crate"><figcaption class="chead"><span class="clab">carousel · client</span><span class="cnum">01</span></figcaption><div class="cmedia slides a45"><img src="assets/proof/reel/aqua-caro-1.jpg" alt="carousel slide" loading="lazy" class="cur"><img src="assets/proof/reel/aqua-caro-2.jpg" alt="carousel slide" loading="lazy"><img src="assets/proof/reel/aqua-caro-3.jpg" alt="carousel slide" loading="lazy"><img src="assets/proof/reel/aqua-caro-4.jpg" alt="carousel slide" loading="lazy"><img src="assets/proof/reel/aqua-caro-5.jpg" alt="carousel slide" loading="lazy"></div><p class="cdesc">Client campaign carousel — written and designed by the OS.</p></figure>
@@ -637,8 +664,8 @@
       </div>
 
       <!-- M06 · AI FILM MACHINE -->
-      <div class="machine" id="m-film">
-        <div class="mhd"><span class="mno">M06</span><h3 class="mname">AI Film Machine</h3><span class="mio2">prompt in → finished film out</span></div>
+      <div class="machine" id="m-film" style="--mc:#2FD4C2">
+        <div class="mhd"><span class="mno">M06</span><h3 class="mname">AI Film Machine</h3><span class="mio2">prompt in → finished film out</span><span class="magents"><span class="mag" style="--c:#F2C94C;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#F2C94C"><use href="#px-cam"/></svg><span class="nm">producer</span></span><span class="mag" style="--c:#C08BF2;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span></span></div>
         <p class="mnote">Fully synthetic productions — image, motion and voice generated inside the OS, then graded and cut in Post-production. No shoot, no stock.</p>
         <div class="mrow rmix">
           <figure class="crate hasv w2"><figcaption class="chead"><span class="clab">ai film</span><span class="cnum">01</span></figcaption><div class="cmedia"><video data-vsrc="assets/proof/nave-work/film-cinematic.mp4" poster="assets/proof/nave-work/film-cinematic.jpg" muted loop playsinline preload="none"></video><span class="csnd">tap for sound</span></div><p class="cdesc">Fully AI-generated — no shoot, no stock.</p></figure>
@@ -650,8 +677,8 @@
       </div>
 
       <!-- M07 · MOTION MACHINE -->
-      <div class="machine" id="m-motion">
-        <div class="mhd"><span class="mno">M07</span><h3 class="mname">Motion Machine</h3><span class="mio2">a message in → animated design out</span></div>
+      <div class="machine" id="m-motion" style="--mc:#9BF06C">
+        <div class="mhd"><span class="mno">M07</span><h3 class="mname">Motion Machine</h3><span class="mio2">a message in → animated design out</span><span class="magents"><span class="mag" style="--c:#C08BF2;--bd:0.0s"><svg viewBox="0 0 24 20" fill="#C08BF2"><use href="#px-brush"/></svg><span class="nm">designer</span></span><span class="mag" style="--c:#D97757;--bd:0.3s"><svg viewBox="0 0 24 20" fill="#D97757"><use href="#px-cut"/></svg><span class="nm">editor</span></span></span></div>
         <p class="mnote">Motion-design explainers rendered straight from code — no After Effects seat, no motion designer on retainer.</p>
         <div class="mrow rmix">
           <figure class="crate hasv"><figcaption class="chead"><span class="clab">motion design</span><span class="cnum">01</span></figcaption><div class="cmedia"><video data-vsrc="assets/proof/nave-work/nave-one-drop.mp4" poster="assets/proof/nave-work/nave-one-drop.jpg" muted loop playsinline preload="none"></video><span class="csnd">tap for sound</span></div><p class="cdesc">One drop folder in — the system takes it from there.</p></figure>
@@ -835,6 +862,30 @@
         k = (k + 1) % ims.length;
         ims[k].classList.add('cur');
       }, 1500);
+    });
+  })();
+
+
+  /* machine selector — one bay at a time */
+  (function(){
+    var tabs = [].slice.call(document.querySelectorAll('.mtab'));
+    var bays = [].slice.call(document.querySelectorAll('.machines .machine'));
+    tabs.forEach(function(t){
+      t.addEventListener('click', function(){
+        tabs.forEach(function(o){ o.classList.remove('on'); });
+        t.classList.add('on');
+        bays.forEach(function(m){
+          var on = m.id === t.getAttribute('data-m');
+          m.classList.toggle('on', on);
+          if (!on){
+            [].slice.call(m.querySelectorAll('video')).forEach(function(v){ v.pause(); v.muted = true; });
+            [].slice.call(m.querySelectorAll('.crate')).forEach(function(c){
+              c.classList.remove('loud');
+              var ch = c.querySelector('.csnd'); if (ch) ch.textContent = 'tap for sound';
+            });
+          }
+        });
+      });
     });
   })();
 
