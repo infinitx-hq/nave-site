@@ -27,9 +27,15 @@
 <section style="text-align:center;padding-top:56px">
   <div class="wrap">
     <div id="sentbanner" class="reveal pane" hidden style="text-align:left;margin:0 auto 30px;max-width:620px;padding:18px 22px;border-color:rgba(31,224,122,.4)">
-      <p class="formhead" style="margin:0 0 4px;color:var(--ink)">✓ Check your email — the playbook is on the way<span id="sentto"></span>.</p>
-      <p style="margin:0;font-size:14.5px">The full method, the real skills &amp; agents, and the Claude Code setup guide (EN/ES) are landing in your inbox now. While it lands: <b>three quick questions</b>, so I can point you at the right next step. Thirty seconds.</p>
-      <p class="micro" style="margin:8px 0 0">Didn't get the email in a couple minutes? <a href="/playbook?unlocked=1">Grab everything here →</a> (check spam too.)</p>
+      <p class="formhead" id="senthead" style="margin:0 0 4px;color:var(--ink)">✓ Here's your playbook<span id="sentto"></span>.</p>
+      <p id="sentbody" style="margin:0;font-size:14.5px">Everything is right here — no inbox hunting. A copy also goes to your email. While you grab it: <b>three quick questions</b>, so I can point you at the right next step. Thirty seconds.</p>
+      <div id="sentfiles" style="display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0">
+        <a class="btn" href="/nave-playbook.pdf" style="padding:8px 14px;font-size:13px">Playbook (PDF) ↓</a>
+        <a class="btn" href="/nave-playbook-kit.zip" style="padding:8px 14px;font-size:13px">Skills &amp; agents kit (ZIP) ↓</a>
+        <a class="btn" href="/guide-claude-code-en.pdf" style="padding:8px 14px;font-size:13px">Claude Code guide · EN ↓</a>
+        <a class="btn" href="/guide-claude-code-es.pdf" style="padding:8px 14px;font-size:13px">Guía Claude Code · ES ↓</a>
+      </div>
+      <p class="micro" style="margin:8px 0 0">Prefer the email? Give it a couple of minutes and check spam. Everything above is also at <a href="/playbook?unlocked=1">/playbook?unlocked=1</a>.</p>
       <p class="micro" style="margin:10px 0 0;padding-top:8px;border-top:1px dashed rgba(31,224,122,.25)"><b style="color:var(--ink)">Community member looking for GitHub access to the Content OS?</b> That's a separate 30-second step: <a href="/access.html">request your repo invite here →</a></p>
     </div>
 
@@ -122,7 +128,14 @@
   var email = ''; try { email = sessionStorage.getItem('nave_email') || ''; } catch (_e) {}
   if (banner && (/[?&]sent=1/.test(location.search) || email)) {
     banner.hidden = false;
-    if (email) { var s = document.getElementById('sentto'); if (s) s.textContent = ' to ' + email; }
+    if (email) { var s = document.getElementById('sentto'); if (s) s.textContent = ', ' + email; }
+    /* ok=0 → the capture POST never got a server answer (network / ad blocker / deploy
+       switchover). Say so instead of promising an email that can't come. Files still work. */
+    if (/[?&]ok=0/.test(location.search)) {
+      var h = document.getElementById('senthead'), b = document.getElementById('sentbody');
+      if (h) h.textContent = 'Here’s your playbook — grab it below.';
+      if (b) b.innerHTML = 'Your request didn’t reach our server (a network hiccup or an ad blocker), so the email copy may not go out. Everything is right here anyway. Then: <b>three quick questions</b>, so I can point you at the right next step.';
+    }
   }
 })();
 (function(){

@@ -164,15 +164,25 @@
     if(!(/^\+?[\d\s().\-]{7,20}$/.test(phone) && digits.length>=7 && digits.length<=15)){ bad(phEl,'Enter a valid phone number with country code (e.g. +1 555 123 4567).'); return; }
     var ref=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():(Date.now()+'-'+Math.random().toString(36).slice(2));
     try{ sessionStorage.setItem('nave_email', email); sessionStorage.setItem('nave_name', name); sessionStorage.setItem('nave_ref', ref); }catch(_e){}
-    var done=false, next=function(){ if(done) return; done=true; location.href='/apply?sent=1'; };
+    /* CONFIRMED capture (2026-08-24): read the server's answer instead of a blind no-cors
+       beacon, and tell /apply whether the lead actually landed (ok=1) or not (ok=0), so the
+       next page never claims "the email is on the way" after a lost POST. */
+    var done=false, next=function(ok){ if(done) return; done=true; location.href='/apply?sent=1&ok='+(ok?1:0); };
+    var row={ source:'playbook', email:email, name:name, phone:phone,
+      lead_ref:ref, referrer:document.referrer||location.href, company_website:v('input[name=company_website]') };
     try{
-      if(window.naveCapture){
-        window.naveCapture({ source:'playbook', email:email, name:name, phone:phone,
-          lead_ref:ref, referrer:document.referrer||location.href, company_website:v('input[name=company_website]')
-        }).finally(next);
-      } else next();
-    }catch(_e){ next(); }
-    setTimeout(next, 2500);
+      ['utm_source','utm_medium','utm_campaign'].forEach(function(k){ var u=sessionStorage.getItem('nave_'+k); if(u) row[k]=u; });
+      if(sessionStorage.getItem('nave_ref0')) row.referrer=sessionStorage.getItem('nave_ref0');
+    }catch(_e){}
+    var url=(window.NAVE_LINKS&&NAVE_LINKS.LEADS_ENDPOINT)||'https://ix-substrate-core-production.up.railway.app/leads';
+    var send=function(attempt){
+      fetch(url,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(row)})
+        .then(function(r){ if(!r.ok) throw new Error('http '+r.status); return r.json(); })
+        .then(function(j){ next(j&&j.ok); })
+        .catch(function(){ if(attempt<1){ setTimeout(function(){ send(attempt+1); },900); } else next(false); });
+    };
+    try{ send(0); }catch(_e){ next(false); }
+    setTimeout(function(){ next(false); }, 6000);
   });
 })();
 </script>
