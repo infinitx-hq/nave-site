@@ -22,7 +22,7 @@
   Media local en ./media (los videos se reproducen inline). GSAP + ScrollTrigger en ./vendor.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FFFFFF; --paper:#F7F8FA; --ink:#12161B; --ink2:#3A424C; --gray:#6E7681; --line:#E3E7EC;
@@ -308,11 +308,66 @@ html.static .doc details.chap{open:true}
 .partner{display:flex;align-items:center;gap:18px;margin-top:26px;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:18px 22px;max-width:860px}
 .partner img{height:34px}
 .partner span{font-size:14px;color:var(--ink2)}
+
+/* ---------- Nave brand (alineado con nave.infinitxai.com/join) ---------- */
+:root{--nv-bg:#070908;--nv-ink:#1FE07A;--nv-cream:#F0EBDE;--nv-cream72:rgba(240,235,222,.72);--nv-line:rgba(31,224,122,.16)}
+#hud .brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;margin-right:2px}
+#hud .brand svg{width:26px;height:23px}
+#hud .brand .w{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+section.nave{background:var(--nv-bg)}
+section.nave .kicker{color:var(--nv-ink)}
+section.nave h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.008em;color:var(--nv-cream);line-height:1.06}
+section.nave h2 .mark{background:none;color:var(--nv-ink);padding:0}
+section.nave .sub{color:var(--nv-cream72);font-family:var(--mono);font-size:14px;line-height:1.9}
+section.nave .stp{background:rgba(15,21,17,.72);border:1px solid var(--nv-line);border-radius:4px}
+section.nave .stp b{color:var(--nv-cream)}
+section.nave .stp p{color:var(--nv-cream72)}
+section.nave .stp .small{color:rgba(240,235,222,.5)}
+section.nave .stp .n{background:var(--nv-ink);color:var(--nv-bg)}
+section.nave .stp.you{background:rgba(31,224,122,.08);border-color:rgba(31,224,122,.55)}
+section.nave .stp code,section.nave .stp .cmd{background:rgba(240,235,222,.06);border:1px solid var(--nv-line);color:var(--nv-cream)}
+section.nave .stp a{color:var(--nv-ink)}
+section.nave .stp i{color:var(--nv-cream)}
+section.nave .partner{background:rgba(15,21,17,.72);border:1px solid var(--nv-line);border-radius:4px}
+section.nave .partner span{color:var(--nv-cream72)}
+section.nave .partner b{color:var(--nv-cream)}
+section.nave .partner .mono{color:var(--nv-ink)}
+section.nave .gatecard{border-radius:4px}
+#sitefoot{background:var(--nv-bg);text-align:center;padding:30px 0 44px}
+#sitefoot .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,235,222,.5)}
+#sitefoot .l{margin-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em}
+#sitefoot .l a{color:rgba(240,235,222,.5);text-decoration:none}
+#sitefoot .l a:hover{color:var(--nv-cream)}
+
+/* ---------- candado de email ---------- */
+[data-gated].locked>.inner{filter:blur(8px);pointer-events:none;user-select:none;max-height:74vh;overflow:hidden}
+[data-gated].locked{min-height:70vh}
+.gatewrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:20;padding:0 4vw}
+.gatecard{background:#fff;border:1.5px solid var(--line);border-radius:20px;box-shadow:0 30px 80px rgba(18,22,27,.16);padding:34px 38px;max-width:460px;width:100%;text-align:center}
+.gatecard .gk{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--acc-ink);margin-bottom:12px}
+.gatecard h3{font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+.gatecard p{font-size:14.5px;color:var(--ink2);margin-top:10px}
+.gform{display:flex;gap:8px;margin-top:18px}
+.gform input{flex:1;min-width:0;font-family:var(--mono);font-size:13.5px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;outline:none;color:var(--ink);background:#fff}
+.gform input:focus{border-color:var(--acc-ink)}
+.gform input.bad{border-color:#B3261E}
+.gform button{font-family:var(--mono);font-size:12px;letter-spacing:.08em;border:1.5px solid var(--ink);background:var(--ink);color:#fff;border-radius:12px;padding:13px 18px;cursor:pointer;white-space:nowrap}
+.gform button:hover{background:#000}
+.gs{font-size:12px;color:var(--gray);margin-top:12px;font-family:var(--mono)}
+@media(max-width:520px){.gform{flex-direction:column}}
+.dlrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.dlrow a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-decoration:none;border:1.5px solid var(--ink);background:var(--ink);color:#fff;border-radius:99px;padding:10px 16px}
+.dlrow a.ghost{background:#fff;color:var(--ink);border-color:var(--line)}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+</svg>
+
 <div id="hud">
+  <a class="brand" href="https://nave.infinitxai.com/" title="Nave"><svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg><span class="w">Nave</span></a>
   <div class="who">ENRIQUE <b>la máquina de avatares UGC</b></div>
   <div id="xpwrap"><div id="xpbar"></div></div>
   <div class="hudchip" id="stepchip">PASO <b>0 / 7</b></div>
@@ -558,7 +613,7 @@ html.static .doc details.chap{open:true}
 </section>
 
 <!-- ============ PROMPTS ============ -->
-<section id="prompts" class="alt" data-name="Los prompts" data-step="0">
+<section id="prompts" class="alt" data-name="Los prompts" data-step="0" data-gated="LOS PROMPTS DE LA MÁQUINA">
   <div class="inner">
     <div class="kicker" data-rev>Los prompts — plantillas por paso, para copiar</div>
     <h2 data-rev>Un prompt por paso. <span class="mark">Rellena los corchetes.</span></h2>
@@ -779,851 +834,875 @@ Cuando esté listo, corre una pieza de prueba con este brief: [brief de 5 línea
 </section>
 
 <!-- ============ TRAINING ============ -->
-<section id="training" data-name="El entrenamiento" data-step="0">
+<section id="training" data-name="El entrenamiento" data-step="0" data-gated="EL SISTEMA DE GUION ÍNTEGRO">
   <div class="inner">
     <div class="kicker" data-rev>El entrenamiento — el documento completo, tal cual</div>
-    <h2 data-rev>UGC Script Writing System <span class="mark">v2, íntegro.</span></h2>
-    <p class="sub" data-rev>Es el framework que el paso DIÁLOGO usa como system prompt y como checklist de auditoría. Está aquí completo (en inglés, como se escribió) para que lo pegues en tu OS con el prompt 07. Abre cada capítulo.</p>
+    <h2 data-rev>El Sistema de Guion UGC <span class="mark">v2, íntegro.</span></h2>
+    <p class="sub" data-rev>Es el framework que el paso DIÁLOGO usa como system prompt y como checklist de auditoría. Está aquí completo, traducido al español sin reducir nada, para que lo pegues en tu OS con el prompt 07. Abre cada capítulo — o llévatelo como recurso.</p>
+    <div class="dlrow" data-rev>
+      <a href="sistema/">⬇ VERLO SOLO Y DESCARGARLO — /avatares/sistema</a>
+      <a class="ghost" href="sistema/sistema-guion-ugc-v2-ES.md" download>.md ESPAÑOL</a>
+      <a class="ghost" href="sistema/ugc-script-writing-system-v2-EN.md" download>.md INGLÉS (original)</a>
+    </div>
     <div class="docbar" data-rev><button id="docall">EXPANDIR TODO</button><button id="docnone">PLEGAR TODO</button><button class="copy" data-copy="docraw" style="margin-left:auto">COPIAR EL DOCUMENTO</button></div>
     <div data-rev>
     <!-- TRAINING:START -->
-<div class="doc"><h1>UGC SCRIPT WRITING SYSTEM — VERSION 2</h1>
-<p><i>Universal Framework for AI-Generated UGC Scripts</i></p>
-<p>Niche-Agnostic • Brand-Agnostic • Production-Ready</p>
-<p>Built for AI video generation tools and chunked production workflows</p>
-<details class="chap"><summary>Contents</summary><div class="chb">
-<ol><li>Two Script Formats</li><li>Non-Negotiable Principles</li><li>The Universal Script Structure</li><li>Universal Direction Blocks</li><li>Voiceover Architecture</li><li>Variation Types</li><li>Pain Point Selection</li><li>Camera and B-Roll Direction Standards</li><li>Common Failure Modes</li><li>Brand Input Variables</li><li>Chunked Production Workflow</li><li>Chunk Breakdown Templates by Script Length</li><li>Captions for Organic Reach</li><li>Testing and Scaling Logic</li><li>How to Use This Document</li></ol>
+<div class="doc"><h1>SISTEMA DE ESCRITURA DE GUIONES UGC — VERSIÓN 2</h1>
+<p><i>Framework universal para guiones UGC generados con IA</i></p>
+<p>Agnóstico de nicho • Agnóstico de marca • Listo para producción</p>
+<p>Construido para herramientas de generación de video con IA y flujos de producción por tomas (chunks)</p>
+<blockquote>Traducción íntegra al español del "Universal UGC Script Writing System v2" — todo el contenido, sin reducir. El original en inglés se descarga al final junto con esta versión.</blockquote>
+<details class="chap"><summary>Contenido</summary><div class="chb">
+<ol><li>Los dos formatos de guion</li><li>Principios no negociables</li><li>La estructura universal del guion</li><li>Bloques de dirección universales</li><li>Arquitectura de la voz</li><li>Tipos de variación</li><li>Selección del punto de dolor</li><li>Estándares de cámara y b-roll</li><li>Fallos comunes</li><li>Variables de marca</li><li>Flujo de producción por tomas</li><li>Plantillas de desglose por duración de guion</li><li>Captions para alcance orgánico</li><li>Lógica de testeo y escalado</li><li>Cómo usar este documento</li></ol>
 </div></details>
-<details class="chap"><summary>1. Two Script Formats</summary><div class="chb">
-<p>The system produces two formats. Pick the one that matches the funnel stage.</p>
-<div class="tw"><table><tr><th>Attribute</th><th>Full Stack Format</th><th>Mid-Funnel Punchy</th></tr><tr><td>Runtime</td><td>28–32 seconds</td><td>18–22 seconds</td></tr><tr><td>Word count</td><td>150–180 words</td><td>55–70 words</td></tr><tr><td>Beat structure</td><td>Five-beat: hook, reframe, mechanism, payoff, CTA</td><td>Three-beat: sharp hook with reframe folded in, mechanism with analogy, soft payoff with close</td></tr><tr><td>Default scene count</td><td>3 scenes</td><td>2 scenes (3 only if voiceover requires it)</td></tr><tr><td>Default chunk count (chunked workflow)</td><td>5 chunks</td><td>3 chunks</td></tr><tr><td>Use for</td><td>Cold audiences who need the full education arc to convert</td><td>Warmer audiences who already know they have the problem and need a fast credibility signal</td></tr></table></div>
+<details class="chap"><summary>1. Los dos formatos de guion</summary><div class="chb">
+<p>El sistema produce dos formatos. Elige el que corresponde a la etapa del funnel.</p>
+<div class="tw"><table><tr><th>Atributo</th><th>Formato Full Stack</th><th>Mid-Funnel Punchy</th></tr><tr><td>Duración</td><td>28–32 segundos</td><td>18–22 segundos</td></tr><tr><td>Cantidad de palabras</td><td>150–180 palabras</td><td>55–70 palabras</td></tr><tr><td>Estructura de beats</td><td>Cinco beats: hook, reframe, mecanismo, payoff, CTA</td><td>Tres beats: hook afilado con el reframe plegado adentro, mecanismo con analogía, payoff suave con cierre</td></tr><tr><td>Escenas por defecto</td><td>3 escenas</td><td>2 escenas (3 solo si la voz lo exige)</td></tr><tr><td>Tomas por defecto (flujo por chunks)</td><td>5 tomas</td><td>3 tomas</td></tr><tr><td>Úsalo para</td><td>Audiencias frías que necesitan el arco educativo completo para convertir</td><td>Audiencias más tibias que ya saben que tienen el problema y necesitan una señal de credibilidad rápida</td></tr></table></div>
 </div></details>
-<details class="chap"><summary>2. Non-Negotiable Principles</summary><div class="chb">
-<p>These rules apply to every script, every format, every niche. They are not preferences. They are the core ruleset that separates a winning UGC script from a losing one.</p>
-<h3>2.1 The Hook Owns the First Five Words</h3>
-<p>The opening line identifies the exact person being spoken to and confirms the specific frustration they are carrying. Never narrates the creator's morning, weekend, or life. Calls out the right person and repels everyone else.</p>
-<h3>2.2 Sentence Flow Over Choppy Phrasing</h3>
-<p>No two-word stutter patterns. Sentences connect, breathe, and lead into each other. Use connectors and complete thoughts.</p>
-<h3>2.3 Keep the Mechanism Simple</h3>
-<p>Name the proprietary mechanism the way the brand names it, but only if a 12-year-old would understand. Always pair the mechanism with a one-second tactile analogy the viewer can picture. The analogy is the most important sentence in the entire script — it is what the viewer repeats to a friend later.</p>
-<h3>2.4 Soft CTAs Outperform Direct Sales Pitches</h3>
-<p>The locked competitor formula works for cold traffic but reads as ad-coded for warmer audiences. Default to suggestion-style closes.</p>
-<h3>2.5 No Em Dashes in Voiceover. No Bolding in Voiceover.</h3>
-<p>Em dashes break natural speech rhythm when read aloud. Bolding has no function in audio. Use commas, periods, and short connectors.</p>
-<h3>2.6 Avoid Words AI Voiceover Tools Mispronounce</h3>
-<p>Common offenders: collagen, hyaluronic, niacinamide, keratosis, brand names with non-standard spelling. Either replace with plain-language alternatives or include a phonetic pronunciation note above the voiceover. When in doubt, swap the word.</p>
-<h3>2.7 Brand Pronunciation Lock (When Brand Is Spoken)</h3>
-<p>If the brand name appears in voiceover, include a pronunciation block: exact spelling, dictionary phonetics, and instruction that no shortcuts or variations are permitted. If the brand is consistently mispronounced even with phonetics, remove brand mentions from voiceover.</p>
-<h3>2.2 Example: Sentence Flow</h3>
-<div class="box"><div class="bt">WRONG RHYTHM</div><div class="bb">"No chemicals. No scents. No replacing."</div></div>
-<div class="box"><div class="bt">RIGHT RHYTHM</div><div class="bb">"There are no chemicals, no scents, and nothing to replace ever again."</div></div>
-<h3>2.4 Soft CTA Bank</h3>
-<ul><li>"I'll leave a link to the one I'm using below."</li><li>"I'll drop a link below if you want to look into it."</li><li>"Linking it below so you don't have to go searching for it."</li><li>"Leaving a link in the comments / bio so you can check it out yourself."</li></ul>
+<details class="chap"><summary>2. Principios no negociables</summary><div class="chb">
+<p>Estas reglas aplican a todo guion, todo formato, todo nicho. No son preferencias. Son el conjunto de reglas que separa un guion UGC ganador de uno perdedor.</p>
+<h3>2.1 El hook es dueño de las primeras cinco palabras</h3>
+<p>La línea de apertura identifica a la persona exacta a la que se le habla y confirma la frustración específica que carga. Nunca narra la mañana, el fin de semana ni la vida del creador. Llama a la persona correcta y repele a todos los demás.</p>
+<h3>2.2 Frases que fluyen, no fraseo entrecortado</h3>
+<p>Nada de patrones tartamudos de dos palabras. Las frases se conectan, respiran y llevan una a la otra. Usa conectores y pensamientos completos.</p>
+<h3>2.3 Mantén el mecanismo simple</h3>
+<p>Nombra el mecanismo propietario como lo nombra la marca, pero solo si un niño de 12 años lo entendería. Acompaña SIEMPRE el mecanismo con una analogía táctil de un segundo que el espectador pueda visualizar. La analogía es la frase más importante de todo el guion: es lo que el espectador le repite después a un amigo.</p>
+<h3>2.4 Los CTA suaves rinden más que la venta directa</h3>
+<p>La fórmula bloqueada de la competencia funciona para tráfico frío, pero suena a anuncio para audiencias más tibias. Por defecto, cierres estilo sugerencia.</p>
+<h3>2.5 Sin guiones largos en la voz. Sin negritas en la voz.</h3>
+<p>Los guiones largos (em dashes) rompen el ritmo natural del habla al leerse en voz alta. Las negritas no tienen función en audio. Usa comas, puntos y conectores cortos.</p>
+<h3>2.6 Evita palabras que las voces de IA pronuncian mal</h3>
+<p>Ofensores comunes: colágeno, hialurónico, niacinamida, queratosis, nombres de marca con escritura no estándar. O reemplázalas por alternativas en lenguaje llano, o incluye una nota fonética de pronunciación encima de la voz. Ante la duda, cambia la palabra.</p>
+<h3>2.7 Candado de pronunciación de la marca (cuando la marca se dice)</h3>
+<p>Si el nombre de la marca aparece en la voz, incluye un bloque de pronunciación: escritura exacta, fonética de diccionario y la instrucción de que no se permiten atajos ni variaciones. Si la marca se sigue pronunciando mal aun con la fonética, elimina las menciones de la marca de la voz.</p>
+<h3>2.2 Ejemplo: frases que fluyen</h3>
+<div class="box"><div class="bt">RITMO INCORRECTO</div><div class="bb">"Sin químicos. Sin olores. Sin reemplazos."</div></div>
+<div class="box"><div class="bt">RITMO CORRECTO</div><div class="bb">"No tiene químicos, no tiene olores, y no hay nada que reemplazar nunca más."</div></div>
+<h3>2.4 Banco de CTA suaves</h3>
+<ul><li>"Te dejo abajo el link del que estoy usando."</li><li>"Te dejo un link abajo por si quieres verlo."</li><li>"Dejo el link abajo para que no tengas que buscarlo."</li><li>"Dejo un link en los comentarios / en la bio para que lo revises tú mismo."</li></ul>
 </div></details>
-<details class="chap"><summary>3. The Universal Script Structure</summary><div class="chb">
-<p>Every script output follows the same skeleton. Variables fill in. Sections never reorder. No meta-commentary about process.</p>
-<h3>3.1 Standard Production Skeleton</h3>
-<p>Use this when generating a single video as one continuous prompt.</p>
-<pre class="skel">Create a [STYLE] ad for [PRODUCT CATEGORY]. The creator is a [GENDER] in their [AGE RANGE], [VIBE — 2 to 3 words], [HAIR DESCRIPTION], wearing [OUTFIT]. Natural look, [MAKEUP LEVEL]. They're in [SETTING WITH LIGHTING]. [SKIN DIRECTION BLOCK] [APPLICATION DIRECTION BLOCK] @Image 1 is the product, [PRODUCT NAME — what it is]. Use it as a reference for what the [PACKAGE TYPE] looks like when held or interacted with, not as a static image. [B-ROLL SEQUENCING BLOCK] [UGC REALISM DIRECTION BLOCK] Camera style: [CAMERA DIRECTION]. [B-ROLL DIRECTION WITH EXPLICIT NO-PRODUCT OPENING CUTS] [SCENE COUNT AND PACING NOTE] Here's the full script: "[VOICEOVER SCRIPT]"</pre>
-<h3>3.2 Chunked Production Skeleton</h3>
-<p>Use this when generating clips in chunks for post-production stitching using the same model and character across multiple generations. See Section 12 for full chunk breakdown templates.</p>
-<pre class="skel">[CHARACTER LOCK — paste into every chunk]
-[UNIVERSAL DIRECTION BLOCKS — paste into every chunk]
-  • Skin Direction Block
-  • Application Direction Block
-  • B-Roll Sequencing Block
-  • UGC Realism Direction Block
-[CHUNK-BY-CHUNK BREAKDOWN]
-For each line of voiceover:
-  • Line number and exact voiceover text
-  • Estimated runtime in seconds
-  • Scene-specific visual direction
-  • Continuity notes
-  • Whether @[product asset] is included or not</pre>
+<details class="chap"><summary>3. La estructura universal del guion</summary><div class="chb">
+<p>Toda salida de guion sigue el mismo esqueleto. Las variables se rellenan. Las secciones nunca se reordenan. Sin meta-comentarios sobre el proceso.</p>
+<h3>3.1 Esqueleto de producción estándar</h3>
+<p>Úsalo cuando generas un video como un solo prompt continuo.</p>
+<pre class="skel">Crea un anuncio [ESTILO] para [CATEGORÍA DE PRODUCTO]. El creador es [GÉNERO] de
+[RANGO DE EDAD], [VIBRA — 2 a 3 palabras], [DESCRIPCIÓN DEL PELO], vistiendo
+[OUTFIT]. Look natural, [NIVEL DE MAQUILLAJE]. Está en [ESPACIO CON ILUMINACIÓN].
+[BLOQUE DE DIRECCIÓN DE PIEL] [BLOQUE DE DIRECCIÓN DE APLICACIÓN] @Image 1 es el
+producto, [NOMBRE DEL PRODUCTO — qué es]. Úsala como referencia de cómo se ve
+[TIPO DE EMPAQUE] al sostenerse o usarse, no como imagen estática. [BLOQUE DE
+SECUENCIA DE B-ROLL] [BLOQUE DE REALISMO UGC] Estilo de cámara: [DIRECCIÓN DE
+CÁMARA]. [DIRECCIÓN DE B-ROLL CON APERTURA EXPLÍCITA SIN PRODUCTO] [NOTA DE
+CANTIDAD DE ESCENAS Y RITMO] Este es el guion completo: "[GUION DE VOZ]"</pre>
+<h3>3.2 Esqueleto de producción por tomas</h3>
+<p>Úsalo cuando generas clips por tomas para coserlos en post, usando el mismo modelo y el mismo personaje a través de varias generaciones. La sección 12 tiene las plantillas completas de desglose.</p>
+<pre class="skel">[CHARACTER LOCK — se pega en cada toma]
+[BLOQUES DE DIRECCIÓN UNIVERSALES — se pegan en cada toma]
+  • Bloque de dirección de piel
+  • Bloque de dirección de aplicación
+  • Bloque de secuencia de b-roll
+  • Bloque de realismo UGC
+[DESGLOSE TOMA POR TOMA]
+Por cada línea de la voz:
+  • Número de línea y texto exacto de la voz
+  • Duración estimada en segundos
+  • Dirección visual específica de la escena
+  • Notas de continuidad
+  • Si @[asset del producto] se incluye o no</pre>
 </div></details>
-<details class="chap"><summary>4. Universal Direction Blocks</summary><div class="chb">
-<p>These four blocks lock in production quality and prevent the most common AI generation failures. Paste them into every script. Adapt the variables to the specific product.</p>
-<h3>4.1 Skin Direction Block</h3>
-<p>Prevents the AI from generating the "before" condition on the present-tense creator who is supposed to be showing the result.</p>
-<div class="box"><div class="bt">SKIN DIRECTION BLOCK — paste verbatim</div><div class="bb"><i>Important skin direction: The creator has naturally beautiful, smooth, clear skin with an even tone and a soft healthy glow. Her complexion is clean and radiant throughout the entire video — no visible [CONDITION THE PRODUCT TREATS] at any point. She has the kind of skin that looks like she has already been using the product for months, because she has. This applies to every talking-to-camera scene, every product application scene, and every close-up.</i></div></div>
-<p><b>Adaptation for Other Categories</b></p>
-<ul><li>Hair: "The creator has naturally beautiful, healthy, full hair with no visible [thinning/breakage/frizz] at any point."</li><li>Teeth: "The creator has naturally bright, white, healthy teeth with no visible [staining/yellowing] at any point."</li><li>Home/cleaning: "The creator's home is clean, lived-in, and beautiful — no visible [stains/clutter/damage] at any point."</li></ul>
-<p><i>Principle: lock the creator visually into the after condition the viewer is being shown the path to.</i></p>
-<h3>4.2 Application Direction Block</h3>
-<p>Prevents the AI from generating product as a visible matte or pigmented mark when it should be invisible, transparent, or behave differently.</p>
-<div class="box"><div class="bt">APPLICATION DIRECTION BLOCK — paste verbatim</div><div class="bb"><i>Important application direction: When the creator [USES THE PRODUCT], it should [DESIRED VISUAL BEHAVIOR]. No visible [SPECIFIC FAILURE MODES THE AI DEFAULTS TO]. [WHAT IT SHOULD LOOK LIKE INSTEAD]. Her [TARGET AREA] should look exactly the same after [APPLICATION/USE] as it did before — [DESCRIPTION] — with only [REALISTIC RESIDUAL EFFECT] where the product touched.</i></div></div>
-<p><i>Principle: name the failure mode the AI defaults to and override it with positive description plus a clear visual rule.</i></p>
-<h3>4.3 B-Roll Sequencing Block</h3>
-<p>Prevents the AI from showing the product before the voiceover earns it, which kills the hook by flipping the viewer into "this is an ad" mode too early.</p>
-<div class="box"><div class="bt">B-ROLL SEQUENCING BLOCK — paste verbatim</div><div class="bb"><i>Important b-roll sequencing: The product must not appear on screen until the voiceover specifically introduces it. During the hook and reframe beats, the camera stays on the creator. No environmental cutaways, no decorative shots of the apartment, no shots of furniture or art. The product is only revealed visually at the exact moment the voiceover names it.</i></div></div>
-<p><i>Principle: tie product visibility to a specific lyric in the voiceover, not vague timing. In chunked production, simply omit the @[product asset] reference from prompts where the product should not appear — this is a hard lock the AI cannot override.</i></p>
-<h3>4.4 UGC Realism Direction Block</h3>
-<p>Prevents the AI from generating posed, frozen, commercial-feeling shots. Forces the natural body language of someone casually filming themselves.</p>
-<div class="box"><div class="bt">UGC REALISM DIRECTION BLOCK — paste verbatim</div><div class="bb"><i>Important UGC realism direction: This is a casually filmed video. The phone is propped somewhere off-camera, so both her hands are free throughout. Natural handheld jitter and small micro-movements give it a self-filmed feel. She gestures naturally with both hands as she talks — adjusting her hair, touching her face when relevant, doing small open-palm gestures, shifting weight between her feet. She is never frozen in a still pose with her hands in her pockets or behind her back. The energy is "I just want to tell you something" not "I am posing for a commercial."</i></div></div>
-<p><i>Principle: name the failure mode (frozen pose, hands in pockets) and replace it with specific natural behaviors.</i></p>
+<details class="chap"><summary>4. Bloques de dirección universales</summary><div class="chb">
+<p>Estos cuatro bloques fijan la calidad de producción y previenen los fallos de generación más comunes. Pégalos en cada guion. Adapta las variables al producto específico.</p>
+<h3>4.1 Bloque de dirección de piel</h3>
+<p>Evita que la IA genere la condición del "antes" en el creador en tiempo presente, que se supone muestra el resultado.</p>
+<div class="box"><div class="bt">BLOQUE DE DIRECCIÓN DE PIEL — pegar tal cual</div><div class="bb"><i>Dirección de piel importante: La creadora tiene piel naturalmente hermosa, lisa y limpia, de tono parejo y con un brillo suave y saludable. Su cutis se ve limpio y radiante durante todo el video — sin [CONDICIÓN QUE EL PRODUCTO TRATA] visible en ningún momento. Tiene el tipo de piel de quien ya lleva meses usando el producto, porque así es. Esto aplica a cada escena hablando a cámara, cada escena de aplicación del producto y cada close-up.</i></div></div>
+<p><b>Adaptación a otras categorías</b></p>
+<ul><li>Pelo: "La creadora tiene pelo naturalmente hermoso, sano y abundante, sin [caída/quiebre/frizz] visible en ningún momento."</li><li>Dientes: "La creadora tiene dientes naturalmente brillantes, blancos y sanos, sin [manchas/amarillo] visibles en ningún momento."</li><li>Hogar/limpieza: "La casa de la creadora está limpia, habitada y hermosa — sin [manchas/desorden/daños] visibles en ningún momento."</li></ul>
+<p><i>Principio: fija visualmente al creador en la condición del DESPUÉS hacia la cual se le está mostrando el camino al espectador.</i></p>
+<h3>4.2 Bloque de dirección de aplicación</h3>
+<p>Evita que la IA genere el producto como una marca mate o pigmentada visible cuando debería ser invisible, transparente o comportarse distinto.</p>
+<div class="box"><div class="bt">BLOQUE DE DIRECCIÓN DE APLICACIÓN — pegar tal cual</div><div class="bb"><i>Dirección de aplicación importante: Cuando la creadora [USA EL PRODUCTO], debe [COMPORTAMIENTO VISUAL DESEADO]. Sin [MODOS DE FALLO ESPECÍFICOS A LOS QUE LA IA TIENDE] visibles. [CÓMO DEBERÍA VERSE EN SU LUGAR]. Su [ZONA OBJETIVO] debe verse exactamente igual después de [APLICACIÓN/USO] que antes — [DESCRIPCIÓN] — con solo [EFECTO RESIDUAL REALISTA] donde el producto tocó.</i></div></div>
+<p><i>Principio: nombra el modo de fallo al que la IA tiende y anúlalo con descripción positiva más una regla visual clara.</i></p>
+<h3>4.3 Bloque de secuencia de b-roll</h3>
+<p>Evita que la IA muestre el producto antes de que la voz se lo gane, lo que mata el hook al poner al espectador en modo "esto es un anuncio" demasiado pronto.</p>
+<div class="box"><div class="bt">BLOQUE DE SECUENCIA DE B-ROLL — pegar tal cual</div><div class="bb"><i>Secuencia de b-roll importante: El producto no debe aparecer en pantalla hasta que la voz lo introduce específicamente. Durante los beats de hook y reframe, la cámara se queda en la creadora. Sin cortes al entorno, sin tomas decorativas del departamento, sin tomas de muebles o arte. El producto solo se revela visualmente en el momento exacto en que la voz lo nombra.</i></div></div>
+<p><i>Principio: amarra la visibilidad del producto a una palabra específica de la voz, no a un tiempo vago. En producción por tomas, simplemente omite la referencia @[asset del producto] en los prompts donde el producto no debe aparecer — es un candado duro que la IA no puede saltarse.</i></p>
+<h3>4.4 Bloque de realismo UGC</h3>
+<p>Evita que la IA genere tomas posadas, congeladas, con sensación de comercial. Fuerza el lenguaje corporal natural de alguien que se graba a sí mismo casualmente.</p>
+<div class="box"><div class="bt">BLOQUE DE REALISMO UGC — pegar tal cual</div><div class="bb"><i>Dirección de realismo UGC importante: Este es un video grabado casualmente. El teléfono está apoyado fuera de cámara, así que sus dos manos quedan libres todo el tiempo. Un temblor natural de mano y micro-movimientos pequeños le dan sensación de auto-grabado. Gesticula naturalmente con ambas manos mientras habla — se acomoda el pelo, se toca la cara cuando es relevante, hace pequeños gestos de palma abierta, cambia el peso entre los pies. Nunca está congelada en una pose con las manos en los bolsillos o detrás de la espalda. La energía es "solo te quiero contar algo", no "estoy posando para un comercial".</i></div></div>
+<p><i>Principio: nombra el modo de fallo (pose congelada, manos en bolsillos) y reemplázalo con conductas naturales específicas.</i></p>
 </div></details>
-<details class="chap"><summary>5. Voiceover Architecture</summary><div class="chb">
-<h3>5.1 Full Stack Five-Beat Structure</h3>
-<div class="tw"><table><tr><th>Beat</th><th>Timing</th><th>Function</th></tr><tr><td>1. Hook</td><td>0:00–0:03</td><td>Calls out exact person, confirms specific frustration. Two sentences.</td></tr><tr><td>2. Problem Reframe</td><td>0:03–0:10</td><td>Reveals the hidden mechanism behind why the viewer's previous attempts failed. Reorients from "I am doing it wrong" to "I was given the wrong tools."</td></tr><tr><td>3. Mechanism + Analogy</td><td>0:10–0:20</td><td>Introduces the product, explains the mechanism in plain language with a one-second tactile analogy.</td></tr><tr><td>4. Payoff</td><td>0:20–0:25</td><td>Sensory and specific lived experience after the product. Visual and immediate, not abstract benefits.</td></tr><tr><td>5. CTA</td><td>0:25–0:30</td><td>Soft suggestion-style close.</td></tr></table></div>
-<h3>5.2 Mid-Funnel Three-Beat Structure</h3>
-<div class="tw"><table><tr><th>Beat</th><th>Timing</th><th>Function</th></tr><tr><td>1. Sharp Hook with Reframe Folded In</td><td>0:00–0:06</td><td>One sentence that calls out the audience and dismisses the wrong assumption in the same breath.</td></tr><tr><td>2. Mechanism with Analogy</td><td>0:06–0:16</td><td>Compressed mechanism plus the tactile analogy. The analogy stays intact at all costs.</td></tr><tr><td>3. Soft Payoff and Close</td><td>0:16–0:21</td><td>One sensory beat plus the suggestion-style CTA.</td></tr></table></div>
-<h3>5.3 Hook Frameworks</h3>
-<p>Pull from this list. Rotate across scripts to prevent fatigue.</p>
-<ul><li>If you are trying to ___ this is how you finally do it without ___.</li><li>Your ___ is ___, and ___ won't fix it.</li><li>The biggest myth about ___ is...</li><li>I tested ___ so you don't have to.</li><li>I wish someone had told me this before I started ___.</li><li>I found this out by accident while ___.</li><li>What nobody warns you about with ___ is...</li><li>Why ___ works when nothing else does.</li><li>Why your ___ isn't working and how to fix it.</li><li>Don't make this mistake with ___.</li><li>One thing I'll never do again in ___.</li><li>Three mistakes keeping you stuck in ___.</li><li>This one thing changed everything for me in ___.</li><li>What nobody admits about ___ is...</li><li>How I stopped ___.</li><li>The truth behind my ___.</li><li>If I could go back and tell myself one thing about ___.</li></ul>
-<h3>5.4 The Universal Reframe Pattern</h3>
-<p>Across niches, the strongest reframes follow this shape:</p>
-<div class="box"><div class="bt">UNIVERSAL REFRAME PATTERN</div><div class="bb"><i>"Most people think ___ is a [SURFACE] problem so they keep [SURFACE BEHAVIOR]. But it is actually a [STRUCTURAL/HIDDEN] problem, which is why [SURFACE SOLUTION] physically cannot reach it."</i></div></div>
-<p>This works because it absolves the viewer of guilt for past failures and sets up the mechanism reveal. Adapt the structural-vs-surface framing to whatever the product addresses.</p>
+<details class="chap"><summary>5. Arquitectura de la voz</summary><div class="chb">
+<h3>5.1 Estructura Full Stack de cinco beats</h3>
+<div class="tw"><table><tr><th>Beat</th><th>Tiempo</th><th>Función</th></tr><tr><td>1. Hook</td><td>0:00–0:03</td><td>Llama a la persona exacta, confirma la frustración específica. Dos frases.</td></tr><tr><td>2. Reframe del problema</td><td>0:03–0:10</td><td>Revela el mecanismo oculto detrás de por qué los intentos anteriores del espectador fallaron. Lo reorienta de "lo estoy haciendo mal" a "me dieron las herramientas equivocadas".</td></tr><tr><td>3. Mecanismo + analogía</td><td>0:10–0:20</td><td>Introduce el producto, explica el mecanismo en lenguaje llano con una analogía táctil de un segundo.</td></tr><tr><td>4. Payoff</td><td>0:20–0:25</td><td>Experiencia vivida, sensorial y específica después del producto. Visual e inmediata, no beneficios abstractos.</td></tr><tr><td>5. CTA</td><td>0:25–0:30</td><td>Cierre suave estilo sugerencia.</td></tr></table></div>
+<h3>5.2 Estructura Mid-Funnel de tres beats</h3>
+<div class="tw"><table><tr><th>Beat</th><th>Tiempo</th><th>Función</th></tr><tr><td>1. Hook afilado con el reframe plegado</td><td>0:00–0:06</td><td>Una frase que llama a la audiencia y descarta la suposición equivocada en el mismo aliento.</td></tr><tr><td>2. Mecanismo con analogía</td><td>0:06–0:16</td><td>Mecanismo comprimido más la analogía táctil. La analogía se mantiene intacta a toda costa.</td></tr><tr><td>3. Payoff suave y cierre</td><td>0:16–0:21</td><td>Un beat sensorial más el CTA estilo sugerencia.</td></tr></table></div>
+<h3>5.3 Frameworks de hook</h3>
+<p>Toma de esta lista. Rota entre guiones para prevenir fatiga.</p>
+<ul><li>Si estás intentando ___, así es como por fin lo logras sin ___.</li><li>Tu ___ está ___, y ___ no lo va a arreglar.</li><li>El mito más grande sobre ___ es...</li><li>Probé ___ para que tú no tengas que hacerlo.</li><li>Ojalá alguien me hubiera dicho esto antes de empezar ___.</li><li>Descubrí esto por accidente mientras ___.</li><li>Lo que nadie te advierte sobre ___ es...</li><li>Por qué ___ funciona cuando nada más funciona.</li><li>Por qué tu ___ no está funcionando y cómo arreglarlo.</li><li>No cometas este error con ___.</li><li>Una cosa que nunca volveré a hacer en ___.</li><li>Tres errores que te tienen atorado en ___.</li><li>Esta única cosa lo cambió todo para mí en ___.</li><li>Lo que nadie admite sobre ___ es...</li><li>Cómo dejé de ___.</li><li>La verdad detrás de mi ___.</li><li>Si pudiera regresar y decirme una sola cosa sobre ___.</li></ul>
+<h3>5.4 El patrón universal de reframe</h3>
+<p>A través de los nichos, los reframes más fuertes siguen esta forma:</p>
+<div class="box"><div class="bt">PATRÓN UNIVERSAL DE REFRAME</div><div class="bb"><i>"La mayoría cree que ___ es un problema de [SUPERFICIE], así que sigue [CONDUCTA SUPERFICIAL]. Pero en realidad es un problema [ESTRUCTURAL/OCULTO], y por eso [LA SOLUCIÓN SUPERFICIAL] físicamente no puede alcanzarlo."</i></div></div>
+<p>Funciona porque absuelve al espectador de la culpa por los fracasos pasados y prepara la revelación del mecanismo. Adapta el encuadre estructura-vs-superficie a lo que sea que el producto resuelve.</p>
 </div></details>
-<details class="chap"><summary>6. Variation Types</summary><div class="chb">
-<p>The same script structure supports multiple emotional registers. Rotate across the campaign.</p>
-<div class="tw"><table><tr><th>Type</th><th>Voice</th><th>Best For</th></tr><tr><td>The Confessional</td><td>First-person, present tense, includes a personal admission</td><td>Emotional categories like beauty, wellness, parenting</td></tr><tr><td>The Tested It So You Don't Have To</td><td>Audience surrogate who tried every wrong solution first</td><td>Crowded categories where the audience has tried multiple competing products</td></tr><tr><td>The Myth Buster</td><td>Opens with a corrective reframe</td><td>Educational categories where the audience has absorbed wrong information</td></tr><tr><td>The Accidental Discovery</td><td>Creator stumbled onto the insight</td><td>Lowest sales pressure framing — positions creator as fellow explorer</td></tr><tr><td>The Animated Infomercial</td><td>No creator, pure product b-roll with voiceover</td><td>Scaling output without booking talent, or when the product is the hero</td></tr></table></div>
+<details class="chap"><summary>6. Tipos de variación</summary><div class="chb">
+<p>La misma estructura de guion soporta varios registros emocionales. Rótalos a lo largo de la campaña.</p>
+<div class="tw"><table><tr><th>Tipo</th><th>Voz</th><th>Mejor para</th></tr><tr><td>El confesional</td><td>Primera persona, tiempo presente, incluye una admisión personal</td><td>Categorías emocionales como belleza, bienestar, crianza</td></tr><tr><td>Lo probé para que tú no tengas que hacerlo</td><td>Sustituto de la audiencia que probó primero todas las soluciones equivocadas</td><td>Categorías saturadas donde la audiencia ya probó varios productos de la competencia</td></tr><tr><td>El rompe-mitos</td><td>Abre con un reframe correctivo</td><td>Categorías educativas donde la audiencia absorbió información equivocada</td></tr><tr><td>El descubrimiento accidental</td><td>El creador se topó con el insight</td><td>El encuadre de menor presión de venta — posiciona al creador como explorador igual que tú</td></tr><tr><td>El infomercial animado</td><td>Sin creador, puro b-roll del producto con voz en off</td><td>Escalar producción sin contratar talento, o cuando el producto es el héroe</td></tr></table></div>
 </div></details>
-<details class="chap"><summary>7. Pain Point Selection</summary><div class="chb">
-<p>The first scripts in any campaign should target the surface complaint (visible symptom). Once those are running, expand into deeper pain points. Mass-desire pain points outperform niche ones.</p>
-<h3>7.1 Surface Complaints</h3>
-<p>The literal, visible symptom of the problem. Easy entry point but saturated.</p>
-<h3>7.2 Deep Pain Points</h3>
-<p>High-leverage angles that go beyond the surface symptom.</p>
-<ul><li><b>Public visibility pain —</b> being seen in unforgiving lighting (photos, video calls, daylight)</li><li><b>The mental tax —</b> daily labor of working around the problem</li><li><b>The aging or time pain —</b> carrying the problem for years/decades, the strange grief of unresolved issues</li><li><b>The "I have fixed everything else" pain —</b> the existential frustration of someone who solves problems and this is the one that has not budged</li><li><b>Intimacy and close-up pain —</b> how the problem feels in private moments, with people who look closely</li><li><b>The recognition pain —</b> not recognizing yourself, the gap between how you feel and how you appear</li></ul>
-<h3>7.3 Mass-Desire Filter</h3>
-<p>The best pain points cut across age, gender, profession, and lifestyle. Test for universality. If the pain point only applies to office workers, parents, or one specific demographic, it narrows reach. If almost anyone with the problem has felt it, it is mass-desire.</p>
+<details class="chap"><summary>7. Selección del punto de dolor</summary><div class="chb">
+<p>Los primeros guiones de cualquier campaña deben apuntar a la queja de superficie (el síntoma visible). Cuando esos ya corren, expande hacia dolores más profundos. Los dolores de deseo masivo rinden más que los de nicho.</p>
+<h3>7.1 Quejas de superficie</h3>
+<p>El síntoma literal y visible del problema. Punto de entrada fácil pero saturado.</p>
+<h3>7.2 Dolores profundos</h3>
+<p>Ángulos de alto apalancamiento que van más allá del síntoma de superficie.</p>
+<ul><li><b>El dolor de la visibilidad pública —</b> ser visto en luz que no perdona (fotos, videollamadas, luz de día)</li><li><b>El impuesto mental —</b> el trabajo diario de vivir esquivando el problema</li><li><b>El dolor de la edad o del tiempo —</b> cargar el problema por años/décadas, el duelo extraño de lo que no se resuelve</li><li><b>El dolor de "ya arreglé todo lo demás" —</b> la frustración existencial de quien resuelve problemas y este es el único que no cede</li><li><b>El dolor de la intimidad y el close-up —</b> cómo se siente el problema en momentos privados, con gente que mira de cerca</li><li><b>El dolor del reconocimiento —</b> no reconocerte, la brecha entre cómo te sientes y cómo te ves</li></ul>
+<h3>7.3 Filtro de deseo masivo</h3>
+<p>Los mejores dolores cruzan edad, género, profesión y estilo de vida. Prueba su universalidad. Si el dolor solo aplica a oficinistas, padres o una demografía específica, estrecha el alcance. Si casi cualquiera con el problema lo ha sentido, es de deseo masivo.</p>
 </div></details>
-<details class="chap"><summary>8. Camera and B-Roll Direction Standards</summary><div class="chb">
-<h3>8.1 Constant Motion Rule</h3>
-<p>Every shot has movement. No locked-off product photography. No still talking-head shots. Talking-to-camera footage uses natural handheld jitter. Hands-free shots use subtle drift or micro-push-ins. B-roll uses tracking, dolly pushes, orbits, reveals, or hand motion.</p>
-<h3>8.2 Visual-to-Voiceover Sync</h3>
-<p>Every visual matches what the narrator is saying at that exact moment. When the narrator says "fridge" show a fridge. When they describe the mechanism show the mechanism. Visuals follow the voiceover word for word.</p>
-<h3>8.3 Continuous Cuts — Cuts Are Motivated, Not Decorative</h3>
-<p>Cuts happen when:</p>
-<ul><li>The creator physically moves to a new location to do something</li><li>The voiceover names the product (cut to product reveal)</li><li>A specific action happens that the script calls for</li></ul>
-<p>Cuts do NOT happen for:</p>
-<ul><li>Decorative environmental shots of furniture, art, or interior design</li><li>"Visual breaths" that have no relationship to what is being said</li><li>Aesthetic moments that exist for cinematography reasons</li></ul>
-<h3>8.4 Pacing Within Scenes</h3>
-<p>Scenes play at normal speed. No slow motion. No sped up footage. Within each scene, micro-cuts can be rapid for high-energy beats and slightly slower for emotional or explanatory beats.</p>
-<h3>8.5 Scene Count Discipline</h3>
-<ul><li>Mid-funnel format: 2 scenes default, 3 only if voiceover requires it</li><li>Full stack format: 3 scenes default</li><li>Animated infomercial: AI determines breaks based on voiceover beats</li></ul>
-<h3>8.6 Setting Variation Across Campaign</h3>
-<p>Rotate environments and lighting setups across scripts so the audience does not see the same backdrop on repeat. Options: warm dim kitchen evening, bright sun-drenched morning, soft afternoon side window, cool clinical product studio, lived-in family kitchen, sunlit bedroom vanity, back patio outdoor light, evening warm bathroom. Tie each variation to the emotional register of that script.</p>
-<h3>8.7 Demographic Variation Across Campaign</h3>
-<p>Rotate creator demographics so the algorithm has signal on which audience segments respond. Standard spread: ages 19-23, 24-32, 32-38, 35-45, plus a male equivalent for at least one variation. Each demographic carries different emotional pressure points.</p>
+<details class="chap"><summary>8. Estándares de cámara y b-roll</summary><div class="chb">
+<h3>8.1 Regla de movimiento constante</h3>
+<p>Toda toma tiene movimiento. Nada de fotografía de producto fija. Nada de cabezas parlantes estáticas. Lo hablado a cámara usa temblor natural de mano. Las tomas con manos libres usan una deriva sutil o micro-push-ins. El b-roll usa tracking, empujes de dolly, órbitas, reveals o movimiento de mano.</p>
+<h3>8.2 Sincronía visual-voz</h3>
+<p>Cada visual coincide con lo que el narrador dice en ese momento exacto. Cuando el narrador dice "refrigerador", muestra un refrigerador. Cuando describe el mecanismo, muestra el mecanismo. Los visuales siguen la voz palabra por palabra.</p>
+<h3>8.3 Cortes continuos — los cortes se motivan, no decoran</h3>
+<p>Los cortes suceden cuando:</p>
+<ul><li>El creador se mueve físicamente a un lugar nuevo a hacer algo</li><li>La voz nombra el producto (corte al reveal del producto)</li><li>Sucede una acción específica que el guion pide</li></ul>
+<p>Los cortes NO suceden por:</p>
+<ul><li>Tomas decorativas del entorno: muebles, arte o diseño de interiores</li><li>"Respiros visuales" sin relación con lo que se dice</li><li>Momentos estéticos que existen por razones de cinematografía</li></ul>
+<h3>8.4 Ritmo dentro de las escenas</h3>
+<p>Las escenas corren a velocidad normal. Sin cámara lenta. Sin material acelerado. Dentro de cada escena, los micro-cortes pueden ser rápidos en beats de alta energía y un poco más lentos en beats emocionales o explicativos.</p>
+<h3>8.5 Disciplina de cantidad de escenas</h3>
+<ul><li>Formato mid-funnel: 2 escenas por defecto, 3 solo si la voz lo exige</li><li>Formato full stack: 3 escenas por defecto</li><li>Infomercial animado: la IA determina los cortes según los beats de la voz</li></ul>
+<h3>8.6 Variación de espacios a lo largo de la campaña</h3>
+<p>Rota entornos e iluminaciones entre guiones para que la audiencia no vea el mismo fondo en repetición. Opciones: cocina cálida y tenue de noche, mañana inundada de sol, ventana lateral suave de tarde, estudio de producto frío y clínico, cocina familiar habitada, tocador de recámara con sol, patio trasero con luz exterior, baño cálido de noche. Amarra cada variación al registro emocional de ese guion.</p>
+<h3>8.7 Variación demográfica a lo largo de la campaña</h3>
+<p>Rota la demografía de los creadores para que el algoritmo tenga señal de qué segmentos responden. Distribución estándar: edades 19-23, 24-32, 32-38, 35-45, más un equivalente masculino en al menos una variación. Cada demografía carga puntos de presión emocional distintos.</p>
 </div></details>
-<details class="chap"><summary>9. Common Failure Modes</summary><div class="chb">
-<p>These are recurring AI generation failures. Self-correct against them on every output.</p>
-<div class="fail"><div class="bt">✕ RAMBLING HOOKS</div><div class="bb">"I scrubbed my fridge on Saturday on my hands and knees" is a failed hook. The first words call out the audience, not narrate the creator's life.</div></div>
-<div class="fail"><div class="bt">✕ CHOPPY PHRASING</div><div class="bb">Two-word fragments stacked together kill conversational flow.</div></div>
-<div class="fail"><div class="bt">✕ JARGON MECHANISMS</div><div class="bb">If a 12-year-old does not understand the mechanism word, replace it.</div></div>
-<div class="fail"><div class="bt">✕ VEERING CTAS</div><div class="bb">Use the locked formulas. Do not invent new structures unless testing has earned it.</div></div>
-<div class="fail"><div class="bt">✕ STATIC B-ROLL</div><div class="bb">Every shot moves.</div></div>
-<div class="fail"><div class="bt">✕ MISMATCHED VISUALS</div><div class="bb">If the narrator says one thing and the b-roll shows another, the script fails.</div></div>
-<div class="fail"><div class="bt">✕ DECORATIVE B-ROLL</div><div class="bb">Cuts to furniture, art, or interior design that have no relationship to the voiceover. UGC does not have cinematic establishing shots. Keep the camera on the creator unless there is a specific reason to cut away.</div></div>
-<div class="fail"><div class="bt">✕ OVER-FORMATTING THE OUTPUT</div><div class="bb">The deliverable is a clean prose prompt block. No headers, tables, or production notes attached unless using chunked production format.</div></div>
-<div class="fail"><div class="bt">✕ PHONE IN HAND WHEN NOT NEEDED</div><div class="bb">If the script calls for selfie-style direction, the phone in hand makes sense. Otherwise, leave the phone off-camera so both hands are free for natural gestures.</div></div>
-<div class="fail"><div class="bt">✕ FROZEN POSES</div><div class="bb">Hands in pockets, hands behind back, no movement. Real UGC creators gesture, shift weight, touch their face when relevant.</div></div>
-<div class="fail"><div class="bt">✕ PRODUCT VISIBILITY BEFORE VOICEOVER EARNS IT</div><div class="bb">Showing the product in the hook beat tells the viewer this is an ad before they have decided to keep watching.</div></div>
-<div class="fail"><div class="bt">✕ WRONG CONDITION ON THE PRESENT-TENSE CREATOR</div><div class="bb">Generating visible scars/blemishes/damage on the creator who is supposed to be showing the after.</div></div>
-<div class="fail"><div class="bt">✕ VISIBLE PRODUCT RESIDUE WHEN IT SHOULD BE INVISIBLE</div><div class="bb">Generating a matte stripe or pigmented mark when application should be transparent.</div></div>
+<details class="chap"><summary>9. Fallos comunes</summary><div class="chb">
+<p>Son fallos recurrentes de la generación con IA. Auto-corrígete contra ellos en cada salida.</p>
+<div class="fail"><div class="bt">✕ HOOKS QUE DIVAGAN</div><div class="bb">"Tallé mi refrigerador el sábado de rodillas" es un hook fallido. Las primeras palabras llaman a la audiencia, no narran la vida del creador.</div></div>
+<div class="fail"><div class="bt">✕ FRASEO ENTRECORTADO</div><div class="bb">Los fragmentos de dos palabras apilados matan el flujo conversacional.</div></div>
+<div class="fail"><div class="bt">✕ MECANISMOS CON JERGA</div><div class="bb">Si un niño de 12 años no entiende la palabra del mecanismo, reemplázala.</div></div>
+<div class="fail"><div class="bt">✕ CTAS QUE SE DESVÍAN</div><div class="bb">Usa las fórmulas bloqueadas. No inventes estructuras nuevas a menos que el testeo se lo haya ganado.</div></div>
+<div class="fail"><div class="bt">✕ B-ROLL ESTÁTICO</div><div class="bb">Toda toma se mueve.</div></div>
+<div class="fail"><div class="bt">✕ VISUALES QUE NO COINCIDEN</div><div class="bb">Si el narrador dice una cosa y el b-roll muestra otra, el guion falla.</div></div>
+<div class="fail"><div class="bt">✕ B-ROLL DECORATIVO</div><div class="bb">Cortes a muebles, arte o diseño de interiores sin relación con la voz. El UGC no tiene tomas de establecimiento cinemáticas. Mantén la cámara en el creador salvo que haya una razón específica para cortar.</div></div>
+<div class="fail"><div class="bt">✕ SOBRE-FORMATEAR LA SALIDA</div><div class="bb">El entregable es un bloque de prompt en prosa limpia. Sin encabezados, tablas ni notas de producción, salvo en el formato de producción por tomas.</div></div>
+<div class="fail"><div class="bt">✕ TELÉFONO EN MANO SIN NECESIDAD</div><div class="bb">Si el guion pide dirección estilo selfie, el teléfono en mano tiene sentido. Si no, deja el teléfono fuera de cámara para que las dos manos queden libres para gesticular natural.</div></div>
+<div class="fail"><div class="bt">✕ POSES CONGELADAS</div><div class="bb">Manos en los bolsillos, manos atrás, sin movimiento. Los creadores UGC reales gesticulan, cambian el peso, se tocan la cara cuando es relevante.</div></div>
+<div class="fail"><div class="bt">✕ PRODUCTO VISIBLE ANTES DE QUE LA VOZ LO GANE</div><div class="bb">Mostrar el producto en el beat del hook le dice al espectador que esto es un anuncio antes de que haya decidido seguir viendo.</div></div>
+<div class="fail"><div class="bt">✕ LA CONDICIÓN EQUIVOCADA EN EL CREADOR EN PRESENTE</div><div class="bb">Generar cicatrices/imperfecciones/daño visibles en el creador que se supone muestra el después.</div></div>
+<div class="fail"><div class="bt">✕ RESIDUO VISIBLE CUANDO DEBERÍA SER INVISIBLE</div><div class="bb">Generar una franja mate o una marca pigmentada cuando la aplicación debería ser transparente.</div></div>
 </div></details>
-<details class="chap"><summary>10. Brand Input Variables</summary><div class="chb">
-<p>Before producing any script, collect these or ask for them. Do not invent values.</p>
-<div class="tw"><table><tr><th>Variable</th><th>Status</th><th>Notes</th></tr><tr><td>Brand name and exact spelling</td><td>Required</td><td></td></tr><tr><td>Brand pronunciation (dictionary phonetics)</td><td>Required if spoken</td><td></td></tr><tr><td>Whether brand name is spoken in voiceover</td><td>Required</td><td></td></tr><tr><td>Product name and exact spelling</td><td>Required</td><td></td></tr><tr><td>Product pronunciation</td><td>Required if spoken</td><td></td></tr><tr><td>Product category</td><td>Required</td><td></td></tr><tr><td>Core mechanism in plain language</td><td>Required</td><td>Must be 12-year-old understandable</td></tr><tr><td>Tactile analogy for the mechanism</td><td>Required</td><td>Format: "Think of it less like ___ and more like ___"</td></tr><tr><td>Failed alternatives the audience has tried</td><td>Required</td><td></td></tr><tr><td>Target avatar demographics</td><td>Required</td><td></td></tr><tr><td>Specific pain points beyond surface complaint</td><td>Required for deep angles</td><td></td></tr><tr><td>Setting and lighting preferences</td><td>Optional</td><td>Defaults to lived-in home environment</td></tr><tr><td>Reference image of the product</td><td>Required</td><td>Use as @Image 1 or @[product asset]</td></tr><tr><td>Words AI mispronounces in this category</td><td>Optional</td><td>Flag in advance to swap out</td></tr></table></div>
+<details class="chap"><summary>10. Variables de marca</summary><div class="chb">
+<p>Antes de producir cualquier guion, reúne estas o pídelas. No inventes valores.</p>
+<div class="tw"><table><tr><th>Variable</th><th>Estatus</th><th>Notas</th></tr><tr><td>Nombre de la marca y escritura exacta</td><td>Requerido</td><td></td></tr><tr><td>Pronunciación de la marca (fonética de diccionario)</td><td>Requerido si se dice</td><td></td></tr><tr><td>Si el nombre de la marca se dice en la voz</td><td>Requerido</td><td></td></tr><tr><td>Nombre del producto y escritura exacta</td><td>Requerido</td><td></td></tr><tr><td>Pronunciación del producto</td><td>Requerido si se dice</td><td></td></tr><tr><td>Categoría del producto</td><td>Requerido</td><td></td></tr><tr><td>Mecanismo central en lenguaje llano</td><td>Requerido</td><td>Debe entenderlo un niño de 12 años</td></tr><tr><td>Analogía táctil del mecanismo</td><td>Requerido</td><td>Formato: "Piénsalo menos como ___ y más como ___"</td></tr><tr><td>Alternativas fallidas que la audiencia ya probó</td><td>Requerido</td><td></td></tr><tr><td>Demografía del avatar objetivo</td><td>Requerido</td><td></td></tr><tr><td>Dolores específicos más allá de la queja de superficie</td><td>Requerido para ángulos profundos</td><td></td></tr><tr><td>Preferencias de espacio e iluminación</td><td>Opcional</td><td>Por defecto: entorno de casa habitada</td></tr><tr><td>Imagen de referencia del producto</td><td>Requerido</td><td>Úsala como @Image 1 o @[asset del producto]</td></tr><tr><td>Palabras que la IA pronuncia mal en esta categoría</td><td>Opcional</td><td>Márcalas por adelantado para cambiarlas</td></tr></table></div>
 </div></details>
-<details class="chap"><summary>11. Chunked Production Workflow</summary><div class="chb">
-<p>For projects where the same creator and setting are used across multiple generated clips that get stitched together in post.</p>
-<h3>11.1 Lock the Character Once</h3>
-<p>Write a detailed character description that gets pasted verbatim into every chunk. Include age range, energy, hair color and style, skin tone, eyes, accessories, specific outfit, and the apartment or setting they are in.</p>
-<h3>11.2 Lock the Universal Direction Blocks</h3>
-<p>Skin Direction, Application Direction, B-Roll Sequencing, and UGC Realism Direction all get pasted into every chunk verbatim.</p>
-<h3>11.3 Break the Voiceover Into Lines</h3>
-<p>Each line of voiceover becomes one chunk. Default chunk counts:</p>
-<ul><li><b>Mid-funnel (18-22 sec):</b> 3 chunks</li><li><b>Full stack (28-32 sec):</b> 5 chunks</li></ul>
-<p>Section 12 contains the full chunk breakdown templates for both formats.</p>
-<h3>11.4 Asset Tagging Locks Product Visibility</h3>
-<p>Use @[product asset name] (e.g., @stick, @bottle, @canister) in the prompts where the product should appear. Do NOT include the asset reference in chunks where the product should not appear. The AI cannot generate the product if the asset is not referenced — this is a hard lock that enforces the b-roll sequencing rule.</p>
-<h3>11.5 Bookend Structure</h3>
-<p>Make the first chunk and last chunk visually similar (same setting, same framing) so the stitched video feels intentional and any small inconsistencies between middle chunks read as natural cuts rather than continuity errors.</p>
-<h3>11.6 Identify Cut Points and Fallback Cuts</h3>
-<p>Note which chunks can be dropped from the edit if any single chunk fails to generate cleanly. Usually environmental or transitional chunks are the easiest to remove without breaking the script.</p>
+<details class="chap"><summary>11. Flujo de producción por tomas</summary><div class="chb">
+<p>Para proyectos donde el mismo creador y el mismo espacio se usan a través de varios clips generados que se cosen en post.</p>
+<h3>11.1 Fija el personaje una vez</h3>
+<p>Escribe una descripción detallada del personaje que se pega tal cual en cada toma. Incluye rango de edad, energía, color y estilo de pelo, tono de piel, ojos, accesorios, outfit específico, y el departamento o espacio donde está.</p>
+<h3>11.2 Fija los bloques de dirección universales</h3>
+<p>Dirección de piel, dirección de aplicación, secuencia de b-roll y realismo UGC se pegan tal cual en cada toma.</p>
+<h3>11.3 Parte la voz en líneas</h3>
+<p>Cada línea de la voz se vuelve una toma. Cantidades por defecto:</p>
+<ul><li><b>Mid-funnel (18-22 seg):</b> 3 tomas</li><li><b>Full stack (28-32 seg):</b> 5 tomas</li></ul>
+<p>La sección 12 contiene las plantillas completas de desglose para ambos formatos.</p>
+<h3>11.4 El etiquetado de assets fija la visibilidad del producto</h3>
+<p>Usa @[nombre del asset del producto] (p. ej. @stick, @bottle, @canister) en los prompts donde el producto debe aparecer. NO incluyas la referencia del asset en las tomas donde el producto no debe aparecer. La IA no puede generar el producto si el asset no está referenciado — es un candado duro que hace cumplir la regla de secuencia de b-roll.</p>
+<h3>11.5 Estructura bookend</h3>
+<p>Haz que la primera y la última toma sean visualmente similares (mismo espacio, mismo encuadre) para que el video cosido se sienta intencional y cualquier pequeña inconsistencia entre las tomas del medio se lea como cortes naturales y no como errores de continuidad.</p>
+<h3>11.6 Identifica puntos de corte y cortes de respaldo</h3>
+<p>Anota qué tomas se pueden dejar caer de la edición si una sola falla al generar limpia. Normalmente las tomas de entorno o de transición son las más fáciles de quitar sin romper el guion.</p>
 </div></details>
-<details class="chap"><summary>12. Chunk Breakdown Templates by Script Length</summary><div class="chb">
-<p>This section provides the exact chunk structure for each script format. Use these as the operational template when building scripts for chunked production. Each chunk is one separate AI generation that gets stitched together in post.</p>
-<h3>12.1 Per-Chunk Specification Template</h3>
-<p>Every chunk, regardless of script length, includes this structured set of fields:</p>
-<div class="tw"><table><tr><th>Field</th><th>Purpose</th></tr><tr><td>Chunk number and beat label</td><td>Identifies which voiceover beat this chunk covers (Hook, Reframe, Mechanism, Payoff, CTA)</td></tr><tr><td>Voiceover text</td><td>The exact line spoken in this chunk, copied verbatim from the full script</td></tr><tr><td>Estimated runtime (seconds)</td><td>How long the AI generation needs to be for this clip</td></tr><tr><td>@[product asset] inclusion</td><td>Whether the product asset reference appears in this chunk's prompt — this controls product visibility</td></tr><tr><td>Visual direction</td><td>Camera angle, gesture timing, what the creator is doing during the line</td></tr><tr><td>Continuity notes</td><td>What must match the previous chunk (outfit, hair, setting, lighting, position)</td></tr></table></div>
-<h3>12.2 Mid-Funnel Format — 3-Chunk Breakdown</h3>
-<p><b>Total runtime target:</b> 18–22 seconds. <b>Word count:</b> 55–70 words. <b>Chunks:</b> 3.</p>
-<p>This format compresses the five-beat structure into three operational chunks: the hook with reframe folded in, the mechanism reveal with product introduction, and the payoff with soft CTA.</p>
-<div class="box"><div class="bt">CHUNK 1 — HOOK + REFRAME (folded together)</div><div class="bb"><b>Voiceover content:</b> The opening line that calls out the audience and dismisses the wrong assumption in the same breath.<br><b>Estimated runtime:</b> 5–7 seconds<br><b>@[product asset] included:</b> <b>NO — product must not appear in this chunk</b><br><b>Visual direction:</b> Talking-to-camera shot in primary setting. Both hands free. Natural gestures on key words. Camera stays on the creator the entire time. No environmental cutaways. No product visible.<br><b>Continuity notes:</b> Establishes baseline — outfit, hair, lighting, position. All subsequent chunks reference back to this.</div></div>
-<div class="box"><div class="bt">CHUNK 2 — MECHANISM + PRODUCT REVEAL</div><div class="bb"><b>Voiceover content:</b> The compressed mechanism plus the tactile analogy. The product is named here for the first time.<br><b>Estimated runtime:</b> 8–10 seconds<br><b>@[product asset] included:</b> <b>YES — appears at the exact moment the voiceover names it</b><br><b>Visual direction:</b> Cut to a new angle motivated by physical movement (creator walks to a counter or surface). Phone propped, framing steadier. Quick application sequence: pick up product, twist open, glide across target area, close-up of result. Application leaves no visible residue per the application direction block.<br><b>Continuity notes:</b> Same outfit, hair, lighting as Chunk 1. Location can shift if motivated by movement. Product matches reference image exactly.</div></div>
-<div class="box"><div class="bt">CHUNK 3 — PAYOFF + SOFT CTA</div><div class="bb"><b>Voiceover content:</b> One sensory beat describing the lived experience after the product, plus the suggestion-style close.<br><b>Estimated runtime:</b> 5–6 seconds<br><b>@[product asset] included:</b> <b>NO — closing on the creator's face, not the product</b><br><b>Visual direction:</b> Return to talking-to-camera shot, ideally bookending the framing of Chunk 1. Soft genuine smile on the payoff line. Subtle downward gesture on the CTA. Both hands free.<br><b>Continuity notes:</b> Match Chunk 1 framing as closely as possible to create the bookend. Same outfit, hair, lighting.</div></div>
-<p><b>Stitching Notes — Mid-Funnel</b></p>
-<ul><li>Natural seam between Chunk 1 and Chunk 2 — that is where the no-product hook section transitions to the product reveal section.</li><li>If a chunk fails to generate cleanly, Chunk 2 is the hardest to drop because it carries the product reveal. Chunks 1 and 3 are easier to regenerate or reshape because they are bookend talking-to-camera shots.</li></ul>
-<h3>12.3 Full Stack Format — 5-Chunk Breakdown</h3>
-<p><b>Total runtime target:</b> 28–32 seconds. <b>Word count:</b> 150–180 words. <b>Chunks:</b> 5.</p>
-<p>This format gives each beat of the five-beat structure its own dedicated chunk, which is what the longer runtime supports. Each chunk handles one voiceover beat.</p>
-<div class="box"><div class="bt">CHUNK 1 — HOOK</div><div class="bb"><b>Voiceover content:</b> Two sentences that call out the exact person and confirm the specific frustration.<br><b>Estimated runtime:</b> 5–6 seconds<br><b>@[product asset] included:</b> <b>NO</b><br><b>Visual direction:</b> Talking-to-camera shot in primary setting. Both hands free, natural gestures. Steady eye contact. No cuts, no environmental shots. Background is just the lived-in setting behind her, not the focus.<br><b>Continuity notes:</b> Establishes baseline for the entire video. Lock outfit, hair, lighting, position.</div></div>
-<div class="box"><div class="bt">CHUNK 2 — REFRAME PART 1</div><div class="bb"><b>Voiceover content:</b> Opens the reframe by naming the wrong things the audience has tried. Sets up the structural-vs-surface distinction.<br><b>Estimated runtime:</b> 5–6 seconds<br><b>@[product asset] included:</b> <b>NO</b><br><b>Visual direction:</b> Same talking-to-camera shot as Chunk 1, with a slight angle shift or subtle camera drift to keep the visuals fresh. Dismissive hand gesture on the list of failed alternatives. Brief unconscious cheek-touch or self-reference if relevant to the product category.<br><b>Continuity notes:</b> Same setting as Chunk 1. Same outfit, hair, lighting. Camera move should feel like a natural reframe within one take, not a hard cut to a new location.</div></div>
-<div class="box"><div class="bt">CHUNK 3 — REFRAME PART 2 (the structural truth)</div><div class="bb"><b>Voiceover content:</b> The mechanism reveal: explains why surface attempts physically cannot work, setting up the product as the only viable option.<br><b>Estimated runtime:</b> 5–6 seconds<br><b>@[product asset] included:</b> <b>NO — product still has not appeared</b><br><b>Visual direction:</b> Continuous talking-to-camera. Optional brief gesture indicating the affected area on the creator's body. Dismissive flick on the failed alternatives. No environmental cutaways. No product visibility.<br><b>Continuity notes:</b> Same setting, same outfit, same lighting. This is the final beat before the product is introduced — the hook tension peaks here.</div></div>
-<div class="box"><div class="bt">CHUNK 4 — MECHANISM + PRODUCT REVEAL + APPLICATION</div><div class="bb"><b>Voiceover content:</b> The product is named, the mechanism is explained in plain language, and the tactile analogy lands here. The most important sentence in the entire script.<br><b>Estimated runtime:</b> 8–10 seconds<br><b>@[product asset] included:</b> <b>YES — first appearance, at the exact moment the voiceover names it</b><br><b>Visual direction:</b> Cut to a new angle motivated by physical movement (creator walks to a counter or surface). Phone propped on the counter, framing steadier with subtle drift. Quick application sequence: tight shot of product in hand, twist open on the word the product is named, macro shot of application across target area, push-in close-up showing the immediate result. Application leaves no visible residue per the application direction block.<br><b>Continuity notes:</b> Location shift is motivated and reads as natural movement. Same outfit, hair, lighting. Product matches the reference image exactly.</div></div>
-<div class="box"><div class="bt">CHUNK 5 — PAYOFF + SOFT CTA</div><div class="bb"><b>Voiceover content:</b> Sensory and specific description of life after the product, followed by the suggestion-style close.<br><b>Estimated runtime:</b> 5–6 seconds<br><b>@[product asset] included:</b> <b>NO — closing on the creator's face, not the product</b><br><b>Visual direction:</b> Return to talking-to-camera shot, ideally bookending the framing of Chunk 1. Soft genuine smile on the payoff line. Subtle downward gesture on the CTA. Both hands free, no posing.<br><b>Continuity notes:</b> Match Chunk 1 framing as closely as possible to create the bookend. Same outfit, hair, lighting. The smile should feel earned, not staged.</div></div>
-<p><b>Stitching Notes — Full Stack</b></p>
-<ul><li>Natural seam between Chunk 3 and Chunk 4 — that is where the no-product reframe section transitions to the product reveal section.</li><li>Chunks 1, 2, 3, and 5 are all talking-to-camera in the primary setting. If any of these generate slightly off, the bookend structure (Chunks 1 and 5 matching) masks small inconsistencies because viewers register the visual symmetry as intentional.</li><li>Chunk 3 is the easiest to drop or compress if any single chunk fails to generate cleanly. The voiceover line in Chunk 3 can be folded onto the end of Chunk 2 with the visual just being a continued talking-to-camera shot. Keep that as your fallback.</li><li>Chunk 4 is the hardest to regenerate because it contains the product reveal and application. Plan extra generation time for this chunk.</li></ul>
-<h3>12.4 Animated Infomercial Format — Variable Chunks</h3>
-<p>The animated infomercial uses no creator and is pure product cinematography with voiceover. Because there is no continuity requirement on a human creator across chunks, the chunk count flexes based on script length:</p>
-<ul><li><b>Mid-funnel runtime:</b> 3–4 chunks aligned to voiceover beats</li><li><b>Full stack runtime:</b> 5–6 chunks aligned to voiceover beats</li></ul>
-<p>Each chunk in this format covers a distinct visual concept rather than a continuity-locked scene: orbit shot of the product, animated cross-section showing the mechanism, macro application footage, hero shot at the close, etc. Because there is no creator continuity to maintain, the chunks have more visual freedom and the AI can generate each one with different lighting and angle without breaking the video.</p>
-<p><b>Animated Infomercial Per-Chunk Field Adjustments</b></p>
-<ul><li>Replace "Visual direction" with "Cinematography direction" — orbit, dolly, macro, animated cutaway, hero shot.</li><li>Replace "Continuity notes" with "Aesthetic continuity" — what visual style stays consistent (lighting temperature, color grading, surface materials).</li><li>@[product asset] inclusion is YES on every chunk because the product is the hero of every shot.</li></ul>
-<h3>12.5 Quick Reference — Chunk Count by Format</h3>
-<div class="tw"><table><tr><th>Format</th><th>Runtime</th><th>Chunks</th><th>Product Asset Pattern</th></tr><tr><td>Mid-Funnel Punchy</td><td>18–22 sec</td><td>3 chunks</td><td>NO, YES, NO</td></tr><tr><td>Full Stack</td><td>28–32 sec</td><td>5 chunks</td><td>NO, NO, NO, YES, NO</td></tr><tr><td>Animated Infomercial (mid)</td><td>18–22 sec</td><td>3–4 chunks</td><td>YES on all chunks</td></tr><tr><td>Animated Infomercial (full)</td><td>28–32 sec</td><td>5–6 chunks</td><td>YES on all chunks</td></tr></table></div>
-<h3>12.6 Workflow Summary</h3>
-<p>To produce a chunked script from scratch:</p>
-<ul><li><b>Step 1.</b> Decide format (mid-funnel or full stack) based on funnel stage.</li><li><b>Step 2.</b> Write the full voiceover script using the beat structure from Section 5.</li><li><b>Step 3.</b> Lock the character description and the four universal direction blocks.</li><li><b>Step 4.</b> Break the voiceover into the chunk count for that format (3 or 5).</li><li><b>Step 5.</b> Fill in the per-chunk specification template for each chunk.</li><li><b>Step 6.</b> Generate each chunk separately, regenerating any that fail to land cleanly.</li><li><b>Step 7.</b> Stitch chunks in post, prioritizing the bookend match between Chunk 1 and the final chunk.</li></ul>
+<details class="chap"><summary>12. Plantillas de desglose por duración de guion</summary><div class="chb">
+<p>Esta sección da la estructura exacta de tomas para cada formato de guion. Úsalas como plantilla operativa al construir guiones para producción por tomas. Cada toma es una generación de IA separada que se cose en post.</p>
+<h3>12.1 Plantilla de especificación por toma</h3>
+<p>Cada toma, sin importar la duración del guion, incluye este conjunto estructurado de campos:</p>
+<div class="tw"><table><tr><th>Campo</th><th>Propósito</th></tr><tr><td>Número de toma y etiqueta de beat</td><td>Identifica qué beat de la voz cubre esta toma (Hook, Reframe, Mecanismo, Payoff, CTA)</td></tr><tr><td>Texto de la voz</td><td>La línea exacta que se dice en esta toma, copiada tal cual del guion completo</td></tr><tr><td>Duración estimada (segundos)</td><td>Cuánto necesita durar la generación de IA para este clip</td></tr><tr><td>Inclusión de @[asset del producto]</td><td>Si la referencia del asset del producto aparece en el prompt de esta toma — esto controla la visibilidad del producto</td></tr><tr><td>Dirección visual</td><td>Ángulo de cámara, tiempo de los gestos, qué hace el creador durante la línea</td></tr><tr><td>Notas de continuidad</td><td>Qué debe coincidir con la toma anterior (outfit, pelo, espacio, luz, posición)</td></tr></table></div>
+<h3>12.2 Formato Mid-Funnel — desglose en 3 tomas</h3>
+<p><b>Duración objetivo:</b> 18–22 segundos. <b>Palabras:</b> 55–70. <b>Tomas:</b> 3.</p>
+<p>Este formato comprime la estructura de cinco beats en tres tomas operativas: el hook con el reframe plegado, la revelación del mecanismo con la introducción del producto, y el payoff con CTA suave.</p>
+<div class="box"><div class="bt">TOMA 1 — HOOK + REFRAME (plegados)</div><div class="bb"><b>Contenido de la voz:</b> La línea de apertura que llama a la audiencia y descarta la suposición equivocada en el mismo aliento.<br><b>Duración estimada:</b> 5–7 segundos<br><b>@[asset del producto] incluido:</b> <b>NO — el producto no debe aparecer en esta toma</b><br><b>Dirección visual:</b> Toma hablando a cámara en el espacio principal. Ambas manos libres. Gestos naturales en las palabras clave. La cámara se queda en el creador todo el tiempo. Sin cortes al entorno. Sin producto visible.<br><b>Notas de continuidad:</b> Establece la línea base — outfit, pelo, luz, posición. Todas las tomas siguientes se refieren a esta.</div></div>
+<div class="box"><div class="bt">TOMA 2 — MECANISMO + REVEAL DEL PRODUCTO</div><div class="bb"><b>Contenido de la voz:</b> El mecanismo comprimido más la analogía táctil. El producto se nombra aquí por primera vez.<br><b>Duración estimada:</b> 8–10 segundos<br><b>@[asset del producto] incluido:</b> <b>SÍ — aparece en el momento exacto en que la voz lo nombra</b><br><b>Dirección visual:</b> Corte a un ángulo nuevo motivado por movimiento físico (el creador camina a una barra o superficie). Teléfono apoyado, encuadre más estable. Secuencia rápida de aplicación: tomar el producto, girarlo para abrir, deslizarlo por la zona objetivo, close-up del resultado. La aplicación no deja residuo visible según el bloque de dirección de aplicación.<br><b>Notas de continuidad:</b> Mismo outfit, pelo y luz que la toma 1. El lugar puede cambiar si el movimiento lo motiva. El producto coincide exactamente con la imagen de referencia.</div></div>
+<div class="box"><div class="bt">TOMA 3 — PAYOFF + CTA SUAVE</div><div class="bb"><b>Contenido de la voz:</b> Un beat sensorial que describe la experiencia vivida después del producto, más el cierre estilo sugerencia.<br><b>Duración estimada:</b> 5–6 segundos<br><b>@[asset del producto] incluido:</b> <b>NO — se cierra en la cara del creador, no en el producto</b><br><b>Dirección visual:</b> Regreso a la toma hablando a cámara, idealmente haciendo bookend con el encuadre de la toma 1. Sonrisa suave y genuina en la línea del payoff. Gesto sutil hacia abajo en el CTA. Ambas manos libres.<br><b>Notas de continuidad:</b> Iguala el encuadre de la toma 1 lo más posible para crear el bookend. Mismo outfit, pelo, luz.</div></div>
+<p><b>Notas de cosido — Mid-Funnel</b></p>
+<ul><li>Costura natural entre la toma 1 y la toma 2 — ahí es donde la sección de hook sin producto transiciona a la sección del reveal.</li><li>Si una toma falla al generar limpia, la toma 2 es la más difícil de soltar porque carga el reveal del producto. Las tomas 1 y 3 son más fáciles de regenerar o reformular porque son los bookends hablando a cámara.</li></ul>
+<h3>12.3 Formato Full Stack — desglose en 5 tomas</h3>
+<p><b>Duración objetivo:</b> 28–32 segundos. <b>Palabras:</b> 150–180. <b>Tomas:</b> 5.</p>
+<p>Este formato le da a cada beat de la estructura de cinco beats su propia toma dedicada, que es lo que la duración mayor permite. Cada toma maneja un beat de la voz.</p>
+<div class="box"><div class="bt">TOMA 1 — HOOK</div><div class="bb"><b>Contenido de la voz:</b> Dos frases que llaman a la persona exacta y confirman la frustración específica.<br><b>Duración estimada:</b> 5–6 segundos<br><b>@[asset del producto] incluido:</b> <b>NO</b><br><b>Dirección visual:</b> Toma hablando a cámara en el espacio principal. Ambas manos libres, gestos naturales. Contacto visual sostenido. Sin cortes, sin tomas del entorno. El fondo es solo el espacio habitado detrás, no el foco.<br><b>Notas de continuidad:</b> Establece la línea base del video entero. Fija outfit, pelo, luz, posición.</div></div>
+<div class="box"><div class="bt">TOMA 2 — REFRAME PARTE 1</div><div class="bb"><b>Contenido de la voz:</b> Abre el reframe nombrando las cosas equivocadas que la audiencia ya probó. Prepara la distinción estructura-vs-superficie.<br><b>Duración estimada:</b> 5–6 segundos<br><b>@[asset del producto] incluido:</b> <b>NO</b><br><b>Dirección visual:</b> La misma toma a cámara que la toma 1, con un ligero cambio de ángulo o una deriva sutil de cámara para mantener frescura visual. Gesto de mano desestimando la lista de alternativas fallidas. Breve toque inconsciente de mejilla o auto-referencia si es relevante a la categoría.<br><b>Notas de continuidad:</b> Mismo espacio que la toma 1. Mismo outfit, pelo, luz. El movimiento de cámara debe sentirse como un reencuadre natural dentro de una misma toma, no como un corte duro a otro lugar.</div></div>
+<div class="box"><div class="bt">TOMA 3 — REFRAME PARTE 2 (la verdad estructural)</div><div class="bb"><b>Contenido de la voz:</b> La revelación del mecanismo: explica por qué los intentos de superficie físicamente no pueden funcionar, preparando el producto como la única opción viable.<br><b>Duración estimada:</b> 5–6 segundos<br><b>@[asset del producto] incluido:</b> <b>NO — el producto todavía no ha aparecido</b><br><b>Dirección visual:</b> Continúa hablando a cámara. Gesto breve opcional señalando la zona afectada en el cuerpo del creador. Gesto de descarte sobre las alternativas fallidas. Sin cortes al entorno. Sin visibilidad del producto.<br><b>Notas de continuidad:</b> Mismo espacio, mismo outfit, misma luz. Es el beat final antes de introducir el producto — la tensión del hook llega a su pico aquí.</div></div>
+<div class="box"><div class="bt">TOMA 4 — MECANISMO + REVEAL DEL PRODUCTO + APLICACIÓN</div><div class="bb"><b>Contenido de la voz:</b> Se nombra el producto, se explica el mecanismo en lenguaje llano, y la analogía táctil aterriza aquí. La frase más importante de todo el guion.<br><b>Duración estimada:</b> 8–10 segundos<br><b>@[asset del producto] incluido:</b> <b>SÍ — primera aparición, en el momento exacto en que la voz lo nombra</b><br><b>Dirección visual:</b> Corte a un ángulo nuevo motivado por movimiento físico (el creador camina a una barra o superficie). Teléfono apoyado en la barra, encuadre más estable con deriva sutil. Secuencia rápida de aplicación: toma cerrada del producto en mano, girar para abrir en la palabra donde se nombra, toma macro de la aplicación en la zona objetivo, push-in a un close-up que muestra el resultado inmediato. La aplicación no deja residuo visible según el bloque de dirección de aplicación.<br><b>Notas de continuidad:</b> El cambio de lugar está motivado y se lee como movimiento natural. Mismo outfit, pelo, luz. El producto coincide exactamente con la imagen de referencia.</div></div>
+<div class="box"><div class="bt">TOMA 5 — PAYOFF + CTA SUAVE</div><div class="bb"><b>Contenido de la voz:</b> Descripción sensorial y específica de la vida después del producto, seguida del cierre estilo sugerencia.<br><b>Duración estimada:</b> 5–6 segundos<br><b>@[asset del producto] incluido:</b> <b>NO — se cierra en la cara del creador, no en el producto</b><br><b>Dirección visual:</b> Regreso a la toma hablando a cámara, idealmente haciendo bookend con el encuadre de la toma 1. Sonrisa suave y genuina en la línea del payoff. Gesto sutil hacia abajo en el CTA. Ambas manos libres, sin posar.<br><b>Notas de continuidad:</b> Iguala el encuadre de la toma 1 lo más posible para crear el bookend. Mismo outfit, pelo, luz. La sonrisa debe sentirse ganada, no actuada.</div></div>
+<p><b>Notas de cosido — Full Stack</b></p>
+<ul><li>Costura natural entre la toma 3 y la toma 4 — ahí es donde la sección de reframe sin producto transiciona a la sección del reveal.</li><li>Las tomas 1, 2, 3 y 5 son todas hablando a cámara en el espacio principal. Si alguna genera ligeramente distinta, la estructura bookend (tomas 1 y 5 iguales) enmascara las pequeñas inconsistencias porque el espectador registra la simetría visual como intencional.</li><li>La toma 3 es la más fácil de soltar o comprimir si una sola toma falla al generar limpia. La línea de voz de la toma 3 puede plegarse al final de la toma 2 con el visual siendo simplemente la continuación hablando a cámara. Mantén eso como tu respaldo.</li><li>La toma 4 es la más difícil de regenerar porque contiene el reveal del producto y la aplicación. Planea tiempo de generación extra para esta toma.</li></ul>
+<h3>12.4 Formato infomercial animado — tomas variables</h3>
+<p>El infomercial animado no usa creador y es pura cinematografía de producto con voz en off. Como no hay requisito de continuidad sobre un creador humano entre tomas, la cantidad de tomas flexa según la duración del guion:</p>
+<ul><li><b>Duración mid-funnel:</b> 3–4 tomas alineadas a los beats de la voz</li><li><b>Duración full stack:</b> 5–6 tomas alineadas a los beats de la voz</li></ul>
+<p>Cada toma en este formato cubre un concepto visual distinto en vez de una escena con candado de continuidad: toma de órbita del producto, corte transversal animado mostrando el mecanismo, material macro de aplicación, toma héroe al cierre, etc. Como no hay continuidad de creador que mantener, las tomas tienen más libertad visual y la IA puede generar cada una con luz y ángulo distintos sin romper el video.</p>
+<p><b>Ajustes de campos por toma para el infomercial animado</b></p>
+<ul><li>Reemplaza "Dirección visual" por "Dirección de cinematografía" — órbita, dolly, macro, corte animado, toma héroe.</li><li>Reemplaza "Notas de continuidad" por "Continuidad estética" — qué estilo visual se mantiene consistente (temperatura de luz, gradado de color, materiales de superficie).</li><li>La inclusión de @[asset del producto] es SÍ en todas las tomas porque el producto es el héroe de cada una.</li></ul>
+<h3>12.5 Referencia rápida — tomas por formato</h3>
+<div class="tw"><table><tr><th>Formato</th><th>Duración</th><th>Tomas</th><th>Patrón del asset del producto</th></tr><tr><td>Mid-Funnel Punchy</td><td>18–22 seg</td><td>3 tomas</td><td>NO, SÍ, NO</td></tr><tr><td>Full Stack</td><td>28–32 seg</td><td>5 tomas</td><td>NO, NO, NO, SÍ, NO</td></tr><tr><td>Infomercial animado (mid)</td><td>18–22 seg</td><td>3–4 tomas</td><td>SÍ en todas</td></tr><tr><td>Infomercial animado (full)</td><td>28–32 seg</td><td>5–6 tomas</td><td>SÍ en todas</td></tr></table></div>
+<h3>12.6 Resumen del flujo</h3>
+<p>Para producir un guion por tomas desde cero:</p>
+<ul><li><b>Paso 1.</b> Decide el formato (mid-funnel o full stack) según la etapa del funnel.</li><li><b>Paso 2.</b> Escribe el guion completo de la voz con la estructura de beats de la sección 5.</li><li><b>Paso 3.</b> Fija la descripción del personaje y los cuatro bloques de dirección universales.</li><li><b>Paso 4.</b> Parte la voz en la cantidad de tomas de ese formato (3 o 5).</li><li><b>Paso 5.</b> Llena la plantilla de especificación por toma para cada una.</li><li><b>Paso 6.</b> Genera cada toma por separado, regenerando las que no aterricen limpias.</li><li><b>Paso 7.</b> Cose las tomas en post, priorizando el bookend entre la toma 1 y la final.</li></ul>
 </div></details>
-<details class="chap"><summary>13. Captions for Organic Reach</summary><div class="chb">
-<p>Captions on the video post matter as much as the script for reach. Native-feeling captions outperform branded copy.</p>
-<h3>13.1 Caption Principles</h3>
-<ul><li>Lowercase, no over-punctuation, conversational tone</li><li>One soft emoji maximum, optional</li><li>No hashtags unless testing shows they help on the platform</li><li>1–2 short sentences</li><li>Does not directly sell — alludes to the topic of the video and lets the video do the work</li></ul>
-<h3>13.2 Caption Templates by Variation</h3>
-<div class="tw"><table><tr><th>Variation Type</th><th>Template</th></tr><tr><td>Confessional / Accidental Discovery</td><td>"nobody told me ___. wish I had figured this out years ago"</td></tr><tr><td>Tested It</td><td>"spent way too much money on ___ before I figured out why none of it worked"</td></tr><tr><td>Myth Buster</td><td>"if you've been ___ thinking it would ___, read this"</td></tr><tr><td>Universal</td><td>"genuinely did not know this until recently. if you ___ this might explain why nothing's been working for you"</td></tr></table></div>
-<h3>13.3 First Comment</h3>
-<p>Drop the actual link in the first comment of the post. Keep the main caption clean. The first comment can be slightly more direct: "linking what I'm using in my bio if anyone wants to check it out."</p>
+<details class="chap"><summary>13. Captions para alcance orgánico</summary><div class="chb">
+<p>Los captions del post importan tanto como el guion para el alcance. Los captions que se sienten nativos rinden más que el copy de marca.</p>
+<h3>13.1 Principios de caption</h3>
+<ul><li>Minúsculas, sin sobre-puntuación, tono conversacional</li><li>Máximo un emoji suave, opcional</li><li>Sin hashtags salvo que el testeo demuestre que ayudan en la plataforma</li><li>1–2 frases cortas</li><li>No vende directo — alude al tema del video y deja que el video haga el trabajo</li></ul>
+<h3>13.2 Plantillas de caption por variación</h3>
+<div class="tw"><table><tr><th>Tipo de variación</th><th>Plantilla</th></tr><tr><td>Confesional / Descubrimiento accidental</td><td>"nadie me dijo ___. ojalá lo hubiera descubierto hace años"</td></tr><tr><td>Lo probé</td><td>"gasté demasiado dinero en ___ antes de entender por qué nada funcionaba"</td></tr><tr><td>Rompe-mitos</td><td>"si has estado ___ pensando que iba a ___, lee esto"</td></tr><tr><td>Universal</td><td>"de verdad no sabía esto hasta hace poco. si tú ___, esto podría explicar por qué nada te ha funcionado"</td></tr></table></div>
+<h3>13.3 Primer comentario</h3>
+<p>Deja el link real en el primer comentario del post. Mantén el caption principal limpio. El primer comentario puede ser un poco más directo: "dejo en mi bio lo que estoy usando por si alguien quiere verlo."</p>
 </div></details>
-<details class="chap"><summary>14. Testing and Scaling Logic</summary><div class="chb">
-<h3>14.1 Initial Test Set</h3>
-<p>Build out a test set of 6–10 scripts before scaling spend. Cover at minimum:</p>
-<ul><li>All five variation types</li><li>2–3 different demographic profiles</li><li>2–3 different hook frameworks</li><li>Both formats (mid-funnel and full stack)</li><li>At least one mass-desire deep pain point angle</li></ul>
-<h3>14.2 What to Watch</h3>
-<ul><li>Watch time and completion rate, not just CTR</li><li>Cost per click against creative angle</li><li>Comment sentiment — <b>specifically: are viewers saying the analogy back to each other? That is the signal that the script is working as intended</b></li><li>Demographic breakdown of who the algorithm is serving each script to</li></ul>
-<h3>14.3 When to Cut and When to Scale</h3>
-<div class="box"><div class="bt">KILL CRITERIA</div><div class="bb">• Watch time drops in the first 3 seconds — the hook is not working<br>• Viewers watch but do not click — the payoff or CTA is weak</div></div>
-<div class="box"><div class="bt">SCALE CRITERIA</div><div class="bb">• Comments quote the analogy or the payoff line back — that is product-language fit<br>• Once a winner emerges, write hook variations on it before fatigue sets in</div></div>
-<h3>14.4 Demographic and Setting Variation as Fatigue Defense</h3>
-<p>Rotate demographics and settings across the campaign. Same script, different creator and setting, can extend a winning angle by weeks before the audience tires of it.</p>
+<details class="chap"><summary>14. Lógica de testeo y escalado</summary><div class="chb">
+<h3>14.1 Set inicial de prueba</h3>
+<p>Construye un set de 6–10 guiones antes de escalar inversión. Cubre como mínimo:</p>
+<ul><li>Los cinco tipos de variación</li><li>2–3 perfiles demográficos distintos</li><li>2–3 frameworks de hook distintos</li><li>Ambos formatos (mid-funnel y full stack)</li><li>Al menos un ángulo de dolor profundo de deseo masivo</li></ul>
+<h3>14.2 Qué observar</h3>
+<ul><li>Tiempo de visualización y tasa de finalización, no solo CTR</li><li>Costo por clic contra el ángulo creativo</li><li>Sentimiento de los comentarios — <b>específicamente: ¿los espectadores se repiten la analogía entre ellos? Esa es la señal de que el guion está funcionando como se diseñó</b></li><li>Desglose demográfico de a quién le está sirviendo el algoritmo cada guion</li></ul>
+<h3>14.3 Cuándo cortar y cuándo escalar</h3>
+<div class="box"><div class="bt">CRITERIOS PARA MATAR</div><div class="bb">• El tiempo de visualización cae en los primeros 3 segundos — el hook no está funcionando<br>• Ven pero no hacen clic — el payoff o el CTA está débil</div></div>
+<div class="box"><div class="bt">CRITERIOS PARA ESCALAR</div><div class="bb">• Los comentarios citan la analogía o la línea del payoff — eso es ajuste producto-lenguaje<br>• Cuando emerge un ganador, escribe variaciones de hook sobre él antes de que llegue la fatiga</div></div>
+<h3>14.4 La variación demográfica y de espacios como defensa contra la fatiga</h3>
+<p>Rota demografías y espacios a lo largo de la campaña. El mismo guion, con otro creador y otro espacio, puede extender un ángulo ganador por semanas antes de que la audiencia se canse.</p>
 </div></details>
-<details class="chap"><summary>15. How to Use This Document</summary><div class="chb">
-<p>This document deploys in three ways:</p>
-<ul><li><b>As a system prompt.</b> Paste sections 1–13 into the system prompt of any LLM. Provide brand variables from section 10 and the desired hook framework, format, variation type, and pain point. The model produces structured output.</li><li><b>As a training reference.</b> Use as a style guide for human copywriters or contractors. The structure rules apply equally to human-written and AI-written scripts.</li><li><b>As an audit checklist.</b> Use the failure modes in section 9 and the principles in section 2 to grade any script before approving it for production.</li></ul>
-<p><i>End of Document — Universal UGC Script Writing System v2</i></p>
-</div></details></div><textarea id="docraw" style="display:none" readonly># UGC SCRIPT WRITING SYSTEM — VERSION 2
+<details class="chap"><summary>15. Cómo usar este documento</summary><div class="chb">
+<p>Este documento se despliega de tres maneras:</p>
+<ul><li><b>Como system prompt.</b> Pega las secciones 1–13 en el system prompt de cualquier LLM. Dale las variables de marca de la sección 10 y el framework de hook, formato, tipo de variación y dolor deseados. El modelo produce salida estructurada.</li><li><b>Como referencia de entrenamiento.</b> Úsalo como guía de estilo para copywriters humanos o contratistas. Las reglas de estructura aplican igual a guiones escritos por humanos o por IA.</li><li><b>Como checklist de auditoría.</b> Usa los fallos de la sección 9 y los principios de la sección 2 para calificar cualquier guion antes de aprobarlo para producción.</li></ul>
+<p><i>Fin del documento — Sistema de Escritura de Guiones UGC v2 (traducción íntegra al español; el original en inglés se descarga junto a esta versión)</i></p>
+</div></details></div><textarea id="docraw" style="display:none" readonly># SISTEMA DE ESCRITURA DE GUIONES UGC — VERSIÓN 2
 
-*Universal Framework for AI-Generated UGC Scripts*
+*Framework universal para guiones UGC generados con IA*
 
-Niche-Agnostic • Brand-Agnostic • Production-Ready
+Agnóstico de nicho • Agnóstico de marca • Listo para producción
 
-Built for AI video generation tools and chunked production workflows
+Construido para herramientas de generación de video con IA y flujos de producción por tomas (chunks)
 
-## Contents
+&gt; Traducción íntegra al español del "Universal UGC Script Writing System v2" — todo el contenido, sin reducir. El original en inglés se descarga al final junto con esta versión.
 
-1. Two Script Formats
-2. Non-Negotiable Principles
-3. The Universal Script Structure
-4. Universal Direction Blocks
-5. Voiceover Architecture
-6. Variation Types
-7. Pain Point Selection
-8. Camera and B-Roll Direction Standards
-9. Common Failure Modes
-10. Brand Input Variables
-11. Chunked Production Workflow
-12. Chunk Breakdown Templates by Script Length
-13. Captions for Organic Reach
-14. Testing and Scaling Logic
-15. How to Use This Document
+## Contenido
 
-## 1. Two Script Formats
+1. Los dos formatos de guion
+2. Principios no negociables
+3. La estructura universal del guion
+4. Bloques de dirección universales
+5. Arquitectura de la voz
+6. Tipos de variación
+7. Selección del punto de dolor
+8. Estándares de cámara y b-roll
+9. Fallos comunes
+10. Variables de marca
+11. Flujo de producción por tomas
+12. Plantillas de desglose por duración de guion
+13. Captions para alcance orgánico
+14. Lógica de testeo y escalado
+15. Cómo usar este documento
 
-The system produces two formats. Pick the one that matches the funnel stage.
+## 1. Los dos formatos de guion
 
-| Attribute | Full Stack Format | Mid-Funnel Punchy |
+El sistema produce dos formatos. Elige el que corresponde a la etapa del funnel.
+
+| Atributo | Formato Full Stack | Mid-Funnel Punchy |
 | --- | --- | --- |
-| Runtime | 28–32 seconds | 18–22 seconds |
-| Word count | 150–180 words | 55–70 words |
-| Beat structure | Five-beat: hook, reframe, mechanism, payoff, CTA | Three-beat: sharp hook with reframe folded in, mechanism with analogy, soft payoff with close |
-| Default scene count | 3 scenes | 2 scenes (3 only if voiceover requires it) |
-| Default chunk count (chunked workflow) | 5 chunks | 3 chunks |
-| Use for | Cold audiences who need the full education arc to convert | Warmer audiences who already know they have the problem and need a fast credibility signal |
+| Duración | 28–32 segundos | 18–22 segundos |
+| Cantidad de palabras | 150–180 palabras | 55–70 palabras |
+| Estructura de beats | Cinco beats: hook, reframe, mecanismo, payoff, CTA | Tres beats: hook afilado con el reframe plegado adentro, mecanismo con analogía, payoff suave con cierre |
+| Escenas por defecto | 3 escenas | 2 escenas (3 solo si la voz lo exige) |
+| Tomas por defecto (flujo por chunks) | 5 tomas | 3 tomas |
+| Úsalo para | Audiencias frías que necesitan el arco educativo completo para convertir | Audiencias más tibias que ya saben que tienen el problema y necesitan una señal de credibilidad rápida |
 
-## 2. Non-Negotiable Principles
+## 2. Principios no negociables
 
-These rules apply to every script, every format, every niche. They are not preferences. They are the core ruleset that separates a winning UGC script from a losing one.
+Estas reglas aplican a todo guion, todo formato, todo nicho. No son preferencias. Son el conjunto de reglas que separa un guion UGC ganador de uno perdedor.
 
-### 2.1 The Hook Owns the First Five Words
+### 2.1 El hook es dueño de las primeras cinco palabras
 
-The opening line identifies the exact person being spoken to and confirms the specific frustration they are carrying. Never narrates the creator's morning, weekend, or life. Calls out the right person and repels everyone else.
+La línea de apertura identifica a la persona exacta a la que se le habla y confirma la frustración específica que carga. Nunca narra la mañana, el fin de semana ni la vida del creador. Llama a la persona correcta y repele a todos los demás.
 
-### 2.2 Sentence Flow Over Choppy Phrasing
+### 2.2 Frases que fluyen, no fraseo entrecortado
 
-No two-word stutter patterns. Sentences connect, breathe, and lead into each other. Use connectors and complete thoughts.
+Nada de patrones tartamudos de dos palabras. Las frases se conectan, respiran y llevan una a la otra. Usa conectores y pensamientos completos.
 
-### 2.3 Keep the Mechanism Simple
+### 2.3 Mantén el mecanismo simple
 
-Name the proprietary mechanism the way the brand names it, but only if a 12-year-old would understand. Always pair the mechanism with a one-second tactile analogy the viewer can picture. The analogy is the most important sentence in the entire script — it is what the viewer repeats to a friend later.
+Nombra el mecanismo propietario como lo nombra la marca, pero solo si un niño de 12 años lo entendería. Acompaña SIEMPRE el mecanismo con una analogía táctil de un segundo que el espectador pueda visualizar. La analogía es la frase más importante de todo el guion: es lo que el espectador le repite después a un amigo.
 
-### 2.4 Soft CTAs Outperform Direct Sales Pitches
+### 2.4 Los CTA suaves rinden más que la venta directa
 
-The locked competitor formula works for cold traffic but reads as ad-coded for warmer audiences. Default to suggestion-style closes.
+La fórmula bloqueada de la competencia funciona para tráfico frío, pero suena a anuncio para audiencias más tibias. Por defecto, cierres estilo sugerencia.
 
-### 2.5 No Em Dashes in Voiceover. No Bolding in Voiceover.
+### 2.5 Sin guiones largos en la voz. Sin negritas en la voz.
 
-Em dashes break natural speech rhythm when read aloud. Bolding has no function in audio. Use commas, periods, and short connectors.
+Los guiones largos (em dashes) rompen el ritmo natural del habla al leerse en voz alta. Las negritas no tienen función en audio. Usa comas, puntos y conectores cortos.
 
-### 2.6 Avoid Words AI Voiceover Tools Mispronounce
+### 2.6 Evita palabras que las voces de IA pronuncian mal
 
-Common offenders: collagen, hyaluronic, niacinamide, keratosis, brand names with non-standard spelling. Either replace with plain-language alternatives or include a phonetic pronunciation note above the voiceover. When in doubt, swap the word.
+Ofensores comunes: colágeno, hialurónico, niacinamida, queratosis, nombres de marca con escritura no estándar. O reemplázalas por alternativas en lenguaje llano, o incluye una nota fonética de pronunciación encima de la voz. Ante la duda, cambia la palabra.
 
-### 2.7 Brand Pronunciation Lock (When Brand Is Spoken)
+### 2.7 Candado de pronunciación de la marca (cuando la marca se dice)
 
-If the brand name appears in voiceover, include a pronunciation block: exact spelling, dictionary phonetics, and instruction that no shortcuts or variations are permitted. If the brand is consistently mispronounced even with phonetics, remove brand mentions from voiceover.
+Si el nombre de la marca aparece en la voz, incluye un bloque de pronunciación: escritura exacta, fonética de diccionario y la instrucción de que no se permiten atajos ni variaciones. Si la marca se sigue pronunciando mal aun con la fonética, elimina las menciones de la marca de la voz.
 
-### 2.2 Example: Sentence Flow
+### 2.2 Ejemplo: frases que fluyen
 
-:::box WRONG RHYTHM
-"No chemicals. No scents. No replacing."
+:::box RITMO INCORRECTO
+"Sin químicos. Sin olores. Sin reemplazos."
 :::
 
-:::box RIGHT RHYTHM
-"There are no chemicals, no scents, and nothing to replace ever again."
+:::box RITMO CORRECTO
+"No tiene químicos, no tiene olores, y no hay nada que reemplazar nunca más."
 :::
 
-### 2.4 Soft CTA Bank
+### 2.4 Banco de CTA suaves
 
-- "I'll leave a link to the one I'm using below."
-- "I'll drop a link below if you want to look into it."
-- "Linking it below so you don't have to go searching for it."
-- "Leaving a link in the comments / bio so you can check it out yourself."
+- "Te dejo abajo el link del que estoy usando."
+- "Te dejo un link abajo por si quieres verlo."
+- "Dejo el link abajo para que no tengas que buscarlo."
+- "Dejo un link en los comentarios / en la bio para que lo revises tú mismo."
 
-## 3. The Universal Script Structure
+## 3. La estructura universal del guion
 
-Every script output follows the same skeleton. Variables fill in. Sections never reorder. No meta-commentary about process.
+Toda salida de guion sigue el mismo esqueleto. Las variables se rellenan. Las secciones nunca se reordenan. Sin meta-comentarios sobre el proceso.
 
-### 3.1 Standard Production Skeleton
+### 3.1 Esqueleto de producción estándar
 
-Use this when generating a single video as one continuous prompt.
+Úsalo cuando generas un video como un solo prompt continuo.
 
 ```
-Create a [STYLE] ad for [PRODUCT CATEGORY]. The creator is a [GENDER] in their [AGE RANGE], [VIBE — 2 to 3 words], [HAIR DESCRIPTION], wearing [OUTFIT]. Natural look, [MAKEUP LEVEL]. They're in [SETTING WITH LIGHTING]. [SKIN DIRECTION BLOCK] [APPLICATION DIRECTION BLOCK] @Image 1 is the product, [PRODUCT NAME — what it is]. Use it as a reference for what the [PACKAGE TYPE] looks like when held or interacted with, not as a static image. [B-ROLL SEQUENCING BLOCK] [UGC REALISM DIRECTION BLOCK] Camera style: [CAMERA DIRECTION]. [B-ROLL DIRECTION WITH EXPLICIT NO-PRODUCT OPENING CUTS] [SCENE COUNT AND PACING NOTE] Here's the full script: "[VOICEOVER SCRIPT]"
+Crea un anuncio [ESTILO] para [CATEGORÍA DE PRODUCTO]. El creador es [GÉNERO] de
+[RANGO DE EDAD], [VIBRA — 2 a 3 palabras], [DESCRIPCIÓN DEL PELO], vistiendo
+[OUTFIT]. Look natural, [NIVEL DE MAQUILLAJE]. Está en [ESPACIO CON ILUMINACIÓN].
+[BLOQUE DE DIRECCIÓN DE PIEL] [BLOQUE DE DIRECCIÓN DE APLICACIÓN] @Image 1 es el
+producto, [NOMBRE DEL PRODUCTO — qué es]. Úsala como referencia de cómo se ve
+[TIPO DE EMPAQUE] al sostenerse o usarse, no como imagen estática. [BLOQUE DE
+SECUENCIA DE B-ROLL] [BLOQUE DE REALISMO UGC] Estilo de cámara: [DIRECCIÓN DE
+CÁMARA]. [DIRECCIÓN DE B-ROLL CON APERTURA EXPLÍCITA SIN PRODUCTO] [NOTA DE
+CANTIDAD DE ESCENAS Y RITMO] Este es el guion completo: "[GUION DE VOZ]"
 ```
 
-### 3.2 Chunked Production Skeleton
+### 3.2 Esqueleto de producción por tomas
 
-Use this when generating clips in chunks for post-production stitching using the same model and character across multiple generations. See Section 12 for full chunk breakdown templates.
+Úsalo cuando generas clips por tomas para coserlos en post, usando el mismo modelo y el mismo personaje a través de varias generaciones. La sección 12 tiene las plantillas completas de desglose.
 
 ```
-[CHARACTER LOCK — paste into every chunk]
-[UNIVERSAL DIRECTION BLOCKS — paste into every chunk]
-  • Skin Direction Block
-  • Application Direction Block
-  • B-Roll Sequencing Block
-  • UGC Realism Direction Block
-[CHUNK-BY-CHUNK BREAKDOWN]
-For each line of voiceover:
-  • Line number and exact voiceover text
-  • Estimated runtime in seconds
-  • Scene-specific visual direction
-  • Continuity notes
-  • Whether @[product asset] is included or not
+[CHARACTER LOCK — se pega en cada toma]
+[BLOQUES DE DIRECCIÓN UNIVERSALES — se pegan en cada toma]
+  • Bloque de dirección de piel
+  • Bloque de dirección de aplicación
+  • Bloque de secuencia de b-roll
+  • Bloque de realismo UGC
+[DESGLOSE TOMA POR TOMA]
+Por cada línea de la voz:
+  • Número de línea y texto exacto de la voz
+  • Duración estimada en segundos
+  • Dirección visual específica de la escena
+  • Notas de continuidad
+  • Si @[asset del producto] se incluye o no
 ```
 
-## 4. Universal Direction Blocks
+## 4. Bloques de dirección universales
 
-These four blocks lock in production quality and prevent the most common AI generation failures. Paste them into every script. Adapt the variables to the specific product.
+Estos cuatro bloques fijan la calidad de producción y previenen los fallos de generación más comunes. Pégalos en cada guion. Adapta las variables al producto específico.
 
-### 4.1 Skin Direction Block
+### 4.1 Bloque de dirección de piel
 
-Prevents the AI from generating the "before" condition on the present-tense creator who is supposed to be showing the result.
+Evita que la IA genere la condición del "antes" en el creador en tiempo presente, que se supone muestra el resultado.
 
-:::box SKIN DIRECTION BLOCK — paste verbatim
-*Important skin direction: The creator has naturally beautiful, smooth, clear skin with an even tone and a soft healthy glow. Her complexion is clean and radiant throughout the entire video — no visible [CONDITION THE PRODUCT TREATS] at any point. She has the kind of skin that looks like she has already been using the product for months, because she has. This applies to every talking-to-camera scene, every product application scene, and every close-up.*
+:::box BLOQUE DE DIRECCIÓN DE PIEL — pegar tal cual
+*Dirección de piel importante: La creadora tiene piel naturalmente hermosa, lisa y limpia, de tono parejo y con un brillo suave y saludable. Su cutis se ve limpio y radiante durante todo el video — sin [CONDICIÓN QUE EL PRODUCTO TRATA] visible en ningún momento. Tiene el tipo de piel de quien ya lleva meses usando el producto, porque así es. Esto aplica a cada escena hablando a cámara, cada escena de aplicación del producto y cada close-up.*
 :::
 
-**Adaptation for Other Categories**
+**Adaptación a otras categorías**
 
-- Hair: "The creator has naturally beautiful, healthy, full hair with no visible [thinning/breakage/frizz] at any point."
-- Teeth: "The creator has naturally bright, white, healthy teeth with no visible [staining/yellowing] at any point."
-- Home/cleaning: "The creator's home is clean, lived-in, and beautiful — no visible [stains/clutter/damage] at any point."
+- Pelo: "La creadora tiene pelo naturalmente hermoso, sano y abundante, sin [caída/quiebre/frizz] visible en ningún momento."
+- Dientes: "La creadora tiene dientes naturalmente brillantes, blancos y sanos, sin [manchas/amarillo] visibles en ningún momento."
+- Hogar/limpieza: "La casa de la creadora está limpia, habitada y hermosa — sin [manchas/desorden/daños] visibles en ningún momento."
 
-*Principle: lock the creator visually into the after condition the viewer is being shown the path to.*
+*Principio: fija visualmente al creador en la condición del DESPUÉS hacia la cual se le está mostrando el camino al espectador.*
 
-### 4.2 Application Direction Block
+### 4.2 Bloque de dirección de aplicación
 
-Prevents the AI from generating product as a visible matte or pigmented mark when it should be invisible, transparent, or behave differently.
+Evita que la IA genere el producto como una marca mate o pigmentada visible cuando debería ser invisible, transparente o comportarse distinto.
 
-:::box APPLICATION DIRECTION BLOCK — paste verbatim
-*Important application direction: When the creator [USES THE PRODUCT], it should [DESIRED VISUAL BEHAVIOR]. No visible [SPECIFIC FAILURE MODES THE AI DEFAULTS TO]. [WHAT IT SHOULD LOOK LIKE INSTEAD]. Her [TARGET AREA] should look exactly the same after [APPLICATION/USE] as it did before — [DESCRIPTION] — with only [REALISTIC RESIDUAL EFFECT] where the product touched.*
+:::box BLOQUE DE DIRECCIÓN DE APLICACIÓN — pegar tal cual
+*Dirección de aplicación importante: Cuando la creadora [USA EL PRODUCTO], debe [COMPORTAMIENTO VISUAL DESEADO]. Sin [MODOS DE FALLO ESPECÍFICOS A LOS QUE LA IA TIENDE] visibles. [CÓMO DEBERÍA VERSE EN SU LUGAR]. Su [ZONA OBJETIVO] debe verse exactamente igual después de [APLICACIÓN/USO] que antes — [DESCRIPCIÓN] — con solo [EFECTO RESIDUAL REALISTA] donde el producto tocó.*
 :::
 
-*Principle: name the failure mode the AI defaults to and override it with positive description plus a clear visual rule.*
+*Principio: nombra el modo de fallo al que la IA tiende y anúlalo con descripción positiva más una regla visual clara.*
 
-### 4.3 B-Roll Sequencing Block
+### 4.3 Bloque de secuencia de b-roll
 
-Prevents the AI from showing the product before the voiceover earns it, which kills the hook by flipping the viewer into "this is an ad" mode too early.
+Evita que la IA muestre el producto antes de que la voz se lo gane, lo que mata el hook al poner al espectador en modo "esto es un anuncio" demasiado pronto.
 
-:::box B-ROLL SEQUENCING BLOCK — paste verbatim
-*Important b-roll sequencing: The product must not appear on screen until the voiceover specifically introduces it. During the hook and reframe beats, the camera stays on the creator. No environmental cutaways, no decorative shots of the apartment, no shots of furniture or art. The product is only revealed visually at the exact moment the voiceover names it.*
+:::box BLOQUE DE SECUENCIA DE B-ROLL — pegar tal cual
+*Secuencia de b-roll importante: El producto no debe aparecer en pantalla hasta que la voz lo introduce específicamente. Durante los beats de hook y reframe, la cámara se queda en la creadora. Sin cortes al entorno, sin tomas decorativas del departamento, sin tomas de muebles o arte. El producto solo se revela visualmente en el momento exacto en que la voz lo nombra.*
 :::
 
-*Principle: tie product visibility to a specific lyric in the voiceover, not vague timing. In chunked production, simply omit the @[product asset] reference from prompts where the product should not appear — this is a hard lock the AI cannot override.*
+*Principio: amarra la visibilidad del producto a una palabra específica de la voz, no a un tiempo vago. En producción por tomas, simplemente omite la referencia @[asset del producto] en los prompts donde el producto no debe aparecer — es un candado duro que la IA no puede saltarse.*
 
-### 4.4 UGC Realism Direction Block
+### 4.4 Bloque de realismo UGC
 
-Prevents the AI from generating posed, frozen, commercial-feeling shots. Forces the natural body language of someone casually filming themselves.
+Evita que la IA genere tomas posadas, congeladas, con sensación de comercial. Fuerza el lenguaje corporal natural de alguien que se graba a sí mismo casualmente.
 
-:::box UGC REALISM DIRECTION BLOCK — paste verbatim
-*Important UGC realism direction: This is a casually filmed video. The phone is propped somewhere off-camera, so both her hands are free throughout. Natural handheld jitter and small micro-movements give it a self-filmed feel. She gestures naturally with both hands as she talks — adjusting her hair, touching her face when relevant, doing small open-palm gestures, shifting weight between her feet. She is never frozen in a still pose with her hands in her pockets or behind her back. The energy is "I just want to tell you something" not "I am posing for a commercial."*
+:::box BLOQUE DE REALISMO UGC — pegar tal cual
+*Dirección de realismo UGC importante: Este es un video grabado casualmente. El teléfono está apoyado fuera de cámara, así que sus dos manos quedan libres todo el tiempo. Un temblor natural de mano y micro-movimientos pequeños le dan sensación de auto-grabado. Gesticula naturalmente con ambas manos mientras habla — se acomoda el pelo, se toca la cara cuando es relevante, hace pequeños gestos de palma abierta, cambia el peso entre los pies. Nunca está congelada en una pose con las manos en los bolsillos o detrás de la espalda. La energía es "solo te quiero contar algo", no "estoy posando para un comercial".*
 :::
 
-*Principle: name the failure mode (frozen pose, hands in pockets) and replace it with specific natural behaviors.*
+*Principio: nombra el modo de fallo (pose congelada, manos en bolsillos) y reemplázalo con conductas naturales específicas.*
 
-## 5. Voiceover Architecture
+## 5. Arquitectura de la voz
 
-### 5.1 Full Stack Five-Beat Structure
+### 5.1 Estructura Full Stack de cinco beats
 
-| Beat | Timing | Function |
+| Beat | Tiempo | Función |
 | --- | --- | --- |
-| 1. Hook | 0:00–0:03 | Calls out exact person, confirms specific frustration. Two sentences. |
-| 2. Problem Reframe | 0:03–0:10 | Reveals the hidden mechanism behind why the viewer's previous attempts failed. Reorients from "I am doing it wrong" to "I was given the wrong tools." |
-| 3. Mechanism + Analogy | 0:10–0:20 | Introduces the product, explains the mechanism in plain language with a one-second tactile analogy. |
-| 4. Payoff | 0:20–0:25 | Sensory and specific lived experience after the product. Visual and immediate, not abstract benefits. |
-| 5. CTA | 0:25–0:30 | Soft suggestion-style close. |
+| 1. Hook | 0:00–0:03 | Llama a la persona exacta, confirma la frustración específica. Dos frases. |
+| 2. Reframe del problema | 0:03–0:10 | Revela el mecanismo oculto detrás de por qué los intentos anteriores del espectador fallaron. Lo reorienta de "lo estoy haciendo mal" a "me dieron las herramientas equivocadas". |
+| 3. Mecanismo + analogía | 0:10–0:20 | Introduce el producto, explica el mecanismo en lenguaje llano con una analogía táctil de un segundo. |
+| 4. Payoff | 0:20–0:25 | Experiencia vivida, sensorial y específica después del producto. Visual e inmediata, no beneficios abstractos. |
+| 5. CTA | 0:25–0:30 | Cierre suave estilo sugerencia. |
 
-### 5.2 Mid-Funnel Three-Beat Structure
+### 5.2 Estructura Mid-Funnel de tres beats
 
-| Beat | Timing | Function |
+| Beat | Tiempo | Función |
 | --- | --- | --- |
-| 1. Sharp Hook with Reframe Folded In | 0:00–0:06 | One sentence that calls out the audience and dismisses the wrong assumption in the same breath. |
-| 2. Mechanism with Analogy | 0:06–0:16 | Compressed mechanism plus the tactile analogy. The analogy stays intact at all costs. |
-| 3. Soft Payoff and Close | 0:16–0:21 | One sensory beat plus the suggestion-style CTA. |
+| 1. Hook afilado con el reframe plegado | 0:00–0:06 | Una frase que llama a la audiencia y descarta la suposición equivocada en el mismo aliento. |
+| 2. Mecanismo con analogía | 0:06–0:16 | Mecanismo comprimido más la analogía táctil. La analogía se mantiene intacta a toda costa. |
+| 3. Payoff suave y cierre | 0:16–0:21 | Un beat sensorial más el CTA estilo sugerencia. |
 
-### 5.3 Hook Frameworks
+### 5.3 Frameworks de hook
 
-Pull from this list. Rotate across scripts to prevent fatigue.
+Toma de esta lista. Rota entre guiones para prevenir fatiga.
 
-- If you are trying to ___ this is how you finally do it without ___.
-- Your ___ is ___, and ___ won't fix it.
-- The biggest myth about ___ is...
-- I tested ___ so you don't have to.
-- I wish someone had told me this before I started ___.
-- I found this out by accident while ___.
-- What nobody warns you about with ___ is...
-- Why ___ works when nothing else does.
-- Why your ___ isn't working and how to fix it.
-- Don't make this mistake with ___.
-- One thing I'll never do again in ___.
-- Three mistakes keeping you stuck in ___.
-- This one thing changed everything for me in ___.
-- What nobody admits about ___ is...
-- How I stopped ___.
-- The truth behind my ___.
-- If I could go back and tell myself one thing about ___.
+- Si estás intentando ___, así es como por fin lo logras sin ___.
+- Tu ___ está ___, y ___ no lo va a arreglar.
+- El mito más grande sobre ___ es...
+- Probé ___ para que tú no tengas que hacerlo.
+- Ojalá alguien me hubiera dicho esto antes de empezar ___.
+- Descubrí esto por accidente mientras ___.
+- Lo que nadie te advierte sobre ___ es...
+- Por qué ___ funciona cuando nada más funciona.
+- Por qué tu ___ no está funcionando y cómo arreglarlo.
+- No cometas este error con ___.
+- Una cosa que nunca volveré a hacer en ___.
+- Tres errores que te tienen atorado en ___.
+- Esta única cosa lo cambió todo para mí en ___.
+- Lo que nadie admite sobre ___ es...
+- Cómo dejé de ___.
+- La verdad detrás de mi ___.
+- Si pudiera regresar y decirme una sola cosa sobre ___.
 
-### 5.4 The Universal Reframe Pattern
+### 5.4 El patrón universal de reframe
 
-Across niches, the strongest reframes follow this shape:
+A través de los nichos, los reframes más fuertes siguen esta forma:
 
-:::box UNIVERSAL REFRAME PATTERN
-*"Most people think ___ is a [SURFACE] problem so they keep [SURFACE BEHAVIOR]. But it is actually a [STRUCTURAL/HIDDEN] problem, which is why [SURFACE SOLUTION] physically cannot reach it."*
+:::box PATRÓN UNIVERSAL DE REFRAME
+*"La mayoría cree que ___ es un problema de [SUPERFICIE], así que sigue [CONDUCTA SUPERFICIAL]. Pero en realidad es un problema [ESTRUCTURAL/OCULTO], y por eso [LA SOLUCIÓN SUPERFICIAL] físicamente no puede alcanzarlo."*
 :::
 
-This works because it absolves the viewer of guilt for past failures and sets up the mechanism reveal. Adapt the structural-vs-surface framing to whatever the product addresses.
+Funciona porque absuelve al espectador de la culpa por los fracasos pasados y prepara la revelación del mecanismo. Adapta el encuadre estructura-vs-superficie a lo que sea que el producto resuelve.
 
-## 6. Variation Types
+## 6. Tipos de variación
 
-The same script structure supports multiple emotional registers. Rotate across the campaign.
+La misma estructura de guion soporta varios registros emocionales. Rótalos a lo largo de la campaña.
 
-| Type | Voice | Best For |
+| Tipo | Voz | Mejor para |
 | --- | --- | --- |
-| The Confessional | First-person, present tense, includes a personal admission | Emotional categories like beauty, wellness, parenting |
-| The Tested It So You Don't Have To | Audience surrogate who tried every wrong solution first | Crowded categories where the audience has tried multiple competing products |
-| The Myth Buster | Opens with a corrective reframe | Educational categories where the audience has absorbed wrong information |
-| The Accidental Discovery | Creator stumbled onto the insight | Lowest sales pressure framing — positions creator as fellow explorer |
-| The Animated Infomercial | No creator, pure product b-roll with voiceover | Scaling output without booking talent, or when the product is the hero |
+| El confesional | Primera persona, tiempo presente, incluye una admisión personal | Categorías emocionales como belleza, bienestar, crianza |
+| Lo probé para que tú no tengas que hacerlo | Sustituto de la audiencia que probó primero todas las soluciones equivocadas | Categorías saturadas donde la audiencia ya probó varios productos de la competencia |
+| El rompe-mitos | Abre con un reframe correctivo | Categorías educativas donde la audiencia absorbió información equivocada |
+| El descubrimiento accidental | El creador se topó con el insight | El encuadre de menor presión de venta — posiciona al creador como explorador igual que tú |
+| El infomercial animado | Sin creador, puro b-roll del producto con voz en off | Escalar producción sin contratar talento, o cuando el producto es el héroe |
 
-## 7. Pain Point Selection
+## 7. Selección del punto de dolor
 
-The first scripts in any campaign should target the surface complaint (visible symptom). Once those are running, expand into deeper pain points. Mass-desire pain points outperform niche ones.
+Los primeros guiones de cualquier campaña deben apuntar a la queja de superficie (el síntoma visible). Cuando esos ya corren, expande hacia dolores más profundos. Los dolores de deseo masivo rinden más que los de nicho.
 
-### 7.1 Surface Complaints
+### 7.1 Quejas de superficie
 
-The literal, visible symptom of the problem. Easy entry point but saturated.
+El síntoma literal y visible del problema. Punto de entrada fácil pero saturado.
 
-### 7.2 Deep Pain Points
+### 7.2 Dolores profundos
 
-High-leverage angles that go beyond the surface symptom.
+Ángulos de alto apalancamiento que van más allá del síntoma de superficie.
 
-- **Public visibility pain —** being seen in unforgiving lighting (photos, video calls, daylight)
-- **The mental tax —** daily labor of working around the problem
-- **The aging or time pain —** carrying the problem for years/decades, the strange grief of unresolved issues
-- **The "I have fixed everything else" pain —** the existential frustration of someone who solves problems and this is the one that has not budged
-- **Intimacy and close-up pain —** how the problem feels in private moments, with people who look closely
-- **The recognition pain —** not recognizing yourself, the gap between how you feel and how you appear
+- **El dolor de la visibilidad pública —** ser visto en luz que no perdona (fotos, videollamadas, luz de día)
+- **El impuesto mental —** el trabajo diario de vivir esquivando el problema
+- **El dolor de la edad o del tiempo —** cargar el problema por años/décadas, el duelo extraño de lo que no se resuelve
+- **El dolor de "ya arreglé todo lo demás" —** la frustración existencial de quien resuelve problemas y este es el único que no cede
+- **El dolor de la intimidad y el close-up —** cómo se siente el problema en momentos privados, con gente que mira de cerca
+- **El dolor del reconocimiento —** no reconocerte, la brecha entre cómo te sientes y cómo te ves
 
-### 7.3 Mass-Desire Filter
+### 7.3 Filtro de deseo masivo
 
-The best pain points cut across age, gender, profession, and lifestyle. Test for universality. If the pain point only applies to office workers, parents, or one specific demographic, it narrows reach. If almost anyone with the problem has felt it, it is mass-desire.
+Los mejores dolores cruzan edad, género, profesión y estilo de vida. Prueba su universalidad. Si el dolor solo aplica a oficinistas, padres o una demografía específica, estrecha el alcance. Si casi cualquiera con el problema lo ha sentido, es de deseo masivo.
 
-## 8. Camera and B-Roll Direction Standards
+## 8. Estándares de cámara y b-roll
 
-### 8.1 Constant Motion Rule
+### 8.1 Regla de movimiento constante
 
-Every shot has movement. No locked-off product photography. No still talking-head shots. Talking-to-camera footage uses natural handheld jitter. Hands-free shots use subtle drift or micro-push-ins. B-roll uses tracking, dolly pushes, orbits, reveals, or hand motion.
+Toda toma tiene movimiento. Nada de fotografía de producto fija. Nada de cabezas parlantes estáticas. Lo hablado a cámara usa temblor natural de mano. Las tomas con manos libres usan una deriva sutil o micro-push-ins. El b-roll usa tracking, empujes de dolly, órbitas, reveals o movimiento de mano.
 
-### 8.2 Visual-to-Voiceover Sync
+### 8.2 Sincronía visual-voz
 
-Every visual matches what the narrator is saying at that exact moment. When the narrator says "fridge" show a fridge. When they describe the mechanism show the mechanism. Visuals follow the voiceover word for word.
+Cada visual coincide con lo que el narrador dice en ese momento exacto. Cuando el narrador dice "refrigerador", muestra un refrigerador. Cuando describe el mecanismo, muestra el mecanismo. Los visuales siguen la voz palabra por palabra.
 
-### 8.3 Continuous Cuts — Cuts Are Motivated, Not Decorative
+### 8.3 Cortes continuos — los cortes se motivan, no decoran
 
-Cuts happen when:
+Los cortes suceden cuando:
 
-- The creator physically moves to a new location to do something
-- The voiceover names the product (cut to product reveal)
-- A specific action happens that the script calls for
+- El creador se mueve físicamente a un lugar nuevo a hacer algo
+- La voz nombra el producto (corte al reveal del producto)
+- Sucede una acción específica que el guion pide
 
-Cuts do NOT happen for:
+Los cortes NO suceden por:
 
-- Decorative environmental shots of furniture, art, or interior design
-- "Visual breaths" that have no relationship to what is being said
-- Aesthetic moments that exist for cinematography reasons
+- Tomas decorativas del entorno: muebles, arte o diseño de interiores
+- "Respiros visuales" sin relación con lo que se dice
+- Momentos estéticos que existen por razones de cinematografía
 
-### 8.4 Pacing Within Scenes
+### 8.4 Ritmo dentro de las escenas
 
-Scenes play at normal speed. No slow motion. No sped up footage. Within each scene, micro-cuts can be rapid for high-energy beats and slightly slower for emotional or explanatory beats.
+Las escenas corren a velocidad normal. Sin cámara lenta. Sin material acelerado. Dentro de cada escena, los micro-cortes pueden ser rápidos en beats de alta energía y un poco más lentos en beats emocionales o explicativos.
 
-### 8.5 Scene Count Discipline
+### 8.5 Disciplina de cantidad de escenas
 
-- Mid-funnel format: 2 scenes default, 3 only if voiceover requires it
-- Full stack format: 3 scenes default
-- Animated infomercial: AI determines breaks based on voiceover beats
+- Formato mid-funnel: 2 escenas por defecto, 3 solo si la voz lo exige
+- Formato full stack: 3 escenas por defecto
+- Infomercial animado: la IA determina los cortes según los beats de la voz
 
-### 8.6 Setting Variation Across Campaign
+### 8.6 Variación de espacios a lo largo de la campaña
 
-Rotate environments and lighting setups across scripts so the audience does not see the same backdrop on repeat. Options: warm dim kitchen evening, bright sun-drenched morning, soft afternoon side window, cool clinical product studio, lived-in family kitchen, sunlit bedroom vanity, back patio outdoor light, evening warm bathroom. Tie each variation to the emotional register of that script.
+Rota entornos e iluminaciones entre guiones para que la audiencia no vea el mismo fondo en repetición. Opciones: cocina cálida y tenue de noche, mañana inundada de sol, ventana lateral suave de tarde, estudio de producto frío y clínico, cocina familiar habitada, tocador de recámara con sol, patio trasero con luz exterior, baño cálido de noche. Amarra cada variación al registro emocional de ese guion.
 
-### 8.7 Demographic Variation Across Campaign
+### 8.7 Variación demográfica a lo largo de la campaña
 
-Rotate creator demographics so the algorithm has signal on which audience segments respond. Standard spread: ages 19-23, 24-32, 32-38, 35-45, plus a male equivalent for at least one variation. Each demographic carries different emotional pressure points.
+Rota la demografía de los creadores para que el algoritmo tenga señal de qué segmentos responden. Distribución estándar: edades 19-23, 24-32, 32-38, 35-45, más un equivalente masculino en al menos una variación. Cada demografía carga puntos de presión emocional distintos.
 
-## 9. Common Failure Modes
+## 9. Fallos comunes
 
-These are recurring AI generation failures. Self-correct against them on every output.
+Son fallos recurrentes de la generación con IA. Auto-corrígete contra ellos en cada salida.
 
-:::fail RAMBLING HOOKS
-"I scrubbed my fridge on Saturday on my hands and knees" is a failed hook. The first words call out the audience, not narrate the creator's life.
+:::fail HOOKS QUE DIVAGAN
+"Tallé mi refrigerador el sábado de rodillas" es un hook fallido. Las primeras palabras llaman a la audiencia, no narran la vida del creador.
 :::
 
-:::fail CHOPPY PHRASING
-Two-word fragments stacked together kill conversational flow.
+:::fail FRASEO ENTRECORTADO
+Los fragmentos de dos palabras apilados matan el flujo conversacional.
 :::
 
-:::fail JARGON MECHANISMS
-If a 12-year-old does not understand the mechanism word, replace it.
+:::fail MECANISMOS CON JERGA
+Si un niño de 12 años no entiende la palabra del mecanismo, reemplázala.
 :::
 
-:::fail VEERING CTAS
-Use the locked formulas. Do not invent new structures unless testing has earned it.
+:::fail CTAS QUE SE DESVÍAN
+Usa las fórmulas bloqueadas. No inventes estructuras nuevas a menos que el testeo se lo haya ganado.
 :::
 
-:::fail STATIC B-ROLL
-Every shot moves.
+:::fail B-ROLL ESTÁTICO
+Toda toma se mueve.
 :::
 
-:::fail MISMATCHED VISUALS
-If the narrator says one thing and the b-roll shows another, the script fails.
+:::fail VISUALES QUE NO COINCIDEN
+Si el narrador dice una cosa y el b-roll muestra otra, el guion falla.
 :::
 
-:::fail DECORATIVE B-ROLL
-Cuts to furniture, art, or interior design that have no relationship to the voiceover. UGC does not have cinematic establishing shots. Keep the camera on the creator unless there is a specific reason to cut away.
+:::fail B-ROLL DECORATIVO
+Cortes a muebles, arte o diseño de interiores sin relación con la voz. El UGC no tiene tomas de establecimiento cinemáticas. Mantén la cámara en el creador salvo que haya una razón específica para cortar.
 :::
 
-:::fail OVER-FORMATTING THE OUTPUT
-The deliverable is a clean prose prompt block. No headers, tables, or production notes attached unless using chunked production format.
+:::fail SOBRE-FORMATEAR LA SALIDA
+El entregable es un bloque de prompt en prosa limpia. Sin encabezados, tablas ni notas de producción, salvo en el formato de producción por tomas.
 :::
 
-:::fail PHONE IN HAND WHEN NOT NEEDED
-If the script calls for selfie-style direction, the phone in hand makes sense. Otherwise, leave the phone off-camera so both hands are free for natural gestures.
+:::fail TELÉFONO EN MANO SIN NECESIDAD
+Si el guion pide dirección estilo selfie, el teléfono en mano tiene sentido. Si no, deja el teléfono fuera de cámara para que las dos manos queden libres para gesticular natural.
 :::
 
-:::fail FROZEN POSES
-Hands in pockets, hands behind back, no movement. Real UGC creators gesture, shift weight, touch their face when relevant.
+:::fail POSES CONGELADAS
+Manos en los bolsillos, manos atrás, sin movimiento. Los creadores UGC reales gesticulan, cambian el peso, se tocan la cara cuando es relevante.
 :::
 
-:::fail PRODUCT VISIBILITY BEFORE VOICEOVER EARNS IT
-Showing the product in the hook beat tells the viewer this is an ad before they have decided to keep watching.
+:::fail PRODUCTO VISIBLE ANTES DE QUE LA VOZ LO GANE
+Mostrar el producto en el beat del hook le dice al espectador que esto es un anuncio antes de que haya decidido seguir viendo.
 :::
 
-:::fail WRONG CONDITION ON THE PRESENT-TENSE CREATOR
-Generating visible scars/blemishes/damage on the creator who is supposed to be showing the after.
+:::fail LA CONDICIÓN EQUIVOCADA EN EL CREADOR EN PRESENTE
+Generar cicatrices/imperfecciones/daño visibles en el creador que se supone muestra el después.
 :::
 
-:::fail VISIBLE PRODUCT RESIDUE WHEN IT SHOULD BE INVISIBLE
-Generating a matte stripe or pigmented mark when application should be transparent.
+:::fail RESIDUO VISIBLE CUANDO DEBERÍA SER INVISIBLE
+Generar una franja mate o una marca pigmentada cuando la aplicación debería ser transparente.
 :::
 
-## 10. Brand Input Variables
+## 10. Variables de marca
 
-Before producing any script, collect these or ask for them. Do not invent values.
+Antes de producir cualquier guion, reúne estas o pídelas. No inventes valores.
 
-| Variable | Status | Notes |
+| Variable | Estatus | Notas |
 | --- | --- | --- |
-| Brand name and exact spelling | Required | |
-| Brand pronunciation (dictionary phonetics) | Required if spoken | |
-| Whether brand name is spoken in voiceover | Required | |
-| Product name and exact spelling | Required | |
-| Product pronunciation | Required if spoken | |
-| Product category | Required | |
-| Core mechanism in plain language | Required | Must be 12-year-old understandable |
-| Tactile analogy for the mechanism | Required | Format: "Think of it less like ___ and more like ___" |
-| Failed alternatives the audience has tried | Required | |
-| Target avatar demographics | Required | |
-| Specific pain points beyond surface complaint | Required for deep angles | |
-| Setting and lighting preferences | Optional | Defaults to lived-in home environment |
-| Reference image of the product | Required | Use as @Image 1 or @[product asset] |
-| Words AI mispronounces in this category | Optional | Flag in advance to swap out |
+| Nombre de la marca y escritura exacta | Requerido | |
+| Pronunciación de la marca (fonética de diccionario) | Requerido si se dice | |
+| Si el nombre de la marca se dice en la voz | Requerido | |
+| Nombre del producto y escritura exacta | Requerido | |
+| Pronunciación del producto | Requerido si se dice | |
+| Categoría del producto | Requerido | |
+| Mecanismo central en lenguaje llano | Requerido | Debe entenderlo un niño de 12 años |
+| Analogía táctil del mecanismo | Requerido | Formato: "Piénsalo menos como ___ y más como ___" |
+| Alternativas fallidas que la audiencia ya probó | Requerido | |
+| Demografía del avatar objetivo | Requerido | |
+| Dolores específicos más allá de la queja de superficie | Requerido para ángulos profundos | |
+| Preferencias de espacio e iluminación | Opcional | Por defecto: entorno de casa habitada |
+| Imagen de referencia del producto | Requerido | Úsala como @Image 1 o @[asset del producto] |
+| Palabras que la IA pronuncia mal en esta categoría | Opcional | Márcalas por adelantado para cambiarlas |
 
-## 11. Chunked Production Workflow
+## 11. Flujo de producción por tomas
 
-For projects where the same creator and setting are used across multiple generated clips that get stitched together in post.
+Para proyectos donde el mismo creador y el mismo espacio se usan a través de varios clips generados que se cosen en post.
 
-### 11.1 Lock the Character Once
+### 11.1 Fija el personaje una vez
 
-Write a detailed character description that gets pasted verbatim into every chunk. Include age range, energy, hair color and style, skin tone, eyes, accessories, specific outfit, and the apartment or setting they are in.
+Escribe una descripción detallada del personaje que se pega tal cual en cada toma. Incluye rango de edad, energía, color y estilo de pelo, tono de piel, ojos, accesorios, outfit específico, y el departamento o espacio donde está.
 
-### 11.2 Lock the Universal Direction Blocks
+### 11.2 Fija los bloques de dirección universales
 
-Skin Direction, Application Direction, B-Roll Sequencing, and UGC Realism Direction all get pasted into every chunk verbatim.
+Dirección de piel, dirección de aplicación, secuencia de b-roll y realismo UGC se pegan tal cual en cada toma.
 
-### 11.3 Break the Voiceover Into Lines
+### 11.3 Parte la voz en líneas
 
-Each line of voiceover becomes one chunk. Default chunk counts:
+Cada línea de la voz se vuelve una toma. Cantidades por defecto:
 
-- **Mid-funnel (18-22 sec):** 3 chunks
-- **Full stack (28-32 sec):** 5 chunks
+- **Mid-funnel (18-22 seg):** 3 tomas
+- **Full stack (28-32 seg):** 5 tomas
 
-Section 12 contains the full chunk breakdown templates for both formats.
+La sección 12 contiene las plantillas completas de desglose para ambos formatos.
 
-### 11.4 Asset Tagging Locks Product Visibility
+### 11.4 El etiquetado de assets fija la visibilidad del producto
 
-Use @[product asset name] (e.g., @stick, @bottle, @canister) in the prompts where the product should appear. Do NOT include the asset reference in chunks where the product should not appear. The AI cannot generate the product if the asset is not referenced — this is a hard lock that enforces the b-roll sequencing rule.
+Usa @[nombre del asset del producto] (p. ej. @stick, @bottle, @canister) en los prompts donde el producto debe aparecer. NO incluyas la referencia del asset en las tomas donde el producto no debe aparecer. La IA no puede generar el producto si el asset no está referenciado — es un candado duro que hace cumplir la regla de secuencia de b-roll.
 
-### 11.5 Bookend Structure
+### 11.5 Estructura bookend
 
-Make the first chunk and last chunk visually similar (same setting, same framing) so the stitched video feels intentional and any small inconsistencies between middle chunks read as natural cuts rather than continuity errors.
+Haz que la primera y la última toma sean visualmente similares (mismo espacio, mismo encuadre) para que el video cosido se sienta intencional y cualquier pequeña inconsistencia entre las tomas del medio se lea como cortes naturales y no como errores de continuidad.
 
-### 11.6 Identify Cut Points and Fallback Cuts
+### 11.6 Identifica puntos de corte y cortes de respaldo
 
-Note which chunks can be dropped from the edit if any single chunk fails to generate cleanly. Usually environmental or transitional chunks are the easiest to remove without breaking the script.
+Anota qué tomas se pueden dejar caer de la edición si una sola falla al generar limpia. Normalmente las tomas de entorno o de transición son las más fáciles de quitar sin romper el guion.
 
-## 12. Chunk Breakdown Templates by Script Length
+## 12. Plantillas de desglose por duración de guion
 
-This section provides the exact chunk structure for each script format. Use these as the operational template when building scripts for chunked production. Each chunk is one separate AI generation that gets stitched together in post.
+Esta sección da la estructura exacta de tomas para cada formato de guion. Úsalas como plantilla operativa al construir guiones para producción por tomas. Cada toma es una generación de IA separada que se cose en post.
 
-### 12.1 Per-Chunk Specification Template
+### 12.1 Plantilla de especificación por toma
 
-Every chunk, regardless of script length, includes this structured set of fields:
+Cada toma, sin importar la duración del guion, incluye este conjunto estructurado de campos:
 
-| Field | Purpose |
+| Campo | Propósito |
 | --- | --- |
-| Chunk number and beat label | Identifies which voiceover beat this chunk covers (Hook, Reframe, Mechanism, Payoff, CTA) |
-| Voiceover text | The exact line spoken in this chunk, copied verbatim from the full script |
-| Estimated runtime (seconds) | How long the AI generation needs to be for this clip |
-| @[product asset] inclusion | Whether the product asset reference appears in this chunk's prompt — this controls product visibility |
-| Visual direction | Camera angle, gesture timing, what the creator is doing during the line |
-| Continuity notes | What must match the previous chunk (outfit, hair, setting, lighting, position) |
+| Número de toma y etiqueta de beat | Identifica qué beat de la voz cubre esta toma (Hook, Reframe, Mecanismo, Payoff, CTA) |
+| Texto de la voz | La línea exacta que se dice en esta toma, copiada tal cual del guion completo |
+| Duración estimada (segundos) | Cuánto necesita durar la generación de IA para este clip |
+| Inclusión de @[asset del producto] | Si la referencia del asset del producto aparece en el prompt de esta toma — esto controla la visibilidad del producto |
+| Dirección visual | Ángulo de cámara, tiempo de los gestos, qué hace el creador durante la línea |
+| Notas de continuidad | Qué debe coincidir con la toma anterior (outfit, pelo, espacio, luz, posición) |
 
-### 12.2 Mid-Funnel Format — 3-Chunk Breakdown
+### 12.2 Formato Mid-Funnel — desglose en 3 tomas
 
-**Total runtime target:** 18–22 seconds. **Word count:** 55–70 words. **Chunks:** 3.
+**Duración objetivo:** 18–22 segundos. **Palabras:** 55–70. **Tomas:** 3.
 
-This format compresses the five-beat structure into three operational chunks: the hook with reframe folded in, the mechanism reveal with product introduction, and the payoff with soft CTA.
+Este formato comprime la estructura de cinco beats en tres tomas operativas: el hook con el reframe plegado, la revelación del mecanismo con la introducción del producto, y el payoff con CTA suave.
 
-:::box CHUNK 1 — HOOK + REFRAME (folded together)
-**Voiceover content:** The opening line that calls out the audience and dismisses the wrong assumption in the same breath.
-**Estimated runtime:** 5–7 seconds
-**@[product asset] included:** **NO — product must not appear in this chunk**
-**Visual direction:** Talking-to-camera shot in primary setting. Both hands free. Natural gestures on key words. Camera stays on the creator the entire time. No environmental cutaways. No product visible.
-**Continuity notes:** Establishes baseline — outfit, hair, lighting, position. All subsequent chunks reference back to this.
+:::box TOMA 1 — HOOK + REFRAME (plegados)
+**Contenido de la voz:** La línea de apertura que llama a la audiencia y descarta la suposición equivocada en el mismo aliento.
+**Duración estimada:** 5–7 segundos
+**@[asset del producto] incluido:** **NO — el producto no debe aparecer en esta toma**
+**Dirección visual:** Toma hablando a cámara en el espacio principal. Ambas manos libres. Gestos naturales en las palabras clave. La cámara se queda en el creador todo el tiempo. Sin cortes al entorno. Sin producto visible.
+**Notas de continuidad:** Establece la línea base — outfit, pelo, luz, posición. Todas las tomas siguientes se refieren a esta.
 :::
 
-:::box CHUNK 2 — MECHANISM + PRODUCT REVEAL
-**Voiceover content:** The compressed mechanism plus the tactile analogy. The product is named here for the first time.
-**Estimated runtime:** 8–10 seconds
-**@[product asset] included:** **YES — appears at the exact moment the voiceover names it**
-**Visual direction:** Cut to a new angle motivated by physical movement (creator walks to a counter or surface). Phone propped, framing steadier. Quick application sequence: pick up product, twist open, glide across target area, close-up of result. Application leaves no visible residue per the application direction block.
-**Continuity notes:** Same outfit, hair, lighting as Chunk 1. Location can shift if motivated by movement. Product matches reference image exactly.
+:::box TOMA 2 — MECANISMO + REVEAL DEL PRODUCTO
+**Contenido de la voz:** El mecanismo comprimido más la analogía táctil. El producto se nombra aquí por primera vez.
+**Duración estimada:** 8–10 segundos
+**@[asset del producto] incluido:** **SÍ — aparece en el momento exacto en que la voz lo nombra**
+**Dirección visual:** Corte a un ángulo nuevo motivado por movimiento físico (el creador camina a una barra o superficie). Teléfono apoyado, encuadre más estable. Secuencia rápida de aplicación: tomar el producto, girarlo para abrir, deslizarlo por la zona objetivo, close-up del resultado. La aplicación no deja residuo visible según el bloque de dirección de aplicación.
+**Notas de continuidad:** Mismo outfit, pelo y luz que la toma 1. El lugar puede cambiar si el movimiento lo motiva. El producto coincide exactamente con la imagen de referencia.
 :::
 
-:::box CHUNK 3 — PAYOFF + SOFT CTA
-**Voiceover content:** One sensory beat describing the lived experience after the product, plus the suggestion-style close.
-**Estimated runtime:** 5–6 seconds
-**@[product asset] included:** **NO — closing on the creator's face, not the product**
-**Visual direction:** Return to talking-to-camera shot, ideally bookending the framing of Chunk 1. Soft genuine smile on the payoff line. Subtle downward gesture on the CTA. Both hands free.
-**Continuity notes:** Match Chunk 1 framing as closely as possible to create the bookend. Same outfit, hair, lighting.
+:::box TOMA 3 — PAYOFF + CTA SUAVE
+**Contenido de la voz:** Un beat sensorial que describe la experiencia vivida después del producto, más el cierre estilo sugerencia.
+**Duración estimada:** 5–6 segundos
+**@[asset del producto] incluido:** **NO — se cierra en la cara del creador, no en el producto**
+**Dirección visual:** Regreso a la toma hablando a cámara, idealmente haciendo bookend con el encuadre de la toma 1. Sonrisa suave y genuina en la línea del payoff. Gesto sutil hacia abajo en el CTA. Ambas manos libres.
+**Notas de continuidad:** Iguala el encuadre de la toma 1 lo más posible para crear el bookend. Mismo outfit, pelo, luz.
 :::
 
-**Stitching Notes — Mid-Funnel**
+**Notas de cosido — Mid-Funnel**
 
-- Natural seam between Chunk 1 and Chunk 2 — that is where the no-product hook section transitions to the product reveal section.
-- If a chunk fails to generate cleanly, Chunk 2 is the hardest to drop because it carries the product reveal. Chunks 1 and 3 are easier to regenerate or reshape because they are bookend talking-to-camera shots.
+- Costura natural entre la toma 1 y la toma 2 — ahí es donde la sección de hook sin producto transiciona a la sección del reveal.
+- Si una toma falla al generar limpia, la toma 2 es la más difícil de soltar porque carga el reveal del producto. Las tomas 1 y 3 son más fáciles de regenerar o reformular porque son los bookends hablando a cámara.
 
-### 12.3 Full Stack Format — 5-Chunk Breakdown
+### 12.3 Formato Full Stack — desglose en 5 tomas
 
-**Total runtime target:** 28–32 seconds. **Word count:** 150–180 words. **Chunks:** 5.
+**Duración objetivo:** 28–32 segundos. **Palabras:** 150–180. **Tomas:** 5.
 
-This format gives each beat of the five-beat structure its own dedicated chunk, which is what the longer runtime supports. Each chunk handles one voiceover beat.
+Este formato le da a cada beat de la estructura de cinco beats su propia toma dedicada, que es lo que la duración mayor permite. Cada toma maneja un beat de la voz.
 
-:::box CHUNK 1 — HOOK
-**Voiceover content:** Two sentences that call out the exact person and confirm the specific frustration.
-**Estimated runtime:** 5–6 seconds
-**@[product asset] included:** **NO**
-**Visual direction:** Talking-to-camera shot in primary setting. Both hands free, natural gestures. Steady eye contact. No cuts, no environmental shots. Background is just the lived-in setting behind her, not the focus.
-**Continuity notes:** Establishes baseline for the entire video. Lock outfit, hair, lighting, position.
+:::box TOMA 1 — HOOK
+**Contenido de la voz:** Dos frases que llaman a la persona exacta y confirman la frustración específica.
+**Duración estimada:** 5–6 segundos
+**@[asset del producto] incluido:** **NO**
+**Dirección visual:** Toma hablando a cámara en el espacio principal. Ambas manos libres, gestos naturales. Contacto visual sostenido. Sin cortes, sin tomas del entorno. El fondo es solo el espacio habitado detrás, no el foco.
+**Notas de continuidad:** Establece la línea base del video entero. Fija outfit, pelo, luz, posición.
 :::
 
-:::box CHUNK 2 — REFRAME PART 1
-**Voiceover content:** Opens the reframe by naming the wrong things the audience has tried. Sets up the structural-vs-surface distinction.
-**Estimated runtime:** 5–6 seconds
-**@[product asset] included:** **NO**
-**Visual direction:** Same talking-to-camera shot as Chunk 1, with a slight angle shift or subtle camera drift to keep the visuals fresh. Dismissive hand gesture on the list of failed alternatives. Brief unconscious cheek-touch or self-reference if relevant to the product category.
-**Continuity notes:** Same setting as Chunk 1. Same outfit, hair, lighting. Camera move should feel like a natural reframe within one take, not a hard cut to a new location.
+:::box TOMA 2 — REFRAME PARTE 1
+**Contenido de la voz:** Abre el reframe nombrando las cosas equivocadas que la audiencia ya probó. Prepara la distinción estructura-vs-superficie.
+**Duración estimada:** 5–6 segundos
+**@[asset del producto] incluido:** **NO**
+**Dirección visual:** La misma toma a cámara que la toma 1, con un ligero cambio de ángulo o una deriva sutil de cámara para mantener frescura visual. Gesto de mano desestimando la lista de alternativas fallidas. Breve toque inconsciente de mejilla o auto-referencia si es relevante a la categoría.
+**Notas de continuidad:** Mismo espacio que la toma 1. Mismo outfit, pelo, luz. El movimiento de cámara debe sentirse como un reencuadre natural dentro de una misma toma, no como un corte duro a otro lugar.
 :::
 
-:::box CHUNK 3 — REFRAME PART 2 (the structural truth)
-**Voiceover content:** The mechanism reveal: explains why surface attempts physically cannot work, setting up the product as the only viable option.
-**Estimated runtime:** 5–6 seconds
-**@[product asset] included:** **NO — product still has not appeared**
-**Visual direction:** Continuous talking-to-camera. Optional brief gesture indicating the affected area on the creator's body. Dismissive flick on the failed alternatives. No environmental cutaways. No product visibility.
-**Continuity notes:** Same setting, same outfit, same lighting. This is the final beat before the product is introduced — the hook tension peaks here.
+:::box TOMA 3 — REFRAME PARTE 2 (la verdad estructural)
+**Contenido de la voz:** La revelación del mecanismo: explica por qué los intentos de superficie físicamente no pueden funcionar, preparando el producto como la única opción viable.
+**Duración estimada:** 5–6 segundos
+**@[asset del producto] incluido:** **NO — el producto todavía no ha aparecido**
+**Dirección visual:** Continúa hablando a cámara. Gesto breve opcional señalando la zona afectada en el cuerpo del creador. Gesto de descarte sobre las alternativas fallidas. Sin cortes al entorno. Sin visibilidad del producto.
+**Notas de continuidad:** Mismo espacio, mismo outfit, misma luz. Es el beat final antes de introducir el producto — la tensión del hook llega a su pico aquí.
 :::
 
-:::box CHUNK 4 — MECHANISM + PRODUCT REVEAL + APPLICATION
-**Voiceover content:** The product is named, the mechanism is explained in plain language, and the tactile analogy lands here. The most important sentence in the entire script.
-**Estimated runtime:** 8–10 seconds
-**@[product asset] included:** **YES — first appearance, at the exact moment the voiceover names it**
-**Visual direction:** Cut to a new angle motivated by physical movement (creator walks to a counter or surface). Phone propped on the counter, framing steadier with subtle drift. Quick application sequence: tight shot of product in hand, twist open on the word the product is named, macro shot of application across target area, push-in close-up showing the immediate result. Application leaves no visible residue per the application direction block.
-**Continuity notes:** Location shift is motivated and reads as natural movement. Same outfit, hair, lighting. Product matches the reference image exactly.
+:::box TOMA 4 — MECANISMO + REVEAL DEL PRODUCTO + APLICACIÓN
+**Contenido de la voz:** Se nombra el producto, se explica el mecanismo en lenguaje llano, y la analogía táctil aterriza aquí. La frase más importante de todo el guion.
+**Duración estimada:** 8–10 segundos
+**@[asset del producto] incluido:** **SÍ — primera aparición, en el momento exacto en que la voz lo nombra**
+**Dirección visual:** Corte a un ángulo nuevo motivado por movimiento físico (el creador camina a una barra o superficie). Teléfono apoyado en la barra, encuadre más estable con deriva sutil. Secuencia rápida de aplicación: toma cerrada del producto en mano, girar para abrir en la palabra donde se nombra, toma macro de la aplicación en la zona objetivo, push-in a un close-up que muestra el resultado inmediato. La aplicación no deja residuo visible según el bloque de dirección de aplicación.
+**Notas de continuidad:** El cambio de lugar está motivado y se lee como movimiento natural. Mismo outfit, pelo, luz. El producto coincide exactamente con la imagen de referencia.
 :::
 
-:::box CHUNK 5 — PAYOFF + SOFT CTA
-**Voiceover content:** Sensory and specific description of life after the product, followed by the suggestion-style close.
-**Estimated runtime:** 5–6 seconds
-**@[product asset] included:** **NO — closing on the creator's face, not the product**
-**Visual direction:** Return to talking-to-camera shot, ideally bookending the framing of Chunk 1. Soft genuine smile on the payoff line. Subtle downward gesture on the CTA. Both hands free, no posing.
-**Continuity notes:** Match Chunk 1 framing as closely as possible to create the bookend. Same outfit, hair, lighting. The smile should feel earned, not staged.
+:::box TOMA 5 — PAYOFF + CTA SUAVE
+**Contenido de la voz:** Descripción sensorial y específica de la vida después del producto, seguida del cierre estilo sugerencia.
+**Duración estimada:** 5–6 segundos
+**@[asset del producto] incluido:** **NO — se cierra en la cara del creador, no en el producto**
+**Dirección visual:** Regreso a la toma hablando a cámara, idealmente haciendo bookend con el encuadre de la toma 1. Sonrisa suave y genuina en la línea del payoff. Gesto sutil hacia abajo en el CTA. Ambas manos libres, sin posar.
+**Notas de continuidad:** Iguala el encuadre de la toma 1 lo más posible para crear el bookend. Mismo outfit, pelo, luz. La sonrisa debe sentirse ganada, no actuada.
 :::
 
-**Stitching Notes — Full Stack**
+**Notas de cosido — Full Stack**
 
-- Natural seam between Chunk 3 and Chunk 4 — that is where the no-product reframe section transitions to the product reveal section.
-- Chunks 1, 2, 3, and 5 are all talking-to-camera in the primary setting. If any of these generate slightly off, the bookend structure (Chunks 1 and 5 matching) masks small inconsistencies because viewers register the visual symmetry as intentional.
-- Chunk 3 is the easiest to drop or compress if any single chunk fails to generate cleanly. The voiceover line in Chunk 3 can be folded onto the end of Chunk 2 with the visual just being a continued talking-to-camera shot. Keep that as your fallback.
-- Chunk 4 is the hardest to regenerate because it contains the product reveal and application. Plan extra generation time for this chunk.
+- Costura natural entre la toma 3 y la toma 4 — ahí es donde la sección de reframe sin producto transiciona a la sección del reveal.
+- Las tomas 1, 2, 3 y 5 son todas hablando a cámara en el espacio principal. Si alguna genera ligeramente distinta, la estructura bookend (tomas 1 y 5 iguales) enmascara las pequeñas inconsistencias porque el espectador registra la simetría visual como intencional.
+- La toma 3 es la más fácil de soltar o comprimir si una sola toma falla al generar limpia. La línea de voz de la toma 3 puede plegarse al final de la toma 2 con el visual siendo simplemente la continuación hablando a cámara. Mantén eso como tu respaldo.
+- La toma 4 es la más difícil de regenerar porque contiene el reveal del producto y la aplicación. Planea tiempo de generación extra para esta toma.
 
-### 12.4 Animated Infomercial Format — Variable Chunks
+### 12.4 Formato infomercial animado — tomas variables
 
-The animated infomercial uses no creator and is pure product cinematography with voiceover. Because there is no continuity requirement on a human creator across chunks, the chunk count flexes based on script length:
+El infomercial animado no usa creador y es pura cinematografía de producto con voz en off. Como no hay requisito de continuidad sobre un creador humano entre tomas, la cantidad de tomas flexa según la duración del guion:
 
-- **Mid-funnel runtime:** 3–4 chunks aligned to voiceover beats
-- **Full stack runtime:** 5–6 chunks aligned to voiceover beats
+- **Duración mid-funnel:** 3–4 tomas alineadas a los beats de la voz
+- **Duración full stack:** 5–6 tomas alineadas a los beats de la voz
 
-Each chunk in this format covers a distinct visual concept rather than a continuity-locked scene: orbit shot of the product, animated cross-section showing the mechanism, macro application footage, hero shot at the close, etc. Because there is no creator continuity to maintain, the chunks have more visual freedom and the AI can generate each one with different lighting and angle without breaking the video.
+Cada toma en este formato cubre un concepto visual distinto en vez de una escena con candado de continuidad: toma de órbita del producto, corte transversal animado mostrando el mecanismo, material macro de aplicación, toma héroe al cierre, etc. Como no hay continuidad de creador que mantener, las tomas tienen más libertad visual y la IA puede generar cada una con luz y ángulo distintos sin romper el video.
 
-**Animated Infomercial Per-Chunk Field Adjustments**
+**Ajustes de campos por toma para el infomercial animado**
 
-- Replace "Visual direction" with "Cinematography direction" — orbit, dolly, macro, animated cutaway, hero shot.
-- Replace "Continuity notes" with "Aesthetic continuity" — what visual style stays consistent (lighting temperature, color grading, surface materials).
-- @[product asset] inclusion is YES on every chunk because the product is the hero of every shot.
+- Reemplaza "Dirección visual" por "Dirección de cinematografía" — órbita, dolly, macro, corte animado, toma héroe.
+- Reemplaza "Notas de continuidad" por "Continuidad estética" — qué estilo visual se mantiene consistente (temperatura de luz, gradado de color, materiales de superficie).
+- La inclusión de @[asset del producto] es SÍ en todas las tomas porque el producto es el héroe de cada una.
 
-### 12.5 Quick Reference — Chunk Count by Format
+### 12.5 Referencia rápida — tomas por formato
 
-| Format | Runtime | Chunks | Product Asset Pattern |
+| Formato | Duración | Tomas | Patrón del asset del producto |
 | --- | --- | --- | --- |
-| Mid-Funnel Punchy | 18–22 sec | 3 chunks | NO, YES, NO |
-| Full Stack | 28–32 sec | 5 chunks | NO, NO, NO, YES, NO |
-| Animated Infomercial (mid) | 18–22 sec | 3–4 chunks | YES on all chunks |
-| Animated Infomercial (full) | 28–32 sec | 5–6 chunks | YES on all chunks |
+| Mid-Funnel Punchy | 18–22 seg | 3 tomas | NO, SÍ, NO |
+| Full Stack | 28–32 seg | 5 tomas | NO, NO, NO, SÍ, NO |
+| Infomercial animado (mid) | 18–22 seg | 3–4 tomas | SÍ en todas |
+| Infomercial animado (full) | 28–32 seg | 5–6 tomas | SÍ en todas |
 
-### 12.6 Workflow Summary
+### 12.6 Resumen del flujo
 
-To produce a chunked script from scratch:
+Para producir un guion por tomas desde cero:
 
-- **Step 1.** Decide format (mid-funnel or full stack) based on funnel stage.
-- **Step 2.** Write the full voiceover script using the beat structure from Section 5.
-- **Step 3.** Lock the character description and the four universal direction blocks.
-- **Step 4.** Break the voiceover into the chunk count for that format (3 or 5).
-- **Step 5.** Fill in the per-chunk specification template for each chunk.
-- **Step 6.** Generate each chunk separately, regenerating any that fail to land cleanly.
-- **Step 7.** Stitch chunks in post, prioritizing the bookend match between Chunk 1 and the final chunk.
+- **Paso 1.** Decide el formato (mid-funnel o full stack) según la etapa del funnel.
+- **Paso 2.** Escribe el guion completo de la voz con la estructura de beats de la sección 5.
+- **Paso 3.** Fija la descripción del personaje y los cuatro bloques de dirección universales.
+- **Paso 4.** Parte la voz en la cantidad de tomas de ese formato (3 o 5).
+- **Paso 5.** Llena la plantilla de especificación por toma para cada una.
+- **Paso 6.** Genera cada toma por separado, regenerando las que no aterricen limpias.
+- **Paso 7.** Cose las tomas en post, priorizando el bookend entre la toma 1 y la final.
 
-## 13. Captions for Organic Reach
+## 13. Captions para alcance orgánico
 
-Captions on the video post matter as much as the script for reach. Native-feeling captions outperform branded copy.
+Los captions del post importan tanto como el guion para el alcance. Los captions que se sienten nativos rinden más que el copy de marca.
 
-### 13.1 Caption Principles
+### 13.1 Principios de caption
 
-- Lowercase, no over-punctuation, conversational tone
-- One soft emoji maximum, optional
-- No hashtags unless testing shows they help on the platform
-- 1–2 short sentences
-- Does not directly sell — alludes to the topic of the video and lets the video do the work
+- Minúsculas, sin sobre-puntuación, tono conversacional
+- Máximo un emoji suave, opcional
+- Sin hashtags salvo que el testeo demuestre que ayudan en la plataforma
+- 1–2 frases cortas
+- No vende directo — alude al tema del video y deja que el video haga el trabajo
 
-### 13.2 Caption Templates by Variation
+### 13.2 Plantillas de caption por variación
 
-| Variation Type | Template |
+| Tipo de variación | Plantilla |
 | --- | --- |
-| Confessional / Accidental Discovery | "nobody told me ___. wish I had figured this out years ago" |
-| Tested It | "spent way too much money on ___ before I figured out why none of it worked" |
-| Myth Buster | "if you've been ___ thinking it would ___, read this" |
-| Universal | "genuinely did not know this until recently. if you ___ this might explain why nothing's been working for you" |
+| Confesional / Descubrimiento accidental | "nadie me dijo ___. ojalá lo hubiera descubierto hace años" |
+| Lo probé | "gasté demasiado dinero en ___ antes de entender por qué nada funcionaba" |
+| Rompe-mitos | "si has estado ___ pensando que iba a ___, lee esto" |
+| Universal | "de verdad no sabía esto hasta hace poco. si tú ___, esto podría explicar por qué nada te ha funcionado" |
 
-### 13.3 First Comment
+### 13.3 Primer comentario
 
-Drop the actual link in the first comment of the post. Keep the main caption clean. The first comment can be slightly more direct: "linking what I'm using in my bio if anyone wants to check it out."
+Deja el link real en el primer comentario del post. Mantén el caption principal limpio. El primer comentario puede ser un poco más directo: "dejo en mi bio lo que estoy usando por si alguien quiere verlo."
 
-## 14. Testing and Scaling Logic
+## 14. Lógica de testeo y escalado
 
-### 14.1 Initial Test Set
+### 14.1 Set inicial de prueba
 
-Build out a test set of 6–10 scripts before scaling spend. Cover at minimum:
+Construye un set de 6–10 guiones antes de escalar inversión. Cubre como mínimo:
 
-- All five variation types
-- 2–3 different demographic profiles
-- 2–3 different hook frameworks
-- Both formats (mid-funnel and full stack)
-- At least one mass-desire deep pain point angle
+- Los cinco tipos de variación
+- 2–3 perfiles demográficos distintos
+- 2–3 frameworks de hook distintos
+- Ambos formatos (mid-funnel y full stack)
+- Al menos un ángulo de dolor profundo de deseo masivo
 
-### 14.2 What to Watch
+### 14.2 Qué observar
 
-- Watch time and completion rate, not just CTR
-- Cost per click against creative angle
-- Comment sentiment — **specifically: are viewers saying the analogy back to each other? That is the signal that the script is working as intended**
-- Demographic breakdown of who the algorithm is serving each script to
+- Tiempo de visualización y tasa de finalización, no solo CTR
+- Costo por clic contra el ángulo creativo
+- Sentimiento de los comentarios — **específicamente: ¿los espectadores se repiten la analogía entre ellos? Esa es la señal de que el guion está funcionando como se diseñó**
+- Desglose demográfico de a quién le está sirviendo el algoritmo cada guion
 
-### 14.3 When to Cut and When to Scale
+### 14.3 Cuándo cortar y cuándo escalar
 
-:::box KILL CRITERIA
-• Watch time drops in the first 3 seconds — the hook is not working
-• Viewers watch but do not click — the payoff or CTA is weak
+:::box CRITERIOS PARA MATAR
+• El tiempo de visualización cae en los primeros 3 segundos — el hook no está funcionando
+• Ven pero no hacen clic — el payoff o el CTA está débil
 :::
 
-:::box SCALE CRITERIA
-• Comments quote the analogy or the payoff line back — that is product-language fit
-• Once a winner emerges, write hook variations on it before fatigue sets in
+:::box CRITERIOS PARA ESCALAR
+• Los comentarios citan la analogía o la línea del payoff — eso es ajuste producto-lenguaje
+• Cuando emerge un ganador, escribe variaciones de hook sobre él antes de que llegue la fatiga
 :::
 
-### 14.4 Demographic and Setting Variation as Fatigue Defense
+### 14.4 La variación demográfica y de espacios como defensa contra la fatiga
 
-Rotate demographics and settings across the campaign. Same script, different creator and setting, can extend a winning angle by weeks before the audience tires of it.
+Rota demografías y espacios a lo largo de la campaña. El mismo guion, con otro creador y otro espacio, puede extender un ángulo ganador por semanas antes de que la audiencia se canse.
 
-## 15. How to Use This Document
+## 15. Cómo usar este documento
 
-This document deploys in three ways:
+Este documento se despliega de tres maneras:
 
-- **As a system prompt.** Paste sections 1–13 into the system prompt of any LLM. Provide brand variables from section 10 and the desired hook framework, format, variation type, and pain point. The model produces structured output.
-- **As a training reference.** Use as a style guide for human copywriters or contractors. The structure rules apply equally to human-written and AI-written scripts.
-- **As an audit checklist.** Use the failure modes in section 9 and the principles in section 2 to grade any script before approving it for production.
+- **Como system prompt.** Pega las secciones 1–13 en el system prompt de cualquier LLM. Dale las variables de marca de la sección 10 y el framework de hook, formato, tipo de variación y dolor deseados. El modelo produce salida estructurada.
+- **Como referencia de entrenamiento.** Úsalo como guía de estilo para copywriters humanos o contratistas. Las reglas de estructura aplican igual a guiones escritos por humanos o por IA.
+- **Como checklist de auditoría.** Usa los fallos de la sección 9 y los principios de la sección 2 para calificar cualquier guion antes de aprobarlo para producción.
 
-*End of Document — Universal UGC Script Writing System v2*
+*Fin del documento — Sistema de Escritura de Guiones UGC v2 (traducción íntegra al español; el original en inglés se descarga junto a esta versión)*
 </textarea>
 <!-- TRAINING:END -->
     </div>
@@ -1668,7 +1747,7 @@ This document deploys in three ways:
 </section>
 
 <!-- ============ ACCESS (paso a paso) ============ -->
-<section id="access" class="alt" data-name="Acceso" data-step="0">
+<section id="access" class="alt nave" data-name="Acceso" data-step="0" data-gated="EL PASO A PASO DEL OS">
   <div class="inner">
     <div class="kicker" data-rev>Acceso — paso a paso, si quieres que TU sistema produzca esto por ti</div>
     <h2 data-rev>Instala el Content OS. <span class="mark">Después, es un chat.</span></h2>
@@ -1714,6 +1793,11 @@ This document deploys in three ways:
 
 </main>
 
+<footer id="sitefoot">
+  <div class="t">INFINITX — 2026</div>
+  <div class="l"><a href="https://nave.infinitxai.com/">Nave</a> · <a href="https://nave.infinitxai.com/join">The community</a> · <a href="https://nave.infinitxai.com/access">Access</a> · <a href="sistema/">El sistema de guion</a></div>
+</footer>
+
 <div id="viewer" role="dialog" aria-modal="true">
   <div class="vwrap">
     <div class="vtitle" id="vtitle"></div>
@@ -1725,6 +1809,7 @@ This document deploys in three ways:
 
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
+<script src="gate.js"></script>
 <script>
 (function(){
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
