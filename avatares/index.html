@@ -1824,6 +1824,7 @@ Este documento se despliega de tres maneras:
   ptabs.forEach(function(t){ t.addEventListener('click',function(){
     ptabs.forEach(function(x){x.classList.remove('on')}); ppanels.forEach(function(x){x.classList.remove('on')});
     t.classList.add('on'); var p=document.getElementById('p-'+t.dataset.p); if(p) p.classList.add('on');
+    if(window.ScrollTrigger) ScrollTrigger.refresh(); /* la altura de la sección cambia con cada pestaña */
   });});
   document.querySelectorAll('.copy').forEach(function(b){ b.addEventListener('click',function(){
     var el=document.getElementById(b.dataset.copy); if(!el) return;
@@ -1876,6 +1877,16 @@ Este documento se despliega de tres maneras:
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ignoreMobileResize:true});
+  /* el scroll suave nativo pelea con los pins en los saltos de ancla */
+  document.documentElement.style.scrollBehavior='auto';
+
+  /* triggers estables: recalcular cuando la página termina de cargar y cuando
+     cada imagen entra (las alturas cambian y los triggers quedaban corridos) */
+  var refreshQueued;
+  function queueRefresh(){ clearTimeout(refreshQueued); refreshQueued=setTimeout(function(){ ScrollTrigger.refresh(); },150); }
+  window.addEventListener('load', queueRefresh);
+  document.querySelectorAll('img').forEach(function(im){ if(!im.complete) im.addEventListener('load', queueRefresh, {once:true}); });
 
   gsap.to('#xpbar',{width:'100%',ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:.3}});
 
@@ -1893,24 +1904,30 @@ Este documento se despliega de tres maneras:
       }});
   });
 
+  /* el pin del mapa solo corre en desktop; si corre, SUS capas no entran al reveal
+     general (dos animaciones sobre el mismo elemento = el bug de parpadeo/atasco) */
+  var mapPin = matchMedia('(min-width: 980px)').matches;
+
   secs.forEach(function(s){
-    var els = s.querySelectorAll('[data-rev]');
+    var els = Array.prototype.slice.call(s.querySelectorAll('[data-rev]'));
+    if(mapPin && s.id==='map'){ els = els.filter(function(el){ return !el.closest('#layers'); }); }
     if(!els.length) return;
-    gsap.fromTo(els,{autoAlpha:0,y:22},{autoAlpha:1,y:0,duration:.55,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:s,start:'top 62%',once:true}});
+    gsap.fromTo(els,{autoAlpha:0,y:22},{autoAlpha:1,y:0,duration:.55,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:s,start:'top 70%',once:true}});
   });
 
   /* the stack assembles on its own screen */
-  if(matchMedia('(min-width: 980px)').matches){
+  if(mapPin){
     var layers = gsap.utils.toArray('#layers .layer');
-    var tl = gsap.timeline({scrollTrigger:{trigger:'#map',start:'top top',end:'+=700',pin:true,scrub:.8}});
+    var tl = gsap.timeline({scrollTrigger:{trigger:'#map',start:'top top',end:'+=600',pin:true,scrub:.8,anticipatePin:1}});
     layers.forEach(function(p,i){ tl.fromTo(p,{x:-40*(i%2?-1:1),autoAlpha:0},{x:0,autoAlpha:1,duration:.5,ease:'power1.out'}, i*0.08); });
+    tl.to({},{duration:.25}); /* respiro al final del pin para que no suelte en seco */
   }
 
-  /* conveyor: horizontal scrub */
+  /* conveyor: horizontal scrub (solo desktop — en móvil la cinta scrollea con el dedo) */
   var belt=document.getElementById('belt');
-  var over=belt.scrollWidth - belt.parentElement.clientWidth;
-  if(over>40){
-    gsap.to(belt,{x:-over,ease:'none',scrollTrigger:{trigger:'#system',start:'top top',end:'+='+Math.max(over,600),pin:true,scrub:.4}});
+  if(mapPin){
+    var beltST = gsap.to(belt,{x:function(){ return -Math.max(0, belt.scrollWidth - belt.parentElement.clientWidth); },ease:'none',
+      scrollTrigger:{trigger:'#system',start:'top top',end:function(){ return '+='+Math.max(belt.scrollWidth - belt.parentElement.clientWidth, 600); },pin:true,scrub:.4,anticipatePin:1,invalidateOnRefresh:true}});
   }
   ScrollTrigger.sort(); ScrollTrigger.refresh();
 })();
