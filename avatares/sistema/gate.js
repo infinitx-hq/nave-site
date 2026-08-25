@@ -52,7 +52,7 @@
 
   var css = [
     '#pagegate{position:fixed;inset:0;z-index:400;background:#070908;overflow-y:auto}',
-    '#pagegate .bgimg{position:fixed;inset:0;background:url("' + pre + 'media/gate-collage.jpg") center/cover no-repeat;opacity:.34;filter:blur(2px)}',
+    '#pagegate .bgimg{position:fixed;inset:0;background:url("' + pre + 'media/gate-collage.jpg") center/cover no-repeat;opacity:.88}',
     '#pagegate .bgfade{position:fixed;inset:0;background:linear-gradient(100deg,#070908 0%,rgba(7,9,8,.94) 34%,rgba(7,9,8,.55) 62%,rgba(7,9,8,.82) 100%)}',
     '#pagegate .wrap{position:relative;min-height:100%;display:flex;align-items:center;padding:7vh 6vw}',
     '#pagegate .panel{max-width:560px;width:100%}',
