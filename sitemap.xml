@@ -40,4 +40,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://nave.infinitxai.com/comandos/</loc>
+  </url>
 </urlset>
