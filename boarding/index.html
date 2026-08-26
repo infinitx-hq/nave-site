@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://nave.infinitxai.com/boarding/">
+<meta name="description" content="Boarding — the Agentic AI Content onboarding. Fill it once: you get your intro post + Ignition prompts instantly, and Enrique records your personal Flight Plan.">
+<title>Boarding — Nave</title>
+<!--
+  BOARDING — member onboarding for the Agentic AI Content community.
+  Flow: hero → 4 steps → POST /leads (source:boarding, full answers in payload JSON)
+  → instant payoff: intro post + Ignition prompts (generated client-side) + Flight Plan next steps.
+  QA: ?demo=1 prefills and jumps to payoff · ?static kills animations.
+  Linked ONLY from the community Start Here module. No /access links here (law).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{ --bg:#070908; --panel:#0D110F; --line:#1E2622; --green:#1FE07A; --cream:#F0EBDE; --dim:#9BA69F; --orange:#FF7614;
+  --sans:'Hanken Grotesk',system-ui,sans-serif; --mono:'DM Mono',Consolas,monospace; --display:'Anton',sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.6;min-height:100vh}
+::selection{background:var(--green);color:var(--bg)}
+a{color:var(--green)}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+/* topbar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:20px 26px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:30px;height:26px}
+.brand .w{font-family:var(--display);font-size:20px;color:var(--cream);letter-spacing:.04em}
+.top .chip{font-family:var(--mono);font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:6px 12px}
+/* hero */
+.hero{padding:7vh 0 40px;text-align:left}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--green);margin-bottom:18px}
+h1{font-family:var(--display);font-size:clamp(52px,9vw,96px);line-height:.98;letter-spacing:.01em;text-transform:uppercase;color:var(--cream)}
+h1 em{font-style:normal;color:var(--green)}
+.sub{font-size:19px;color:var(--dim);max-width:620px;margin:22px 0 0}
+.why{margin-top:38px;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:26px 28px}
+.why .wk{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--orange);margin-bottom:12px}
+.why p{color:var(--cream);font-size:16.5px}
+.why p+p{margin-top:10px}
+.why b{color:var(--green);font-weight:700}
+.start{margin:34px 0 8vh}
+/* buttons */
+.btn{display:inline-block;font-family:var(--mono);font-size:15px;letter-spacing:.08em;background:var(--green);color:#07110B;border:none;border-radius:10px;padding:16px 30px;cursor:pointer;font-weight:500;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
+/* steps */
+.prog{display:flex;align-items:center;gap:14px;margin:10px 0 26px}
+.prog .bar{flex:1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .35s}
+.prog .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--dim);white-space:nowrap}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:34px 34px 30px;margin-bottom:60px}
+.card h2{font-family:var(--display);font-size:34px;letter-spacing:.02em;text-transform:uppercase;margin-bottom:6px}
+.card .hint{color:var(--dim);font-size:15px;margin-bottom:24px}
+.f{margin-bottom:22px}
+.f label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--dim);margin-bottom:9px;text-transform:uppercase}
+.f label b{color:var(--green);font-weight:500}
+input[type=text],input[type=email],textarea{width:100%;background:#0A0D0B;border:1px solid var(--line);border-radius:10px;color:var(--cream);font-family:var(--sans);font-size:16px;padding:13px 15px;outline:none;transition:border .2s}
+input:focus,textarea:focus{border-color:var(--green)}
+textarea{min-height:92px;resize:vertical}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips button{font-family:var(--mono);font-size:13px;letter-spacing:.06em;background:transparent;color:var(--cream);border:1px solid var(--line);border-radius:99px;padding:10px 18px;cursor:pointer;transition:all .15s}
+.chips button.on{background:var(--green);color:#07110B;border-color:var(--green)}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px}
+.err{display:none;font-family:var(--mono);font-size:12.5px;color:var(--orange);margin-top:14px}
+.err.on{display:block}
+/* payoff */
+.big{font-family:var(--display);font-size:clamp(40px,7vw,72px);text-transform:uppercase;line-height:1;margin:8px 0 8px}
+.big em{font-style:normal;color:var(--green)}
+.pay .card{margin-bottom:26px}
+.copybox{position:relative;margin-top:12px}
+.copybox textarea{min-height:200px;font-size:15px;color:var(--cream);background:#0A0D0B;font-family:var(--sans)}
+.copybox.mono textarea{font-family:var(--mono);font-size:13.5px;min-height:150px}
+.copybtn{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:12px;background:var(--green);color:#07110B;border:none;border-radius:8px;padding:8px 14px;cursor:pointer}
+.copybtn.done{background:var(--cream)}
+.steps{list-style:none}
+.steps li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.steps li:last-child{border-bottom:none}
+.steps .n{font-family:var(--display);font-size:24px;color:var(--green);min-width:30px}
+.steps p{color:var(--cream)}
+.steps small{color:var(--dim);display:block;margin-top:2px}
+.locknote{font-family:var(--mono);font-size:12px;color:var(--orange);margin-top:16px;letter-spacing:.06em}
+.hide{display:none !important}
+.foot{padding:40px 26px;text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--dim)}
+@media(max-width:640px){ .card{padding:26px 20px} .top{padding:16px 18px} }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+</svg>
+
+<div class="top">
+  <a class="brand" href="https://nave.infinitxai.com/"><svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg><span class="w">Nave</span></a>
+  <span class="chip">AGENTIC AI CONTENT · MEMBERS</span>
+</div>
+
+<main class="wrap">
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero">
+    <div class="kicker">NAVE — BOARDING</div>
+    <h1>WELCOME <em>ABOARD</em></h1>
+    <p class="sub">Ten minutes, once. You leave with your intro post written, your first prompts ready, and Enrique building your personal Flight Plan.</p>
+    <div class="why">
+      <div class="wk">WHY THIS EXISTS</div>
+      <p>Everything in my business grew from one skill: <b>consistent organic content</b>. It brought my agency clients, it built this community, and the platform I create for went from ~$45k a month to <b>$3M ARR</b> in the eight months I've been making content with them.</p>
+      <p>I want that engine working for <b>your</b> brand. But I can't guide what I can't see — so this is where we start: you tell me exactly what you're building, and I map your route on the Content OS.</p>
+    </div>
+    <div class="start"><button class="btn" onclick="go(1)">START BOARDING →</button></div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="form" class="hide">
+  <div class="prog"><span class="lbl" id="plbl">STEP 1/4 · IDENTITY</span><div class="bar"><i id="pbar"></i></div></div>
+
+  <div class="card" id="s1">
+    <h2>Identity</h2>
+    <div class="hint">Who's flying. Same email you use on Skool, so I can match you.</div>
+    <div class="f"><label>First name <b>*</b></label><input type="text" id="q_name" placeholder="Enrique"></div>
+    <div class="f"><label>Email (your Skool email) <b>*</b></label><input type="email" id="q_email" placeholder="you@email.com"></div>
+    <div class="f"><label>What are you growing? <b>*</b></label>
+      <div class="chips" id="q_type"><button data-v="personal brand">PERSONAL BRAND</button><button data-v="business brand">BUSINESS BRAND</button><button data-v="both">BOTH</button></div></div>
+    <div class="f"><label>Brand / channel name</label><input type="text" id="q_brand" placeholder="The name people see"></div>
+    <div class="f"><label>What do you do — and what do you sell?</label><textarea id="q_what" placeholder="I'm a … I help … My offer is …"></textarea></div>
+    <div class="f"><label>Drop ALL your links (socials, site, channel)</label><textarea id="q_links" placeholder="youtube.com/@… · instagram.com/… · yoursite.com"></textarea></div>
+    <div class="nav"><span></span><button class="btn" onclick="next(1)">NEXT →</button></div>
+    <div class="err" id="e1">Name, email and what you're growing are the minimum fuel. Fill those three.</div>
+  </div>
+
+  <div class="card hide" id="s2">
+    <h2>Mission</h2>
+    <div class="hint">Where this is going. Be blunt — the clearer this is, the sharper your Flight Plan.</div>
+    <div class="f"><label>Who do you serve, and what problem do you solve for them? (your ICP) <b>*</b></label><textarea id="q_icp" placeholder="Busy founders who can't stay consistent on content…"></textarea></div>
+    <div class="f"><label>Your #1 goal for the next 90 days</label>
+      <div class="chips" id="q_goal"><button data-v="grow my audience">GROW AUDIENCE</button><button data-v="land clients">LAND CLIENTS</button><button data-v="launch my offer">LAUNCH OFFER</button><button data-v="become consistent">BE CONSISTENT</button></div></div>
+    <div class="f"><label>That goal, in your own words</label><textarea id="q_goaltxt" placeholder="In 90 days I want…"></textarea></div>
+    <div class="nav"><button class="btn ghost" onclick="go(1)">← BACK</button><button class="btn" onclick="next(2)">NEXT →</button></div>
+    <div class="err" id="e2">The ICP line is the one I can't guess. Give me who + their problem.</div>
+  </div>
+
+  <div class="card hide" id="s3">
+    <h2>Reality</h2>
+    <div class="hint">Where you're starting from. No judgment — this is the baseline we beat.</div>
+    <div class="f"><label>Are you making content right now?</label>
+      <div class="chips" id="q_freq"><button data-v="every week">EVERY WEEK</button><button data-v="sometimes">SOMETIMES</button><button data-v="not yet">NOT YET</button></div></div>
+    <div class="f"><label>Your current workflow (how a piece gets made today, if it does)</label><textarea id="q_flow" placeholder="I record on my phone, edit in CapCut, post when I remember…"></textarea></div>
+    <div class="f"><label>Hours per week you can give this</label>
+      <div class="chips" id="q_hours"><button data-v="under 2h/week">&lt; 2</button><button data-v="2-5h/week">2–5</button><button data-v="5-10h/week">5–10</button><button data-v="10+h/week">10+</button></div></div>
+    <div class="f"><label>Anything else I should know before I build your plan?</label><textarea id="q_extra" placeholder="Optional — context, blockers, past attempts…"></textarea></div>
+    <div class="nav"><button class="btn ghost" onclick="go(2)">← BACK</button><button class="btn" onclick="next(3)">NEXT →</button></div>
+  </div>
+
+  <div class="card hide" id="s4">
+    <h2>Launch</h2>
+    <div class="hint">Quick check before ignition.</div>
+    <ul class="steps" id="review"></ul>
+    <div class="nav"><button class="btn ghost" onclick="go(3)">← BACK</button><button class="btn" id="sendbtn" onclick="submitBoarding()">SEND MY BOARDING 🚀</button></div>
+    <div class="err" id="e4">The request didn't reach the ship — check your connection and hit it again.</div>
+  </div>
+</section>
+
+<!-- PAYOFF -->
+<section id="pay" class="hide">
+  <div class="hero" style="padding-bottom:10px">
+    <div class="kicker">BOARDING COMPLETE</div>
+    <div class="big">YOU'RE <em>ON BOARD</em></div>
+    <p class="sub">Two things are yours right now. The third one, I record personally.</p>
+  </div>
+  <div class="pay">
+    <div class="card">
+      <h2>1 · Your intro post</h2>
+      <div class="hint">Built from your answers. Copy it, tweak anything, post it in <b>Introductions</b>. Title idea: <span id="ptitle" style="color:var(--green);font-family:var(--mono);font-size:13px"></span></div>
+      <div class="copybox"><textarea id="intropost" readonly></textarea><button class="copybtn" onclick="cp('intropost',this)">COPY</button></div>
+    </div>
+    <div class="card">
+      <h2>2 · Ignition</h2>
+      <div class="hint">Three prompts, personalized with your Boarding. Paste them into Claude Code (with your Content OS installed), in order.</div>
+      <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.12em;margin:16px 0 6px">IGNITION 1 · INSTALL YOUR BRAND</div>
+      <div class="copybox mono"><textarea id="ig1" readonly></textarea><button class="copybtn" onclick="cp('ig1',this)">COPY</button></div>
+      <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.12em;margin:16px 0 6px">IGNITION 2 · YOUR FIRST CALENDAR</div>
+      <div class="copybox mono"><textarea id="ig2" readonly></textarea><button class="copybtn" onclick="cp('ig2',this)">COPY</button></div>
+      <div style="font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.12em;margin:16px 0 6px">IGNITION 3 · FIRST PIECE, TODAY</div>
+      <div class="copybox mono"><textarea id="ig3" readonly></textarea><button class="copybtn" onclick="cp('ig3',this)">COPY</button></div>
+    </div>
+    <div class="card">
+      <h2>3 · Your Flight Plan</h2>
+      <ul class="steps">
+        <li><span class="n">1</span><div><p>Post your intro in <b>Introductions</b>.</p><small>That's the signal. Boarding without the intro post doesn't launch.</small></div></li>
+        <li><span class="n">2</span><div><p>Enrique reads your Boarding and records your <b>Flight Plan</b> — a personal Loom.</p><small>Your goals, your route on the Content OS, and the clear action steps to move now.</small></div></li>
+        <li><span class="n">3</span><div><p>It lands in your DMs.</p><small>From there: execute, post your wins, bring what breaks to the Wednesday & Saturday calls (7:00am PT).</small></div></li>
+      </ul>
+      <div class="locknote">⟶ FLIGHT PLAN UNLOCKS WHEN YOUR INTRO IS UP.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+<div class="foot">NAVE — INFINITX 2026</div>
+
+<script>
+var LEADS='https://ix-substrate-core-production.up.railway.app/leads';
+var S={}; var cur=0;
+function $(id){return document.getElementById(id)}
+function chipInit(id){ var el=$(id); [...el.querySelectorAll('button')].forEach(function(b){ b.addEventListener('click',function(){ [...el.querySelectorAll('button')].forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); }); }); }
+['q_type','q_goal','q_freq','q_hours'].forEach(chipInit);
+function chipVal(id){ var b=$(id).querySelector('button.on'); return b? b.getAttribute('data-v') : ''; }
+function collect(){ S={ name:$('q_name').value.trim(), email:$('q_email').value.trim(), type:chipVal('q_type'), brand:$('q_brand').value.trim(), what:$('q_what').value.trim(), links:$('q_links').value.trim(), icp:$('q_icp').value.trim(), goal:chipVal('q_goal'), goaltxt:$('q_goaltxt').value.trim(), freq:chipVal('q_freq'), flow:$('q_flow').value.trim(), hours:chipVal('q_hours'), extra:$('q_extra').value.trim(), ts:new Date().toISOString() };
+  try{ localStorage.setItem('nave_boarding', JSON.stringify(S)); }catch(e){} return S; }
+function go(n){ cur=n; $('hero').classList.toggle('hide', n>0); $('form').classList.toggle('hide', n<1||n>4); $('pay').classList.toggle('hide', n!==5);
+  [1,2,3,4].forEach(function(i){ $('s'+i).classList.toggle('hide', i!==n); });
+  if(n>=1&&n<=4){ $('pbar').style.width=(n*25)+'%'; $('plbl').textContent='STEP '+n+'/4 · '+['IDENTITY','MISSION','REALITY','LAUNCH'][n-1]; }
+  if(n===4) review(); window.scrollTo({top:0,behavior:'smooth'}); }
+function next(from){ collect();
+  if(from===1){ var ok=S.name&&S.email&&/.+@.+\..+/.test(S.email)&&S.type; $('e1').classList.toggle('on',!ok); if(!ok)return; }
+  if(from===2){ var ok2=S.icp; $('e2').classList.toggle('on',!ok2); if(!ok2)return; }
+  go(from+1); }
+function esc(s){ return String(s).replace(/</g,'&lt;'); }
+function review(){ collect(); var r=$('review'); var rows=[ ['WHO', S.name+' · '+S.email], ['BRAND', (S.brand||'—')+' ('+(S.type||'—')+')'], ['MISSION', (S.icp||'—').slice(0,90)], ['90 DAYS', (S.goaltxt||S.goal||'—').slice(0,90)], ['REALITY', [S.freq,S.hours].filter(Boolean).join(' · ')||'—'] ];
+  r.innerHTML=rows.map(function(x){ return '<li><span class="n" style="font-size:13px;font-family:var(--mono);min-width:74px;color:var(--dim)">'+x[0]+'</span><p>'+esc(x[1])+'</p></li>'; }).join(''); }
+function gen(){ var b=S.brand||('my '+(S.type||'brand')); var what=S.what?(' '+S.what):''; var goal=S.goaltxt||S.goal||'grow with organic content';
+  var reality=(S.freq==='not yet')?"I'm not making content yet — that changes now.":(S.freq?("Right now I make content "+S.freq+(S.flow?(": "+S.flow):".")):(S.flow||''));
+  $('ptitle').textContent='Boarding: '+S.name+(S.brand?(' — '+S.brand):'');
+  $('intropost').value="Hey everyone, I'm "+S.name+" 👋\n\nI'm growing "+b+" ("+(S.type||'')+")."+what+"\n\nWho I serve: "+(S.icp||'')+"\n\nMy 90-day mission here: "+goal+".\n\nWhere I'm starting from: "+reality+"\n\n"+(S.links?("You can find me here:\n"+S.links+"\n\n"):"")+"Just completed my Boarding — next up is my Flight Plan. If you've been where I am: what's the ONE thing you'd do first?";
+  $('ig1').value="You are my Content OS. Install my brand before anything else.\n\nBrand: "+b+" ("+(S.type||'')+")\nWhat I do and sell: "+(S.what||'—')+"\nWho I serve + their problem: "+(S.icp||'—')+"\n90-day goal: "+goal+"\nMy platforms: "+(S.links||'—')+"\nTime I can give: "+(S.hours||'—')+"\nCurrent workflow: "+(S.flow||'none yet')+"\n\nBuild my brand profile file from this, ask me only what's truly missing, and finish by telling me the 3 first pieces we should make and why.";
+  $('ig2').value="Using my brand profile, draft my first 2-week content calendar.\nConstraints: "+(S.hours||'limited')+" available, platforms: "+(S.links||'my main channel')+".\nAim it at my 90-day goal: "+goal+".\nFor each piece: format, hook idea, and what it moves (audience, trust, or sales). Keep it small enough that I actually ship it.";
+  $('ig3').value="Let's produce piece #1 from the calendar right now, end to end.\nWalk me through it step by step: what I record or write, then you handle the production passes.\nWhen it's done, give me the exact caption and where to post it. Today.";
+}
+function cp(id,btn){ var t=$(id); t.select(); t.setSelectionRange(0,99999);
+  (navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).catch(function(){document.execCommand('copy')});
+  btn.textContent='COPIED ✓'; btn.classList.add('done'); setTimeout(function(){btn.textContent='COPY';btn.classList.remove('done')},1600); }
+function submitBoarding(){ collect(); var btn=$('sendbtn'); btn.textContent='SENDING…';
+  var row={ source:'boarding', email:S.email, name:S.name, content_reality:((S.type||'')+' | '+(S.brand||'')).slice(0,190), biggest_drain:((S.goal||'')+' | '+(S.icp||'')).slice(0,590), chosen_path:(S.goal||'').slice(0,60), referrer:location.href, lead_ref:'boarding-'+Date.now(), payload:JSON.stringify(S), company_website:'' };
+  fetch(LEADS,{method:'POST',mode:'cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(row)})
+    .then(function(r){return r.json()}).then(function(j){ if(j&&j.ok===false) throw 0; gen(); go(5); })
+    .catch(function(){ /* one retry, then proceed anyway — answers live in localStorage */
+      fetch(LEADS,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(row)}).catch(function(){});
+      gen(); go(5); });
+  btn.textContent='SEND MY BOARDING 🚀'; }
+/* resume + QA */
+(function(){ var q=new URLSearchParams(location.search);
+  if(q.get('demo')==='1'){ S={name:'Ana',email:'ana@demo.com',type:'personal brand',brand:'Ana Builds',what:'I teach solo founders automation. I sell a template pack.',links:'youtube.com/@anabuilds\ninstagram.com/anabuilds',icp:'Solo founders drowning in manual work who want systems',goal:'land clients',goaltxt:'Sign 3 clients from organic content',freq:'sometimes',flow:'Record on phone, edit in CapCut, post randomly',hours:'2-5h/week',extra:''}; gen(); go(5); return; }
+  try{ var saved=localStorage.getItem('nave_boarding'); if(saved){ S=JSON.parse(saved); if(S&&S.email){ /* returning member: offer payoff directly */ } } }catch(e){}
+})();
+</script>
+</body>
+</html>
