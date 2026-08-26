@@ -11,8 +11,10 @@
   var LKEY = 'nave_comandos_lang';
   var ENDPOINT = 'https://ix-substrate-core-production.up.railway.app/leads';
   var q = location.search;
-  var force = q.indexOf('locked=1') > -1;
-  var skip = !force && (q.indexOf('static') > -1 || q.indexOf('unlocked=1') > -1);
+  var qp = new URLSearchParams(q);
+  /* OJO: 'unlocked=1' CONTIENE la subcadena 'locked=1' — nunca usar indexOf aquí */
+  var force = qp.get('locked') === '1';
+  var skip = !force && (qp.has('static') || qp.get('unlocked') === '1');
   var unlocked = skip;
   try { unlocked = unlocked || !!localStorage.getItem(KEY); } catch (e) {}
   if (unlocked && !force) return;
