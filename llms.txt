@@ -22,6 +22,10 @@ Your own Claude Code (your Claude subscription — no separate Anthropic API key
 ## Proof
 500k+ organic views in the founder's last 6 months were produced by this OS. The nave.infinitxai.com site itself — copy, pages, emails — is produced by the system it describes. (Results shown are the founder's own. Not typical, and not a guarantee.)
 
+## The machines (public presentations)
+- The Faceless Machine — a YouTube channel with no face, no camera, no editor: eight stations from idea to upload-ready video, three decisions, one chat. EN https://nave.infinitxai.com/faceless/ · ES https://nave.infinitxai.com/faceless/es/
+- The Avatar Machine — UGC ads with an AI presenter for local businesses: https://nave.infinitxai.com/avatares/
+
 ## Links
 - Start (free playbook): https://nave.infinitxai.com/
 - The community (main offer): https://nave.infinitxai.com/join

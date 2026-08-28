@@ -1,0 +1,58 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nave">
+  <defs>
+    <radialGradient id="beam" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#FF7614" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#FF7614" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFC58A"/>
+      <stop offset="100%" stop-color="#FFA559"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF8A33"/>
+      <stop offset="55%" stop-color="#FF7614"/>
+      <stop offset="100%" stop-color="#D85C0C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- tractor beam -->
+  <path d="M188 280 L324 280 L404 470 L108 470 Z" fill="url(#beam)"/>
+
+  <!-- little sparkle stars -->
+  <g fill="#FFB877">
+    <path d="M96 150 l6 14 14 6 -14 6 -6 14 -6 -14 -14 -6 14 -6 z"/>
+    <path d="M420 110 l5 11 11 5 -11 5 -5 11 -5 -11 -11 -5 11 -5 z"/>
+  </g>
+
+  <!-- saucer body -->
+  <ellipse cx="256" cy="276" rx="172" ry="52" fill="url(#body)"/>
+  <ellipse cx="256" cy="266" rx="172" ry="46" fill="#FF7614"/>
+
+  <!-- rim window-lights -->
+  <g fill="#FFE9D2">
+    <circle cx="150" cy="276" r="9"/>
+    <circle cx="205" cy="289" r="9"/>
+    <circle cx="256" cy="293" r="9"/>
+    <circle cx="307" cy="289" r="9"/>
+    <circle cx="362" cy="276" r="9"/>
+  </g>
+
+  <!-- dome (the cabin) -->
+  <path d="M158 250 a98 86 0 0 1 196 0 z" fill="url(#dome)"/>
+  <!-- glass highlight -->
+  <path d="M196 232 a56 46 0 0 1 70 -34 c-34 -4 -62 14 -70 34 z" fill="#FFFFFF" fill-opacity="0.45"/>
+
+  <!-- cute alien eyes peeking -->
+  <g fill="#3A2410">
+    <ellipse cx="232" cy="206" rx="11" ry="14"/>
+    <ellipse cx="280" cy="206" rx="11" ry="14"/>
+  </g>
+  <g fill="#FFFFFF">
+    <circle cx="235" cy="201" r="3.4"/>
+    <circle cx="283" cy="201" r="3.4"/>
+  </g>
+
+  <!-- antenna + infinity beacon (INFINITX nod) -->
+  <line x1="256" y1="164" x2="256" y2="134" stroke="#D85C0C" stroke-width="6" stroke-linecap="round"/>
+  <path d="M243 128 a8 8 0 1 1 13 6 a8 8 0 1 0 13 6" fill="none" stroke="#FF7614" stroke-width="6" stroke-linecap="round"/>
+</svg>
