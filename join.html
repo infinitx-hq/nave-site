@@ -68,6 +68,11 @@
   .herosub b{color:var(--cream)}
   .heroctas-c{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:26px}
   .btn-big{font-size:14.5px;padding:18px 34px}
+  /* ── Skool CTA (directiva 08-28: logo oficial con su blanco y sus colores) ── */
+  .btn-skool{background:#FFFFFF;color:#111;border:1px solid #FFFFFF;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(255,255,255,.10)}
+  .btn-skool:hover{background:#F4F2ED;border-color:#F4F2ED;color:#111}
+  .btn-skool img{height:22px;width:auto;display:block;transform:translateY(1px)}
+  .btn-skool.btn-sm img{height:15px}
   /* the ship flying — thruster + streaking stars */
   .ship{position:relative;width:66px;margin:0 auto;animation:shiphover 3.2s ease-in-out infinite alternate}
   @keyframes shiphover{0%{transform:translateY(0)}100%{transform:translateY(-7px)}}
@@ -385,7 +390,7 @@
     <h1><span class="rise" style="--rd:.2s;display:block">Systematize your <em>content production</em></span><span class="rise" style="--rd:.32s;display:block">with <em>AI agents.</em></span></h1>
     <p class="herosub rise" style="--rd:.46s">A community dedicated to building <b>agentic systems around content production</b> — and to the Content OS that takes over your whole production process, built on <img src="assets/claude-code-dark.svg" alt="Claude Code" style="height:15px;width:auto;vertical-align:-3px"> <b>You direct it. They produce.</b></p>
     <div class="heroctas-c rise" style="--rd:.58s">
-      <a class="btn btn-big" data-cta="JOIN" href="#final">Be part of the community →</a>
+      <a class="btn btn-big btn-skool" data-cta="JOIN" href="#final">Join on <img src="assets/logos/skool.svg" alt="Skool"> →</a>
       <a class="btn btn-ghost" href="#math">See it run ↓</a>
     </div>
     <span class="micro rise" style="--rd:.68s;display:block;margin-top:14px">Your voice and your style, built in — <b>a rule the agents can't break.</b></span>
@@ -523,7 +528,7 @@
       <img src="assets/logos/hyperframes.svg" alt="Hyperframes">
       <img src="assets/logos/zernio.png" alt="Zernio">
       <img src="assets/logos/kie.png" alt="Kie.ai">
-      <span class="skool">skool</span>
+      <img src="assets/logos/skool.svg" alt="Skool" style="height:18px;opacity:.95">
     </div>
     <p class="micro" style="text-align:center">Claude Code is Anthropic's AI agent for your own computer. Plain English, no coding. Works with Codex too.</p>
   </div>
@@ -643,7 +648,7 @@
     <h2 class="finalposter">Be part of<span class="ln2">the community.</span></h2>
     <p class="sub" style="max-width:500px;margin:18px auto 0">The system, the training, the calls, the support, the room — built to compound, month after month.</p>
     <div class="ctablock" style="margin-top:26px">
-      <a class="btn btn-big" data-cta="JOIN" href="#final">Join Agentic AI Content →</a>
+      <a class="btn btn-big btn-skool" data-cta="JOIN" href="#final">Join Agentic AI Content on <img src="assets/logos/skool.svg" alt="Skool"> →</a>
     </div>
   </div>
 </section>
@@ -670,7 +675,7 @@
 
 <div id="ctabar"><div class="wrap">
   <span class="t">Agentic AI Content — founding window open · your whole content production, systematized</span>
-  <a class="btn" data-cta="JOIN" href="#final">Join →</a>
+  <a class="btn btn-skool btn-sm" data-cta="JOIN" href="#final">Join on <img src="assets/logos/skool.svg" alt="Skool"> →</a>
 </div></div>
 
 <footer style="padding:36px 0 110px"><div class="wrap">
