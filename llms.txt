@@ -29,6 +29,8 @@ Your own Claude Code (your Claude subscription — no separate Anthropic API key
 ## Links
 - Start (free playbook): https://nave.infinitxai.com/
 - The community (main offer): https://nave.infinitxai.com/join
+- The Nave Vault (machine library + unlock schedule): https://nave.infinitxai.com/vault
+- About Enrique (the operator behind Nave): https://nave.infinitxai.com/about
 - Done for you (custom build): https://nave.infinitxai.com/done-for-you
 - Apply (30-second routing): https://nave.infinitxai.com/apply
 - Terms & refunds: https://nave.infinitxai.com/terms.html

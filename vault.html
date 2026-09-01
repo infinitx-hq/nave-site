@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Nave Vault — the machine library inside Agentic AI Content</title>
+<meta name="description" content="Nave is the Content OS that lives inside the Agentic AI Content community — a machine library that unlocks as you stay. See what's in the vault and when each machine opens.">
+<link rel="canonical" href="https://nave.infinitxai.com/vault">
+<meta name="theme-color" content="#070908">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nave">
+<meta property="og:title" content="The Nave Vault — the machine library inside the community">
+<meta property="og:description" content="What Nave is, what it does, and when each machine unlocks. The OS lives only inside the community.">
+<meta property="og:url" content="https://nave.infinitxai.com/vault">
+<meta property="og:image" content="https://nave.infinitxai.com/assets/og.png">
+<link rel="icon" type="image/svg+xml" href="assets/nave-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Hanken+Grotesk:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+
+<style>
+  /* ── hero ── */
+  .vhero{position:relative;overflow:hidden;padding:64px 0 56px;text-align:center}
+  .vhero h1{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(32px,5.2vw,72px);line-height:1.04;letter-spacing:.008em;margin:20px 0 0;color:var(--cream)}
+  .vhero h1 em{font-style:normal;color:var(--ink)}
+  .rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--rd,0s)}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  .badgechip{display:inline-flex;gap:14px;align-items:center;border:1px solid var(--line);background:rgba(15,21,17,.7);backdrop-filter:blur(8px);padding:9px 16px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50)}
+  .badgechip b{color:var(--ink);font-weight:500}
+  .herosub{font-family:'DM Mono',monospace;font-size:13.5px;line-height:1.9;color:var(--cream-72);max-width:620px;margin:22px auto 0}
+  .herosub b{color:var(--cream)}
+  .star{position:absolute;width:2px;height:7px;background:var(--cream-50);opacity:.2;animation:fall var(--td,5s) linear infinite}
+  @keyframes fall{0%{transform:translateY(-40px);opacity:0}12%{opacity:.4}88%{opacity:.35}100%{transform:translateY(140px);opacity:0}}
+  .ship{position:relative;width:66px;margin:0 auto;animation:shiphover 3.2s ease-in-out infinite alternate}
+  @keyframes shiphover{0%{transform:translateY(0)}100%{transform:translateY(-7px)}}
+  .ship svg{width:66px;height:58px;filter:drop-shadow(0 0 18px rgba(31,224,122,.5))}
+  .btn-skool{background:#FFFFFF;color:#111;border:1px solid #FFFFFF;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(255,255,255,.10)}
+  .btn-skool:hover{background:#F4F2ED;border-color:#F4F2ED;color:#111}
+  .btn-skool img{height:22px;width:auto;display:block;transform:translateY(1px)}
+  .btn-big{font-size:14.5px;padding:18px 34px}
+  .ph{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(26px,3.8vw,48px);line-height:1.04;color:var(--cream);margin:10px 0 0}
+  .ph i{font-style:normal;color:var(--ink)}
+  /* ── what nave is — three panes ── */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+  @media(max-width:860px){.three{grid-template-columns:1fr}}
+  .wcard{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.05),rgba(15,21,17,.62));padding:24px 26px;transition:border-color .2s}
+  .wcard:hover{border-color:var(--line-strong)}
+  .wcard::before{content:"";position:absolute;top:-1px;left:-1px;width:11px;height:11px;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+  .wcard .wk{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+  .wcard h3{font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:17.5px;color:var(--cream);margin:12px 0 8px}
+  .wcard p{margin:0;font-size:14px;line-height:1.6;color:var(--cream-72)}
+  .onlyline{text-align:center;margin-top:26px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-50)}
+  .onlyline b{color:var(--ink)}
+  /* ── the vault library ── */
+  .vaultgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+  @media(max-width:860px){.vaultgrid{grid-template-columns:1fr}}
+  .mcrate{position:relative;border:1px solid var(--line);background:#0c0f0d;overflow:hidden;transition:border-color .2s}
+  .mcrate:hover{border-color:var(--line-strong)}
+  .mcrate::before{content:"";position:absolute;top:-1px;left:-1px;width:11px;height:11px;border-top:2px solid var(--ink);border-left:2px solid var(--ink);z-index:2}
+  .mcrate::after{content:"";position:absolute;bottom:-1px;right:-1px;width:11px;height:11px;border-bottom:2px solid var(--ink);border-right:2px solid var(--ink);z-index:2}
+  .mhead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .mhead .nm{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:19px;letter-spacing:.02em;color:var(--cream)}
+  .mhead .st{display:inline-flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+  .mhead .st svg{width:11px;height:13px;display:block}
+  /* the blurred manifest — you see there's substance, you can't read it */
+  .mblur{position:relative;padding:16px 18px;min-height:118px}
+  .mblur .lines{filter:blur(6px);opacity:.75;user-select:none;pointer-events:none;font-family:'DM Mono',monospace;font-size:12px;line-height:2;color:var(--ink-soft);white-space:pre-wrap}
+  .mblur .lockover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:radial-gradient(ellipse at 50% 50%,rgba(7,9,8,.25),rgba(7,9,8,.62))}
+  .mblur .lockover svg{width:26px;height:32px;filter:drop-shadow(0 0 12px rgba(31,224,122,.55))}
+  .mblur .lockover span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink)}
+  .mdesc{padding:14px 18px 6px;font-size:14px;line-height:1.6;color:var(--cream-72);margin:0}
+  .mdesc b{color:var(--cream)}
+  .munlock{display:flex;align-items:center;gap:9px;margin:10px 16px 14px;border:1px dashed var(--line);padding:9px 12px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-50)}
+  .munlock b{color:var(--ink);font-weight:500}
+  .munlock .key{width:12px;height:14px;flex:none}
+  /* coming crates */
+  .coming{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+  @media(max-width:960px){.coming{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.coming{grid-template-columns:1fr}}
+  .ccrate{border:1px dashed var(--line);background:rgba(12,15,13,.6);padding:16px 16px 14px;transition:border-color .2s}
+  .ccrate:hover{border-color:var(--line-strong)}
+  .ccrate .ck{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-50)}
+  .ccrate h4{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:15.5px;color:var(--cream-72);margin:8px 0 0;letter-spacing:.02em}
+  .backnote{margin-top:14px;text-align:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--cream-50)}
+  .backnote b{color:var(--ink)}
+  /* ── how it unlocks ── */
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+  @media(max-width:860px){.plans{grid-template-columns:1fr}}
+  .plan{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,rgba(31,224,122,.04),rgba(15,21,17,.62));padding:26px 28px}
+  .plan.hot{border-color:var(--line-strong);background:linear-gradient(180deg,rgba(31,224,122,.09),rgba(15,21,17,.7))}
+  .plan .pk{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+  .plan h3{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;font-size:24px;color:var(--cream);margin:10px 0 14px}
+  .plan ul{list-style:none;margin:0;padding:0}
+  .plan li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.6;color:var(--cream-72);margin-bottom:9px}
+  .plan li::before{content:"";position:absolute;left:2px;top:8px;width:7px;height:7px;background:var(--ink)}
+  .plan li b{color:var(--cream)}
+  .trialline{margin-top:22px;text-align:center;font-family:'DM Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:var(--cream-50);line-height:1.9}
+  .trialline b{color:var(--cream)}
+  /* final */
+  .finalposter{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(36px,5.6vw,72px);line-height:1;color:var(--cream);margin:14px 0 0}
+  .finalposter .ln2{display:block;color:var(--ink)}
+  @media(max-width:640px){
+    .badgechip{flex-wrap:wrap;justify-content:center;row-gap:2px;max-width:94%;font-size:10.5px;letter-spacing:.07em;text-align:center}
+    .vhero h1{font-size:clamp(28px,8.6vw,36px)}
+    .herosub{font-size:12.5px;padding:0 2px}
+    .btn-big{width:min(100%,340px);text-align:center;justify-content:center}
+    .mhead{flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="px-ship" viewBox="0 0 512 448"><rect x="224" y="96" width="32" height="32"/><rect x="256" y="96" width="32" height="32"/><rect x="192" y="128" width="32" height="32"/><rect x="224" y="128" width="32" height="32"/><rect x="256" y="128" width="32" height="32"/><rect x="288" y="128" width="32" height="32"/><rect x="128" y="160" width="32" height="32"/><rect x="160" y="160" width="32" height="32"/><rect x="192" y="160" width="32" height="32"/><rect x="224" y="160" width="32" height="32"/><rect x="256" y="160" width="32" height="32"/><rect x="288" y="160" width="32" height="32"/><rect x="320" y="160" width="32" height="32"/><rect x="352" y="160" width="32" height="32"/><rect x="64" y="192" width="32" height="32"/><rect x="96" y="192" width="32" height="32"/><rect x="128" y="192" width="32" height="32"/><rect x="160" y="192" width="32" height="32"/><rect x="192" y="192" width="32" height="32"/><rect x="224" y="192" width="32" height="32"/><rect x="256" y="192" width="32" height="32"/><rect x="288" y="192" width="32" height="32"/><rect x="320" y="192" width="32" height="32"/><rect x="352" y="192" width="32" height="32"/><rect x="384" y="192" width="32" height="32"/><rect x="416" y="192" width="32" height="32"/><rect x="128" y="224" width="32" height="32"/><rect x="160" y="224" width="32" height="32"/><rect x="224" y="224" width="32" height="32"/><rect x="256" y="224" width="32" height="32"/><rect x="320" y="224" width="32" height="32"/><rect x="352" y="224" width="32" height="32"/><rect x="224" y="288" width="32" height="32" opacity=".4"/><rect x="256" y="288" width="32" height="32" opacity=".4"/></symbol>
+  <symbol id="px-lock" viewBox="0 0 16 20">
+    <rect x="4" y="0" width="8" height="2"/><rect x="3" y="2" width="2" height="5"/><rect x="11" y="2" width="2" height="5"/>
+    <rect x="1" y="8" width="14" height="11"/>
+    <rect x="7" y="11" width="2" height="2" fill="#070908"/><rect x="7" y="13" width="2" height="3" fill="#070908"/>
+  </symbol>
+  <symbol id="px-key" viewBox="0 0 20 16">
+    <rect x="1" y="4" width="6" height="6"/><rect x="3" y="6" width="2" height="2" fill="#070908"/>
+    <rect x="7" y="6" width="11" height="2"/><rect x="14" y="8" width="2" height="3"/><rect x="17" y="8" width="2" height="4"/>
+  </symbol>
+</svg>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="/">
+    <svg viewBox="0 0 512 448" aria-label="Nave" fill="#1FE07A"><use href="#px-ship"/></svg>
+    <span class="w">Nave</span>
+  </a>
+  <div class="links">
+    <a href="/join">The community</a>
+    <a href="/about">About</a>
+  </div>
+</nav></div></header>
+
+<main>
+<section class="vhero">
+  <i class="star" style="top:6%;left:18%;--td:4.2s;animation-delay:.3s"></i><i class="star" style="top:2%;left:38%;--td:5.2s"></i>
+  <i class="star" style="top:8%;left:62%;--td:4.6s;animation-delay:1.2s"></i><i class="star" style="top:4%;left:82%;--td:5.6s;animation-delay:.7s"></i>
+  <i class="star" style="top:12%;left:28%;--td:6s;animation-delay:2s"></i><i class="star" style="top:10%;left:72%;--td:4.4s;animation-delay:1.6s"></i>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="ship" aria-hidden="true"><svg viewBox="0 0 512 448" fill="#1FE07A"><use href="#px-ship"/></svg></div>
+    <span class="badgechip rise" style="--rd:.1s;margin-top:18px"><b>THE NAVE VAULT</b> // THE MACHINE LIBRARY INSIDE</span>
+    <h1><span class="rise" style="--rd:.2s;display:block">Every machine <em>in the ship.</em></span><span class="rise" style="--rd:.32s;display:block">Locked until <em>you're aboard.</em></span></h1>
+    <p class="herosub rise" style="--rd:.46s"><b>Nave</b> is the Content OS at the center of the Agentic AI Content community — a growing library of <b>machines</b>: complete production systems you install once and own. This page shows what's in the vault and when each one opens.</p>
+    <div class="rise" style="--rd:.58s;margin-top:26px">
+      <a class="btn btn-big btn-skool" data-cta="JOIN" href="/join">Unlock it on <img src="assets/logos/skool.svg" alt="Skool"> →</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ══ WHAT NAVE IS ══ -->
+<section id="what">
+  <div class="wrap">
+    <span class="eyebrow">First — what Nave is</span>
+    <h2 class="ph">Your content department, <i>in a terminal.</i></h2>
+    <div class="three">
+      <div class="wcard">
+        <span class="wk">What it is</span>
+        <h3>A Content OS you install and own</h3>
+        <p>Nave runs on <b>Claude Code</b>, on your machine. Not SaaS, not a subscription to software — a working system of agents covering every stage of production, from research to publishing. It installs per brand, with your voice and rules written in.</p>
+      </div>
+      <div class="wcard">
+        <span class="wk">What it's for</span>
+        <h3>One production day, one month of content</h3>
+        <p>You bring footage and direction. The system carries pre-production, production, post-production, distribution and engagement — and stages everything for your approval. <b>Nothing posts without your OK.</b></p>
+      </div>
+      <div class="wcard">
+        <span class="wk">How you use it</span>
+        <h3>Plain English. No code.</h3>
+        <p>You direct it the way you'd direct a team: in plain English, in a terminal. The training inside walks the install step by step, the live calls fix real screens, and support answers the same day.</p>
+      </div>
+    </div>
+    <p class="onlyline">Nave lives <b>only inside the community</b> — the OS is never sold or downloaded anywhere else.</p>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ══ THE LIBRARY ══ -->
+<section id="library">
+  <div class="wrap">
+    <span class="eyebrow">The vault — established machines</span>
+    <h2 class="ph">Four machines. <i>Sealed cargo.</i></h2>
+    <p class="sub" style="max-width:560px;margin-top:14px">Each machine is a complete, named production system — proven on the founder's channel and on client work before it enters the vault. You can see the shape. Opening the crate takes membership.</p>
+
+    <div class="vaultgrid">
+
+      <div class="mcrate">
+        <div class="mhead">
+          <span class="nm">UGC Avatar Machine</span>
+          <span class="st"><svg fill="#1FE07A"><use href="#px-lock"/></svg>Locked</span>
+        </div>
+        <div class="mblur">
+          <div class="lines">brief → creator cast → 3 scripts → your pick
+generate: Seedance 2.5, native speech
+edit → captions → covers → staged for approval
+output: UGC ads + spokesperson videos, no filming day</div>
+          <div class="lockover"><svg fill="#1FE07A" viewBox="0 0 16 20"><use href="#px-lock"/></svg><span>Sealed</span></div>
+        </div>
+        <p class="mdesc"><b>AI creators selling for you, end to end.</b> Script to finished UGC ad with an AI spokesperson — the machine behind the avatar ads on the channel. The September drop.</p>
+        <div class="munlock"><svg class="key" fill="#1FE07A" viewBox="0 0 20 16"><use href="#px-key"/></svg><span>Unlocks — <b>2+ months</b> of membership · <b>instant on annual</b></span></div>
+      </div>
+
+      <div class="mcrate">
+        <div class="mhead">
+          <span class="nm">Avatar Machine</span>
+          <span class="st"><svg fill="#1FE07A"><use href="#px-lock"/></svg>Locked</span>
+        </div>
+        <div class="mblur">
+          <div class="lines">your avatar: short form + long form, edited
+institutional videos, built from zero
+script → generate → edit → captions → ship
+output: you on camera, without the camera</div>
+          <div class="lockover"><svg fill="#1FE07A" viewBox="0 0 16 20"><use href="#px-lock"/></svg><span>Sealed</span></div>
+        </div>
+        <p class="mdesc"><b>Your own avatar, publishing for you.</b> Short and long form with your face and voice, edited — plus institutional videos built from scratch for a business.</p>
+        <div class="munlock"><svg class="key" fill="#1FE07A" viewBox="0 0 20 16"><use href="#px-key"/></svg><span>Unlocks — <b>with tenure</b>, one machine per month · <b>instant on annual</b></span></div>
+      </div>
+
+      <div class="mcrate">
+        <div class="mhead">
+          <span class="nm">Faceless Video Machine</span>
+          <span class="st"><svg fill="#1FE07A"><use href="#px-lock"/></svg>Locked</span>
+        </div>
+        <div class="mblur">
+          <div class="lines">research → script → visual cast → voice
+cut by sentence → captions → covers
+one continuous take, zero camera
+output: a full faceless video, start to finish</div>
+          <div class="lockover"><svg fill="#1FE07A" viewBox="0 0 16 20"><use href="#px-lock"/></svg><span>Sealed</span></div>
+        </div>
+        <p class="mdesc"><b>A whole faceless video, built start to finish.</b> The machine ran end to end on camera — the full walkthrough is live on <a href="https://www.youtube.com/@enriquemarq-0" target="_blank" rel="noopener" style="color:var(--ink)">the founder's channel</a>.</p>
+        <div class="munlock"><svg class="key" fill="#1FE07A" viewBox="0 0 20 16"><use href="#px-key"/></svg><span>Unlocks — <b>with tenure</b>, one machine per month · <b>instant on annual</b></span></div>
+      </div>
+
+      <div class="mcrate">
+        <div class="mhead">
+          <span class="nm">Clip Machine</span>
+          <span class="st"><svg fill="#1FE07A"><use href="#px-lock"/></svg>Locked</span>
+        </div>
+        <div class="mblur">
+          <div class="lines">one long master in → moments scored
+9:16 reframe, face-tracked → captions → covers
+staged to the queue, spaced across the week
+output: your shorts, cut while you sleep on it</div>
+          <div class="lockover"><svg fill="#1FE07A" viewBox="0 0 16 20"><use href="#px-lock"/></svg><span>Sealed</span></div>
+        </div>
+        <p class="mdesc"><b>One long video becomes a week of shorts.</b> The machine finds the moments, reframes to vertical, captions and covers each cut — the same rig that clips the founder's channel.</p>
+        <div class="munlock"><svg class="key" fill="#1FE07A" viewBox="0 0 20 16"><use href="#px-key"/></svg><span>Unlocks — <b>with tenure</b>, one machine per month · <b>instant on annual</b></span></div>
+      </div>
+
+    </div>
+
+    <span class="eyebrow" style="margin-top:44px">In the bay — next drops</span>
+    <div class="coming">
+      <div class="ccrate"><span class="ck">In the bay</span><h4>Thumbnail Machine</h4></div>
+      <div class="ccrate"><span class="ck">In the bay</span><h4>Long-form Edit Machine</h4></div>
+      <div class="ccrate"><span class="ck">In the bay</span><h4>Copy / Hook Machine</h4></div>
+      <div class="ccrate"><span class="ck">In the bay</span><h4>Carousel Machine</h4></div>
+    </div>
+    <p class="backnote">New machines drop as they're proven in production — <b>the backlog runs 12+ months deep.</b></p>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<!-- ══ HOW IT UNLOCKS ══ -->
+<section id="unlock">
+  <div class="wrap">
+    <span class="eyebrow">How the vault opens</span>
+    <h2 class="ph">Two keys. <i>Pick yours.</i></h2>
+    <div class="plans">
+      <div class="plan">
+        <span class="pk">Key 01 · Monthly</span>
+        <h3>Earn it with tenure</h3>
+        <ul>
+          <li><b>Nave Core</b> — the base Content OS, installed and yours</li>
+          <li>The community, <b>live calls twice a week</b>, same-day support</li>
+          <li>Boarding — your onboarding into the system</li>
+          <li><b>One machine unlocks per month</b> you're a member</li>
+        </ul>
+      </div>
+      <div class="plan hot">
+        <span class="pk">Key 02 · Annual</span>
+        <h3>Open everything today</h3>
+        <ul>
+          <li>Everything in monthly</li>
+          <li><b>All four established machines, unlocked now</b></li>
+          <li><b>Every future drop</b> the year ships, as it lands</li>
+          <li>Flight Plan — a personal roadmap, recorded for you</li>
+          <li>One <b>1:1 install session</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="trialline">The 7-day trial is <b>training only</b> — the course, the free resources, an honest taste. The vault stays sealed until you're a member.</p>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<section id="final" style="text-align:center;padding-bottom:90px">
+  <div class="wrap">
+    <span class="badgechip"><b>THE VAULT</b> // OPENS FROM INSIDE</span>
+    <h2 class="finalposter">Board the ship.<span class="ln2">Open the vault.</span></h2>
+    <p class="sub" style="max-width:480px;margin:18px auto 0">The OS, the machines, the training, the calls, the room — built to compound the longer you stay.</p>
+    <div class="ctablock" style="margin-top:26px">
+      <a class="btn btn-big btn-skool" data-cta="JOIN" href="/join">Join Agentic AI Content on <img src="assets/logos/skool.svg" alt="Skool"> →</a>
+    </div>
+    <span class="micro" style="margin-top:16px">Want the full picture of the community first? <a href="/join" style="color:var(--ink)">See everything inside →</a></span>
+  </div>
+</section>
+</main>
+
+<footer style="padding:36px 0 44px"><div class="wrap">
+  <div class="pagechrome" style="border-top:0;margin-top:0"><span>INFINITX — 2026</span><span><a href="/join">The community</a> · <a href="/about">About Enrique</a> · <a href="/partner">Partners</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></span></div>
+</div></footer>
+
+<script src="assets/links.js"></script>
+</body>
+</html>
