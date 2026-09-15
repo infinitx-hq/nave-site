@@ -201,6 +201,14 @@
   .vcard{flex:0 0 min(430px,88%);scroll-snap-align:center;border:1px solid var(--line);background:#0c0f0d;overflow:hidden}
   .vcard .vh{position:relative;padding-bottom:56.25%}
   .vcard iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vcard .vplay{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;margin:0;background:#0c0f0d;cursor:pointer;display:block}
+  .vcard .vplay[hidden]{display:none}
+  .vcard .vplay img{width:100%;height:100%;object-fit:cover;display:block;opacity:.86;transition:opacity .2s,transform .3s}
+  .vcard .vplay img.vfit{object-fit:contain}
+  .vcard .vplay:hover img{opacity:1;transform:scale(1.02)}
+  .vcard .vico{position:absolute;left:50%;top:50%;width:64px;height:64px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(7,9,8,.72);border:1px solid var(--line-strong);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .15s}
+  .vcard .vico::after{content:'';border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent var(--ink);margin-left:5px}
+  .vcard .vplay:hover .vico{background:rgba(31,224,122,.22)}
   .vcard .vl{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:10px 14px}
   .wallgrid{columns:3;column-gap:14px;margin-top:16px}
   .wallgrid a{display:block;break-inside:avoid;margin-bottom:14px;border:1px solid var(--line);overflow:hidden;background:#0c0f0d}
@@ -614,15 +622,15 @@
     <div class="deckwrap">
       <button class="dnav prev" data-deck="vslide" aria-label="Previous">←</button>
       <div class="vslider" id="vslide">
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/a18460184af14d57bcb0961fcf41410c?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Zach"></iframe></div><div class="vl">Zach — operator</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/e67036f1cda54d158c31dbb5e1f07b08?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Anden"></iframe></div><div class="vl">Anden — operator</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/43ac006a00c64ccd879cebffaeab50e0?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Dex"></iframe></div><div class="vl">Dex — TheChicagoAIGuy.com</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/de84d0c1d88941fd8d56d1610a01dcf8?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Dylan"></iframe></div><div class="vl">Dylan</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/adaff80a4d10475b82a4f0ab56595116?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Devin"></iframe></div><div class="vl">Devin</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/be2995f5e45447138833f935f52ef5f8?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Brian"></iframe></div><div class="vl">Brian</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/bf78a075bed541f4a58fab88dfda61b9?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — LFG Ventures"></iframe></div><div class="vl">LFG Ventures — venture partner</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/bf239e9c62c14a73bbdc7c95795ffde8?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Family Office"></iframe></div><div class="vl">Family Office — partner</div></div>
-        <div class="vcard"><div class="vh"><iframe loading="lazy" src="https://www.loom.com/embed/f4f2794694c64463a3d9de7849890631?hideEmbedTopBar=true&amp;hide_title=true&amp;hide_owner=true" allowfullscreen title="Testimonial — Brian (operator)"></iframe></div><div class="vl">Brian — operator</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="a18460184af14d57bcb0961fcf41410c" aria-label="Play — Testimonial — Zach"><img src="assets/proof/loom/a18460184af14d57bcb0961fcf41410c.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Zach — operator</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="e67036f1cda54d158c31dbb5e1f07b08" aria-label="Play — Testimonial — Anden"><img src="assets/proof/loom/e67036f1cda54d158c31dbb5e1f07b08.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Anden — operator</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="43ac006a00c64ccd879cebffaeab50e0" aria-label="Play — Testimonial — Dex"><img src="assets/proof/loom/43ac006a00c64ccd879cebffaeab50e0.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Dex — TheChicagoAIGuy.com</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="de84d0c1d88941fd8d56d1610a01dcf8" aria-label="Play — Testimonial — Dylan"><img src="assets/proof/loom/de84d0c1d88941fd8d56d1610a01dcf8.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Dylan</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="adaff80a4d10475b82a4f0ab56595116" aria-label="Play — Testimonial — Devin"><img src="assets/proof/loom/adaff80a4d10475b82a4f0ab56595116.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Devin</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="be2995f5e45447138833f935f52ef5f8" aria-label="Play — Testimonial — Brian"><img src="assets/proof/loom/be2995f5e45447138833f935f52ef5f8.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Brian</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="bf78a075bed541f4a58fab88dfda61b9" aria-label="Play — Testimonial — LFG Ventures"><img src="assets/proof/loom/bf78a075bed541f4a58fab88dfda61b9.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">LFG Ventures — venture partner</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="bf239e9c62c14a73bbdc7c95795ffde8" aria-label="Play — Testimonial — Family Office"><img src="assets/proof/loom/bf239e9c62c14a73bbdc7c95795ffde8.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Family Office — partner</div></div>
+        <div class="vcard"><div class="vh"><button type="button" class="vplay" data-loom="f4f2794694c64463a3d9de7849890631" aria-label="Play — Testimonial — Brian (operator)"><img class="vfit" src="assets/proof/loom/f4f2794694c64463a3d9de7849890631.jpg" alt="" loading="lazy" width="960" height="540"><span class="vico" aria-hidden="true"></span></button></div><div class="vl">Brian — operator</div></div>
       </div>
       <button class="dnav next" data-deck="vslide" aria-label="Next">→</button>
     </div>
@@ -693,6 +701,25 @@
       var w = d.querySelector('.vcard');
       var step = w ? w.getBoundingClientRect().width + 14 : d.clientWidth * .8;
       d.scrollBy({ left: btn.classList.contains('next') ? step : -step, behavior: 'smooth' });
+    });
+  });
+
+  /* loom testimonials: poster first, embed on tap, one player at a time.
+     Nine live Loom embeds at once starve the browser (each pulls ~700 requests) and none renders. */
+  var vplays = [].slice.call(document.querySelectorAll('.vplay'));
+  vplays.forEach(function(b){
+    b.addEventListener('click', function(){
+      vplays.forEach(function(o){
+        var old = o.parentNode.querySelector('iframe');
+        if (old){ old.remove(); o.hidden = false; }
+      });
+      var f = document.createElement('iframe');
+      f.src = 'https://www.loom.com/embed/' + b.dataset.loom + '?hideEmbedTopBar=true&hide_title=true&hide_owner=true&autoplay=1';
+      f.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+      f.setAttribute('allowfullscreen', '');
+      f.title = b.getAttribute('aria-label');
+      b.hidden = true;
+      b.parentNode.appendChild(f);
     });
   });
 
