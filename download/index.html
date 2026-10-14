@@ -41,11 +41,12 @@
    <a class="download" id="dl-mac" href="#" rel="noopener"><svg class="os"><use href="#apple"/></svg><span><strong>Download for Mac</strong><small id="dl-mac-note">Apple silicon (M1 and newer)</small></span><svg><use href="#arrow"/></svg></a>
    <p class="small">Links work for one hour. Come back here any time for a fresh one.</p>
    <div class="first-open">
-    <p class="first-title">Opening it the first time</p>
-    <p><b>Mac:</b> drag Nave into Applications. If your Mac says Nave is damaged or can't be opened, open <b>Terminal</b> (⌘ Space, type Terminal), paste this line and press Return, then open Nave again:</p>
-    <div class="cmd"><code id="mac-cmd">xattr -cr /Applications/Nave.app</code><button type="button" id="copy-cmd">Copy</button></div>
-    <p><b>Windows:</b> if your browser asks, choose <b>Keep</b>. If Windows says "Windows protected your PC", click <b>More info</b>, then <b>Run anyway</b>.</p>
-    <p class="small left">You only do this once. Nave isn't signed by Apple and Microsoft yet; it will open with a double-click soon.</p>
+    <p class="first-title">The easiest way: one line, no warnings</p>
+    <p><b>Mac:</b> open <b>Terminal</b> (⌘ Space, type Terminal), paste this line and press Return. It installs Nave in Applications and opens it.</p>
+    <div class="cmd"><code id="cmd-mac">curl -fsSL https://nave.infinitxai.com/download/install.sh | bash</code><button type="button" data-copy="cmd-mac">Copy</button></div>
+    <p><b>Windows:</b> open <b>PowerShell</b> (Start, type PowerShell), paste this line and press Enter.</p>
+    <div class="cmd"><code id="cmd-win">irm https://nave.infinitxai.com/download/install.ps1 | iex</code><button type="button" data-copy="cmd-win">Copy</button></div>
+    <p class="small left">Used the download button instead? On a Mac that says Nave is damaged, run <code>xattr -cr /Applications/Nave.app</code> in Terminal. On Windows, choose Keep, then More info → Run anyway. Only the first time.</p>
    </div>
   </div>
  </section>

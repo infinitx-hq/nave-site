@@ -17,10 +17,11 @@
     document.getElementById(id + '-note').textContent = (file ? note + size(file.bytes) : 'Not available yet');
   };
 
-  const copy = document.getElementById('copy-cmd');
-  if (copy) copy.addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(document.getElementById('mac-cmd').textContent); copy.textContent = 'Copied'; setTimeout(() => { copy.textContent = 'Copy'; }, 2000); } catch { copy.textContent = 'Select it'; }
-  });
+  for (const button of document.querySelectorAll('[data-copy]')) {
+    button.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(document.getElementById(button.dataset.copy).textContent); button.textContent = 'Copied'; setTimeout(() => { button.textContent = 'Copy'; }, 2000); } catch { button.textContent = 'Select it'; }
+    });
+  }
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -40,6 +41,10 @@
       if (response.ok && body.ok) {
         link('dl-windows', body.windows, 'Windows 10 and 11 · 64-bit');
         link('dl-mac', body.mac, 'Apple silicon (M1 and newer)');
+        // The one-line installs carry the email they just typed, so nothing is asked twice.
+        const safe = value.replace(/[^a-z0-9@._+-]/g, '');
+        document.getElementById('cmd-mac').textContent = `curl -fsSL https://nave.infinitxai.com/download/install.sh | bash -s ${safe}`;
+        document.getElementById('cmd-win').textContent = `$env:NAVE_EMAIL='${safe}'; irm https://nave.infinitxai.com/download/install.ps1 | iex`;
         if (body.version) document.getElementById('ready-line').textContent = `Nave ${body.version} is ready for you.`;
         form.hidden = true; downloads.hidden = false; downloads.focus();
         return;

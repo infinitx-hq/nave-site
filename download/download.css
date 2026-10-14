@@ -56,3 +56,5 @@ footer .wordmark{font-size:20px}footer .mark{width:36px;height:24px}footer p{col
 .cmd button{border:1.5px solid var(--ink);border-radius:999px;background:var(--blue);font-size:12px;font-weight:600;padding:6px 14px;box-shadow:0 2px 0 var(--ink)}
 .small.left{text-align:left}
 .faq code{font:400 12px var(--mono);background:var(--wash);padding:1px 5px;border-radius:5px}
+.first-open code{font:400 12px var(--mono);background:var(--wash);padding:1px 5px;border-radius:5px}
+.cmd code{background:none!important;padding:0!important}
