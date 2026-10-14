@@ -40,6 +40,13 @@
    <a class="download" id="dl-windows" href="#" rel="noopener"><svg class="os"><use href="#windows"/></svg><span><strong>Download for Windows</strong><small id="dl-windows-note">Windows 10 and 11 · 64-bit</small></span><svg><use href="#arrow"/></svg></a>
    <a class="download" id="dl-mac" href="#" rel="noopener"><svg class="os"><use href="#apple"/></svg><span><strong>Download for Mac</strong><small id="dl-mac-note">Apple silicon (M1 and newer)</small></span><svg><use href="#arrow"/></svg></a>
    <p class="small">Links work for one hour. Come back here any time for a fresh one.</p>
+   <div class="first-open">
+    <p class="first-title">Opening it the first time</p>
+    <p><b>Mac:</b> drag Nave into Applications. If your Mac says Nave is damaged or can't be opened, open <b>Terminal</b> (⌘ Space, type Terminal), paste this line and press Return, then open Nave again:</p>
+    <div class="cmd"><code id="mac-cmd">xattr -cr /Applications/Nave.app</code><button type="button" id="copy-cmd">Copy</button></div>
+    <p><b>Windows:</b> if your browser asks, choose <b>Keep</b>. If Windows says "Windows protected your PC", click <b>More info</b>, then <b>Run anyway</b>.</p>
+    <p class="small left">You only do this once. Nave isn't signed by Apple and Microsoft yet; it will open with a double-click soon.</p>
+   </div>
   </div>
  </section>
 
@@ -54,7 +61,7 @@
 
  <section class="faq" aria-label="Questions">
   <details><summary>Windows says "Windows protected your PC"<span>+</span></summary><p>Nave is new and not yet signed with a Windows certificate. Click <b>More info</b>, then <b>Run anyway</b>. You only do this once.</p></details>
-  <details><summary>My Mac says it can't open Nave<span>+</span></summary><p>Nave is not yet signed by Apple. Open <b>System Settings → Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b> next to Nave. You only do this once.</p></details>
+  <details><summary>My Mac says Nave is damaged or can't be opened<span>+</span></summary><p>Nave isn't signed by Apple yet, and macOS blocks apps it can't verify. Drag Nave into Applications, open <b>Terminal</b>, paste <code>xattr -cr /Applications/Nave.app</code> and press Return, then open Nave. If it then asks, open <b>System Settings → Privacy &amp; Security</b> and click <b>Open Anyway</b>. You only do this once.</p></details>
   <details><summary>I have an Intel Mac<span>+</span></summary><p>Nave runs on Apple silicon Macs (M1 and newer) for now. Ask in the community and we'll tell you when an Intel version is ready.</p></details>
   <details><summary>What stays on my computer?<span>+</span></summary><p>Your workspace, your brand records and your content stay in your own folder. Your tool keys stay on your computer; Nave never holds them.</p></details>
  </section>

@@ -17,6 +17,11 @@
     document.getElementById(id + '-note').textContent = (file ? note + size(file.bytes) : 'Not available yet');
   };
 
+  const copy = document.getElementById('copy-cmd');
+  if (copy) copy.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(document.getElementById('mac-cmd').textContent); copy.textContent = 'Copied'; setTimeout(() => { copy.textContent = 'Copy'; }, 2000); } catch { copy.textContent = 'Select it'; }
+  });
+
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     message.hidden = true;
