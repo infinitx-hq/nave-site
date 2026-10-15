@@ -17,6 +17,18 @@
     document.getElementById(id + '-note').textContent = (file ? note + size(file.bytes) : 'Not available yet');
   };
 
+  // Mac or Windows: the tab for this computer opens first; the other is one tap away.
+  const tabs = [['tab-mac', 'install-mac'], ['tab-win', 'install-win']];
+  const show = (which) => {
+    for (const [tab, panel] of tabs) {
+      const on = tab === which;
+      document.getElementById(tab).setAttribute('aria-selected', String(on));
+      document.getElementById(panel).hidden = !on;
+    }
+  };
+  for (const [tab] of tabs) document.getElementById(tab).addEventListener('click', () => show(tab));
+  show(/Win/i.test(navigator.userAgent) ? 'tab-win' : 'tab-mac');
+
   for (const button of document.querySelectorAll('[data-copy]')) {
     button.addEventListener('click', async () => {
       try { await navigator.clipboard.writeText(document.getElementById(button.dataset.copy).textContent); button.textContent = 'Copied'; setTimeout(() => { button.textContent = 'Copy'; }, 2000); } catch { button.textContent = 'Select it'; }

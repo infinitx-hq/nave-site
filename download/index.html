@@ -37,25 +37,48 @@
 
   <div id="downloads" tabindex="-1" hidden>
    <p class="ready"><span class="dot"></span><span id="ready-line">Nave is ready for you.</span></p>
-   <a class="download" id="dl-windows" href="#" rel="noopener"><svg class="os"><use href="#windows"/></svg><span><strong>Download for Windows</strong><small id="dl-windows-note">Windows 10 and 11 · 64-bit</small></span><svg><use href="#arrow"/></svg></a>
-   <a class="download" id="dl-mac" href="#" rel="noopener"><svg class="os"><use href="#apple"/></svg><span><strong>Download for Mac</strong><small id="dl-mac-note">Apple silicon (M1 and newer)</small></span><svg><use href="#arrow"/></svg></a>
-   <p class="small">Links work for one hour. Come back here any time for a fresh one.</p>
-   <div class="first-open">
-    <p class="first-title">The easiest way: one line, no warnings</p>
-    <p><b>Mac:</b> open <b>Terminal</b> (⌘ Space, type Terminal), paste this line and press Return. It installs Nave in Applications and opens it.</p>
-    <div class="cmd"><code id="cmd-mac">curl -fsSL https://nave.infinitxai.com/download/install.sh | bash</code><button type="button" data-copy="cmd-mac">Copy</button></div>
-    <p><b>Windows:</b> open <b>PowerShell</b> (Start, type PowerShell), paste this line and press Enter.</p>
-    <div class="cmd"><code id="cmd-win">irm https://nave.infinitxai.com/download/install.ps1 | iex</code><button type="button" data-copy="cmd-win">Copy</button></div>
-    <p class="small left">Used the download button instead? On a Mac that says Nave is damaged, run <code>xattr -cr /Applications/Nave.app</code> in Terminal. On Windows, choose Keep, then More info → Run anyway. Only the first time.</p>
+   <div class="os-tabs" role="tablist" aria-label="Your computer">
+    <button type="button" role="tab" id="tab-mac" aria-controls="install-mac" aria-selected="true"><svg class="os"><use href="#apple"/></svg>Mac</button>
+    <button type="button" role="tab" id="tab-win" aria-controls="install-win" aria-selected="false"><svg class="os"><use href="#windows"/></svg>Windows</button>
    </div>
+   <div class="install" id="install-mac" role="tabpanel" aria-labelledby="tab-mac">
+    <p class="install-title">Install in one line. <em>No warnings.</em></p>
+    <ol class="install-steps">
+     <li><span class="n">1</span><span>Open <b>Terminal</b>: press <kbd>⌘</kbd> <kbd>Space</kbd>, type <b>Terminal</b>, press Return.</span></li>
+     <li><span class="n">2</span><span>Copy this line and paste it in Terminal:</span></li>
+    </ol>
+    <div class="cmd big"><code id="cmd-mac">curl -fsSL https://nave.infinitxai.com/download/install.sh | bash</code><button type="button" data-copy="cmd-mac">Copy</button></div>
+    <ol class="install-steps" start="3">
+     <li><span class="n">3</span><span>Press <b>Return</b>. Nave downloads, goes into Applications and opens. That's it.</span></li>
+    </ol>
+    <p class="needs">Apple silicon Mac (M1 or newer) · a Claude or ChatGPT subscription for your AI</p>
+   </div>
+   <div class="install" id="install-win" role="tabpanel" aria-labelledby="tab-win" hidden>
+    <p class="install-title">Install in one line. <em>No warnings.</em></p>
+    <ol class="install-steps">
+     <li><span class="n">1</span><span>Open <b>PowerShell</b>: press the <kbd>Windows</kbd> key, type <b>PowerShell</b>, press Enter.</span></li>
+     <li><span class="n">2</span><span>Copy this line and paste it in PowerShell:</span></li>
+    </ol>
+    <div class="cmd big"><code id="cmd-win">irm https://nave.infinitxai.com/download/install.ps1 | iex</code><button type="button" data-copy="cmd-win">Copy</button></div>
+    <ol class="install-steps" start="3">
+     <li><span class="n">3</span><span>Press <b>Enter</b>. Nave downloads, installs and opens. That's it.</span></li>
+    </ol>
+    <p class="needs">Windows 10 or 11, 64-bit · a Claude or ChatGPT subscription for your AI</p>
+   </div>
+   <details class="manual">
+    <summary>Prefer a normal download?<span>+</span></summary>
+    <a class="download" id="dl-mac" href="#" rel="noopener"><svg class="os"><use href="#apple"/></svg><span><strong>Download for Mac</strong><small id="dl-mac-note">Apple silicon (M1 and newer)</small></span><svg><use href="#arrow"/></svg></a>
+    <a class="download" id="dl-windows" href="#" rel="noopener"><svg class="os"><use href="#windows"/></svg><span><strong>Download for Windows</strong><small id="dl-windows-note">Windows 10 and 11 · 64-bit</small></span><svg><use href="#arrow"/></svg></a>
+    <p class="small left">Links work for one hour. The first time you open it: on a Mac, System Settings → Privacy &amp; Security → <b>Open Anyway</b> (if it says Nave is damaged, run <code>xattr -cr /Applications/Nave.app</code> in Terminal); on Windows, More info → <b>Run anyway</b>.</p>
+   </details>
   </div>
  </section>
 
  <section class="steps" aria-labelledby="steps-title">
   <h2 id="steps-title">Three steps, one installation</h2>
   <ol>
-   <li><span class="no">01</span><h3>Install</h3><p>Open the file you downloaded and follow it. Nothing else to install.</p></li>
-   <li><span class="no">02</span><h3>Sign in</h3><p>Type your membership email; Nave sends you a six-digit code. It remembers you after that.</p></li>
+   <li><span class="no">01</span><h3>Install</h3><p>Paste one line in Terminal (Mac) or PowerShell (Windows). Nave installs itself and opens.</p></li>
+   <li><span class="no">02</span><h3>Sign in</h3><p>Type your membership email; Nave sends you a code. It remembers you after that.</p></li>
    <li><span class="no">03</span><h3>Come on board</h3><p>Nave sets up your workspace, its studios and Nave Editor, then Nave Guide shows you around.</p></li>
   </ol>
  </section>
