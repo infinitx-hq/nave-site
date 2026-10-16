@@ -49,7 +49,12 @@ mkdir -p "$MOUNT"
 hdiutil attach "$WORK/Nave.dmg" -nobrowse -readonly -mountpoint "$MOUNT" -quiet || fail "Couldn't open the download. Run the line again."
 APP="$(find "$MOUNT" -maxdepth 1 -name '*.app' | head -n 1)"
 [ -n "$APP" ] || fail "The download didn't contain Nave. Run the line again."
-if pgrep -x Nave >/dev/null 2>&1; then osascript -e 'quit app "Nave"' >/dev/null 2>&1 || true; sleep 2; fi
+# A running Nave is asked to quit, and waited for (it stops its own helpers first), before it is replaced.
+if pgrep -x Nave >/dev/null 2>&1; then
+  osascript -e 'quit app "Nave"' >/dev/null 2>&1 || true
+  for _ in $(seq 1 30); do pgrep -x Nave >/dev/null 2>&1 || break; sleep 1; done
+  if pgrep -x Nave >/dev/null 2>&1; then pkill -x Nave >/dev/null 2>&1 || true; sleep 2; fi
+fi
 rm -rf "/Applications/Nave.app"
 ditto "$APP" "/Applications/Nave.app" || fail "Couldn't write to Applications. Run the line again, or drag Nave there yourself."
 xattr -cr "/Applications/Nave.app" >/dev/null 2>&1 || true

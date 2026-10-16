@@ -36,7 +36,21 @@ try {
   Invoke-WebRequest -Uri $Answer.windows.url -OutFile $Installer -UseBasicParsing
   Unblock-File -Path $Installer
   Write-Host ''; Write-Host '  Installing...'
-  Start-Process -FilePath $Installer -Wait
+  if ($env:NAVE_UPDATE -eq '1') {
+    # Run by Nave's own "Update the app": close Nave first, so its installer has nothing to ask,
+    # and let the installer close what is left and open the new Nave when it is done.
+    $App = $env:NAVE_APP_EXE
+    if ($App -and (Test-Path -LiteralPath $App)) {
+      $Name = [IO.Path]::GetFileNameWithoutExtension($App)
+      Get-Process -Name $Name -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $App -and $_.MainWindowHandle -ne 0 } | ForEach-Object { [void]$_.CloseMainWindow() }
+      for ($i = 0; $i -lt 30 -and (Get-Process -Name $Name -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq $App }); $i++) { Start-Sleep -Seconds 1 }
+    }
+    $Run = Start-Process -FilePath $Installer -ArgumentList '--updated' -Wait -PassThru
+  } else {
+    $Run = Start-Process -FilePath $Installer -Wait -PassThru
+  }
+  if ($Run.ExitCode -ne 0) { Stop-Install 'The installer stopped before it finished. Run the line again.'; return }
+  if ($env:NAVE_UPDATE -eq '1') { Write-Host ''; Write-Host '  Nave is updated. It opens again by itself.' -ForegroundColor Green; Write-Host ''; return }
   Write-Host ''; Write-Host "  Nave is installed. Open it from the Start menu and sign in with $Email." -ForegroundColor Green
   Write-Host ''
 } catch {
